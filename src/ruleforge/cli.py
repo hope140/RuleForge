@@ -165,7 +165,7 @@ def build_parser() -> argparse.ArgumentParser:
     build.add_argument("--refresh", action="store_true")
     build.add_argument(
         "--repository-base-url",
-        default="https://raw.githubusercontent.com/hope140/RuleForge/main",
+        default="https://raw.githubusercontent.com/hope140/RuleForge/refs/heads/main",
         help="base URL used in filter_remote.safe.conf",
     )
     build.add_argument("--fail-on-conflict", action="store_true")
