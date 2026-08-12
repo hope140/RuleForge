@@ -1,0 +1,220 @@
+schema_version: 1
+target: quantumult-x
+description: 当前个人 QuanX 配置使用的公开分流种子来源
+sources:
+  - id: rulego-advertising
+    kind: filter
+    format: surge
+    category: reject
+    policy: reject
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list
+    parser: surge
+    enabled: true
+
+  - id: rulego-tracking
+    kind: filter
+    format: surge
+    category: privacy
+    policy: reject
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list
+    parser: surge
+    enabled: true
+
+  - id: blackmatrix-openai
+    kind: filter
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-claude
+    kind: filter
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-gemini
+    kind: filter
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-copilot
+    kind: filter
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Copilot/Copilot.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: rulego-ai-supplement
+    kind: filter
+    format: surge
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list
+    parser: surge
+    enabled: true
+    notes: 保留 Blackmatrix 没有完整独立列表的 OpenRouter、Cursor、Perplexity、Grok 等覆盖；与其他 AI 源使用同一策略。
+
+  - id: blackmatrix-apple
+    kind: filter
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-youtube
+    kind: filter
+    format: quantumult-x
+    category: youtube
+    policy: YouTube
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-netflix
+    kind: filter
+    format: quantumult-x
+    category: netflix
+    policy: Netflix
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-tiktok
+    kind: filter
+    format: quantumult-x
+    category: tiktok
+    policy: 海外抖音
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-google-voice
+    kind: filter
+    format: quantumult-x
+    category: google-voice
+    policy: 美国节点
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleVoice/GoogleVoice.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-google
+    kind: filter
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-github
+    kind: filter
+    format: quantumult-x
+    category: github
+    policy: GitHub
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-spotify
+    kind: filter
+    format: quantumult-x
+    category: spotify
+    policy: Spotify
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-telegram
+    kind: filter
+    format: quantumult-x
+    category: telegram
+    policy: 电报代理
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: rulego-china-media
+    kind: filter
+    format: surge
+    category: china-media
+    policy: 港台番剧
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list
+    parser: surge
+    enabled: true
+
+  - id: rulego-global-media
+    kind: filter
+    format: surge
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list
+    parser: surge
+    enabled: true
+
+  - id: blackmatrix-alipay
+    kind: filter
+    format: quantumult-x
+    category: alipay
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: blackmatrix-wechat
+    kind: filter
+    format: quantumult-x
+    category: wechat
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: rulego-direct-plus
+    kind: filter
+    format: surge
+    category: direct-exception
+    policy: direct
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list
+    parser: surge
+    enabled: true
+
+  - id: blackmatrix-direct
+    kind: filter
+    format: quantumult-x
+    category: china-direct
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list
+    parser: quantumult-x
+    enabled: true
+
+  - id: rulego-proxy-plus
+    kind: filter
+    format: surge
+    category: proxy-exception
+    policy: proxy
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list
+    parser: surge
+    enabled: true
+
+  - id: rulego-proxy
+    kind: filter
+    format: surge
+    category: proxy
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list
+    parser: surge
+    enabled: true
