@@ -25,7 +25,12 @@ RuleForge 从多个公开规则项目收集分流规则，按业务分类统一�
 | `ai` | `AI` | OpenAI、Claude、Gemini、Copilot 等 AI 服务 |
 | `apple` | `苹果服务` | Apple 相关服务 |
 | `google` | `谷歌服务` | Google 相关服务 |
+| `microsoft` / `cloud` | `全球加速` | Microsoft、OneDrive、Dropbox、MEGA 等海外云服务 |
+| `social` | `全球加速` | Twitter、Facebook、Instagram、Discord 等社交服务 |
+| `developer` | `全球加速` | GitLab、Docker、Figma、Notion、npm 等开发者服务 |
 | `china-media` | `港台番剧` | 国内及港台媒体补充分类 |
+| `china-streaming` | `direct` | 哔哩哔哩、优酷、爱奇艺、AcFun 等国内影音 |
+| `china-services` | `direct` | 国内电商、地图、出行、内容和基础服务 |
 | `global-media` | `国际媒体` | 国际流媒体分类 |
 | `github` | `GitHub` | GitHub 相关服务 |
 | `youtube` / `netflix` | 对应策略 | 视频服务 |
@@ -58,7 +63,7 @@ RuleForge 从多个公开规则项目收集分流规则，按业务分类统一�
 
 ## 来源
 
-当前来源以 [Blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) 的原生 Quantumult X 分类列表为主要来源，并使用 [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo) 和 [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 进行交叉补充。
+当前来源以 [Blackmatrix7/ios_rule_script 的 Quantumult X 目录](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX) 为主要来源，并使用 [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo) 和 [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 进行交叉补充。Blackmatrix 目录本身包含大量按服务拆分的列表，本轮先纳入常用且业务边界清晰的第一批来源，后续继续按同一流程扩展，不把目录中的所有条目无差别塞进主配置。
 
 所有来源地址、格式、分类、策略映射和维护说明均登记在 [sources/quantumultx.yaml](sources/quantumultx.yaml) 中。来源更新后应重新构建，不直接手工覆盖生成文件。
 

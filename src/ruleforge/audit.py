@@ -227,6 +227,8 @@ _CATEGORY_PREFERENCES: dict[frozenset[str], str] = {
     frozenset(("youtube", "google")): "youtube",
     frozenset(("google", "china-direct")): "google",
     frozenset(("apple", "china-direct")): "apple",
+    frozenset(("developer", "github")): "developer",
+    frozenset(("china-streaming", "global-media")): "global-media",
 }
 
 _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
@@ -239,6 +241,7 @@ _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
     (frozenset(("ai", "proxy")), "cp4.cloudflare.com"): "proxy",
     (frozenset(("global-media", "proxy")), "naver.com"): "global-media",
     (frozenset(("global-media", "proxy")), "s3-ap-southeast-1.amazonaws.com"): "proxy",
+    (frozenset(("apple", "microsoft")), "akadns.net"): "microsoft",
 }
 
 

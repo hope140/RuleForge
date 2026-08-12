@@ -17,9 +17,9 @@ from ruleforge.parsers import parse_resource  # noqa: E402
 class RuleForgeTests(unittest.TestCase):
     def test_manifest_has_unique_seed_sources(self) -> None:
         _, sources = load_manifest(ROOT / "sources" / "quantumultx.yaml")
-        self.assertEqual(len(sources), 25)
-        self.assertEqual(len({source.id for source in sources}), 25)
-        self.assertEqual(len({source.url for source in sources}), 25)
+        self.assertEqual(len(sources), 94)
+        self.assertEqual(len({source.id for source in sources}), 94)
+        self.assertEqual(len({source.url for source in sources}), 94)
 
     def test_surge_domain_is_rendered_as_quantumultx_host(self) -> None:
         source = Source("test", "filter", "surge", "demo", "direct", "https://example.test", "surge")
@@ -89,6 +89,9 @@ class RuleForgeTests(unittest.TestCase):
             ("perplexity.ai", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
             ("apple-relay.cloudflare.com", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
             ("naver.com", source("rulego-media", "global-media", "国际媒体"), source("rulego-proxy", "proxy", "全球加速")),
+            ("npmjs.com", source("blackmatrix-github", "github", "GitHub"), source("blackmatrix-npmjs", "developer", "全球加速")),
+            ("bilibili.tv", source("blackmatrix-global", "global-media", "国际媒体"), source("blackmatrix-china", "china-streaming", "direct")),
+            ("akadns.net", source("blackmatrix-apple", "apple", "苹果服务"), source("blackmatrix-microsoft", "microsoft", "全球加速")),
         )
         rules = []
         for value, left_source, right_source in cases:
@@ -106,6 +109,9 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(selected["perplexity.ai"], "AI")
         self.assertEqual(selected["apple-relay.cloudflare.com"], "全球加速")
         self.assertEqual(selected["naver.com"], "国际媒体")
+        self.assertEqual(selected["npmjs.com"], "全球加速")
+        self.assertEqual(selected["bilibili.tv"], "国际媒体")
+        self.assertEqual(selected["akadns.net"], "全球加速")
 
     def test_host_suffix_overlap_is_reported(self) -> None:
         direct = Source("direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")

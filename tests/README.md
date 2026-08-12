@@ -5,6 +5,7 @@
 - 支付宝主站和常见子域名应进入 direct。
 - Apple 服务应进入 苹果服务。
 - OpenAI、Claude、Gemini、Copilot 应进入 AI。
+- Apple、Google、社交、开发者、云服务和国内服务应进入各自业务分类。
 - 国内 IP 直连不能覆盖更具体的业务规则。
 - 同一域名命中不同策略时应按 Blackmatrix、direct、具体规则和业务分类边界裁决，无法判断时进入冲突报告。
 - 规则源失效、返回 HTML 或格式异常时构建应失败或明确报警。
