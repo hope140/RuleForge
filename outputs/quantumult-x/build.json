@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-12T03:01:06.560003+00:00",
+  "generated_at_utc": "2026-08-12T03:15:36.000963+00:00",
   "generator_version": "0.1.0",
   "manifest": {
     "schema_version": 1,
@@ -264,24 +264,26 @@
   "enabled_source_count": 25,
   "parsed_rule_count": 6460,
   "kept_rule_count": 6358,
-  "safe_rule_count": 6154,
-  "resolved_rule_count": 6154,
+  "safe_rule_count": 6177,
+  "resolved_rule_count": 6177,
   "conflicted_rule_count": 394,
   "duplicate_count": 102,
   "conflict_count": 280,
-  "resolved_conflict_count": 257,
+  "resolved_conflict_count": 280,
   "blackmatrix_preferred_conflict_count": 176,
   "direct_preferred_conflict_count": 7,
   "specific_preferred_conflict_count": 74,
-  "unresolved_conflict_count": 23,
+  "category_preferred_conflict_count": 23,
+  "unresolved_conflict_count": 0,
   "resolution": {
-    "resolved_rule_count": 6154,
-    "rejected_rule_count": 204,
-    "resolved_conflict_count": 257,
+    "resolved_rule_count": 6177,
+    "rejected_rule_count": 181,
+    "resolved_conflict_count": 280,
     "blackmatrix_preferred_conflict_count": 176,
     "direct_preferred_conflict_count": 7,
     "specific_preferred_conflict_count": 74,
-    "unresolved_conflict_count": 23
+    "category_preferred_conflict_count": 23,
+    "unresolved_conflict_count": 0
   },
   "candidate_categories": [
     {
@@ -580,7 +582,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 119,
+      "rule_count": 124,
       "source_count": 6
     },
     {
@@ -591,7 +593,18 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1875,
+      "rule_count": 1879,
+      "source_count": 1
+    },
+    {
+      "category": "google-voice",
+      "file": "outputs/quantumult-x/categories/safe/google-voice.list",
+      "filename": "google-voice.list",
+      "policy": "美国节点",
+      "policies": [
+        "美国节点"
+      ],
+      "rule_count": 1,
       "source_count": 1
     },
     {
@@ -602,7 +615,7 @@
       "policies": [
         "谷歌服务"
       ],
-      "rule_count": 698,
+      "rule_count": 703,
       "source_count": 1
     },
     {
@@ -657,7 +670,7 @@
       "policies": [
         "YouTube"
       ],
-      "rule_count": 191,
+      "rule_count": 194,
       "source_count": 1
     },
     {
@@ -690,7 +703,7 @@
       "policies": [
         "国际媒体"
       ],
-      "rule_count": 195,
+      "rule_count": 196,
       "source_count": 1
     },
     {
@@ -712,7 +725,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 444,
+      "rule_count": 448,
       "source_count": 1
     }
   ],

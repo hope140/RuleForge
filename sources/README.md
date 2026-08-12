@@ -37,4 +37,6 @@
 1. Blackmatrix 来源优先于其他来源。
 2. 直连 `direct` 优先于阻断 `reject`。
 3. 更具体的单独规则优先于更宽泛的整体规则，例如 `HOST` 优先于覆盖它的 `HOST-SUFFIX`，更长的子域后缀优先于父域后缀。
-4. 不符合以上条件的冲突不猜测，保留在审计报告并从已裁决输出中排除。
+4. 业务边界按分类优先级处理：Google Voice > Google、AI > Google、YouTube > Google、Apple/Google > 国内直连。
+5. 明确 AI 域名优先 AI；共享 CDN、云存储和基础设施域名优先全球代理；`naver.com` 优先国际媒体。
+6. 不符合以上条件的冲突不猜测，保留在审计报告并从已裁决输出中排除。

@@ -78,6 +78,35 @@ class RuleForgeTests(unittest.TestCase):
         self.assertNotIn(exact_reject, resolution.rules)
         self.assertNotIn(broad_rule, resolution.rules)
 
+    def test_business_category_boundaries_are_applied(self) -> None:
+        def source(source_id: str, category: str, policy: str) -> Source:
+            return Source(source_id, "filter", "quantumult-x", category, policy, "https://example.test", "quantumult-x")
+
+        cases = (
+            ("lens.l.google.com", source("blackmatrix-google-voice", "google-voice", "美国节点"), source("blackmatrix-google", "google", "谷歌服务")),
+            ("crashlytics.com", source("blackmatrix-apple", "apple", "苹果服务"), source("blackmatrix-google", "google", "谷歌服务")),
+            ("deepmind.com", source("blackmatrix-gemini", "ai", "AI"), source("blackmatrix-google", "google", "谷歌服务")),
+            ("perplexity.ai", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
+            ("apple-relay.cloudflare.com", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
+            ("naver.com", source("rulego-media", "global-media", "国际媒体"), source("rulego-proxy", "proxy", "全球加速")),
+        )
+        rules = []
+        for value, left_source, right_source in cases:
+            rules.extend(
+                (
+                    parse_resource(f"HOST,{value}\n", left_source).rules[0],
+                    parse_resource(f"HOST,{value}\n", right_source).rules[0],
+                )
+            )
+        resolution = resolve_conflicts(audit_rules(rules))
+        selected = {rule.value: rule.policy for rule in resolution.rules}
+        self.assertEqual(selected["lens.l.google.com"], "美国节点")
+        self.assertEqual(selected["crashlytics.com"], "谷歌服务")
+        self.assertEqual(selected["deepmind.com"], "AI")
+        self.assertEqual(selected["perplexity.ai"], "AI")
+        self.assertEqual(selected["apple-relay.cloudflare.com"], "全球加速")
+        self.assertEqual(selected["naver.com"], "国际媒体")
+
     def test_host_suffix_overlap_is_reported(self) -> None:
         direct = Source("direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")
         proxy = Source("proxy", "filter", "surge", "demo", "proxy", "https://proxy.test", "surge")

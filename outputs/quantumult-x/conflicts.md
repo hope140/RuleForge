@@ -1,18 +1,19 @@
 # RuleForge conflict report
 
 These 280 entries were evaluated by the source-priority resolver.
-Priority: Blackmatrix, direct over reject, and specific host rules over broader host rules.
+Priority: Blackmatrix, direct over reject, specific host rules, and configured business-category boundaries.
 Conflicts that match none of these priorities remain unresolved and are excluded.
 
 ## Summary
 
 - exact-policy: 126
 - semantic-overlap: 154
-- resolved: 257
+- resolved: 280
 - blackmatrix-preferred: 176
 - direct-preferred: 7
 - specific-preferred: 74
-- unresolved: 23
+- category-preferred: 23
+- unresolved: 0
 
 ## reject ↔ china-direct
 
@@ -302,22 +303,22 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 52. exact-policy / same-rule-different-policy
 - left: `HOST,init.ess.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,init.ess.apple.com -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,init.ess.apple.com -> 苹果服务 (blackmatrix-apple)` (The configured business-category priority applies to this conflict.)
 
 ### 53. exact-policy / same-rule-different-policy
 - left: `HOST,itunes.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,itunes.apple.com -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,itunes.apple.com -> 苹果服务 (blackmatrix-apple)` (The configured business-category priority applies to this conflict.)
 
 ### 54. exact-policy / same-rule-different-policy
 - left: `HOST,smp-device-content.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,smp-device-content.apple.com -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,smp-device-content.apple.com -> 苹果服务 (blackmatrix-apple)` (The configured business-category priority applies to this conflict.)
 
 ### 55. exact-policy / same-rule-different-policy
 - left: `HOST-KEYWORD,buy.itunes.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-KEYWORD,buy.itunes.apple.com -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-KEYWORD,buy.itunes.apple.com -> 苹果服务 (blackmatrix-apple)` (The configured business-category priority applies to this conflict.)
 
 ### 56. semantic-overlap / host-inside-host-suffix
 - left: `HOST,init.ess.apple.com -> direct (blackmatrix-direct)`
@@ -369,22 +370,22 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 65. exact-policy / same-rule-different-policy
 - left: `HOST,clientservices.googleapis.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST,clientservices.googleapis.com -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,clientservices.googleapis.com -> 谷歌服务 (blackmatrix-google)` (The configured business-category priority applies to this conflict.)
 
 ### 66. exact-policy / same-rule-different-policy
 - left: `HOST,mtalk.google.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST,mtalk.google.com -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,mtalk.google.com -> 谷歌服务 (blackmatrix-google)` (The configured business-category priority applies to this conflict.)
 
 ### 67. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,blog.google -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,blog.google -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,blog.google -> 谷歌服务 (blackmatrix-google)` (The configured business-category priority applies to this conflict.)
 
 ### 68. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,googletraveladservices.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,googletraveladservices.com -> direct (blackmatrix-direct)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,googletraveladservices.com -> 谷歌服务 (blackmatrix-google)` (The configured business-category priority applies to this conflict.)
 
 ### 69. semantic-overlap / host-inside-host-suffix
 - left: `HOST,clientservices.googleapis.com -> direct (blackmatrix-direct)`
@@ -596,7 +597,7 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 108. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,deepmind.com -> AI (blackmatrix-gemini)`
 - right: `HOST-SUFFIX,deepmind.com -> 谷歌服务 (blackmatrix-google)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,deepmind.com -> AI (blackmatrix-gemini)` (The configured business-category priority applies to this conflict.)
 
 ### 109. semantic-overlap / host-inside-host-suffix
 - left: `HOST,ai.google.dev -> AI (blackmatrix-gemini)`
@@ -705,12 +706,12 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 129. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,perplexity.ai -> AI (rulego-ai-supplement)`
 - right: `HOST-SUFFIX,perplexity.ai -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,perplexity.ai -> AI (rulego-ai-supplement)` (The configured business-category priority applies to this conflict.)
 
 ### 130. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,meta.ai -> AI (rulego-ai-supplement)`
 - right: `HOST-SUFFIX,meta.ai -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,meta.ai -> AI (rulego-ai-supplement)` (The configured business-category priority applies to this conflict.)
 
 ### 131. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,chatgpt.com -> AI (blackmatrix-openai)`
@@ -725,27 +726,27 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 133. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,grok.com -> AI (rulego-ai-supplement)`
 - right: `HOST-SUFFIX,grok.com -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,grok.com -> AI (rulego-ai-supplement)` (The configured business-category priority applies to this conflict.)
 
 ### 134. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,x.ai -> AI (rulego-ai-supplement)`
 - right: `HOST-SUFFIX,x.ai -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,x.ai -> AI (rulego-ai-supplement)` (The configured business-category priority applies to this conflict.)
 
 ### 135. exact-policy / same-rule-different-policy
 - left: `HOST,apple-relay.cloudflare.com -> AI (rulego-ai-supplement)`
 - right: `HOST,apple-relay.cloudflare.com -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,apple-relay.cloudflare.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
 ### 136. exact-policy / same-rule-different-policy
 - left: `HOST,apple-relay.fastly-edge.com -> AI (rulego-ai-supplement)`
 - right: `HOST,apple-relay.fastly-edge.com -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,apple-relay.fastly-edge.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
 ### 137. exact-policy / same-rule-different-policy
 - left: `HOST,cp4.cloudflare.com -> AI (rulego-ai-supplement)`
 - right: `HOST,cp4.cloudflare.com -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,cp4.cloudflare.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
 ### 138. exact-policy / same-rule-different-policy
 - left: `HOST,copilot.microsoft.com -> AI (blackmatrix-copilot)`
@@ -807,7 +808,7 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 149. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,crashlytics.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,crashlytics.com -> 谷歌服务 (blackmatrix-google)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,crashlytics.com -> 谷歌服务 (blackmatrix-google)` (The configured business-category priority applies to this conflict.)
 
 ## apple ↔ global-media
 
@@ -968,7 +969,7 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 180. exact-policy / same-rule-different-policy
 - left: `HOST,lens.l.google.com -> 美国节点 (blackmatrix-google-voice)`
 - right: `HOST,lens.l.google.com -> 谷歌服务 (blackmatrix-google)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,lens.l.google.com -> 美国节点 (blackmatrix-google-voice)` (The configured business-category priority applies to this conflict.)
 
 ### 181. semantic-overlap / host-inside-host-suffix
 - left: `HOST,lens.l.google.com -> 美国节点 (blackmatrix-google-voice)`
@@ -980,17 +981,17 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 182. exact-policy / same-rule-different-policy
 - left: `IP-CIDR,172.110.32.0/21 -> YouTube (blackmatrix-youtube)`
 - right: `IP-CIDR,172.110.32.0/21 -> 谷歌服务 (blackmatrix-google)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `IP-CIDR,172.110.32.0/21 -> YouTube (blackmatrix-youtube)` (The configured business-category priority applies to this conflict.)
 
 ### 183. exact-policy / same-rule-different-policy
 - left: `IP-CIDR,216.73.80.0/20 -> YouTube (blackmatrix-youtube)`
 - right: `IP-CIDR,216.73.80.0/20 -> 谷歌服务 (blackmatrix-google)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `IP-CIDR,216.73.80.0/20 -> YouTube (blackmatrix-youtube)` (The configured business-category priority applies to this conflict.)
 
 ### 184. exact-policy / same-rule-different-policy
 - left: `IP6-CIDR,2620:120:e000::/40 -> YouTube (blackmatrix-youtube)`
 - right: `IP6-CIDR,2620:120:e000::/40 -> 谷歌服务 (blackmatrix-google)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `IP6-CIDR,2620:120:e000::/40 -> YouTube (blackmatrix-youtube)` (The configured business-category priority applies to this conflict.)
 
 ### 185. semantic-overlap / host-inside-host-suffix
 - left: `HOST,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)`
@@ -1480,12 +1481,12 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 278. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,naver.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,naver.com -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST-SUFFIX,naver.com -> 国际媒体 (rulego-global-media)` (The configured business-category priority applies to this conflict.)
 
 ### 279. exact-policy / same-rule-different-policy
 - left: `HOST,s3-ap-southeast-1.amazonaws.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST,s3-ap-southeast-1.amazonaws.com -> 全球加速 (rulego-proxy)`
-- decision: `unresolved`
+- decision: `prefer-category` -> `HOST,s3-ap-southeast-1.amazonaws.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
 ### 280. semantic-overlap / host-inside-host-suffix
 - left: `HOST,api.viu.now.com -> 国际媒体 (rulego-global-media)`

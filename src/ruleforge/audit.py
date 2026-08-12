@@ -84,6 +84,10 @@ class ResolutionResult:
         return tuple(item for item in self.decisions if item.decision == "prefer-specific")
 
     @property
+    def category_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "prefer-category")
+
+    @property
     def unresolved_decisions(self) -> tuple[ConflictDecision, ...]:
         return tuple(item for item in self.decisions if item.decision == "unresolved")
 
@@ -95,6 +99,7 @@ class ResolutionResult:
             "blackmatrix_preferred_conflict_count": len(self.blackmatrix_decisions),
             "direct_preferred_conflict_count": len(self.direct_decisions),
             "specific_preferred_conflict_count": len(self.specific_decisions),
+            "category_preferred_conflict_count": len(self.category_decisions),
             "unresolved_conflict_count": len(self.unresolved_decisions),
             "decisions": [item.to_dict() for item in self.decisions],
         }
@@ -107,6 +112,7 @@ class ResolutionResult:
             "blackmatrix_preferred_conflict_count": len(self.blackmatrix_decisions),
             "direct_preferred_conflict_count": len(self.direct_decisions),
             "specific_preferred_conflict_count": len(self.specific_decisions),
+            "category_preferred_conflict_count": len(self.category_decisions),
             "unresolved_conflict_count": len(self.unresolved_decisions),
         }
 
@@ -214,6 +220,44 @@ def _is_policy(rule: Rule, name: str) -> bool:
     return rule.policy.casefold() == name.casefold()
 
 
+_CATEGORY_PREFERENCES: dict[frozenset[str], str] = {
+    frozenset(("google-voice", "google")): "google-voice",
+    frozenset(("apple", "google")): "google",
+    frozenset(("ai", "google")): "ai",
+    frozenset(("youtube", "google")): "youtube",
+    frozenset(("google", "china-direct")): "google",
+    frozenset(("apple", "china-direct")): "apple",
+}
+
+_VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
+    (frozenset(("ai", "proxy")), "perplexity.ai"): "ai",
+    (frozenset(("ai", "proxy")), "meta.ai"): "ai",
+    (frozenset(("ai", "proxy")), "grok.com"): "ai",
+    (frozenset(("ai", "proxy")), "x.ai"): "ai",
+    (frozenset(("ai", "proxy")), "apple-relay.cloudflare.com"): "proxy",
+    (frozenset(("ai", "proxy")), "apple-relay.fastly-edge.com"): "proxy",
+    (frozenset(("ai", "proxy")), "cp4.cloudflare.com"): "proxy",
+    (frozenset(("global-media", "proxy")), "naver.com"): "global-media",
+    (frozenset(("global-media", "proxy")), "s3-ap-southeast-1.amazonaws.com"): "proxy",
+}
+
+
+def _category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
+    categories = frozenset((conflict.left.category, conflict.right.category))
+    preferred_category = _VALUE_CATEGORY_PREFERENCES.get((categories, conflict.left.value))
+    if preferred_category is None and conflict.left.value == conflict.right.value:
+        preferred_category = _VALUE_CATEGORY_PREFERENCES.get((categories, conflict.right.value))
+    if preferred_category is None:
+        preferred_category = _CATEGORY_PREFERENCES.get(categories)
+    if preferred_category is None:
+        return None
+    if conflict.left.category == preferred_category and conflict.right.category != preferred_category:
+        return conflict.left, conflict.right
+    if conflict.right.category == preferred_category and conflict.left.category != preferred_category:
+        return conflict.right, conflict.left
+    return None
+
+
 def _specific_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
     if conflict.relation == "host-inside-host-suffix":
         if conflict.left.rule_type == "HOST" and conflict.right.rule_type == "HOST-SUFFIX":
@@ -267,9 +311,15 @@ def resolve_conflicts(audit: AuditResult) -> ResolutionResult:
                     decision = "prefer-specific"
                     reason = "A specific host rule takes precedence over a broader host rule."
                 else:
-                    winner = loser = None
-                    decision = "unresolved"
-                    reason = "No configured priority applies to this conflict."
+                    category_rule = _category_rule(conflict)
+                    if category_rule is not None:
+                        winner, loser = category_rule
+                        decision = "prefer-category"
+                        reason = "The configured business-category priority applies to this conflict."
+                    else:
+                        winner = loser = None
+                        decision = "unresolved"
+                        reason = "No configured priority applies to this conflict."
         else:
             specific = _specific_rule(conflict)
             if specific is not None:
@@ -277,9 +327,15 @@ def resolve_conflicts(audit: AuditResult) -> ResolutionResult:
                 decision = "prefer-specific"
                 reason = "A specific host rule takes precedence over a broader host rule."
             else:
-                winner = loser = None
-                decision = "unresolved"
-                reason = "No configured priority applies to this conflict."
+                category_rule = _category_rule(conflict)
+                if category_rule is not None:
+                    winner, loser = category_rule
+                    decision = "prefer-category"
+                    reason = "The configured business-category priority applies to this conflict."
+                else:
+                    winner = loser = None
+                    decision = "unresolved"
+                    reason = "No configured priority applies to this conflict."
 
         if decision != "unresolved" and winner is not None and loser is not None:
             rejected.add(loser)

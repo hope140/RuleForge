@@ -115,6 +115,7 @@ def _build(args: argparse.Namespace) -> int:
             "blackmatrix_preferred_conflict_count": len(resolution.blackmatrix_decisions),
             "direct_preferred_conflict_count": len(resolution.direct_decisions),
             "specific_preferred_conflict_count": len(resolution.specific_decisions),
+            "category_preferred_conflict_count": len(resolution.category_decisions),
             "unresolved_conflict_count": len(resolution.unresolved_decisions),
             "resolution": resolution.to_summary_dict(),
             "candidate_categories": candidate_categories,
@@ -136,6 +137,7 @@ def _build(args: argparse.Namespace) -> int:
         f"blackmatrix_preferred={len(resolution.blackmatrix_decisions)} "
         f"direct_preferred={len(resolution.direct_decisions)} "
         f"specific_preferred={len(resolution.specific_decisions)} "
+        f"category_preferred={len(resolution.category_decisions)} "
         f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
     )
     print(f"output={output_dir}")

@@ -1,6 +1,6 @@
 {
   "kept_rule_count": 6358,
-  "safe_rule_count": 6154,
+  "safe_rule_count": 6177,
   "conflicted_rule_count": 394,
   "duplicate_count": 102,
   "conflict_count": 280,
@@ -9737,15 +9737,16 @@
     }
   ],
   "conflict_free_rule_count": 5964,
-  "resolved_rule_count": 6154,
+  "resolved_rule_count": 6177,
   "resolution": {
-    "resolved_rule_count": 6154,
-    "rejected_rule_count": 204,
-    "resolved_conflict_count": 257,
+    "resolved_rule_count": 6177,
+    "rejected_rule_count": 181,
+    "resolved_conflict_count": 280,
     "blackmatrix_preferred_conflict_count": 176,
     "direct_preferred_conflict_count": 7,
     "specific_preferred_conflict_count": 74,
-    "unresolved_conflict_count": 23,
+    "category_preferred_conflict_count": 23,
+    "unresolved_conflict_count": 0,
     "decisions": [
       {
         "kind": "exact-policy",
@@ -9850,10 +9851,22 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-google-voice",
+          "category": "google-voice",
+          "rule_type": "HOST",
+          "value": "lens.l.google.com",
+          "policy": "美国节点"
+        },
+        "loser": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "HOST",
+          "value": "lens.l.google.com",
+          "policy": "谷歌服务"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -9878,18 +9891,42 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "HOST-SUFFIX",
+          "value": "crashlytics.com",
+          "policy": "谷歌服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "crashlytics.com",
+          "policy": "苹果服务"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-gemini",
+          "category": "ai",
+          "rule_type": "HOST-SUFFIX",
+          "value": "deepmind.com",
+          "policy": "AI"
+        },
+        "loser": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "HOST-SUFFIX",
+          "value": "deepmind.com",
+          "policy": "谷歌服务"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -9994,26 +10031,62 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-youtube",
+          "category": "youtube",
+          "rule_type": "IP-CIDR",
+          "value": "172.110.32.0/21",
+          "policy": "YouTube"
+        },
+        "loser": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "IP-CIDR",
+          "value": "172.110.32.0/21",
+          "policy": "谷歌服务"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-youtube",
+          "category": "youtube",
+          "rule_type": "IP-CIDR",
+          "value": "216.73.80.0/20",
+          "policy": "YouTube"
+        },
+        "loser": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "IP-CIDR",
+          "value": "216.73.80.0/20",
+          "policy": "谷歌服务"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-youtube",
+          "category": "youtube",
+          "rule_type": "IP6-CIDR",
+          "value": "2620:120:e000::/40",
+          "policy": "YouTube"
+        },
+        "loser": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "IP6-CIDR",
+          "value": "2620:120:e000::/40",
+          "policy": "谷歌服务"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -10918,66 +10991,162 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "HOST",
+          "value": "clientservices.googleapis.com",
+          "policy": "谷歌服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST",
+          "value": "clientservices.googleapis.com",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "init.ess.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST",
+          "value": "init.ess.apple.com",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "itunes.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST",
+          "value": "itunes.apple.com",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "HOST",
+          "value": "mtalk.google.com",
+          "policy": "谷歌服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST",
+          "value": "mtalk.google.com",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "smp-device-content.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST",
+          "value": "smp-device-content.apple.com",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "HOST-SUFFIX",
+          "value": "blog.google",
+          "policy": "谷歌服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "blog.google",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-google",
+          "category": "google",
+          "rule_type": "HOST-SUFFIX",
+          "value": "googletraveladservices.com",
+          "policy": "谷歌服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "googletraveladservices.com",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-KEYWORD",
+          "value": "buy.itunes.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "blackmatrix-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-KEYWORD",
+          "value": "buy.itunes.apple.com",
+          "policy": "direct"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -11002,18 +11171,42 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-global-media",
+          "category": "global-media",
+          "rule_type": "HOST-SUFFIX",
+          "value": "naver.com",
+          "policy": "国际媒体"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "naver.com",
+          "policy": "全球加速"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST-SUFFIX",
+          "value": "perplexity.ai",
+          "policy": "AI"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "perplexity.ai",
+          "policy": "全球加速"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -11038,10 +11231,22 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "s3-ap-southeast-1.amazonaws.com",
+          "policy": "全球加速"
+        },
+        "loser": {
+          "source_id": "rulego-global-media",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "s3-ap-southeast-1.amazonaws.com",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -11226,10 +11431,22 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST-SUFFIX",
+          "value": "meta.ai",
+          "policy": "AI"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "meta.ai",
+          "policy": "全球加速"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -11694,18 +11911,42 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST-SUFFIX",
+          "value": "grok.com",
+          "policy": "AI"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "grok.com",
+          "policy": "全球加速"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST-SUFFIX",
+          "value": "x.ai",
+          "policy": "AI"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "x.ai",
+          "policy": "全球加速"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -11750,26 +11991,62 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "apple-relay.cloudflare.com",
+          "policy": "全球加速"
+        },
+        "loser": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST",
+          "value": "apple-relay.cloudflare.com",
+          "policy": "AI"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "apple-relay.fastly-edge.com",
+          "policy": "全球加速"
+        },
+        "loser": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST",
+          "value": "apple-relay.fastly-edge.com",
+          "policy": "AI"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "unresolved",
-        "winner": null,
-        "loser": null,
-        "reason": "No configured priority applies to this conflict."
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "cp4.cloudflare.com",
+          "policy": "全球加速"
+        },
+        "loser": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST",
+          "value": "cp4.cloudflare.com",
+          "policy": "AI"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",

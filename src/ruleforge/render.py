@@ -191,7 +191,7 @@ def render_conflicts(
         "# RuleForge conflict report",
         "",
         f"These {len(conflict_list)} entries were evaluated by the source-priority resolver.",
-        "Priority: Blackmatrix, direct over reject, and specific host rules over broader host rules.",
+        "Priority: Blackmatrix, direct over reject, specific host rules, and configured business-category boundaries.",
         "Conflicts that match none of these priorities remain unresolved and are excluded.",
         "",
         "## Summary",
@@ -206,6 +206,7 @@ def render_conflicts(
                 f"- blackmatrix-preferred: {len(resolution.blackmatrix_decisions)}",
                 f"- direct-preferred: {len(resolution.direct_decisions)}",
                 f"- specific-preferred: {len(resolution.specific_decisions)}",
+                f"- category-preferred: {len(resolution.category_decisions)}",
                 f"- unresolved: {len(resolution.unresolved_decisions)}",
             ]
         )
