@@ -53,6 +53,7 @@ jobs:
           if git diff --quiet \
             -I'^# Generated at ' \
             -I'^[[:space:]]*"generated_at_utc":' \
+            -I'^[[:space:]]*"from_cache":' \
             -- outputs/quantumult-x; then
             git restore -- outputs/quantumult-x
             echo "changed=false" >> "$GITHUB_OUTPUT"
