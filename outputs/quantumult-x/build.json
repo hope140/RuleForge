@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-12T04:16:50.392868+00:00",
+  "generated_at_utc": "2026-08-12T04:28:39.827588+00:00",
   "generator_version": "0.1.0",
   "manifest": {
     "schema_version": 1,
@@ -954,25 +954,25 @@
   "enabled_source_count": 94,
   "parsed_rule_count": 13546,
   "kept_rule_count": 13115,
-  "safe_rule_count": 12773,
-  "resolved_rule_count": 12773,
-  "conflicted_rule_count": 719,
+  "safe_rule_count": 12764,
+  "resolved_rule_count": 12764,
+  "conflicted_rule_count": 733,
   "duplicate_count": 431,
-  "conflict_count": 532,
-  "resolved_conflict_count": 532,
-  "blackmatrix_preferred_conflict_count": 322,
+  "conflict_count": 552,
+  "resolved_conflict_count": 552,
+  "blackmatrix_preferred_conflict_count": 340,
   "direct_preferred_conflict_count": 7,
   "specific_preferred_conflict_count": 168,
-  "category_preferred_conflict_count": 35,
+  "category_preferred_conflict_count": 37,
   "unresolved_conflict_count": 0,
   "resolution": {
-    "resolved_rule_count": 12773,
-    "rejected_rule_count": 342,
-    "resolved_conflict_count": 532,
-    "blackmatrix_preferred_conflict_count": 322,
+    "resolved_rule_count": 12764,
+    "rejected_rule_count": 351,
+    "resolved_conflict_count": 552,
+    "blackmatrix_preferred_conflict_count": 340,
     "direct_preferred_conflict_count": 7,
     "specific_preferred_conflict_count": 168,
-    "category_preferred_conflict_count": 35,
+    "category_preferred_conflict_count": 37,
     "unresolved_conflict_count": 0
   },
   "candidate_categories": [
@@ -1547,7 +1547,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 387,
+      "rule_count": 378,
       "source_count": 1
     }
   ],

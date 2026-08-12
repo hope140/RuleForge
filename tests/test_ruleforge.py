@@ -36,6 +36,19 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(result.rules[0].policy, "AI")
         self.assertEqual(result.rules[0].options, ())
 
+    def test_inline_source_comments_do_not_enter_rule_values(self) -> None:
+        source = Source("test", "filter", "surge", "demo", "reject", "https://example.test", "surge")
+        result = parse_resource("DOMAIN,example.com // explanatory note\n", source)
+        self.assertEqual(result.issues, ())
+        self.assertEqual(result.rules[0].value, "example.com")
+        self.assertEqual(result.rules[0].to_quantumultx(), "host,example.com,reject")
+
+    def test_unsupported_source_options_are_not_rendered_for_quantumultx(self) -> None:
+        source = Source("test", "filter", "surge", "demo", "AI", "https://example.test", "surge")
+        result = parse_resource("DOMAIN-SUFFIX,example.com,extended-matching\n", source)
+        self.assertEqual(result.rules[0].options, ("extended-matching",))
+        self.assertEqual(result.rules[0].to_quantumultx(), "host-suffix,example.com,AI")
+
     def test_exact_duplicate_and_policy_conflict_are_distinguished(self) -> None:
         direct = Source("direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")
         proxy = Source("proxy", "filter", "surge", "demo", "proxy", "https://proxy.test", "surge")
@@ -87,6 +100,8 @@ class RuleForgeTests(unittest.TestCase):
             ("crashlytics.com", source("blackmatrix-apple", "apple", "苹果服务"), source("blackmatrix-google", "google", "谷歌服务")),
             ("deepmind.com", source("blackmatrix-gemini", "ai", "AI"), source("blackmatrix-google", "google", "谷歌服务")),
             ("perplexity.ai", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
+            ("smoot.apple.com", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
+            ("apple-relay.apple.com", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
             ("apple-relay.cloudflare.com", source("rulego-ai", "ai", "AI"), source("rulego-proxy", "proxy", "全球加速")),
             ("naver.com", source("rulego-media", "global-media", "国际媒体"), source("rulego-proxy", "proxy", "全球加速")),
             ("npmjs.com", source("blackmatrix-github", "github", "GitHub"), source("blackmatrix-npmjs", "developer", "全球加速")),
@@ -107,6 +122,8 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(selected["crashlytics.com"], "谷歌服务")
         self.assertEqual(selected["deepmind.com"], "AI")
         self.assertEqual(selected["perplexity.ai"], "AI")
+        self.assertEqual(selected["smoot.apple.com"], "AI")
+        self.assertEqual(selected["apple-relay.apple.com"], "AI")
         self.assertEqual(selected["apple-relay.cloudflare.com"], "全球加速")
         self.assertEqual(selected["naver.com"], "国际媒体")
         self.assertEqual(selected["npmjs.com"], "全球加速")

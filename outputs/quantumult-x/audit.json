@@ -1,9 +1,9 @@
 {
   "kept_rule_count": 13115,
-  "safe_rule_count": 12773,
-  "conflicted_rule_count": 719,
+  "safe_rule_count": 12764,
+  "conflicted_rule_count": 733,
   "duplicate_count": 431,
-  "conflict_count": 532,
+  "conflict_count": 552,
   "duplicates": [
     {
       "kept": {
@@ -14567,6 +14567,162 @@
       "kind": "exact-policy",
       "relation": "same-rule-different-policy",
       "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "appsto.re",
+        "options": [],
+        "line_number": 1468,
+        "raw": "HOST-SUFFIX,appsto.re,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "appsto.re",
+        "options": [],
+        "line_number": 530,
+        "raw": "DOMAIN-SUFFIX,appsto.re // Apple URL Shortener"
+      }
+    },
+    {
+      "kind": "exact-policy",
+      "relation": "same-rule-different-policy",
+      "left": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 2,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 531,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com // Spotlight"
+      }
+    },
+    {
+      "kind": "exact-policy",
+      "relation": "same-rule-different-policy",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "beta.music.apple.com",
+        "options": [],
+        "line_number": 46,
+        "raw": "HOST,beta.music.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "beta.music.apple.com",
+        "options": [],
+        "line_number": 533,
+        "raw": "DOMAIN,beta.music.apple.com // Apple Music Web"
+      }
+    },
+    {
+      "kind": "exact-policy",
+      "relation": "same-rule-different-policy",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "books.itunes.apple.com",
+        "options": [],
+        "line_number": 248,
+        "raw": "HOST,books.itunes.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "books.itunes.apple.com",
+        "options": [],
+        "line_number": 534,
+        "raw": "DOMAIN,books.itunes.apple.com // iBooks Store download"
+      }
+    },
+    {
+      "kind": "exact-policy",
+      "relation": "same-rule-different-policy",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "lookup-api.apple.com",
+        "options": [],
+        "line_number": 258,
+        "raw": "HOST,lookup-api.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "lookup-api.apple.com",
+        "options": [],
+        "line_number": 536,
+        "raw": "DOMAIN,lookup-api.apple.com // Look Up"
+      }
+    },
+    {
+      "kind": "exact-policy",
+      "relation": "same-rule-different-policy",
+      "left": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "options": [],
+        "line_number": 3,
+        "raw": "DOMAIN,apple-relay.apple.com"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "options": [],
+        "line_number": 538,
+        "raw": "DOMAIN,apple-relay.apple.com // Apple Intelligence"
+      }
+    },
+    {
+      "kind": "exact-policy",
+      "relation": "same-rule-different-policy",
+      "left": {
         "source_id": "rulego-ai-supplement",
         "source_format": "surge",
         "category": "ai",
@@ -17323,6 +17479,32 @@
       "kind": "semantic-overlap",
       "relation": "host-inside-host-suffix",
       "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "options": [],
+        "line_number": 538,
+        "raw": "DOMAIN,apple-relay.apple.com // Apple Intelligence"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
         "source_id": "rulego-ai-supplement",
         "source_format": "surge",
         "category": "ai",
@@ -17770,10 +17952,88 @@
         "category": "apple",
         "policy": "苹果服务",
         "rule_type": "HOST",
+        "value": "api-p-ap-c.smoot.apple.com",
+        "options": [],
+        "line_number": 26,
+        "raw": "HOST,api-p-ap-c.smoot.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 531,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com // Spotlight"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
         "value": "api-p-ap-d.smoot.apple.com",
         "options": [],
         "line_number": 27,
         "raw": "HOST,api-p-ap-d.smoot.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 2,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "api-p-ap-d.smoot.apple.com",
+        "options": [],
+        "line_number": 27,
+        "raw": "HOST,api-p-ap-d.smoot.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 531,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com // Spotlight"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "api-p-ap-e.smoot.apple.com",
+        "options": [],
+        "line_number": 28,
+        "raw": "HOST,api-p-ap-e.smoot.apple.com,Apple"
       },
       "right": {
         "source_id": "rulego-ai-supplement",
@@ -17802,15 +18062,15 @@
         "raw": "HOST,api-p-ap-e.smoot.apple.com,Apple"
       },
       "right": {
-        "source_id": "rulego-ai-supplement",
+        "source_id": "rulego-proxy",
         "source_format": "surge",
-        "category": "ai",
-        "policy": "AI",
+        "category": "proxy",
+        "policy": "全球加速",
         "rule_type": "HOST-SUFFIX",
         "value": "smoot.apple.com",
         "options": [],
-        "line_number": 2,
-        "raw": "DOMAIN-SUFFIX,smoot.apple.com"
+        "line_number": 531,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com // Spotlight"
       }
     },
     {
@@ -17915,6 +18175,58 @@
         "options": [],
         "line_number": 68,
         "raw": "HOST-SUFFIX,akadns.net,Microsoft"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "beta.music.apple.com",
+        "options": [],
+        "line_number": 533,
+        "raw": "DOMAIN,beta.music.apple.com // Apple Music Web"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple-music",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "music.apple.com",
+        "options": [],
+        "line_number": 17,
+        "raw": "HOST-SUFFIX,music.apple.com,AppleMusic"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "beta.music.apple.com",
+        "options": [],
+        "line_number": 533,
+        "raw": "DOMAIN,beta.music.apple.com // Apple Music Web"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
       }
     },
     {
@@ -18409,6 +18721,32 @@
         "options": [],
         "line_number": 2,
         "raw": "DOMAIN-SUFFIX,smoot.apple.com"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "guzzoni.smoot.apple.com",
+        "options": [],
+        "line_number": 120,
+        "raw": "HOST,guzzoni.smoot.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 531,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com // Spotlight"
       }
     },
     {
@@ -19325,6 +19663,32 @@
       "kind": "semantic-overlap",
       "relation": "host-inside-host-suffix",
       "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "api-glb-sea.smoot.apple.com",
+        "options": [],
+        "line_number": 246,
+        "raw": "HOST,api-glb-sea.smoot.apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 531,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com // Spotlight"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
         "source_id": "rulego-proxy",
         "source_format": "surge",
         "category": "proxy",
@@ -19345,6 +19709,32 @@
         "options": [],
         "line_number": 1790,
         "raw": "HOST-SUFFIX,apple.comscoreresearch.com,Apple"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "books.itunes.apple.com",
+        "options": [],
+        "line_number": 534,
+        "raw": "DOMAIN,books.itunes.apple.com // iBooks Store download"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
       }
     },
     {
@@ -19386,6 +19776,32 @@
         "options": [],
         "line_number": 548,
         "raw": "DOMAIN,itunes.apple.com"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "lookup-api.apple.com",
+        "options": [],
+        "line_number": 536,
+        "raw": "DOMAIN,lookup-api.apple.com // Look Up"
       },
       "right": {
         "source_id": "blackmatrix-apple",
@@ -21722,6 +22138,84 @@
         "category": "proxy",
         "policy": "全球加速",
         "rule_type": "HOST",
+        "value": "amp-api.podcasts.apple.com",
+        "options": [],
+        "line_number": 532,
+        "raw": "DOMAIN,amp-api.podcasts.apple.com // Podcasts"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "facetime.apple.com",
+        "options": [],
+        "line_number": 535,
+        "raw": "DOMAIN,facetime.apple.com // FaceTime Links"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "radio.itunes.apple.com",
+        "options": [],
+        "line_number": 537,
+        "raw": "DOMAIN,radio.itunes.apple.com // Apple Music Radio"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
         "value": "c.mi.com",
         "options": [],
         "line_number": 543,
@@ -22387,6 +22881,32 @@
         "options": [],
         "line_number": 2,
         "raw": "DOMAIN-SUFFIX,smoot.apple.com"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "nested-host-suffix",
+      "left": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
+      },
+      "right": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "options": [],
+        "line_number": 531,
+        "raw": "DOMAIN-SUFFIX,smoot.apple.com // Spotlight"
       }
     },
     {
@@ -24184,16 +24704,16 @@
       }
     }
   ],
-  "conflict_free_rule_count": 12396,
-  "resolved_rule_count": 12773,
+  "conflict_free_rule_count": 12382,
+  "resolved_rule_count": 12764,
   "resolution": {
-    "resolved_rule_count": 12773,
-    "rejected_rule_count": 342,
-    "resolved_conflict_count": 532,
-    "blackmatrix_preferred_conflict_count": 322,
+    "resolved_rule_count": 12764,
+    "rejected_rule_count": 351,
+    "resolved_conflict_count": 552,
+    "blackmatrix_preferred_conflict_count": 340,
     "direct_preferred_conflict_count": 7,
     "specific_preferred_conflict_count": 168,
-    "category_preferred_conflict_count": 35,
+    "category_preferred_conflict_count": 37,
     "unresolved_conflict_count": 0,
     "decisions": [
       {
@@ -27439,6 +27959,126 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "appsto.re",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "appsto.re",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "exact-policy",
+        "relation": "same-rule-different-policy",
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "AI"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
+      },
+      {
+        "kind": "exact-policy",
+        "relation": "same-rule-different-policy",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "beta.music.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "beta.music.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "exact-policy",
+        "relation": "same-rule-different-policy",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "books.itunes.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "books.itunes.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "exact-policy",
+        "relation": "same-rule-different-policy",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "lookup-api.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "lookup-api.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "exact-policy",
+        "relation": "same-rule-different-policy",
+        "decision": "prefer-category",
+        "winner": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST",
+          "value": "apple-relay.apple.com",
+          "policy": "AI"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "apple-relay.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
+      },
+      {
+        "kind": "exact-policy",
+        "relation": "same-rule-different-policy",
         "decision": "prefer-category",
         "winner": {
           "source_id": "rulego-proxy",
@@ -29568,6 +30208,26 @@
           "policy": "苹果服务"
         },
         "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "apple-relay.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
           "source_id": "rulego-ai-supplement",
           "category": "ai",
           "rule_type": "HOST",
@@ -29904,7 +30564,67 @@
           "source_id": "blackmatrix-apple",
           "category": "apple",
           "rule_type": "HOST",
+          "value": "api-p-ap-c.smoot.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
           "value": "api-p-ap-d.smoot.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-ai-supplement",
+          "category": "ai",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "AI"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "api-p-ap-d.smoot.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "api-p-ap-e.smoot.apple.com",
           "policy": "苹果服务"
         },
         "loser": {
@@ -29928,11 +30648,11 @@
           "policy": "苹果服务"
         },
         "loser": {
-          "source_id": "rulego-ai-supplement",
-          "category": "ai",
+          "source_id": "rulego-proxy",
+          "category": "proxy",
           "rule_type": "HOST-SUFFIX",
           "value": "smoot.apple.com",
-          "policy": "AI"
+          "policy": "全球加速"
         },
         "reason": "Blackmatrix is the configured primary source."
       },
@@ -30015,6 +30735,46 @@
           "policy": "全球加速"
         },
         "reason": "A specific host rule takes precedence over a broader host rule."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple-music",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "music.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "beta.music.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "beta.music.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
       },
       {
         "kind": "semantic-overlap",
@@ -30393,6 +31153,26 @@
           "rule_type": "HOST-SUFFIX",
           "value": "smoot.apple.com",
           "policy": "AI"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST",
+          "value": "guzzoni.smoot.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "全球加速"
         },
         "reason": "Blackmatrix is the configured primary source."
       },
@@ -31103,6 +31883,26 @@
         "winner": {
           "source_id": "blackmatrix-apple",
           "category": "apple",
+          "rule_type": "HOST",
+          "value": "api-glb-sea.smoot.apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
           "rule_type": "HOST-SUFFIX",
           "value": "apple.comscoreresearch.com",
           "policy": "苹果服务"
@@ -31112,6 +31912,26 @@
           "category": "proxy",
           "rule_type": "HOST",
           "value": "apple.comscoreresearch.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "books.itunes.apple.com",
           "policy": "全球加速"
         },
         "reason": "Blackmatrix is the configured primary source."
@@ -31152,6 +31972,26 @@
           "category": "proxy",
           "rule_type": "HOST",
           "value": "itunes.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "lookup-api.apple.com",
           "policy": "全球加速"
         },
         "reason": "Blackmatrix is the configured primary source."
@@ -32941,6 +33781,66 @@
         "relation": "host-inside-host-suffix",
         "decision": "prefer-blackmatrix",
         "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "amp-api.podcasts.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "facetime.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "radio.itunes.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
           "source_id": "blackmatrix-china-services-xiaomi",
           "category": "china-services",
           "rule_type": "HOST-SUFFIX",
@@ -33453,6 +34353,26 @@
           "rule_type": "HOST-SUFFIX",
           "value": "smoot.apple.com",
           "policy": "AI"
+        },
+        "reason": "Blackmatrix is the configured primary source."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "nested-host-suffix",
+        "decision": "prefer-blackmatrix",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST-SUFFIX",
+          "value": "smoot.apple.com",
+          "policy": "全球加速"
         },
         "reason": "Blackmatrix is the configured primary source."
       },

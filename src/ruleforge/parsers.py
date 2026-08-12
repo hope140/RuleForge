@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 
 from .model import Rule, Source
 
@@ -34,6 +35,7 @@ KNOWN_OPTIONS = {
     "force-remote",
 }
 COMMENT_PREFIXES = ("#", ";", "//")
+INLINE_COMMENT_RE = re.compile(r"\s+(?://|#|;).*$")
 
 
 @dataclass(frozen=True)
@@ -76,8 +78,11 @@ def parse_resource(text: str, source: Source) -> ParseResult:
     rules: list[Rule] = []
     issues: list[ParseIssue] = []
     for line_number, raw_line in enumerate(text.splitlines(), start=1):
-        stripped = raw_line.strip()
-        if not stripped or stripped.startswith(COMMENT_PREFIXES):
+        raw = raw_line.strip()
+        if not raw or raw.startswith(COMMENT_PREFIXES):
+            continue
+        stripped = INLINE_COMMENT_RE.sub("", raw).strip()
+        if not stripped:
             continue
         parts = [part.strip() for part in stripped.split(",")]
         if len(parts) < 2:
@@ -102,7 +107,7 @@ def parse_resource(text: str, source: Source) -> ParseResult:
                 value=value,
                 options=_options(source, parts),
                 line_number=line_number,
-                raw=stripped,
+                raw=raw,
             )
         )
     return ParseResult(tuple(rules), tuple(issues))

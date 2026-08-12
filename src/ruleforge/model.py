@@ -4,6 +4,14 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
+QUANTUMULTX_OPTIONS = {
+    "no-resolve",
+    "force-cellular",
+    "multi-interface",
+    "multi-interface-balance",
+}
+
+
 @dataclass(frozen=True)
 class Source:
     id: str
@@ -43,7 +51,15 @@ class Rule:
         fields = [self.rule_type.lower(), self.value]
         if include_policy and self.policy:
             fields.append(self.policy)
-        fields.extend(self.options)
+        # Surge/Clash sources can carry options that are not accepted by a
+        # Quantumult X remote filter resource. Keep only the native options
+        # used by this profile; source options remain available in the audit
+        # model for traceability.
+        fields.extend(
+            option
+            for option in self.options
+            if option.lower() in QUANTUMULTX_OPTIONS or option.lower().startswith("via-interface=")
+        )
         return ",".join(fields)
 
     def to_dict(self) -> dict[str, Any]:

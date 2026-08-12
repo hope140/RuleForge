@@ -1,18 +1,18 @@
 # RuleForge conflict report
 
-These 532 entries were evaluated by the source-priority resolver.
+These 552 entries were evaluated by the source-priority resolver.
 Priority: Blackmatrix, direct over reject, specific host rules, and configured business-category boundaries.
 Conflicts that match none of these priorities remain unresolved and are excluded.
 
 ## Summary
 
-- exact-policy: 176
-- semantic-overlap: 356
-- resolved: 532
-- blackmatrix-preferred: 322
+- exact-policy: 182
+- semantic-overlap: 370
+- resolved: 552
+- blackmatrix-preferred: 340
 - direct-preferred: 7
 - specific-preferred: 168
-- category-preferred: 35
+- category-preferred: 37
 - unresolved: 0
 
 ## reject ↔ china-services
@@ -1617,1192 +1617,1292 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 - decision: `prefer-category` -> `HOST-SUFFIX,x.ai -> AI (rulego-ai-supplement)` (The configured business-category priority applies to this conflict.)
 
 ### 304. exact-policy / same-rule-different-policy
+- left: `HOST-SUFFIX,smoot.apple.com -> AI (rulego-ai-supplement)`
+- right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-category` -> `HOST-SUFFIX,smoot.apple.com -> AI (rulego-ai-supplement)` (The configured business-category priority applies to this conflict.)
+
+### 305. exact-policy / same-rule-different-policy
+- left: `HOST,apple-relay.apple.com -> AI (rulego-ai-supplement)`
+- right: `HOST,apple-relay.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-category` -> `HOST,apple-relay.apple.com -> AI (rulego-ai-supplement)` (The configured business-category priority applies to this conflict.)
+
+### 306. exact-policy / same-rule-different-policy
 - left: `HOST,apple-relay.cloudflare.com -> AI (rulego-ai-supplement)`
 - right: `HOST,apple-relay.cloudflare.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-category` -> `HOST,apple-relay.cloudflare.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
-### 305. exact-policy / same-rule-different-policy
+### 307. exact-policy / same-rule-different-policy
 - left: `HOST,apple-relay.fastly-edge.com -> AI (rulego-ai-supplement)`
 - right: `HOST,apple-relay.fastly-edge.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-category` -> `HOST,apple-relay.fastly-edge.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
-### 306. exact-policy / same-rule-different-policy
+### 308. exact-policy / same-rule-different-policy
 - left: `HOST,cp4.cloudflare.com -> AI (rulego-ai-supplement)`
 - right: `HOST,cp4.cloudflare.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-category` -> `HOST,cp4.cloudflare.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
-### 307. exact-policy / same-rule-different-policy
+### 309. exact-policy / same-rule-different-policy
 - left: `HOST,copilot.microsoft.com -> AI (blackmatrix-copilot)`
 - right: `HOST,copilot.microsoft.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,copilot.microsoft.com -> AI (blackmatrix-copilot)` (Blackmatrix is the configured primary source.)
 
-### 308. semantic-overlap / host-inside-host-suffix
+### 310. semantic-overlap / host-inside-host-suffix
 - left: `HOST,copilot.microsoft.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,copilot.microsoft.com -> AI (acl4ssr-ai)`
 - decision: `prefer-specific` -> `HOST,copilot.microsoft.com -> 全球加速 (rulego-proxy)` (A specific host rule takes precedence over a broader host rule.)
 
-### 309. semantic-overlap / host-inside-host-suffix
+### 311. semantic-overlap / host-inside-host-suffix
 - left: `HOST,copilot-proxy.githubusercontent.com -> AI (acl4ssr-ai)`
 - right: `HOST-SUFFIX,githubusercontent.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-specific` -> `HOST,copilot-proxy.githubusercontent.com -> AI (acl4ssr-ai)` (A specific host rule takes precedence over a broader host rule.)
 
-### 310. semantic-overlap / host-inside-host-suffix
+### 312. semantic-overlap / host-inside-host-suffix
 - left: `HOST,gateway.icloud.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,gateway.icloud.com -> AI (rulego-ai-supplement)`
 - decision: `prefer-specific` -> `HOST,gateway.icloud.com -> 全球加速 (rulego-proxy)` (A specific host rule takes precedence over a broader host rule.)
 
 ## apple ↔ google
 
-### 311. exact-policy / same-rule-different-policy
+### 313. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,crashlytics.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,crashlytics.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-category` -> `HOST-SUFFIX,crashlytics.com -> 谷歌服务 (blackmatrix-google)` (The configured business-category priority applies to this conflict.)
 
 ## apple ↔ microsoft
 
-### 312. exact-policy / same-rule-different-policy
+### 314. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-category` -> `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)` (The configured business-category priority applies to this conflict.)
 
-### 313. semantic-overlap / host-inside-host-suffix
+### 315. semantic-overlap / host-inside-host-suffix
 - left: `HOST,adcdownload.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,adcdownload.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 314. semantic-overlap / host-inside-host-suffix
+### 316. semantic-overlap / host-inside-host-suffix
 - left: `HOST,appldnld.apple.com.edgesuite.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,appldnld.apple.com.edgesuite.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 315. semantic-overlap / host-inside-host-suffix
+### 317. semantic-overlap / host-inside-host-suffix
 - left: `HOST,apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 316. semantic-overlap / host-inside-host-suffix
+### 318. semantic-overlap / host-inside-host-suffix
 - left: `HOST,bag-cdn.itunes-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,bag-cdn.itunes-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 317. semantic-overlap / host-inside-host-suffix
+### 319. semantic-overlap / host-inside-host-suffix
 - left: `HOST,cds.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,cds.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 318. semantic-overlap / host-inside-host-suffix
+### 320. semantic-overlap / host-inside-host-suffix
 - left: `HOST,certs-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,certs-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 319. semantic-overlap / host-inside-host-suffix
+### 321. semantic-overlap / host-inside-host-suffix
 - left: `HOST,cl1-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,cl1-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 320. semantic-overlap / host-inside-host-suffix
+### 322. semantic-overlap / host-inside-host-suffix
 - left: `HOST,cl3-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,cl3-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 321. semantic-overlap / host-inside-host-suffix
+### 323. semantic-overlap / host-inside-host-suffix
 - left: `HOST,cl4-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,cl4-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 322. semantic-overlap / host-inside-host-suffix
+### 324. semantic-overlap / host-inside-host-suffix
 - left: `HOST,cl5-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,cl5-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 323. semantic-overlap / host-inside-host-suffix
+### 325. semantic-overlap / host-inside-host-suffix
 - left: `HOST,clientflow.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,clientflow.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 324. semantic-overlap / host-inside-host-suffix
+### 326. semantic-overlap / host-inside-host-suffix
 - left: `HOST,configuration.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,configuration.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 325. semantic-overlap / host-inside-host-suffix
+### 327. semantic-overlap / host-inside-host-suffix
 - left: `HOST,courier-push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,courier-push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 326. semantic-overlap / host-inside-host-suffix
+### 328. semantic-overlap / host-inside-host-suffix
 - left: `HOST,crl-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,crl-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 327. semantic-overlap / host-inside-host-suffix
+### 329. semantic-overlap / host-inside-host-suffix
 - left: `HOST,dd-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,dd-cdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 328. semantic-overlap / host-inside-host-suffix
+### 330. semantic-overlap / host-inside-host-suffix
 - left: `HOST,e16991.b.akamaiedge.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,b.akamaiedge.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,e16991.b.akamaiedge.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 329. semantic-overlap / host-inside-host-suffix
+### 331. semantic-overlap / host-inside-host-suffix
 - left: `HOST,gsp4-cn.ls.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,gsp4-cn.ls.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 330. semantic-overlap / host-inside-host-suffix
+### 332. semantic-overlap / host-inside-host-suffix
 - left: `HOST,gspe19-2-cn-ssl.ls-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,gspe19-2-cn-ssl.ls-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 331. semantic-overlap / host-inside-host-suffix
+### 333. semantic-overlap / host-inside-host-suffix
 - left: `HOST,gspe19-cn.ls-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,gspe19-cn.ls-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 332. semantic-overlap / host-inside-host-suffix
+### 334. semantic-overlap / host-inside-host-suffix
 - left: `HOST,icloud-cdn.icloud.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,icloud-cdn.icloud.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 333. semantic-overlap / host-inside-host-suffix
+### 335. semantic-overlap / host-inside-host-suffix
 - left: `HOST,images.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,images.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 334. semantic-overlap / host-inside-host-suffix
+### 336. semantic-overlap / host-inside-host-suffix
 - left: `HOST,images.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,images.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 335. semantic-overlap / host-inside-host-suffix
+### 337. semantic-overlap / host-inside-host-suffix
 - left: `HOST,init-p01md-lb.push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,init-p01md-lb.push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 336. semantic-overlap / host-inside-host-suffix
+### 338. semantic-overlap / host-inside-host-suffix
 - left: `HOST,init-p01st-lb.push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,init-p01st-lb.push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 337. semantic-overlap / host-inside-host-suffix
+### 339. semantic-overlap / host-inside-host-suffix
 - left: `HOST,init-s01st-lb.push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,init-s01st-lb.push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 338. semantic-overlap / host-inside-host-suffix
+### 340. semantic-overlap / host-inside-host-suffix
 - left: `HOST,iphone-ld.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,iphone-ld.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 339. semantic-overlap / host-inside-host-suffix
+### 341. semantic-overlap / host-inside-host-suffix
 - left: `HOST,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 340. semantic-overlap / host-inside-host-suffix
+### 342. semantic-overlap / host-inside-host-suffix
 - left: `HOST,itunes-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,itunes-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 341. semantic-overlap / host-inside-host-suffix
+### 343. semantic-overlap / host-inside-host-suffix
 - left: `HOST,mesu-cdn.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,mesu-cdn.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 342. semantic-overlap / host-inside-host-suffix
+### 344. semantic-overlap / host-inside-host-suffix
 - left: `HOST,mesu-china.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,mesu-china.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 343. semantic-overlap / host-inside-host-suffix
+### 345. semantic-overlap / host-inside-host-suffix
 - left: `HOST,ocsp-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,ocsp-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 344. semantic-overlap / host-inside-host-suffix
+### 346. semantic-overlap / host-inside-host-suffix
 - left: `HOST,ocsp2-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,ocsp2-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 345. semantic-overlap / host-inside-host-suffix
+### 347. semantic-overlap / host-inside-host-suffix
 - left: `HOST,oscdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,oscdn.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 346. semantic-overlap / host-inside-host-suffix
+### 348. semantic-overlap / host-inside-host-suffix
 - left: `HOST,pancake.cdn-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,pancake.cdn-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 347. semantic-overlap / host-inside-host-suffix
+### 349. semantic-overlap / host-inside-host-suffix
 - left: `HOST,prod-support.apple-support.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,prod-support.apple-support.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 348. semantic-overlap / host-inside-host-suffix
+### 350. semantic-overlap / host-inside-host-suffix
 - left: `HOST,push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,push-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 349. semantic-overlap / host-inside-host-suffix
+### 351. semantic-overlap / host-inside-host-suffix
 - left: `HOST,stocks-sparkline-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,stocks-sparkline-lb.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 350. semantic-overlap / host-inside-host-suffix
+### 352. semantic-overlap / host-inside-host-suffix
 - left: `HOST,store.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,store.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 351. semantic-overlap / host-inside-host-suffix
+### 353. semantic-overlap / host-inside-host-suffix
 - left: `HOST,store.storeimages.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,store.storeimages.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 352. semantic-overlap / host-inside-host-suffix
+### 354. semantic-overlap / host-inside-host-suffix
 - left: `HOST,support-china.apple-support.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,support-china.apple-support.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 353. semantic-overlap / host-inside-host-suffix
+### 355. semantic-overlap / host-inside-host-suffix
 - left: `HOST,swcatalog-cdn.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,swcatalog-cdn.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 354. semantic-overlap / host-inside-host-suffix
+### 356. semantic-overlap / host-inside-host-suffix
 - left: `HOST,swdist.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,swdist.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 355. semantic-overlap / host-inside-host-suffix
+### 357. semantic-overlap / host-inside-host-suffix
 - left: `HOST,swscan-cdn.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,swscan-cdn.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 356. semantic-overlap / host-inside-host-suffix
+### 358. semantic-overlap / host-inside-host-suffix
 - left: `HOST,updates-http.cdn-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,updates-http.cdn-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 357. semantic-overlap / host-inside-host-suffix
+### 359. semantic-overlap / host-inside-host-suffix
 - left: `HOST,valid.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,valid.origin-apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 358. semantic-overlap / host-inside-host-suffix
+### 360. semantic-overlap / host-inside-host-suffix
 - left: `HOST,weather-data.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,weather-data.apple.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 359. semantic-overlap / host-inside-host-suffix
+### 361. semantic-overlap / host-inside-host-suffix
 - left: `HOST,www.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,www.apple.com.edgekey.net.globalredir.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 360. semantic-overlap / host-inside-host-suffix
+### 362. semantic-overlap / host-inside-host-suffix
 - left: `HOST,www-cdn.icloud.com.akadns.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,akadns.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,www-cdn.icloud.com.akadns.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 361. semantic-overlap / nested-host-suffix
+### 363. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,appldnld.apple.com.edgesuite.net -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,appldnld.apple.com.edgesuite.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
-### 362. semantic-overlap / nested-host-suffix
+### 364. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - right: `HOST-SUFFIX,ls.apple.com.edgesuite.net -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,ls.apple.com.edgesuite.net -> 苹果服务 (blackmatrix-apple)` (A specific host rule takes precedence over a broader host rule.)
 
 ## apple ↔ global-media
 
-### 363. exact-policy / same-rule-different-policy
+### 365. exact-policy / same-rule-different-policy
 - left: `HOST,tv.applemusic.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,tv.applemusic.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST,tv.applemusic.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 364. exact-policy / same-rule-different-policy
+### 366. exact-policy / same-rule-different-policy
 - left: `HOST,play-edge.itunes.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,play-edge.itunes.apple.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST,play-edge.itunes.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 365. exact-policy / same-rule-different-policy
+### 367. exact-policy / same-rule-different-policy
 - left: `HOST,uts-api.itunes.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,uts-api.itunes.apple.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST,uts-api.itunes.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 366. semantic-overlap / host-inside-host-suffix
+### 368. semantic-overlap / host-inside-host-suffix
 - left: `HOST,play-edge.itunes.apple.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,play-edge.itunes.apple.com -> 苹果服务 (blackmatrix-apple-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,play-edge.itunes.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
 
-### 367. semantic-overlap / host-inside-host-suffix
+### 369. semantic-overlap / host-inside-host-suffix
 - left: `HOST,play-edge.itunes.apple.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 368. semantic-overlap / host-inside-host-suffix
+### 370. semantic-overlap / host-inside-host-suffix
 - left: `HOST,tv.applemusic.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,applemusic.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,applemusic.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 369. semantic-overlap / host-inside-host-suffix
+### 371. semantic-overlap / host-inside-host-suffix
 - left: `HOST,uts-api.itunes.apple.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 370. semantic-overlap / host-inside-host-suffix
+### 372. semantic-overlap / host-inside-host-suffix
 - left: `HOST,linear.tv.apple.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,tv.apple.com -> 苹果服务 (blackmatrix-apple-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tv.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
 
-### 371. semantic-overlap / host-inside-host-suffix
+### 373. semantic-overlap / host-inside-host-suffix
 - left: `HOST,linear.tv.apple.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
 ## apple ↔ proxy
 
-### 372. exact-policy / same-rule-different-policy
+### 374. exact-policy / same-rule-different-policy
 - left: `HOST,testflight.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,testflight.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,testflight.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 373. exact-policy / same-rule-different-policy
+### 375. exact-policy / same-rule-different-policy
+- left: `HOST-SUFFIX,appsto.re -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST-SUFFIX,appsto.re -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,appsto.re -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 376. exact-policy / same-rule-different-policy
+- left: `HOST,beta.music.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST,beta.music.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,beta.music.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 377. exact-policy / same-rule-different-policy
+- left: `HOST,books.itunes.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST,books.itunes.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,books.itunes.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 378. exact-policy / same-rule-different-policy
+- left: `HOST,lookup-api.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST,lookup-api.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,lookup-api.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 379. exact-policy / same-rule-different-policy
 - left: `HOST,apps.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,apps.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,apps.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 374. exact-policy / same-rule-different-policy
+### 380. exact-policy / same-rule-different-policy
 - left: `HOST,itunes.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,itunes.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,itunes.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 375. exact-policy / same-rule-different-policy
+### 381. exact-policy / same-rule-different-policy
 - left: `HOST,gateway.icloud.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,gateway.icloud.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,gateway.icloud.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 376. exact-policy / same-rule-different-policy
+### 382. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,apple.news -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,apple.news -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.news -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 377. exact-policy / same-rule-different-policy
+### 383. exact-policy / same-rule-different-policy
 - left: `HOST,news-assets.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,news-assets.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,news-assets.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 378. exact-policy / same-rule-different-policy
+### 384. exact-policy / same-rule-different-policy
 - left: `HOST,news-client.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,news-client.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,news-client.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 379. exact-policy / same-rule-different-policy
+### 385. exact-policy / same-rule-different-policy
 - left: `HOST,news-client-search.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,news-client-search.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,news-client-search.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 380. exact-policy / same-rule-different-policy
+### 386. exact-policy / same-rule-different-policy
 - left: `HOST,news-edge.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,news-edge.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,news-edge.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 381. exact-policy / same-rule-different-policy
+### 387. exact-policy / same-rule-different-policy
 - left: `HOST,news-events.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,news-events.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,news-events.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 382. exact-policy / same-rule-different-policy
+### 388. exact-policy / same-rule-different-policy
 - left: `HOST,apple.comscoreresearch.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST,apple.comscoreresearch.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,apple.comscoreresearch.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 383. semantic-overlap / host-inside-host-suffix
+### 389. semantic-overlap / host-inside-host-suffix
+- left: `HOST,apple-relay.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 390. semantic-overlap / host-inside-host-suffix
 - left: `HOST,apps.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apps.apple.com -> 苹果服务 (blackmatrix-apple-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apps.apple.com -> 苹果服务 (blackmatrix-apple-proxy)` (Blackmatrix is the configured primary source.)
 
-### 384. semantic-overlap / host-inside-host-suffix
+### 391. semantic-overlap / host-inside-host-suffix
 - left: `HOST,apps.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 385. semantic-overlap / host-inside-host-suffix
-- left: `HOST,gateway.icloud.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,icloud.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,icloud.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
-
-### 386. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-client-search.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
-
-### 387. semantic-overlap / host-inside-host-suffix
-- left: `HOST,apple.comscoreresearch.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,apple.comscoreresearch.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.comscoreresearch.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
-
-### 388. semantic-overlap / host-inside-host-suffix
-- left: `HOST,itunes.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
-
-### 389. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-assets.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,news-assets.apple.com -> 苹果服务 (blackmatrix-apple-media)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-assets.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
-
-### 390. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-assets.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
-
-### 391. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-client.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,news-client.apple.com -> 苹果服务 (blackmatrix-apple-media)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-client.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
-
 ### 392. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-client.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+- left: `HOST,api-p-ap-c.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,api-p-ap-c.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
 ### 393. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-edge.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,news-edge.apple.com -> 苹果服务 (blackmatrix-apple-media)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-edge.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
+- left: `HOST,api-p-ap-d.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,api-p-ap-d.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
 ### 394. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-edge.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+- left: `HOST,api-p-ap-e.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,api-p-ap-e.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
 ### 395. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-events.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,news-events.apple.com -> 苹果服务 (blackmatrix-apple-media)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-events.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
+- left: `HOST,beta.music.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,music.apple.com -> 苹果服务 (blackmatrix-apple-music)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,music.apple.com -> 苹果服务 (blackmatrix-apple-music)` (Blackmatrix is the configured primary source.)
 
 ### 396. semantic-overlap / host-inside-host-suffix
-- left: `HOST,news-events.apple.com -> 全球加速 (rulego-proxy)`
+- left: `HOST,beta.music.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
 ### 397. semantic-overlap / host-inside-host-suffix
+- left: `HOST,gateway.icloud.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,icloud.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,icloud.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 398. semantic-overlap / host-inside-host-suffix
+- left: `HOST,guzzoni.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,guzzoni.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 399. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-client-search.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 400. semantic-overlap / host-inside-host-suffix
+- left: `HOST,api-glb-sea.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST,api-glb-sea.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 401. semantic-overlap / host-inside-host-suffix
+- left: `HOST,apple.comscoreresearch.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.comscoreresearch.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.comscoreresearch.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 402. semantic-overlap / host-inside-host-suffix
+- left: `HOST,books.itunes.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 403. semantic-overlap / host-inside-host-suffix
+- left: `HOST,itunes.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 404. semantic-overlap / host-inside-host-suffix
+- left: `HOST,lookup-api.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 405. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-assets.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,news-assets.apple.com -> 苹果服务 (blackmatrix-apple-media)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-assets.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
+
+### 406. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-assets.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 407. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-client.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,news-client.apple.com -> 苹果服务 (blackmatrix-apple-media)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-client.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
+
+### 408. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-client.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 409. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-edge.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,news-edge.apple.com -> 苹果服务 (blackmatrix-apple-media)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-edge.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
+
+### 410. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-edge.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 411. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-events.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,news-events.apple.com -> 苹果服务 (blackmatrix-apple-media)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,news-events.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
+
+### 412. semantic-overlap / host-inside-host-suffix
+- left: `HOST,news-events.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 413. semantic-overlap / host-inside-host-suffix
 - left: `HOST,testflight.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 398. semantic-overlap / host-inside-host-suffix
+### 414. semantic-overlap / host-inside-host-suffix
+- left: `HOST,amp-api.podcasts.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 415. semantic-overlap / host-inside-host-suffix
+- left: `HOST,facetime.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 416. semantic-overlap / host-inside-host-suffix
+- left: `HOST,radio.itunes.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
+### 417. semantic-overlap / host-inside-host-suffix
 - left: `HOST,books.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
-### 399. semantic-overlap / host-inside-host-suffix
+### 418. semantic-overlap / host-inside-host-suffix
 - left: `HOST,tv.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,tv.apple.com -> 苹果服务 (blackmatrix-apple-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tv.apple.com -> 苹果服务 (blackmatrix-apple-media)` (Blackmatrix is the configured primary source.)
 
-### 400. semantic-overlap / host-inside-host-suffix
+### 419. semantic-overlap / host-inside-host-suffix
 - left: `HOST,tv.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
 
+### 420. semantic-overlap / nested-host-suffix
+- left: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
+- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Blackmatrix is the configured primary source.)
+
 ## google-voice ↔ google
 
-### 401. exact-policy / same-rule-different-policy
+### 421. exact-policy / same-rule-different-policy
 - left: `HOST,lens.l.google.com -> 美国节点 (blackmatrix-google-voice)`
 - right: `HOST,lens.l.google.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-category` -> `HOST,lens.l.google.com -> 美国节点 (blackmatrix-google-voice)` (The configured business-category priority applies to this conflict.)
 
-### 402. semantic-overlap / host-inside-host-suffix
+### 422. semantic-overlap / host-inside-host-suffix
 - left: `HOST,lens.l.google.com -> 美国节点 (blackmatrix-google-voice)`
 - right: `HOST-SUFFIX,google.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST,lens.l.google.com -> 美国节点 (blackmatrix-google-voice)` (A specific host rule takes precedence over a broader host rule.)
 
 ## google ↔ social
 
-### 403. semantic-overlap / nested-host-suffix
+### 423. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com -> 全球加速 (blackmatrix-social-discord)`
 - right: `HOST-SUFFIX,googleapis.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com -> 全球加速 (blackmatrix-social-discord)` (A specific host rule takes precedence over a broader host rule.)
 
-### 404. semantic-overlap / nested-host-suffix
+### 424. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,discordapp.page.link -> 全球加速 (blackmatrix-social-discord)`
 - right: `HOST-SUFFIX,page.link -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,discordapp.page.link -> 全球加速 (blackmatrix-social-discord)` (A specific host rule takes precedence over a broader host rule.)
 
 ## google ↔ youtube
 
-### 405. exact-policy / same-rule-different-policy
+### 425. exact-policy / same-rule-different-policy
 - left: `IP-CIDR,172.110.32.0/21 -> YouTube (blackmatrix-youtube)`
 - right: `IP-CIDR,172.110.32.0/21 -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-category` -> `IP-CIDR,172.110.32.0/21 -> YouTube (blackmatrix-youtube)` (The configured business-category priority applies to this conflict.)
 
-### 406. exact-policy / same-rule-different-policy
+### 426. exact-policy / same-rule-different-policy
 - left: `IP-CIDR,216.73.80.0/20 -> YouTube (blackmatrix-youtube)`
 - right: `IP-CIDR,216.73.80.0/20 -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-category` -> `IP-CIDR,216.73.80.0/20 -> YouTube (blackmatrix-youtube)` (The configured business-category priority applies to this conflict.)
 
-### 407. exact-policy / same-rule-different-policy
+### 427. exact-policy / same-rule-different-policy
 - left: `IP6-CIDR,2620:120:e000::/40 -> YouTube (blackmatrix-youtube)`
 - right: `IP6-CIDR,2620:120:e000::/40 -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-category` -> `IP6-CIDR,2620:120:e000::/40 -> YouTube (blackmatrix-youtube)` (The configured business-category priority applies to this conflict.)
 
-### 408. semantic-overlap / host-inside-host-suffix
+### 428. semantic-overlap / host-inside-host-suffix
 - left: `HOST,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,googleapis.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)` (A specific host rule takes precedence over a broader host rule.)
 
-### 409. semantic-overlap / host-inside-host-suffix
+### 429. semantic-overlap / host-inside-host-suffix
 - left: `HOST,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt1.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 410. semantic-overlap / nested-host-suffix
+### 430. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,beacons.gvt2.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt2.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,beacons.gvt2.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 411. semantic-overlap / nested-host-suffix
+### 431. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,beacons2.gvt2.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt2.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,beacons2.gvt2.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 412. semantic-overlap / nested-host-suffix
+### 432. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,beacons3.gvt2.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt2.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,beacons3.gvt2.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 413. semantic-overlap / nested-host-suffix
+### 433. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gcp.gvt2.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt2.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,gcp.gvt2.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 414. semantic-overlap / nested-host-suffix
+### 434. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,google.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,video.google.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,video.google.com -> YouTube (blackmatrix-youtube)` (A specific host rule takes precedence over a broader host rule.)
 
-### 415. semantic-overlap / nested-host-suffix
+### 435. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,google.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,wide-youtube.l.google.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,wide-youtube.l.google.com -> YouTube (blackmatrix-youtube)` (A specific host rule takes precedence over a broader host rule.)
 
-### 416. semantic-overlap / nested-host-suffix
+### 436. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,google.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,youtube-ui.l.google.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,youtube-ui.l.google.com -> YouTube (blackmatrix-youtube)` (A specific host rule takes precedence over a broader host rule.)
 
-### 417. semantic-overlap / nested-host-suffix
+### 437. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,googleapis.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,youtube.googleapis.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,youtube.googleapis.com -> YouTube (blackmatrix-youtube)` (A specific host rule takes precedence over a broader host rule.)
 
-### 418. semantic-overlap / nested-host-suffix
+### 438. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,googleapis.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,youtubeembeddedplayer.googleapis.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,youtubeembeddedplayer.googleapis.com -> YouTube (blackmatrix-youtube)` (A specific host rule takes precedence over a broader host rule.)
 
-### 419. semantic-overlap / nested-host-suffix
+### 439. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,googleapis.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)` (A specific host rule takes precedence over a broader host rule.)
 
-### 420. semantic-overlap / nested-host-suffix
+### 440. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,redirector.gcpcdn.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,redirector.gcpcdn.gvt1.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 421. semantic-overlap / nested-host-suffix
+### 441. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 422. semantic-overlap / nested-host-suffix
+### 442. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,redirector.offline-maps.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,redirector.offline-maps.gvt1.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
-### 423. semantic-overlap / nested-host-suffix
+### 443. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,redirector.snap.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,redirector.snap.gvt1.com -> 谷歌服务 (blackmatrix-google)` (A specific host rule takes precedence over a broader host rule.)
 
 ## google ↔ global-media
 
-### 424. semantic-overlap / host-inside-host-suffix
+### 444. semantic-overlap / host-inside-host-suffix
 - left: `HOST,youtubei.googleapis.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,googleapis.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,googleapis.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
 ## google ↔ proxy
 
-### 425. exact-policy / same-rule-different-policy
+### 445. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,apigee.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,apigee.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,apigee.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 426. exact-policy / same-rule-different-policy
+### 446. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,appspot.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,appspot.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,appspot.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 427. exact-policy / same-rule-different-policy
+### 447. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,blogger.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,blogger.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,blogger.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 428. exact-policy / same-rule-different-policy
+### 448. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,gvt0.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt0.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,gvt0.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 429. exact-policy / same-rule-different-policy
+### 449. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,gvt3.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt3.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,gvt3.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 430. exact-policy / same-rule-different-policy
+### 450. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,xn--ngstr-lra8j.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,xn--ngstr-lra8j.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,xn--ngstr-lra8j.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 431. exact-policy / same-rule-different-policy
+### 451. exact-policy / same-rule-different-policy
 - left: `HOST-KEYWORD,google -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-KEYWORD,google -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 432. exact-policy / same-rule-different-policy
+### 452. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,go.dev -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,go.dev -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,go.dev -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 433. exact-policy / same-rule-different-policy
+### 453. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,golang.org -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,golang.org -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,golang.org -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 434. semantic-overlap / host-inside-host-suffix
+### 454. semantic-overlap / host-inside-host-suffix
 - left: `HOST,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - right: `HOST-SUFFIX,gvt1.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 435. semantic-overlap / nested-host-suffix
+### 455. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,redirector.gcpcdn.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,redirector.gcpcdn.gvt1.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 436. semantic-overlap / nested-host-suffix
+### 456. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,redirector.gvt1.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 437. semantic-overlap / nested-host-suffix
+### 457. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,redirector.offline-maps.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,redirector.offline-maps.gvt1.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
-### 438. semantic-overlap / nested-host-suffix
+### 458. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,gvt1.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,redirector.snap.gvt1.com -> 谷歌服务 (blackmatrix-google)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,redirector.snap.gvt1.com -> 谷歌服务 (blackmatrix-google)` (Blackmatrix is the configured primary source.)
 
 ## microsoft ↔ spotify
 
-### 439. semantic-overlap / host-inside-host-suffix
+### 459. semantic-overlap / host-inside-host-suffix
 - left: `HOST,spotify.com.edgesuite.net -> Spotify (blackmatrix-spotify)`
 - right: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,spotify.com.edgesuite.net -> Spotify (blackmatrix-spotify)` (A specific host rule takes precedence over a broader host rule.)
 
 ## microsoft ↔ netflix
 
-### 440. semantic-overlap / host-inside-host-suffix
+### 460. semantic-overlap / host-inside-host-suffix
 - left: `HOST,netflix.com.edgesuite.net -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,netflix.com.edgesuite.net -> Netflix (blackmatrix-netflix)` (A specific host rule takes precedence over a broader host rule.)
 
-### 441. semantic-overlap / nested-host-suffix
+### 461. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - right: `HOST-SUFFIX,netflix.com.edgesuite.net -> Netflix (blackmatrix-netflix)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,netflix.com.edgesuite.net -> Netflix (blackmatrix-netflix)` (A specific host rule takes precedence over a broader host rule.)
 
 ## microsoft ↔ global-media
 
-### 442. semantic-overlap / host-inside-host-suffix
+### 462. semantic-overlap / host-inside-host-suffix
 - left: `HOST,tvbtracking.azurewebsites.net -> 国际媒体 (blackmatrix-global-media-tvb)`
 - right: `HOST-SUFFIX,azurewebsites.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST,tvbtracking.azurewebsites.net -> 国际媒体 (blackmatrix-global-media-tvb)` (A specific host rule takes precedence over a broader host rule.)
 
-### 443. semantic-overlap / nested-host-suffix
+### 463. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,abcnews.edgesuite.net -> 国际媒体 (blackmatrix-global-media-disney)`
 - right: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,abcnews.edgesuite.net -> 国际媒体 (blackmatrix-global-media-disney)` (A specific host rule takes precedence over a broader host rule.)
 
-### 444. semantic-overlap / nested-host-suffix
+### 464. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,cdn.optimizely.com -> 国际媒体 (blackmatrix-global-media-disney)`
 - right: `HOST-SUFFIX,optimizely.com -> 全球加速 (blackmatrix-microsoft)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,cdn.optimizely.com -> 国际媒体 (blackmatrix-global-media-disney)` (A specific host rule takes precedence over a broader host rule.)
 
-### 445. semantic-overlap / nested-host-suffix
+### 465. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,edgesuite.net -> 全球加速 (blackmatrix-microsoft)`
 - right: `HOST-SUFFIX,hbo.com.edgesuite.net -> 国际媒体 (blackmatrix-global-media-hbo)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,hbo.com.edgesuite.net -> 国际媒体 (blackmatrix-global-media-hbo)` (A specific host rule takes precedence over a broader host rule.)
 
 ## developer ↔ github
 
-### 446. exact-policy / same-rule-different-policy
+### 466. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,npm.community -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,npm.community -> 全球加速 (blackmatrix-developer-npmjs)`
 - decision: `prefer-category` -> `HOST-SUFFIX,npm.community -> 全球加速 (blackmatrix-developer-npmjs)` (The configured business-category priority applies to this conflict.)
 
-### 447. exact-policy / same-rule-different-policy
+### 467. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,npmjs.com -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,npmjs.com -> 全球加速 (blackmatrix-developer-npmjs)`
 - decision: `prefer-category` -> `HOST-SUFFIX,npmjs.com -> 全球加速 (blackmatrix-developer-npmjs)` (The configured business-category priority applies to this conflict.)
 
-### 448. exact-policy / same-rule-different-policy
+### 468. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,npmjs.org -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,npmjs.org -> 全球加速 (blackmatrix-developer-npmjs)`
 - decision: `prefer-category` -> `HOST-SUFFIX,npmjs.org -> 全球加速 (blackmatrix-developer-npmjs)` (The configured business-category priority applies to this conflict.)
 
 ## developer ↔ global-media
 
-### 449. semantic-overlap / host-inside-host-suffix
+### 469. semantic-overlap / host-inside-host-suffix
 - left: `HOST,d2wy8f7a9ursnm.cloudfront.net -> 全球加速 (blackmatrix-developer-docker)`
 - right: `HOST-SUFFIX,d2wy8f7a9ursnm.cloudfront.net -> 国际媒体 (blackmatrix-global-media-abema-tv)`
 - decision: `prefer-specific` -> `HOST,d2wy8f7a9ursnm.cloudfront.net -> 全球加速 (blackmatrix-developer-docker)` (A specific host rule takes precedence over a broader host rule.)
 
 ## github ↔ proxy
 
-### 450. exact-policy / same-rule-different-policy
+### 470. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,git.io -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,git.io -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,git.io -> GitHub (blackmatrix-github)` (Blackmatrix is the configured primary source.)
 
-### 451. exact-policy / same-rule-different-policy
+### 471. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,github.blog -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,github.blog -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,github.blog -> GitHub (blackmatrix-github)` (Blackmatrix is the configured primary source.)
 
-### 452. exact-policy / same-rule-different-policy
+### 472. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,github.com -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,github.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,github.com -> GitHub (blackmatrix-github)` (Blackmatrix is the configured primary source.)
 
-### 453. exact-policy / same-rule-different-policy
+### 473. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,github.io -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,github.io -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,github.io -> GitHub (blackmatrix-github)` (Blackmatrix is the configured primary source.)
 
-### 454. exact-policy / same-rule-different-policy
+### 474. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,githubassets.com -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,githubassets.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,githubassets.com -> GitHub (blackmatrix-github)` (Blackmatrix is the configured primary source.)
 
-### 455. exact-policy / same-rule-different-policy
+### 475. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,githubusercontent.com -> GitHub (blackmatrix-github)`
 - right: `HOST-SUFFIX,githubusercontent.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,githubusercontent.com -> GitHub (blackmatrix-github)` (Blackmatrix is the configured primary source.)
 
-### 456. semantic-overlap / nested-host-suffix
+### 476. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,freetls.fastly.net -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net -> GitHub (blackmatrix-github)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net -> GitHub (blackmatrix-github)` (Blackmatrix is the configured primary source.)
 
 ## spotify ↔ global-media
 
-### 457. exact-policy / same-rule-different-policy
+### 477. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,pscdn.co -> Spotify (blackmatrix-spotify)`
 - right: `HOST-SUFFIX,pscdn.co -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,pscdn.co -> Spotify (blackmatrix-spotify)` (Blackmatrix is the configured primary source.)
 
-### 458. exact-policy / same-rule-different-policy
+### 478. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,scdn.co -> Spotify (blackmatrix-spotify)`
 - right: `HOST-SUFFIX,scdn.co -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,scdn.co -> Spotify (blackmatrix-spotify)` (Blackmatrix is the configured primary source.)
 
-### 459. exact-policy / same-rule-different-policy
+### 479. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,spotify.com -> Spotify (blackmatrix-spotify)`
 - right: `HOST-SUFFIX,spotify.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,spotify.com -> Spotify (blackmatrix-spotify)` (Blackmatrix is the configured primary source.)
 
-### 460. exact-policy / same-rule-different-policy
+### 480. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,spoti.fi -> Spotify (blackmatrix-spotify)`
 - right: `HOST-SUFFIX,spoti.fi -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,spoti.fi -> Spotify (blackmatrix-spotify)` (Blackmatrix is the configured primary source.)
 
 ## telegram ↔ proxy
 
-### 461. exact-policy / same-rule-different-policy
+### 481. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,cdn-telegram.org -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,cdn-telegram.org -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,cdn-telegram.org -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 462. exact-policy / same-rule-different-policy
+### 482. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,comments.app -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,comments.app -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,comments.app -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 463. exact-policy / same-rule-different-policy
+### 483. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,graph.org -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,graph.org -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,graph.org -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 464. exact-policy / same-rule-different-policy
+### 484. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,legra.ph -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,legra.ph -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,legra.ph -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 465. exact-policy / same-rule-different-policy
+### 485. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,quiz.directory -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,quiz.directory -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,quiz.directory -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 466. exact-policy / same-rule-different-policy
+### 486. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,t.me -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,t.me -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,t.me -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 467. exact-policy / same-rule-different-policy
+### 487. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,tdesktop.com -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,tdesktop.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tdesktop.com -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 468. exact-policy / same-rule-different-policy
+### 488. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,telegra.ph -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,telegra.ph -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,telegra.ph -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 469. exact-policy / same-rule-different-policy
+### 489. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,telegram.dog -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,telegram.dog -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,telegram.dog -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 470. exact-policy / same-rule-different-policy
+### 490. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,telegram.me -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,telegram.me -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,telegram.me -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 471. exact-policy / same-rule-different-policy
+### 491. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,telegram.org -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,telegram.org -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,telegram.org -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 472. exact-policy / same-rule-different-policy
+### 492. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,telegram.space -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,telegram.space -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,telegram.space -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 473. exact-policy / same-rule-different-policy
+### 493. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,telegram-cdn.org -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,telegram-cdn.org -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,telegram-cdn.org -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 474. exact-policy / same-rule-different-policy
+### 494. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,telesco.pe -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,telesco.pe -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,telesco.pe -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 475. exact-policy / same-rule-different-policy
+### 495. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,tg.dev -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,tg.dev -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tg.dev -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
-### 476. exact-policy / same-rule-different-policy
+### 496. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,tx.me -> 电报代理 (blackmatrix-telegram)`
 - right: `HOST-SUFFIX,tx.me -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tx.me -> 电报代理 (blackmatrix-telegram)` (Blackmatrix is the configured primary source.)
 
 ## tiktok ↔ global-media
 
-### 477. exact-policy / same-rule-different-policy
+### 497. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,byteoversea.com -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,byteoversea.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,byteoversea.com -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
-### 478. exact-policy / same-rule-different-policy
+### 498. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,ibytedtos.com -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,ibytedtos.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,ibytedtos.com -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
-### 479. exact-policy / same-rule-different-policy
+### 499. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,muscdn.com -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,muscdn.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,muscdn.com -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
-### 480. exact-policy / same-rule-different-policy
+### 500. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,musical.ly -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,musical.ly -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,musical.ly -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
-### 481. exact-policy / same-rule-different-policy
+### 501. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,tiktok.com -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,tiktok.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tiktok.com -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
-### 482. exact-policy / same-rule-different-policy
+### 502. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,tik-tokapi.com -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,tik-tokapi.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tik-tokapi.com -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
-### 483. exact-policy / same-rule-different-policy
+### 503. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,tiktokcdn.com -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,tiktokcdn.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tiktokcdn.com -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
-### 484. exact-policy / same-rule-different-policy
+### 504. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,tiktokv.com -> 海外抖音 (blackmatrix-tiktok)`
 - right: `HOST-SUFFIX,tiktokv.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,tiktokv.com -> 海外抖音 (blackmatrix-tiktok)` (Blackmatrix is the configured primary source.)
 
 ## youtube ↔ global-media
 
-### 485. exact-policy / same-rule-different-policy
+### 505. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,googlevideo.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,googlevideo.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,googlevideo.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 486. exact-policy / same-rule-different-policy
+### 506. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,withyoutube.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,withyoutube.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,withyoutube.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 487. exact-policy / same-rule-different-policy
+### 507. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,youtu.be -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,youtu.be -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,youtu.be -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 488. exact-policy / same-rule-different-policy
+### 508. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,youtube.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,youtube.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,youtube.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 489. exact-policy / same-rule-different-policy
+### 509. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,youtubeeducation.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,youtubeeducation.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,youtubeeducation.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 490. exact-policy / same-rule-different-policy
+### 510. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,youtubegaming.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,youtubegaming.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,youtubegaming.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 491. exact-policy / same-rule-different-policy
+### 511. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,youtubekids.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,youtubekids.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,youtubekids.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 492. exact-policy / same-rule-different-policy
+### 512. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,youtube-nocookie.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,youtube-nocookie.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,youtube-nocookie.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 493. exact-policy / same-rule-different-policy
+### 513. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,yt.be -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,yt.be -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,yt.be -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 494. exact-policy / same-rule-different-policy
+### 514. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,ytimg.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,ytimg.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,ytimg.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 495. exact-policy / same-rule-different-policy
+### 515. exact-policy / same-rule-different-policy
 - left: `HOST,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST,youtubei.googleapis.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 496. exact-policy / same-rule-different-policy
+### 516. exact-policy / same-rule-different-policy
 - left: `HOST,yt3.ggpht.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST,yt3.ggpht.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST,yt3.ggpht.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 497. semantic-overlap / host-inside-host-suffix
+### 517. semantic-overlap / host-inside-host-suffix
 - left: `HOST,music.youtube.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,youtube.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST,music.youtube.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 498. semantic-overlap / host-inside-host-suffix
+### 518. semantic-overlap / host-inside-host-suffix
 - left: `HOST,youtubei.googleapis.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,youtubei.googleapis.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
-### 499. semantic-overlap / host-inside-host-suffix
+### 519. semantic-overlap / host-inside-host-suffix
 - left: `HOST,yt3.ggpht.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,ggpht.com -> YouTube (blackmatrix-youtube)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,ggpht.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
 ## youtube ↔ proxy
 
-### 500. exact-policy / same-rule-different-policy
+### 520. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,gvt1.com -> YouTube (blackmatrix-youtube)`
 - right: `HOST-SUFFIX,gvt1.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,gvt1.com -> YouTube (blackmatrix-youtube)` (Blackmatrix is the configured primary source.)
 
 ## netflix ↔ global-media
 
-### 501. exact-policy / same-rule-different-policy
+### 521. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,fast.com -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,fast.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,fast.com -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 502. exact-policy / same-rule-different-policy
+### 522. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,netflix.com -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,netflix.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,netflix.com -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 503. exact-policy / same-rule-different-policy
+### 523. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,netflix.net -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,netflix.net -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,netflix.net -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 504. exact-policy / same-rule-different-policy
+### 524. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,nflxext.com -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,nflxext.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,nflxext.com -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 505. exact-policy / same-rule-different-policy
+### 525. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,nflximg.com -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,nflximg.com -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,nflximg.com -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 506. exact-policy / same-rule-different-policy
+### 526. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,nflximg.net -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,nflximg.net -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,nflximg.net -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 507. exact-policy / same-rule-different-policy
+### 527. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,nflxso.net -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,nflxso.net -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,nflxso.net -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 508. exact-policy / same-rule-different-policy
+### 528. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,nflxvideo.net -> Netflix (blackmatrix-netflix)`
 - right: `HOST-SUFFIX,nflxvideo.net -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,nflxvideo.net -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 509. exact-policy / same-rule-different-policy
+### 529. exact-policy / same-rule-different-policy
 - left: `HOST-KEYWORD,netflixdnstest -> Netflix (blackmatrix-netflix)`
 - right: `HOST-KEYWORD,netflixdnstest -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-KEYWORD,netflixdnstest -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 510. exact-policy / same-rule-different-policy
+### 530. exact-policy / same-rule-different-policy
 - left: `HOST-KEYWORD,apiproxy-device-prod-nlb- -> Netflix (blackmatrix-netflix)`
 - right: `HOST-KEYWORD,apiproxy-device-prod-nlb- -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-KEYWORD,apiproxy-device-prod-nlb- -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 511. exact-policy / same-rule-different-policy
+### 531. exact-policy / same-rule-different-policy
 - left: `HOST-KEYWORD,dualstack.apiproxy- -> Netflix (blackmatrix-netflix)`
 - right: `HOST-KEYWORD,dualstack.apiproxy- -> 国际媒体 (rulego-global-media)`
 - decision: `prefer-blackmatrix` -> `HOST-KEYWORD,dualstack.apiproxy- -> Netflix (blackmatrix-netflix)` (Blackmatrix is the configured primary source.)
 
-### 512. semantic-overlap / nested-host-suffix
+### 532. semantic-overlap / nested-host-suffix
 - left: `HOST-SUFFIX,disney-portal.my.onetrust.com -> 国际媒体 (blackmatrix-global-media-disney)`
 - right: `HOST-SUFFIX,onetrust.com -> Netflix (blackmatrix-netflix)`
 - decision: `prefer-specific` -> `HOST-SUFFIX,disney-portal.my.onetrust.com -> 国际媒体 (blackmatrix-global-media-disney)` (A specific host rule takes precedence over a broader host rule.)
 
 ## china-media ↔ global-media
 
-### 513. exact-policy / same-rule-different-policy
+### 533. exact-policy / same-rule-different-policy
 - left: `HOST,cache.video.iqiyi.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,cache.video.iqiyi.com -> 国际媒体 (blackmatrix-global-media-iqiyi-intl)`
 - decision: `prefer-blackmatrix` -> `HOST,cache.video.iqiyi.com -> 国际媒体 (blackmatrix-global-media-iqiyi-intl)` (Blackmatrix is the configured primary source.)
 
-### 514. exact-policy / same-rule-different-policy
+### 534. exact-policy / same-rule-different-policy
 - left: `HOST,api.biliapi.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,api.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,api.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 515. exact-policy / same-rule-different-policy
+### 535. exact-policy / same-rule-different-policy
 - left: `HOST,api.biliapi.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,api.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,api.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 516. exact-policy / same-rule-different-policy
+### 536. exact-policy / same-rule-different-policy
 - left: `HOST,api.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,api.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,api.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 517. exact-policy / same-rule-different-policy
+### 537. exact-policy / same-rule-different-policy
 - left: `HOST,app.biliapi.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,app.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,app.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 518. exact-policy / same-rule-different-policy
+### 538. exact-policy / same-rule-different-policy
 - left: `HOST,app.biliapi.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,app.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,app.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 519. exact-policy / same-rule-different-policy
+### 539. exact-policy / same-rule-different-policy
 - left: `HOST,app.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,app.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,app.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 520. exact-policy / same-rule-different-policy
+### 540. exact-policy / same-rule-different-policy
 - left: `HOST,cache.video.iqiyi.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,cache.video.iqiyi.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,cache.video.iqiyi.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 521. exact-policy / same-rule-different-policy
+### 541. exact-policy / same-rule-different-policy
 - left: `HOST,grpc.biliapi.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,grpc.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,grpc.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 522. exact-policy / same-rule-different-policy
+### 542. exact-policy / same-rule-different-policy
 - left: `HOST,m.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,m.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,m.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 523. exact-policy / same-rule-different-policy
+### 543. exact-policy / same-rule-different-policy
 - left: `HOST,mobileso.bz.mgtv.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,mobileso.bz.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,mobileso.bz.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 524. exact-policy / same-rule-different-policy
+### 544. exact-policy / same-rule-different-policy
 - left: `HOST,upos-hz-mirrorakam.akamaized.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,upos-hz-mirrorakam.akamaized.net -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,upos-hz-mirrorakam.akamaized.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 525. exact-policy / same-rule-different-policy
+### 545. exact-policy / same-rule-different-policy
 - left: `HOST,www.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,www.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST,www.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 526. exact-policy / same-rule-different-policy
+### 546. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,api.mgtv.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST-SUFFIX,api.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,api.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
-### 527. exact-policy / same-rule-different-policy
+### 547. exact-policy / same-rule-different-policy
 - left: `HOST-KEYWORD,cn-hk-eq-bcache- -> 港台番剧 (rulego-china-media)`
 - right: `HOST-KEYWORD,cn-hk-eq-bcache- -> 国际媒体 (blackmatrix-global-media-asian)`
 - decision: `prefer-blackmatrix` -> `HOST-KEYWORD,cn-hk-eq-bcache- -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
 
 ## global-media ↔ proxy
 
-### 528. exact-policy / same-rule-different-policy
+### 548. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,abc.com -> 国际媒体 (blackmatrix-global-media-disney)`
 - right: `HOST-SUFFIX,abc.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,abc.com -> 国际媒体 (blackmatrix-global-media-disney)` (Blackmatrix is the configured primary source.)
 
-### 529. exact-policy / same-rule-different-policy
+### 549. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,naver.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,naver.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-category` -> `HOST-SUFFIX,naver.com -> 国际媒体 (rulego-global-media)` (The configured business-category priority applies to this conflict.)
 
-### 530. exact-policy / same-rule-different-policy
+### 550. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,now.com -> 国际媒体 (blackmatrix-global-media-hbo)`
 - right: `HOST-SUFFIX,now.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-blackmatrix` -> `HOST-SUFFIX,now.com -> 国际媒体 (blackmatrix-global-media-hbo)` (Blackmatrix is the configured primary source.)
 
-### 531. exact-policy / same-rule-different-policy
+### 551. exact-policy / same-rule-different-policy
 - left: `HOST,s3-ap-southeast-1.amazonaws.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST,s3-ap-southeast-1.amazonaws.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-category` -> `HOST,s3-ap-southeast-1.amazonaws.com -> 全球加速 (rulego-proxy)` (The configured business-category priority applies to this conflict.)
 
-### 532. semantic-overlap / host-inside-host-suffix
+### 552. semantic-overlap / host-inside-host-suffix
 - left: `HOST,api.viu.now.com -> 国际媒体 (rulego-global-media)`
 - right: `HOST-SUFFIX,now.com -> 全球加速 (rulego-proxy)`
 - decision: `prefer-specific` -> `HOST,api.viu.now.com -> 国际媒体 (rulego-global-media)` (A specific host rule takes precedence over a broader host rule.)

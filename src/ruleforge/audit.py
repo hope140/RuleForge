@@ -236,6 +236,8 @@ _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
     (frozenset(("ai", "proxy")), "meta.ai"): "ai",
     (frozenset(("ai", "proxy")), "grok.com"): "ai",
     (frozenset(("ai", "proxy")), "x.ai"): "ai",
+    (frozenset(("ai", "proxy")), "smoot.apple.com"): "ai",
+    (frozenset(("ai", "proxy")), "apple-relay.apple.com"): "ai",
     (frozenset(("ai", "proxy")), "apple-relay.cloudflare.com"): "proxy",
     (frozenset(("ai", "proxy")), "apple-relay.fastly-edge.com"): "proxy",
     (frozenset(("ai", "proxy")), "cp4.cloudflare.com"): "proxy",
