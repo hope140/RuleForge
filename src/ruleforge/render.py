@@ -76,11 +76,11 @@ def render_category_filters(
 ) -> list[dict[str, object]]:
     """Render one policy-aware filter file per business category.
 
-    A category file omits the policy column when all of its rules share one
-    policy. The remote-filter snippet then supplies that policy through
-    Quantumult X's ``force-policy`` field. This keeps the category resource
-    reusable while retaining a single unambiguous routing policy at the
-    profile boundary.
+    Category files always include the policy column. Quantumult X can use
+    ``force-policy`` at the profile boundary, but an ``opt-parser=false``
+    remote resource still needs each raw filter line to be a complete rule.
+    Keeping the policy in both places makes the resource directly importable
+    and leaves ``force-policy`` as an explicit profile-level override.
     """
 
     grouped: dict[str, list[Rule]] = defaultdict(list)
@@ -97,7 +97,6 @@ def render_category_filters(
             key=lambda rule: (rule.rule_type, rule.value, rule.options, rule.policy),
         )
         policies = sorted({rule.policy for rule in category_rules if rule.policy})
-        include_policy = len(policies) != 1
         filename = _category_filename(category)
         lines = [
             "# GENERATED FILE - DO NOT EDIT",
@@ -107,7 +106,7 @@ def render_category_filters(
             f"# Policy: {policies[0]}" if len(policies) == 1 else "# Policy: mixed or unset",
             "# This is a filter resource, not a complete Quantumult X profile.",
         ]
-        lines.extend(rule.to_quantumultx(include_policy=include_policy) for rule in category_rules)
+        lines.extend(rule.to_quantumultx(include_policy=True) for rule in category_rules)
         output = output_root / filename
         output.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
         metadata.append(

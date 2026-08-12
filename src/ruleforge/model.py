@@ -38,7 +38,9 @@ class Rule:
         return self.rule_type, self.value
 
     def to_quantumultx(self, *, include_policy: bool = True) -> str:
-        fields = [self.rule_type, self.value]
+        # Keep canonical rule types upper-case internally for parsing and
+        # conflict analysis, but emit Quantumult X's native lower-case form.
+        fields = [self.rule_type.lower(), self.value]
         if include_policy and self.policy:
             fields.append(self.policy)
         fields.extend(self.options)

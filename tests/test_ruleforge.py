@@ -28,7 +28,7 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(result.rules[0].rule_type, "HOST-SUFFIX")
         self.assertEqual(result.rules[0].value, "example.com")
         self.assertEqual(result.rules[0].options, ("no-resolve",))
-        self.assertEqual(result.rules[0].to_quantumultx(), "HOST-SUFFIX,example.com,direct,no-resolve")
+        self.assertEqual(result.rules[0].to_quantumultx(), "host-suffix,example.com,direct,no-resolve")
 
     def test_quantumultx_policy_is_replaced_by_manifest_policy(self) -> None:
         source = Source("test", "filter", "quantumult-x", "demo", "AI", "https://example.test", "quantumult-x")
@@ -131,9 +131,9 @@ class RuleForgeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             path = Path(temp_dir) / "rules.list"
             render_quantumultx((rule,), path)
-            self.assertIn("HOST,example.com,direct", path.read_text(encoding="utf-8"))
+            self.assertIn("host,example.com,direct", path.read_text(encoding="utf-8"))
 
-    def test_category_output_groups_rules_and_omits_single_policy(self) -> None:
+    def test_category_output_is_directly_importable_with_complete_rules(self) -> None:
         from ruleforge.render import render_category_filters
 
         source = Source("test", "filter", "surge", "ai", "AI", "https://example.test", "surge")
@@ -142,8 +142,8 @@ class RuleForgeTests(unittest.TestCase):
             entries = render_category_filters(rules, Path(temp_dir), relative_prefix="categories")
             self.assertEqual(entries[0]["category"], "ai")
             content = (Path(temp_dir) / "ai.list").read_text(encoding="utf-8")
-            self.assertIn("HOST,example.com\n", content)
-            self.assertNotIn("HOST,example.com,AI", content)
+            self.assertIn("host,example.com,AI\n", content)
+            self.assertIn("host-suffix,example.org,AI\n", content)
 
 
 if __name__ == "__main__":
