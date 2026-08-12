@@ -45,6 +45,8 @@ source manifest
 
 Quantumult X 输出应优先使用其原生规则类型。Surge 来源不能未经解析就直接复制到原生 Quantumult X 输出中；每个输出文件都要标记生成器版本、来源快照和构建时间。
 
+第一版采用保守输出：涉及不同策略冲突的规则不进入 `quantumultx.generated.list`，但会保留在 `quantumultx.candidates.list` 并写入冲突报告。这样不会把“按来源顺序偶然取第一条”误当成正式策略裁决。
+
 ## 安全边界
 
 - 不接收或生成节点订阅。

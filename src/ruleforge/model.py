@@ -1,0 +1,58 @@
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Any
+
+
+@dataclass(frozen=True)
+class Source:
+    id: str
+    kind: str
+    format: str
+    category: str
+    policy: str
+    url: str
+    parser: str
+    enabled: bool = True
+    notes: str = ""
+
+
+@dataclass(frozen=True)
+class Rule:
+    source_id: str
+    source_format: str
+    category: str
+    policy: str
+    rule_type: str
+    value: str
+    options: tuple[str, ...] = field(default_factory=tuple)
+    line_number: int = 0
+    raw: str = ""
+
+    @property
+    def identity_key(self) -> tuple[str, str, tuple[str, ...]]:
+        return self.rule_type, self.value, self.options
+
+    @property
+    def routed_key(self) -> tuple[str, str]:
+        return self.rule_type, self.value
+
+    def to_quantumultx(self) -> str:
+        fields = [self.rule_type, self.value]
+        if self.policy:
+            fields.append(self.policy)
+        fields.extend(self.options)
+        return ",".join(fields)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_id": self.source_id,
+            "source_format": self.source_format,
+            "category": self.category,
+            "policy": self.policy,
+            "rule_type": self.rule_type,
+            "value": self.value,
+            "options": list(self.options),
+            "line_number": self.line_number,
+            "raw": self.raw,
+        }

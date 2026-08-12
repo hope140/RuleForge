@@ -31,9 +31,26 @@
 - `tests/`：回归样例和客户端边界测试
 - `tools/`：后续的拉取、解析、构建和审计工具
 
-## 与旧仓库的关系
+## 本地运行
 
-旧仓库 [hope140/Clash](https://github.com/hope140/Clash) 继续保留现有 Clash/QuanX 成品配置和兼容链接。RuleForge 负责规则处理和生成，待结果经过验证后再作为新的发布来源。
+不安装第三方运行时依赖即可执行：
+
+```powershell
+python tools/ruleforge.py lint --manifest sources/quantumultx.yaml
+python tools/ruleforge.py build --manifest sources/quantumultx.yaml
+```
+
+构建会生成：
+
+- `outputs/quantumult-x/quantumultx.generated.list`：排除策略冲突后的保守结果
+- `outputs/quantumult-x/quantumultx.candidates.list`：去重后的完整候选结果
+- `outputs/quantumult-x/audit.json`：机器可读审计数据
+- `outputs/quantumult-x/conflicts.md`：需要人工确认的冲突
+- `outputs/quantumult-x/build.json`：来源快照、哈希和构建摘要
+
+在策略裁决器完成前，不应把候选结果直接作为日常配置；优先查看保守结果和冲突报告。
+
+RuleForge 是独立项目，不依赖其他配置仓库。旧项目不会被读取、同步或作为生成输入。
 
 ## 免责声明
 
