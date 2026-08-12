@@ -1,0 +1,70 @@
+name: Update Quantumult X rules
+
+on:
+  schedule:
+    # 02:17 UTC = 10:17 Asia/Hong_Kong, once per day.
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-quantumult-x-rules
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Refresh, build and audit rules
+        run: >-
+          python tools/ruleforge.py build
+          --manifest sources/quantumultx.yaml
+          --refresh
+          --fail-on-conflict
+
+      - name: Detect meaningful generated changes
+        id: changes
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # A newly generated category is always a meaningful change.
+          if git ls-files --others --exclude-standard -- outputs/quantumult-x | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Ignore timestamps only; rule, source hash, count and audit changes remain visible.
+          if git diff --quiet \
+            -I'^# Generated at ' \
+            -I'^[[:space:]]*"generated_at_utc":' \
+            -- outputs/quantumult-x; then
+            git restore -- outputs/quantumult-x
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit refreshed rules
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/quantumult-x
+          git commit -m "chore: update Quantumult X rules"
+          git push

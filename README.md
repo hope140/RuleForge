@@ -73,10 +73,20 @@ RuleForge 从多个公开规则项目收集分流规则，按业务分类统一�
 
 ```powershell
 python tools/ruleforge.py lint --manifest sources/quantumultx.yaml
-python tools/ruleforge.py build --manifest sources/quantumultx.yaml
+python -m unittest discover -s tests -v
+python tools/ruleforge.py build --manifest sources/quantumultx.yaml --refresh --fail-on-conflict
 ```
 
-仓库当前为私有仓库，因此生成的 Raw 地址是发布模板。要让 Quantumult X 直接远程拉取，需要先公开生成文件或替换为自己的可访问静态地址。
+仓库已公开，生成的 Raw 地址可以被 Quantumult X 直接远程拉取。日常手动更新时运行上面的构建命令，确认无未决冲突后提交并推送 `outputs/quantumult-x`。
+
+## 自动更新
+
+仓库使用 [GitHub Actions](.github/workflows/update-rules.yml) 每天运行一次，时间为 UTC 02:17，即香港时间 10:17。工作流会依次执行回归测试、刷新全部公开来源、解析、去重和冲突审计。
+
+- 构建失败、来源抓取失败或出现未决冲突时，不会推送新规则，上一版继续保留。
+- 只有规则、来源哈希、数量或审计结果发生实际变化时才会提交，单纯生成时间变化不会产生提交。
+- 也可以在 GitHub 的 `Actions` 页面手动运行 `Update Quantumult X rules`。
+- 自动更新成功后，Quantumult X 按远程过滤器中的 `update-interval=172800` 重新拉取。
 
 ## 特别声明
 
