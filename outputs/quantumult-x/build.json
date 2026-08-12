@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-12T02:28:28.655792+00:00",
+  "generated_at_utc": "2026-08-12T02:45:05.554224+00:00",
   "generator_version": "0.1.0",
   "manifest": {
     "schema_version": 1,
@@ -76,6 +76,17 @@
         "parser": "surge",
         "enabled": true,
         "notes": "保留 Blackmatrix 没有完整独立列表的 OpenRouter、Cursor、Perplexity、Grok 等覆盖；与其他 AI 源使用同一策略。"
+      },
+      {
+        "id": "acl4ssr-ai",
+        "kind": "filter",
+        "format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
+        "parser": "surge",
+        "enabled": true,
+        "notes": "作为 AI 交叉来源，统一转换为 Quantumult X 规则并参与去重和冲突审计；不直接复制其客户端格式。"
       },
       {
         "id": "blackmatrix-apple",
@@ -249,14 +260,447 @@
       }
     ]
   },
-  "source_count": 24,
-  "enabled_source_count": 24,
-  "parsed_rule_count": 6411,
-  "kept_rule_count": 6215,
-  "safe_rule_count": 5957,
-  "conflicted_rule_count": 384,
-  "duplicate_count": 70,
-  "conflict_count": 240,
+  "source_count": 25,
+  "enabled_source_count": 25,
+  "parsed_rule_count": 6460,
+  "kept_rule_count": 6232,
+  "safe_rule_count": 5970,
+  "conflicted_rule_count": 388,
+  "duplicate_count": 102,
+  "conflict_count": 244,
+  "candidate_categories": [
+    {
+      "category": "reject",
+      "file": "outputs/quantumult-x/categories/candidates/reject.list",
+      "filename": "reject.list",
+      "policy": "reject",
+      "policies": [
+        "reject"
+      ],
+      "rule_count": 974,
+      "source_count": 1
+    },
+    {
+      "category": "privacy",
+      "file": "outputs/quantumult-x/categories/candidates/privacy.list",
+      "filename": "privacy.list",
+      "policy": "reject",
+      "policies": [
+        "reject"
+      ],
+      "rule_count": 87,
+      "source_count": 1
+    },
+    {
+      "category": "alipay",
+      "file": "outputs/quantumult-x/categories/candidates/alipay.list",
+      "filename": "alipay.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 21,
+      "source_count": 1
+    },
+    {
+      "category": "wechat",
+      "file": "outputs/quantumult-x/categories/candidates/wechat.list",
+      "filename": "wechat.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 43,
+      "source_count": 1
+    },
+    {
+      "category": "china-direct",
+      "file": "outputs/quantumult-x/categories/candidates/china-direct.list",
+      "filename": "china-direct.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 208,
+      "source_count": 1
+    },
+    {
+      "category": "direct-exception",
+      "file": "outputs/quantumult-x/categories/candidates/direct-exception.list",
+      "filename": "direct-exception.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
+      "category": "ai",
+      "file": "outputs/quantumult-x/categories/candidates/ai.list",
+      "filename": "ai.list",
+      "policy": "AI",
+      "policies": [
+        "AI"
+      ],
+      "rule_count": 145,
+      "source_count": 6
+    },
+    {
+      "category": "apple",
+      "file": "outputs/quantumult-x/categories/candidates/apple.list",
+      "filename": "apple.list",
+      "policy": "苹果服务",
+      "policies": [
+        "苹果服务"
+      ],
+      "rule_count": 1879,
+      "source_count": 1
+    },
+    {
+      "category": "google-voice",
+      "file": "outputs/quantumult-x/categories/candidates/google-voice.list",
+      "filename": "google-voice.list",
+      "policy": "美国节点",
+      "policies": [
+        "美国节点"
+      ],
+      "rule_count": 1,
+      "source_count": 1
+    },
+    {
+      "category": "google",
+      "file": "outputs/quantumult-x/categories/candidates/google.list",
+      "filename": "google.list",
+      "policy": "谷歌服务",
+      "policies": [
+        "谷歌服务"
+      ],
+      "rule_count": 698,
+      "source_count": 1
+    },
+    {
+      "category": "github",
+      "file": "outputs/quantumult-x/categories/candidates/github.list",
+      "filename": "github.list",
+      "policy": "GitHub",
+      "policies": [
+        "GitHub"
+      ],
+      "rule_count": 30,
+      "source_count": 1
+    },
+    {
+      "category": "spotify",
+      "file": "outputs/quantumult-x/categories/candidates/spotify.list",
+      "filename": "spotify.list",
+      "policy": "Spotify",
+      "policies": [
+        "Spotify"
+      ],
+      "rule_count": 30,
+      "source_count": 1
+    },
+    {
+      "category": "telegram",
+      "file": "outputs/quantumult-x/categories/candidates/telegram.list",
+      "filename": "telegram.list",
+      "policy": "电报代理",
+      "policies": [
+        "电报代理"
+      ],
+      "rule_count": 40,
+      "source_count": 1
+    },
+    {
+      "category": "tiktok",
+      "file": "outputs/quantumult-x/categories/candidates/tiktok.list",
+      "filename": "tiktok.list",
+      "policy": "海外抖音",
+      "policies": [
+        "海外抖音"
+      ],
+      "rule_count": 32,
+      "source_count": 1
+    },
+    {
+      "category": "youtube",
+      "file": "outputs/quantumult-x/categories/candidates/youtube.list",
+      "filename": "youtube.list",
+      "policy": "YouTube",
+      "policies": [
+        "YouTube"
+      ],
+      "rule_count": 196,
+      "source_count": 1
+    },
+    {
+      "category": "netflix",
+      "file": "outputs/quantumult-x/categories/candidates/netflix.list",
+      "filename": "netflix.list",
+      "policy": "Netflix",
+      "policies": [
+        "Netflix"
+      ],
+      "rule_count": 1158,
+      "source_count": 1
+    },
+    {
+      "category": "china-media",
+      "file": "outputs/quantumult-x/categories/candidates/china-media.list",
+      "filename": "china-media.list",
+      "policy": "港台番剧",
+      "policies": [
+        "港台番剧"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
+      "category": "global-media",
+      "file": "outputs/quantumult-x/categories/candidates/global-media.list",
+      "filename": "global-media.list",
+      "policy": "国际媒体",
+      "policies": [
+        "国际媒体"
+      ],
+      "rule_count": 201,
+      "source_count": 1
+    },
+    {
+      "category": "proxy-exception",
+      "file": "outputs/quantumult-x/categories/candidates/proxy-exception.list",
+      "filename": "proxy-exception.list",
+      "policy": "proxy",
+      "policies": [
+        "proxy"
+      ],
+      "rule_count": 1,
+      "source_count": 1
+    },
+    {
+      "category": "proxy",
+      "file": "outputs/quantumult-x/categories/candidates/proxy.list",
+      "filename": "proxy.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 456,
+      "source_count": 1
+    }
+  ],
+  "safe_categories": [
+    {
+      "category": "reject",
+      "file": "outputs/quantumult-x/categories/safe/reject.list",
+      "filename": "reject.list",
+      "policy": "reject",
+      "policies": [
+        "reject"
+      ],
+      "rule_count": 941,
+      "source_count": 1
+    },
+    {
+      "category": "privacy",
+      "file": "outputs/quantumult-x/categories/safe/privacy.list",
+      "filename": "privacy.list",
+      "policy": "reject",
+      "policies": [
+        "reject"
+      ],
+      "rule_count": 76,
+      "source_count": 1
+    },
+    {
+      "category": "alipay",
+      "file": "outputs/quantumult-x/categories/safe/alipay.list",
+      "filename": "alipay.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 21,
+      "source_count": 1
+    },
+    {
+      "category": "wechat",
+      "file": "outputs/quantumult-x/categories/safe/wechat.list",
+      "filename": "wechat.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 43,
+      "source_count": 1
+    },
+    {
+      "category": "china-direct",
+      "file": "outputs/quantumult-x/categories/safe/china-direct.list",
+      "filename": "china-direct.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 193,
+      "source_count": 1
+    },
+    {
+      "category": "direct-exception",
+      "file": "outputs/quantumult-x/categories/safe/direct-exception.list",
+      "filename": "direct-exception.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 5,
+      "source_count": 1
+    },
+    {
+      "category": "ai",
+      "file": "outputs/quantumult-x/categories/safe/ai.list",
+      "filename": "ai.list",
+      "policy": "AI",
+      "policies": [
+        "AI"
+      ],
+      "rule_count": 102,
+      "source_count": 6
+    },
+    {
+      "category": "apple",
+      "file": "outputs/quantumult-x/categories/safe/apple.list",
+      "filename": "apple.list",
+      "policy": "苹果服务",
+      "policies": [
+        "苹果服务"
+      ],
+      "rule_count": 1848,
+      "source_count": 1
+    },
+    {
+      "category": "google",
+      "file": "outputs/quantumult-x/categories/safe/google.list",
+      "filename": "google.list",
+      "policy": "谷歌服务",
+      "policies": [
+        "谷歌服务"
+      ],
+      "rule_count": 670,
+      "source_count": 1
+    },
+    {
+      "category": "github",
+      "file": "outputs/quantumult-x/categories/safe/github.list",
+      "filename": "github.list",
+      "policy": "GitHub",
+      "policies": [
+        "GitHub"
+      ],
+      "rule_count": 23,
+      "source_count": 1
+    },
+    {
+      "category": "spotify",
+      "file": "outputs/quantumult-x/categories/safe/spotify.list",
+      "filename": "spotify.list",
+      "policy": "Spotify",
+      "policies": [
+        "Spotify"
+      ],
+      "rule_count": 26,
+      "source_count": 1
+    },
+    {
+      "category": "telegram",
+      "file": "outputs/quantumult-x/categories/safe/telegram.list",
+      "filename": "telegram.list",
+      "policy": "电报代理",
+      "policies": [
+        "电报代理"
+      ],
+      "rule_count": 24,
+      "source_count": 1
+    },
+    {
+      "category": "tiktok",
+      "file": "outputs/quantumult-x/categories/safe/tiktok.list",
+      "filename": "tiktok.list",
+      "policy": "海外抖音",
+      "policies": [
+        "海外抖音"
+      ],
+      "rule_count": 23,
+      "source_count": 1
+    },
+    {
+      "category": "youtube",
+      "file": "outputs/quantumult-x/categories/safe/youtube.list",
+      "filename": "youtube.list",
+      "policy": "YouTube",
+      "policies": [
+        "YouTube"
+      ],
+      "rule_count": 173,
+      "source_count": 1
+    },
+    {
+      "category": "netflix",
+      "file": "outputs/quantumult-x/categories/safe/netflix.list",
+      "filename": "netflix.list",
+      "policy": "Netflix",
+      "policies": [
+        "Netflix"
+      ],
+      "rule_count": 1147,
+      "source_count": 1
+    },
+    {
+      "category": "china-media",
+      "file": "outputs/quantumult-x/categories/safe/china-media.list",
+      "filename": "china-media.list",
+      "policy": "港台番剧",
+      "policies": [
+        "港台番剧"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
+      "category": "global-media",
+      "file": "outputs/quantumult-x/categories/safe/global-media.list",
+      "filename": "global-media.list",
+      "policy": "国际媒体",
+      "policies": [
+        "国际媒体"
+      ],
+      "rule_count": 194,
+      "source_count": 1
+    },
+    {
+      "category": "proxy-exception",
+      "file": "outputs/quantumult-x/categories/safe/proxy-exception.list",
+      "filename": "proxy-exception.list",
+      "policy": "proxy",
+      "policies": [
+        "proxy"
+      ],
+      "rule_count": 1,
+      "source_count": 1
+    },
+    {
+      "category": "proxy",
+      "file": "outputs/quantumult-x/categories/safe/proxy.list",
+      "filename": "proxy.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 444,
+      "source_count": 1
+    }
+  ],
   "parse_issue_count": 0,
   "fetch_error_count": 0,
   "sources": [
@@ -264,7 +708,7 @@
       "id": "rulego-advertising",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
       "sha256": "2536aacb61b0d40b205d459df7f9beac4e3c0e23744a963e111a6147fabc8cc9",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 976,
       "issue_count": 0
     },
@@ -272,7 +716,7 @@
       "id": "rulego-tracking",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list",
       "sha256": "b27f44faaf04388f5cf6effb82c9d4cdcf931a153f1d33c056f84855d20678f2",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 90,
       "issue_count": 0
     },
@@ -280,7 +724,7 @@
       "id": "blackmatrix-openai",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list",
       "sha256": "6ec16f5da986a15c62e80192f5b445dcdaf88607987923120761c1388eeb243d",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 35,
       "issue_count": 0
     },
@@ -288,7 +732,7 @@
       "id": "blackmatrix-claude",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list",
       "sha256": "bcf41ba79464a16d8305cf1c6f18c69d023ccd33ea1b84834daaa47cc0d5dfea",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -296,7 +740,7 @@
       "id": "blackmatrix-gemini",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list",
       "sha256": "9e488fd027a55ec5bfeeeda1ab4a9022364c1d47dfd140293e02835d3303980f",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 13,
       "issue_count": 0
     },
@@ -304,7 +748,7 @@
       "id": "blackmatrix-copilot",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Copilot/Copilot.list",
       "sha256": "b6bd07a9aaa109d44915b23b19d1d05948cc137dc7e2a5c3240d9a81c6e6b3a4",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 51,
       "issue_count": 0
     },
@@ -312,15 +756,23 @@
       "id": "rulego-ai-supplement",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
       "sha256": "18bffe9e41f878787d31b537f423078bc396131e5a577c9ec919b0fe27c5a5a0",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 74,
+      "issue_count": 0
+    },
+    {
+      "id": "acl4ssr-ai",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
+      "sha256": "63e70895ac8c04c3b28965dc0b4ba9ceb3a1313a66b49487ed96005debc97e1e",
+      "from_cache": false,
+      "rule_count": 49,
       "issue_count": 0
     },
     {
       "id": "blackmatrix-apple",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
       "sha256": "a1abf54e8f20302d076e5130b44c2ccd5326338e8eb314e0b42be785668acac9",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1881,
       "issue_count": 0
     },
@@ -328,7 +780,7 @@
       "id": "blackmatrix-youtube",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list",
       "sha256": "6c011f1b2d03f664799bd8f01718bef9c8b071209d5602bfed18bb5db4a8c9e4",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 196,
       "issue_count": 0
     },
@@ -336,7 +788,7 @@
       "id": "blackmatrix-netflix",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list",
       "sha256": "eb95ba340fc9b3013e6b66a64270d20e4142b0f9b8cde1bac060725742331ec7",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1158,
       "issue_count": 0
     },
@@ -344,7 +796,7 @@
       "id": "blackmatrix-tiktok",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list",
       "sha256": "d1e594680d94bec9575ebc584d03c224c8ac5b74daba1fa8f87b44f48b7724bb",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 32,
       "issue_count": 0
     },
@@ -352,7 +804,7 @@
       "id": "blackmatrix-google-voice",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleVoice/GoogleVoice.list",
       "sha256": "b0e49655ed123a5ed8f6c492f4693853c05bf015e82c4bbbdbbfcbeb9bf3e496",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -360,7 +812,7 @@
       "id": "blackmatrix-google",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list",
       "sha256": "eb56706413fab41ded77194ae73f690af583bd56ad7d470273e026fa5ccb7b93",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 711,
       "issue_count": 0
     },
@@ -368,7 +820,7 @@
       "id": "blackmatrix-github",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list",
       "sha256": "413f664aa29692e83879422ee6d35ced46dd135ebd85f67afaf554ab14391f77",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 31,
       "issue_count": 0
     },
@@ -376,7 +828,7 @@
       "id": "blackmatrix-spotify",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list",
       "sha256": "d29fa087d00317231e7de7c8cd4aa9ca91ed0c51660fbf76101b719d8ac5e78c",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 30,
       "issue_count": 0
     },
@@ -384,7 +836,7 @@
       "id": "blackmatrix-telegram",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list",
       "sha256": "986f8e7d587ce42c3bb472e6a2e9cffd42a413240d32c02cc363c4d6367141fe",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 40,
       "issue_count": 0
     },
@@ -392,7 +844,7 @@
       "id": "rulego-china-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list",
       "sha256": "8a79fd534b92d7ac33e9290bd141b423822dc50525a525938486a340b6b5bcda",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 16,
       "issue_count": 0
     },
@@ -400,7 +852,7 @@
       "id": "rulego-global-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
       "sha256": "8e3a7945de96310575837ad55fd724aecaf3b3894a7eac2a979311d6d5fa88ce",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 242,
       "issue_count": 0
     },
@@ -408,7 +860,7 @@
       "id": "blackmatrix-alipay",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list",
       "sha256": "80b1c0e09de197f235ded8abb53a6d65b2093b9fbdbe62fdd57cb8d591d5e72d",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -416,7 +868,7 @@
       "id": "blackmatrix-wechat",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list",
       "sha256": "f2b1097292162858845d3b4f99058f047e0715bef4a0e6202b40a10af5c38e2c",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 43,
       "issue_count": 0
     },
@@ -424,7 +876,7 @@
       "id": "rulego-direct-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list",
       "sha256": "467d7173ed8d0541ed2436c0f686aee63b8850c0f1452469a7c8439f542cfd32",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -432,7 +884,7 @@
       "id": "blackmatrix-direct",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list",
       "sha256": "5ba475db11bd85c7f92699760c15d935d6011616143c99fff54827783772dc7a",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 232,
       "issue_count": 0
     },
@@ -440,7 +892,7 @@
       "id": "rulego-proxy-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list",
       "sha256": "2d4f4e156663de6b5d1e4d49be23799f8a0a08ef7c061cb0d133e194be07bf7c",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -448,7 +900,7 @@
       "id": "rulego-proxy",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
       "sha256": "2292abb55f20caf031ffbb7011c84b85c2246f54ae050fe416323da1fd2b8ead",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 513,
       "issue_count": 0
     }

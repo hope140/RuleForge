@@ -7,10 +7,11 @@ source manifest
   -> fetch and cache
   -> parser
   -> canonical rule model
+  -> group by business category
   -> exact deduplication
   -> semantic overlap analysis
   -> policy resolution
-  -> Quantumult X renderer
+  -> category filter renderer
   -> audit report
 ```
 
@@ -45,7 +46,11 @@ source manifest
 
 Quantumult X 输出应优先使用其原生规则类型。Surge 来源不能未经解析就直接复制到原生 Quantumult X 输出中；每个输出文件都要标记生成器版本、来源快照和构建时间。
 
-第一版采用保守输出：涉及不同策略冲突的规则不进入 `quantumultx.generated.list`，但会保留在 `quantumultx.candidates.list` 并写入冲突报告。这样不会把“按来源顺序偶然取第一条”误当成正式策略裁决。
+当前输出按业务分类拆分，而不是按 `HOST`、`IP-CIDR` 等语法类型拆分。同一类可以同时包含多个规则类型，但只承载一个明确的业务意图和策略映射。远程过滤器片段按业务优先级输出，专项服务不会因为规则语法不同而被拆散。
+
+第一版采用保守输出：涉及不同策略冲突的规则不进入 `categories/safe/<category>.list`，但会保留在对应的 `categories/candidates/<category>.list` 并写入冲突报告。这样不会把“按来源顺序偶然取第一条”误当成正式策略裁决。
+
+每个业务分类的处理顺序是：先合并多个上游来源，再做精确去重和语义冲突审计；后续的策略裁决器只处理报告中的歧义，不再重复搬运上游规则。
 
 ## 安全边界
 

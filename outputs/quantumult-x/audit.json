@@ -1,9 +1,9 @@
 {
-  "kept_rule_count": 6215,
-  "safe_rule_count": 5957,
-  "conflicted_rule_count": 384,
-  "duplicate_count": 70,
-  "conflict_count": 240,
+  "kept_rule_count": 6232,
+  "safe_rule_count": 5970,
+  "conflicted_rule_count": 388,
+  "duplicate_count": 102,
+  "conflict_count": 244,
   "duplicates": [
     {
       "kept": {
@@ -1227,6 +1227,774 @@
         "options": [],
         "line_number": 96,
         "raw": "DOMAIN,www.bing.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-KEYWORD",
+        "value": "openai",
+        "options": [],
+        "line_number": 42,
+        "raw": "HOST-KEYWORD,openai,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-KEYWORD",
+        "value": "openai",
+        "options": [],
+        "line_number": 5,
+        "raw": "DOMAIN-KEYWORD,openai"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-gemini",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "ai.google.dev",
+        "options": [],
+        "line_number": 9,
+        "raw": "HOST,ai.google.dev,Gemini"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "ai.google.dev",
+        "options": [],
+        "line_number": 6,
+        "raw": "DOMAIN,ai.google.dev"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "aistudio.google.com",
+        "options": [],
+        "line_number": 61,
+        "raw": "DOMAIN,aistudio.google.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "aistudio.google.com",
+        "options": [],
+        "line_number": 7,
+        "raw": "DOMAIN,aistudio.google.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "bard.google.com",
+        "options": [],
+        "line_number": 75,
+        "raw": "DOMAIN,bard.google.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "bard.google.com",
+        "options": [],
+        "line_number": 11,
+        "raw": "DOMAIN,bard.google.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "gemini.google.com",
+        "options": [],
+        "line_number": 76,
+        "raw": "DOMAIN,gemini.google.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "gemini.google.com",
+        "options": [],
+        "line_number": 14,
+        "raw": "DOMAIN,gemini.google.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-copilot",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "sydney.bing.com",
+        "options": [],
+        "line_number": 29,
+        "raw": "HOST,sydney.bing.com,Copilot"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "sydney.bing.com",
+        "options": [],
+        "line_number": 17,
+        "raw": "DOMAIN,sydney.bing.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-claude",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "anthropic.com",
+        "options": [],
+        "line_number": 9,
+        "raw": "HOST-SUFFIX,anthropic.com,Claude"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "anthropic.com",
+        "options": [],
+        "line_number": 19,
+        "raw": "DOMAIN-SUFFIX,anthropic.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "auth0.com",
+        "options": [],
+        "line_number": 21,
+        "raw": "HOST-SUFFIX,auth0.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "auth0.com",
+        "options": [],
+        "line_number": 20,
+        "raw": "DOMAIN-SUFFIX,auth0.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-gemini",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "bard.google.com",
+        "options": [],
+        "line_number": 12,
+        "raw": "HOST-SUFFIX,bard.google.com,Gemini"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "bard.google.com",
+        "options": [],
+        "line_number": 21,
+        "raw": "DOMAIN-SUFFIX,bard.google.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "chatgpt.com",
+        "options": [],
+        "line_number": 22,
+        "raw": "HOST-SUFFIX,chatgpt.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "chatgpt.com",
+        "options": [],
+        "line_number": 22,
+        "raw": "DOMAIN-SUFFIX,chatgpt.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-claude",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "claude.ai",
+        "options": [],
+        "line_number": 10,
+        "raw": "HOST-SUFFIX,claude.ai,Claude"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "claude.ai",
+        "options": [],
+        "line_number": 23,
+        "raw": "DOMAIN-SUFFIX,claude.ai"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "claude.com",
+        "options": [],
+        "line_number": 16,
+        "raw": "DOMAIN-SUFFIX,claude.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "claude.com",
+        "options": [],
+        "line_number": 24,
+        "raw": "DOMAIN-SUFFIX,claude.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "claudeusercontent.com",
+        "options": [],
+        "line_number": 20,
+        "raw": "DOMAIN-SUFFIX,claudeusercontent.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "claudeusercontent.com",
+        "options": [],
+        "line_number": 25,
+        "raw": "DOMAIN-SUFFIX,claudeusercontent.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "client-api.arkoselabs.com",
+        "options": [],
+        "line_number": 24,
+        "raw": "HOST-SUFFIX,client-api.arkoselabs.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "client-api.arkoselabs.com",
+        "options": [],
+        "line_number": 26,
+        "raw": "DOMAIN-SUFFIX,client-api.arkoselabs.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cursor.com",
+        "options": [],
+        "line_number": 50,
+        "raw": "DOMAIN-SUFFIX,cursor.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cursor.com",
+        "options": [],
+        "line_number": 29,
+        "raw": "DOMAIN-SUFFIX,cursor.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cursor.sh",
+        "options": [],
+        "line_number": 51,
+        "raw": "DOMAIN-SUFFIX,cursor.sh"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cursor.sh",
+        "options": [],
+        "line_number": 30,
+        "raw": "DOMAIN-SUFFIX,cursor.sh"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "events.statsigapi.net",
+        "options": [],
+        "line_number": 25,
+        "raw": "HOST-SUFFIX,events.statsigapi.net,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "events.statsigapi.net",
+        "options": [],
+        "line_number": 31,
+        "raw": "DOMAIN-SUFFIX,events.statsigapi.net"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "featuregates.org",
+        "options": [],
+        "line_number": 26,
+        "raw": "HOST-SUFFIX,featuregates.org,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "featuregates.org",
+        "options": [],
+        "line_number": 32,
+        "raw": "DOMAIN-SUFFIX,featuregates.org"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-gemini",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gemini.google.com",
+        "options": [],
+        "line_number": 15,
+        "raw": "HOST-SUFFIX,gemini.google.com,Gemini"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gemini.google.com",
+        "options": [],
+        "line_number": 33,
+        "raw": "DOMAIN-SUFFIX,gemini.google.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "grazie.ai",
+        "options": [],
+        "line_number": 86,
+        "raw": "DOMAIN-SUFFIX,grazie.ai"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "grazie.ai",
+        "options": [],
+        "line_number": 34,
+        "raw": "DOMAIN-SUFFIX,grazie.ai"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "identrust.com",
+        "options": [],
+        "line_number": 28,
+        "raw": "HOST-SUFFIX,identrust.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "identrust.com",
+        "options": [],
+        "line_number": 36,
+        "raw": "DOMAIN-SUFFIX,identrust.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "intercom.io",
+        "options": [],
+        "line_number": 29,
+        "raw": "HOST-SUFFIX,intercom.io,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "intercom.io",
+        "options": [],
+        "line_number": 37,
+        "raw": "DOMAIN-SUFFIX,intercom.io"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "intercomcdn.com",
+        "options": [],
+        "line_number": 30,
+        "raw": "HOST-SUFFIX,intercomcdn.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "intercomcdn.com",
+        "options": [],
+        "line_number": 38,
+        "raw": "DOMAIN-SUFFIX,intercomcdn.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "makersuite.google.com",
+        "options": [],
+        "line_number": 60,
+        "raw": "DOMAIN-SUFFIX,makersuite.google.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "makersuite.google.com",
+        "options": [],
+        "line_number": 40,
+        "raw": "DOMAIN-SUFFIX,makersuite.google.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "meta.ai",
+        "options": [],
+        "line_number": 89,
+        "raw": "DOMAIN-SUFFIX,meta.ai"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "meta.ai",
+        "options": [],
+        "line_number": 41,
+        "raw": "DOMAIN-SUFFIX,meta.ai"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oaistatic.com",
+        "options": [],
+        "line_number": 32,
+        "raw": "HOST-SUFFIX,oaistatic.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oaistatic.com",
+        "options": [],
+        "line_number": 45,
+        "raw": "DOMAIN-SUFFIX,oaistatic.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oaiusercontent.com",
+        "options": [],
+        "line_number": 33,
+        "raw": "HOST-SUFFIX,oaiusercontent.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oaiusercontent.com",
+        "options": [],
+        "line_number": 46,
+        "raw": "DOMAIN-SUFFIX,oaiusercontent.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "openai.com",
+        "options": [],
+        "line_number": 35,
+        "raw": "HOST-SUFFIX,openai.com,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "openai.com",
+        "options": [],
+        "line_number": 47,
+        "raw": "DOMAIN-SUFFIX,openai.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "blackmatrix-openai",
+        "source_format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "openaiapi-site.azureedge.net",
+        "options": [],
+        "line_number": 36,
+        "raw": "HOST-SUFFIX,openaiapi-site.azureedge.net,OpenAI"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "openaiapi-site.azureedge.net",
+        "options": [],
+        "line_number": 48,
+        "raw": "DOMAIN-SUFFIX,openaiapi-site.azureedge.net"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "perplexity.ai",
+        "options": [],
+        "line_number": 101,
+        "raw": "DOMAIN-SUFFIX,perplexity.ai"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "perplexity.ai",
+        "options": [],
+        "line_number": 49,
+        "raw": "DOMAIN-SUFFIX,perplexity.ai"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "sora.com",
+        "options": [],
+        "line_number": 34,
+        "raw": "DOMAIN-SUFFIX,sora.com"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "sora.com",
+        "options": [],
+        "line_number": 50,
+        "raw": "DOMAIN-SUFFIX,sora.com"
+      }
+    },
+    {
+      "kept": {
+        "source_id": "rulego-ai-supplement",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "x.ai",
+        "options": [],
+        "line_number": 107,
+        "raw": "DOMAIN-SUFFIX,x.ai"
+      },
+      "dropped": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "x.ai",
+        "options": [],
+        "line_number": 51,
+        "raw": "DOMAIN-SUFFIX,x.ai"
       }
     },
     {
@@ -5877,6 +6645,84 @@
       "kind": "semantic-overlap",
       "relation": "host-inside-host-suffix",
       "left": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "copilot-proxy.githubusercontent.com",
+        "options": [],
+        "line_number": 13,
+        "raw": "DOMAIN,copilot-proxy.githubusercontent.com"
+      },
+      "right": {
+        "source_id": "blackmatrix-github",
+        "source_format": "quantumult-x",
+        "category": "github",
+        "policy": "GitHub",
+        "rule_type": "HOST-SUFFIX",
+        "value": "githubusercontent.com",
+        "options": [],
+        "line_number": 28,
+        "raw": "HOST-SUFFIX,githubusercontent.com,GitHub"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "generativelanguage.googleapis.com",
+        "options": [],
+        "line_number": 15,
+        "raw": "DOMAIN,generativelanguage.googleapis.com"
+      },
+      "right": {
+        "source_id": "blackmatrix-google",
+        "source_format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "googleapis.com",
+        "options": [],
+        "line_number": 479,
+        "raw": "HOST-SUFFIX,googleapis.com,Google"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "notebooklm.google.com",
+        "options": [],
+        "line_number": 16,
+        "raw": "DOMAIN,notebooklm.google.com"
+      },
+      "right": {
+        "source_id": "blackmatrix-google",
+        "source_format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "google.com",
+        "options": [],
+        "line_number": 328,
+        "raw": "HOST-SUFFIX,google.com,Google"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
         "source_id": "blackmatrix-apple",
         "source_format": "quantumult-x",
         "category": "apple",
@@ -7613,6 +8459,32 @@
         "options": [],
         "line_number": 60,
         "raw": "DOMAIN-SUFFIX,makersuite.google.com"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "nested-host-suffix",
+      "left": {
+        "source_id": "blackmatrix-google",
+        "source_format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "google.com",
+        "options": [],
+        "line_number": 328,
+        "raw": "HOST-SUFFIX,google.com,Google"
+      },
+      "right": {
+        "source_id": "acl4ssr-ai",
+        "source_format": "surge",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "notebooklm.google.com",
+        "options": [],
+        "line_number": 44,
+        "raw": "DOMAIN-SUFFIX,notebooklm.google.com"
       }
     },
     {

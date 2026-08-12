@@ -66,6 +66,16 @@ sources:
     enabled: true
     notes: 保留 Blackmatrix 没有完整独立列表的 OpenRouter、Cursor、Perplexity、Grok 等覆盖；与其他 AI 源使用同一策略。
 
+  - id: acl4ssr-ai
+    kind: filter
+    format: surge
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list
+    parser: surge
+    enabled: true
+    notes: 作为 AI 交叉来源，统一转换为 Quantumult X 规则并参与去重和冲突审计；不直接复制其客户端格式。
+
   - id: blackmatrix-apple
     kind: filter
     format: quantumult-x

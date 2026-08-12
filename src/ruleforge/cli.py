@@ -9,7 +9,13 @@ from .audit import audit_rules
 from .fetch import FetchError, fetch_source
 from .manifest import ManifestError, load_manifest
 from .parsers import parse_resource
-from .render import render_audit, render_conflicts, render_json, render_quantumultx
+from .render import (
+    render_audit,
+    render_category_filters,
+    render_conflicts,
+    render_filter_remote_conf,
+    render_json,
+)
 
 
 def _default_root() -> Path:
@@ -70,15 +76,23 @@ def _build(args: argparse.Namespace) -> int:
     audit = audit_rules(all_rules)
     generated_at_utc = datetime.now(timezone.utc).isoformat()
     output_dir.mkdir(parents=True, exist_ok=True)
-    render_quantumultx(
-        audit.safe_rules,
-        output_dir / "quantumultx.generated.list",
-        generated_at_utc=generated_at_utc,
-    )
-    render_quantumultx(
+    candidate_categories = render_category_filters(
         audit.kept_rules,
-        output_dir / "quantumultx.candidates.list",
+        output_dir / "categories" / "candidates",
         generated_at_utc=generated_at_utc,
+        relative_prefix="outputs/quantumult-x/categories/candidates",
+    )
+    safe_categories = render_category_filters(
+        audit.safe_rules,
+        output_dir / "categories" / "safe",
+        generated_at_utc=generated_at_utc,
+        relative_prefix="outputs/quantumult-x/categories/safe",
+    )
+    render_filter_remote_conf(
+        safe_categories,
+        output_dir / "filter_remote.safe.conf",
+        repository_base_url=args.repository_base_url,
+        title="Conservative category filters",
     )
     render_audit(audit, output_dir / "audit.json")
     render_conflicts(audit.conflicts, output_dir / "conflicts.md")
@@ -95,6 +109,8 @@ def _build(args: argparse.Namespace) -> int:
             "conflicted_rule_count": len(audit.conflicted_rules),
             "duplicate_count": len(audit.duplicates),
             "conflict_count": len(audit.conflicts),
+            "candidate_categories": candidate_categories,
+            "safe_categories": safe_categories,
             "parse_issue_count": len(parse_issues),
             "fetch_error_count": len(fetch_errors),
             "sources": source_metadata,
@@ -131,6 +147,11 @@ def build_parser() -> argparse.ArgumentParser:
     build.add_argument("--timeout", type=float, default=30.0)
     build.add_argument("--offline", action="store_true")
     build.add_argument("--refresh", action="store_true")
+    build.add_argument(
+        "--repository-base-url",
+        default="https://raw.githubusercontent.com/hope140/RuleForge/main",
+        help="base URL used in filter_remote.safe.conf",
+    )
     build.add_argument("--fail-on-conflict", action="store_true")
     build.set_defaults(handler=_build)
     return parser

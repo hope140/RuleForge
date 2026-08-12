@@ -37,9 +37,9 @@ class Rule:
     def routed_key(self) -> tuple[str, str]:
         return self.rule_type, self.value
 
-    def to_quantumultx(self) -> str:
+    def to_quantumultx(self, *, include_policy: bool = True) -> str:
         fields = [self.rule_type, self.value]
-        if self.policy:
+        if include_policy and self.policy:
             fields.append(self.policy)
         fields.extend(self.options)
         return ",".join(fields)

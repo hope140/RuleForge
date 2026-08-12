@@ -8,8 +8,8 @@
 
 - 仓库：实验性、私有
 - 第一目标：Quantumult X
-- 当前种子来源：来自个人 QuanX 配置的 24 条公开分流资源
-- 当前阶段：来源清单与数据模型设计
+- 当前种子来源：25 条公开分流资源，包含 Blackmatrix、RuleGo 和 ACL4SSR 的交叉来源
+- 当前阶段：按业务分类合并、规范化、去重和冲突审计
 - 尚未承诺：自动生成结果可直接用于生产环境
 
 ## 设计原则
@@ -42,13 +42,16 @@ python tools/ruleforge.py build --manifest sources/quantumultx.yaml
 
 构建会生成：
 
-- `outputs/quantumult-x/quantumultx.generated.list`：排除策略冲突后的保守结果
-- `outputs/quantumult-x/quantumultx.candidates.list`：去重后的完整候选结果
+- `outputs/quantumult-x/categories/candidates/<category>.list`：按业务分类合并后的完整候选结果
+- `outputs/quantumult-x/categories/safe/<category>.list`：排除未裁决冲突后的保守结果
+- `outputs/quantumult-x/filter_remote.safe.conf`：可复制到 Quantumult X 的分类远程过滤器片段
 - `outputs/quantumult-x/audit.json`：机器可读审计数据
 - `outputs/quantumult-x/conflicts.md`：需要人工确认的冲突
 - `outputs/quantumult-x/build.json`：来源快照、哈希和构建摘要
 
-在策略裁决器完成前，不应把候选结果直接作为日常配置；优先查看保守结果和冲突报告。
+在策略裁决器完成前，不应把候选结果直接作为日常配置；优先查看保守结果和冲突报告。分类文件可以混合 `HOST`、`HOST-SUFFIX`、`IP-CIDR` 等规则类型，因为分类依据是业务意图，而不是语法类型。
+
+当前仓库仍为私有仓库，因此 `filter_remote.safe.conf` 中的 GitHub Raw 地址暂时只作为发布模板；要在 Quantumult X 中直接远程拉取，需要先公开这些生成文件或改成自己的可访问静态地址。
 
 RuleForge 是独立项目，不依赖其他配置仓库。旧项目不会被读取、同步或作为生成输入。
 
