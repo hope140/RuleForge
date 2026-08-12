@@ -32,6 +32,86 @@ class Conflict:
 
 
 @dataclass(frozen=True)
+class ConflictDecision:
+    conflict: Conflict
+    decision: str
+    winner: Rule | None = None
+    loser: Rule | None = None
+    reason: str = ""
+
+    def to_dict(self) -> dict[str, object]:
+        def rule_ref(rule: Rule | None) -> dict[str, object] | None:
+            if rule is None:
+                return None
+            return {
+                "source_id": rule.source_id,
+                "category": rule.category,
+                "rule_type": rule.rule_type,
+                "value": rule.value,
+                "policy": rule.policy,
+            }
+
+        return {
+            "kind": self.conflict.kind,
+            "relation": self.conflict.relation,
+            "decision": self.decision,
+            "winner": rule_ref(self.winner),
+            "loser": rule_ref(self.loser),
+            "reason": self.reason,
+        }
+
+
+@dataclass(frozen=True)
+class ResolutionResult:
+    rules: tuple[Rule, ...]
+    decisions: tuple[ConflictDecision, ...]
+    rejected_rules: frozenset[Rule]
+
+    @property
+    def preferred_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision != "unresolved")
+
+    @property
+    def blackmatrix_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "prefer-blackmatrix")
+
+    @property
+    def direct_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "prefer-direct")
+
+    @property
+    def specific_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "prefer-specific")
+
+    @property
+    def unresolved_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "unresolved")
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "resolved_rule_count": len(self.rules),
+            "rejected_rule_count": len(self.rejected_rules),
+            "resolved_conflict_count": len(self.preferred_decisions),
+            "blackmatrix_preferred_conflict_count": len(self.blackmatrix_decisions),
+            "direct_preferred_conflict_count": len(self.direct_decisions),
+            "specific_preferred_conflict_count": len(self.specific_decisions),
+            "unresolved_conflict_count": len(self.unresolved_decisions),
+            "decisions": [item.to_dict() for item in self.decisions],
+        }
+
+    def to_summary_dict(self) -> dict[str, int]:
+        return {
+            "resolved_rule_count": len(self.rules),
+            "rejected_rule_count": len(self.rejected_rules),
+            "resolved_conflict_count": len(self.preferred_decisions),
+            "blackmatrix_preferred_conflict_count": len(self.blackmatrix_decisions),
+            "direct_preferred_conflict_count": len(self.direct_decisions),
+            "specific_preferred_conflict_count": len(self.specific_decisions),
+            "unresolved_conflict_count": len(self.unresolved_decisions),
+        }
+
+
+@dataclass(frozen=True)
 class AuditResult:
     kept_rules: tuple[Rule, ...]
     duplicates: tuple[Duplicate, ...]
@@ -83,6 +163,7 @@ def audit_rules(rules: Iterable[Rule]) -> AuditResult:
             duplicates.append(Duplicate(previous, rule))
         else:
             conflicts.append(Conflict("exact-policy", "same-rule-different-policy", previous, rule))
+            kept.append(rule)
 
     host_exact: dict[str, list[Rule]] = {}
     host_suffix: dict[str, list[Rule]] = {}
@@ -123,3 +204,104 @@ def audit_rules(rules: Iterable[Rule]) -> AuditResult:
                         add_overlap(left, right, "nested-host-suffix")
 
     return AuditResult(tuple(kept), tuple(duplicates), tuple(conflicts))
+
+
+def _is_blackmatrix(rule: Rule) -> bool:
+    return rule.source_id.lower().startswith("blackmatrix")
+
+
+def _is_policy(rule: Rule, name: str) -> bool:
+    return rule.policy.casefold() == name.casefold()
+
+
+def _specific_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
+    if conflict.relation == "host-inside-host-suffix":
+        if conflict.left.rule_type == "HOST" and conflict.right.rule_type == "HOST-SUFFIX":
+            return conflict.left, conflict.right
+        if conflict.right.rule_type == "HOST" and conflict.left.rule_type == "HOST-SUFFIX":
+            return conflict.right, conflict.left
+    if conflict.relation == "nested-host-suffix":
+        if conflict.left.rule_type == "HOST-SUFFIX" and conflict.right.rule_type == "HOST-SUFFIX":
+            if len(conflict.left.value) > len(conflict.right.value):
+                return conflict.left, conflict.right
+            if len(conflict.right.value) > len(conflict.left.value):
+                return conflict.right, conflict.left
+    return None
+
+
+def resolve_conflicts(audit: AuditResult) -> ResolutionResult:
+    """Resolve conflicts with an explicit Blackmatrix-first policy.
+
+    The priority order is explicit: Blackmatrix, direct over reject, and a
+    more specific host rule over a broader host rule. Conflicts that do not
+    match one of these rules remain unresolved and both rules stay out of the
+    resolved output. This avoids turning source order into an accidental
+    policy decision.
+    """
+
+    rejected: set[Rule] = set()
+    decisions: list[ConflictDecision] = []
+    unresolved_rules: set[Rule] = set()
+    for conflict in audit.conflicts:
+        left_is_preferred = _is_blackmatrix(conflict.left)
+        right_is_preferred = _is_blackmatrix(conflict.right)
+        if left_is_preferred != right_is_preferred:
+            winner = conflict.left if left_is_preferred else conflict.right
+            loser = conflict.right if left_is_preferred else conflict.left
+            decision = "prefer-blackmatrix"
+            reason = "Blackmatrix is the configured primary source."
+        elif _is_policy(conflict.left, "direct") != _is_policy(conflict.right, "direct"):
+            left_is_direct = _is_policy(conflict.left, "direct")
+            left_is_reject = _is_policy(conflict.left, "reject")
+            right_is_direct = _is_policy(conflict.right, "direct")
+            right_is_reject = _is_policy(conflict.right, "reject")
+            if (left_is_direct and right_is_reject) or (right_is_direct and left_is_reject):
+                winner = conflict.left if left_is_direct else conflict.right
+                loser = conflict.right if left_is_direct else conflict.left
+                decision = "prefer-direct"
+                reason = "direct takes precedence over reject."
+            else:
+                specific = _specific_rule(conflict)
+                if specific is not None:
+                    winner, loser = specific
+                    decision = "prefer-specific"
+                    reason = "A specific host rule takes precedence over a broader host rule."
+                else:
+                    winner = loser = None
+                    decision = "unresolved"
+                    reason = "No configured priority applies to this conflict."
+        else:
+            specific = _specific_rule(conflict)
+            if specific is not None:
+                winner, loser = specific
+                decision = "prefer-specific"
+                reason = "A specific host rule takes precedence over a broader host rule."
+            else:
+                winner = loser = None
+                decision = "unresolved"
+                reason = "No configured priority applies to this conflict."
+
+        if decision != "unresolved" and winner is not None and loser is not None:
+            rejected.add(loser)
+            decisions.append(
+                ConflictDecision(
+                    conflict=conflict,
+                    decision=decision,
+                    winner=winner,
+                    loser=loser,
+                    reason=reason,
+                )
+            )
+        else:
+            unresolved_rules.update((conflict.left, conflict.right))
+            decisions.append(
+                ConflictDecision(
+                    conflict=conflict,
+                    decision="unresolved",
+                    reason=reason,
+                )
+            )
+
+    rejected.update(unresolved_rules)
+    resolved = tuple(rule for rule in audit.kept_rules if rule not in rejected)
+    return ResolutionResult(tuple(resolved), tuple(decisions), frozenset(rejected))

@@ -5,7 +5,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .audit import audit_rules
+from .audit import audit_rules, resolve_conflicts
 from .fetch import FetchError, fetch_source
 from .manifest import ManifestError, load_manifest
 from .parsers import parse_resource
@@ -74,6 +74,7 @@ def _build(args: argparse.Namespace) -> int:
         )
 
     audit = audit_rules(all_rules)
+    resolution = resolve_conflicts(audit)
     generated_at_utc = datetime.now(timezone.utc).isoformat()
     output_dir.mkdir(parents=True, exist_ok=True)
     candidate_categories = render_category_filters(
@@ -83,7 +84,7 @@ def _build(args: argparse.Namespace) -> int:
         relative_prefix="outputs/quantumult-x/categories/candidates",
     )
     safe_categories = render_category_filters(
-        audit.safe_rules,
+        resolution.rules,
         output_dir / "categories" / "safe",
         generated_at_utc=generated_at_utc,
         relative_prefix="outputs/quantumult-x/categories/safe",
@@ -92,10 +93,10 @@ def _build(args: argparse.Namespace) -> int:
         safe_categories,
         output_dir / "filter_remote.safe.conf",
         repository_base_url=args.repository_base_url,
-        title="Conservative category filters",
+        title="Resolved category filters (Blackmatrix preferred)",
     )
-    render_audit(audit, output_dir / "audit.json")
-    render_conflicts(audit.conflicts, output_dir / "conflicts.md")
+    render_audit(audit, output_dir / "audit.json", resolution=resolution)
+    render_conflicts(audit.conflicts, output_dir / "conflicts.md", resolution=resolution)
     render_json(
         {
             "generated_at_utc": generated_at_utc,
@@ -105,10 +106,17 @@ def _build(args: argparse.Namespace) -> int:
             "enabled_source_count": len([source for source in sources if source.enabled]),
             "parsed_rule_count": len(all_rules),
             "kept_rule_count": len(audit.kept_rules),
-            "safe_rule_count": len(audit.safe_rules),
+            "safe_rule_count": len(resolution.rules),
+            "resolved_rule_count": len(resolution.rules),
             "conflicted_rule_count": len(audit.conflicted_rules),
             "duplicate_count": len(audit.duplicates),
             "conflict_count": len(audit.conflicts),
+            "resolved_conflict_count": len(resolution.preferred_decisions),
+            "blackmatrix_preferred_conflict_count": len(resolution.blackmatrix_decisions),
+            "direct_preferred_conflict_count": len(resolution.direct_decisions),
+            "specific_preferred_conflict_count": len(resolution.specific_decisions),
+            "unresolved_conflict_count": len(resolution.unresolved_decisions),
+            "resolution": resolution.to_summary_dict(),
             "candidate_categories": candidate_categories,
             "safe_categories": safe_categories,
             "parse_issue_count": len(parse_issues),
@@ -121,13 +129,19 @@ def _build(args: argparse.Namespace) -> int:
     )
     print(
         f"sources={len(source_metadata)} parsed_rules={len(all_rules)} "
-        f"kept_rules={len(audit.kept_rules)} safe_rules={len(audit.safe_rules)}"
+        f"kept_rules={len(audit.kept_rules)} resolved_rules={len(resolution.rules)}"
     )
-    print(f"duplicates={len(audit.duplicates)} conflicts={len(audit.conflicts)} parse_issues={len(parse_issues)}")
+    print(
+        f"duplicates={len(audit.duplicates)} conflicts={len(audit.conflicts)} "
+        f"blackmatrix_preferred={len(resolution.blackmatrix_decisions)} "
+        f"direct_preferred={len(resolution.direct_decisions)} "
+        f"specific_preferred={len(resolution.specific_decisions)} "
+        f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
+    )
     print(f"output={output_dir}")
     if fetch_errors:
         return 1
-    if args.fail_on_conflict and audit.conflicts:
+    if args.fail_on_conflict and resolution.unresolved_decisions:
         return 2
     return 0
 

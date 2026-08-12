@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-12T02:45:05.554224+00:00",
+  "generated_at_utc": "2026-08-12T03:01:06.560003+00:00",
   "generator_version": "0.1.0",
   "manifest": {
     "schema_version": 1,
@@ -263,11 +263,26 @@
   "source_count": 25,
   "enabled_source_count": 25,
   "parsed_rule_count": 6460,
-  "kept_rule_count": 6232,
-  "safe_rule_count": 5970,
-  "conflicted_rule_count": 388,
+  "kept_rule_count": 6358,
+  "safe_rule_count": 6154,
+  "resolved_rule_count": 6154,
+  "conflicted_rule_count": 394,
   "duplicate_count": 102,
-  "conflict_count": 244,
+  "conflict_count": 280,
+  "resolved_conflict_count": 257,
+  "blackmatrix_preferred_conflict_count": 176,
+  "direct_preferred_conflict_count": 7,
+  "specific_preferred_conflict_count": 74,
+  "unresolved_conflict_count": 23,
+  "resolution": {
+    "resolved_rule_count": 6154,
+    "rejected_rule_count": 204,
+    "resolved_conflict_count": 257,
+    "blackmatrix_preferred_conflict_count": 176,
+    "direct_preferred_conflict_count": 7,
+    "specific_preferred_conflict_count": 74,
+    "unresolved_conflict_count": 23
+  },
   "candidate_categories": [
     {
       "category": "reject",
@@ -321,7 +336,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 208,
+      "rule_count": 217,
       "source_count": 1
     },
     {
@@ -332,7 +347,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 16,
+      "rule_count": 21,
       "source_count": 1
     },
     {
@@ -343,7 +358,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 145,
+      "rule_count": 147,
       "source_count": 6
     },
     {
@@ -354,7 +369,7 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1879,
+      "rule_count": 1881,
       "source_count": 1
     },
     {
@@ -376,7 +391,7 @@
       "policies": [
         "谷歌服务"
       ],
-      "rule_count": 698,
+      "rule_count": 711,
       "source_count": 1
     },
     {
@@ -387,7 +402,7 @@
       "policies": [
         "GitHub"
       ],
-      "rule_count": 30,
+      "rule_count": 31,
       "source_count": 1
     },
     {
@@ -464,7 +479,7 @@
       "policies": [
         "国际媒体"
       ],
-      "rule_count": 201,
+      "rule_count": 239,
       "source_count": 1
     },
     {
@@ -486,7 +501,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 456,
+      "rule_count": 512,
       "source_count": 1
     }
   ],
@@ -499,7 +514,7 @@
       "policies": [
         "reject"
       ],
-      "rule_count": 941,
+      "rule_count": 961,
       "source_count": 1
     },
     {
@@ -510,7 +525,7 @@
       "policies": [
         "reject"
       ],
-      "rule_count": 76,
+      "rule_count": 80,
       "source_count": 1
     },
     {
@@ -543,7 +558,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 193,
+      "rule_count": 207,
       "source_count": 1
     },
     {
@@ -554,7 +569,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 5,
+      "rule_count": 12,
       "source_count": 1
     },
     {
@@ -565,7 +580,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 102,
+      "rule_count": 119,
       "source_count": 6
     },
     {
@@ -576,7 +591,7 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1848,
+      "rule_count": 1875,
       "source_count": 1
     },
     {
@@ -587,7 +602,7 @@
       "policies": [
         "谷歌服务"
       ],
-      "rule_count": 670,
+      "rule_count": 698,
       "source_count": 1
     },
     {
@@ -598,7 +613,7 @@
       "policies": [
         "GitHub"
       ],
-      "rule_count": 23,
+      "rule_count": 31,
       "source_count": 1
     },
     {
@@ -609,7 +624,7 @@
       "policies": [
         "Spotify"
       ],
-      "rule_count": 26,
+      "rule_count": 30,
       "source_count": 1
     },
     {
@@ -620,7 +635,7 @@
       "policies": [
         "电报代理"
       ],
-      "rule_count": 24,
+      "rule_count": 40,
       "source_count": 1
     },
     {
@@ -631,7 +646,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 23,
+      "rule_count": 32,
       "source_count": 1
     },
     {
@@ -642,7 +657,7 @@
       "policies": [
         "YouTube"
       ],
-      "rule_count": 173,
+      "rule_count": 191,
       "source_count": 1
     },
     {
@@ -653,7 +668,7 @@
       "policies": [
         "Netflix"
       ],
-      "rule_count": 1147,
+      "rule_count": 1158,
       "source_count": 1
     },
     {
@@ -675,7 +690,7 @@
       "policies": [
         "国际媒体"
       ],
-      "rule_count": 194,
+      "rule_count": 195,
       "source_count": 1
     },
     {

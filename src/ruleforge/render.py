@@ -6,7 +6,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Iterable
 
-from .audit import AuditResult, Conflict
+from .audit import AuditResult, Conflict, ResolutionResult
 from .model import Rule
 
 
@@ -153,12 +153,31 @@ def render_json(value: object, path: str | Path) -> None:
     output.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
-def render_audit(audit: AuditResult, path: str | Path) -> None:
-    render_json(audit.to_dict(), path)
+def render_audit(
+    audit: AuditResult,
+    path: str | Path,
+    *,
+    resolution: ResolutionResult | None = None,
+) -> None:
+    data = audit.to_dict()
+    if resolution is not None:
+        data["conflict_free_rule_count"] = len(audit.safe_rules)
+        data["safe_rule_count"] = len(resolution.rules)
+        data["resolved_rule_count"] = len(resolution.rules)
+        data["resolution"] = resolution.to_dict()
+    render_json(data, path)
 
 
-def render_conflicts(conflicts: Iterable[Conflict], path: str | Path) -> None:
+def render_conflicts(
+    conflicts: Iterable[Conflict],
+    path: str | Path,
+    *,
+    resolution: ResolutionResult | None = None,
+) -> None:
     conflict_list = list(conflicts)
+    decisions = {}
+    if resolution is not None:
+        decisions = {id(item.conflict): item for item in resolution.decisions}
     grouped: dict[tuple[str, ...], list[Conflict]] = defaultdict(list)
     for conflict in conflict_list:
         categories = tuple(
@@ -171,14 +190,25 @@ def render_conflicts(conflicts: Iterable[Conflict], path: str | Path) -> None:
     lines = [
         "# RuleForge conflict report",
         "",
-        f"These {len(conflict_list)} entries were excluded from the conservative category filters.",
-        "Review policy intent before adding an explicit resolver.",
+        f"These {len(conflict_list)} entries were evaluated by the source-priority resolver.",
+        "Priority: Blackmatrix, direct over reject, and specific host rules over broader host rules.",
+        "Conflicts that match none of these priorities remain unresolved and are excluded.",
         "",
         "## Summary",
         "",
     ]
     for kind, count in sorted(Counter(item.kind for item in conflict_list).items()):
         lines.append(f"- {kind}: {count}")
+    if resolution is not None:
+        lines.extend(
+            [
+                f"- resolved: {len(resolution.preferred_decisions)}",
+                f"- blackmatrix-preferred: {len(resolution.blackmatrix_decisions)}",
+                f"- direct-preferred: {len(resolution.direct_decisions)}",
+                f"- specific-preferred: {len(resolution.specific_decisions)}",
+                f"- unresolved: {len(resolution.unresolved_decisions)}",
+            ]
+        )
     lines.append("")
     index = 0
     for categories in sorted(grouped, key=lambda item: tuple(_category_sort_key(value) for value in item)):
@@ -188,11 +218,17 @@ def render_conflicts(conflicts: Iterable[Conflict], path: str | Path) -> None:
             index += 1
             left = f"{conflict.left.rule_type},{conflict.left.value} -> {conflict.left.policy} ({conflict.left.source_id})"
             right = f"{conflict.right.rule_type},{conflict.right.value} -> {conflict.right.policy} ({conflict.right.source_id})"
+            decision = decisions.get(id(conflict))
+            decision_line = "- decision: `unresolved`"
+            if decision is not None and decision.winner is not None:
+                winner = f"{decision.winner.rule_type},{decision.winner.value} -> {decision.winner.policy} ({decision.winner.source_id})"
+                decision_line = f"- decision: `{decision.decision}` -> `{winner}` ({decision.reason})"
             lines.extend(
                 [
                     f"### {index}. {conflict.kind} / {conflict.relation}",
                     f"- left: `{left}`",
                     f"- right: `{right}`",
+                    decision_line,
                     "",
                 ]
             )

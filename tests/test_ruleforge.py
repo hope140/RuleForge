@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ruleforge.audit import audit_rules  # noqa: E402
+from ruleforge.audit import audit_rules, resolve_conflicts  # noqa: E402
 from ruleforge.manifest import load_manifest  # noqa: E402
 from ruleforge.model import Source  # noqa: E402
 from ruleforge.parsers import parse_resource  # noqa: E402
@@ -46,6 +46,37 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(len(result.duplicates), 1)
         self.assertEqual(len(result.conflicts), 1)
         self.assertEqual(result.conflicts[0].kind, "exact-policy")
+
+    def test_blackmatrix_wins_policy_conflict(self) -> None:
+        reject = Source("rulego-test", "filter", "surge", "demo", "reject", "https://reject.test", "surge")
+        blackmatrix = Source(
+            "blackmatrix-test", "filter", "quantumult-x", "demo", "direct", "https://blackmatrix.test", "quantumult-x"
+        )
+        rejected_rule = parse_resource("DOMAIN,example.com\n", reject).rules[0]
+        preferred_rule = parse_resource("HOST,example.com\n", blackmatrix).rules[0]
+        audit = audit_rules((rejected_rule, preferred_rule))
+        resolution = resolve_conflicts(audit)
+        self.assertEqual(len(audit.kept_rules), 2)
+        self.assertEqual(len(resolution.preferred_decisions), 1)
+        self.assertEqual(len(resolution.unresolved_decisions), 0)
+        self.assertEqual(resolution.rules, (preferred_rule,))
+
+    def test_direct_wins_reject_and_specific_rule_wins_broad_rule(self) -> None:
+        reject = Source("rulego-reject", "filter", "surge", "demo", "reject", "https://reject.test", "surge")
+        direct = Source("rulego-direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")
+        broad = Source("rulego-broad", "filter", "surge", "demo", "全球加速", "https://broad.test", "surge")
+        exact_reject = parse_resource("DOMAIN,exact.other.com\n", reject).rules[0]
+        exact_direct = parse_resource("DOMAIN,exact.other.com\n", direct).rules[0]
+        specific = parse_resource("DOMAIN,specific.example.com\n", direct).rules[0]
+        broad_rule = parse_resource("DOMAIN-SUFFIX,example.com\n", broad).rules[0]
+        audit = audit_rules((exact_reject, exact_direct, specific, broad_rule))
+        resolution = resolve_conflicts(audit)
+        self.assertEqual(len(resolution.direct_decisions), 1)
+        self.assertEqual(len(resolution.specific_decisions), 1)
+        self.assertIn(exact_direct, resolution.rules)
+        self.assertIn(specific, resolution.rules)
+        self.assertNotIn(exact_reject, resolution.rules)
+        self.assertNotIn(broad_rule, resolution.rules)
 
     def test_host_suffix_overlap_is_reported(self) -> None:
         direct = Source("direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")
