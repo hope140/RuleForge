@@ -3998,7 +3998,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cdn-apple.com",
         "options": [],
-        "line_number": 1779,
+        "line_number": 1786,
         "raw": "HOST-SUFFIX,cdn-apple.com,Apple"
       },
       "dropped": {
@@ -4022,7 +4022,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "digicert.com",
         "options": [],
-        "line_number": 1780,
+        "line_number": 1779,
         "raw": "HOST-SUFFIX,digicert.com,Apple"
       },
       "dropped": {
