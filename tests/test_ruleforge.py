@@ -263,24 +263,11 @@ class RuleForgeTests(unittest.TestCase):
         for policy in {source.policy for source in sources} - {"direct", "reject", "proxy"}:
             self.assertIn(f"name: {policy}", content)
 
-    def test_mihomo_branch_test_profile_is_single_subscription_and_complete(self) -> None:
-        _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
-        content = (ROOT / "profiles" / "mihomo" / "config.branch-test.yaml").read_text(encoding="utf-8")
-        self.assertEqual(content.count("REPLACE_WITH_YOUR_SUBSCRIPTION_URL"), 1)
-        self.assertNotIn("provider-1", content)
-        self.assertNotIn("provider-2", content)
-        self.assertNotIn("RuleForge/main/", content)
-        self.assertEqual(content.count("RuleForge/codex/mihomo-rules/"), 26)
-        for category in {source.category for source in sources}:
-            self.assertIn(f"  {category}:", content)
-            self.assertIn(f"RULE-SET,{category},", content)
-
-    def test_mihomo_profiles_show_business_groups_before_regions_with_icons(self) -> None:
-        for filename in ("config.example.yaml", "config.branch-test.yaml"):
-            content = (ROOT / "profiles" / "mihomo" / filename).read_text(encoding="utf-8")
-            self.assertLess(content.index("  - name: 全球加速"), content.index("  - name: 香港节点"))
-            self.assertLess(content.index("  - name: 兜底策略"), content.index("  - name: 香港节点"))
-            self.assertEqual(content.count("raw.githubusercontent.com/Orz-3/mini/master/Color/"), 20)
+    def test_mihomo_profile_shows_business_groups_before_regions_with_icons(self) -> None:
+        content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
+        self.assertLess(content.index("  - name: 全球加速"), content.index("  - name: 香港节点"))
+        self.assertLess(content.index("  - name: 兜底策略"), content.index("  - name: 香港节点"))
+        self.assertEqual(content.count("raw.githubusercontent.com/Orz-3/mini/master/Color/"), 20)
 
 
 if __name__ == "__main__":

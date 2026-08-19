@@ -1,5 +1,5 @@
 # RuleForge Mihomo example profile
-# Replace the two subscription URLs and the controller secret before use.
+# Replace the two subscription URLs before use.
 # Quantumult X rewrite, MITM and scheduled-task sections have no equivalent here.
 
 mixed-port: 7890
@@ -11,7 +11,7 @@ ipv6: false
 unified-delay: true
 tcp-concurrent: true
 external-controller: "127.0.0.1:9090"
-secret: "REPLACE_WITH_A_RANDOM_SECRET"
+secret: ""
 
 profile:
   store-selected: true
