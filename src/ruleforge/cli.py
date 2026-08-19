@@ -15,6 +15,9 @@ from .render import (
     render_conflicts,
     render_filter_remote_conf,
     render_json,
+    render_mihomo_category_filters,
+    render_mihomo_rule_providers,
+    render_mihomo_rules,
 )
 
 
@@ -39,7 +42,10 @@ def _lint(args: argparse.Namespace) -> int:
 
 def _build(args: argparse.Namespace) -> int:
     manifest_data, sources = load_manifest(args.manifest)
-    output_dir = Path(args.output_dir)
+    target = str(manifest_data["target"]).lower()
+    if target not in {"quantumult-x", "mihomo"}:
+        raise ManifestError(f"unsupported target: {target}")
+    output_dir = Path(args.output_dir or f"outputs/{target}")
     cache_dir = Path(args.cache_dir)
     all_rules = []
     parse_issues = []
@@ -76,25 +82,54 @@ def _build(args: argparse.Namespace) -> int:
     audit = audit_rules(all_rules)
     resolution = resolve_conflicts(audit)
     generated_at_utc = datetime.now(timezone.utc).isoformat()
+    if target == "mihomo":
+        unsupported = []
+        for rule in all_rules:
+            try:
+                rule.to_mihomo()
+            except ValueError:
+                unsupported.append(rule)
+        if unsupported:
+            sample = ", ".join(
+                f"{rule.source_id}:{rule.line_number}:{rule.rule_type}" for rule in unsupported[:10]
+            )
+            print(
+                f"error: unsupported Mihomo rules={len(unsupported)} sample={sample}",
+                file=sys.stderr,
+            )
+            return 3
+
     output_dir.mkdir(parents=True, exist_ok=True)
-    candidate_categories = render_category_filters(
+    category_renderer = (
+        render_mihomo_category_filters if target == "mihomo" else render_category_filters
+    )
+    relative_root = f"outputs/{target}/categories"
+    candidate_categories = category_renderer(
         audit.kept_rules,
         output_dir / "categories" / "candidates",
         generated_at_utc=generated_at_utc,
-        relative_prefix="outputs/quantumult-x/categories/candidates",
+        relative_prefix=f"{relative_root}/candidates",
     )
-    safe_categories = render_category_filters(
+    safe_categories = category_renderer(
         resolution.rules,
         output_dir / "categories" / "safe",
         generated_at_utc=generated_at_utc,
-        relative_prefix="outputs/quantumult-x/categories/safe",
+        relative_prefix=f"{relative_root}/safe",
     )
-    render_filter_remote_conf(
-        safe_categories,
-        output_dir / "filter_remote.safe.conf",
-        repository_base_url=args.repository_base_url,
-        title="Resolved category filters (Blackmatrix preferred)",
-    )
+    if target == "mihomo":
+        render_mihomo_rule_providers(
+            safe_categories,
+            output_dir / "rule-providers.safe.yaml",
+            repository_base_url=args.repository_base_url,
+        )
+        render_mihomo_rules(safe_categories, output_dir / "rules.safe.yaml")
+    else:
+        render_filter_remote_conf(
+            safe_categories,
+            output_dir / "filter_remote.safe.conf",
+            repository_base_url=args.repository_base_url,
+            title="Resolved category filters (Blackmatrix preferred)",
+        )
     render_audit(audit, output_dir / "audit.json", resolution=resolution)
     render_conflicts(audit.conflicts, output_dir / "conflicts.md", resolution=resolution)
     render_json(
@@ -141,7 +176,7 @@ def _build(args: argparse.Namespace) -> int:
         f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
     )
     print(f"output={output_dir}")
-    if fetch_errors:
+    if fetch_errors or parse_issues:
         return 1
     if args.fail_on_conflict and resolution.unresolved_decisions:
         return 2
@@ -158,7 +193,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     build = subparsers.add_parser("build", help="fetch, parse, audit and render rules")
     _manifest_arg(build)
-    build.add_argument("--output-dir", default="outputs/quantumult-x")
+    build.add_argument("--output-dir")
     build.add_argument("--cache-dir", default=".cache/ruleforge")
     build.add_argument("--timeout", type=float, default=30.0)
     build.add_argument("--offline", action="store_true")

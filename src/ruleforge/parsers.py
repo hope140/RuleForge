@@ -69,9 +69,21 @@ def _normalize_value(rule_type: str, value: str) -> str:
 
 def _options(source: Source, parts: list[str]) -> tuple[str, ...]:
     extras = [item.strip() for item in parts[2:] if item.strip()]
-    if source.format.lower() in {"surge", "clash"}:
+    if source.format.lower() in {"surge", "clash", "mihomo"}:
         return tuple(extras)
     return tuple(item for item in extras if item.lower() in KNOWN_OPTIONS)
+
+
+def _unwrap_clash_payload(raw: str, source: Source) -> str | None:
+    if source.parser.lower() not in {"clash", "mihomo", "clash-classical"}:
+        return raw
+    if raw == "payload:":
+        return None
+    if raw.startswith("-"):
+        raw = raw[1:].strip()
+    if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in {"'", '"'}:
+        raw = raw[1:-1].strip()
+    return raw
 
 
 def parse_resource(text: str, source: Source) -> ParseResult:
@@ -80,6 +92,9 @@ def parse_resource(text: str, source: Source) -> ParseResult:
     for line_number, raw_line in enumerate(text.splitlines(), start=1):
         raw = raw_line.strip()
         if not raw or raw.startswith(COMMENT_PREFIXES):
+            continue
+        raw = _unwrap_clash_payload(raw, source)
+        if raw is None:
             continue
         stripped = INLINE_COMMENT_RE.sub("", raw).strip()
         if not stripped:

@@ -11,6 +11,23 @@ QUANTUMULTX_OPTIONS = {
     "multi-interface-balance",
 }
 
+MIHOMO_TYPE_MAP = {
+    "HOST": "DOMAIN",
+    "HOST-SUFFIX": "DOMAIN-SUFFIX",
+    "HOST-KEYWORD": "DOMAIN-KEYWORD",
+    "HOST-WILDCARD": "DOMAIN-WILDCARD",
+    "IP6-CIDR": "IP-CIDR6",
+    "DEST-PORT": "DST-PORT",
+}
+MIHOMO_NATIVE_TYPES = {
+    "IP-CIDR",
+    "IP-ASN",
+    "GEOIP",
+    "PROCESS-NAME",
+    "IN-PORT",
+}
+MIHOMO_OPTIONS = {"no-resolve", "src"}
+
 
 @dataclass(frozen=True)
 class Source:
@@ -60,6 +77,23 @@ class Rule:
             for option in self.options
             if option.lower() in QUANTUMULTX_OPTIONS or option.lower().startswith("via-interface=")
         )
+        return ",".join(fields)
+
+    def to_mihomo(self) -> str:
+        """Render a policy-free Mihomo classical rule.
+
+        Policy routing belongs to the profile's ``RULE-SET`` line.  Reject
+        unsupported types instead of silently publishing a resource that
+        Mihomo cannot use.
+        """
+
+        rule_type = MIHOMO_TYPE_MAP.get(self.rule_type)
+        if rule_type is None and self.rule_type in MIHOMO_NATIVE_TYPES:
+            rule_type = self.rule_type
+        if rule_type is None:
+            raise ValueError(f"unsupported Mihomo rule type: {self.rule_type}")
+        fields = [rule_type, self.value]
+        fields.extend(option for option in self.options if option.lower() in MIHOMO_OPTIONS)
         return ",".join(fields)
 
     def to_dict(self) -> dict[str, Any]:

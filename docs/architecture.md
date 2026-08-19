@@ -11,7 +11,7 @@ source manifest
   -> exact deduplication
   -> semantic overlap analysis
   -> policy resolution
-  -> category filter renderer
+  -> target renderer (Quantumult X or Mihomo)
   -> audit report
 ```
 
@@ -44,7 +44,7 @@ source manifest
 
 ## 输出原则
 
-Quantumult X 输出应优先使用其原生规则类型。Surge 来源不能未经解析就直接复制到原生 Quantumult X 输出中；每个输出文件都要标记生成器版本、来源快照和构建时间。
+Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、去重和冲突裁决。目标渲染器只负责语法转换，不能改变业务分类或裁决结果。Mihomo Classical 文件不包含策略列，策略由配置中的 `RULE-SET` 指定；核心不支持的规则类型必须使构建失败。
 
 当前输出按业务分类拆分，而不是按 `HOST`、`IP-CIDR` 等语法类型拆分。同一类可以同时包含多个规则类型，但只承载一个明确的业务意图和策略映射。远程过滤器片段按业务优先级输出，专项服务不会因为规则语法不同而被拆散。
 
@@ -56,4 +56,5 @@ Quantumult X 输出应优先使用其原生规则类型。Surge 来源不能未�
 
 - 不接收或生成节点订阅。
 - 不把用户本地 mitm、证书、私钥、Cookie、Token 写入仓库。
+- Mihomo 示例模板只保留订阅与控制器密钥占位符，不登记真实值。
 - 公开输出前重新检查来源许可和第三方转载要求。

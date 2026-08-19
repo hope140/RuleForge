@@ -3,23 +3,60 @@ from __future__ import annotations
 import sys
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
+from unittest.mock import Mock, patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from ruleforge.audit import audit_rules, resolve_conflicts  # noqa: E402
+from ruleforge.fetch import FetchError, fetch_source  # noqa: E402
 from ruleforge.manifest import load_manifest  # noqa: E402
 from ruleforge.model import Source  # noqa: E402
 from ruleforge.parsers import parse_resource  # noqa: E402
 
 
 class RuleForgeTests(unittest.TestCase):
+    def test_fetch_retries_transient_network_errors(self) -> None:
+        source = Source("test", "filter", "surge", "demo", "direct", "https://example.test", "surge")
+        response = Mock()
+        response.status = 200
+        response.read.return_value = b"DOMAIN,example.com\n"
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch("ruleforge.fetch.urllib.request.urlopen", side_effect=[urllib.error.URLError("reset"), response]) as urlopen:
+                with patch("ruleforge.fetch.time.sleep"):
+                    result = fetch_source(source, temp_dir, attempts=3)
+            self.assertEqual(result.text, "DOMAIN,example.com\n")
+            self.assertEqual(urlopen.call_count, 2)
+
+    def test_fetch_does_not_retry_http_404(self) -> None:
+        source = Source("test", "filter", "surge", "demo", "direct", "https://example.test", "surge")
+        error = urllib.error.HTTPError(source.url, 404, "Not Found", None, None)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch("ruleforge.fetch.urllib.request.urlopen", side_effect=error) as urlopen:
+                with self.assertRaisesRegex(FetchError, "HTTP 404"):
+                    fetch_source(source, temp_dir, attempts=3)
+            self.assertEqual(urlopen.call_count, 1)
+
     def test_manifest_has_unique_seed_sources(self) -> None:
-        _, sources = load_manifest(ROOT / "sources" / "quantumultx.yaml")
-        self.assertEqual(len(sources), 94)
-        self.assertEqual(len({source.id for source in sources}), 94)
-        self.assertEqual(len({source.url for source in sources}), 94)
+        for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
+            manifest, sources = load_manifest(ROOT / "sources" / filename)
+            self.assertEqual(manifest["target"], target)
+            self.assertEqual(len(sources), 94)
+            self.assertEqual(len({source.id for source in sources}), 94)
+            self.assertEqual(len({source.url for source in sources}), 94)
+
+    def test_mihomo_manifest_uses_native_clash_sources(self) -> None:
+        _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
+        blackmatrix = [source for source in sources if source.id.startswith("blackmatrix-")]
+        self.assertEqual(len(blackmatrix), 85)
+        self.assertTrue(all(source.format == "clash" for source in blackmatrix))
+        self.assertTrue(all(source.parser == "clash-classical" for source in blackmatrix))
+        self.assertTrue(all("/rule/Clash/" in source.url for source in blackmatrix))
+        self.assertTrue(all(source.url.endswith(".yaml") for source in blackmatrix))
 
     def test_surge_domain_is_rendered_as_quantumultx_host(self) -> None:
         source = Source("test", "filter", "surge", "demo", "direct", "https://example.test", "surge")
@@ -48,6 +85,30 @@ class RuleForgeTests(unittest.TestCase):
         result = parse_resource("DOMAIN-SUFFIX,example.com,extended-matching\n", source)
         self.assertEqual(result.rules[0].options, ("extended-matching",))
         self.assertEqual(result.rules[0].to_quantumultx(), "host-suffix,example.com,AI")
+
+    def test_clash_payload_is_rendered_as_policy_free_mihomo_classical(self) -> None:
+        source = Source(
+            "blackmatrix-test",
+            "filter",
+            "clash",
+            "ai",
+            "AI",
+            "https://example.test/rules.yaml",
+            "clash-classical",
+        )
+        result = parse_resource(
+            "payload:\n  - DOMAIN,Chat.Example.COM\n  - DOMAIN-SUFFIX,example.org,extended-matching\n",
+            source,
+        )
+        self.assertEqual(result.issues, ())
+        self.assertEqual(result.rules[0].to_mihomo(), "DOMAIN,chat.example.com")
+        self.assertEqual(result.rules[1].to_mihomo(), "DOMAIN-SUFFIX,example.org")
+
+    def test_mihomo_rejects_user_agent_rules(self) -> None:
+        source = Source("test", "filter", "surge", "demo", "AI", "https://example.test", "surge")
+        rule = parse_resource("USER-AGENT,Example*\n", source).rules[0]
+        with self.assertRaisesRegex(ValueError, "unsupported Mihomo rule type: USER-AGENT"):
+            rule.to_mihomo()
 
     def test_exact_duplicate_and_policy_conflict_are_distinguished(self) -> None:
         direct = Source("direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")
@@ -161,6 +222,46 @@ class RuleForgeTests(unittest.TestCase):
             content = (Path(temp_dir) / "ai.list").read_text(encoding="utf-8")
             self.assertIn("host,example.com,AI\n", content)
             self.assertIn("host-suffix,example.org,AI\n", content)
+
+    def test_mihomo_outputs_preserve_category_order_and_policy_mapping(self) -> None:
+        from ruleforge.render import (
+            render_mihomo_category_filters,
+            render_mihomo_rule_providers,
+            render_mihomo_rules,
+        )
+
+        reject = Source("reject", "filter", "surge", "reject", "reject", "https://r.test", "surge")
+        ai = Source("ai", "filter", "surge", "ai", "AI", "https://a.test", "surge")
+        rules = (
+            parse_resource("DOMAIN,ai.example\n", ai).rules[0],
+            parse_resource("DOMAIN-SUFFIX,ads.example\n", reject).rules[0],
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            entries = render_mihomo_category_filters(
+                rules, root / "safe", relative_prefix="outputs/mihomo/categories/safe"
+            )
+            self.assertEqual([entry["category"] for entry in entries], ["reject", "ai"])
+            self.assertIn("DOMAIN,ai.example\n", (root / "safe" / "ai.list").read_text(encoding="utf-8"))
+            self.assertNotIn(",AI\n", (root / "safe" / "ai.list").read_text(encoding="utf-8"))
+            render_mihomo_rule_providers(entries, root / "providers.yaml", repository_base_url="https://raw.test")
+            render_mihomo_rules(entries, root / "rules.yaml")
+            providers = (root / "providers.yaml").read_text(encoding="utf-8")
+            route_rules = (root / "rules.yaml").read_text(encoding="utf-8")
+            self.assertIn("behavior: classical", providers)
+            self.assertIn("format: text", providers)
+            self.assertLess(route_rules.index("RULE-SET,reject,REJECT"), route_rules.index("RULE-SET,ai,AI"))
+
+    def test_mihomo_profile_references_every_category_and_policy(self) -> None:
+        _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
+        content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
+        categories = {source.category for source in sources}
+        self.assertEqual(len(categories), 26)
+        for category in categories:
+            self.assertIn(f"  {category}:", content)
+            self.assertIn(f"RULE-SET,{category},", content)
+        for policy in {source.policy for source in sources} - {"direct", "reject", "proxy"}:
+            self.assertIn(f"name: {policy}", content)
 
 
 if __name__ == "__main__":

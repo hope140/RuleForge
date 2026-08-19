@@ -1,0 +1,851 @@
+schema_version: 1
+target: mihomo
+description: 基于 QuanX 业务分类建立的 Mihomo 原生公开分流来源
+sources:
+  - id: rulego-advertising
+    kind: filter
+    format: surge
+    category: reject
+    policy: reject
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list
+    parser: surge
+    enabled: true
+
+  - id: rulego-tracking
+    kind: filter
+    format: surge
+    category: privacy
+    policy: reject
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list
+    parser: surge
+    enabled: true
+
+  - id: blackmatrix-openai
+    kind: filter
+    format: clash
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-claude
+    kind: filter
+    format: clash
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-gemini
+    kind: filter
+    format: clash
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-copilot
+    kind: filter
+    format: clash
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-anthropic
+    kind: filter
+    format: clash
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-civitai
+    kind: filter
+    format: clash
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: rulego-ai-supplement
+    kind: filter
+    format: surge
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list
+    parser: surge
+    enabled: true
+    notes: 保留 Blackmatrix 没有完整独立列表的 OpenRouter、Cursor、Perplexity、Grok 等覆盖；与其他 AI 源使用同一策略。
+
+  - id: acl4ssr-ai
+    kind: filter
+    format: surge
+    category: ai
+    policy: AI
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list
+    parser: surge
+    enabled: true
+    notes: 作为 AI 交叉来源，按 Mihomo Classical 规则参与统一去重和冲突审计。
+
+  - id: blackmatrix-apple
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-apple-id
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleID/AppleID.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-apple-mail
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMail/AppleMail.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-apple-media
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMedia/AppleMedia.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-apple-music
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMusic/AppleMusic.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-apple-news
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-apple-proxy
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleProxy/AppleProxy.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-apple-tv
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleTV/AppleTV.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-appstore
+    kind: filter
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppStore/AppStore.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-youtube
+    kind: filter
+    format: clash
+    category: youtube
+    policy: YouTube
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-netflix
+    kind: filter
+    format: clash
+    category: netflix
+    policy: Netflix
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-tiktok
+    kind: filter
+    format: clash
+    category: tiktok
+    policy: 海外抖音
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-google-voice
+    kind: filter
+    format: clash
+    category: google-voice
+    policy: 美国节点
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleVoice/GoogleVoice.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-google
+    kind: filter
+    format: clash
+    category: google
+    policy: 谷歌服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-google-drive
+    kind: filter
+    format: clash
+    category: google
+    policy: 谷歌服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-google-earth
+    kind: filter
+    format: clash
+    category: google
+    policy: 谷歌服务
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleEarth/GoogleEarth.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-microsoft
+    kind: filter
+    format: clash
+    category: microsoft
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-onedrive
+    kind: filter
+    format: clash
+    category: cloud
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-dropbox
+    kind: filter
+    format: clash
+    category: cloud
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Dropbox/Dropbox.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-mega
+    kind: filter
+    format: clash
+    category: cloud
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MEGA/MEGA.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-bing
+    kind: filter
+    format: clash
+    category: microsoft
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-github
+    kind: filter
+    format: clash
+    category: github
+    policy: GitHub
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-spotify
+    kind: filter
+    format: clash
+    category: spotify
+    policy: Spotify
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-telegram
+    kind: filter
+    format: clash
+    category: telegram
+    policy: 电报代理
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-twitter
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-facebook
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-instagram
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-whatsapp
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Whatsapp/Whatsapp.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-line
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-kakaotalk
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/KakaoTalk/KakaoTalk.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-discord
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-reddit
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Reddit/Reddit.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-social-threads
+    kind: filter
+    format: clash
+    category: social
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Threads/Threads.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-gitlab
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitLab/GitLab.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-docker
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Docker/Docker.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-figma
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Figma/Figma.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-notion
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Notion/Notion.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-npmjs
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Npmjs/Npmjs.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-jetbrains
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Jetbrains/Jetbrains.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-sourceforge
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SourceForge/SourceForge.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-vercel
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Vercel/Vercel.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-developer-slack
+    kind: filter
+    format: clash
+    category: developer
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Slack/Slack.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: rulego-china-media
+    kind: filter
+    format: surge
+    category: china-media
+    policy: 港台番剧
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list
+    parser: surge
+    enabled: true
+
+  - id: rulego-global-media
+    kind: filter
+    format: surge
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list
+    parser: surge
+    enabled: true
+
+  - id: blackmatrix-global-media-disney
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-hbo
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-hulu
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hulu/Hulu.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-amazon-prime-video
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-prime-video
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrimeVideo/PrimeVideo.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-twitch
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitch/Twitch.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-abema-tv
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AbemaTV/AbemaTV.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-bilibili-intl
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBiliIntl/BiliBiliIntl.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-iqiyi-intl
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/iQIYIIntl/iQIYIIntl.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-naver-tv
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NaverTV/NaverTV.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-tvb
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TVB/TVB.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-asian
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AsianMedia/AsianMedia.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-joox
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/JOOX/JOOX.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-kkbox
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/KKBOX/KKBOX.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-paramount-plus
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ParamountPlus/ParamountPlus.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-global-media-peacock
+    kind: filter
+    format: clash
+    category: global-media
+    policy: 国际媒体
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Peacock/Peacock.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-youtube-music
+    kind: filter
+    format: clash
+    category: youtube
+    policy: YouTube
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-streaming-bilibili
+    kind: filter
+    format: clash
+    category: china-streaming
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-streaming-youku
+    kind: filter
+    format: clash
+    category: china-streaming
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Youku/Youku.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-streaming-iqiyi
+    kind: filter
+    format: clash
+    category: china-streaming
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/iQIYI/iQIYI.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-streaming-acfun
+    kind: filter
+    format: clash
+    category: china-streaming
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AcFun/AcFun.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-alibaba
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-baidu
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Baidu/Baidu.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-tencent
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-xiaomi
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoMi/XiaoMi.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-jingdong
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/JingDong/JingDong.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-pinduoduo
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pinduoduo/Pinduoduo.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-meituan
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MeiTuan/MeiTuan.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-didi
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DiDi/DiDi.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-12306
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/12306/12306.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-sina
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sina/Sina.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-weibo
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Weibo/Weibo.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-zhihu
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Zhihu/Zhihu.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-china-services-douban
+    kind: filter
+    format: clash
+    category: china-services
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DouBan/DouBan.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-alipay
+    kind: filter
+    format: clash
+    category: alipay
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AliPay/AliPay.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: blackmatrix-wechat
+    kind: filter
+    format: clash
+    category: wechat
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: rulego-direct-plus
+    kind: filter
+    format: surge
+    category: direct-exception
+    policy: direct
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list
+    parser: surge
+    enabled: true
+
+  - id: blackmatrix-direct
+    kind: filter
+    format: clash
+    category: china-direct
+    policy: direct
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
+    parser: clash-classical
+    enabled: true
+
+  - id: rulego-proxy-plus
+    kind: filter
+    format: surge
+    category: proxy-exception
+    policy: proxy
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list
+    parser: surge
+    enabled: true
+
+  - id: rulego-proxy
+    kind: filter
+    format: surge
+    category: proxy
+    policy: 全球加速
+    url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list
+    parser: surge
+    enabled: true
