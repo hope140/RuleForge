@@ -75,6 +75,9 @@ jobs:
           printf '%s\n' 'proxies:' '  - { name: "Validation Node 2", type: http, server: 127.0.0.1, port: 8081 }' \
             > "$home/proxy_providers/provider-2.yaml"
           "$RUNNER_TEMP/mihomo" -t -d "$home" -f "$GITHUB_WORKSPACE/profiles/mihomo/config.example.yaml"
+          printf '%s\n' 'proxies:' '  - { name: "Validation Node", type: http, server: 127.0.0.1, port: 8080 }' \
+            > "$home/proxy_providers/subscription.yaml"
+          "$RUNNER_TEMP/mihomo" -t -d "$home" -f "$GITHUB_WORKSPACE/profiles/mihomo/config.branch-test.yaml"
 
       - name: Detect meaningful generated changes
         id: changes
