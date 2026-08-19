@@ -1,0 +1,184 @@
+# GENERATED FILE - DO NOT EDIT
+rule-providers:
+  reject:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/reject.list"
+    path: ./rule_providers/reject.list
+    interval: 172800
+  privacy:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/privacy.list"
+    path: ./rule_providers/privacy.list
+    interval: 172800
+  alipay:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/alipay.list"
+    path: ./rule_providers/alipay.list
+    interval: 172800
+  wechat:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/wechat.list"
+    path: ./rule_providers/wechat.list
+    interval: 172800
+  china-services:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-services.list"
+    path: ./rule_providers/china-services.list
+    interval: 172800
+  china-streaming:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-streaming.list"
+    path: ./rule_providers/china-streaming.list
+    interval: 172800
+  china-direct:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-direct.list"
+    path: ./rule_providers/china-direct.list
+    interval: 172800
+  direct-exception:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/direct-exception.list"
+    path: ./rule_providers/direct-exception.list
+    interval: 172800
+  ai:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/ai.list"
+    path: ./rule_providers/ai.list
+    interval: 172800
+  apple:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/apple.list"
+    path: ./rule_providers/apple.list
+    interval: 172800
+  google-voice:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/google-voice.list"
+    path: ./rule_providers/google-voice.list
+    interval: 172800
+  google:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/google.list"
+    path: ./rule_providers/google.list
+    interval: 172800
+  microsoft:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/microsoft.list"
+    path: ./rule_providers/microsoft.list
+    interval: 172800
+  cloud:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/cloud.list"
+    path: ./rule_providers/cloud.list
+    interval: 172800
+  social:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/social.list"
+    path: ./rule_providers/social.list
+    interval: 172800
+  developer:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/developer.list"
+    path: ./rule_providers/developer.list
+    interval: 172800
+  github:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/github.list"
+    path: ./rule_providers/github.list
+    interval: 172800
+  spotify:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/spotify.list"
+    path: ./rule_providers/spotify.list
+    interval: 172800
+  telegram:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/telegram.list"
+    path: ./rule_providers/telegram.list
+    interval: 172800
+  tiktok:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/tiktok.list"
+    path: ./rule_providers/tiktok.list
+    interval: 172800
+  youtube:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/youtube.list"
+    path: ./rule_providers/youtube.list
+    interval: 172800
+  netflix:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/netflix.list"
+    path: ./rule_providers/netflix.list
+    interval: 172800
+  china-media:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-media.list"
+    path: ./rule_providers/china-media.list
+    interval: 172800
+  global-media:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/global-media.list"
+    path: ./rule_providers/global-media.list
+    interval: 172800
+  proxy-exception:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/proxy-exception.list"
+    path: ./rule_providers/proxy-exception.list
+    interval: 172800
+  proxy:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/proxy.list"
+    path: ./rule_providers/proxy.list
+    interval: 172800

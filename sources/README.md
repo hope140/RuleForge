@@ -6,9 +6,9 @@
 
 - `id`：稳定的内部标识
 - `kind`：资源类型，目前使用 `filter`
-- `format`：上游格式，例如 `quantumult-x` 或 `surge`
+- `format`：上游格式，例如 `quantumult-x`、`clash` 或 `surge`
 - `category`：业务分类
-- `policy`：输出到 Quantumult X 时使用的策略
+- `policy`：目标客户端通过规则分类使用的策略
 - `url`：公开资源地址
 - `parser`：解析方式
 - `enabled`：是否纳入构建
@@ -18,7 +18,7 @@
 
 - `id` 使用 `来源-业务分类[-补充说明]` 的小写 kebab-case，例如 `blackmatrix-openai`、`rulego-ai-supplement`。
 - `category` 使用稳定的小写 kebab-case，表示业务归属，例如 `ai`、`apple`、`social`、`china-services`；同类来源必须使用同一个分类名。
-- `policy` 只填写目标 Quantumult X 中已经存在的策略名，例如 `AI`、`苹果服务`、`direct`，不在来源名称里重复表达策略。
+- `policy` 只填写目标配置中已经存在的策略名，例如 `AI`、`苹果服务`、`direct`，不在来源名称里重复表达策略。
 
 规则源更新后，先记录变更，再运行解析、去重和冲突审计；不要直接覆盖生成结果。
 
@@ -29,6 +29,13 @@
 - `ACL4SSR/ACL4SSR`：作为交叉来源，优先用于发现主来源遗漏的规则；不把它的客户端配置格式直接当作 Quantumult X 输出。
 
 同一个 `category` 可以登记多个来源。构建时会先把同类来源合并，再统一规范化、精确去重、语义冲突审计，最后分别输出候选版和已按优先级裁决的规则版。
+
+## 双目标来源
+
+- `quantumultx.yaml` 使用 Blackmatrix 原生 Quantumult X 列表。
+- `mihomo.yaml` 是独立清单，沿用相同业务分类与策略边界，但使用 Blackmatrix 原生 Clash classical YAML；兼容的 RuleGo Surge 与 ACL4SSR Clash 文本继续作为补充。
+- 两份清单的来源 ID 保持对应，便于比较覆盖差异；生成结果不互相作为输入。
+- Mihomo 构建严格拒绝 `USER-AGENT`、`URL-REGEX` 等核心不支持的规则类型，避免静默降级。
 
 ## 冲突优先级
 

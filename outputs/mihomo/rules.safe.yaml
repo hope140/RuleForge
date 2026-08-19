@@ -1,0 +1,28 @@
+# GENERATED FILE - DO NOT EDIT
+rules:
+  - RULE-SET,reject,REJECT
+  - RULE-SET,privacy,REJECT
+  - RULE-SET,alipay,DIRECT
+  - RULE-SET,wechat,DIRECT
+  - RULE-SET,china-services,DIRECT
+  - RULE-SET,china-streaming,DIRECT
+  - RULE-SET,china-direct,DIRECT
+  - RULE-SET,direct-exception,DIRECT
+  - RULE-SET,ai,AI
+  - RULE-SET,apple,苹果服务
+  - RULE-SET,google-voice,美国节点
+  - RULE-SET,google,谷歌服务
+  - RULE-SET,microsoft,全球加速
+  - RULE-SET,cloud,全球加速
+  - RULE-SET,social,全球加速
+  - RULE-SET,developer,全球加速
+  - RULE-SET,github,GitHub
+  - RULE-SET,spotify,Spotify
+  - RULE-SET,telegram,电报代理
+  - RULE-SET,tiktok,海外抖音
+  - RULE-SET,youtube,YouTube
+  - RULE-SET,netflix,Netflix
+  - RULE-SET,china-media,港台番剧
+  - RULE-SET,global-media,国际媒体
+  - RULE-SET,proxy-exception,全球加速
+  - RULE-SET,proxy,全球加速

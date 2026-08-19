@@ -1,4 +1,4 @@
-name: Update Quantumult X rules
+name: Update proxy rules
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-quantumult-x-rules
+  group: update-proxy-rules
   cancel-in-progress: false
 
 jobs:
@@ -30,12 +30,51 @@ jobs:
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
 
-      - name: Refresh, build and audit rules
+      - name: Refresh, build and audit Quantumult X rules
         run: >-
           python tools/ruleforge.py build
           --manifest sources/quantumultx.yaml
           --refresh
           --fail-on-conflict
+
+      - name: Refresh, build and audit Mihomo rules
+        run: >-
+          python tools/ruleforge.py build
+          --manifest sources/mihomo.yaml
+          --refresh
+          --fail-on-conflict
+
+      - name: Install pinned Mihomo validator
+        shell: bash
+        run: |
+          set -euo pipefail
+          asset="mihomo-linux-amd64-compatible-v1.19.30.gz"
+          url="https://github.com/MetaCubeX/mihomo/releases/download/v1.19.30/${asset}"
+          expected="db214c7a2517e63c150d123178d16d102e03a241ccdae4e5e07ffbe9cf56c6f9"
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/$asset" "$url"
+          echo "$expected  $RUNNER_TEMP/$asset" | sha256sum --check --strict
+          gzip --decompress --stdout "$RUNNER_TEMP/$asset" > "$RUNNER_TEMP/mihomo"
+          chmod +x "$RUNNER_TEMP/mihomo"
+
+      - name: Validate Mihomo outputs and example profile
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t providers < <(find outputs/mihomo/categories/safe -maxdepth 1 -type f -name '*.list' | sort)
+          test "${#providers[@]}" -eq 26
+          if grep -RniE '^(host|host-suffix|host-keyword|host-wildcard|user-agent),' outputs/mihomo/categories/safe; then
+            echo "Quantumult X or unsupported rules found in Mihomo outputs" >&2
+            exit 1
+          fi
+
+          home="$RUNNER_TEMP/mihomo-home"
+          mkdir -p "$home/rule_providers" "$home/proxy_providers"
+          cp outputs/mihomo/categories/safe/*.list "$home/rule_providers/"
+          printf '%s\n' 'proxies:' '  - { name: "Validation Node 1", type: http, server: 127.0.0.1, port: 8080 }' \
+            > "$home/proxy_providers/provider-1.yaml"
+          printf '%s\n' 'proxies:' '  - { name: "Validation Node 2", type: http, server: 127.0.0.1, port: 8081 }' \
+            > "$home/proxy_providers/provider-2.yaml"
+          "$RUNNER_TEMP/mihomo" -t -d "$home" -f "$GITHUB_WORKSPACE/profiles/mihomo/config.example.yaml"
 
       - name: Detect meaningful generated changes
         id: changes
@@ -44,7 +83,7 @@ jobs:
           set -euo pipefail
 
           # A newly generated category is always a meaningful change.
-          if git ls-files --others --exclude-standard -- outputs/quantumult-x | grep -q .; then
+          if git ls-files --others --exclude-standard -- outputs/quantumult-x outputs/mihomo | grep -q .; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -54,8 +93,8 @@ jobs:
             -I'^# Generated at ' \
             -I'^[[:space:]]*"generated_at_utc":' \
             -I'^[[:space:]]*"from_cache":' \
-            -- outputs/quantumult-x; then
-            git restore -- outputs/quantumult-x
+            -- outputs/quantumult-x outputs/mihomo; then
+            git restore -- outputs/quantumult-x outputs/mihomo
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -66,6 +105,19 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add outputs/quantumult-x
-          git commit -m "chore: update Quantumult X rules"
+          git add outputs/quantumult-x outputs/mihomo
+          git commit -m "chore: update proxy rules"
           git push
+
+      - name: Verify published Mihomo rule providers
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe"
+          for file in outputs/mihomo/categories/safe/*.list; do
+            name="$(basename "$file")"
+            curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
+              --output "$RUNNER_TEMP/published-$name" "$base/$name"
+            grep -q '^# Category:' "$RUNNER_TEMP/published-$name"
+          done
