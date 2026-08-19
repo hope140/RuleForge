@@ -68,60 +68,60 @@ proxy-providers:
 
 proxy-groups:
   - name: 全球加速
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png"
     type: select
     proxies: [香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, DIRECT]
   - name: 苹果服务
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png"
     type: select
     proxies: [香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, 全球加速, DIRECT]
   - name: 港台番剧
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HKMTMedia.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png"
     type: select
     proxies: [香港节点, 台湾节点, DIRECT]
   - name: 国际媒体
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png"
     type: select
     proxies: [香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, 全球加速]
   - name: 电报代理
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png"
     type: select
     proxies: [狮城节点, 香港节点, 台湾节点, 日本节点, 韩国节点, 美国节点, 全球加速, DIRECT]
   - name: AI
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png"
     type: select
     proxies: [香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, 全球加速, DIRECT]
   - name: 谷歌服务
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Google.png"
     type: select
     proxies: [全球加速, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点]
   - name: GitHub
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/github.png"
     type: select
     proxies: [全球加速, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点]
   - name: Spotify
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Spotify.png"
     type: select
     proxies: [全球加速, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点]
   - name: YouTube
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/YouTube.png"
     type: select
     proxies: [香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 全球加速]
   - name: Netflix
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Netflix.png"
     type: select
     proxies: [香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 全球加速]
   - name: 海外抖音
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png"
     type: select
     proxies: [全球加速, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点]
   - name: 兜底策略
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png"
     type: select
     proxies: [全球加速, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, DIRECT]
 
   - name: 香港节点
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HK.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png"
     type: url-test
     use: [provider-1, provider-2]
     filter: "(?i)(香港|港|HK|Hong Kong|HongKong)"
@@ -132,7 +132,7 @@ proxy-groups:
     lazy: true
     empty-fallback: DIRECT
   - name: 台湾节点
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TW.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png"
     type: url-test
     use: [provider-1, provider-2]
     filter: "(?i)(台湾|台|TW|Taiwan)"
@@ -143,7 +143,7 @@ proxy-groups:
     lazy: true
     empty-fallback: DIRECT
   - name: 日本节点
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/JP.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png"
     type: url-test
     use: [provider-1, provider-2]
     filter: "(?i)(日本|日|JP|Japan)"
@@ -154,7 +154,7 @@ proxy-groups:
     lazy: true
     empty-fallback: DIRECT
   - name: 韩国节点
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/KR.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png"
     type: url-test
     use: [provider-1, provider-2]
     filter: "(?i)(韩国|韩|KR|Korea|🇰🇷)"
@@ -165,7 +165,7 @@ proxy-groups:
     lazy: true
     empty-fallback: DIRECT
   - name: 狮城节点
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SG.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png"
     type: url-test
     use: [provider-1, provider-2]
     filter: "(?i)(新加坡|狮城|狮|坡|SG|Singapore)"
@@ -176,7 +176,7 @@ proxy-groups:
     lazy: true
     empty-fallback: DIRECT
   - name: 美国节点
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/US.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png"
     type: url-test
     use: [provider-1, provider-2]
     filter: "(?i)(美国|美|US|United States|America)"
@@ -187,7 +187,7 @@ proxy-groups:
     lazy: true
     empty-fallback: DIRECT
   - name: 特殊节点
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png"
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Manual.png"
     type: select
     use: [provider-1, provider-2]
     filter: ".+"

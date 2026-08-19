@@ -280,7 +280,7 @@ class RuleForgeTests(unittest.TestCase):
             content = (ROOT / "profiles" / "mihomo" / filename).read_text(encoding="utf-8")
             self.assertLess(content.index("  - name: 全球加速"), content.index("  - name: 香港节点"))
             self.assertLess(content.index("  - name: 兜底策略"), content.index("  - name: 香港节点"))
-            self.assertEqual(content.count("raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/"), 20)
+            self.assertEqual(content.count("raw.githubusercontent.com/Orz-3/mini/master/Color/"), 20)
 
 
 if __name__ == "__main__":
