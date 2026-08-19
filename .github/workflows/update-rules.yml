@@ -2,7 +2,7 @@ name: Update proxy rules
 
 on:
   schedule:
-    # 02:17 UTC = 10:17 Asia/Hong_Kong, once per day.
+    # 02:17 UTC = 10:17 China Standard Time (UTC+8), once per day.
     - cron: "17 2 * * *"
   workflow_dispatch:
 
