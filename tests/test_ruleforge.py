@@ -275,6 +275,13 @@ class RuleForgeTests(unittest.TestCase):
             self.assertIn(f"  {category}:", content)
             self.assertIn(f"RULE-SET,{category},", content)
 
+    def test_mihomo_profiles_show_business_groups_before_regions_with_icons(self) -> None:
+        for filename in ("config.example.yaml", "config.branch-test.yaml"):
+            content = (ROOT / "profiles" / "mihomo" / filename).read_text(encoding="utf-8")
+            self.assertLess(content.index("  - name: 全球加速"), content.index("  - name: 香港节点"))
+            self.assertLess(content.index("  - name: 兜底策略"), content.index("  - name: 香港节点"))
+            self.assertEqual(content.count("raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/"), 20)
+
 
 if __name__ == "__main__":
     unittest.main()
