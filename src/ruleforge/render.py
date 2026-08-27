@@ -215,6 +215,9 @@ def render_mihomo_rules(entries: Iterable[dict[str, object]], path: str | Path) 
     lines = ["# GENERATED FILE - DO NOT EDIT", "rules:"]
     for entry in entries:
         lines.append(f"  - RULE-SET,{entry['category']},{_mihomo_policy(entry['policy'])}")
+    # Keep the broad CN domain fallback after all explicit business rules.
+    # This covers Fake-IP/TUN traffic whose synthetic IP cannot match GEOIP,CN.
+    lines.append("  - GEOSITE,cn,DIRECT")
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")

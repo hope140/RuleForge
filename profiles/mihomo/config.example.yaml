@@ -13,6 +13,19 @@ tcp-concurrent: true
 external-controller: "127.0.0.1:9090"
 secret: ""
 
+# GeoSite handles domain-based CN routing before Fake-IP addresses reach GEOIP.
+# GEOIP continues to use the existing MMDB mode; GeoSite is refreshed every 48 hours.
+geodata-mode: false
+geosite-matcher: succinct
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 48
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
+  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
+
 profile:
   store-selected: true
   store-fake-ip: true
@@ -256,5 +269,6 @@ rules:
   - RULE-SET,global-media,国际媒体
   - RULE-SET,proxy-exception,全球加速
   - RULE-SET,proxy,全球加速
+  - GEOSITE,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
   - MATCH,兜底策略

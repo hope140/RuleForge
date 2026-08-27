@@ -251,6 +251,8 @@ class RuleForgeTests(unittest.TestCase):
             self.assertIn("behavior: classical", providers)
             self.assertIn("format: text", providers)
             self.assertLess(route_rules.index("RULE-SET,reject,REJECT"), route_rules.index("RULE-SET,ai,AI"))
+            self.assertIn("GEOSITE,cn,DIRECT", route_rules)
+            self.assertGreater(route_rules.index("GEOSITE,cn,DIRECT"), route_rules.index("RULE-SET,ai,AI"))
 
     def test_mihomo_profile_references_every_category_and_policy(self) -> None:
         _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
@@ -268,6 +270,16 @@ class RuleForgeTests(unittest.TestCase):
         self.assertLess(content.index("  - name: 全球加速"), content.index("  - name: 香港节点"))
         self.assertLess(content.index("  - name: 兜底策略"), content.index("  - name: 香港节点"))
         self.assertEqual(content.count("raw.githubusercontent.com/Orz-3/mini/master/Color/"), 20)
+
+    def test_mihomo_profile_places_geosite_cn_before_geoip_and_match(self) -> None:
+        content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
+        self.assertIn("geosite-matcher: succinct", content)
+        self.assertIn(
+            'geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"',
+            content,
+        )
+        self.assertLess(content.index("RULE-SET,proxy,全球加速"), content.index("GEOSITE,cn,DIRECT"))
+        self.assertLess(content.index("GEOSITE,cn,DIRECT"), content.index("GEOIP,CN,DIRECT,no-resolve"))
 
 
 if __name__ == "__main__":

@@ -26,3 +26,4 @@ rules:
   - RULE-SET,global-media,国际媒体
   - RULE-SET,proxy-exception,全球加速
   - RULE-SET,proxy,全球加速
+  - GEOSITE,cn,DIRECT

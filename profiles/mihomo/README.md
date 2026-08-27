@@ -19,6 +19,8 @@
 - `allow-lan`、TUN 与 IPv6 默认关闭。
 - DNS 使用 Fake-IP 模式。
 - 策略选择和 Fake-IP 状态会保存。
+- GeoSite 使用 MetaCubeX 的 `geosite.dat`，每 48 小时自动更新。
+- `GEOSITE,cn,DIRECT` 位于明确代理规则之后，用于覆盖 Fake-IP 下无法通过 `GEOIP,CN` 判断的中国域名。
 
 控制器目前只允许本机访问。若要改成局域网或公网监听，应先设置随机密钥，并同时限制防火墙和访问来源。
 
@@ -30,7 +32,7 @@
 
 ## 规则更新
 
-模板引用 26 个 Classical 文本 Rule Provider。规则文件不带策略列，`rules` 中的 `RULE-SET` 负责把分类交给对应策略组。
+模板引用 26 个 Classical 文本 Rule Provider，并额外加载 GeoSite 数据库。规则文件不带策略列，`rules` 中的 `RULE-SET` 负责把分类交给对应策略组，`GEOSITE,cn,DIRECT` 负责中国域名兜底。
 
 每个 Rule Provider 的刷新间隔为 172800 秒，也就是 48 小时。GitHub Actions 每天更新一次仓库中的规则文件，客户端按自己的刷新间隔重新下载。
 
