@@ -9,10 +9,10 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 - exact-policy: 175
 - semantic-overlap: 755
 - resolved: 930
-- blackmatrix-preferred: 152
+- blackmatrix-preferred: 135
 - direct-preferred: 63
 - specific-preferred: 463
-- category-preferred: 191
+- category-preferred: 208
 - protective-reject: 61
 - unresolved: 0
 
@@ -4673,87 +4673,87 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 907. exact-policy / same-rule-different-policy
 - left: `HOST,cache.video.iqiyi.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,cache.video.iqiyi.com -> 国际媒体 (blackmatrix-global-media-iqiyi-intl)`
-- decision: `prefer-blackmatrix` -> `HOST,cache.video.iqiyi.com -> 国际媒体 (blackmatrix-global-media-iqiyi-intl)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,cache.video.iqiyi.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 908. exact-policy / same-rule-different-policy
 - left: `HOST,api.biliapi.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,api.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,api.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,api.biliapi.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 909. exact-policy / same-rule-different-policy
 - left: `HOST,api.biliapi.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,api.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,api.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,api.biliapi.net -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 910. exact-policy / same-rule-different-policy
 - left: `HOST,api.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,api.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,api.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,api.bilibili.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 911. exact-policy / same-rule-different-policy
 - left: `HOST,app.biliapi.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,app.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,app.biliapi.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,app.biliapi.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 912. exact-policy / same-rule-different-policy
 - left: `HOST,app.biliapi.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,app.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,app.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,app.biliapi.net -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 913. exact-policy / same-rule-different-policy
 - left: `HOST,app.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,app.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,app.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,app.bilibili.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 914. exact-policy / same-rule-different-policy
 - left: `HOST,grpc.biliapi.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,grpc.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,grpc.biliapi.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,grpc.biliapi.net -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 915. exact-policy / same-rule-different-policy
 - left: `HOST,m.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,m.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,m.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,m.bilibili.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 916. exact-policy / same-rule-different-policy
 - left: `HOST,mobileso.bz.mgtv.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,mobileso.bz.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,mobileso.bz.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,mobileso.bz.mgtv.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 917. exact-policy / same-rule-different-policy
 - left: `HOST,upos-hz-mirrorakam.akamaized.net -> 港台番剧 (rulego-china-media)`
 - right: `HOST,upos-hz-mirrorakam.akamaized.net -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,upos-hz-mirrorakam.akamaized.net -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,upos-hz-mirrorakam.akamaized.net -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 918. exact-policy / same-rule-different-policy
 - left: `HOST,www.bilibili.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST,www.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST,www.bilibili.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST,www.bilibili.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 919. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,api.mgtv.com -> 港台番剧 (rulego-china-media)`
 - right: `HOST-SUFFIX,api.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST-SUFFIX,api.mgtv.com -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST-SUFFIX,api.mgtv.com -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 920. exact-policy / same-rule-different-policy
 - left: `HOST-KEYWORD,cn-hk-eq-bcache- -> 港台番剧 (rulego-china-media)`
 - right: `HOST-KEYWORD,cn-hk-eq-bcache- -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST-KEYWORD,cn-hk-eq-bcache- -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST-KEYWORD,cn-hk-eq-bcache- -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 921. exact-policy / same-rule-different-policy
 - left: `IP-CIDR,116.211.202.206/32 -> 港台番剧 (rulego-china-media)`
 - right: `IP-CIDR,116.211.202.206/32 -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `IP-CIDR,116.211.202.206/32 -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `IP-CIDR,116.211.202.206/32 -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 922. exact-policy / same-rule-different-policy
 - left: `IP-CIDR,116.211.202.216/32 -> 港台番剧 (rulego-china-media)`
 - right: `IP-CIDR,116.211.202.216/32 -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `IP-CIDR,116.211.202.216/32 -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `IP-CIDR,116.211.202.216/32 -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ### 923. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,cn-hk-eq-bcache- -> 港台番剧 (rulego-china-media)`
 - right: `HOST-KEYWORD,cn-hk-eq-bcache- -> 国际媒体 (blackmatrix-global-media-asian)`
-- decision: `prefer-blackmatrix` -> `HOST-KEYWORD,cn-hk-eq-bcache- -> 国际媒体 (blackmatrix-global-media-asian)` (Blackmatrix is the configured primary source.)
+- decision: `prefer-category` -> `HOST-KEYWORD,cn-hk-eq-bcache- -> 港台番剧 (rulego-china-media)` (The configured business-category priority applies to this conflict.)
 
 ## global-media ↔ proxy
 

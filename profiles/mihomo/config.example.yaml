@@ -76,8 +76,6 @@ proxy-providers:
       interval: 600
       timeout: 5000
       expected-status: 204
-    override:
-      additional-prefix: "[订阅1] "
   provider-2:
     type: http
     url: "https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2"
@@ -89,8 +87,6 @@ proxy-providers:
       interval: 600
       timeout: 5000
       expected-status: 204
-    override:
-      additional-prefix: "[订阅2] "
 
 proxy-groups:
   - name: 全球加速

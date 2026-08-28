@@ -40336,10 +40336,10 @@
     "resolved_rule_count": 12703,
     "rejected_rule_count": 401,
     "resolved_conflict_count": 1139,
-    "blackmatrix_preferred_conflict_count": 163,
+    "blackmatrix_preferred_conflict_count": 146,
     "direct_preferred_conflict_count": 87,
     "specific_preferred_conflict_count": 569,
-    "category_preferred_conflict_count": 256,
+    "category_preferred_conflict_count": 273,
     "protective_reject_conflict_count": 64,
     "unresolved_conflict_count": 0,
     "decisions": [
@@ -41686,322 +41686,322 @@
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
+          "source_id": "rulego-china-media",
+          "category": "china-media",
+          "rule_type": "HOST",
+          "value": "cache.video.iqiyi.com",
+          "policy": "港台番剧"
+        },
+        "loser": {
           "source_id": "blackmatrix-global-media-iqiyi-intl",
           "category": "global-media",
           "rule_type": "HOST",
           "value": "cache.video.iqiyi.com",
           "policy": "国际媒体"
         },
-        "loser": {
-          "source_id": "rulego-china-media",
-          "category": "china-media",
-          "rule_type": "HOST",
-          "value": "cache.video.iqiyi.com",
-          "policy": "港台番剧"
-        },
-        "reason": "Blackmatrix is the configured primary source."
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "api.biliapi.com",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "api.biliapi.com",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "api.biliapi.com",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "api.biliapi.net",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "api.biliapi.net",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "api.biliapi.net",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "api.bilibili.com",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "api.bilibili.com",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "api.bilibili.com",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "app.biliapi.com",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "app.biliapi.com",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "app.biliapi.com",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "app.biliapi.net",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "app.biliapi.net",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "app.biliapi.net",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "app.bilibili.com",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "app.bilibili.com",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "app.bilibili.com",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "grpc.biliapi.net",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "grpc.biliapi.net",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "grpc.biliapi.net",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "m.bilibili.com",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "m.bilibili.com",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "m.bilibili.com",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
+          "source_id": "rulego-china-media",
+          "category": "china-media",
+          "rule_type": "HOST",
+          "value": "mobileso.bz.mgtv.com",
+          "policy": "港台番剧"
+        },
+        "loser": {
           "source_id": "blackmatrix-global-media-asian",
           "category": "global-media",
           "rule_type": "HOST",
           "value": "mobileso.bz.mgtv.com",
           "policy": "国际媒体"
         },
-        "loser": {
-          "source_id": "rulego-china-media",
-          "category": "china-media",
-          "rule_type": "HOST",
-          "value": "mobileso.bz.mgtv.com",
-          "policy": "港台番剧"
-        },
-        "reason": "Blackmatrix is the configured primary source."
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST",
-          "value": "upos-hz-mirrorakam.akamaized.net",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST",
           "value": "upos-hz-mirrorakam.akamaized.net",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST",
+          "value": "upos-hz-mirrorakam.akamaized.net",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
+          "source_id": "rulego-china-media",
+          "category": "china-media",
+          "rule_type": "HOST",
+          "value": "www.bilibili.com",
+          "policy": "港台番剧"
+        },
+        "loser": {
           "source_id": "blackmatrix-global-media-asian",
           "category": "global-media",
           "rule_type": "HOST",
           "value": "www.bilibili.com",
           "policy": "国际媒体"
         },
-        "loser": {
-          "source_id": "rulego-china-media",
-          "category": "china-media",
-          "rule_type": "HOST",
-          "value": "www.bilibili.com",
-          "policy": "港台番剧"
-        },
-        "reason": "Blackmatrix is the configured primary source."
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST-SUFFIX",
-          "value": "api.mgtv.com",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST-SUFFIX",
           "value": "api.mgtv.com",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST-SUFFIX",
+          "value": "api.mgtv.com",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST-KEYWORD",
-          "value": "cn-hk-eq-bcache-",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST-KEYWORD",
           "value": "cn-hk-eq-bcache-",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST-KEYWORD",
+          "value": "cn-hk-eq-bcache-",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "IP-CIDR",
-          "value": "116.211.202.206/32",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "IP-CIDR",
           "value": "116.211.202.206/32",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "IP-CIDR",
+          "value": "116.211.202.206/32",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
         "relation": "same-rule-different-policy",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "IP-CIDR",
-          "value": "116.211.202.216/32",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "IP-CIDR",
           "value": "116.211.202.216/32",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "IP-CIDR",
+          "value": "116.211.202.216/32",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "exact-policy",
@@ -53926,22 +53926,22 @@
       {
         "kind": "semantic-overlap",
         "relation": "host-keyword-overlap",
-        "decision": "prefer-blackmatrix",
+        "decision": "prefer-category",
         "winner": {
-          "source_id": "blackmatrix-global-media-asian",
-          "category": "global-media",
-          "rule_type": "HOST-KEYWORD",
-          "value": "cn-hk-eq-bcache-",
-          "policy": "国际媒体"
-        },
-        "loser": {
           "source_id": "rulego-china-media",
           "category": "china-media",
           "rule_type": "HOST-KEYWORD",
           "value": "cn-hk-eq-bcache-",
           "policy": "港台番剧"
         },
-        "reason": "Blackmatrix is the configured primary source."
+        "loser": {
+          "source_id": "blackmatrix-global-media-asian",
+          "category": "global-media",
+          "rule_type": "HOST-KEYWORD",
+          "value": "cn-hk-eq-bcache-",
+          "policy": "国际媒体"
+        },
+        "reason": "The configured business-category priority applies to this conflict."
       },
       {
         "kind": "semantic-overlap",

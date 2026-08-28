@@ -204,6 +204,32 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(resolution.rules, (broad,))
         self.assertEqual(len(resolution.protective_reject_decisions), 1)
 
+    def test_china_media_wins_exact_conflict_with_global_media(self) -> None:
+        china_media = Source(
+            "rulego-china-media",
+            "filter",
+            "surge",
+            "china-media",
+            "港台番剧",
+            "https://china-media.test",
+            "surge",
+        )
+        global_media = Source(
+            "blackmatrix-global-media-asian",
+            "filter",
+            "clash",
+            "global-media",
+            "国际媒体",
+            "https://global-media.test",
+            "clash-classical",
+        )
+        cn_rule = parse_resource("DOMAIN,www.bilibili.com\n", china_media).rules[0]
+        global_rule = parse_resource("DOMAIN,www.bilibili.com\n", global_media).rules[0]
+
+        resolution = resolve_conflicts(audit_rules((cn_rule, global_rule)))
+
+        self.assertEqual(resolution.rules, (cn_rule,))
+
     def test_ip_cidr_overlap_prefers_narrower_business_rule(self) -> None:
         social = Source(
             "blackmatrix-social",
@@ -405,7 +431,7 @@ class RuleForgeTests(unittest.TestCase):
 
     def test_mihomo_profile_keeps_provider_nodes_unique_and_proxy_groups_closed(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
-        self.assertEqual(content.count("additional-prefix:"), 2)
+        self.assertNotIn("additional-prefix:", content)
         self.assertEqual(content.count("include-all: true"), 6)
         self.assertEqual(content.count("expected-status: 204"), 8)
         self.assertNotIn("empty-fallback: DIRECT", content)
@@ -416,6 +442,14 @@ class RuleForgeTests(unittest.TestCase):
         self.assertIn("- 美国节点", content)
         self.assertIn("- proxy", content)
         self.assertIn("没有 Mihomo 的 `GEOSITE,cn` 域名兜底", content)
+
+    def test_generated_china_media_filter_is_not_empty(self) -> None:
+        content = (ROOT / "outputs" / "quantumult-x" / "categories" / "safe" / "china-media.list").read_text(
+            encoding="utf-8"
+        )
+        rules = [line for line in content.splitlines() if line.strip() and not line.startswith("#")]
+        self.assertGreater(len(rules), 0)
+        self.assertIn("host,api.bilibili.com,港台番剧", rules)
 
     def test_mihomo_profile_places_geosite_cn_before_geoip_and_match(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")

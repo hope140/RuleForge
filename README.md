@@ -32,7 +32,7 @@ REPLACE_WITH_SUBSCRIPTION_1
 REPLACE_WITH_SUBSCRIPTION_2
 ```
 
-模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。业务策略组排在地区测速组之前，地区节点使用订阅前缀避免同名冲突，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
+模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。业务策略组排在地区测速组之前，保留订阅原始节点名称，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
 
 26 个 Rule Provider 指向本仓库 `main` 分支，每 172800 秒刷新一次；GeoSite 数据也按 48 小时自动更新。模板不包含 Quantumult X 的重写、MITM 和定时脚本。
 

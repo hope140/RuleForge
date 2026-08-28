@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-28T08:19:47.119357+00:00",
+  "generated_at_utc": "2026-08-28T08:57:18.976358+00:00",
   "generator_version": "0.1.0",
   "manifest": {
     "schema_version": 1,
@@ -971,20 +971,20 @@
   "duplicate_count": 324,
   "conflict_count": 930,
   "resolved_conflict_count": 930,
-  "blackmatrix_preferred_conflict_count": 152,
+  "blackmatrix_preferred_conflict_count": 135,
   "direct_preferred_conflict_count": 63,
   "specific_preferred_conflict_count": 463,
-  "category_preferred_conflict_count": 191,
+  "category_preferred_conflict_count": 208,
   "protective_reject_conflict_count": 61,
   "unresolved_conflict_count": 0,
   "resolution": {
     "resolved_rule_count": 6089,
     "rejected_rule_count": 343,
     "resolved_conflict_count": 930,
-    "blackmatrix_preferred_conflict_count": 152,
+    "blackmatrix_preferred_conflict_count": 135,
     "direct_preferred_conflict_count": 63,
     "specific_preferred_conflict_count": 463,
-    "category_preferred_conflict_count": 191,
+    "category_preferred_conflict_count": 208,
     "protective_reject_conflict_count": 61,
     "unresolved_conflict_count": 0
   },
@@ -1527,8 +1527,8 @@
       "policies": [
         "港台番剧"
       ],
-      "rule_count": 0,
-      "source_count": 0
+      "rule_count": 16,
+      "source_count": 1
     },
     {
       "category": "global-media",
@@ -1538,7 +1538,7 @@
       "policies": [
         "国际媒体"
       ],
-      "rule_count": 541,
+      "rule_count": 525,
       "source_count": 14
     },
     {

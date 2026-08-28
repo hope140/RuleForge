@@ -303,6 +303,7 @@ _CATEGORY_PREFERENCES: dict[frozenset[str], str] = {
     frozenset(("apple", "china-direct")): "apple",
     frozenset(("ai", "global-media")): "ai",
     frozenset(("developer", "github")): "developer",
+    frozenset(("china-media", "global-media")): "china-media",
     frozenset(("china-streaming", "global-media")): "global-media",
     frozenset(("china-direct", "global-media")): "global-media",
     frozenset(("google", "social")): "social",
@@ -326,6 +327,10 @@ _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
     (frozenset(("global-media", "proxy")), "naver.com"): "global-media",
     (frozenset(("global-media", "proxy")), "s3-ap-southeast-1.amazonaws.com"): "proxy",
     (frozenset(("apple", "microsoft")), "akadns.net"): "microsoft",
+}
+
+_EXACT_CATEGORY_PREFERENCES = {
+    frozenset(("china-media", "global-media")),
 }
 
 
@@ -436,9 +441,11 @@ def resolve_conflicts(audit: AuditResult) -> ResolutionResult:
             decision = "prefer-direct"
             reason = "direct takes precedence over reject."
         else:
-            semantic_category = (
-                _category_rule(conflict) if conflict.kind == "semantic-overlap" else None
-            )
+            category_pair = frozenset((conflict.left.category, conflict.right.category))
+            semantic_category = _category_rule(conflict) if (
+                conflict.kind == "semantic-overlap"
+                or category_pair in _EXACT_CATEGORY_PREFERENCES
+            ) else None
             protective_reject = (
                 _protective_reject_rule(conflict)
                 if conflict.kind == "semantic-overlap"

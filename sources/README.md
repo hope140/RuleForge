@@ -47,5 +47,5 @@
 2. 业务边界优先于宽泛关键词和网段重叠：Google Voice > Google、AI > Google、YouTube > Google、Apple/Google > 国内直连；国内影音与国际影音按服务边界区分。
 3. 更具体的单独规则优先于更宽泛的整体规则，例如 `HOST` 优先于覆盖它的 `HOST-SUFFIX`，非关键词域名规则优先于覆盖它的 `HOST-KEYWORD`，更长的子网优先于父网段。
 4. 广告和隐私阻断规则保护已识别的语义重叠；开发者服务优先于泛 GitHub 分类，`naver.com` 优先国际媒体，社交与 Netflix 的专用网段优先各自业务分类。
-5. 完全相同且仍无法按业务边界判断的规则，再由 Blackmatrix 来源优先于其他来源。
+5. `china-media` 与 `global-media` 的完全相同规则按已登记的国内/国际媒体边界优先保留 `china-media`；其他完全相同且仍无法按业务边界判断的规则，再由 Blackmatrix 来源优先于其他来源。
 6. 不符合以上条件的冲突不猜测，保留在审计报告并从已裁决输出中排除。
