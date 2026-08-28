@@ -120,4 +120,22 @@ jobs:
             curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
               --output "$RUNNER_TEMP/published-$name" "$base/$name"
             grep -q '^# Category:' "$RUNNER_TEMP/published-$name"
+
+      - name: Verify published Quantumult X rule filters
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/quantumult-x/categories/safe"
+          for file in outputs/quantumult-x/categories/safe/*.list; do
+            name="$(basename "$file")"
+            curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
+              --output "$RUNNER_TEMP/published-qx-$name" "$base/$name"
+            grep -q '^# Category:' "$RUNNER_TEMP/published-qx-$name"
+          done
+
+          curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
+            --output "$RUNNER_TEMP/filter_remote.safe.conf" \
+            "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/quantumult-x/filter_remote.safe.conf"
+          grep -q '^\[filter_remote\]$' "$RUNNER_TEMP/filter_remote.safe.conf"
           done

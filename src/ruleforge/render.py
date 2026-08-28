@@ -73,6 +73,7 @@ def render_category_filters(
     *,
     generated_at_utc: str | None = None,
     relative_prefix: str | None = None,
+    category_policies: dict[str, str] | None = None,
 ) -> list[dict[str, object]]:
     """Render one policy-aware filter file per business category.
 
@@ -89,14 +90,21 @@ def render_category_filters(
 
     output_root = Path(root)
     output_root.mkdir(parents=True, exist_ok=True)
+    for stale_file in output_root.glob("*.list"):
+        stale_file.unlink()
     prefix = (relative_prefix or output_root.as_posix()).rstrip("/")
+    declared_policies = category_policies or {}
     metadata: list[dict[str, object]] = []
-    for category in sorted(grouped, key=_category_sort_key):
+    categories = set(grouped) | set(declared_policies)
+    for category in sorted(categories, key=_category_sort_key):
         category_rules = sorted(
             grouped[category],
             key=lambda rule: (rule.rule_type, rule.value, rule.options, rule.policy),
         )
         policies = sorted({rule.policy for rule in category_rules if rule.policy})
+        declared_policy = declared_policies.get(category)
+        if declared_policy and not policies:
+            policies = [declared_policy]
         filename = _category_filename(category)
         lines = [
             "# GENERATED FILE - DO NOT EDIT",
@@ -129,6 +137,7 @@ def render_mihomo_category_filters(
     *,
     generated_at_utc: str | None = None,
     relative_prefix: str | None = None,
+    category_policies: dict[str, str] | None = None,
 ) -> list[dict[str, object]]:
     """Render policy-free Mihomo classical text providers by category."""
 
@@ -138,14 +147,21 @@ def render_mihomo_category_filters(
 
     output_root = Path(root)
     output_root.mkdir(parents=True, exist_ok=True)
+    for stale_file in output_root.glob("*.list"):
+        stale_file.unlink()
     prefix = (relative_prefix or output_root.as_posix()).rstrip("/")
+    declared_policies = category_policies or {}
     metadata: list[dict[str, object]] = []
-    for category in sorted(grouped, key=_category_sort_key):
+    categories = set(grouped) | set(declared_policies)
+    for category in sorted(categories, key=_category_sort_key):
         category_rules = sorted(
             grouped[category],
             key=lambda rule: (rule.rule_type, rule.value, rule.options, rule.policy),
         )
         policies = sorted({rule.policy for rule in category_rules if rule.policy})
+        declared_policy = declared_policies.get(category)
+        if declared_policy and not policies:
+            policies = [declared_policy]
         if len(policies) != 1:
             raise ValueError(f"Mihomo category {category!r} must have exactly one policy")
         filename = _category_filename(category)
@@ -312,6 +328,7 @@ def render_conflicts(
                 f"- direct-preferred: {len(resolution.direct_decisions)}",
                 f"- specific-preferred: {len(resolution.specific_decisions)}",
                 f"- category-preferred: {len(resolution.category_decisions)}",
+                f"- protective-reject: {len(resolution.protective_reject_decisions)}",
                 f"- unresolved: {len(resolution.unresolved_decisions)}",
             ]
         )

@@ -45,9 +45,23 @@ class RuleForgeTests(unittest.TestCase):
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
             manifest, sources = load_manifest(ROOT / "sources" / filename)
             self.assertEqual(manifest["target"], target)
-            self.assertEqual(len(sources), 94)
-            self.assertEqual(len({source.id for source in sources}), 94)
-            self.assertEqual(len({source.url for source in sources}), 94)
+            self.assertEqual(len(sources), 95)
+            self.assertEqual(len({source.id for source in sources}), 95)
+            self.assertEqual(len({source.url for source in sources}), 95)
+
+    def test_inline_source_is_local_and_does_not_require_network(self) -> None:
+        source = Source(
+            "local-apple-cma2",
+            "inline",
+            "quantumult-x",
+            "apple",
+            "苹果服务",
+            "inline:HOST,cma2.itunes.apple.com",
+            "quantumult-x",
+        )
+        resource = fetch_source(source, "unused-cache", offline=True)
+        self.assertTrue(resource.from_cache)
+        self.assertEqual(resource.text, "HOST,cma2.itunes.apple.com")
 
     def test_mihomo_manifest_uses_native_clash_sources(self) -> None:
         _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
@@ -120,6 +134,103 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(len(result.duplicates), 1)
         self.assertEqual(len(result.conflicts), 1)
         self.assertEqual(result.conflicts[0].kind, "exact-policy")
+
+    def test_target_ignored_options_do_not_hide_policy_conflicts(self) -> None:
+        ai = Source("rulego-ai", "filter", "surge", "ai", "AI", "https://ai.test", "surge")
+        tiktok = Source(
+            "blackmatrix-tiktok",
+            "filter",
+            "clash",
+            "tiktok",
+            "海外抖音",
+            "https://tiktok.test",
+            "clash-classical",
+        )
+        ai_rule = parse_resource(
+            "DOMAIN-SUFFIX,byteoversea.com,extended-matching\n", ai
+        ).rules[0]
+        tiktok_rule = parse_resource("DOMAIN-SUFFIX,byteoversea.com\n", tiktok).rules[0]
+
+        audit = audit_rules((ai_rule, tiktok_rule))
+        resolution = resolve_conflicts(audit)
+
+        self.assertEqual(len(audit.conflicts), 1)
+        self.assertEqual(resolution.rules, (tiktok_rule,))
+
+    def test_keyword_overlap_uses_business_category_precedence(self) -> None:
+        google = Source(
+            "blackmatrix-google",
+            "filter",
+            "clash",
+            "google",
+            "谷歌服务",
+            "https://google.test",
+            "clash-classical",
+        )
+        youtube = Source(
+            "blackmatrix-youtube",
+            "filter",
+            "clash",
+            "youtube",
+            "YouTube",
+            "https://youtube.test",
+            "clash-classical",
+        )
+        broad = parse_resource("DOMAIN-KEYWORD,google\n", google).rules[0]
+        specific = parse_resource("DOMAIN-SUFFIX,googlevideo.com\n", youtube).rules[0]
+
+        audit = audit_rules((broad, specific))
+        resolution = resolve_conflicts(audit)
+
+        self.assertEqual(audit.conflicts[0].relation, "host-keyword-overlap")
+        self.assertEqual(resolution.rules, (specific,))
+
+    def test_reject_protects_a_broader_keyword_overlap(self) -> None:
+        reject = Source("rulego-reject", "filter", "surge", "reject", "reject", "https://reject.test", "surge")
+        google = Source(
+            "blackmatrix-google",
+            "filter",
+            "clash",
+            "google",
+            "谷歌服务",
+            "https://google.test",
+            "clash-classical",
+        )
+        broad = parse_resource("DOMAIN-KEYWORD,adservice\n", reject).rules[0]
+        specific = parse_resource("DOMAIN-SUFFIX,googleadservices.com\n", google).rules[0]
+
+        resolution = resolve_conflicts(audit_rules((broad, specific)))
+
+        self.assertEqual(resolution.rules, (broad,))
+        self.assertEqual(len(resolution.protective_reject_decisions), 1)
+
+    def test_ip_cidr_overlap_prefers_narrower_business_rule(self) -> None:
+        social = Source(
+            "blackmatrix-social",
+            "filter",
+            "clash",
+            "social",
+            "全球加速",
+            "https://social.test",
+            "clash-classical",
+        )
+        netflix = Source(
+            "blackmatrix-netflix",
+            "filter",
+            "clash",
+            "netflix",
+            "Netflix",
+            "https://netflix.test",
+            "clash-classical",
+        )
+        broad = parse_resource("IP-CIDR,34.224.0.0/12\n", social).rules[0]
+        specific = parse_resource("IP-CIDR,34.226.14.0/24\n", netflix).rules[0]
+
+        audit = audit_rules((broad, specific))
+        resolution = resolve_conflicts(audit)
+
+        self.assertEqual(audit.conflicts[0].relation, "ip-cidr-overlap")
+        self.assertEqual(resolution.rules, (specific,))
 
     def test_blackmatrix_wins_policy_conflict(self) -> None:
         reject = Source("rulego-test", "filter", "surge", "demo", "reject", "https://reject.test", "surge")
@@ -254,6 +365,27 @@ class RuleForgeTests(unittest.TestCase):
             self.assertIn("GEOSITE,cn,DIRECT", route_rules)
             self.assertGreater(route_rules.index("GEOSITE,cn,DIRECT"), route_rules.index("RULE-SET,ai,AI"))
 
+    def test_category_renderers_remove_stale_files_and_keep_empty_declared_categories(self) -> None:
+        from ruleforge.render import render_category_filters, render_mihomo_category_filters
+
+        source = Source("test", "filter", "surge", "ai", "AI", "https://example.test", "surge")
+        rule = parse_resource("DOMAIN,example.com\n", source).rules[0]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            for renderer in (render_category_filters, render_mihomo_category_filters):
+                output = root / renderer.__name__
+                output.mkdir()
+                stale = output / "stale.list"
+                stale.write_text("old\n", encoding="utf-8")
+                entries = renderer(
+                    (rule,),
+                    output,
+                    category_policies={"ai": "AI", "reject": "reject"},
+                )
+                self.assertFalse(stale.exists())
+                self.assertEqual([entry["category"] for entry in entries], ["reject", "ai"])
+                self.assertIn("# Policy: reject", (output / "reject.list").read_text(encoding="utf-8"))
+
     def test_mihomo_profile_references_every_category_and_policy(self) -> None:
         _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
@@ -270,6 +402,20 @@ class RuleForgeTests(unittest.TestCase):
         self.assertLess(content.index("  - name: 全球加速"), content.index("  - name: 香港节点"))
         self.assertLess(content.index("  - name: 兜底策略"), content.index("  - name: 香港节点"))
         self.assertEqual(content.count("raw.githubusercontent.com/Orz-3/mini/master/Color/"), 20)
+
+    def test_mihomo_profile_keeps_provider_nodes_unique_and_proxy_groups_closed(self) -> None:
+        content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
+        self.assertEqual(content.count("additional-prefix:"), 2)
+        self.assertEqual(content.count("include-all: true"), 6)
+        self.assertEqual(content.count("expected-status: 204"), 8)
+        self.assertNotIn("empty-fallback: DIRECT", content)
+        self.assertIn("tolerance: 10", content)
+
+    def test_quantumultx_readme_documents_all_remote_policies(self) -> None:
+        content = (ROOT / "profiles" / "quantumult-x" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("- 美国节点", content)
+        self.assertIn("- proxy", content)
+        self.assertIn("没有 Mihomo 的 `GEOSITE,cn` 域名兜底", content)
 
     def test_mihomo_profile_places_geosite_cn_before_geoip_and_match(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")

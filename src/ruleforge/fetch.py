@@ -37,6 +37,14 @@ def fetch_source(
     max_bytes: int = 25 * 1024 * 1024,
     attempts: int = 3,
 ) -> FetchedResource:
+    if source.url.startswith("inline:"):
+        raw = source.url.removeprefix("inline:").encode("utf-8")
+        return FetchedResource(
+            source,
+            raw.decode("utf-8"),
+            hashlib.sha256(raw).hexdigest(),
+            True,
+        )
     cache_path = _cache_path(Path(cache_dir), source.url)
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     if cache_path.exists() and not refresh:

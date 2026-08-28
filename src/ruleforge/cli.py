@@ -82,6 +82,17 @@ def _build(args: argparse.Namespace) -> int:
     audit = audit_rules(all_rules)
     resolution = resolve_conflicts(audit)
     generated_at_utc = datetime.now(timezone.utc).isoformat()
+    category_policies: dict[str, str] = {}
+    for source in sources:
+        if not source.enabled:
+            continue
+        previous_policy = category_policies.get(source.category)
+        if previous_policy is not None and previous_policy != source.policy:
+            raise ManifestError(
+                f"category {source.category} has mixed policies: "
+                f"{previous_policy!r} and {source.policy!r}"
+            )
+        category_policies[source.category] = source.policy
     if target == "mihomo":
         unsupported = []
         for rule in all_rules:
@@ -109,12 +120,14 @@ def _build(args: argparse.Namespace) -> int:
         output_dir / "categories" / "candidates",
         generated_at_utc=generated_at_utc,
         relative_prefix=f"{relative_root}/candidates",
+        category_policies=category_policies,
     )
     safe_categories = category_renderer(
         resolution.rules,
         output_dir / "categories" / "safe",
         generated_at_utc=generated_at_utc,
         relative_prefix=f"{relative_root}/safe",
+        category_policies=category_policies,
     )
     if target == "mihomo":
         render_mihomo_rule_providers(
@@ -151,6 +164,7 @@ def _build(args: argparse.Namespace) -> int:
             "direct_preferred_conflict_count": len(resolution.direct_decisions),
             "specific_preferred_conflict_count": len(resolution.specific_decisions),
             "category_preferred_conflict_count": len(resolution.category_decisions),
+            "protective_reject_conflict_count": len(resolution.protective_reject_decisions),
             "unresolved_conflict_count": len(resolution.unresolved_decisions),
             "resolution": resolution.to_summary_dict(),
             "candidate_categories": candidate_categories,
@@ -173,6 +187,7 @@ def _build(args: argparse.Namespace) -> int:
         f"direct_preferred={len(resolution.direct_decisions)} "
         f"specific_preferred={len(resolution.specific_decisions)} "
         f"category_preferred={len(resolution.category_decisions)} "
+        f"protective_reject={len(resolution.protective_reject_decisions)} "
         f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
     )
     print(f"output={output_dir}")

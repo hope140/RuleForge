@@ -10,6 +10,7 @@ log-level: info
 ipv6: false
 unified-delay: true
 tcp-concurrent: true
+find-process-mode: strict
 external-controller: "127.0.0.1:9090"
 secret: ""
 
@@ -47,6 +48,10 @@ dns:
   fake-ip-filter:
     - "+.lan"
     - "+.local"
+    - "localhost"
+    - "+.home.arpa"
+    - "+.in-addr.arpa"
+    - "+.ip6.arpa"
     - "time.*.com"
     - "ntp.*.com"
   default-nameserver:
@@ -69,6 +74,10 @@ proxy-providers:
       enable: true
       url: "https://www.gstatic.com/generate_204"
       interval: 600
+      timeout: 5000
+      expected-status: 204
+    override:
+      additional-prefix: "[订阅1] "
   provider-2:
     type: http
     url: "https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2"
@@ -78,6 +87,10 @@ proxy-providers:
       enable: true
       url: "https://www.gstatic.com/generate_204"
       interval: 600
+      timeout: 5000
+      expected-status: 204
+    override:
+      additional-prefix: "[订阅2] "
 
 proxy-groups:
   - name: 全球加速
@@ -136,76 +149,81 @@ proxy-groups:
   - name: 香港节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png"
     type: url-test
-    use: [provider-1, provider-2]
+    include-all: true
     filter: "(?i)(香港|港|HK|Hong Kong|HongKong)"
-    exclude-filter: "(?i)(台湾|台|TW|日本|日|JP|韩国|韩|KR|新加坡|狮城|坡|SG|美国|美|US)"
+    exclude-filter: "(?i)(台湾|台|TW|Taiwan|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
-    tolerance: 0
+    timeout: 5000
+    expected-status: 204
+    tolerance: 10
     lazy: true
-    empty-fallback: DIRECT
   - name: 台湾节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png"
     type: url-test
-    use: [provider-1, provider-2]
+    include-all: true
     filter: "(?i)(台湾|台|TW|Taiwan)"
-    exclude-filter: "(?i)(香港|港|HK|日本|日|JP|韩国|韩|KR|新加坡|狮城|坡|SG|美国|美|US)"
+    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
-    tolerance: 0
+    timeout: 5000
+    expected-status: 204
+    tolerance: 10
     lazy: true
-    empty-fallback: DIRECT
   - name: 日本节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png"
     type: url-test
-    use: [provider-1, provider-2]
+    include-all: true
     filter: "(?i)(日本|日|JP|Japan)"
-    exclude-filter: "(?i)(香港|港|HK|台湾|台|TW|韩国|韩|KR|新加坡|狮城|坡|SG|美国|美|US)"
+    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
-    tolerance: 0
+    timeout: 5000
+    expected-status: 204
+    tolerance: 10
     lazy: true
-    empty-fallback: DIRECT
   - name: 韩国节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png"
     type: url-test
-    use: [provider-1, provider-2]
+    include-all: true
     filter: "(?i)(韩国|韩|KR|Korea|🇰🇷)"
-    exclude-filter: "(?i)(香港|港|HK|台湾|台|TW|日本|日|JP|新加坡|狮城|坡|SG|美国|美|US)"
+    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|日本|日|JP|Japan|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
-    tolerance: 0
+    timeout: 5000
+    expected-status: 204
+    tolerance: 10
     lazy: true
-    empty-fallback: DIRECT
   - name: 狮城节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png"
     type: url-test
-    use: [provider-1, provider-2]
+    include-all: true
     filter: "(?i)(新加坡|狮城|狮|坡|SG|Singapore)"
-    exclude-filter: "(?i)(香港|港|HK|台湾|台|TW|日本|日|JP|韩国|韩|KR|美国|美|US)"
+    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|美国|美|US|United States|America)"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
-    tolerance: 0
+    timeout: 5000
+    expected-status: 204
+    tolerance: 10
     lazy: true
-    empty-fallback: DIRECT
   - name: 美国节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png"
     type: url-test
-    use: [provider-1, provider-2]
+    include-all: true
     filter: "(?i)(美国|美|US|United States|America)"
-    exclude-filter: "(?i)(香港|港|HK|台湾|台|TW|日本|日|JP|韩国|韩|KR|新加坡|狮城|坡|SG)"
+    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore)"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
-    tolerance: 0
+    timeout: 5000
+    expected-status: 204
+    tolerance: 10
     lazy: true
-    empty-fallback: DIRECT
   - name: 特殊节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Manual.png"
     type: select
     use: [provider-1, provider-2]
+    # Catch-all for multi-region names and nodes without a region label.
     filter: ".+"
-    exclude-filter: "(?i)(香港|港|HK|台湾|台|TW|日本|日|JP|韩国|韩|KR|新加坡|狮城|坡|SG|美国|美|US)"
-    empty-fallback: DIRECT
 
 rule-providers:
   reject: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/reject.list", path: ./rule_providers/reject.list, interval: 172800 }

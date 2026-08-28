@@ -28,6 +28,27 @@ MIHOMO_NATIVE_TYPES = {
 }
 MIHOMO_OPTIONS = {"no-resolve", "src"}
 
+# Keep these options in the source model for audit traceability, but do not
+# let options discarded by both target renderers hide an otherwise identical
+# rule from conflict detection.
+AUDIT_IGNORED_OPTIONS = {"extended-matching", "resolve-on-remote", "force-remote"}
+LITERAL_IP_RULE_TYPES = {"IP-CIDR", "IP6-CIDR"}
+
+
+def _semantic_options(rule_type: str, options: tuple[str, ...]) -> tuple[str, ...]:
+    result = []
+    for option in options:
+        name = option.split("=", 1)[0].casefold()
+        if name in AUDIT_IGNORED_OPTIONS:
+            continue
+        # no-resolve does not change matching for a literal IP network.  If it
+        # remains in the identity, the same CIDR can be rendered twice with
+        # different policies and bypass exact-conflict detection.
+        if rule_type in LITERAL_IP_RULE_TYPES and name == "no-resolve":
+            continue
+        result.append(option)
+    return tuple(result)
+
 
 @dataclass(frozen=True)
 class Source:
@@ -56,7 +77,7 @@ class Rule:
 
     @property
     def identity_key(self) -> tuple[str, str, tuple[str, ...]]:
-        return self.rule_type, self.value, self.options
+        return self.rule_type, self.value, _semantic_options(self.rule_type, self.options)
 
     @property
     def routed_key(self) -> tuple[str, str]:

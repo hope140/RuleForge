@@ -849,3 +849,13 @@ sources:
     url: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list
     parser: surge
     enabled: true
+
+  - id: local-apple-cma2
+    kind: inline
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,cma2.itunes.apple.com"
+    parser: inline
+    enabled: true
+    notes: 补充 Apple 的精确 cma2 主机，避免 HOST,cma 规则误以为覆盖了 cma2。

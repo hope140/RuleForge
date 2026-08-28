@@ -107,8 +107,8 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
             raise ManifestError(f"duplicate source id: {source_id}")
         if url in seen_urls:
             raise ManifestError(f"duplicate source url: {url}")
-        if not url.startswith(("https://", "http://")):
-            raise ManifestError(f"source {source_id} must use HTTP(S): {url}")
+        if not url.startswith(("https://", "http://", "inline:")):
+            raise ManifestError(f"source {source_id} must use HTTP(S) or inline data: {url}")
         seen_ids.add(source_id)
         seen_urls.add(url)
         sources.append(
