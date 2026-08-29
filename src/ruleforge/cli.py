@@ -5,7 +5,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import __version__
 from .audit import audit_rules, resolve_conflicts
+from .curation import curate_rules
 from .fetch import FetchError, fetch_source
 from .manifest import ManifestError, load_manifest
 from .parsers import parse_resource
@@ -79,7 +81,9 @@ def _build(args: argparse.Namespace) -> int:
             }
         )
 
-    audit = audit_rules(all_rules)
+    candidate_audit = audit_rules(all_rules)
+    curation = curate_rules(all_rules)
+    audit = audit_rules(curation.rules)
     resolution = resolve_conflicts(audit)
     generated_at_utc = datetime.now(timezone.utc).isoformat()
     category_policies: dict[str, str] = {}
@@ -116,7 +120,7 @@ def _build(args: argparse.Namespace) -> int:
     )
     relative_root = f"outputs/{target}/categories"
     candidate_categories = category_renderer(
-        audit.kept_rules,
+        candidate_audit.kept_rules,
         output_dir / "categories" / "candidates",
         generated_at_utc=generated_at_utc,
         relative_prefix=f"{relative_root}/candidates",
@@ -148,11 +152,14 @@ def _build(args: argparse.Namespace) -> int:
     render_json(
         {
             "generated_at_utc": generated_at_utc,
-            "generator_version": "0.1.0",
+            "generator_version": __version__,
             "manifest": manifest_data,
             "source_count": len(sources),
             "enabled_source_count": len([source for source in sources if source.enabled]),
             "parsed_rule_count": len(all_rules),
+            "curated_rule_count": len(curation.rules),
+            "curation_drop_count": len(curation.dropped),
+            "candidate_kept_rule_count": len(candidate_audit.kept_rules),
             "kept_rule_count": len(audit.kept_rules),
             "safe_rule_count": len(resolution.rules),
             "resolved_rule_count": len(resolution.rules),
@@ -165,6 +172,8 @@ def _build(args: argparse.Namespace) -> int:
             "specific_preferred_conflict_count": len(resolution.specific_decisions),
             "category_preferred_conflict_count": len(resolution.category_decisions),
             "protective_reject_conflict_count": len(resolution.protective_reject_decisions),
+            "ordered_overlap_count": len(resolution.ordered_overlap_decisions),
+            "routing_constraint_count": len(resolution.constraints),
             "unresolved_conflict_count": len(resolution.unresolved_decisions),
             "resolution": resolution.to_summary_dict(),
             "candidate_categories": candidate_categories,
@@ -177,8 +186,10 @@ def _build(args: argparse.Namespace) -> int:
         },
         output_dir / "build.json",
     )
+    render_json(curation.to_dict(), output_dir / "curation.json")
     print(
         f"sources={len(source_metadata)} parsed_rules={len(all_rules)} "
+        f"curated_rules={len(curation.rules)} curation_drops={len(curation.dropped)} "
         f"kept_rules={len(audit.kept_rules)} resolved_rules={len(resolution.rules)}"
     )
     print(
@@ -188,6 +199,7 @@ def _build(args: argparse.Namespace) -> int:
         f"specific_preferred={len(resolution.specific_decisions)} "
         f"category_preferred={len(resolution.category_decisions)} "
         f"protective_reject={len(resolution.protective_reject_decisions)} "
+        f"ordered_overlap={len(resolution.ordered_overlap_decisions)} "
         f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
     )
     print(f"output={output_dir}")

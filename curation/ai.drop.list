@@ -1,0 +1,14 @@
+# Explicit AI curation guardrails.
+# Root shared infrastructure is excluded from the AI category; explicit
+# service endpoints remain available in the source lists.
+IP-ASN,14061
+IP-ASN,20473
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,stripe.com

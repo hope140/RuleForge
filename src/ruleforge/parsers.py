@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import re
 
-from .model import Rule, Source
+from .model import QUANTUMULTX_OPTIONS, Rule, Source
 
 
 TYPE_MAP = {
@@ -33,6 +33,7 @@ KNOWN_OPTIONS = {
     "extended-matching",
     "resolve-on-remote",
     "force-remote",
+    "src",
 }
 COMMENT_PREFIXES = ("#", ";", "//")
 INLINE_COMMENT_RE = re.compile(r"\s+(?://|#|;).*$")
@@ -70,7 +71,16 @@ def _normalize_value(rule_type: str, value: str) -> str:
 def _options(source: Source, parts: list[str]) -> tuple[str, ...]:
     extras = [item.strip() for item in parts[2:] if item.strip()]
     if source.format.lower() in {"surge", "clash", "mihomo"}:
-        return tuple(extras)
+        # Surge commonly appends a policy as the third field.  The manifest
+        # policy is the authoritative routing policy, so target policy names
+        # must not become part of rule identity and hide exact conflicts.
+        supported = KNOWN_OPTIONS | {item.casefold() for item in QUANTUMULTX_OPTIONS}
+        return tuple(
+            item
+            for item in extras
+            if item.split("=", 1)[0].casefold() in supported
+            or item.casefold().startswith("via-interface=")
+        )
     return tuple(item for item in extras if item.lower() in KNOWN_OPTIONS)
 
 

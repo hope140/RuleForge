@@ -26,16 +26,17 @@
 
 生成的 `filter_remote.safe.conf` 使用以下优先级：
 
-1. `reject`、`privacy`
-2. 支付宝、微信、国内服务和国内影音直连例外
-3. AI、苹果、谷歌、Microsoft、云服务、社交、开发者、GitHub、影音和其他专项服务
-4. 港台番剧、国际媒体
-5. 代理例外和全球代理兜底
+1. 明确的 `direct-exception`
+2. `reject`、`privacy`
+3. AI 与 Google Voice、YouTube、Netflix、TikTok、Telegram、Spotify 等地区敏感专项服务
+4. 支付宝、微信、国内服务和国内影音直连例外
+5. Apple、Google、Microsoft、云服务、社交、开发者、GitHub、港台番剧和国际媒体
+6. 代理例外和全球代理兜底
 
-这是远程过滤器的业务优先级，不是把所有规则语法混成一个文件。规则冲突在生成前按以下顺序处理：Blackmatrix 来源优先，`direct` 优先于 `reject`，更具体的单独规则优先于宽泛规则，再按业务边界处理 Google Voice、AI、YouTube、Apple、Google 与代理分类；其余冲突继续保留在报告中，不靠调整文件顺序掩盖。
+这是远程过滤器的业务优先级，不是把所有规则语法混成一个文件。完全相同 selector 的策略冲突按安全策略和业务边界裁决；只有明确的 `direct-exception` 可以覆盖 `reject`。域名后缀、关键词、通配符和 CIDR 的 ordered overlap 会保留双方，并在审计报告中记录 first-match 约束。
 
 分类文件使用 Quantumult X 原生的小写规则类型，并为每条规则保留完整的策略列。生成时会清理上游行尾注释，并过滤 Surge/Clash 专属选项，只保留当前配置使用的 QuanX 兼容选项。远程过滤器片段另外使用 `force-policy` 绑定分类策略；这样即使关闭资源解析器（`opt-parser=false`），规则也能直接导入。
 
-这份输出只是 `[filter_remote]` 片段，不包含 `[policy]`、节点订阅、最终规则、DNS、重写或 MITM。导入前必须确认本地存在上面列出的策略名；`force-policy` 只对实际命中的远程资源生效，未命中的域名仍由本地其他规则和最终策略处理。QX 片段也没有 Mihomo 的 `GEOSITE,cn` 域名兜底。
+这份输出只是 `[filter_remote]` 片段，不包含 `[policy]`、节点订阅、最终规则、DNS、重写或 MITM。导入前必须确认本地存在上面列出的策略名；`force-policy` 只对实际命中的远程资源生效，未命中的域名仍由本地其他规则和最终策略处理。QX 没有 Mihomo 的 `GEOSITE,openai` 兜底，也没有 Mihomo 的 `GEOSITE,cn` 域名兜底，因此 `oaistatsig.com` 已作为 QX 专用补充规则登记。QX 规则文件也不能声明订阅节点的 UDP 能力；使用地区敏感服务时，应在 QX 客户端确认节点支持 UDP，或按客户端能力关闭 QUIC/HTTP3。
 
 节点订阅、服务器标签、mitm 配置和本地证书不进入公共生成模板。

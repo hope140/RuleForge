@@ -6,6 +6,7 @@ import ipaddress
 from typing import Iterable
 
 from .model import Rule
+from .routing import category_sort_key
 
 
 @dataclass(frozen=True)
@@ -64,10 +65,36 @@ class ConflictDecision:
 
 
 @dataclass(frozen=True)
+class RoutingConstraint:
+    """A first-match ordering requirement for two overlapping rules."""
+
+    before: Rule
+    after: Rule
+    reason: str
+
+    def to_dict(self) -> dict[str, object]:
+        def rule_ref(rule: Rule) -> dict[str, object]:
+            return {
+                "source_id": rule.source_id,
+                "category": rule.category,
+                "rule_type": rule.rule_type,
+                "value": rule.value,
+                "policy": rule.policy,
+            }
+
+        return {
+            "before": rule_ref(self.before),
+            "after": rule_ref(self.after),
+            "reason": self.reason,
+        }
+
+
+@dataclass(frozen=True)
 class ResolutionResult:
     rules: tuple[Rule, ...]
     decisions: tuple[ConflictDecision, ...]
     rejected_rules: frozenset[Rule]
+    constraints: tuple[RoutingConstraint, ...] = ()
 
     @property
     def preferred_decisions(self) -> tuple[ConflictDecision, ...]:
@@ -94,6 +121,10 @@ class ResolutionResult:
         return tuple(item for item in self.decisions if item.decision == "prefer-reject")
 
     @property
+    def ordered_overlap_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "ordered-overlap")
+
+    @property
     def unresolved_decisions(self) -> tuple[ConflictDecision, ...]:
         return tuple(item for item in self.decisions if item.decision == "unresolved")
 
@@ -107,8 +138,10 @@ class ResolutionResult:
             "specific_preferred_conflict_count": len(self.specific_decisions),
             "category_preferred_conflict_count": len(self.category_decisions),
             "protective_reject_conflict_count": len(self.protective_reject_decisions),
+            "ordered_overlap_count": len(self.ordered_overlap_decisions),
             "unresolved_conflict_count": len(self.unresolved_decisions),
             "decisions": [item.to_dict() for item in self.decisions],
+            "routing_constraints": [item.to_dict() for item in self.constraints],
         }
 
     def to_summary_dict(self) -> dict[str, int]:
@@ -121,6 +154,7 @@ class ResolutionResult:
             "specific_preferred_conflict_count": len(self.specific_decisions),
             "category_preferred_conflict_count": len(self.category_decisions),
             "protective_reject_conflict_count": len(self.protective_reject_decisions),
+            "ordered_overlap_count": len(self.ordered_overlap_decisions),
             "unresolved_conflict_count": len(self.unresolved_decisions),
         }
 
@@ -392,123 +426,149 @@ def _specific_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
     return None
 
 
-def _direct_reject_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
-    left_direct = _is_policy(conflict.left, "direct")
-    right_direct = _is_policy(conflict.right, "direct")
-    left_reject = _is_policy(conflict.left, "reject")
-    right_reject = _is_policy(conflict.right, "reject")
-    if (left_direct and right_reject) or (right_direct and left_reject):
-        return (
-            (conflict.left, conflict.right)
-            if left_direct
-            else (conflict.right, conflict.left)
-        )
-    return None
+def _is_direct_exception(rule: Rule) -> bool:
+    return rule.category == "direct-exception" and _is_policy(rule, "direct")
 
 
-def _protective_reject_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
+def _security_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
+    """Return the safe first-match order for reject/direct overlaps.
+
+    Normal direct rules must not silently defeat an advertising or privacy
+    reject rule.  A deliberately named ``direct-exception`` category is the
+    only direct policy allowed to override reject.
+    """
+
     left_reject = _is_policy(conflict.left, "reject")
     right_reject = _is_policy(conflict.right, "reject")
     if left_reject == right_reject:
         return None
-    if left_reject and not _is_policy(conflict.right, "direct"):
-        return conflict.left, conflict.right
-    if right_reject and not _is_policy(conflict.left, "direct"):
-        return conflict.right, conflict.left
+    reject = conflict.left if left_reject else conflict.right
+    other = conflict.right if left_reject else conflict.left
+    if _is_direct_exception(other):
+        return other, reject, "An explicit direct-exception may override reject."
+    return reject, other, "Reject rules take precedence over ordinary direct or proxy rules."
+
+
+def _source_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
+    left_is_preferred = _is_blackmatrix(conflict.left)
+    right_is_preferred = _is_blackmatrix(conflict.right)
+    if left_is_preferred == right_is_preferred:
+        return None
+    winner = conflict.left if left_is_preferred else conflict.right
+    loser = conflict.right if left_is_preferred else conflict.left
+    return winner, loser, "Blackmatrix is the configured primary source tie-breaker."
+
+
+def _fallback_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
+    if conflict.left.category == conflict.right.category:
+        return None
+    left_key = category_sort_key(conflict.left.category)
+    right_key = category_sort_key(conflict.right.category)
+    if left_key == right_key:
+        return None
+    if left_key < right_key:
+        return conflict.left, conflict.right, "The shared routing category order provides a stable first-match order."
+    return conflict.right, conflict.left, "The shared routing category order provides a stable first-match order."
+
+
+def _ordered_overlap_rule(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
+    security = _security_order(conflict)
+    if security is not None:
+        return security
+    category = _category_rule(conflict)
+    if category is not None:
+        return category[0], category[1], "The configured business-category priority provides the first-match order."
+    specific = _specific_rule(conflict)
+    if specific is not None:
+        return specific[0], specific[1], "A more specific rule must be evaluated before its broader overlap."
+    source = _source_order(conflict)
+    if source is not None:
+        return source
+    return _fallback_order(conflict)
+
+
+def _exact_conflict_rule(conflict: Conflict) -> tuple[Rule, Rule, str, str] | None:
+    security = _security_order(conflict)
+    if security is not None:
+        winner, loser, reason = security
+        decision = "prefer-direct-exception" if _is_direct_exception(winner) else "prefer-reject"
+        return winner, loser, decision, reason
+    category = _category_rule(conflict)
+    if category is not None:
+        winner, loser = category
+        return winner, loser, "prefer-category", "The configured business-category priority applies to this exact conflict."
+    source = _source_order(conflict)
+    if source is not None:
+        winner, loser, reason = source
+        return winner, loser, "prefer-blackmatrix", reason
     return None
 
 
 def resolve_conflicts(audit: AuditResult) -> ResolutionResult:
-    """Resolve conflicts without relying on rendered source order.
+    """Resolve exclusive conflicts and preserve ordered semantic overlaps.
 
-    Exact conflicts retain the existing Blackmatrix/direct/specific policy.
-    Semantic overlaps use registered business boundaries first, then prefer a
-    protective reject rule or a narrower rule. Conflicts with no applicable
-    decision remain excluded from the safe output.
+    Exact selector conflicts are exclusive and select one policy.  Semantic
+    overlaps are not exclusive: both rules stay in the output, while the
+    preferred first-match rule is recorded as a routing constraint.  Only an
+    unresolved exact conflict or an overlap with no stable ordering removes
+    rules from the safe result.
     """
 
     rejected: set[Rule] = set()
     decisions: list[ConflictDecision] = []
     unresolved_rules: set[Rule] = set()
+    constraints: list[RoutingConstraint] = []
+    constraint_keys: set[tuple[Rule, Rule]] = set()
+
     for conflict in audit.conflicts:
-        winner = loser = None
-        decision = "unresolved"
-        reason = "No configured priority applies to this conflict."
-
-        direct_reject = _direct_reject_rule(conflict)
-        if direct_reject is not None:
-            winner, loser = direct_reject
-            decision = "prefer-direct"
-            reason = "direct takes precedence over reject."
-        else:
-            category_pair = frozenset((conflict.left.category, conflict.right.category))
-            semantic_category = _category_rule(conflict) if (
-                conflict.kind == "semantic-overlap"
-                or category_pair in _EXACT_CATEGORY_PREFERENCES
-            ) else None
-            protective_reject = (
-                _protective_reject_rule(conflict)
-                if conflict.kind == "semantic-overlap"
-                else None
-            )
-            if semantic_category is not None:
-                winner, loser = semantic_category
-                decision = "prefer-category"
-                reason = "The configured business-category priority applies to this conflict."
-            elif protective_reject is not None:
-                winner, loser = protective_reject
-                decision = "prefer-reject"
-                reason = "Reject rules protect against a broader semantic overlap."
-            else:
-                semantic_specific = (
-                    _specific_rule(conflict) if conflict.kind == "semantic-overlap" else None
-                )
-                if semantic_specific is not None:
-                    winner, loser = semantic_specific
-                    decision = "prefer-specific"
-                    reason = "A more specific rule takes precedence over a broader overlap."
-                else:
-                    left_is_preferred = _is_blackmatrix(conflict.left)
-                    right_is_preferred = _is_blackmatrix(conflict.right)
-                    if left_is_preferred != right_is_preferred:
-                        winner = conflict.left if left_is_preferred else conflict.right
-                        loser = conflict.right if left_is_preferred else conflict.left
-                        decision = "prefer-blackmatrix"
-                        reason = "Blackmatrix is the configured primary source."
-                    else:
-                        specific = _specific_rule(conflict)
-                        if specific is not None:
-                            winner, loser = specific
-                            decision = "prefer-specific"
-                            reason = "A more specific rule takes precedence over a broader overlap."
-                        else:
-                            category_rule = _category_rule(conflict)
-                            if category_rule is not None:
-                                winner, loser = category_rule
-                                decision = "prefer-category"
-                                reason = "The configured business-category priority applies to this conflict."
-
-        if decision != "unresolved" and winner is not None and loser is not None:
-            rejected.add(loser)
-            decisions.append(
-                ConflictDecision(
-                    conflict=conflict,
-                    decision=decision,
-                    winner=winner,
-                    loser=loser,
-                    reason=reason,
-                )
-            )
-        else:
+        if conflict.kind == "exact-policy":
+            exact = _exact_conflict_rule(conflict)
+            if exact is not None:
+                winner, loser, decision, reason = exact
+                rejected.add(loser)
+                decisions.append(ConflictDecision(conflict, decision, winner, loser, reason))
+                continue
             unresolved_rules.update((conflict.left, conflict.right))
             decisions.append(
                 ConflictDecision(
                     conflict=conflict,
                     decision="unresolved",
-                    reason=reason,
+                    reason="No exact-conflict priority applies; both policies are excluded for safety.",
                 )
             )
+            continue
+
+        ordered = _ordered_overlap_rule(conflict)
+        if ordered is None:
+            unresolved_rules.update((conflict.left, conflict.right))
+            decisions.append(
+                ConflictDecision(
+                    conflict=conflict,
+                    decision="unresolved",
+                    reason="No stable first-match order applies; both rules are excluded for safety.",
+                )
+            )
+            continue
+
+        before, after, reason = ordered
+        decisions.append(
+            ConflictDecision(
+                conflict=conflict,
+                decision="ordered-overlap",
+                winner=before,
+                loser=after,
+                reason=f"Both rules are retained. {reason}",
+            )
+        )
+        if before.category != after.category and (before, after) not in constraint_keys:
+            constraint_keys.add((before, after))
+            constraints.append(RoutingConstraint(before, after, reason))
 
     rejected.update(unresolved_rules)
     resolved = tuple(rule for rule in audit.kept_rules if rule not in rejected)
-    return ResolutionResult(tuple(resolved), tuple(decisions), frozenset(rejected))
+    return ResolutionResult(
+        tuple(resolved),
+        tuple(decisions),
+        frozenset(rejected),
+        tuple(constraints),
+    )

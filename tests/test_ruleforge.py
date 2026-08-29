@@ -11,10 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from ruleforge.audit import audit_rules, resolve_conflicts  # noqa: E402
+from ruleforge.curation import curate_rules  # noqa: E402
 from ruleforge.fetch import FetchError, fetch_source  # noqa: E402
 from ruleforge.manifest import load_manifest  # noqa: E402
 from ruleforge.model import Source  # noqa: E402
 from ruleforge.parsers import parse_resource  # noqa: E402
+from ruleforge.routing import ROUTING_CATEGORY_ORDER, routing_order_violations  # noqa: E402
+from ruleforge.runtime import RouteProbe, simulate_first_match  # noqa: E402
 
 
 class RuleForgeTests(unittest.TestCase):
@@ -42,12 +45,13 @@ class RuleForgeTests(unittest.TestCase):
             self.assertEqual(urlopen.call_count, 1)
 
     def test_manifest_has_unique_seed_sources(self) -> None:
+        expected_counts = {"quantumultx.yaml": 96, "mihomo.yaml": 95}
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
             manifest, sources = load_manifest(ROOT / "sources" / filename)
             self.assertEqual(manifest["target"], target)
-            self.assertEqual(len(sources), 95)
-            self.assertEqual(len({source.id for source in sources}), 95)
-            self.assertEqual(len({source.url for source in sources}), 95)
+            self.assertEqual(len(sources), expected_counts[filename])
+            self.assertEqual(len({source.id for source in sources}), expected_counts[filename])
+            self.assertEqual(len({source.url for source in sources}), expected_counts[filename])
 
     def test_inline_source_is_local_and_does_not_require_network(self) -> None:
         source = Source(
@@ -183,9 +187,10 @@ class RuleForgeTests(unittest.TestCase):
         resolution = resolve_conflicts(audit)
 
         self.assertEqual(audit.conflicts[0].relation, "host-keyword-overlap")
-        self.assertEqual(resolution.rules, (specific,))
+        self.assertEqual(resolution.rules, (broad, specific))
+        self.assertEqual(len(resolution.ordered_overlap_decisions), 1)
 
-    def test_reject_protects_a_broader_keyword_overlap(self) -> None:
+    def test_reject_precedes_a_broader_keyword_overlap(self) -> None:
         reject = Source("rulego-reject", "filter", "surge", "reject", "reject", "https://reject.test", "surge")
         google = Source(
             "blackmatrix-google",
@@ -201,8 +206,8 @@ class RuleForgeTests(unittest.TestCase):
 
         resolution = resolve_conflicts(audit_rules((broad, specific)))
 
-        self.assertEqual(resolution.rules, (broad,))
-        self.assertEqual(len(resolution.protective_reject_decisions), 1)
+        self.assertEqual(resolution.rules, (broad, specific))
+        self.assertEqual(len(resolution.ordered_overlap_decisions), 1)
 
     def test_china_media_wins_exact_conflict_with_global_media(self) -> None:
         china_media = Source(
@@ -256,9 +261,10 @@ class RuleForgeTests(unittest.TestCase):
         resolution = resolve_conflicts(audit)
 
         self.assertEqual(audit.conflicts[0].relation, "ip-cidr-overlap")
-        self.assertEqual(resolution.rules, (specific,))
+        self.assertEqual(resolution.rules, (broad, specific))
+        self.assertEqual(len(resolution.ordered_overlap_decisions), 1)
 
-    def test_blackmatrix_wins_policy_conflict(self) -> None:
+    def test_reject_beats_blackmatrix_for_an_exact_policy_conflict(self) -> None:
         reject = Source("rulego-test", "filter", "surge", "demo", "reject", "https://reject.test", "surge")
         blackmatrix = Source(
             "blackmatrix-test", "filter", "quantumult-x", "demo", "direct", "https://blackmatrix.test", "quantumult-x"
@@ -268,11 +274,11 @@ class RuleForgeTests(unittest.TestCase):
         audit = audit_rules((rejected_rule, preferred_rule))
         resolution = resolve_conflicts(audit)
         self.assertEqual(len(audit.kept_rules), 2)
-        self.assertEqual(len(resolution.preferred_decisions), 1)
+        self.assertEqual(len(resolution.protective_reject_decisions), 1)
         self.assertEqual(len(resolution.unresolved_decisions), 0)
-        self.assertEqual(resolution.rules, (preferred_rule,))
+        self.assertEqual(resolution.rules, (rejected_rule,))
 
-    def test_direct_wins_reject_and_specific_rule_wins_broad_rule(self) -> None:
+    def test_reject_beats_normal_direct_and_semantic_overlap_is_retained(self) -> None:
         reject = Source("rulego-reject", "filter", "surge", "demo", "reject", "https://reject.test", "surge")
         direct = Source("rulego-direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")
         broad = Source("rulego-broad", "filter", "surge", "demo", "全球加速", "https://broad.test", "surge")
@@ -282,12 +288,148 @@ class RuleForgeTests(unittest.TestCase):
         broad_rule = parse_resource("DOMAIN-SUFFIX,example.com\n", broad).rules[0]
         audit = audit_rules((exact_reject, exact_direct, specific, broad_rule))
         resolution = resolve_conflicts(audit)
-        self.assertEqual(len(resolution.direct_decisions), 1)
-        self.assertEqual(len(resolution.specific_decisions), 1)
-        self.assertIn(exact_direct, resolution.rules)
+        self.assertEqual(len(resolution.direct_decisions), 0)
+        self.assertEqual(len(resolution.protective_reject_decisions), 1)
+        self.assertEqual(len(resolution.ordered_overlap_decisions), 1)
+        self.assertIn(exact_reject, resolution.rules)
+        self.assertNotIn(exact_direct, resolution.rules)
         self.assertIn(specific, resolution.rules)
-        self.assertNotIn(exact_reject, resolution.rules)
-        self.assertNotIn(broad_rule, resolution.rules)
+        self.assertIn(broad_rule, resolution.rules)
+
+    def test_direct_exception_can_override_reject(self) -> None:
+        reject = Source("reject", "filter", "surge", "reject", "reject", "https://reject.test", "surge")
+        exception = Source(
+            "exception",
+            "filter",
+            "surge",
+            "direct-exception",
+            "direct",
+            "https://exception.test",
+            "surge",
+        )
+        rejected_rule = parse_resource("DOMAIN,example.com\n", reject).rules[0]
+        exception_rule = parse_resource("DOMAIN,example.com\n", exception).rules[0]
+
+        resolution = resolve_conflicts(audit_rules((rejected_rule, exception_rule)))
+
+        self.assertEqual(resolution.rules, (exception_rule,))
+        self.assertEqual(resolution.decisions[0].decision, "prefer-direct-exception")
+
+    def test_surged_policy_field_does_not_hide_an_exact_conflict(self) -> None:
+        direct = Source("direct", "filter", "surge", "demo", "direct", "https://direct.test", "surge")
+        reject = Source("reject", "filter", "surge", "demo", "reject", "https://reject.test", "surge")
+        direct_rule = parse_resource("DOMAIN,example.com,direct\n", direct).rules[0]
+        reject_rule = parse_resource("DOMAIN,example.com,reject\n", reject).rules[0]
+
+        audit = audit_rules((direct_rule, reject_rule))
+        resolution = resolve_conflicts(audit)
+
+        self.assertEqual(direct_rule.options, ())
+        self.assertEqual(reject_rule.options, ())
+        self.assertEqual(len(audit.conflicts), 1)
+        self.assertEqual(resolution.rules, (reject_rule,))
+
+    def test_option_order_does_not_hide_an_exact_duplicate(self) -> None:
+        source = Source("source", "filter", "surge", "demo", "direct", "https://source.test", "surge")
+        first = parse_resource("DOMAIN,example.com,no-resolve,extended-matching\n", source).rules[0]
+        second = parse_resource("DOMAIN,example.com,extended-matching,no-resolve\n", source).rules[0]
+
+        audit = audit_rules((first, second))
+
+        self.assertEqual(len(audit.duplicates), 1)
+        self.assertEqual(len(audit.conflicts), 0)
+
+    def test_semantic_overlap_keeps_the_broad_rule_for_other_hosts(self) -> None:
+        direct = Source("direct", "filter", "surge", "china-direct", "direct", "https://direct.test", "surge")
+        proxy = Source("proxy", "filter", "surge", "proxy", "proxy", "https://proxy.test", "surge")
+        broad = parse_resource("DOMAIN-SUFFIX,example.com\n", direct).rules[0]
+        specific = parse_resource("DOMAIN,foo.example.com\n", proxy).rules[0]
+
+        resolution = resolve_conflicts(audit_rules((broad, specific)))
+
+        self.assertEqual(resolution.rules, (broad, specific))
+        self.assertEqual(resolution.constraints[0].before, specific)
+        self.assertEqual(resolution.constraints[0].after, broad)
+
+    def test_ai_curation_drops_shared_infrastructure_but_keeps_explicit_endpoints(self) -> None:
+        ai = Source("blackmatrix-openai", "filter", "clash", "ai", "AI", "https://ai.test", "clash-classical")
+        rules = parse_resource(
+            "IP-ASN,20473\nDOMAIN-SUFFIX,stripe.com\nDOMAIN-SUFFIX,openai.com\nDOMAIN,anthropic.auth0.com\n",
+            ai,
+        ).rules
+
+        result = curate_rules(rules)
+
+        self.assertEqual(
+            {(rule.rule_type, rule.value) for rule in result.rules},
+            {("HOST-SUFFIX", "openai.com"), ("HOST", "anthropic.auth0.com")},
+        )
+        self.assertEqual(
+            {drop.reason for drop in result.dropped},
+            {"shared-infrastructure-asn", "shared-infrastructure-root-suffix"},
+        )
+
+    def test_routing_category_order_satisfies_declared_constraints(self) -> None:
+        self.assertEqual(routing_order_violations(), ())
+
+    def test_mihomo_profile_uses_the_shared_routing_category_order(self) -> None:
+        content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
+        positions = [content.index(f"RULE-SET,{category},") for category in ROUTING_CATEGORY_ORDER]
+        self.assertEqual(positions, sorted(positions))
+
+    def test_runtime_route_probes_cover_openai_and_reject_boundaries(self) -> None:
+        ai = Source("ai", "filter", "quantumult-x", "ai", "AI", "https://ai.test", "quantumult-x")
+        reject = Source("reject", "filter", "surge", "reject", "reject", "https://reject.test", "surge")
+        direct = Source("direct", "filter", "surge", "china-direct", "direct", "https://direct.test", "surge")
+        exception = Source(
+            "exception",
+            "filter",
+            "surge",
+            "direct-exception",
+            "direct",
+            "https://exception.test",
+            "surge",
+        )
+        rules = tuple(
+            rule
+            for source, text in (
+                (ai, "HOST-SUFFIX,openai.com\nHOST-SUFFIX,oaistatsig.com\n"),
+                (reject, "HOST-SUFFIX,example.com\n"),
+                (direct, "HOST-SUFFIX,example.net\n"),
+                (exception, "HOST,allow.example.com\n"),
+            )
+            for rule in parse_resource(text, source).rules
+        )
+
+        self.assertEqual(simulate_first_match(rules, RouteProbe(domain="auth.openai.com")).policy, "AI")
+        self.assertEqual(simulate_first_match(rules, RouteProbe(domain="api.oaistatsig.com")).policy, "AI")
+        self.assertEqual(simulate_first_match(rules, RouteProbe(domain="ad.example.com")).policy, "reject")
+        self.assertEqual(simulate_first_match(rules, RouteProbe(domain="www.example.net")).policy, "direct")
+        self.assertEqual(simulate_first_match(rules, RouteProbe(domain="allow.example.com")).policy, "direct")
+
+    def test_generated_quantumultx_routes_pass_openai_probes(self) -> None:
+        import json
+
+        build = json.loads((ROOT / "outputs" / "quantumult-x" / "build.json").read_text(encoding="utf-8"))
+        rules = []
+        for entry in build["safe_categories"]:
+            source = Source(
+                f"generated-{entry['category']}",
+                "filter",
+                "quantumult-x",
+                entry["category"],
+                entry["policy"],
+                "inline:generated",
+                "quantumult-x",
+            )
+            rules.extend(
+                parse_resource((ROOT / entry["file"]).read_text(encoding="utf-8"), source).rules
+            )
+
+        for domain in ("auth.openai.com", "chatgpt.com", "persistent.oaistatic.com", "api.oaistatsig.com"):
+            result = simulate_first_match(rules, RouteProbe(domain=domain))
+            self.assertIsNotNone(result)
+            self.assertEqual(result.policy, "AI")
 
     def test_business_category_boundaries_are_applied(self) -> None:
         def source(source_id: str, category: str, policy: str) -> Source:
@@ -459,11 +601,25 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(content.count("interval: 86400"), 28)
         self.assertNotIn("interval: 172800", content)
 
+    def test_mihomo_profile_declares_udp_disabled_by_default(self) -> None:
+        content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
+        self.assertEqual(content.count("override:"), 2)
+        self.assertEqual(content.count("udp: false"), 2)
+        self.assertIn("Proxy Provider 的节点 UDP 默认显式关闭", (ROOT / "profiles" / "mihomo" / "README.md").read_text(encoding="utf-8"))
+
     def test_quantumultx_readme_documents_all_remote_policies(self) -> None:
         content = (ROOT / "profiles" / "quantumult-x" / "README.md").read_text(encoding="utf-8")
         self.assertIn("- 美国节点", content)
         self.assertIn("- proxy", content)
         self.assertIn("没有 Mihomo 的 `GEOSITE,cn` 域名兜底", content)
+
+    def test_quantumultx_has_openai_statsig_fallback(self) -> None:
+        _, sources = load_manifest(ROOT / "sources" / "quantumultx.yaml")
+        self.assertTrue(any(source.id == "local-openai-oaistatsig" for source in sources))
+        content = (ROOT / "outputs" / "quantumult-x" / "categories" / "safe" / "ai.list").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("host-suffix,oaistatsig.com,AI", content)
 
     def test_generated_china_media_filter_is_not_empty(self) -> None:
         content = (ROOT / "outputs" / "quantumult-x" / "categories" / "safe" / "china-media.list").read_text(

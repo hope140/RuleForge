@@ -22,6 +22,7 @@
 - `find-process-mode` 使用 `strict`，以支持规则中的 `PROCESS-NAME`。
 - 策略选择和 Fake-IP 状态会保存。
 - GeoSite 使用 MetaCubeX 的 `geosite.dat`，每 24 小时自动更新。
+- Proxy Provider 的节点 UDP 默认显式关闭（`override.udp: false`）。只有确认机场服务端和具体节点支持 UDP 后，才应改为 `true`；该设置会影响 provider 下的节点，不等于策略组本身的 UDP 标记。
 - `GEOSITE,cn,DIRECT` 位于明确代理规则之后，用于覆盖 Fake-IP 下无法通过 `GEOIP,CN` 判断的中国域名。
 
 控制器目前只允许本机访问。若要改成局域网或公网监听，应先设置随机密钥，并同时限制防火墙和访问来源。
@@ -34,9 +35,9 @@
 
 ## 规则更新
 
-模板引用 26 个 Classical 文本 Rule Provider，并额外加载 GeoSite 数据库。规则文件不带策略列，`rules` 中的 `RULE-SET` 负责把分类交给对应策略组；`RULE-SET,ai,AI` 后紧跟 `GEOSITE,openai,AI`，用于覆盖 curated AI 清单之外的 OpenAI 域名；`GEOSITE,cn,DIRECT` 负责中国域名兜底。
+模板引用 26 个 Classical 文本 Rule Provider，并额外加载 GeoSite 数据库。规则文件不带策略列，`rules` 中的 `RULE-SET` 负责把分类交给对应策略组；`RULE-SET,ai,AI` 后紧跟 `GEOSITE,openai,AI`，用于覆盖 curated AI 清单之外的 OpenAI 域名；`GEOSITE,cn,DIRECT` 负责中国域名兜底。构建时会将共享云厂商 ASN 和通用 SaaS 根域从 AI 分类中排除，并写入 `outputs/mihomo/curation.json`。
 
-每个 Rule Provider 的刷新间隔为 86400 秒，也就是 24 小时。GitHub Actions 每天更新一次仓库中的规则文件，客户端按自己的刷新间隔重新下载。
+每个 Rule Provider 的刷新间隔为 86400 秒，也就是 24 小时。GitHub Actions 每天更新一次仓库中的规则文件，客户端按自己的刷新间隔重新下载。若订阅节点本身经过实测支持 UDP，再把对应 Proxy Provider 的 `override.udp` 从 `false` 改为 `true`，不能仅修改策略组的 UDP 标记。若不支持 UDP，应保持关闭，或对地区敏感的 UDP/443 流量明确阻止并使用 TCP fallback。
 
 ## DNS 与 TUN 边界
 

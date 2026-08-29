@@ -47,7 +47,7 @@ def _semantic_options(rule_type: str, options: tuple[str, ...]) -> tuple[str, ..
         if rule_type in LITERAL_IP_RULE_TYPES and name == "no-resolve":
             continue
         result.append(option)
-    return tuple(result)
+    return tuple(sorted(result, key=str.casefold))
 
 
 @dataclass(frozen=True)

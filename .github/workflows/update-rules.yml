@@ -76,6 +76,18 @@ jobs:
             > "$home/proxy_providers/provider-2.yaml"
           "$RUNNER_TEMP/mihomo" -t -d "$home" -f "$GITHUB_WORKSPACE/profiles/mihomo/config.example.yaml"
 
+          test -f outputs/mihomo/curation.json
+          test -f outputs/quantumult-x/curation.json
+          grep -q '^host-suffix,oaistatsig.com,AI$' outputs/quantumult-x/categories/safe/ai.list
+          if grep -RniE '^(DOMAIN-SUFFIX|IP-ASN),(auth0\.com|algolia\.net|identrust\.com|intercom\.io|intercomcdn\.com|launchdarkly\.com|segment\.io|sentry\.io|stripe\.com|14061|20473)' outputs/mihomo/categories/safe/ai.list; then
+            echo "Shared infrastructure curation leaked into Mihomo AI output" >&2
+            exit 1
+          fi
+          if grep -RniE '^(host-suffix|ip-asn),(auth0\.com|algolia\.net|identrust\.com|intercom\.io|intercomcdn\.com|launchdarkly\.com|segment\.io|sentry\.io|stripe\.com|14061|20473)' outputs/quantumult-x/categories/safe/ai.list; then
+            echo "Shared infrastructure curation leaked into Quantumult X AI output" >&2
+            exit 1
+          fi
+
       - name: Detect meaningful generated changes
         id: changes
         shell: bash
@@ -120,6 +132,7 @@ jobs:
             curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
               --output "$RUNNER_TEMP/published-$name" "$base/$name"
             grep -q '^# Category:' "$RUNNER_TEMP/published-$name"
+          done
 
       - name: Verify published Quantumult X rule filters
         if: github.ref == 'refs/heads/main'
@@ -138,4 +151,3 @@ jobs:
             --output "$RUNNER_TEMP/filter_remote.safe.conf" \
             "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/quantumult-x/filter_remote.safe.conf"
           grep -q '^\[filter_remote\]$' "$RUNNER_TEMP/filter_remote.safe.conf"
-          done

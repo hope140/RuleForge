@@ -14,7 +14,7 @@
 - `enabled`：是否纳入构建
 - `notes`：特殊处理或保留原因
 
-`inline:` 地址只用于稳定、可审计的本地补充规则，不访问网络，也不应放入订阅或凭据。当前仅用于补充 Apple 的 `cma2.itunes.apple.com` 精确主机。
+`inline:` 地址只用于稳定、可审计的本地补充规则，不访问网络，也不应放入订阅或凭据。当前用于补充 Apple 的 `cma2.itunes.apple.com` 精确主机，以及 QX 没有 GeoSite 兜底时的 `oaistatsig.com` 根域。
 
 ## 命名约定
 
@@ -22,7 +22,7 @@
 - `category` 使用稳定的小写 kebab-case，表示业务归属，例如 `ai`、`apple`、`social`、`china-services`；同类来源必须使用同一个分类名。
 - `policy` 只填写目标配置中已经存在的策略名，例如 `AI`、`苹果服务`、`direct`，不在来源名称里重复表达策略。
 
-规则源更新后，先记录变更，再运行解析、去重和冲突审计；不要直接覆盖生成结果。
+规则源更新后，先记录变更，再运行解析、Curation、去重和冲突审计；不要直接覆盖生成结果。
 
 ## 来源角色
 
@@ -30,7 +30,7 @@
 - `ConnersHua/RuleGo`：补充 Surge 格式的跨客户端分类规则，经过本项目转换后使用。
 - `ACL4SSR/ACL4SSR`：作为交叉来源，优先用于发现主来源遗漏的规则；不把它的客户端配置格式直接当作 Quantumult X 输出。
 
-同一个 `category` 可以登记多个来源。构建时会先把同类来源合并，再统一规范化、精确去重、语义冲突审计，最后分别输出候选版和已按优先级裁决的规则版。
+同一个 `category` 可以登记多个来源。构建时会先把同类来源合并，再统一规范化；共享云厂商 ASN 和通用 SaaS 根域等明确排除项会进入 Curation 报告，不参加后续冲突裁决，最后分别输出候选版和已按优先级裁决的规则版。
 
 ## 双目标来源
 
@@ -41,11 +41,11 @@
 
 ## 冲突优先级
 
-冲突裁决按以下顺序执行。语义重叠先按已登记的业务边界和保护性规则处理，避免渲染后的客户端顺序把宽泛关键词或网段误认为最终策略；完全相同的规则仍按来源和策略优先级裁决。
+冲突裁决按以下顺序执行。完全相同的 selector 是 exclusive conflict，只保留一个策略；域名后缀、关键词、通配符和 CIDR 的覆盖关系是 ordered overlap，两条规则都保留并记录 first-match 约束，避免删除宽泛规则造成未重叠地址失去覆盖。
 
-1. 直连 `direct` 优先于阻断 `reject`。
+1. 明确的 `direct-exception` 可以覆盖 `reject`；普通 `direct` 不覆盖 `reject`。
 2. 业务边界优先于宽泛关键词和网段重叠：Google Voice > Google、AI > Google、YouTube > Google、Apple/Google > 国内直连；国内影音与国际影音按服务边界区分。
 3. 更具体的单独规则优先于更宽泛的整体规则，例如 `HOST` 优先于覆盖它的 `HOST-SUFFIX`，非关键词域名规则优先于覆盖它的 `HOST-KEYWORD`，更长的子网优先于父网段。
-4. 广告和隐私阻断规则保护已识别的语义重叠；开发者服务优先于泛 GitHub 分类，`naver.com` 优先国际媒体，社交与 Netflix 的专用网段优先各自业务分类。
-5. `china-media` 与 `global-media` 的完全相同规则按已登记的国内/国际媒体边界优先保留 `china-media`；其他完全相同且仍无法按业务边界判断的规则，再由 Blackmatrix 来源优先于其他来源。
-6. 不符合以上条件的冲突不猜测，保留在审计报告并从已裁决输出中排除。
+4. 广告和隐私阻断规则优先于普通业务规则；开发者服务优先于泛 GitHub 分类，`naver.com` 优先国际媒体，社交与 Netflix 的专用网段优先各自业务分类。
+5. `china-media` 与 `global-media` 的完全相同规则按已登记的国内/国际媒体边界优先保留 `china-media`；其他完全相同且仍无法按业务边界判断的规则，再由 Blackmatrix 来源作为 tie-breaker。
+6. 没有稳定顺序的 exclusive conflict 保留在审计报告并从已裁决输出中排除；ordered overlap 不因无法自动决定类别胜负而删除整条规则。

@@ -8,6 +8,7 @@ source manifest
   -> parser
   -> canonical rule model
   -> group by business category
+  -> curation guardrails
   -> exact deduplication
   -> semantic overlap analysis
   -> policy resolution
@@ -52,7 +53,7 @@ Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、�
 
 当前输出分为两层：`categories/candidates/<category>.list` 保留所有规范化后的候选规则；`categories/safe/<category>.list` 按保护性规则、业务边界、具体规则和来源优先级自动裁决，仍无法判断的冲突才从已裁决输出中排除，并写入冲突报告。审计优先使用目标客户端最终会看到的规则身份，避免源规则中被丢弃的选项制造隐性重复。
 
-每个业务分类的处理顺序是：先合并多个上游来源，再做精确去重和语义冲突审计；后续的策略裁决器只处理报告中的歧义，不再重复搬运上游规则。
+每个业务分类的处理顺序是：先合并多个上游来源，再应用明确的 Curation 排除项，然后做精确去重和语义冲突审计。完全相同的 selector 才选择一个策略；语义覆盖关系保留双方并记录先后约束，后续的策略裁决器不再通过删除宽泛规则来掩盖重叠。
 
 ## 安全边界
 

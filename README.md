@@ -13,6 +13,8 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [远程过滤器片段](outputs/quantumult-x/filter_remote.safe.conf)按业务优先级引用各分类文件。
 - [构建摘要](outputs/quantumult-x/build.json)记录来源哈希、规则数量和裁决统计。
 - [冲突报告](outputs/quantumult-x/conflicts.md)记录冲突内容、处理结果和裁决原因。
+- [Curation 报告](outputs/quantumult-x/curation.json)记录从 AI 分类中排除的共享基础设施。
+- [AI Curation 清单](curation/ai.drop.list)记录可审计的排除项。
 
 ### Mihomo
 
@@ -22,6 +24,8 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [路由规则片段](outputs/mihomo/rules.safe.yaml)按业务优先级引用 26 个 Rule Provider。
 - [通用配置示例](profiles/mihomo/config.example.yaml)提供双订阅、地区测速组和业务策略组。
 - [构建摘要](outputs/mihomo/build.json)与[冲突报告](outputs/mihomo/conflicts.md)记录 Mihomo 来源的构建结果。
+- [Curation 报告](outputs/mihomo/curation.json)记录从 AI 分类中排除的共享基础设施。
+- [AI Curation 清单](curation/ai.drop.list)记录可审计的排除项。
 
 ## Mihomo 配置示例
 
@@ -32,7 +36,7 @@ REPLACE_WITH_SUBSCRIPTION_1
 REPLACE_WITH_SUBSCRIPTION_2
 ```
 
-模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。业务策略组排在地区测速组之前，保留订阅原始节点名称，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
+模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。Proxy Provider 节点 UDP 默认显式关闭，确认服务端支持后再按 provider 开启。业务策略组排在地区测速组之前，保留订阅原始节点名称，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
 
 26 个 Rule Provider 指向本仓库 `main` 分支，每 86400 秒刷新一次；GeoSite 数据也按 24 小时自动更新。模板不包含 Quantumult X 的重写、MITM 和定时脚本。
 
@@ -73,12 +77,13 @@ Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域�
 1. 拉取来源并更新缓存。
 2. 按来源格式解析为统一规则模型。
 3. 合并同一业务分类中的多个来源。
-4. 规范化规则并删除完全重复的内容。
-5. 检查语义重叠和策略冲突。
-6. 按直连/阻断保护、已登记的业务边界、规则具体程度和来源优先级进行裁决，并以最终目标客户端会实际匹配的语义为准。
-7. 生成客户端规则、构建摘要和冲突报告。
+4. 应用可审计的 Curation 规则，排除共享云厂商 ASN 和通用 SaaS 根域。
+5. 规范化规则并删除完全重复的内容。
+6. 检查语义重叠和策略冲突。
+7. 按安全策略、业务边界、规则具体程度和来源优先级进行裁决，并以最终目标客户端会实际匹配的语义为准。
+8. 生成客户端规则、构建摘要、冲突报告和 Curation 报告。
 
-冲突裁决会处理域名关键词、通配符和 CIDR 重叠；广告/隐私阻断、业务边界和更具体规则不会被渲染后的文件顺序意外覆盖。完全相同且仍无法判断的规则才使用 Blackmatrix 来源优先级，裁决器无法判断的冲突会保留在报告中，并从 `safe` 输出中排除。
+冲突裁决会处理域名关键词、通配符和 CIDR 重叠。完全相同的 selector 才会在策略冲突时选择一个结果；仅有覆盖关系的 semantic overlap 会保留两条规则，并记录 first-match 顺序约束，避免删除宽泛规则后造成其他域名失去覆盖。普通 `direct` 不覆盖 `reject`，只有明确的 `direct-exception` 才允许这样做。
 
 `categories/candidates/` 用于检查候选规则，`categories/safe/` 才是提供给客户端的已裁决版本。
 
@@ -86,7 +91,7 @@ Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域�
 
 当前主要来源为 [Blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)，并使用 [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo) 与 [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 补充和交叉检查。
 
-Quantumult X 与 Mihomo 使用两份独立清单。两份清单保持相同的业务分类和策略边界，各自采用适合目标客户端的上游格式，生成结果不会互相作为输入。
+Quantumult X 与 Mihomo 使用两份独立清单。两份清单保持相同的业务分类和策略边界，各自采用适合目标客户端的上游格式，生成结果不会互相作为输入。QX 没有 Mihomo 的 `GEOSITE,openai` 兜底，因此额外登记了 `oaistatsig.com` 的 QX 补充规则。
 
 - [Quantumult X 来源清单](sources/quantumultx.yaml)
 - [Mihomo 来源清单](sources/mihomo.yaml)

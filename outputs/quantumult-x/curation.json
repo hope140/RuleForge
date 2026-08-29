@@ -1,0 +1,256 @@
+{
+  "kept_rule_count": 13523,
+  "dropped_rule_count": 25,
+  "dropped": [
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "algolia.net",
+      "line_number": 19,
+      "raw": "HOST-SUFFIX,algolia.net,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "auth0.com",
+      "line_number": 21,
+      "raw": "HOST-SUFFIX,auth0.com,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "identrust.com",
+      "line_number": 28,
+      "raw": "HOST-SUFFIX,identrust.com,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "intercom.io",
+      "line_number": 29,
+      "raw": "HOST-SUFFIX,intercom.io,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "intercomcdn.com",
+      "line_number": 30,
+      "raw": "HOST-SUFFIX,intercomcdn.com,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "launchdarkly.com",
+      "line_number": 31,
+      "raw": "HOST-SUFFIX,launchdarkly.com,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "segment.io",
+      "line_number": 38,
+      "raw": "HOST-SUFFIX,segment.io,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "sentry.io",
+      "line_number": 39,
+      "raw": "HOST-SUFFIX,sentry.io,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "stripe.com",
+      "line_number": 40,
+      "raw": "HOST-SUFFIX,stripe.com,OpenAI",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-openai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "IP-ASN",
+      "value": "20473",
+      "line_number": 45,
+      "raw": "IP-ASN,20473,OpenAI",
+      "reason": "shared-infrastructure-asn"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "algolia.net",
+      "line_number": 31,
+      "raw": "HOST-SUFFIX,algolia.net,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "auth0.com",
+      "line_number": 33,
+      "raw": "HOST-SUFFIX,auth0.com,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "identrust.com",
+      "line_number": 43,
+      "raw": "HOST-SUFFIX,identrust.com,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "intercom.io",
+      "line_number": 44,
+      "raw": "HOST-SUFFIX,intercom.io,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "intercomcdn.com",
+      "line_number": 45,
+      "raw": "HOST-SUFFIX,intercomcdn.com,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "launchdarkly.com",
+      "line_number": 46,
+      "raw": "HOST-SUFFIX,launchdarkly.com,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "segment.io",
+      "line_number": 53,
+      "raw": "HOST-SUFFIX,segment.io,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "sentry.io",
+      "line_number": 54,
+      "raw": "HOST-SUFFIX,sentry.io,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "stripe.com",
+      "line_number": 55,
+      "raw": "HOST-SUFFIX,stripe.com,Copilot",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "IP-ASN",
+      "value": "14061",
+      "line_number": 60,
+      "raw": "IP-ASN,14061,Copilot",
+      "reason": "shared-infrastructure-asn"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "IP-ASN",
+      "value": "20473",
+      "line_number": 61,
+      "raw": "IP-ASN,20473,Copilot",
+      "reason": "shared-infrastructure-asn"
+    },
+    {
+      "source_id": "acl4ssr-ai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "auth0.com",
+      "line_number": 20,
+      "raw": "DOMAIN-SUFFIX,auth0.com",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "acl4ssr-ai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "identrust.com",
+      "line_number": 36,
+      "raw": "DOMAIN-SUFFIX,identrust.com",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "acl4ssr-ai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "intercom.io",
+      "line_number": 37,
+      "raw": "DOMAIN-SUFFIX,intercom.io",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "acl4ssr-ai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "intercomcdn.com",
+      "line_number": 38,
+      "raw": "DOMAIN-SUFFIX,intercomcdn.com",
+      "reason": "shared-infrastructure-root-suffix"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ruleforge"
-version = "0.1.0"
+version = "0.1.1"
 description = "Normalize, deduplicate, audit and render proxy rules."
 requires-python = ">=3.11"
 dependencies = []

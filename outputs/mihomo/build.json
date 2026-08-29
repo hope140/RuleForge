@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-08-28T08:57:18.976358+00:00",
-  "generator_version": "0.1.0",
+  "generated_at_utc": "2026-08-29T07:51:44.103511+00:00",
+  "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
     "target": "mihomo",
@@ -964,31 +964,48 @@
   "source_count": 95,
   "enabled_source_count": 95,
   "parsed_rule_count": 6756,
-  "kept_rule_count": 6432,
-  "safe_rule_count": 6089,
-  "resolved_rule_count": 6089,
-  "conflicted_rule_count": 972,
-  "duplicate_count": 324,
-  "conflict_count": 930,
-  "resolved_conflict_count": 930,
-  "blackmatrix_preferred_conflict_count": 135,
-  "direct_preferred_conflict_count": 63,
-  "specific_preferred_conflict_count": 463,
-  "category_preferred_conflict_count": 208,
-  "protective_reject_conflict_count": 61,
+  "curated_rule_count": 6731,
+  "curation_drop_count": 25,
+  "candidate_kept_rule_count": 6432,
+  "kept_rule_count": 6421,
+  "safe_rule_count": 6249,
+  "resolved_rule_count": 6249,
+  "conflicted_rule_count": 968,
+  "duplicate_count": 310,
+  "conflict_count": 928,
+  "resolved_conflict_count": 928,
+  "blackmatrix_preferred_conflict_count": 58,
+  "direct_preferred_conflict_count": 0,
+  "specific_preferred_conflict_count": 0,
+  "category_preferred_conflict_count": 105,
+  "protective_reject_conflict_count": 11,
+  "ordered_overlap_count": 754,
+  "routing_constraint_count": 754,
   "unresolved_conflict_count": 0,
   "resolution": {
-    "resolved_rule_count": 6089,
-    "rejected_rule_count": 343,
-    "resolved_conflict_count": 930,
-    "blackmatrix_preferred_conflict_count": 135,
-    "direct_preferred_conflict_count": 63,
-    "specific_preferred_conflict_count": 463,
-    "category_preferred_conflict_count": 208,
-    "protective_reject_conflict_count": 61,
+    "resolved_rule_count": 6249,
+    "rejected_rule_count": 172,
+    "resolved_conflict_count": 928,
+    "blackmatrix_preferred_conflict_count": 58,
+    "direct_preferred_conflict_count": 0,
+    "specific_preferred_conflict_count": 0,
+    "category_preferred_conflict_count": 105,
+    "protective_reject_conflict_count": 11,
+    "ordered_overlap_count": 754,
     "unresolved_conflict_count": 0
   },
   "candidate_categories": [
+    {
+      "category": "direct-exception",
+      "file": "outputs/mihomo/categories/candidates/direct-exception.list",
+      "filename": "direct-exception.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 21,
+      "source_count": 1
+    },
     {
       "category": "reject",
       "file": "outputs/mihomo/categories/candidates/reject.list",
@@ -1010,6 +1027,182 @@
       ],
       "rule_count": 87,
       "source_count": 1
+    },
+    {
+      "category": "ai",
+      "file": "outputs/mihomo/categories/candidates/ai.list",
+      "filename": "ai.list",
+      "policy": "AI",
+      "policies": [
+        "AI"
+      ],
+      "rule_count": 147,
+      "source_count": 8
+    },
+    {
+      "category": "google-voice",
+      "file": "outputs/mihomo/categories/candidates/google-voice.list",
+      "filename": "google-voice.list",
+      "policy": "美国节点",
+      "policies": [
+        "美国节点"
+      ],
+      "rule_count": 1,
+      "source_count": 1
+    },
+    {
+      "category": "youtube",
+      "file": "outputs/mihomo/categories/candidates/youtube.list",
+      "filename": "youtube.list",
+      "policy": "YouTube",
+      "policies": [
+        "YouTube"
+      ],
+      "rule_count": 184,
+      "source_count": 2
+    },
+    {
+      "category": "netflix",
+      "file": "outputs/mihomo/categories/candidates/netflix.list",
+      "filename": "netflix.list",
+      "policy": "Netflix",
+      "policies": [
+        "Netflix"
+      ],
+      "rule_count": 38,
+      "source_count": 1
+    },
+    {
+      "category": "tiktok",
+      "file": "outputs/mihomo/categories/candidates/tiktok.list",
+      "filename": "tiktok.list",
+      "policy": "海外抖音",
+      "policies": [
+        "海外抖音"
+      ],
+      "rule_count": 32,
+      "source_count": 1
+    },
+    {
+      "category": "telegram",
+      "file": "outputs/mihomo/categories/candidates/telegram.list",
+      "filename": "telegram.list",
+      "policy": "电报代理",
+      "policies": [
+        "电报代理"
+      ],
+      "rule_count": 46,
+      "source_count": 1
+    },
+    {
+      "category": "spotify",
+      "file": "outputs/mihomo/categories/candidates/spotify.list",
+      "filename": "spotify.list",
+      "policy": "Spotify",
+      "policies": [
+        "Spotify"
+      ],
+      "rule_count": 30,
+      "source_count": 1
+    },
+    {
+      "category": "developer",
+      "file": "outputs/mihomo/categories/candidates/developer.list",
+      "filename": "developer.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 79,
+      "source_count": 9
+    },
+    {
+      "category": "github",
+      "file": "outputs/mihomo/categories/candidates/github.list",
+      "filename": "github.list",
+      "policy": "GitHub",
+      "policies": [
+        "GitHub"
+      ],
+      "rule_count": 31,
+      "source_count": 1
+    },
+    {
+      "category": "apple",
+      "file": "outputs/mihomo/categories/candidates/apple.list",
+      "filename": "apple.list",
+      "policy": "苹果服务",
+      "policies": [
+        "苹果服务"
+      ],
+      "rule_count": 136,
+      "source_count": 10
+    },
+    {
+      "category": "social",
+      "file": "outputs/mihomo/categories/candidates/social.list",
+      "filename": "social.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 694,
+      "source_count": 9
+    },
+    {
+      "category": "google",
+      "file": "outputs/mihomo/categories/candidates/google.list",
+      "filename": "google.list",
+      "policy": "谷歌服务",
+      "policies": [
+        "谷歌服务"
+      ],
+      "rule_count": 720,
+      "source_count": 3
+    },
+    {
+      "category": "microsoft",
+      "file": "outputs/mihomo/categories/candidates/microsoft.list",
+      "filename": "microsoft.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 670,
+      "source_count": 1
+    },
+    {
+      "category": "cloud",
+      "file": "outputs/mihomo/categories/candidates/cloud.list",
+      "filename": "cloud.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 37,
+      "source_count": 3
+    },
+    {
+      "category": "china-media",
+      "file": "outputs/mihomo/categories/candidates/china-media.list",
+      "filename": "china-media.list",
+      "policy": "港台番剧",
+      "policies": [
+        "港台番剧"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
+      "category": "global-media",
+      "file": "outputs/mihomo/categories/candidates/global-media.list",
+      "filename": "global-media.list",
+      "policy": "国际媒体",
+      "policies": [
+        "国际媒体"
+      ],
+      "rule_count": 612,
+      "source_count": 14
     },
     {
       "category": "alipay",
@@ -1067,193 +1260,6 @@
       "source_count": 1
     },
     {
-      "category": "direct-exception",
-      "file": "outputs/mihomo/categories/candidates/direct-exception.list",
-      "filename": "direct-exception.list",
-      "policy": "direct",
-      "policies": [
-        "direct"
-      ],
-      "rule_count": 21,
-      "source_count": 1
-    },
-    {
-      "category": "ai",
-      "file": "outputs/mihomo/categories/candidates/ai.list",
-      "filename": "ai.list",
-      "policy": "AI",
-      "policies": [
-        "AI"
-      ],
-      "rule_count": 147,
-      "source_count": 8
-    },
-    {
-      "category": "apple",
-      "file": "outputs/mihomo/categories/candidates/apple.list",
-      "filename": "apple.list",
-      "policy": "苹果服务",
-      "policies": [
-        "苹果服务"
-      ],
-      "rule_count": 136,
-      "source_count": 10
-    },
-    {
-      "category": "google-voice",
-      "file": "outputs/mihomo/categories/candidates/google-voice.list",
-      "filename": "google-voice.list",
-      "policy": "美国节点",
-      "policies": [
-        "美国节点"
-      ],
-      "rule_count": 1,
-      "source_count": 1
-    },
-    {
-      "category": "google",
-      "file": "outputs/mihomo/categories/candidates/google.list",
-      "filename": "google.list",
-      "policy": "谷歌服务",
-      "policies": [
-        "谷歌服务"
-      ],
-      "rule_count": 720,
-      "source_count": 3
-    },
-    {
-      "category": "microsoft",
-      "file": "outputs/mihomo/categories/candidates/microsoft.list",
-      "filename": "microsoft.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 670,
-      "source_count": 1
-    },
-    {
-      "category": "cloud",
-      "file": "outputs/mihomo/categories/candidates/cloud.list",
-      "filename": "cloud.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 37,
-      "source_count": 3
-    },
-    {
-      "category": "social",
-      "file": "outputs/mihomo/categories/candidates/social.list",
-      "filename": "social.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 694,
-      "source_count": 9
-    },
-    {
-      "category": "developer",
-      "file": "outputs/mihomo/categories/candidates/developer.list",
-      "filename": "developer.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 79,
-      "source_count": 9
-    },
-    {
-      "category": "github",
-      "file": "outputs/mihomo/categories/candidates/github.list",
-      "filename": "github.list",
-      "policy": "GitHub",
-      "policies": [
-        "GitHub"
-      ],
-      "rule_count": 31,
-      "source_count": 1
-    },
-    {
-      "category": "spotify",
-      "file": "outputs/mihomo/categories/candidates/spotify.list",
-      "filename": "spotify.list",
-      "policy": "Spotify",
-      "policies": [
-        "Spotify"
-      ],
-      "rule_count": 30,
-      "source_count": 1
-    },
-    {
-      "category": "telegram",
-      "file": "outputs/mihomo/categories/candidates/telegram.list",
-      "filename": "telegram.list",
-      "policy": "电报代理",
-      "policies": [
-        "电报代理"
-      ],
-      "rule_count": 46,
-      "source_count": 1
-    },
-    {
-      "category": "tiktok",
-      "file": "outputs/mihomo/categories/candidates/tiktok.list",
-      "filename": "tiktok.list",
-      "policy": "海外抖音",
-      "policies": [
-        "海外抖音"
-      ],
-      "rule_count": 32,
-      "source_count": 1
-    },
-    {
-      "category": "youtube",
-      "file": "outputs/mihomo/categories/candidates/youtube.list",
-      "filename": "youtube.list",
-      "policy": "YouTube",
-      "policies": [
-        "YouTube"
-      ],
-      "rule_count": 184,
-      "source_count": 2
-    },
-    {
-      "category": "netflix",
-      "file": "outputs/mihomo/categories/candidates/netflix.list",
-      "filename": "netflix.list",
-      "policy": "Netflix",
-      "policies": [
-        "Netflix"
-      ],
-      "rule_count": 38,
-      "source_count": 1
-    },
-    {
-      "category": "china-media",
-      "file": "outputs/mihomo/categories/candidates/china-media.list",
-      "filename": "china-media.list",
-      "policy": "港台番剧",
-      "policies": [
-        "港台番剧"
-      ],
-      "rule_count": 16,
-      "source_count": 1
-    },
-    {
-      "category": "global-media",
-      "file": "outputs/mihomo/categories/candidates/global-media.list",
-      "filename": "global-media.list",
-      "policy": "国际媒体",
-      "policies": [
-        "国际媒体"
-      ],
-      "rule_count": 612,
-      "source_count": 14
-    },
-    {
       "category": "proxy-exception",
       "file": "outputs/mihomo/categories/candidates/proxy-exception.list",
       "filename": "proxy-exception.list",
@@ -1278,6 +1284,17 @@
   ],
   "safe_categories": [
     {
+      "category": "direct-exception",
+      "file": "outputs/mihomo/categories/safe/direct-exception.list",
+      "filename": "direct-exception.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 18,
+      "source_count": 1
+    },
+    {
       "category": "reject",
       "file": "outputs/mihomo/categories/safe/reject.list",
       "filename": "reject.list",
@@ -1285,7 +1302,7 @@
       "policies": [
         "reject"
       ],
-      "rule_count": 927,
+      "rule_count": 974,
       "source_count": 1
     },
     {
@@ -1296,8 +1313,184 @@
       "policies": [
         "reject"
       ],
-      "rule_count": 74,
+      "rule_count": 87,
       "source_count": 1
+    },
+    {
+      "category": "ai",
+      "file": "outputs/mihomo/categories/safe/ai.list",
+      "filename": "ai.list",
+      "policy": "AI",
+      "policies": [
+        "AI"
+      ],
+      "rule_count": 127,
+      "source_count": 8
+    },
+    {
+      "category": "google-voice",
+      "file": "outputs/mihomo/categories/safe/google-voice.list",
+      "filename": "google-voice.list",
+      "policy": "美国节点",
+      "policies": [
+        "美国节点"
+      ],
+      "rule_count": 1,
+      "source_count": 1
+    },
+    {
+      "category": "youtube",
+      "file": "outputs/mihomo/categories/safe/youtube.list",
+      "filename": "youtube.list",
+      "policy": "YouTube",
+      "policies": [
+        "YouTube"
+      ],
+      "rule_count": 184,
+      "source_count": 2
+    },
+    {
+      "category": "netflix",
+      "file": "outputs/mihomo/categories/safe/netflix.list",
+      "filename": "netflix.list",
+      "policy": "Netflix",
+      "policies": [
+        "Netflix"
+      ],
+      "rule_count": 38,
+      "source_count": 1
+    },
+    {
+      "category": "tiktok",
+      "file": "outputs/mihomo/categories/safe/tiktok.list",
+      "filename": "tiktok.list",
+      "policy": "海外抖音",
+      "policies": [
+        "海外抖音"
+      ],
+      "rule_count": 32,
+      "source_count": 1
+    },
+    {
+      "category": "telegram",
+      "file": "outputs/mihomo/categories/safe/telegram.list",
+      "filename": "telegram.list",
+      "policy": "电报代理",
+      "policies": [
+        "电报代理"
+      ],
+      "rule_count": 46,
+      "source_count": 1
+    },
+    {
+      "category": "spotify",
+      "file": "outputs/mihomo/categories/safe/spotify.list",
+      "filename": "spotify.list",
+      "policy": "Spotify",
+      "policies": [
+        "Spotify"
+      ],
+      "rule_count": 30,
+      "source_count": 1
+    },
+    {
+      "category": "developer",
+      "file": "outputs/mihomo/categories/safe/developer.list",
+      "filename": "developer.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 79,
+      "source_count": 9
+    },
+    {
+      "category": "github",
+      "file": "outputs/mihomo/categories/safe/github.list",
+      "filename": "github.list",
+      "policy": "GitHub",
+      "policies": [
+        "GitHub"
+      ],
+      "rule_count": 28,
+      "source_count": 1
+    },
+    {
+      "category": "apple",
+      "file": "outputs/mihomo/categories/safe/apple.list",
+      "filename": "apple.list",
+      "policy": "苹果服务",
+      "policies": [
+        "苹果服务"
+      ],
+      "rule_count": 136,
+      "source_count": 10
+    },
+    {
+      "category": "social",
+      "file": "outputs/mihomo/categories/safe/social.list",
+      "filename": "social.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 693,
+      "source_count": 9
+    },
+    {
+      "category": "google",
+      "file": "outputs/mihomo/categories/safe/google.list",
+      "filename": "google.list",
+      "policy": "谷歌服务",
+      "policies": [
+        "谷歌服务"
+      ],
+      "rule_count": 710,
+      "source_count": 3
+    },
+    {
+      "category": "microsoft",
+      "file": "outputs/mihomo/categories/safe/microsoft.list",
+      "filename": "microsoft.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 668,
+      "source_count": 1
+    },
+    {
+      "category": "cloud",
+      "file": "outputs/mihomo/categories/safe/cloud.list",
+      "filename": "cloud.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 37,
+      "source_count": 3
+    },
+    {
+      "category": "china-media",
+      "file": "outputs/mihomo/categories/safe/china-media.list",
+      "filename": "china-media.list",
+      "policy": "港台番剧",
+      "policies": [
+        "港台番剧"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
+      "category": "global-media",
+      "file": "outputs/mihomo/categories/safe/global-media.list",
+      "filename": "global-media.list",
+      "policy": "国际媒体",
+      "policies": [
+        "国际媒体"
+      ],
+      "rule_count": 559,
+      "source_count": 14
     },
     {
       "category": "alipay",
@@ -1340,7 +1533,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 211,
+      "rule_count": 199,
       "source_count": 4
     },
     {
@@ -1351,195 +1544,8 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 232,
+      "rule_count": 246,
       "source_count": 1
-    },
-    {
-      "category": "direct-exception",
-      "file": "outputs/mihomo/categories/safe/direct-exception.list",
-      "filename": "direct-exception.list",
-      "policy": "direct",
-      "policies": [
-        "direct"
-      ],
-      "rule_count": 18,
-      "source_count": 1
-    },
-    {
-      "category": "ai",
-      "file": "outputs/mihomo/categories/safe/ai.list",
-      "filename": "ai.list",
-      "policy": "AI",
-      "policies": [
-        "AI"
-      ],
-      "rule_count": 134,
-      "source_count": 8
-    },
-    {
-      "category": "apple",
-      "file": "outputs/mihomo/categories/safe/apple.list",
-      "filename": "apple.list",
-      "policy": "苹果服务",
-      "policies": [
-        "苹果服务"
-      ],
-      "rule_count": 125,
-      "source_count": 10
-    },
-    {
-      "category": "google-voice",
-      "file": "outputs/mihomo/categories/safe/google-voice.list",
-      "filename": "google-voice.list",
-      "policy": "美国节点",
-      "policies": [
-        "美国节点"
-      ],
-      "rule_count": 1,
-      "source_count": 1
-    },
-    {
-      "category": "google",
-      "file": "outputs/mihomo/categories/safe/google.list",
-      "filename": "google.list",
-      "policy": "谷歌服务",
-      "policies": [
-        "谷歌服务"
-      ],
-      "rule_count": 694,
-      "source_count": 3
-    },
-    {
-      "category": "microsoft",
-      "file": "outputs/mihomo/categories/safe/microsoft.list",
-      "filename": "microsoft.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 652,
-      "source_count": 1
-    },
-    {
-      "category": "cloud",
-      "file": "outputs/mihomo/categories/safe/cloud.list",
-      "filename": "cloud.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 37,
-      "source_count": 3
-    },
-    {
-      "category": "social",
-      "file": "outputs/mihomo/categories/safe/social.list",
-      "filename": "social.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 690,
-      "source_count": 9
-    },
-    {
-      "category": "developer",
-      "file": "outputs/mihomo/categories/safe/developer.list",
-      "filename": "developer.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 78,
-      "source_count": 9
-    },
-    {
-      "category": "github",
-      "file": "outputs/mihomo/categories/safe/github.list",
-      "filename": "github.list",
-      "policy": "GitHub",
-      "policies": [
-        "GitHub"
-      ],
-      "rule_count": 25,
-      "source_count": 1
-    },
-    {
-      "category": "spotify",
-      "file": "outputs/mihomo/categories/safe/spotify.list",
-      "filename": "spotify.list",
-      "policy": "Spotify",
-      "policies": [
-        "Spotify"
-      ],
-      "rule_count": 29,
-      "source_count": 1
-    },
-    {
-      "category": "telegram",
-      "file": "outputs/mihomo/categories/safe/telegram.list",
-      "filename": "telegram.list",
-      "policy": "电报代理",
-      "policies": [
-        "电报代理"
-      ],
-      "rule_count": 46,
-      "source_count": 1
-    },
-    {
-      "category": "tiktok",
-      "file": "outputs/mihomo/categories/safe/tiktok.list",
-      "filename": "tiktok.list",
-      "policy": "海外抖音",
-      "policies": [
-        "海外抖音"
-      ],
-      "rule_count": 31,
-      "source_count": 1
-    },
-    {
-      "category": "youtube",
-      "file": "outputs/mihomo/categories/safe/youtube.list",
-      "filename": "youtube.list",
-      "policy": "YouTube",
-      "policies": [
-        "YouTube"
-      ],
-      "rule_count": 181,
-      "source_count": 2
-    },
-    {
-      "category": "netflix",
-      "file": "outputs/mihomo/categories/safe/netflix.list",
-      "filename": "netflix.list",
-      "policy": "Netflix",
-      "policies": [
-        "Netflix"
-      ],
-      "rule_count": 37,
-      "source_count": 1
-    },
-    {
-      "category": "china-media",
-      "file": "outputs/mihomo/categories/safe/china-media.list",
-      "filename": "china-media.list",
-      "policy": "港台番剧",
-      "policies": [
-        "港台番剧"
-      ],
-      "rule_count": 16,
-      "source_count": 1
-    },
-    {
-      "category": "global-media",
-      "file": "outputs/mihomo/categories/safe/global-media.list",
-      "filename": "global-media.list",
-      "policy": "国际媒体",
-      "policies": [
-        "国际媒体"
-      ],
-      "rule_count": 525,
-      "source_count": 14
     },
     {
       "category": "proxy-exception",
@@ -1560,7 +1566,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 373,
+      "rule_count": 388,
       "source_count": 1
     }
   ],

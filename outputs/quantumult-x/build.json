@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-08-28T08:57:17.110936+00:00",
-  "generator_version": "0.1.0",
+  "generated_at_utc": "2026-08-29T07:51:51.733783+00:00",
+  "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
     "target": "quantumult-x",
@@ -107,6 +107,17 @@
         "parser": "surge",
         "enabled": true,
         "notes": "作为 AI 交叉来源，统一转换为 Quantumult X 规则并参与去重和冲突审计；不直接复制其客户端格式。"
+      },
+      {
+        "id": "local-openai-oaistatsig",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "url": "inline:HOST-SUFFIX,oaistatsig.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "QX 没有 Mihomo 的 GEOSITE,openai 兜底，补充 OpenAI Statsig telemetry 根域。"
       },
       {
         "id": "blackmatrix-apple",
@@ -961,34 +972,51 @@
       }
     ]
   },
-  "source_count": 95,
-  "enabled_source_count": 95,
-  "parsed_rule_count": 13547,
-  "kept_rule_count": 13104,
-  "safe_rule_count": 12703,
-  "resolved_rule_count": 12703,
-  "conflicted_rule_count": 1165,
-  "duplicate_count": 443,
-  "conflict_count": 1139,
-  "resolved_conflict_count": 1139,
-  "blackmatrix_preferred_conflict_count": 146,
-  "direct_preferred_conflict_count": 87,
-  "specific_preferred_conflict_count": 569,
-  "category_preferred_conflict_count": 273,
-  "protective_reject_conflict_count": 64,
+  "source_count": 96,
+  "enabled_source_count": 96,
+  "parsed_rule_count": 13548,
+  "curated_rule_count": 13523,
+  "curation_drop_count": 25,
+  "candidate_kept_rule_count": 13105,
+  "kept_rule_count": 13094,
+  "safe_rule_count": 12903,
+  "resolved_rule_count": 12903,
+  "conflicted_rule_count": 1161,
+  "duplicate_count": 429,
+  "conflict_count": 1137,
+  "resolved_conflict_count": 1137,
+  "blackmatrix_preferred_conflict_count": 66,
+  "direct_preferred_conflict_count": 0,
+  "specific_preferred_conflict_count": 0,
+  "category_preferred_conflict_count": 113,
+  "protective_reject_conflict_count": 14,
+  "ordered_overlap_count": 944,
+  "routing_constraint_count": 944,
   "unresolved_conflict_count": 0,
   "resolution": {
-    "resolved_rule_count": 12703,
-    "rejected_rule_count": 401,
-    "resolved_conflict_count": 1139,
-    "blackmatrix_preferred_conflict_count": 146,
-    "direct_preferred_conflict_count": 87,
-    "specific_preferred_conflict_count": 569,
-    "category_preferred_conflict_count": 273,
-    "protective_reject_conflict_count": 64,
+    "resolved_rule_count": 12903,
+    "rejected_rule_count": 191,
+    "resolved_conflict_count": 1137,
+    "blackmatrix_preferred_conflict_count": 66,
+    "direct_preferred_conflict_count": 0,
+    "specific_preferred_conflict_count": 0,
+    "category_preferred_conflict_count": 113,
+    "protective_reject_conflict_count": 14,
+    "ordered_overlap_count": 944,
     "unresolved_conflict_count": 0
   },
   "candidate_categories": [
+    {
+      "category": "direct-exception",
+      "file": "outputs/quantumult-x/categories/candidates/direct-exception.list",
+      "filename": "direct-exception.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 21,
+      "source_count": 1
+    },
     {
       "category": "reject",
       "file": "outputs/quantumult-x/categories/candidates/reject.list",
@@ -1010,6 +1038,182 @@
       ],
       "rule_count": 87,
       "source_count": 1
+    },
+    {
+      "category": "ai",
+      "file": "outputs/quantumult-x/categories/candidates/ai.list",
+      "filename": "ai.list",
+      "policy": "AI",
+      "policies": [
+        "AI"
+      ],
+      "rule_count": 148,
+      "source_count": 9
+    },
+    {
+      "category": "google-voice",
+      "file": "outputs/quantumult-x/categories/candidates/google-voice.list",
+      "filename": "google-voice.list",
+      "policy": "美国节点",
+      "policies": [
+        "美国节点"
+      ],
+      "rule_count": 1,
+      "source_count": 1
+    },
+    {
+      "category": "youtube",
+      "file": "outputs/quantumult-x/categories/candidates/youtube.list",
+      "filename": "youtube.list",
+      "policy": "YouTube",
+      "policies": [
+        "YouTube"
+      ],
+      "rule_count": 196,
+      "source_count": 1
+    },
+    {
+      "category": "netflix",
+      "file": "outputs/quantumult-x/categories/candidates/netflix.list",
+      "filename": "netflix.list",
+      "policy": "Netflix",
+      "policies": [
+        "Netflix"
+      ],
+      "rule_count": 1158,
+      "source_count": 1
+    },
+    {
+      "category": "tiktok",
+      "file": "outputs/quantumult-x/categories/candidates/tiktok.list",
+      "filename": "tiktok.list",
+      "policy": "海外抖音",
+      "policies": [
+        "海外抖音"
+      ],
+      "rule_count": 32,
+      "source_count": 1
+    },
+    {
+      "category": "telegram",
+      "file": "outputs/quantumult-x/categories/candidates/telegram.list",
+      "filename": "telegram.list",
+      "policy": "电报代理",
+      "policies": [
+        "电报代理"
+      ],
+      "rule_count": 40,
+      "source_count": 1
+    },
+    {
+      "category": "spotify",
+      "file": "outputs/quantumult-x/categories/candidates/spotify.list",
+      "filename": "spotify.list",
+      "policy": "Spotify",
+      "policies": [
+        "Spotify"
+      ],
+      "rule_count": 30,
+      "source_count": 1
+    },
+    {
+      "category": "developer",
+      "file": "outputs/quantumult-x/categories/candidates/developer.list",
+      "filename": "developer.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 79,
+      "source_count": 9
+    },
+    {
+      "category": "github",
+      "file": "outputs/quantumult-x/categories/candidates/github.list",
+      "filename": "github.list",
+      "policy": "GitHub",
+      "policies": [
+        "GitHub"
+      ],
+      "rule_count": 31,
+      "source_count": 1
+    },
+    {
+      "category": "apple",
+      "file": "outputs/quantumult-x/categories/candidates/apple.list",
+      "filename": "apple.list",
+      "policy": "苹果服务",
+      "policies": [
+        "苹果服务"
+      ],
+      "rule_count": 1904,
+      "source_count": 7
+    },
+    {
+      "category": "social",
+      "file": "outputs/quantumult-x/categories/candidates/social.list",
+      "filename": "social.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 694,
+      "source_count": 9
+    },
+    {
+      "category": "google",
+      "file": "outputs/quantumult-x/categories/candidates/google.list",
+      "filename": "google.list",
+      "policy": "谷歌服务",
+      "policies": [
+        "谷歌服务"
+      ],
+      "rule_count": 729,
+      "source_count": 3
+    },
+    {
+      "category": "microsoft",
+      "file": "outputs/quantumult-x/categories/candidates/microsoft.list",
+      "filename": "microsoft.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 712,
+      "source_count": 1
+    },
+    {
+      "category": "cloud",
+      "file": "outputs/quantumult-x/categories/candidates/cloud.list",
+      "filename": "cloud.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 36,
+      "source_count": 3
+    },
+    {
+      "category": "china-media",
+      "file": "outputs/quantumult-x/categories/candidates/china-media.list",
+      "filename": "china-media.list",
+      "policy": "港台番剧",
+      "policies": [
+        "港台番剧"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
+      "category": "global-media",
+      "file": "outputs/quantumult-x/categories/candidates/global-media.list",
+      "filename": "global-media.list",
+      "policy": "国际媒体",
+      "policies": [
+        "国际媒体"
+      ],
+      "rule_count": 615,
+      "source_count": 17
     },
     {
       "category": "alipay",
@@ -1067,193 +1271,6 @@
       "source_count": 1
     },
     {
-      "category": "direct-exception",
-      "file": "outputs/quantumult-x/categories/candidates/direct-exception.list",
-      "filename": "direct-exception.list",
-      "policy": "direct",
-      "policies": [
-        "direct"
-      ],
-      "rule_count": 21,
-      "source_count": 1
-    },
-    {
-      "category": "ai",
-      "file": "outputs/quantumult-x/categories/candidates/ai.list",
-      "filename": "ai.list",
-      "policy": "AI",
-      "policies": [
-        "AI"
-      ],
-      "rule_count": 147,
-      "source_count": 8
-    },
-    {
-      "category": "apple",
-      "file": "outputs/quantumult-x/categories/candidates/apple.list",
-      "filename": "apple.list",
-      "policy": "苹果服务",
-      "policies": [
-        "苹果服务"
-      ],
-      "rule_count": 1904,
-      "source_count": 7
-    },
-    {
-      "category": "google-voice",
-      "file": "outputs/quantumult-x/categories/candidates/google-voice.list",
-      "filename": "google-voice.list",
-      "policy": "美国节点",
-      "policies": [
-        "美国节点"
-      ],
-      "rule_count": 1,
-      "source_count": 1
-    },
-    {
-      "category": "google",
-      "file": "outputs/quantumult-x/categories/candidates/google.list",
-      "filename": "google.list",
-      "policy": "谷歌服务",
-      "policies": [
-        "谷歌服务"
-      ],
-      "rule_count": 729,
-      "source_count": 3
-    },
-    {
-      "category": "microsoft",
-      "file": "outputs/quantumult-x/categories/candidates/microsoft.list",
-      "filename": "microsoft.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 712,
-      "source_count": 1
-    },
-    {
-      "category": "cloud",
-      "file": "outputs/quantumult-x/categories/candidates/cloud.list",
-      "filename": "cloud.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 36,
-      "source_count": 3
-    },
-    {
-      "category": "social",
-      "file": "outputs/quantumult-x/categories/candidates/social.list",
-      "filename": "social.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 694,
-      "source_count": 9
-    },
-    {
-      "category": "developer",
-      "file": "outputs/quantumult-x/categories/candidates/developer.list",
-      "filename": "developer.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 79,
-      "source_count": 9
-    },
-    {
-      "category": "github",
-      "file": "outputs/quantumult-x/categories/candidates/github.list",
-      "filename": "github.list",
-      "policy": "GitHub",
-      "policies": [
-        "GitHub"
-      ],
-      "rule_count": 31,
-      "source_count": 1
-    },
-    {
-      "category": "spotify",
-      "file": "outputs/quantumult-x/categories/candidates/spotify.list",
-      "filename": "spotify.list",
-      "policy": "Spotify",
-      "policies": [
-        "Spotify"
-      ],
-      "rule_count": 30,
-      "source_count": 1
-    },
-    {
-      "category": "telegram",
-      "file": "outputs/quantumult-x/categories/candidates/telegram.list",
-      "filename": "telegram.list",
-      "policy": "电报代理",
-      "policies": [
-        "电报代理"
-      ],
-      "rule_count": 40,
-      "source_count": 1
-    },
-    {
-      "category": "tiktok",
-      "file": "outputs/quantumult-x/categories/candidates/tiktok.list",
-      "filename": "tiktok.list",
-      "policy": "海外抖音",
-      "policies": [
-        "海外抖音"
-      ],
-      "rule_count": 32,
-      "source_count": 1
-    },
-    {
-      "category": "youtube",
-      "file": "outputs/quantumult-x/categories/candidates/youtube.list",
-      "filename": "youtube.list",
-      "policy": "YouTube",
-      "policies": [
-        "YouTube"
-      ],
-      "rule_count": 196,
-      "source_count": 1
-    },
-    {
-      "category": "netflix",
-      "file": "outputs/quantumult-x/categories/candidates/netflix.list",
-      "filename": "netflix.list",
-      "policy": "Netflix",
-      "policies": [
-        "Netflix"
-      ],
-      "rule_count": 1158,
-      "source_count": 1
-    },
-    {
-      "category": "china-media",
-      "file": "outputs/quantumult-x/categories/candidates/china-media.list",
-      "filename": "china-media.list",
-      "policy": "港台番剧",
-      "policies": [
-        "港台番剧"
-      ],
-      "rule_count": 16,
-      "source_count": 1
-    },
-    {
-      "category": "global-media",
-      "file": "outputs/quantumult-x/categories/candidates/global-media.list",
-      "filename": "global-media.list",
-      "policy": "国际媒体",
-      "policies": [
-        "国际媒体"
-      ],
-      "rule_count": 615,
-      "source_count": 17
-    },
-    {
       "category": "proxy-exception",
       "file": "outputs/quantumult-x/categories/candidates/proxy-exception.list",
       "filename": "proxy-exception.list",
@@ -1278,6 +1295,17 @@
   ],
   "safe_categories": [
     {
+      "category": "direct-exception",
+      "file": "outputs/quantumult-x/categories/safe/direct-exception.list",
+      "filename": "direct-exception.list",
+      "policy": "direct",
+      "policies": [
+        "direct"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
       "category": "reject",
       "file": "outputs/quantumult-x/categories/safe/reject.list",
       "filename": "reject.list",
@@ -1285,7 +1313,7 @@
       "policies": [
         "reject"
       ],
-      "rule_count": 905,
+      "rule_count": 974,
       "source_count": 1
     },
     {
@@ -1296,8 +1324,184 @@
       "policies": [
         "reject"
       ],
-      "rule_count": 72,
+      "rule_count": 87,
       "source_count": 1
+    },
+    {
+      "category": "ai",
+      "file": "outputs/quantumult-x/categories/safe/ai.list",
+      "filename": "ai.list",
+      "policy": "AI",
+      "policies": [
+        "AI"
+      ],
+      "rule_count": 127,
+      "source_count": 9
+    },
+    {
+      "category": "google-voice",
+      "file": "outputs/quantumult-x/categories/safe/google-voice.list",
+      "filename": "google-voice.list",
+      "policy": "美国节点",
+      "policies": [
+        "美国节点"
+      ],
+      "rule_count": 1,
+      "source_count": 1
+    },
+    {
+      "category": "youtube",
+      "file": "outputs/quantumult-x/categories/safe/youtube.list",
+      "filename": "youtube.list",
+      "policy": "YouTube",
+      "policies": [
+        "YouTube"
+      ],
+      "rule_count": 196,
+      "source_count": 1
+    },
+    {
+      "category": "netflix",
+      "file": "outputs/quantumult-x/categories/safe/netflix.list",
+      "filename": "netflix.list",
+      "policy": "Netflix",
+      "policies": [
+        "Netflix"
+      ],
+      "rule_count": 1158,
+      "source_count": 1
+    },
+    {
+      "category": "tiktok",
+      "file": "outputs/quantumult-x/categories/safe/tiktok.list",
+      "filename": "tiktok.list",
+      "policy": "海外抖音",
+      "policies": [
+        "海外抖音"
+      ],
+      "rule_count": 32,
+      "source_count": 1
+    },
+    {
+      "category": "telegram",
+      "file": "outputs/quantumult-x/categories/safe/telegram.list",
+      "filename": "telegram.list",
+      "policy": "电报代理",
+      "policies": [
+        "电报代理"
+      ],
+      "rule_count": 40,
+      "source_count": 1
+    },
+    {
+      "category": "spotify",
+      "file": "outputs/quantumult-x/categories/safe/spotify.list",
+      "filename": "spotify.list",
+      "policy": "Spotify",
+      "policies": [
+        "Spotify"
+      ],
+      "rule_count": 30,
+      "source_count": 1
+    },
+    {
+      "category": "developer",
+      "file": "outputs/quantumult-x/categories/safe/developer.list",
+      "filename": "developer.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 79,
+      "source_count": 9
+    },
+    {
+      "category": "github",
+      "file": "outputs/quantumult-x/categories/safe/github.list",
+      "filename": "github.list",
+      "policy": "GitHub",
+      "policies": [
+        "GitHub"
+      ],
+      "rule_count": 28,
+      "source_count": 1
+    },
+    {
+      "category": "apple",
+      "file": "outputs/quantumult-x/categories/safe/apple.list",
+      "filename": "apple.list",
+      "policy": "苹果服务",
+      "policies": [
+        "苹果服务"
+      ],
+      "rule_count": 1902,
+      "source_count": 7
+    },
+    {
+      "category": "social",
+      "file": "outputs/quantumult-x/categories/safe/social.list",
+      "filename": "social.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 693,
+      "source_count": 9
+    },
+    {
+      "category": "google",
+      "file": "outputs/quantumult-x/categories/safe/google.list",
+      "filename": "google.list",
+      "policy": "谷歌服务",
+      "policies": [
+        "谷歌服务"
+      ],
+      "rule_count": 717,
+      "source_count": 3
+    },
+    {
+      "category": "microsoft",
+      "file": "outputs/quantumult-x/categories/safe/microsoft.list",
+      "filename": "microsoft.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 710,
+      "source_count": 1
+    },
+    {
+      "category": "cloud",
+      "file": "outputs/quantumult-x/categories/safe/cloud.list",
+      "filename": "cloud.list",
+      "policy": "全球加速",
+      "policies": [
+        "全球加速"
+      ],
+      "rule_count": 36,
+      "source_count": 3
+    },
+    {
+      "category": "china-media",
+      "file": "outputs/quantumult-x/categories/safe/china-media.list",
+      "filename": "china-media.list",
+      "policy": "港台番剧",
+      "policies": [
+        "港台番剧"
+      ],
+      "rule_count": 16,
+      "source_count": 1
+    },
+    {
+      "category": "global-media",
+      "file": "outputs/quantumult-x/categories/safe/global-media.list",
+      "filename": "global-media.list",
+      "policy": "国际媒体",
+      "policies": [
+        "国际媒体"
+      ],
+      "rule_count": 557,
+      "source_count": 17
     },
     {
       "category": "alipay",
@@ -1329,7 +1533,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 4659,
+      "rule_count": 4660,
       "source_count": 12
     },
     {
@@ -1340,7 +1544,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 217,
+      "rule_count": 205,
       "source_count": 4
     },
     {
@@ -1351,195 +1555,8 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 189,
+      "rule_count": 208,
       "source_count": 1
-    },
-    {
-      "category": "direct-exception",
-      "file": "outputs/quantumult-x/categories/safe/direct-exception.list",
-      "filename": "direct-exception.list",
-      "policy": "direct",
-      "policies": [
-        "direct"
-      ],
-      "rule_count": 16,
-      "source_count": 1
-    },
-    {
-      "category": "ai",
-      "file": "outputs/quantumult-x/categories/safe/ai.list",
-      "filename": "ai.list",
-      "policy": "AI",
-      "policies": [
-        "AI"
-      ],
-      "rule_count": 132,
-      "source_count": 8
-    },
-    {
-      "category": "apple",
-      "file": "outputs/quantumult-x/categories/safe/apple.list",
-      "filename": "apple.list",
-      "policy": "苹果服务",
-      "policies": [
-        "苹果服务"
-      ],
-      "rule_count": 1885,
-      "source_count": 6
-    },
-    {
-      "category": "google-voice",
-      "file": "outputs/quantumult-x/categories/safe/google-voice.list",
-      "filename": "google-voice.list",
-      "policy": "美国节点",
-      "policies": [
-        "美国节点"
-      ],
-      "rule_count": 1,
-      "source_count": 1
-    },
-    {
-      "category": "google",
-      "file": "outputs/quantumult-x/categories/safe/google.list",
-      "filename": "google.list",
-      "policy": "谷歌服务",
-      "policies": [
-        "谷歌服务"
-      ],
-      "rule_count": 701,
-      "source_count": 3
-    },
-    {
-      "category": "microsoft",
-      "file": "outputs/quantumult-x/categories/safe/microsoft.list",
-      "filename": "microsoft.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 692,
-      "source_count": 1
-    },
-    {
-      "category": "cloud",
-      "file": "outputs/quantumult-x/categories/safe/cloud.list",
-      "filename": "cloud.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 36,
-      "source_count": 3
-    },
-    {
-      "category": "social",
-      "file": "outputs/quantumult-x/categories/safe/social.list",
-      "filename": "social.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 688,
-      "source_count": 9
-    },
-    {
-      "category": "developer",
-      "file": "outputs/quantumult-x/categories/safe/developer.list",
-      "filename": "developer.list",
-      "policy": "全球加速",
-      "policies": [
-        "全球加速"
-      ],
-      "rule_count": 78,
-      "source_count": 9
-    },
-    {
-      "category": "github",
-      "file": "outputs/quantumult-x/categories/safe/github.list",
-      "filename": "github.list",
-      "policy": "GitHub",
-      "policies": [
-        "GitHub"
-      ],
-      "rule_count": 25,
-      "source_count": 1
-    },
-    {
-      "category": "spotify",
-      "file": "outputs/quantumult-x/categories/safe/spotify.list",
-      "filename": "spotify.list",
-      "policy": "Spotify",
-      "policies": [
-        "Spotify"
-      ],
-      "rule_count": 29,
-      "source_count": 1
-    },
-    {
-      "category": "telegram",
-      "file": "outputs/quantumult-x/categories/safe/telegram.list",
-      "filename": "telegram.list",
-      "policy": "电报代理",
-      "policies": [
-        "电报代理"
-      ],
-      "rule_count": 40,
-      "source_count": 1
-    },
-    {
-      "category": "tiktok",
-      "file": "outputs/quantumult-x/categories/safe/tiktok.list",
-      "filename": "tiktok.list",
-      "policy": "海外抖音",
-      "policies": [
-        "海外抖音"
-      ],
-      "rule_count": 31,
-      "source_count": 1
-    },
-    {
-      "category": "youtube",
-      "file": "outputs/quantumult-x/categories/safe/youtube.list",
-      "filename": "youtube.list",
-      "policy": "YouTube",
-      "policies": [
-        "YouTube"
-      ],
-      "rule_count": 193,
-      "source_count": 1
-    },
-    {
-      "category": "netflix",
-      "file": "outputs/quantumult-x/categories/safe/netflix.list",
-      "filename": "netflix.list",
-      "policy": "Netflix",
-      "policies": [
-        "Netflix"
-      ],
-      "rule_count": 1157,
-      "source_count": 1
-    },
-    {
-      "category": "china-media",
-      "file": "outputs/quantumult-x/categories/safe/china-media.list",
-      "filename": "china-media.list",
-      "policy": "港台番剧",
-      "policies": [
-        "港台番剧"
-      ],
-      "rule_count": 16,
-      "source_count": 1
-    },
-    {
-      "category": "global-media",
-      "file": "outputs/quantumult-x/categories/safe/global-media.list",
-      "filename": "global-media.list",
-      "policy": "国际媒体",
-      "policies": [
-        "国际媒体"
-      ],
-      "rule_count": 525,
-      "source_count": 17
     },
     {
       "category": "proxy-exception",
@@ -1560,7 +1577,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 371,
+      "rule_count": 386,
       "source_count": 1
     }
   ],
@@ -1645,6 +1662,14 @@
       "sha256": "63e70895ac8c04c3b28965dc0b4ba9ceb3a1313a66b49487ed96005debc97e1e",
       "from_cache": true,
       "rule_count": 49,
+      "issue_count": 0
+    },
+    {
+      "id": "local-openai-oaistatsig",
+      "url": "inline:HOST-SUFFIX,oaistatsig.com",
+      "sha256": "807f70e698793584a186dcdc26e7796959f8ade647522149b0df557e6c0912a9",
+      "from_cache": true,
+      "rule_count": 1,
       "issue_count": 0
     },
     {

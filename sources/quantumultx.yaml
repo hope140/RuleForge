@@ -94,6 +94,16 @@ sources:
     enabled: true
     notes: 作为 AI 交叉来源，统一转换为 Quantumult X 规则并参与去重和冲突审计；不直接复制其客户端格式。
 
+  - id: local-openai-oaistatsig
+    kind: inline
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: "inline:HOST-SUFFIX,oaistatsig.com"
+    parser: quantumult-x
+    enabled: true
+    notes: QX 没有 Mihomo 的 GEOSITE,openai 兜底，补充 OpenAI Statsig telemetry 根域。
+
   - id: blackmatrix-apple
     kind: filter
     format: quantumult-x
