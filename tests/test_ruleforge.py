@@ -369,16 +369,18 @@ class RuleForgeTests(unittest.TestCase):
 
         reject = Source("reject", "filter", "surge", "reject", "reject", "https://r.test", "surge")
         ai = Source("ai", "filter", "surge", "ai", "AI", "https://a.test", "surge")
+        alipay = Source("alipay", "filter", "surge", "alipay", "direct", "https://p.test", "surge")
         rules = (
             parse_resource("DOMAIN,ai.example\n", ai).rules[0],
             parse_resource("DOMAIN-SUFFIX,ads.example\n", reject).rules[0],
+            parse_resource("DOMAIN,pay.example\n", alipay).rules[0],
         )
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             entries = render_mihomo_category_filters(
                 rules, root / "safe", relative_prefix="outputs/mihomo/categories/safe"
             )
-            self.assertEqual([entry["category"] for entry in entries], ["reject", "ai"])
+            self.assertEqual([entry["category"] for entry in entries], ["reject", "ai", "alipay"])
             self.assertIn("DOMAIN,ai.example\n", (root / "safe" / "ai.list").read_text(encoding="utf-8"))
             self.assertNotIn(",AI\n", (root / "safe" / "ai.list").read_text(encoding="utf-8"))
             render_mihomo_rule_providers(entries, root / "providers.yaml", repository_base_url="https://raw.test")
@@ -387,9 +389,27 @@ class RuleForgeTests(unittest.TestCase):
             route_rules = (root / "rules.yaml").read_text(encoding="utf-8")
             self.assertIn("behavior: classical", providers)
             self.assertIn("format: text", providers)
+            self.assertIn("interval: 86400", providers)
             self.assertLess(route_rules.index("RULE-SET,reject,REJECT"), route_rules.index("RULE-SET,ai,AI"))
+            self.assertLess(route_rules.index("RULE-SET,ai,AI"), route_rules.index("GEOSITE,openai,AI"))
+            self.assertLess(route_rules.index("GEOSITE,openai,AI"), route_rules.index("RULE-SET,alipay,DIRECT"))
             self.assertIn("GEOSITE,cn,DIRECT", route_rules)
             self.assertGreater(route_rules.index("GEOSITE,cn,DIRECT"), route_rules.index("RULE-SET,ai,AI"))
+
+    def test_quantumultx_remote_renderer_uses_daily_refresh_interval(self) -> None:
+        from ruleforge.render import render_filter_remote_conf
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "filter_remote.conf"
+            render_filter_remote_conf(
+                [{"category": "ai", "file": "categories/ai.list", "policy": "AI"}],
+                path,
+                repository_base_url="https://raw.test",
+                title="test",
+            )
+            content = path.read_text(encoding="utf-8")
+            self.assertIn("update-interval=86400", content)
+            self.assertNotIn("update-interval=172800", content)
 
     def test_category_renderers_remove_stale_files_and_keep_empty_declared_categories(self) -> None:
         from ruleforge.render import render_category_filters, render_mihomo_category_filters
@@ -436,6 +456,8 @@ class RuleForgeTests(unittest.TestCase):
         self.assertEqual(content.count("expected-status: 204"), 8)
         self.assertNotIn("empty-fallback: DIRECT", content)
         self.assertIn("tolerance: 10", content)
+        self.assertEqual(content.count("interval: 86400"), 28)
+        self.assertNotIn("interval: 172800", content)
 
     def test_quantumultx_readme_documents_all_remote_policies(self) -> None:
         content = (ROOT / "profiles" / "quantumult-x" / "README.md").read_text(encoding="utf-8")
@@ -458,6 +480,10 @@ class RuleForgeTests(unittest.TestCase):
             'geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"',
             content,
         )
+        self.assertIn("geo-update-interval: 24", content)
+        self.assertNotIn("geo-update-interval: 48", content)
+        self.assertLess(content.index("RULE-SET,ai,AI"), content.index("GEOSITE,openai,AI"))
+        self.assertLess(content.index("GEOSITE,openai,AI"), content.index("RULE-SET,alipay,DIRECT"))
         self.assertLess(content.index("RULE-SET,proxy,全球加速"), content.index("GEOSITE,cn,DIRECT"))
         self.assertLess(content.index("GEOSITE,cn,DIRECT"), content.index("GEOIP,CN,DIRECT,no-resolve"))
 

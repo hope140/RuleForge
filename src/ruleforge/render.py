@@ -13,13 +13,14 @@ from .model import Rule
 _CATEGORY_ORDER = (
     "reject",
     "privacy",
+    # Keep AI-specific routing ahead of broad direct/business categories.
+    "ai",
     "alipay",
     "wechat",
     "china-services",
     "china-streaming",
     "china-direct",
     "direct-exception",
-    "ai",
     "apple",
     "google-voice",
     "google",
@@ -219,7 +220,7 @@ def render_mihomo_rule_providers(
                 "    format: text",
                 f"    url: \"{base_url}/{file_path}\"",
                 f"    path: ./rule_providers/{category}.list",
-                "    interval: 172800",
+                "    interval: 86400",
             ]
         )
     output = Path(path)
@@ -230,7 +231,11 @@ def render_mihomo_rule_providers(
 def render_mihomo_rules(entries: Iterable[dict[str, object]], path: str | Path) -> None:
     lines = ["# GENERATED FILE - DO NOT EDIT", "rules:"]
     for entry in entries:
-        lines.append(f"  - RULE-SET,{entry['category']},{_mihomo_policy(entry['policy'])}")
+        category = str(entry["category"])
+        lines.append(f"  - RULE-SET,{category},{_mihomo_policy(entry['policy'])}")
+        if category == "ai":
+            # Cover OpenAI domains that are not present in the curated Rule Provider.
+            lines.append("  - GEOSITE,openai,AI")
     # Keep the broad CN domain fallback after all explicit business rules.
     # This covers Fake-IP/TUN traffic whose synthetic IP cannot match GEOIP,CN.
     lines.append("  - GEOSITE,cn,DIRECT")
@@ -261,7 +266,7 @@ def render_filter_remote_conf(
         policy = entry.get("policy")
         if policy:
             fields.append(f"force-policy={policy}")
-        fields.extend(["update-interval=172800", "opt-parser=false", "enabled=true"])
+        fields.extend(["update-interval=86400", "opt-parser=false", "enabled=true"])
         lines.append(",".join(fields))
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)

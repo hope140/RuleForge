@@ -15,12 +15,12 @@ external-controller: "127.0.0.1:9090"
 secret: ""
 
 # GeoSite handles domain-based CN routing before Fake-IP addresses reach GEOIP.
-# GEOIP continues to use the existing MMDB mode; GeoSite is refreshed every 48 hours.
+# GEOIP continues to use the existing MMDB mode; GeoSite is refreshed every 24 hours.
 geodata-mode: false
 geosite-matcher: succinct
 geodata-loader: standard
 geo-auto-update: true
-geo-update-interval: 48
+geo-update-interval: 24
 geox-url:
   geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
@@ -69,7 +69,7 @@ proxy-providers:
     type: http
     url: "https://example.invalid/REPLACE_WITH_SUBSCRIPTION_1"
     path: ./proxy_providers/provider-1.yaml
-    interval: 172800
+    interval: 86400
     health-check:
       enable: true
       url: "https://www.gstatic.com/generate_204"
@@ -80,7 +80,7 @@ proxy-providers:
     type: http
     url: "https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2"
     path: ./proxy_providers/provider-2.yaml
-    interval: 172800
+    interval: 86400
     health-check:
       enable: true
       url: "https://www.gstatic.com/generate_204"
@@ -222,32 +222,32 @@ proxy-groups:
     filter: ".+"
 
 rule-providers:
-  reject: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/reject.list", path: ./rule_providers/reject.list, interval: 172800 }
-  privacy: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/privacy.list", path: ./rule_providers/privacy.list, interval: 172800 }
-  alipay: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/alipay.list", path: ./rule_providers/alipay.list, interval: 172800 }
-  wechat: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/wechat.list", path: ./rule_providers/wechat.list, interval: 172800 }
-  china-services: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-services.list", path: ./rule_providers/china-services.list, interval: 172800 }
-  china-streaming: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-streaming.list", path: ./rule_providers/china-streaming.list, interval: 172800 }
-  china-direct: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-direct.list", path: ./rule_providers/china-direct.list, interval: 172800 }
-  direct-exception: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/direct-exception.list", path: ./rule_providers/direct-exception.list, interval: 172800 }
-  ai: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/ai.list", path: ./rule_providers/ai.list, interval: 172800 }
-  apple: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/apple.list", path: ./rule_providers/apple.list, interval: 172800 }
-  google-voice: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/google-voice.list", path: ./rule_providers/google-voice.list, interval: 172800 }
-  google: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/google.list", path: ./rule_providers/google.list, interval: 172800 }
-  microsoft: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/microsoft.list", path: ./rule_providers/microsoft.list, interval: 172800 }
-  cloud: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/cloud.list", path: ./rule_providers/cloud.list, interval: 172800 }
-  social: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/social.list", path: ./rule_providers/social.list, interval: 172800 }
-  developer: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/developer.list", path: ./rule_providers/developer.list, interval: 172800 }
-  github: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/github.list", path: ./rule_providers/github.list, interval: 172800 }
-  spotify: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/spotify.list", path: ./rule_providers/spotify.list, interval: 172800 }
-  telegram: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/telegram.list", path: ./rule_providers/telegram.list, interval: 172800 }
-  tiktok: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/tiktok.list", path: ./rule_providers/tiktok.list, interval: 172800 }
-  youtube: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/youtube.list", path: ./rule_providers/youtube.list, interval: 172800 }
-  netflix: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/netflix.list", path: ./rule_providers/netflix.list, interval: 172800 }
-  china-media: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-media.list", path: ./rule_providers/china-media.list, interval: 172800 }
-  global-media: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/global-media.list", path: ./rule_providers/global-media.list, interval: 172800 }
-  proxy-exception: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/proxy-exception.list", path: ./rule_providers/proxy-exception.list, interval: 172800 }
-  proxy: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/proxy.list", path: ./rule_providers/proxy.list, interval: 172800 }
+  reject: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/reject.list", path: ./rule_providers/reject.list, interval: 86400 }
+  privacy: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/privacy.list", path: ./rule_providers/privacy.list, interval: 86400 }
+  alipay: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/alipay.list", path: ./rule_providers/alipay.list, interval: 86400 }
+  wechat: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/wechat.list", path: ./rule_providers/wechat.list, interval: 86400 }
+  china-services: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-services.list", path: ./rule_providers/china-services.list, interval: 86400 }
+  china-streaming: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-streaming.list", path: ./rule_providers/china-streaming.list, interval: 86400 }
+  china-direct: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-direct.list", path: ./rule_providers/china-direct.list, interval: 86400 }
+  direct-exception: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/direct-exception.list", path: ./rule_providers/direct-exception.list, interval: 86400 }
+  ai: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/ai.list", path: ./rule_providers/ai.list, interval: 86400 }
+  apple: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/apple.list", path: ./rule_providers/apple.list, interval: 86400 }
+  google-voice: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/google-voice.list", path: ./rule_providers/google-voice.list, interval: 86400 }
+  google: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/google.list", path: ./rule_providers/google.list, interval: 86400 }
+  microsoft: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/microsoft.list", path: ./rule_providers/microsoft.list, interval: 86400 }
+  cloud: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/cloud.list", path: ./rule_providers/cloud.list, interval: 86400 }
+  social: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/social.list", path: ./rule_providers/social.list, interval: 86400 }
+  developer: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/developer.list", path: ./rule_providers/developer.list, interval: 86400 }
+  github: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/github.list", path: ./rule_providers/github.list, interval: 86400 }
+  spotify: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/spotify.list", path: ./rule_providers/spotify.list, interval: 86400 }
+  telegram: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/telegram.list", path: ./rule_providers/telegram.list, interval: 86400 }
+  tiktok: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/tiktok.list", path: ./rule_providers/tiktok.list, interval: 86400 }
+  youtube: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/youtube.list", path: ./rule_providers/youtube.list, interval: 86400 }
+  netflix: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/netflix.list", path: ./rule_providers/netflix.list, interval: 86400 }
+  china-media: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-media.list", path: ./rule_providers/china-media.list, interval: 86400 }
+  global-media: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/global-media.list", path: ./rule_providers/global-media.list, interval: 86400 }
+  proxy-exception: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/proxy-exception.list", path: ./rule_providers/proxy-exception.list, interval: 86400 }
+  proxy: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/proxy.list", path: ./rule_providers/proxy.list, interval: 86400 }
 
 rules:
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
@@ -259,13 +259,15 @@ rules:
   - IP-CIDR6,fe80::/10,DIRECT,no-resolve
   - RULE-SET,reject,REJECT
   - RULE-SET,privacy,REJECT
+  # Keep OpenAI's official GeoSite fallback ahead of broad direct rules.
+  - RULE-SET,ai,AI
+  - GEOSITE,openai,AI
   - RULE-SET,alipay,DIRECT
   - RULE-SET,wechat,DIRECT
   - RULE-SET,china-services,DIRECT
   - RULE-SET,china-streaming,DIRECT
   - RULE-SET,china-direct,DIRECT
   - RULE-SET,direct-exception,DIRECT
-  - RULE-SET,ai,AI
   - RULE-SET,apple,苹果服务
   - RULE-SET,google-voice,美国节点
   - RULE-SET,google,谷歌服务

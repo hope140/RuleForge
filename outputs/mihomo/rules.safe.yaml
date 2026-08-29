@@ -2,13 +2,14 @@
 rules:
   - RULE-SET,reject,REJECT
   - RULE-SET,privacy,REJECT
+  - RULE-SET,ai,AI
+  - GEOSITE,openai,AI
   - RULE-SET,alipay,DIRECT
   - RULE-SET,wechat,DIRECT
   - RULE-SET,china-services,DIRECT
   - RULE-SET,china-streaming,DIRECT
   - RULE-SET,china-direct,DIRECT
   - RULE-SET,direct-exception,DIRECT
-  - RULE-SET,ai,AI
   - RULE-SET,apple,苹果服务
   - RULE-SET,google-voice,美国节点
   - RULE-SET,google,谷歌服务
