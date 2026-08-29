@@ -11,6 +11,7 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [已裁决分类规则](outputs/quantumult-x/categories/safe/)用于远程分流。每条规则都带有策略列。
 - [候选分类规则](outputs/quantumult-x/categories/candidates/)保留去重后的候选项，其中包括发生过冲突、最终可能被排除的规则。
 - [远程过滤器片段](outputs/quantumult-x/filter_remote.safe.conf)按业务优先级引用各分类文件。
+- [完整配置模板](profiles/quantumult-x/config.example.conf)沿用既有 Quantumult X 模板，已移除节点订阅和私有证书内容，可直接导入后补入自己的节点。
 - [构建摘要](outputs/quantumult-x/build.json)记录来源哈希、规则数量和裁决统计。
 - [冲突报告](outputs/quantumult-x/conflicts.md)记录冲突内容、处理结果和裁决原因。
 - [Curation 报告](outputs/quantumult-x/curation.json)记录从 AI 分类中排除的共享基础设施。
@@ -27,6 +28,12 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [Curation 报告](outputs/mihomo/curation.json)记录从 AI 分类中排除的共享基础设施。
 - [AI Curation 清单](curation/ai.drop.list)记录可审计的排除项。
 
+## Quantumult X 配置示例
+
+下载 [完整 Quantumult X 配置模板](profiles/quantumult-x/config.example.conf) 后，在 `[server_remote]` 或客户端的节点管理中加入自己的订阅。模板的策略组、DNS、远程重写、本地规则、定时任务和 MITM 分区沿用既有实际模板；公共文件不包含节点订阅、账号信息或本地证书材料。
+
+模板内的 `[filter_remote]` 已接入仓库当前的分类片段，规则内容会由远程分类文件独立更新，每日刷新一次。已有配置只想更新规则时，继续使用 [远程过滤器片段](outputs/quantumult-x/filter_remote.safe.conf) 即可。模板同时显式设置 `fallback_udp_policy = reject`，未匹配的 UDP 默认拒绝；需要 QUIC/UDP 时请确认所选节点确实支持。
+
 ## Mihomo 配置示例
 
 下载 [`profiles/mihomo/config.example.yaml`](profiles/mihomo/config.example.yaml) 后，替换下面两个订阅地址占位符。
@@ -38,7 +45,7 @@ REPLACE_WITH_SUBSCRIPTION_2
 
 模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。Proxy Provider 节点 UDP 默认显式关闭，确认服务端支持后再按 provider 开启。业务策略组排在地区测速组之前，保留订阅原始节点名称，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
 
-26 个 Rule Provider 指向本仓库 `main` 分支，每 86400 秒刷新一次；GeoSite 数据也按 24 小时自动更新。模板不包含 Quantumult X 的重写、MITM 和定时脚本。
+26 个 Mihomo Rule Provider 指向本仓库 `main` 分支，每 86400 秒刷新一次；GeoSite 数据也按 24 小时自动更新。Quantumult X 完整模板中的远程规则和重写资源同样统一为每日刷新。
 
 ## 业务分类
 

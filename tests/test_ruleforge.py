@@ -553,6 +553,45 @@ class RuleForgeTests(unittest.TestCase):
             self.assertIn("update-interval=86400", content)
             self.assertNotIn("update-interval=172800", content)
 
+    def test_quantumultx_complete_profile_uses_prior_shape_without_private_material(self) -> None:
+        profile = (ROOT / "profiles" / "quantumult-x" / "config.example.conf").read_text(encoding="utf-8")
+        generated = (ROOT / "outputs" / "quantumult-x" / "filter_remote.safe.conf").read_text(encoding="utf-8")
+
+        for section in (
+            "general",
+            "dns",
+            "policy",
+            "server_remote",
+            "filter_remote",
+            "rewrite_remote",
+            "server_local",
+            "filter_local",
+            "rewrite_local",
+            "task_local",
+            "http_backend",
+            "mitm",
+        ):
+            self.assertIn(f"[{section}]", profile)
+
+        server_remote = profile.split("[server_remote]", 1)[1].split("[filter_remote]", 1)[0]
+        self.assertNotRegex(server_remote, r"(?m)^\s*https?://")
+
+        mitm = profile.split("[mitm]", 1)[1]
+        self.assertNotRegex(mitm, r"(?mi)^\s*(passphrase|p12|hostname|skip_validating_cert)\s*=")
+        self.assertNotIn("gravatar", profile.lower())
+        self.assertIn("fallback_udp_policy = reject", profile)
+        self.assertNotIn("update-interval=172800", profile)
+
+        generated_filter_lines = [
+            line for line in generated.splitlines() if line == "[filter_remote]" or line.startswith("https://")
+        ]
+        profile_filter = profile.split("[filter_remote]", 1)[1].split("[rewrite_remote]", 1)[0]
+        for line in generated_filter_lines:
+            if line != "[filter_remote]":
+                self.assertIn(line, profile_filter)
+        self.assertIn("static=AI, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点", profile)
+        self.assertIn("event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX", profile)
+
     def test_category_renderers_remove_stale_files_and_keep_empty_declared_categories(self) -> None:
         from ruleforge.render import render_category_filters, render_mihomo_category_filters
 
