@@ -55,6 +55,16 @@ Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、�
 
 每个业务分类的处理顺序是：先合并多个上游来源，再应用明确的 Curation 排除项，然后做精确去重和语义冲突审计。完全相同的 selector 才选择一个策略；语义覆盖关系保留双方并记录先后约束，后续的策略裁决器不再通过删除宽泛规则来掩盖重叠。
 
+## 优先规则预览
+
+审计裁决后会单独生成 `priority-preview.json` 与 `priority-preview.md`，但不会改变 `categories/safe/` 或模板引用。预览只检查仍存在于最终安全规则中的跨分类重叠，并为域名、关键词、通配符和 CIDR 重叠构造可复现的匹配样例，再按当前目标渲染器的分类顺序执行 first-match 模拟。
+
+预期策略与实际策略不同时，只有明确安全契约或更具体的 HOST、HOST-SUFFIX、CIDR 规则直接被比较规则挡住，才会进入候选列表。涉及关键词、宽泛规则或第三条更早规则的情况继续标记为待审阅。
+
+预览层同时执行 Apple 服务统一契约：`apple.com`、`icloud.com`、`mzstatic.com` 体系以及 Apple 官方使用的 Private Cloud Compute 中继端点都归入“苹果服务”，即使上游将其登记为 AI、国际媒体、直连或通用代理。明确的 reject 与 direct-exception 高于 Apple 契约。该契约只生成预览候选，不改变正式安全规则。
+
+所有预览均带有 `active: false`，在正式启用阶段完成前不得被 QX 或 Mihomo 模板引用。
+
 ## 安全边界
 
 - 不接收或生成节点订阅。

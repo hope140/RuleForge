@@ -1,0 +1,1665 @@
+{
+  "mode": "preview-only",
+  "active": false,
+  "target": "quantumult-x",
+  "ordered_overlap_count": 944,
+  "live_cross_category_count": 475,
+  "discarded_overlap_count": 469,
+  "apple_contract_gap_count": 6,
+  "actual_policy_mismatch_count": 33,
+  "preview_candidate_decision_count": 24,
+  "preview_candidate_rule_count": 18,
+  "review_required_count": 9,
+  "unwitnessed_count": 0,
+  "status_counts": {
+    "enforced": 403,
+    "equivalent-policy": 45,
+    "preview-candidate": 24,
+    "review-required": 9
+  },
+  "override_candidates": [
+    {
+      "rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apple-relay.fastly-edge.com",
+        "line_number": 0
+      },
+      "rendered_rule": "host,apple-relay.fastly-edge.com,苹果服务",
+      "confidence": "high",
+      "evidence_count": 1,
+      "witnesses": [
+        "apple-relay.fastly-edge.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apple-relay.cloudflare.com",
+        "line_number": 0
+      },
+      "rendered_rule": "host,apple-relay.cloudflare.com,苹果服务",
+      "confidence": "high",
+      "evidence_count": 1,
+      "witnesses": [
+        "apple-relay.cloudflare.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "line_number": 0
+      },
+      "rendered_rule": "host,apple-relay.apple.com,苹果服务",
+      "confidence": "high",
+      "evidence_count": 1,
+      "witnesses": [
+        "apple-relay.apple.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "cp4.cloudflare.com",
+        "line_number": 0
+      },
+      "rendered_rule": "host,cp4.cloudflare.com,苹果服务",
+      "confidence": "high",
+      "evidence_count": 1,
+      "witnesses": [
+        "cp4.cloudflare.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "gateway.icloud.com",
+        "line_number": 97
+      },
+      "rendered_rule": "host,gateway.icloud.com,苹果服务",
+      "confidence": "high",
+      "evidence_count": 1,
+      "witnesses": [
+        "gateway.icloud.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apps.mzstatic.com",
+        "line_number": 41
+      },
+      "rendered_rule": "host,apps.mzstatic.com,苹果服务",
+      "confidence": "high",
+      "evidence_count": 1,
+      "witnesses": [
+        "apps.mzstatic.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 0
+      },
+      "rendered_rule": "host-suffix,smoot.apple.com,苹果服务",
+      "confidence": "high",
+      "evidence_count": 1,
+      "witnesses": [
+        "smoot.apple.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-global-media-tvb",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST",
+        "value": "tvbtracking.azurewebsites.net",
+        "line_number": 11
+      },
+      "rendered_rule": "host,tvbtracking.azurewebsites.net,国际媒体",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "tvbtracking.azurewebsites.net"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-global-media-disney",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "disney-portal.my.onetrust.com",
+        "line_number": 32
+      },
+      "rendered_rule": "host-suffix,disney-portal.my.onetrust.com,国际媒体",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "disney-portal.my.onetrust.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-global-media-hbo",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "hbo.com.edgesuite.net",
+        "line_number": 17
+      },
+      "rendered_rule": "host-suffix,hbo.com.edgesuite.net,国际媒体",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "hbo.com.edgesuite.net"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-global-media-disney",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "abcnews.edgesuite.net",
+        "line_number": 16
+      },
+      "rendered_rule": "host-suffix,abcnews.edgesuite.net,国际媒体",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "abcnews.edgesuite.net"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-global-media-disney",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cdn.optimizely.com",
+        "line_number": 25
+      },
+      "rendered_rule": "host-suffix,cdn.optimizely.com,国际媒体",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "cdn.optimizely.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-china-services-sina",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "qingmail.com",
+        "line_number": 46
+      },
+      "rendered_rule": "host-suffix,qingmail.com,direct",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "qingmail.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "blackmatrix-china-services-sina",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "qingmail.cn",
+        "line_number": 45
+      },
+      "rendered_rule": "host-suffix,qingmail.cn,direct",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "qingmail.cn"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "merchant-rating.alibaba.com",
+        "line_number": 525
+      },
+      "rendered_rule": "host,merchant-rating.alibaba.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "merchant-rating.alibaba.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "login.alibaba.com",
+        "line_number": 524
+      },
+      "rendered_rule": "host,login.alibaba.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "login.alibaba.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "new.c.mi.com",
+        "line_number": 544
+      },
+      "rendered_rule": "host,new.c.mi.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "new.c.mi.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "c.mi.com",
+        "line_number": 543
+      },
+      "rendered_rule": "host,c.mi.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "c.mi.com"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "api-glb-sea.smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "api-glb-sea.smoot.apple.com",
+        "line_number": 247
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "apple-service-contract",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "apple-contract-candidate",
+      "reason": "Apple-related traffic is unified under the Apple service policy.",
+      "probe": {
+        "domain": "apple-relay.fastly-edge.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apple-relay.fastly-edge.com",
+        "line_number": 0
+      },
+      "compared_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "apple-relay.fastly-edge.com",
+        "line_number": 540
+      },
+      "actual_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "apple-relay.fastly-edge.com",
+        "line_number": 540
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "全球加速"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "api-p-ap-c.smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "api-p-ap-c.smoot.apple.com",
+        "line_number": 27
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "api-p-ap-d.smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "api-p-ap-d.smoot.apple.com",
+        "line_number": 28
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "api-p-ap-e.smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "api-p-ap-e.smoot.apple.com",
+        "line_number": 29
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "apple-service-contract",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "apple-contract-candidate",
+      "reason": "Apple-related traffic is unified under the Apple service policy.",
+      "probe": {
+        "domain": "apple-relay.cloudflare.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apple-relay.cloudflare.com",
+        "line_number": 0
+      },
+      "compared_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "apple-relay.cloudflare.com",
+        "line_number": 539
+      },
+      "actual_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "apple-relay.cloudflare.com",
+        "line_number": 539
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "全球加速"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "guzzoni.smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "guzzoni.smoot.apple.com",
+        "line_number": 121
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "apple-service-contract",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "apple-contract-candidate",
+      "reason": "Apple-related traffic is unified under the Apple service policy.",
+      "probe": {
+        "domain": "apple-relay.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "line_number": 0
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "line_number": 3
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "line_number": 3
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "apple-service-contract",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "apple-contract-candidate",
+      "reason": "Apple-related traffic is unified under the Apple service policy.",
+      "probe": {
+        "domain": "cp4.cloudflare.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "cp4.cloudflare.com",
+        "line_number": 0
+      },
+      "compared_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "cp4.cloudflare.com",
+        "line_number": 541
+      },
+      "actual_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "cp4.cloudflare.com",
+        "line_number": 541
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "全球加速"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "gateway.icloud.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "gateway.icloud.com",
+        "line_number": 97
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gateway.icloud.com",
+        "line_number": 6
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gateway.icloud.com",
+        "line_number": 6
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "apps.mzstatic.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "apps.mzstatic.com",
+        "line_number": 41
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apps.mzstatic.com",
+        "line_number": 10
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apps.mzstatic.com",
+        "line_number": 10
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "apple-service-contract",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "apple-contract-candidate",
+      "reason": "Apple-related traffic is unified under the Apple service policy.",
+      "probe": {
+        "domain": "api.smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "api.smoot.apple.com",
+        "line_number": 0
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "apple-service-contract",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "preview-candidate",
+      "disposition_reason": "apple-contract-candidate",
+      "reason": "Apple-related traffic is unified under the Apple service policy.",
+      "probe": {
+        "domain": "smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "apple-service-contract",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 0
+      },
+      "compared_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "tvbtracking.azurewebsites.net",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-global-media-tvb",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST",
+        "value": "tvbtracking.azurewebsites.net",
+        "line_number": 11
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azurewebsites.net",
+        "line_number": 143
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azurewebsites.net",
+        "line_number": 143
+      },
+      "expected_policy": "国际媒体",
+      "actual_policy": "全球加速"
+    },
+    {
+      "relation": "nested-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "disney-portal.my.onetrust.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-global-media-disney",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "disney-portal.my.onetrust.com",
+        "line_number": 32
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-netflix",
+        "category": "netflix",
+        "policy": "Netflix",
+        "rule_type": "HOST-SUFFIX",
+        "value": "onetrust.com",
+        "line_number": 44
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-netflix",
+        "category": "netflix",
+        "policy": "Netflix",
+        "rule_type": "HOST-SUFFIX",
+        "value": "onetrust.com",
+        "line_number": 44
+      },
+      "expected_policy": "国际媒体",
+      "actual_policy": "Netflix"
+    },
+    {
+      "relation": "nested-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "hbo.com.edgesuite.net",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-global-media-hbo",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "hbo.com.edgesuite.net",
+        "line_number": 17
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "edgesuite.net",
+        "line_number": 226
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "edgesuite.net",
+        "line_number": 226
+      },
+      "expected_policy": "国际媒体",
+      "actual_policy": "全球加速"
+    },
+    {
+      "relation": "nested-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "abcnews.edgesuite.net",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-global-media-disney",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "abcnews.edgesuite.net",
+        "line_number": 16
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "edgesuite.net",
+        "line_number": 226
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "edgesuite.net",
+        "line_number": 226
+      },
+      "expected_policy": "国际媒体",
+      "actual_policy": "全球加速"
+    },
+    {
+      "relation": "nested-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "cdn.optimizely.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-global-media-disney",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cdn.optimizely.com",
+        "line_number": 25
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "optimizely.com",
+        "line_number": 558
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST-SUFFIX",
+        "value": "optimizely.com",
+        "line_number": 558
+      },
+      "expected_policy": "国际媒体",
+      "actual_policy": "全球加速"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "qingmail.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-china-services-sina",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "qingmail.com",
+        "line_number": 46
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-KEYWORD",
+        "value": "gmail",
+        "line_number": 712
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-KEYWORD",
+        "value": "gmail",
+        "line_number": 712
+      },
+      "expected_policy": "direct",
+      "actual_policy": "谷歌服务"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "qingmail.cn",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-china-services-sina",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "qingmail.cn",
+        "line_number": 45
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-KEYWORD",
+        "value": "gmail",
+        "line_number": 712
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-KEYWORD",
+        "value": "gmail",
+        "line_number": 712
+      },
+      "expected_policy": "direct",
+      "actual_policy": "谷歌服务"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "merchant-rating.alibaba.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "merchant-rating.alibaba.com",
+        "line_number": 525
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-china-services-alibaba",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "alibaba.com",
+        "line_number": 36
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-china-services-alibaba",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "alibaba.com",
+        "line_number": 36
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "login.alibaba.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "login.alibaba.com",
+        "line_number": 524
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-china-services-alibaba",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "alibaba.com",
+        "line_number": 36
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-china-services-alibaba",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "alibaba.com",
+        "line_number": 36
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "new.c.mi.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "new.c.mi.com",
+        "line_number": 544
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-china-services-xiaomi",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mi.com",
+        "line_number": 62
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-china-services-xiaomi",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mi.com",
+        "line_number": 62
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "c.mi.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "c.mi.com",
+        "line_number": 543
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-china-services-xiaomi",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mi.com",
+        "line_number": 62
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-china-services-xiaomi",
+        "category": "china-services",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mi.com",
+        "line_number": 62
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "review-required",
+      "disposition_reason": "apple-policy-missing",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "apple-relay.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "line_number": 3
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "line_number": 369
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST",
+        "value": "apple-relay.apple.com",
+        "line_number": 3
+      },
+      "expected_policy": "AI",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "review-required",
+      "disposition_reason": "apple-policy-missing",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "gateway.icloud.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gateway.icloud.com",
+        "line_number": 6
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-KEYWORD",
+        "value": "icloud.com",
+        "line_number": 222
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gateway.icloud.com",
+        "line_number": 6
+      },
+      "expected_policy": "AI",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "nested-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "review-required",
+      "disposition_reason": "apple-policy-missing",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "gateway.icloud.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gateway.icloud.com",
+        "line_number": 6
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "icloud.com",
+        "line_number": 1485
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gateway.icloud.com",
+        "line_number": 6
+      },
+      "expected_policy": "AI",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "nested-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "review-required",
+      "disposition_reason": "apple-policy-missing",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "apps.mzstatic.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apps.mzstatic.com",
+        "line_number": 10
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mzstatic.com",
+        "line_number": 1226
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apps.mzstatic.com",
+        "line_number": 10
+      },
+      "expected_policy": "AI",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "nested-host-suffix",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "review-required",
+      "disposition_reason": "apple-policy-missing",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "smoot.apple.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "line_number": 369
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "smoot.apple.com",
+        "line_number": 2
+      },
+      "expected_policy": "AI",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "high",
+      "method": "apple-service-contract",
+      "status": "review-required",
+      "disposition_reason": "third-rule-interference",
+      "reason": "Both rules are retained. The configured business-category priority provides the first-match order.",
+      "probe": {
+        "domain": "gateway.icloud.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "blackmatrix-apple",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST",
+        "value": "gateway.icloud.com",
+        "line_number": 97
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-KEYWORD",
+        "value": "icloud.com",
+        "line_number": 222
+      },
+      "actual_rule": {
+        "source_id": "rulego-ai-supplement",
+        "category": "ai",
+        "policy": "AI",
+        "rule_type": "HOST-SUFFIX",
+        "value": "gateway.icloud.com",
+        "line_number": 6
+      },
+      "expected_policy": "苹果服务",
+      "actual_policy": "AI"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "review-required",
+      "disposition_reason": "not-auto-eligible",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "probe-spotify--spotify-com.example",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-global-media",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-KEYWORD",
+        "value": "-spotify-com",
+        "line_number": 36
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-spotify",
+        "category": "spotify",
+        "policy": "Spotify",
+        "rule_type": "HOST-KEYWORD",
+        "value": "spotify",
+        "line_number": 37
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-spotify",
+        "category": "spotify",
+        "policy": "Spotify",
+        "rule_type": "HOST-KEYWORD",
+        "value": "spotify",
+        "line_number": 37
+      },
+      "expected_policy": "国际媒体",
+      "actual_policy": "Spotify"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "review-required",
+      "disposition_reason": "not-auto-eligible",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "probe-spotify-spotify.com.example",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-global-media",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "rule_type": "HOST-KEYWORD",
+        "value": "spotify.com",
+        "line_number": 35
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-spotify",
+        "category": "spotify",
+        "policy": "Spotify",
+        "rule_type": "HOST-KEYWORD",
+        "value": "spotify",
+        "line_number": 37
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-spotify",
+        "category": "spotify",
+        "policy": "Spotify",
+        "rule_type": "HOST-KEYWORD",
+        "value": "spotify",
+        "line_number": 37
+      },
+      "expected_policy": "国际媒体",
+      "actual_policy": "Spotify"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "review-required",
+      "disposition_reason": "not-auto-eligible",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "probe-blogspot-.blogspot.example",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-proxy",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST-KEYWORD",
+        "value": ".blogspot",
+        "line_number": 271
+      },
+      "compared_rule": {
+        "source_id": "blackmatrix-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-KEYWORD",
+        "value": "blogspot",
+        "line_number": 711
+      },
+      "actual_rule": {
+        "source_id": "blackmatrix-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST-KEYWORD",
+        "value": "blogspot",
+        "line_number": 711
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "谷歌服务"
+    }
+  ]
+}

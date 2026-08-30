@@ -16,8 +16,9 @@ from ruleforge.fetch import FetchError, fetch_source  # noqa: E402
 from ruleforge.manifest import ManifestError, load_manifest  # noqa: E402
 from ruleforge.model import Source  # noqa: E402
 from ruleforge.parsers import parse_resource  # noqa: E402
+from ruleforge.preview import build_priority_preview, conflict_probe  # noqa: E402
 from ruleforge.routing import ROUTING_CATEGORY_ORDER, routing_order_violations  # noqa: E402
-from ruleforge.runtime import RouteProbe, simulate_first_match  # noqa: E402
+from ruleforge.runtime import RouteProbe, rule_matches, simulate_first_match  # noqa: E402
 
 
 class RuleForgeTests(unittest.TestCase):
@@ -145,7 +146,14 @@ class RuleForgeTests(unittest.TestCase):
 
             self.assertEqual(result, 0)
             self.assertTrue((output / "build.json").is_file())
+            self.assertTrue((output / "priority-preview.json").is_file())
+            self.assertTrue((output / "priority-preview.md").is_file())
             self.assertTrue((output / "categories" / "safe" / "demo.list").is_file())
+            import json
+
+            preview = json.loads((output / "priority-preview.json").read_text(encoding="utf-8"))
+            self.assertEqual(preview["mode"], "preview-only")
+            self.assertFalse(preview["active"])
             self.assertEqual(sentinel.read_text(encoding="utf-8"), "preserved\n")
             self.assertEqual(list(root.glob(".ruleforge-staging-*")), [])
             self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
@@ -599,6 +607,262 @@ sources:
         self.assertEqual(simulate_first_match(rules, RouteProbe(domain="www.example.net")).policy, "direct")
         self.assertEqual(simulate_first_match(rules, RouteProbe(domain="allow.example.com")).policy, "direct")
 
+    def test_priority_preview_finds_a_live_cross_category_route_change(self) -> None:
+        ai = Source(
+            "rulego-ai-supplement",
+            "filter",
+            "surge",
+            "ai",
+            "AI",
+            "https://ai.test",
+            "surge",
+        )
+        apple = Source(
+            "blackmatrix-apple",
+            "filter",
+            "quantumult-x",
+            "apple",
+            "苹果服务",
+            "https://apple.test",
+            "quantumult-x",
+        )
+        broad = parse_resource("HOST-SUFFIX,smoot.apple.com\n", ai).rules[0]
+        exact = parse_resource("HOST,api.smoot.apple.com\n", apple).rules[0]
+
+        preview = build_priority_preview(
+            resolve_conflicts(audit_rules((broad, exact))),
+            target="quantumult-x",
+        )
+
+        self.assertEqual(preview.live_cross_category_count, 1)
+        self.assertEqual(preview.status_counts["preview-candidate"], 2)
+        self.assertEqual(len(preview.candidate_rules), 1)
+        self.assertEqual(preview.candidate_rules[0].rule_type, "HOST-SUFFIX")
+        self.assertEqual(preview.candidate_rules[0].value, "smoot.apple.com")
+        self.assertEqual(preview.candidate_rules[0].policy, "苹果服务")
+        item = preview.items[0]
+        self.assertEqual(item.probe.domain, "api.smoot.apple.com")
+        self.assertEqual(item.expected_rule.policy, "苹果服务")
+        self.assertEqual(item.actual_rule.policy, "AI")
+        self.assertEqual(item.method, "apple-service-contract")
+        self.assertEqual(item.confidence, "high")
+
+    def test_priority_preview_ignores_constraints_for_rejected_rules(self) -> None:
+        ai = Source(
+            "rulego-ai-supplement",
+            "filter",
+            "surge",
+            "ai",
+            "AI",
+            "https://ai.test",
+            "surge",
+        )
+        apple = Source(
+            "blackmatrix-apple",
+            "filter",
+            "quantumult-x",
+            "apple",
+            "苹果服务",
+            "https://apple.test",
+            "quantumult-x",
+        )
+        google = Source(
+            "blackmatrix-google",
+            "filter",
+            "quantumult-x",
+            "google",
+            "谷歌服务",
+            "https://google.test",
+            "quantumult-x",
+        )
+        rules = (
+            parse_resource("HOST-SUFFIX,smoot.apple.com\n", ai).rules[0],
+            parse_resource("HOST,api.smoot.apple.com\n", apple).rules[0],
+            parse_resource("HOST,api.smoot.apple.com\n", google).rules[0],
+        )
+
+        preview = build_priority_preview(
+            resolve_conflicts(audit_rules(rules)),
+            target="quantumult-x",
+        )
+
+        self.assertGreaterEqual(preview.discarded_overlap_count, 1)
+        self.assertTrue(
+            all(rule.source_id != "blackmatrix-apple" for rule in preview.candidate_rules)
+        )
+
+    def test_priority_preview_does_not_treat_a_third_rule_as_authorized(self) -> None:
+        ai = Source(
+            "rulego-ai-supplement",
+            "filter",
+            "surge",
+            "ai",
+            "AI",
+            "https://ai.test",
+            "surge",
+        )
+        apple = Source(
+            "blackmatrix-apple",
+            "filter",
+            "quantumult-x",
+            "apple",
+            "苹果服务",
+            "https://apple.test",
+            "quantumult-x",
+        )
+        direct = Source(
+            "blackmatrix-direct",
+            "filter",
+            "quantumult-x",
+            "china-direct",
+            "direct",
+            "https://direct.test",
+            "quantumult-x",
+        )
+        broad_ai = parse_resource("HOST-SUFFIX,gateway.icloud.com\n", ai).rules[0]
+        exact_apple = parse_resource("HOST,gateway.icloud.com\n", apple).rules[0]
+        keyword_direct = parse_resource("HOST-KEYWORD,icloud.com\n", direct).rules[0]
+
+        preview = build_priority_preview(
+            resolve_conflicts(audit_rules((broad_ai, exact_apple, keyword_direct))),
+            target="quantumult-x",
+        )
+
+        self.assertEqual(len(preview.candidate_rules), 1)
+        self.assertEqual(preview.candidate_rules[0].rule_type, "HOST-SUFFIX")
+        self.assertEqual(preview.candidate_rules[0].value, "icloud.com")
+        evidence = [item for item in preview.items if item.expected_rule == exact_apple]
+        self.assertEqual({item.status for item in evidence}, {"preview-candidate", "review-required"})
+        self.assertIn(
+            "third-rule-interference",
+            {item.disposition_reason for item in evidence},
+        )
+        candidate = preview.to_dict()["override_candidates"][0]
+        self.assertEqual(candidate["confidence"], "high")
+
+    def test_priority_preview_builds_a_cidr_witness(self) -> None:
+        social = Source(
+            "blackmatrix-social",
+            "filter",
+            "clash",
+            "social",
+            "全球加速",
+            "https://social.test",
+            "clash-classical",
+        )
+        netflix = Source(
+            "blackmatrix-netflix",
+            "filter",
+            "clash",
+            "netflix",
+            "Netflix",
+            "https://netflix.test",
+            "clash-classical",
+        )
+        broad = parse_resource("IP-CIDR,34.224.0.0/12\n", social).rules[0]
+        narrow = parse_resource("IP-CIDR,34.226.14.0/24\n", netflix).rules[0]
+        conflict = audit_rules((broad, narrow)).conflicts[0]
+
+        probe = conflict_probe(conflict)
+
+        self.assertIsNotNone(probe)
+        self.assertEqual(probe.ip, "34.226.14.0")
+        self.assertTrue(all(rule_matches(rule, probe) for rule in (broad, narrow)))
+
+    def test_priority_preview_keeps_active_apple_policy_over_global_media(self) -> None:
+        apple = Source(
+            "blackmatrix-apple",
+            "filter",
+            "quantumult-x",
+            "apple",
+            "苹果服务",
+            "https://apple.test",
+            "quantumult-x",
+        )
+        media = Source(
+            "rulego-global-media",
+            "filter",
+            "surge",
+            "global-media",
+            "国际媒体",
+            "https://media.test",
+            "surge",
+        )
+        apple_rule = parse_resource("HOST-SUFFIX,tv.apple.com\n", apple).rules[0]
+        media_rule = parse_resource("HOST,linear.tv.apple.com\n", media).rules[0]
+
+        preview = build_priority_preview(
+            resolve_conflicts(audit_rules((media_rule, apple_rule))),
+            target="quantumult-x",
+        )
+
+        self.assertEqual(preview.candidate_rules, ())
+        self.assertEqual(preview.status_counts["equivalent-policy"], 1)
+
+    def test_priority_preview_flags_missing_apple_policy_instead_of_proxy_candidate(self) -> None:
+        ai = Source(
+            "rulego-ai",
+            "filter",
+            "surge",
+            "ai",
+            "AI",
+            "https://ai.test",
+            "surge",
+        )
+        proxy = Source(
+            "rulego-proxy",
+            "filter",
+            "surge",
+            "proxy",
+            "全球加速",
+            "https://proxy.test",
+            "surge",
+        )
+        ai_rule = parse_resource("HOST-SUFFIX,gateway.icloud.com\n", ai).rules[0]
+        proxy_rule = parse_resource("HOST,gateway.icloud.com\n", proxy).rules[0]
+
+        preview = build_priority_preview(
+            resolve_conflicts(audit_rules((ai_rule, proxy_rule))),
+            target="quantumult-x",
+        )
+
+        self.assertEqual(len(preview.candidate_rules), 1)
+        self.assertEqual(preview.candidate_rules[0].rule_type, "HOST-SUFFIX")
+        self.assertEqual(preview.candidate_rules[0].value, "gateway.icloud.com")
+        review = [item for item in preview.items if item.status == "review-required"]
+        self.assertEqual(review[0].disposition_reason, "apple-policy-missing")
+        self.assertEqual(review[0].method, "apple-service-contract")
+
+    def test_priority_preview_keeps_reject_ahead_of_apple_service_contract(self) -> None:
+        reject = Source(
+            "rulego-reject",
+            "filter",
+            "surge",
+            "reject",
+            "reject",
+            "https://reject.test",
+            "surge",
+        )
+        apple = Source(
+            "blackmatrix-apple",
+            "filter",
+            "quantumult-x",
+            "apple",
+            "苹果服务",
+            "https://apple.test",
+            "quantumult-x",
+        )
+        reject_rule = parse_resource("HOST,iadsdk.apple.com\n", reject).rules[0]
+        apple_rule = parse_resource("HOST-SUFFIX,apple.com\n", apple).rules[0]
+
+        preview = build_priority_preview(
+            resolve_conflicts(audit_rules((reject_rule, apple_rule))),
+            target="quantumult-x",
+        )
+
+        self.assertEqual(preview.candidate_rules, ())
+        self.assertEqual(preview.status_counts["enforced"], 1)
+
     def test_generated_quantumultx_routes_pass_openai_probes(self) -> None:
         import json
 
@@ -816,6 +1080,18 @@ sources:
         for policy in {source.policy for source in sources} - {"direct", "reject", "proxy"}:
             self.assertIn(f"name: {policy}", content)
 
+    def test_priority_preview_is_not_referenced_by_active_profiles(self) -> None:
+        active_files = (
+            ROOT / "profiles" / "quantumult-x" / "config.example.conf",
+            ROOT / "profiles" / "mihomo" / "config.example.yaml",
+            ROOT / "outputs" / "quantumult-x" / "filter_remote.safe.conf",
+            ROOT / "outputs" / "mihomo" / "rules.safe.yaml",
+            ROOT / "outputs" / "mihomo" / "rule-providers.safe.yaml",
+        )
+        for path in active_files:
+            with self.subTest(path=path):
+                self.assertNotIn("priority-preview", path.read_text(encoding="utf-8"))
+
     def test_mihomo_profile_shows_business_groups_before_regions_with_icons(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
         self.assertLess(content.index("  - name: 全球加速"), content.index("  - name: 香港节点"))
@@ -859,6 +1135,31 @@ sources:
         rules = [line for line in content.splitlines() if line.strip() and not line.startswith("#")]
         self.assertGreater(len(rules), 0)
         self.assertIn("host,api.bilibili.com,港台番剧", rules)
+
+    def test_generated_priority_previews_are_inactive_and_summarized(self) -> None:
+        import json
+
+        for target in ("quantumult-x", "mihomo"):
+            with self.subTest(target=target):
+                root = ROOT / "outputs" / target
+                preview = json.loads((root / "priority-preview.json").read_text(encoding="utf-8"))
+                build = json.loads((root / "build.json").read_text(encoding="utf-8"))
+                markdown = (root / "priority-preview.md").read_text(encoding="utf-8")
+
+                self.assertEqual(preview["mode"], "preview-only")
+                self.assertFalse(preview["active"])
+                self.assertEqual(preview["target"], target)
+                self.assertEqual(
+                    preview["actual_policy_mismatch_count"],
+                    preview["preview_candidate_decision_count"]
+                    + preview["review_required_count"],
+                )
+                self.assertEqual(build["priority_preview"], {
+                    key: value
+                    for key, value in preview.items()
+                    if key not in {"override_candidates", "items"}
+                })
+                self.assertIn("仅供审阅", markdown)
 
     def test_mihomo_profile_places_geosite_cn_before_geoip_and_match(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")

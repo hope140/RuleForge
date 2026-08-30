@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-30T05:27:39.323279+00:00",
+  "generated_at_utc": "2026-08-30T12:43:29.808357+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1005,6 +1005,26 @@
     "ordered_overlap_count": 944,
     "unresolved_conflict_count": 0
   },
+  "priority_preview": {
+    "mode": "preview-only",
+    "active": false,
+    "target": "quantumult-x",
+    "ordered_overlap_count": 944,
+    "live_cross_category_count": 475,
+    "discarded_overlap_count": 469,
+    "apple_contract_gap_count": 6,
+    "actual_policy_mismatch_count": 33,
+    "preview_candidate_decision_count": 24,
+    "preview_candidate_rule_count": 18,
+    "review_required_count": 9,
+    "unwitnessed_count": 0,
+    "status_counts": {
+      "enforced": 403,
+      "equivalent-policy": 45,
+      "preview-candidate": 24,
+      "review-required": 9
+    }
+  },
   "candidate_categories": [
     {
       "category": "direct-exception",
@@ -1588,7 +1608,7 @@
       "id": "rulego-advertising",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
       "sha256": "2536aacb61b0d40b205d459df7f9beac4e3c0e23744a963e111a6147fabc8cc9",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 976,
       "issue_count": 0
     },
@@ -1596,7 +1616,7 @@
       "id": "rulego-tracking",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list",
       "sha256": "b27f44faaf04388f5cf6effb82c9d4cdcf931a153f1d33c056f84855d20678f2",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 90,
       "issue_count": 0
     },
@@ -1604,7 +1624,7 @@
       "id": "blackmatrix-openai",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list",
       "sha256": "6ec16f5da986a15c62e80192f5b445dcdaf88607987923120761c1388eeb243d",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 35,
       "issue_count": 0
     },
@@ -1612,7 +1632,7 @@
       "id": "blackmatrix-claude",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list",
       "sha256": "bcf41ba79464a16d8305cf1c6f18c69d023ccd33ea1b84834daaa47cc0d5dfea",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -1620,7 +1640,7 @@
       "id": "blackmatrix-gemini",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list",
       "sha256": "9e488fd027a55ec5bfeeeda1ab4a9022364c1d47dfd140293e02835d3303980f",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 13,
       "issue_count": 0
     },
@@ -1628,7 +1648,7 @@
       "id": "blackmatrix-copilot",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Copilot/Copilot.list",
       "sha256": "b6bd07a9aaa109d44915b23b19d1d05948cc137dc7e2a5c3240d9a81c6e6b3a4",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 51,
       "issue_count": 0
     },
@@ -1636,7 +1656,7 @@
       "id": "blackmatrix-anthropic",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Anthropic/Anthropic.list",
       "sha256": "b1e7ccfe4a5d39e297d030ad53ee93b1b0b1d558dd1134956ca114321eb0bd3a",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -1644,7 +1664,7 @@
       "id": "blackmatrix-civitai",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Civitai/Civitai.list",
       "sha256": "6e900ebd1040e186b529f0baaef19d380cd0ba39f84b0dbcf6af2f2b8587e846",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1652,7 +1672,7 @@
       "id": "rulego-ai-supplement",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
       "sha256": "18bffe9e41f878787d31b537f423078bc396131e5a577c9ec919b0fe27c5a5a0",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 74,
       "issue_count": 0
     },
@@ -1660,7 +1680,7 @@
       "id": "acl4ssr-ai",
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
       "sha256": "63e70895ac8c04c3b28965dc0b4ba9ceb3a1313a66b49487ed96005debc97e1e",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 49,
       "issue_count": 0
     },
@@ -1676,7 +1696,7 @@
       "id": "blackmatrix-apple",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
       "sha256": "228b05875a09b0150e5129037b5773f8f24ffd38bdac3eee94d94400e416beea",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1881,
       "issue_count": 0
     },
@@ -1684,7 +1704,7 @@
       "id": "blackmatrix-apple-id",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleID/AppleID.list",
       "sha256": "3e8130e1d985eee5d3b68ef1eb5e57b364715a5703756af2a15b365e3fd14dbb",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -1692,7 +1712,7 @@
       "id": "blackmatrix-apple-mail",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMail/AppleMail.list",
       "sha256": "0f0f270817dc95160f75a95d0d70b4db2650426bf59d22a73273aa2241a99661",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -1700,7 +1720,7 @@
       "id": "blackmatrix-apple-media",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMedia/AppleMedia.list",
       "sha256": "53e7a5f64d5f4c956226ea52622a517b5e4e245407fc3d311bcdb94bc9b44def",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 52,
       "issue_count": 0
     },
@@ -1708,7 +1728,7 @@
       "id": "blackmatrix-apple-music",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMusic/AppleMusic.list",
       "sha256": "47a5e04d517816386eedd2761806ccc8c63fbb6af10c82d3a800271e2da23343",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 10,
       "issue_count": 0
     },
@@ -1716,7 +1736,7 @@
       "id": "blackmatrix-apple-news",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleNews/AppleNews.list",
       "sha256": "5f330ee83e017d6edbde0cfbf73fc2ac6a9f741bea69d766d40bb9a4c0f0fa1b",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -1724,7 +1744,7 @@
       "id": "blackmatrix-apple-proxy",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleProxy/AppleProxy.list",
       "sha256": "ef0acbccd04a766b052d1a1c6473315fc3795484882c89e9601bc08976c290ad",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 44,
       "issue_count": 0
     },
@@ -1732,7 +1752,7 @@
       "id": "blackmatrix-apple-tv",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleTV/AppleTV.list",
       "sha256": "20226007d5a0268b70fc3adf56d6152f9efce614cf8dab9fdc0976eeb93c04ee",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 9,
       "issue_count": 0
     },
@@ -1740,7 +1760,7 @@
       "id": "blackmatrix-appstore",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppStore/AppStore.list",
       "sha256": "8189ba2f921fe1c25e6c4a78ee5ab1fee35ac9c62ed80d744925b93994fcc6d7",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -1748,7 +1768,7 @@
       "id": "blackmatrix-youtube",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list",
       "sha256": "6c011f1b2d03f664799bd8f01718bef9c8b071209d5602bfed18bb5db4a8c9e4",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 196,
       "issue_count": 0
     },
@@ -1756,7 +1776,7 @@
       "id": "blackmatrix-netflix",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list",
       "sha256": "eb95ba340fc9b3013e6b66a64270d20e4142b0f9b8cde1bac060725742331ec7",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1158,
       "issue_count": 0
     },
@@ -1764,7 +1784,7 @@
       "id": "blackmatrix-tiktok",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list",
       "sha256": "d1e594680d94bec9575ebc584d03c224c8ac5b74daba1fa8f87b44f48b7724bb",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 32,
       "issue_count": 0
     },
@@ -1772,7 +1792,7 @@
       "id": "blackmatrix-google-voice",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleVoice/GoogleVoice.list",
       "sha256": "b0e49655ed123a5ed8f6c492f4693853c05bf015e82c4bbbdbbfcbeb9bf3e496",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1780,7 +1800,7 @@
       "id": "blackmatrix-google",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list",
       "sha256": "eb56706413fab41ded77194ae73f690af583bd56ad7d470273e026fa5ccb7b93",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 711,
       "issue_count": 0
     },
@@ -1788,7 +1808,7 @@
       "id": "blackmatrix-google-drive",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleDrive/GoogleDrive.list",
       "sha256": "4969e8ba55a0d03ba5dd13d8b626a28b73823c1e57991187e5c05a792b7f9144",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 8,
       "issue_count": 0
     },
@@ -1796,7 +1816,7 @@
       "id": "blackmatrix-google-earth",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleEarth/GoogleEarth.list",
       "sha256": "56dde6bbd6b8ed9f1f46fcc2dd9ff57196b019df796d0fc0582df421e909cd45",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 16,
       "issue_count": 0
     },
@@ -1804,7 +1824,7 @@
       "id": "blackmatrix-microsoft",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list",
       "sha256": "7de40c9424a4a1ab793a38f58dbf64c25ef68f9e812618abf3751a853561c800",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 712,
       "issue_count": 0
     },
@@ -1812,7 +1832,7 @@
       "id": "blackmatrix-onedrive",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OneDrive/OneDrive.list",
       "sha256": "ff3c4a9b4bf9ff4a5095b653e8c9af69a90c4074b3d136a8a82f8cfbb701f676",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 17,
       "issue_count": 0
     },
@@ -1820,7 +1840,7 @@
       "id": "blackmatrix-dropbox",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Dropbox/Dropbox.list",
       "sha256": "2dab7fdb4ebeb89e2012e23a85bb5a6c7f074ff3911160291923e51242937f82",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 17,
       "issue_count": 0
     },
@@ -1828,7 +1848,7 @@
       "id": "blackmatrix-mega",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MEGA/MEGA.list",
       "sha256": "0530860f50f5afbb96bf0a74699cfbf3566b7904872505fb7464cbffd057bf60",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 13,
       "issue_count": 0
     },
@@ -1836,7 +1856,7 @@
       "id": "blackmatrix-bing",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bing/Bing.list",
       "sha256": "104a58946d9e1411c3d18db64754ea667888ce42224209a3707888a9430655c6",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 9,
       "issue_count": 0
     },
@@ -1844,7 +1864,7 @@
       "id": "blackmatrix-github",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list",
       "sha256": "413f664aa29692e83879422ee6d35ced46dd135ebd85f67afaf554ab14391f77",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 31,
       "issue_count": 0
     },
@@ -1852,7 +1872,7 @@
       "id": "blackmatrix-spotify",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list",
       "sha256": "d29fa087d00317231e7de7c8cd4aa9ca91ed0c51660fbf76101b719d8ac5e78c",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 30,
       "issue_count": 0
     },
@@ -1860,7 +1880,7 @@
       "id": "blackmatrix-telegram",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list",
       "sha256": "986f8e7d587ce42c3bb472e6a2e9cffd42a413240d32c02cc363c4d6367141fe",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 40,
       "issue_count": 0
     },
@@ -1868,7 +1888,7 @@
       "id": "blackmatrix-social-twitter",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitter/Twitter.list",
       "sha256": "71cc825be928852e43158d45075e036fad558d0d212c0703c192ed5651bbfcb4",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 33,
       "issue_count": 0
     },
@@ -1876,7 +1896,7 @@
       "id": "blackmatrix-social-facebook",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Facebook/Facebook.list",
       "sha256": "9f437681b4e84671e9cfab5c85e29bc74dc85d071486c259e19cac78edf3b521",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 570,
       "issue_count": 0
     },
@@ -1884,7 +1904,7 @@
       "id": "blackmatrix-social-instagram",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list",
       "sha256": "6e38a62bfb1681ec875882c95a3df94b4180ccb45d17ef716289b0c7dd9f56c9",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -1892,7 +1912,7 @@
       "id": "blackmatrix-social-whatsapp",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Whatsapp/Whatsapp.list",
       "sha256": "ed5d84c175a72357092e6013d828fa94135aee5b41d1515254bcd168ad4747f8",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 17,
       "issue_count": 0
     },
@@ -1900,7 +1920,7 @@
       "id": "blackmatrix-social-line",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Line/Line.list",
       "sha256": "65589a46f0ed967ffa9825923f9739bfa504f9a196a55af093ef40fd429091dc",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 24,
       "issue_count": 0
     },
@@ -1908,7 +1928,7 @@
       "id": "blackmatrix-social-kakaotalk",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KakaoTalk/KakaoTalk.list",
       "sha256": "fd7f297ccf8a53337972d8678f9201c09d32f606eb725a7adf96394b48a796ef",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 15,
       "issue_count": 0
     },
@@ -1916,7 +1936,7 @@
       "id": "blackmatrix-social-discord",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Discord/Discord.list",
       "sha256": "8b4ea92aa617fc9697f45a1cd276b47d3b96bd07019584aebcde5f6aae0fddf2",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 29,
       "issue_count": 0
     },
@@ -1924,7 +1944,7 @@
       "id": "blackmatrix-social-reddit",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Reddit/Reddit.list",
       "sha256": "628f0a3341498af9717559996d611c78c2e7abfccd5eb5b2e84debb1f23b8c8e",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 8,
       "issue_count": 0
     },
@@ -1932,7 +1952,7 @@
       "id": "blackmatrix-social-threads",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Threads/Threads.list",
       "sha256": "9c0e3bfffd65fb7f551f35de72630605f9380abfbae9656ddad0d0933844e5a3",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1940,7 +1960,7 @@
       "id": "blackmatrix-developer-gitlab",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitLab/GitLab.list",
       "sha256": "a6cf1745a19aa5ca7396be9bb6761c4126e5c285a072829f597f5a07deed9e58",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 6,
       "issue_count": 0
     },
@@ -1948,7 +1968,7 @@
       "id": "blackmatrix-developer-docker",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Docker/Docker.list",
       "sha256": "bc9e5e88fed658b202e3beebcb977f93070cc18ca4e2bbb955db6bdfda8d6d09",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 7,
       "issue_count": 0
     },
@@ -1956,7 +1976,7 @@
       "id": "blackmatrix-developer-figma",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Figma/Figma.list",
       "sha256": "befb9ad2d976cb57591484d8bdbeb045f28ee1bc7a414cc2da86faa098564b13",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1964,7 +1984,7 @@
       "id": "blackmatrix-developer-notion",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Notion/Notion.list",
       "sha256": "51f54ca90d78a61cd321fbfc266d8025d9eeb506b92157464140e15aa14b3872",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 6,
       "issue_count": 0
     },
@@ -1972,7 +1992,7 @@
       "id": "blackmatrix-developer-npmjs",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Npmjs/Npmjs.list",
       "sha256": "5cc48c7ebaa1df807c653332028a8c1b73b665934feffe9083282fd9c97943fd",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -1980,7 +2000,7 @@
       "id": "blackmatrix-developer-jetbrains",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Jetbrains/Jetbrains.list",
       "sha256": "3eecf0dd67c07548516282292c4033fe2ae9434bb376f5f27da0df076d145d09",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 14,
       "issue_count": 0
     },
@@ -1988,7 +2008,7 @@
       "id": "blackmatrix-developer-sourceforge",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/SourceForge/SourceForge.list",
       "sha256": "79682e0dc681a224aafe695aa73e73b1c207b6902e80366462fedf331c3df791",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -1996,7 +2016,7 @@
       "id": "blackmatrix-developer-vercel",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Vercel/Vercel.list",
       "sha256": "309e068b794cef2c2c9e5580ca9b8f3137e21e0f3de322249e6b18bddcca174d",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 27,
       "issue_count": 0
     },
@@ -2004,7 +2024,7 @@
       "id": "blackmatrix-developer-slack",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Slack/Slack.list",
       "sha256": "efb342b17ca908c48a0ac645f20a9b176fb0b3ac21333fce246c3733aca049a2",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 11,
       "issue_count": 0
     },
@@ -2012,7 +2032,7 @@
       "id": "rulego-china-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list",
       "sha256": "8a79fd534b92d7ac33e9290bd141b423822dc50525a525938486a340b6b5bcda",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 16,
       "issue_count": 0
     },
@@ -2020,7 +2040,7 @@
       "id": "rulego-global-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
       "sha256": "8e3a7945de96310575837ad55fd724aecaf3b3894a7eac2a979311d6d5fa88ce",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 242,
       "issue_count": 0
     },
@@ -2028,7 +2048,7 @@
       "id": "blackmatrix-global-media-disney",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list",
       "sha256": "f2682e12018f9019b2edae52ceee57cb1964d792ae4b3647c88b81f30fe41022",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 174,
       "issue_count": 0
     },
@@ -2036,7 +2056,7 @@
       "id": "blackmatrix-global-media-hbo",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/HBO/HBO.list",
       "sha256": "824fcce1ad8bee157a94e048a4130832cc1d21d843cbdea86def1c378ec59b3d",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 49,
       "issue_count": 0
     },
@@ -2044,7 +2064,7 @@
       "id": "blackmatrix-global-media-hulu",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hulu/Hulu.list",
       "sha256": "1ce2813c7b9060e99ae8c0ebee8313c6fb330acbbcaa78826098e4735249015a",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 58,
       "issue_count": 0
     },
@@ -2052,7 +2072,7 @@
       "id": "blackmatrix-global-media-amazon-prime-video",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AmazonPrimeVideo/AmazonPrimeVideo.list",
       "sha256": "e4e39b8ae62781e543268f1829af15b4c904da4e3126b1fbfdde92fa6cdf3a6b",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 27,
       "issue_count": 0
     },
@@ -2060,7 +2080,7 @@
       "id": "blackmatrix-global-media-prime-video",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/PrimeVideo/PrimeVideo.list",
       "sha256": "c51ccfea4d51a4b259a2cabb7988cd28c02c60b7265617d2f866ace7a150f4af",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 18,
       "issue_count": 0
     },
@@ -2068,7 +2088,7 @@
       "id": "blackmatrix-global-media-twitch",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitch/Twitch.list",
       "sha256": "1f79f5ec91170a7ab00bfbe3fb13a44be7e693de10b0ac9810d2bd850867b1b6",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -2076,7 +2096,7 @@
       "id": "blackmatrix-global-media-abema-tv",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AbemaTV/AbemaTV.list",
       "sha256": "38e06aed84cdafe32e4b44a3cccb9f8a36a1b2c0d733fbe866cac2b6719184ca",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 24,
       "issue_count": 0
     },
@@ -2084,7 +2104,7 @@
       "id": "blackmatrix-global-media-bilibili-intl",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBiliIntl/BiliBiliIntl.list",
       "sha256": "e13cbff83ce460e84534ca7c1fb6c860bd659cbdbe4afbe36b58aa54f6c09318",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -2092,7 +2112,7 @@
       "id": "blackmatrix-global-media-iqiyi-intl",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYIIntl/iQIYIIntl.list",
       "sha256": "80e677f8af295ca2b7c0806f9330dd4d97e3ed67b9e9af086d132e47f6be7cb5",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 19,
       "issue_count": 0
     },
@@ -2100,7 +2120,7 @@
       "id": "blackmatrix-global-media-naver-tv",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/NaverTV/NaverTV.list",
       "sha256": "c25bbd8e688077ebd7486b4586d38ae091e80fe6ee5047771f0570a84eaeaa7d",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -2108,7 +2128,7 @@
       "id": "blackmatrix-global-media-tvb",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TVB/TVB.list",
       "sha256": "5681f12279fea07dece1400ae75f642efb9a99bec7bf50099ec205afc30a5e8a",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 23,
       "issue_count": 0
     },
@@ -2116,7 +2136,7 @@
       "id": "blackmatrix-global-media-asian",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AsianMedia/AsianMedia.list",
       "sha256": "9f46dd3665fe85ad5f3572260c2f3a508caf7a43451676a96c2abe1a3a2f7eb4",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 31,
       "issue_count": 0
     },
@@ -2124,7 +2144,7 @@
       "id": "blackmatrix-global-media-joox",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JOOX/JOOX.list",
       "sha256": "492f77be9a9941a050c9dd093e041386bfc69cccfbe833d1ffb2f5027bd05d23",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 8,
       "issue_count": 0
     },
@@ -2132,7 +2152,7 @@
       "id": "blackmatrix-global-media-kkbox",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KKBOX/KKBOX.list",
       "sha256": "1434fdafab0fcc7f28e66568f471f92e0aae600c70303bf71846e7801c110003",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 9,
       "issue_count": 0
     },
@@ -2140,7 +2160,7 @@
       "id": "blackmatrix-global-media-paramount-plus",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ParamountPlus/ParamountPlus.list",
       "sha256": "4b7ce915f3ce5767a8be537d700da785b00a76825acdd2a90621b06763f4ad90",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 10,
       "issue_count": 0
     },
@@ -2148,7 +2168,7 @@
       "id": "blackmatrix-global-media-peacock",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Peacock/Peacock.list",
       "sha256": "9c1f5b3db55a995971eb49d5fd95a41d203fb9c829707d7d99fa853704670db1",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -2156,7 +2176,7 @@
       "id": "blackmatrix-youtube-music",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTubeMusic/YouTubeMusic.list",
       "sha256": "33730080645d727e4e9ab44f18a3f1dbe730e27e00d3f6e11faf48927237359f",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 5,
       "issue_count": 0
     },
@@ -2164,7 +2184,7 @@
       "id": "blackmatrix-china-streaming-bilibili",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list",
       "sha256": "fd0f422e30fb78a490adfd23cae3cb02ddc9c85a1a1c46a1e620c2de5b987df6",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 127,
       "issue_count": 0
     },
@@ -2172,7 +2192,7 @@
       "id": "blackmatrix-china-streaming-youku",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Youku/Youku.list",
       "sha256": "f5269239fd71ffe59bb6550d09b2f635ee8ab83f818e2698ad76244ee4ec1500",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 37,
       "issue_count": 0
     },
@@ -2180,7 +2200,7 @@
       "id": "blackmatrix-china-streaming-iqiyi",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYI/iQIYI.list",
       "sha256": "4d69e50dab93a60f970b96dc7ce8c9be5b6e532606b467da85b21b32a903c54c",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 62,
       "issue_count": 0
     },
@@ -2188,7 +2208,7 @@
       "id": "blackmatrix-china-streaming-acfun",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AcFun/AcFun.list",
       "sha256": "357e820efa98fb9c497e95a4af6a26e60514b5b77a6924da72fc976692713fa9",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 5,
       "issue_count": 0
     },
@@ -2196,7 +2216,7 @@
       "id": "blackmatrix-china-services-alibaba",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Alibaba/Alibaba.list",
       "sha256": "176fe8d2c87403be0d7bdec6d5f6731a4b1491f96ba97f0a827aa9a6df1f14c4",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1320,
       "issue_count": 0
     },
@@ -2204,7 +2224,7 @@
       "id": "blackmatrix-china-services-baidu",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Baidu/Baidu.list",
       "sha256": "6d5b61a7b6aa286f46ef1a9660462a7d5159c01ff87804d1c1aa7857fe7e3e69",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 251,
       "issue_count": 0
     },
@@ -2212,7 +2232,7 @@
       "id": "blackmatrix-china-services-tencent",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list",
       "sha256": "2389edcd00c769b59073cff27ce27d69f9d7b2f00c8da79ff7f4f89a13eaade3",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 2523,
       "issue_count": 0
     },
@@ -2220,7 +2240,7 @@
       "id": "blackmatrix-china-services-xiaomi",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/XiaoMi/XiaoMi.list",
       "sha256": "a396fb0ebf3e72a31bcc2f274dda2409c80a28f2d76782b38342adbc6218825a",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 157,
       "issue_count": 0
     },
@@ -2228,7 +2248,7 @@
       "id": "blackmatrix-china-services-jingdong",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list",
       "sha256": "0fbd12756395e4357fff89acc861e4ae7bb0d93cbdbdcbee11d83028ac032af3",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 249,
       "issue_count": 0
     },
@@ -2236,7 +2256,7 @@
       "id": "blackmatrix-china-services-pinduoduo",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pinduoduo/Pinduoduo.list",
       "sha256": "0c4769294b6b3408253b576a0fce24d86922a56725936763a588aee4be915080",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -2244,7 +2264,7 @@
       "id": "blackmatrix-china-services-meituan",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list",
       "sha256": "11ff7a8666db242133af2691d851cac9b838c1514bab54c477061d2fc5355160",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 7,
       "issue_count": 0
     },
@@ -2252,7 +2272,7 @@
       "id": "blackmatrix-china-services-didi",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DiDi/DiDi.list",
       "sha256": "adec00b9905ada06850643266715a43d57a799889ac17ba8bf21b59c3bf312e4",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 25,
       "issue_count": 0
     },
@@ -2260,7 +2280,7 @@
       "id": "blackmatrix-china-services-12306",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/12306/12306.list",
       "sha256": "ac4cb2f7805b48e261b24b22d048b7e9cb9d94bd0e793598187a55f138119755",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 15,
       "issue_count": 0
     },
@@ -2268,7 +2288,7 @@
       "id": "blackmatrix-china-services-sina",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Sina/Sina.list",
       "sha256": "6c520a3a174f90cd444c001ed2fcdbd423569dc507bfff2e857b78f36628d4cc",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 108,
       "issue_count": 0
     },
@@ -2276,7 +2296,7 @@
       "id": "blackmatrix-china-services-weibo",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Weibo/Weibo.list",
       "sha256": "1699c8fbc366874880b1b96c4288269c41c595213bb23b5dbce702e56066d6a6",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -2284,7 +2304,7 @@
       "id": "blackmatrix-china-services-zhihu",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Zhihu/Zhihu.list",
       "sha256": "6ae5266b68dc3a6a23eea99b86bf97f77e5bedad072750c64282ca3200239b69",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 7,
       "issue_count": 0
     },
@@ -2292,7 +2312,7 @@
       "id": "blackmatrix-china-services-douban",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DouBan/DouBan.list",
       "sha256": "db24f402138457ef1844b5a38149bba377e8cfa19c55a36f07ce55c4744040b2",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -2300,7 +2320,7 @@
       "id": "blackmatrix-alipay",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list",
       "sha256": "80b1c0e09de197f235ded8abb53a6d65b2093b9fbdbe62fdd57cb8d591d5e72d",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -2308,7 +2328,7 @@
       "id": "blackmatrix-wechat",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list",
       "sha256": "f2b1097292162858845d3b4f99058f047e0715bef4a0e6202b40a10af5c38e2c",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 43,
       "issue_count": 0
     },
@@ -2316,7 +2336,7 @@
       "id": "rulego-direct-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list",
       "sha256": "467d7173ed8d0541ed2436c0f686aee63b8850c0f1452469a7c8439f542cfd32",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -2324,7 +2344,7 @@
       "id": "blackmatrix-direct",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list",
       "sha256": "5ba475db11bd85c7f92699760c15d935d6011616143c99fff54827783772dc7a",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 232,
       "issue_count": 0
     },
@@ -2332,7 +2352,7 @@
       "id": "rulego-proxy-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list",
       "sha256": "2d4f4e156663de6b5d1e4d49be23799f8a0a08ef7c061cb0d133e194be07bf7c",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -2340,7 +2360,7 @@
       "id": "rulego-proxy",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
       "sha256": "2292abb55f20caf031ffbb7011c84b85c2246f54ae050fe416323da1fd2b8ead",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 513,
       "issue_count": 0
     },

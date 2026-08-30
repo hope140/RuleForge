@@ -11,6 +11,8 @@
 - 规则源失效、返回 HTML 或格式异常时构建应失败或明确报警。
 - 规则源没有解析出任何规则时构建应失败，且抓取、解析或渲染失败不得覆盖已有正式输出。
 - first-match route simulator 应保证 OpenAI、reject/direct 和 direct-exception 探针命中预期策略。
+- 优先规则预览应过滤已淘汰规则，为存活重叠生成域名或 CIDR 样例，并把第三条规则干扰留在待审阅状态。
+- Apple 服务统一契约应把 Apple Intelligence、iCloud 和 Apple 内容端点归入苹果服务，同时保留 reject 与 direct-exception 的安全优先级。
 
 双目标回归还应保证 QX 输出不变、Mihomo 不含 QX 类型或内嵌策略列、26 个 Rule Provider 与模板引用一致，并使用固定且校验过 SHA256 的 Mihomo 内核执行配置测试。
 

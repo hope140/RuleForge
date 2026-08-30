@@ -15,6 +15,7 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [构建摘要](outputs/quantumult-x/build.json)记录来源哈希、规则数量和裁决统计。
 - [冲突报告](outputs/quantumult-x/conflicts.md)记录冲突内容、处理结果和裁决原因。
 - [Curation 报告](outputs/quantumult-x/curation.json)记录从 AI 分类中排除的共享基础设施。
+- [优先规则预览](outputs/quantumult-x/priority-preview.md)用实际 first-match 样例列出审计判断与当前路由不一致的规则；当前模板不会引用这些候选规则。
 - [AI Curation 清单](curation/ai.drop.list)记录可审计的排除项。
 
 ### Mihomo
@@ -26,6 +27,7 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [通用配置示例](profiles/mihomo/config.example.yaml)提供双订阅、地区测速组和业务策略组。
 - [构建摘要](outputs/mihomo/build.json)与[冲突报告](outputs/mihomo/conflicts.md)记录 Mihomo 来源的构建结果。
 - [Curation 报告](outputs/mihomo/curation.json)记录从 AI 分类中排除的共享基础设施。
+- [优先规则预览](outputs/mihomo/priority-preview.md)用 Mihomo 当前 Rule Provider 顺序模拟实际命中；当前模板不会引用这些候选规则。
 - [AI Curation 清单](curation/ai.drop.list)记录可审计的排除项。
 
 ## Quantumult X 配置示例
@@ -88,11 +90,14 @@ Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域�
 5. 规范化规则并删除完全重复的内容。
 6. 检查语义重叠和策略冲突。
 7. 按安全策略、业务边界、规则具体程度和来源优先级进行裁决，并以最终目标客户端会实际匹配的语义为准。
-8. 生成客户端规则、构建摘要、冲突报告和 Curation 报告。
+8. 对仍然存活的跨分类重叠构造域名或 IP 样例，并按最终分类顺序模拟实际 first-match。
+9. 生成客户端规则、构建摘要、冲突报告、Curation 报告和不生效的优先规则预览。
 
 冲突裁决会处理域名关键词、通配符和 CIDR 重叠。完全相同的 selector 才会在策略冲突时选择一个结果；仅有覆盖关系的 semantic overlap 会保留两条规则，并记录 first-match 顺序约束，避免删除宽泛规则后造成其他域名失去覆盖。普通 `direct` 不覆盖 `reject`，只有明确的 `direct-exception` 才允许这样做。
 
 `categories/candidates/` 用于检查候选规则，`categories/safe/` 才是提供给客户端的已裁决版本。
+
+`priority-preview.json` 和 `priority-preview.md` 只用于观察潜在路由变化。预览会过滤已经被其他冲突淘汰的规则；精确域名、更窄后缀或 CIDR 等可以构造可靠样例的差异会列为候选，关键词及受到第三条规则干扰的关系继续标记为待审阅。Apple 自有域名及官方 Apple Intelligence/iCloud 端点统一以“苹果服务”为预期策略，避免 QX 与 Mihomo 分别落入 AI、国际媒体或通用代理；明确的 reject 和 direct-exception 仍然优先。预览文件不会被完整模板或远程片段引用。
 
 ## 规则来源
 
@@ -127,7 +132,7 @@ python tools/ruleforge.py build --manifest sources/mihomo.yaml --refresh --fail-
 
 工作流先运行回归测试，再依次构建 Quantumult X 与 Mihomo。两个目标全部通过后才会提交生成结果。单纯的生成时间和缓存状态变化不会产生提交。
 
-CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 26 个 Mihomo、26 个 Quantumult X 规则文件以及 QX 远程过滤器片段，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
+CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 26 个 Mihomo、26 个 Quantumult X 规则文件、QX 远程过滤器片段和两套优先规则预览，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
 
 ## 使用边界
 

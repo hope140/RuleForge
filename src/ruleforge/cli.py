@@ -14,6 +14,7 @@ from .curation import curate_rules
 from .fetch import FetchError, fetch_source
 from .manifest import ManifestError, load_manifest
 from .parsers import parse_resource
+from .preview import build_priority_preview, render_priority_preview_markdown
 from .render import (
     render_audit,
     render_category_filters,
@@ -160,6 +161,7 @@ def _build(args: argparse.Namespace) -> int:
     curation = curate_rules(all_rules)
     audit = audit_rules(curation.rules)
     resolution = resolve_conflicts(audit)
+    priority_preview = build_priority_preview(resolution, target=target)
     generated_at_utc = datetime.now(timezone.utc).isoformat()
     category_policies: dict[str, str] = {}
     for source in sources:
@@ -236,6 +238,11 @@ def _build(args: argparse.Namespace) -> int:
             staging_output / "conflicts.md",
             resolution=resolution,
         )
+        render_json(priority_preview.to_dict(), staging_output / "priority-preview.json")
+        render_priority_preview_markdown(
+            priority_preview,
+            staging_output / "priority-preview.md",
+        )
         render_json(
             {
                 "generated_at_utc": generated_at_utc,
@@ -263,6 +270,7 @@ def _build(args: argparse.Namespace) -> int:
                 "routing_constraint_count": len(resolution.constraints),
                 "unresolved_conflict_count": len(resolution.unresolved_decisions),
                 "resolution": resolution.to_summary_dict(),
+                "priority_preview": priority_preview.summary_dict(),
                 "candidate_categories": candidate_categories,
                 "safe_categories": safe_categories,
                 "parse_issue_count": len(parse_issues),
@@ -292,6 +300,11 @@ def _build(args: argparse.Namespace) -> int:
         f"protective_reject={len(resolution.protective_reject_decisions)} "
         f"ordered_overlap={len(resolution.ordered_overlap_decisions)} "
         f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
+    )
+    print(
+        f"priority_preview_candidates={len(priority_preview.candidate_rules)} "
+        f"priority_preview_review={priority_preview.status_counts.get('review-required', 0)} "
+        f"priority_preview_unwitnessed={priority_preview.status_counts.get('unwitnessed', 0)}"
     )
     print(f"output={output_dir}")
     return 0

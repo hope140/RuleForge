@@ -168,6 +168,17 @@ jobs:
             "https://raw.githubusercontent.com/hope140/RuleForge/${revision}/outputs/quantumult-x/filter_remote.safe.conf"
           cmp -- "$filter" "$filter_download"
 
+          for target in quantumult-x mihomo; do
+            for name in priority-preview.json priority-preview.md; do
+              local_file="$GITHUB_WORKSPACE/outputs/$target/$name"
+              downloaded="$download_dir/$target-$name"
+              curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 \
+                --output "$downloaded" \
+                "https://raw.githubusercontent.com/hope140/RuleForge/${revision}/outputs/$target/$name"
+              cmp -- "$local_file" "$downloaded"
+            done
+          done
+
       - name: Verify public main aliases are readable
         if: github.ref == 'refs/heads/main'
         shell: bash
@@ -202,3 +213,13 @@ jobs:
             "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/quantumult-x/filter_remote.safe.conf"
           test -s "$download_dir/filter_remote.safe.conf"
           grep -q '^\[filter_remote\]$' "$download_dir/filter_remote.safe.conf"
+
+          for target in quantumult-x mihomo; do
+            for name in priority-preview.json priority-preview.md; do
+              downloaded="$download_dir/$target-$name"
+              curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 \
+                --output "$downloaded" \
+                "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/$target/$name"
+              test -s "$downloaded"
+            done
+          done
