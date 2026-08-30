@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-29T07:51:44.103511+00:00",
+  "generated_at_utc": "2026-08-30T05:27:51.230087+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1577,7 +1577,7 @@
       "id": "rulego-advertising",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
       "sha256": "2536aacb61b0d40b205d459df7f9beac4e3c0e23744a963e111a6147fabc8cc9",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 976,
       "issue_count": 0
     },
@@ -1585,7 +1585,7 @@
       "id": "rulego-tracking",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list",
       "sha256": "b27f44faaf04388f5cf6effb82c9d4cdcf931a153f1d33c056f84855d20678f2",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 90,
       "issue_count": 0
     },
@@ -1593,7 +1593,7 @@
       "id": "blackmatrix-openai",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml",
       "sha256": "cf66c50e7cfbe0aa0e9e249bfa8897d152ae35b38ab6db2936ef62860b7b61b4",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 35,
       "issue_count": 0
     },
@@ -1601,7 +1601,7 @@
       "id": "blackmatrix-claude",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml",
       "sha256": "ef21df39005b17dbd84aa65a47162b36fb5e72754cd32384146474ed488df482",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -1609,7 +1609,7 @@
       "id": "blackmatrix-gemini",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml",
       "sha256": "d76e9822f72a69860b7d3086db61bbbef53014c57e3dc12472150c62a4f6434b",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 13,
       "issue_count": 0
     },
@@ -1617,7 +1617,7 @@
       "id": "blackmatrix-copilot",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml",
       "sha256": "6be526fd6a4a2c4d374fd8cadcdae87309865fb79b8f57634823dbcb7d780a5e",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 51,
       "issue_count": 0
     },
@@ -1625,7 +1625,7 @@
       "id": "blackmatrix-anthropic",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml",
       "sha256": "af16ff9b3d5d587f93fa1761292401c8cc716fd52e7263f8ced577b90d7507c5",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -1633,7 +1633,7 @@
       "id": "blackmatrix-civitai",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml",
       "sha256": "e1b85de298866274cad9ddf64f2ca8ca048e1c84ed9d206015256aadd6c52b80",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1641,7 +1641,7 @@
       "id": "rulego-ai-supplement",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
       "sha256": "18bffe9e41f878787d31b537f423078bc396131e5a577c9ec919b0fe27c5a5a0",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 74,
       "issue_count": 0
     },
@@ -1649,7 +1649,7 @@
       "id": "acl4ssr-ai",
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
       "sha256": "63e70895ac8c04c3b28965dc0b4ba9ceb3a1313a66b49487ed96005debc97e1e",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 49,
       "issue_count": 0
     },
@@ -1657,7 +1657,7 @@
       "id": "blackmatrix-apple",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml",
       "sha256": "9f81f8e6ee8485d4553544d7dcefd6e4b2e9534f6306c7e4ee38427a20898de1",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 33,
       "issue_count": 0
     },
@@ -1665,7 +1665,7 @@
       "id": "blackmatrix-apple-id",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleID/AppleID.yaml",
       "sha256": "ceba276e0ab26b99a332307f7b7a81fd908d403fc558a256d5e7e35cb9d06b7f",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -1673,7 +1673,7 @@
       "id": "blackmatrix-apple-mail",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMail/AppleMail.yaml",
       "sha256": "661db3013e359e4e815fff7cd81b4c4552d47db64a7325c86396c05608d9cbf3",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -1681,7 +1681,7 @@
       "id": "blackmatrix-apple-media",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMedia/AppleMedia.yaml",
       "sha256": "991459ec6d4672f45251b8d488b6c2798ecb4803616a28be80b23b2cd23183bc",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 52,
       "issue_count": 0
     },
@@ -1689,7 +1689,7 @@
       "id": "blackmatrix-apple-music",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMusic/AppleMusic.yaml",
       "sha256": "ba4bf225975f9e3aae88fa8b53275b3be9356b61cf0f52149a9864c0c53791e3",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 10,
       "issue_count": 0
     },
@@ -1697,7 +1697,7 @@
       "id": "blackmatrix-apple-news",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml",
       "sha256": "f45b1892d69cac07cbf55d3d498fbaebb22eb686e55f5485e4f697c2ed0eeb54",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -1705,7 +1705,7 @@
       "id": "blackmatrix-apple-proxy",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleProxy/AppleProxy.yaml",
       "sha256": "683103c41509c1f660c71d39ce5290e1a13a4176ec061822f4e8e83934afba4b",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 40,
       "issue_count": 0
     },
@@ -1713,7 +1713,7 @@
       "id": "blackmatrix-apple-tv",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleTV/AppleTV.yaml",
       "sha256": "8c82bfeb31a2ce0abd508d07b4fe5f24a54274b53717de0120b46f55ba5fb70a",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 8,
       "issue_count": 0
     },
@@ -1721,7 +1721,7 @@
       "id": "blackmatrix-appstore",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppStore/AppStore.yaml",
       "sha256": "96b8bdfd20cd3937ab08b2eaba286eac7e83e3e580c1e967861f7622ad9d43bf",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -1729,7 +1729,7 @@
       "id": "blackmatrix-youtube",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml",
       "sha256": "2f84cc9d35c8559ebea4c43aa9b30bb43b36313d70684f23a359f1acabb879bb",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 183,
       "issue_count": 0
     },
@@ -1737,7 +1737,7 @@
       "id": "blackmatrix-netflix",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml",
       "sha256": "cfb49b76fabc96887c7da7336ecea9066727c1489d25d677baa4f4e7a79a05f3",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 38,
       "issue_count": 0
     },
@@ -1745,7 +1745,7 @@
       "id": "blackmatrix-tiktok",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml",
       "sha256": "c93113e0f7d84302868ae8a1a7bfd024dbc03e54c5953f5439d20ca9c04005b7",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 32,
       "issue_count": 0
     },
@@ -1753,7 +1753,7 @@
       "id": "blackmatrix-google-voice",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleVoice/GoogleVoice.yaml",
       "sha256": "6c569656f01fa0acfc0966e644c2bf514dc53d6950d3e45448c233954588439d",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1761,7 +1761,7 @@
       "id": "blackmatrix-google",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml",
       "sha256": "dfb4bf0a0095e48f024fbb7c31564a928e6c7d450b662aca9803119489a9237c",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 701,
       "issue_count": 0
     },
@@ -1769,7 +1769,7 @@
       "id": "blackmatrix-google-drive",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml",
       "sha256": "6f83ad7099bfe2d961c30e56c0cd8d7025e0c16ae3c38cd519eed3c364783343",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 6,
       "issue_count": 0
     },
@@ -1777,7 +1777,7 @@
       "id": "blackmatrix-google-earth",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleEarth/GoogleEarth.yaml",
       "sha256": "afed267cf0c6a423761509a8555fcae07d8ee0a6b07131fd3fc3955d8856e3d8",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 16,
       "issue_count": 0
     },
@@ -1785,7 +1785,7 @@
       "id": "blackmatrix-microsoft",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml",
       "sha256": "a289a1d52394e92ceee26a5c83953cd292609717d39fb2970d189dc7877b2a4d",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 670,
       "issue_count": 0
     },
@@ -1793,7 +1793,7 @@
       "id": "blackmatrix-onedrive",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml",
       "sha256": "6f5902a52d1a0f48b69f7ebe021c4f14361e2c3f5426388923f2034740e60991",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 18,
       "issue_count": 0
     },
@@ -1801,7 +1801,7 @@
       "id": "blackmatrix-dropbox",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Dropbox/Dropbox.yaml",
       "sha256": "8dc09c2d1173000d9544cc7d0b1be5392d9d12887328b5c57e37804fdd8cbc2a",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 17,
       "issue_count": 0
     },
@@ -1809,7 +1809,7 @@
       "id": "blackmatrix-mega",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MEGA/MEGA.yaml",
       "sha256": "dd3ccf10d0ec9ce2c74387c02bacd50a726c2bc79c543a51727d850f07e313ed",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 14,
       "issue_count": 0
     },
@@ -1817,7 +1817,7 @@
       "id": "blackmatrix-bing",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml",
       "sha256": "b8e907098fd67486dbaa32878addbc29cbb284331363d1e8a806320cbcbfe9f1",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 9,
       "issue_count": 0
     },
@@ -1825,7 +1825,7 @@
       "id": "blackmatrix-github",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml",
       "sha256": "a2641ce2f10857831b600623f97d354e6f8db7b20dff175c5313c2c46e0b6867",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 31,
       "issue_count": 0
     },
@@ -1833,7 +1833,7 @@
       "id": "blackmatrix-spotify",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml",
       "sha256": "e74599390a87e5ed6da929f80be9c173cf3017e41b8f69362c2028d248875a79",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 30,
       "issue_count": 0
     },
@@ -1841,7 +1841,7 @@
       "id": "blackmatrix-telegram",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml",
       "sha256": "e78efc3f18069f1f1e3f88c15cd55f85424367b58ce8474af08c2fdf054704e0",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 46,
       "issue_count": 0
     },
@@ -1849,7 +1849,7 @@
       "id": "blackmatrix-social-twitter",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml",
       "sha256": "67c46c3988da5cdc387eacee945c2950464691af0e2746929455cd9295c3ff2b",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 33,
       "issue_count": 0
     },
@@ -1857,7 +1857,7 @@
       "id": "blackmatrix-social-facebook",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml",
       "sha256": "c82828bf136de47a26458f2303d3acf2a06aaca2a18c19e67f315387ef977ed0",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 570,
       "issue_count": 0
     },
@@ -1865,7 +1865,7 @@
       "id": "blackmatrix-social-instagram",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml",
       "sha256": "3ea6152876ff1c998b9434761898af1242bcc6bcaeaed74023910d9d08c64e39",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -1873,7 +1873,7 @@
       "id": "blackmatrix-social-whatsapp",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Whatsapp/Whatsapp.yaml",
       "sha256": "fce89bfff5101fee701336bb28934c7af7c570d1594fd5244e6db1743f0bb254",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 17,
       "issue_count": 0
     },
@@ -1881,7 +1881,7 @@
       "id": "blackmatrix-social-line",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml",
       "sha256": "23af95c3f877d0754cd663ba3d4179aae821dc693be3b37cf7e98a02d0cb46b4",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 24,
       "issue_count": 0
     },
@@ -1889,7 +1889,7 @@
       "id": "blackmatrix-social-kakaotalk",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/KakaoTalk/KakaoTalk.yaml",
       "sha256": "4623ea42c2d45b1b8067d09cc856470741bafd9e9840eca36035e9e3615bb2f0",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 15,
       "issue_count": 0
     },
@@ -1897,7 +1897,7 @@
       "id": "blackmatrix-social-discord",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml",
       "sha256": "ce5e3cf18e7353fea35edce91f66e1dfa2a38331203b7fb245c535620d02bf8b",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 29,
       "issue_count": 0
     },
@@ -1905,7 +1905,7 @@
       "id": "blackmatrix-social-reddit",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Reddit/Reddit.yaml",
       "sha256": "bf20bcd7b2f841eb9cb2170f7e52ba4437f897eb697ac9e3f4041e674eb4cf2e",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 8,
       "issue_count": 0
     },
@@ -1913,7 +1913,7 @@
       "id": "blackmatrix-social-threads",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Threads/Threads.yaml",
       "sha256": "25bbce496dfbd2c86b4614281e07a24a791d0baf30068241aeeffe9441c8aebd",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1921,7 +1921,7 @@
       "id": "blackmatrix-developer-gitlab",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitLab/GitLab.yaml",
       "sha256": "73e06133716dd197115133bd350d3ef7214257fa366d60e3c6e9b8d300a0fcf8",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 6,
       "issue_count": 0
     },
@@ -1929,7 +1929,7 @@
       "id": "blackmatrix-developer-docker",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Docker/Docker.yaml",
       "sha256": "df274e8a4058cc25e82f8ecc0ae912875425e01a1dd424bb7ae263d576fcd3e3",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
     },
@@ -1937,7 +1937,7 @@
       "id": "blackmatrix-developer-figma",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Figma/Figma.yaml",
       "sha256": "2d9cdc42a6ed097e24c1c955bdf409bf0616d3cfc67192ecfee37b4ef28cb5f9",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -1945,7 +1945,7 @@
       "id": "blackmatrix-developer-notion",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Notion/Notion.yaml",
       "sha256": "b92f5bdc0ac6a51ac3f5a7e53fd308aaecac4bfd4ad78605feb3db62aeb0e250",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 6,
       "issue_count": 0
     },
@@ -1953,7 +1953,7 @@
       "id": "blackmatrix-developer-npmjs",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Npmjs/Npmjs.yaml",
       "sha256": "54b382876517ec81f0598232809a943cf601cd3766e57520f955835c6593b788",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -1961,7 +1961,7 @@
       "id": "blackmatrix-developer-jetbrains",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Jetbrains/Jetbrains.yaml",
       "sha256": "6c7697252813345c651357427fabbfb4bcd2c480067f356314566e38c0bdeb20",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 14,
       "issue_count": 0
     },
@@ -1969,7 +1969,7 @@
       "id": "blackmatrix-developer-sourceforge",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SourceForge/SourceForge.yaml",
       "sha256": "44f498ae168cd8bc69d759bb162d9c37f52dd317a23b60d2a7f7a94be6b375e9",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -1977,7 +1977,7 @@
       "id": "blackmatrix-developer-vercel",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Vercel/Vercel.yaml",
       "sha256": "2707c9916860125e2d136505faa2759dc47050811958fc34091e141cd13bec04",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 27,
       "issue_count": 0
     },
@@ -1985,7 +1985,7 @@
       "id": "blackmatrix-developer-slack",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Slack/Slack.yaml",
       "sha256": "afce83215850f474ba424af8522fc40f1af42a05ae8048c7536283762a72674c",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 11,
       "issue_count": 0
     },
@@ -1993,7 +1993,7 @@
       "id": "rulego-china-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list",
       "sha256": "8a79fd534b92d7ac33e9290bd141b423822dc50525a525938486a340b6b5bcda",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 16,
       "issue_count": 0
     },
@@ -2001,7 +2001,7 @@
       "id": "rulego-global-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
       "sha256": "8e3a7945de96310575837ad55fd724aecaf3b3894a7eac2a979311d6d5fa88ce",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 242,
       "issue_count": 0
     },
@@ -2009,7 +2009,7 @@
       "id": "blackmatrix-global-media-disney",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml",
       "sha256": "5788df2a9935ecdbacc06c87c3f9c7cc4ec39fe3d61aea1f33be66d79e6b5a3a",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 174,
       "issue_count": 0
     },
@@ -2017,7 +2017,7 @@
       "id": "blackmatrix-global-media-hbo",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml",
       "sha256": "0fbca42b02a6ae923258118dddf5bd9894e788f1d18679340d6a05b051abf703",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 48,
       "issue_count": 0
     },
@@ -2025,7 +2025,7 @@
       "id": "blackmatrix-global-media-hulu",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hulu/Hulu.yaml",
       "sha256": "1dc853a5cfcaacc6cc738179466c5518342efc4683e267becd78b480dde7025e",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 59,
       "issue_count": 0
     },
@@ -2033,7 +2033,7 @@
       "id": "blackmatrix-global-media-amazon-prime-video",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml",
       "sha256": "393c6113b32767d9d5f3b62b65d1bec3d9a8d10aee41b225652350b73db5b256",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 26,
       "issue_count": 0
     },
@@ -2041,7 +2041,7 @@
       "id": "blackmatrix-global-media-prime-video",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrimeVideo/PrimeVideo.yaml",
       "sha256": "472c6ef0b6066a6cecb718a3638a353a952e2331ae843078cae26f0faab08a00",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 16,
       "issue_count": 0
     },
@@ -2049,7 +2049,7 @@
       "id": "blackmatrix-global-media-twitch",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitch/Twitch.yaml",
       "sha256": "397c2f2e0c5d5a7bb868525f644ff34d3452325e90d978ae6bcae973630ee282",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 22,
       "issue_count": 0
     },
@@ -2057,7 +2057,7 @@
       "id": "blackmatrix-global-media-abema-tv",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AbemaTV/AbemaTV.yaml",
       "sha256": "36947b96f2b247258e3c89d414a08a60f3f8860bc80fc7b34f763c0c6bfbfc94",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 23,
       "issue_count": 0
     },
@@ -2065,7 +2065,7 @@
       "id": "blackmatrix-global-media-bilibili-intl",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBiliIntl/BiliBiliIntl.yaml",
       "sha256": "9638fc60466cfa9bf8db74ebcdb41f4699ec389d9722d3c111c396c713b4fa68",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -2073,7 +2073,7 @@
       "id": "blackmatrix-global-media-iqiyi-intl",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/iQIYIIntl/iQIYIIntl.yaml",
       "sha256": "003893e269adf30bd9cccf647a196d49789d47ab4bd780c6a7e5b7f6bf7297f3",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -2081,7 +2081,7 @@
       "id": "blackmatrix-global-media-naver-tv",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NaverTV/NaverTV.yaml",
       "sha256": "d2bee63adca660c585b5b7a36e97d232d6b2b0f9470f638ad4c386b48dbb6dcf",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
     },
@@ -2089,7 +2089,7 @@
       "id": "blackmatrix-global-media-tvb",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TVB/TVB.yaml",
       "sha256": "7f08f5c6af4edee2253d365f0b211f1e378df1c2872f87159700882b99405622",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -2097,7 +2097,7 @@
       "id": "blackmatrix-global-media-asian",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AsianMedia/AsianMedia.yaml",
       "sha256": "3e4c6e0a085ef11b673ffa3502b1ea2ca60606fe2157d417d66a88227a02cffe",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 31,
       "issue_count": 0
     },
@@ -2105,7 +2105,7 @@
       "id": "blackmatrix-global-media-joox",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/JOOX/JOOX.yaml",
       "sha256": "bbfe81ab160edaa50dabfa1ddc03970f18b902cd3d1e323c1bec62331d58e923",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
     },
@@ -2113,7 +2113,7 @@
       "id": "blackmatrix-global-media-kkbox",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/KKBOX/KKBOX.yaml",
       "sha256": "33add1b34f550eafec77185a575a44d9f2c6fc6bed87c91d56bdc55a970103c3",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 9,
       "issue_count": 0
     },
@@ -2121,7 +2121,7 @@
       "id": "blackmatrix-global-media-paramount-plus",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ParamountPlus/ParamountPlus.yaml",
       "sha256": "5985fa97cf0ccee3ac9b428c0d3ddc63bcfa9713a77165cde328156c33cec199",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 9,
       "issue_count": 0
     },
@@ -2129,7 +2129,7 @@
       "id": "blackmatrix-global-media-peacock",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Peacock/Peacock.yaml",
       "sha256": "9ec680f8e8782b755f0c5ed8b36da216feb4d6c5438656440484272f27d28372",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -2137,7 +2137,7 @@
       "id": "blackmatrix-youtube-music",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml",
       "sha256": "226e55117e8363b1ee23e1777b5254d5767503dc0ec9ae94c283c04ead784786",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -2145,7 +2145,7 @@
       "id": "blackmatrix-china-streaming-bilibili",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml",
       "sha256": "fba635689995726aebbb522699f157f5dd910783950daa4bb475f167fe7b40de",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 129,
       "issue_count": 0
     },
@@ -2153,7 +2153,7 @@
       "id": "blackmatrix-china-streaming-youku",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Youku/Youku.yaml",
       "sha256": "ae16b5c263e8e916086871c2b6c28687707bff3963a069804561b0a5f594b0c9",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 35,
       "issue_count": 0
     },
@@ -2161,7 +2161,7 @@
       "id": "blackmatrix-china-streaming-iqiyi",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/iQIYI/iQIYI.yaml",
       "sha256": "46dae845399159d1145a65fc11ce94cbef73cf3d65ac5cd32be8bd71928ea496",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 57,
       "issue_count": 0
     },
@@ -2169,7 +2169,7 @@
       "id": "blackmatrix-china-streaming-acfun",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AcFun/AcFun.yaml",
       "sha256": "8ebab71305e051894f603826be6144788c1452e48fe5a4e8782360f0a1e51f7f",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -2177,7 +2177,7 @@
       "id": "blackmatrix-china-services-alibaba",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.yaml",
       "sha256": "032960207f577289598d8153ae3e6e3d03f9a2e3f835496752c3c6b3c3fdaf97",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 55,
       "issue_count": 0
     },
@@ -2185,7 +2185,7 @@
       "id": "blackmatrix-china-services-baidu",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Baidu/Baidu.yaml",
       "sha256": "178ccb2d030efb23039388ad62de8d20a7579620a1ce69389fd27eef97bda9db",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 251,
       "issue_count": 0
     },
@@ -2193,7 +2193,7 @@
       "id": "blackmatrix-china-services-tencent",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.yaml",
       "sha256": "0a5f578e2b837c757de278bed80e6a5092aa22741d723ffc722095f4ba99b420",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 20,
       "issue_count": 0
     },
@@ -2201,7 +2201,7 @@
       "id": "blackmatrix-china-services-xiaomi",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoMi/XiaoMi.yaml",
       "sha256": "eb8b3acd06fcc3fbc1b1cf5b8606f78aadc34a7e0ffea00d6091ef7328358e42",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 159,
       "issue_count": 0
     },
@@ -2209,7 +2209,7 @@
       "id": "blackmatrix-china-services-jingdong",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/JingDong/JingDong.yaml",
       "sha256": "20a052bb10e0601f25afca13df5cae1448c022ed148f9d523870fd075f9c9c5e",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 249,
       "issue_count": 0
     },
@@ -2217,7 +2217,7 @@
       "id": "blackmatrix-china-services-pinduoduo",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pinduoduo/Pinduoduo.yaml",
       "sha256": "9c022acf368bd6bcdfadf9f7445e84c2d13c586209b192e25643a9ffc8720473",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -2225,7 +2225,7 @@
       "id": "blackmatrix-china-services-meituan",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MeiTuan/MeiTuan.yaml",
       "sha256": "a7238babc4f9385cfe0d02002ab98d834744843b8ade2684728fcfb02acd1990",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
     },
@@ -2233,7 +2233,7 @@
       "id": "blackmatrix-china-services-didi",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DiDi/DiDi.yaml",
       "sha256": "ba6dc39684ec5a5df8e065a59d031f1ea2a3292e6f58cb28a2d6742e9a0ac73a",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 25,
       "issue_count": 0
     },
@@ -2241,7 +2241,7 @@
       "id": "blackmatrix-china-services-12306",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/12306/12306.yaml",
       "sha256": "b8c7201b36e7ddb8913562912ae812a4cbd76e8d4d3998c1377222b74e0a0acd",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 15,
       "issue_count": 0
     },
@@ -2249,7 +2249,7 @@
       "id": "blackmatrix-china-services-sina",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sina/Sina.yaml",
       "sha256": "033124117b8a8d380c731fa5c62a741f91643fc6a2ad7e9f52828a9d037e6163",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 108,
       "issue_count": 0
     },
@@ -2257,7 +2257,7 @@
       "id": "blackmatrix-china-services-weibo",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Weibo/Weibo.yaml",
       "sha256": "5cf5800ad6e4deebf0f10a8a095df9ecd9bb305a023db879ae526fd959993cb8",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
     },
@@ -2265,7 +2265,7 @@
       "id": "blackmatrix-china-services-zhihu",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Zhihu/Zhihu.yaml",
       "sha256": "e7ec2f8854196964b2da78ebddb00edd7ef6cc81ccaa73b6c04ce17677498a40",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
     },
@@ -2273,7 +2273,7 @@
       "id": "blackmatrix-china-services-douban",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DouBan/DouBan.yaml",
       "sha256": "ad834d7b8ad1504c683c80fac93a5b4ab7b2d727029d743ebc0c133b40b0ff23",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
     },
@@ -2281,7 +2281,7 @@
       "id": "blackmatrix-alipay",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AliPay/AliPay.yaml",
       "sha256": "0bad2e7ba4a5f12d4e2e3956805512517e47fe611c7927633fd4f18265db40e4",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -2289,7 +2289,7 @@
       "id": "blackmatrix-wechat",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml",
       "sha256": "10a541b6a4a2d13b47c61bc67fca72c78ba9c0a024bc439e3d83f8e398abb60a",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 31,
       "issue_count": 0
     },
@@ -2297,7 +2297,7 @@
       "id": "rulego-direct-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list",
       "sha256": "467d7173ed8d0541ed2436c0f686aee63b8850c0f1452469a7c8439f542cfd32",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
     },
@@ -2305,7 +2305,7 @@
       "id": "blackmatrix-direct",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml",
       "sha256": "059ab2909b5c55fde7d7cb7b0c171dea2566c6e8d0d9e0bed5947db5452dfbdc",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 267,
       "issue_count": 0
     },
@@ -2313,7 +2313,7 @@
       "id": "rulego-proxy-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list",
       "sha256": "2d4f4e156663de6b5d1e4d49be23799f8a0a08ef7c061cb0d133e194be07bf7c",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
     },
@@ -2321,7 +2321,7 @@
       "id": "rulego-proxy",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
       "sha256": "2292abb55f20caf031ffbb7011c84b85c2246f54ae050fe416323da1fd2b8ead",
-      "from_cache": true,
+      "from_cache": false,
       "rule_count": 513,
       "issue_count": 0
     },
