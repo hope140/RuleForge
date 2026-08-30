@@ -119,7 +119,7 @@ python tools/ruleforge.py build --manifest sources/quantumultx.yaml --refresh --
 python tools/ruleforge.py build --manifest sources/mihomo.yaml --refresh --fail-on-conflict
 ```
 
-带有 `--refresh` 的构建会访问上游来源。任一来源抓取失败、解析异常、出现不受支持的规则类型或仍有未决冲突时，命令会失败。
+带有 `--refresh` 的构建会访问上游来源。任一来源抓取失败、没有解析出规则、出现解析异常、不受支持的规则类型或仍有未决冲突时，命令会失败。生成过程先写入同盘暂存目录，全部检查和渲染成功后才替换正式输出；失败构建不会覆盖上一次可用结果。
 
 ## 自动更新
 
@@ -127,7 +127,7 @@ python tools/ruleforge.py build --manifest sources/mihomo.yaml --refresh --fail-
 
 工作流先运行回归测试，再依次构建 Quantumult X 与 Mihomo。两个目标全部通过后才会提交生成结果。单纯的生成时间和缓存状态变化不会产生提交。
 
-CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流还会访问 26 个 Mihomo 和 26 个 Quantumult X Raw 地址，确认主分支上的远程规则可以读取。
+CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 26 个 Mihomo、26 个 Quantumult X 规则文件以及 QX 远程过滤器片段，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
 
 ## 使用边界
 

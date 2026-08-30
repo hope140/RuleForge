@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 import sys
+import tempfile
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -29,6 +32,54 @@ def _default_root() -> Path:
 
 def _manifest_arg(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--manifest", default="sources/quantumultx.yaml")
+
+
+def _prepare_staging_output(output_dir: Path) -> Path:
+    """Create a same-filesystem staging copy without touching the live output."""
+
+    resolved_output = output_dir.resolve()
+    if resolved_output == resolved_output.parent or resolved_output == Path.cwd().resolve():
+        raise OSError(f"refusing unsafe output directory: {output_dir}")
+    resolved_output.parent.mkdir(parents=True, exist_ok=True)
+    staging = Path(
+        tempfile.mkdtemp(
+            prefix=f".ruleforge-staging-{resolved_output.name}-",
+            dir=resolved_output.parent,
+        )
+    )
+    try:
+        if resolved_output.exists():
+            if not resolved_output.is_dir():
+                raise OSError(f"output path is not a directory: {output_dir}")
+            shutil.copytree(resolved_output, staging, dirs_exist_ok=True)
+    except BaseException:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
+    return staging
+
+
+def _publish_staging_output(staging: Path, output_dir: Path) -> None:
+    """Replace the live output only after the staged build is complete."""
+
+    resolved_output = output_dir.resolve()
+    backup = resolved_output.parent / (
+        f".ruleforge-backup-{resolved_output.name}-{uuid.uuid4().hex}"
+    )
+    moved_existing = False
+    try:
+        if resolved_output.exists():
+            resolved_output.replace(backup)
+            moved_existing = True
+        staging.replace(resolved_output)
+    except BaseException:
+        if moved_existing and not resolved_output.exists() and backup.exists():
+            backup.replace(resolved_output)
+        raise
+    if backup.exists():
+        try:
+            shutil.rmtree(backup)
+        except OSError as exc:
+            print(f"warning: unable to remove output backup {backup}: {exc}", file=sys.stderr)
 
 
 def _lint(args: argparse.Namespace) -> int:
@@ -70,6 +121,15 @@ def _build(args: argparse.Namespace) -> int:
         result = parse_resource(resource.text, source)
         all_rules.extend(result.rules)
         parse_issues.extend(issue.to_dict() for issue in result.issues)
+        if not result.rules:
+            parse_issues.append(
+                {
+                    "source_id": source.id,
+                    "line_number": 0,
+                    "message": "source produced no rules",
+                    "raw": "",
+                }
+            )
         source_metadata.append(
             {
                 "id": source.id,
@@ -80,6 +140,21 @@ def _build(args: argparse.Namespace) -> int:
                 "issue_count": len(result.issues),
             }
         )
+
+    if fetch_errors or parse_issues:
+        print(
+            f"error: fetch_errors={len(fetch_errors)} parse_issues={len(parse_issues)}; "
+            "existing outputs were left unchanged",
+            file=sys.stderr,
+        )
+        for message in fetch_errors[:5]:
+            print(f"error: {message}", file=sys.stderr)
+        for issue in parse_issues[:5]:
+            print(
+                f"error: {issue['source_id']}:{issue['line_number']}: {issue['message']}",
+                file=sys.stderr,
+            )
+        return 1
 
     candidate_audit = audit_rules(all_rules)
     curation = curate_rules(all_rules)
@@ -113,80 +188,96 @@ def _build(args: argparse.Namespace) -> int:
                 file=sys.stderr,
             )
             return 3
+    if args.fail_on_conflict and resolution.unresolved_decisions:
+        print(
+            f"error: unresolved conflicts={len(resolution.unresolved_decisions)}; "
+            "existing outputs were left unchanged",
+            file=sys.stderr,
+        )
+        return 2
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-    category_renderer = (
-        render_mihomo_category_filters if target == "mihomo" else render_category_filters
-    )
-    relative_root = f"outputs/{target}/categories"
-    candidate_categories = category_renderer(
-        candidate_audit.kept_rules,
-        output_dir / "categories" / "candidates",
-        generated_at_utc=generated_at_utc,
-        relative_prefix=f"{relative_root}/candidates",
-        category_policies=category_policies,
-    )
-    safe_categories = category_renderer(
-        resolution.rules,
-        output_dir / "categories" / "safe",
-        generated_at_utc=generated_at_utc,
-        relative_prefix=f"{relative_root}/safe",
-        category_policies=category_policies,
-    )
-    if target == "mihomo":
-        render_mihomo_rule_providers(
-            safe_categories,
-            output_dir / "rule-providers.safe.yaml",
-            repository_base_url=args.repository_base_url,
+    staging_output = _prepare_staging_output(output_dir)
+    try:
+        category_renderer = (
+            render_mihomo_category_filters if target == "mihomo" else render_category_filters
         )
-        render_mihomo_rules(safe_categories, output_dir / "rules.safe.yaml")
-    else:
-        render_filter_remote_conf(
-            safe_categories,
-            output_dir / "filter_remote.safe.conf",
-            repository_base_url=args.repository_base_url,
-            title="Resolved category filters (Blackmatrix preferred)",
+        relative_root = f"outputs/{target}/categories"
+        candidate_categories = category_renderer(
+            candidate_audit.kept_rules,
+            staging_output / "categories" / "candidates",
+            generated_at_utc=generated_at_utc,
+            relative_prefix=f"{relative_root}/candidates",
+            category_policies=category_policies,
         )
-    render_audit(audit, output_dir / "audit.json", resolution=resolution)
-    render_conflicts(audit.conflicts, output_dir / "conflicts.md", resolution=resolution)
-    render_json(
-        {
-            "generated_at_utc": generated_at_utc,
-            "generator_version": __version__,
-            "manifest": manifest_data,
-            "source_count": len(sources),
-            "enabled_source_count": len([source for source in sources if source.enabled]),
-            "parsed_rule_count": len(all_rules),
-            "curated_rule_count": len(curation.rules),
-            "curation_drop_count": len(curation.dropped),
-            "candidate_kept_rule_count": len(candidate_audit.kept_rules),
-            "kept_rule_count": len(audit.kept_rules),
-            "safe_rule_count": len(resolution.rules),
-            "resolved_rule_count": len(resolution.rules),
-            "conflicted_rule_count": len(audit.conflicted_rules),
-            "duplicate_count": len(audit.duplicates),
-            "conflict_count": len(audit.conflicts),
-            "resolved_conflict_count": len(resolution.preferred_decisions),
-            "blackmatrix_preferred_conflict_count": len(resolution.blackmatrix_decisions),
-            "direct_preferred_conflict_count": len(resolution.direct_decisions),
-            "specific_preferred_conflict_count": len(resolution.specific_decisions),
-            "category_preferred_conflict_count": len(resolution.category_decisions),
-            "protective_reject_conflict_count": len(resolution.protective_reject_decisions),
-            "ordered_overlap_count": len(resolution.ordered_overlap_decisions),
-            "routing_constraint_count": len(resolution.constraints),
-            "unresolved_conflict_count": len(resolution.unresolved_decisions),
-            "resolution": resolution.to_summary_dict(),
-            "candidate_categories": candidate_categories,
-            "safe_categories": safe_categories,
-            "parse_issue_count": len(parse_issues),
-            "fetch_error_count": len(fetch_errors),
-            "sources": source_metadata,
-            "parse_issues": parse_issues,
-            "fetch_errors": fetch_errors,
-        },
-        output_dir / "build.json",
-    )
-    render_json(curation.to_dict(), output_dir / "curation.json")
+        safe_categories = category_renderer(
+            resolution.rules,
+            staging_output / "categories" / "safe",
+            generated_at_utc=generated_at_utc,
+            relative_prefix=f"{relative_root}/safe",
+            category_policies=category_policies,
+        )
+        if target == "mihomo":
+            render_mihomo_rule_providers(
+                safe_categories,
+                staging_output / "rule-providers.safe.yaml",
+                repository_base_url=args.repository_base_url,
+            )
+            render_mihomo_rules(safe_categories, staging_output / "rules.safe.yaml")
+        else:
+            render_filter_remote_conf(
+                safe_categories,
+                staging_output / "filter_remote.safe.conf",
+                repository_base_url=args.repository_base_url,
+                title="Resolved category filters (Blackmatrix preferred)",
+            )
+        render_audit(audit, staging_output / "audit.json", resolution=resolution)
+        render_conflicts(
+            audit.conflicts,
+            staging_output / "conflicts.md",
+            resolution=resolution,
+        )
+        render_json(
+            {
+                "generated_at_utc": generated_at_utc,
+                "generator_version": __version__,
+                "manifest": manifest_data,
+                "source_count": len(sources),
+                "enabled_source_count": len([source for source in sources if source.enabled]),
+                "parsed_rule_count": len(all_rules),
+                "curated_rule_count": len(curation.rules),
+                "curation_drop_count": len(curation.dropped),
+                "candidate_kept_rule_count": len(candidate_audit.kept_rules),
+                "kept_rule_count": len(audit.kept_rules),
+                "safe_rule_count": len(resolution.rules),
+                "resolved_rule_count": len(resolution.rules),
+                "conflicted_rule_count": len(audit.conflicted_rules),
+                "duplicate_count": len(audit.duplicates),
+                "conflict_count": len(audit.conflicts),
+                "resolved_conflict_count": len(resolution.preferred_decisions),
+                "blackmatrix_preferred_conflict_count": len(resolution.blackmatrix_decisions),
+                "direct_preferred_conflict_count": len(resolution.direct_decisions),
+                "specific_preferred_conflict_count": len(resolution.specific_decisions),
+                "category_preferred_conflict_count": len(resolution.category_decisions),
+                "protective_reject_conflict_count": len(resolution.protective_reject_decisions),
+                "ordered_overlap_count": len(resolution.ordered_overlap_decisions),
+                "routing_constraint_count": len(resolution.constraints),
+                "unresolved_conflict_count": len(resolution.unresolved_decisions),
+                "resolution": resolution.to_summary_dict(),
+                "candidate_categories": candidate_categories,
+                "safe_categories": safe_categories,
+                "parse_issue_count": len(parse_issues),
+                "fetch_error_count": len(fetch_errors),
+                "sources": source_metadata,
+                "parse_issues": parse_issues,
+                "fetch_errors": fetch_errors,
+            },
+            staging_output / "build.json",
+        )
+        render_json(curation.to_dict(), staging_output / "curation.json")
+        _publish_staging_output(staging_output, output_dir)
+    finally:
+        if staging_output.exists():
+            shutil.rmtree(staging_output, ignore_errors=True)
     print(
         f"sources={len(source_metadata)} parsed_rules={len(all_rules)} "
         f"curated_rules={len(curation.rules)} curation_drops={len(curation.dropped)} "
@@ -203,10 +294,6 @@ def _build(args: argparse.Namespace) -> int:
         f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
     )
     print(f"output={output_dir}")
-    if fetch_errors or parse_issues:
-        return 1
-    if args.fail_on_conflict and resolution.unresolved_decisions:
-        return 2
     return 0
 
 

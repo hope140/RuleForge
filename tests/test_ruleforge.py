@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from ruleforge.audit import audit_rules, resolve_conflicts  # noqa: E402
 from ruleforge.curation import curate_rules  # noqa: E402
 from ruleforge.fetch import FetchError, fetch_source  # noqa: E402
-from ruleforge.manifest import load_manifest  # noqa: E402
+from ruleforge.manifest import ManifestError, load_manifest  # noqa: E402
 from ruleforge.model import Source  # noqa: E402
 from ruleforge.parsers import parse_resource  # noqa: E402
 from ruleforge.routing import ROUTING_CATEGORY_ORDER, routing_order_violations  # noqa: E402
@@ -21,6 +21,27 @@ from ruleforge.runtime import RouteProbe, simulate_first_match  # noqa: E402
 
 
 class RuleForgeTests(unittest.TestCase):
+    def _write_inline_manifest(self, path: Path, payload: str = "HOST,example.com") -> None:
+        path.write_text(
+            "\n".join(
+                (
+                    "schema_version: 1",
+                    "target: quantumult-x",
+                    "sources:",
+                    "  - id: inline-test",
+                    "    kind: inline",
+                    "    format: quantumult-x",
+                    "    category: demo",
+                    "    policy: direct",
+                    f'    url: "inline:{payload}"',
+                    "    parser: quantumult-x",
+                    "    enabled: true",
+                    "",
+                )
+            ),
+            encoding="utf-8",
+        )
+
     def test_fetch_retries_transient_network_errors(self) -> None:
         source = Source("test", "filter", "surge", "demo", "direct", "https://example.test", "surge")
         response = Mock()
@@ -44,6 +65,91 @@ class RuleForgeTests(unittest.TestCase):
                     fetch_source(source, temp_dir, attempts=3)
             self.assertEqual(urlopen.call_count, 1)
 
+    def test_empty_source_fails_without_replacing_existing_output(self) -> None:
+        from ruleforge.cli import main
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            manifest = root / "manifest.yaml"
+            output = root / "output"
+            output.mkdir()
+            sentinel = output / "sentinel.txt"
+            sentinel.write_text("original\n", encoding="utf-8")
+            self._write_inline_manifest(manifest, "# comments only")
+
+            result = main(
+                [
+                    "build",
+                    "--manifest",
+                    str(manifest),
+                    "--output-dir",
+                    str(output),
+                ]
+            )
+
+            self.assertEqual(result, 1)
+            self.assertEqual(sentinel.read_text(encoding="utf-8"), "original\n")
+            self.assertFalse((output / "build.json").exists())
+            self.assertEqual(list(root.glob(".ruleforge-staging-*")), [])
+
+    def test_render_failure_keeps_existing_output_and_cleans_staging(self) -> None:
+        from ruleforge.cli import main
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            manifest = root / "manifest.yaml"
+            output = root / "output"
+            output.mkdir()
+            sentinel = output / "sentinel.txt"
+            sentinel.write_text("original\n", encoding="utf-8")
+            self._write_inline_manifest(manifest)
+
+            with patch("ruleforge.cli.render_json", side_effect=OSError("render failed")):
+                result = main(
+                    [
+                        "build",
+                        "--manifest",
+                        str(manifest),
+                        "--output-dir",
+                        str(output),
+                    ]
+                )
+
+            self.assertEqual(result, 1)
+            self.assertEqual(sentinel.read_text(encoding="utf-8"), "original\n")
+            self.assertFalse((output / "build.json").exists())
+            self.assertEqual(list(root.glob(".ruleforge-staging-*")), [])
+            self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
+
+    def test_successful_build_publishes_staged_output(self) -> None:
+        from ruleforge.cli import main
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            manifest = root / "manifest.yaml"
+            output = root / "output"
+            output.mkdir()
+            sentinel = output / "sentinel.txt"
+            sentinel.write_text("preserved\n", encoding="utf-8")
+            self._write_inline_manifest(manifest)
+
+            result = main(
+                [
+                    "build",
+                    "--manifest",
+                    str(manifest),
+                    "--output-dir",
+                    str(output),
+                ]
+            )
+
+            self.assertEqual(result, 0)
+            self.assertTrue((output / "build.json").is_file())
+            self.assertTrue((output / "categories" / "safe" / "demo.list").is_file())
+            self.assertEqual(sentinel.read_text(encoding="utf-8"), "preserved\n")
+            self.assertEqual(list(root.glob(".ruleforge-staging-*")), [])
+            self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
+
     def test_manifest_has_unique_seed_sources(self) -> None:
         expected_counts = {"quantumultx.yaml": 96, "mihomo.yaml": 95}
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
@@ -52,6 +158,92 @@ class RuleForgeTests(unittest.TestCase):
             self.assertEqual(len(sources), expected_counts[filename])
             self.assertEqual(len({source.id for source in sources}), expected_counts[filename])
             self.assertEqual(len({source.url for source in sources}), expected_counts[filename])
+
+    def test_manifest_rejects_invalid_root_schema_target_and_unknown_fields(self) -> None:
+        base = """schema_version: 1
+target: quantumult-x
+description: test
+sources:
+  - id: demo
+    kind: filter
+    format: surge
+    category: demo
+    policy: direct
+    url: https://example.test/rules.list
+    parser: surge
+    enabled: true
+"""
+        cases = (
+            ("schema_version: 2", "schema_version must be integer 1"),
+            ("schema_version: \"1\"", "schema_version must be integer 1"),
+            ("target: unknown", "unsupported target"),
+            ("unexpected: value", "unknown manifest fields"),
+            ("    unexpected: value", "source 1 has unknown fields"),
+        )
+        for replacement, message in cases:
+            with self.subTest(replacement=replacement), tempfile.TemporaryDirectory() as temp_dir:
+                text = base.replace("schema_version: 1", replacement, 1)
+                if replacement.startswith("    "):
+                    text = base.replace("    enabled: true", "    enabled: true\n" + replacement, 1)
+                elif replacement.startswith("unexpected:"):
+                    text = base.replace("description: test", "description: test\n" + replacement, 1)
+                elif replacement.startswith("target:"):
+                    text = base.replace("target: quantumult-x", replacement, 1)
+                path = Path(temp_dir) / "manifest.yaml"
+                path.write_text(text, encoding="utf-8")
+                with self.assertRaisesRegex(ManifestError, message):
+                    load_manifest(path)
+
+    def test_manifest_rejects_string_booleans_and_non_string_source_fields(self) -> None:
+        base = """schema_version: 1
+target: quantumult-x
+sources:
+  - id: demo
+    kind: filter
+    format: surge
+    category: demo
+    policy: direct
+    url: https://example.test/rules.list
+    parser: surge
+    enabled: true
+"""
+        for field, value in (("enabled", '"false"'), ("enabled", 1), ("id", 1), ("url", 1)):
+            with self.subTest(field=field, value=value), tempfile.TemporaryDirectory() as temp_dir:
+                original = (
+                    f"  - id: demo" if field == "id" else
+                    f"    {field}: " + ("true" if field == "enabled" else "https://example.test/rules.list")
+                )
+                replacement = f"  - id: {value}" if field == "id" else f"    {field}: {value}"
+                text = base.replace(original, replacement, 1)
+                path = Path(temp_dir) / "manifest.yaml"
+                path.write_text(text, encoding="utf-8")
+                with self.assertRaisesRegex(ManifestError, f"field {field} .*string|field {field} .*boolean"):
+                    load_manifest(path)
+
+    def test_manifest_accepts_documented_notes_and_current_combinations(self) -> None:
+        for filename in ("quantumultx.yaml", "mihomo.yaml"):
+            manifest, sources = load_manifest(ROOT / "sources" / filename)
+            self.assertIn("description", manifest)
+            self.assertTrue(sources)
+
+    def test_manifest_rejects_unknown_source_combination(self) -> None:
+        text = """schema_version: 1
+target: quantumult-x
+sources:
+  - id: demo
+    kind: filter
+    format: clash
+    category: demo
+    policy: direct
+    url: https://example.test/rules.yaml
+    parser: surge
+    enabled: true
+"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "manifest.yaml"
+            path.write_text(text, encoding="utf-8")
+            with self.assertRaisesRegex(ManifestError, "unsupported kind/format/parser combination"):
+                load_manifest(path)
 
     def test_inline_source_is_local_and_does_not_require_network(self) -> None:
         source = Source(

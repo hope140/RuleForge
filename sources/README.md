@@ -2,6 +2,8 @@
 
 来源清单登记公开规则地址、格式、策略映射和维护说明，也允许极少量经过审阅的 `inline:` 精确例外；不登记节点订阅或其他私密地址。
 
+清单只接受 `schema_version: 1`，`target` 必须是 `quantumult-x` 或 `mihomo`。根字段、来源字段、字段类型以及 `kind` / `format` / `parser` 组合都会严格校验；`enabled` 必须使用不带引号的 YAML 布尔值，未知字段会使 lint 和构建失败。
+
 ## 字段约定
 
 - `id`：稳定的内部标识

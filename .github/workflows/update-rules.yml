@@ -121,33 +121,84 @@ jobs:
           git commit -m "chore: update proxy rules"
           git push
 
-      - name: Verify published Mihomo rule providers
+      - name: Resolve published revision
+        id: published_revision
         if: github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
-          base="https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe"
-          for file in outputs/mihomo/categories/safe/*.list; do
-            name="$(basename "$file")"
-            curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
-              --output "$RUNNER_TEMP/published-$name" "$base/$name"
-            grep -q '^# Category:' "$RUNNER_TEMP/published-$name"
-          done
+          revision="$(git rev-parse HEAD)"
+          test "${#revision}" -eq 40
+          echo "revision=$revision" >> "$GITHUB_OUTPUT"
 
-      - name: Verify published Quantumult X rule filters
+      - name: Verify published outputs at current revision
         if: github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
-          base="https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/quantumult-x/categories/safe"
-          for file in outputs/quantumult-x/categories/safe/*.list; do
-            name="$(basename "$file")"
-            curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
-              --output "$RUNNER_TEMP/published-qx-$name" "$base/$name"
-            grep -q '^# Category:' "$RUNNER_TEMP/published-qx-$name"
-          done
+          revision="${{ steps.published_revision.outputs.revision }}"
+          test -n "$revision"
+          download_dir="$(mktemp -d "$RUNNER_TEMP/published-exact-XXXXXX")"
+          trap 'rm -rf "$download_dir"' EXIT
 
-          curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 \
-            --output "$RUNNER_TEMP/filter_remote.safe.conf" \
+          verify_tree() {
+            local kind="$1"
+            local relative_dir="$2"
+            local base="https://raw.githubusercontent.com/hope140/RuleForge/${revision}/${relative_dir}"
+            local -a files
+            mapfile -t files < <(find "$GITHUB_WORKSPACE/$relative_dir" -maxdepth 1 -type f -name '*.list' -print | sort)
+            test "${#files[@]}" -eq 26
+            for file in "${files[@]}"; do
+              local name downloaded
+              name="$(basename "$file")"
+              downloaded="$download_dir/${kind}-${name}"
+              curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 \
+                --output "$downloaded" "$base/$name"
+              cmp -- "$file" "$downloaded"
+            done
+          }
+
+          verify_tree mihomo outputs/mihomo/categories/safe
+          verify_tree qx outputs/quantumult-x/categories/safe
+
+          filter="$GITHUB_WORKSPACE/outputs/quantumult-x/filter_remote.safe.conf"
+          filter_download="$download_dir/qx-filter_remote.safe.conf"
+          curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 \
+            --output "$filter_download" \
+            "https://raw.githubusercontent.com/hope140/RuleForge/${revision}/outputs/quantumult-x/filter_remote.safe.conf"
+          cmp -- "$filter" "$filter_download"
+
+      - name: Verify public main aliases are readable
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          download_dir="$(mktemp -d "$RUNNER_TEMP/published-alias-XXXXXX")"
+          trap 'rm -rf "$download_dir"' EXIT
+
+          verify_alias_tree() {
+            local kind="$1"
+            local relative_dir="$2"
+            local base="https://raw.githubusercontent.com/hope140/RuleForge/main/${relative_dir}"
+            local -a files
+            mapfile -t files < <(find "$GITHUB_WORKSPACE/$relative_dir" -maxdepth 1 -type f -name '*.list' -print | sort)
+            test "${#files[@]}" -eq 26
+            for file in "${files[@]}"; do
+              local name downloaded
+              name="$(basename "$file")"
+              downloaded="$download_dir/${kind}-${name}"
+              curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 \
+                --output "$downloaded" "$base/$name"
+              test -s "$downloaded"
+              grep -q '^# Category:' "$downloaded"
+            done
+          }
+
+          verify_alias_tree mihomo outputs/mihomo/categories/safe
+          verify_alias_tree qx outputs/quantumult-x/categories/safe
+
+          curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 \
+            --output "$download_dir/filter_remote.safe.conf" \
             "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/quantumult-x/filter_remote.safe.conf"
-          grep -q '^\[filter_remote\]$' "$RUNNER_TEMP/filter_remote.safe.conf"
+          test -s "$download_dir/filter_remote.safe.conf"
+          grep -q '^\[filter_remote\]$' "$download_dir/filter_remote.safe.conf"

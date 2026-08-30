@@ -3,6 +3,8 @@ __pycache__/
 .venv/
 .env
 .cache/
+.ruleforge-staging-*/
+.ruleforge-backup-*/
 build/
 dist/
 reports/local/

@@ -10,6 +10,28 @@ class ManifestError(ValueError):
     pass
 
 
+_ALLOWED_ROOT_FIELDS = {"schema_version", "target", "sources", "description", "notes"}
+_ALLOWED_SOURCE_FIELDS = {
+    "id",
+    "kind",
+    "format",
+    "category",
+    "policy",
+    "url",
+    "parser",
+    "enabled",
+    "notes",
+}
+_ALLOWED_TARGETS = {"quantumult-x", "mihomo"}
+_ALLOWED_COMBINATIONS = {
+    ("filter", "surge", "surge"),
+    ("filter", "quantumult-x", "quantumult-x"),
+    ("filter", "clash", "clash-classical"),
+    ("inline", "quantumult-x", "quantumult-x"),
+    ("inline", "clash", "inline"),
+}
+
+
 def _scalar(value: str) -> Any:
     value = value.strip()
     if not value:
@@ -92,17 +114,47 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
     missing_root = required_root - data.keys()
     if missing_root:
         raise ManifestError(f"missing manifest fields: {', '.join(sorted(missing_root))}")
+    unknown_root = set(data) - _ALLOWED_ROOT_FIELDS
+    if unknown_root:
+        raise ManifestError(f"unknown manifest fields: {', '.join(sorted(unknown_root))}")
+    if type(data["schema_version"]) is not int or data["schema_version"] != 1:
+        raise ManifestError("schema_version must be integer 1")
+    if type(data["target"]) is not str or data["target"] not in _ALLOWED_TARGETS:
+        raise ManifestError(f"unsupported target: {data['target']!r}")
+    for field in ("description", "notes"):
+        if field in data and type(data[field]) is not str:
+            raise ManifestError(f"manifest field {field} must be a string")
+    if not isinstance(data["sources"], list):
+        raise ManifestError("sources must be a list")
 
     sources: list[Source] = []
     seen_ids: set[str] = set()
     seen_urls: set[str] = set()
     required_source = {"id", "kind", "format", "category", "policy", "url", "parser", "enabled"}
     for index, item in enumerate(data["sources"], start=1):
+        if not isinstance(item, dict):
+            raise ManifestError(f"source {index} must be a mapping")
+        unknown = set(item) - _ALLOWED_SOURCE_FIELDS
+        if unknown:
+            raise ManifestError(f"source {index} has unknown fields: {', '.join(sorted(unknown))}")
         missing = required_source - item.keys()
         if missing:
             raise ManifestError(f"source {index} missing fields: {', '.join(sorted(missing))}")
-        source_id = str(item["id"])
-        url = str(item["url"])
+        for field in ("id", "kind", "format", "category", "policy", "url", "parser"):
+            if type(item[field]) is not str:
+                raise ManifestError(f"source {index} field {field} must be a string")
+        if type(item["enabled"]) is not bool:
+            raise ManifestError(f"source {index} field enabled must be a boolean")
+        if "notes" in item and type(item["notes"]) is not str:
+            raise ManifestError(f"source {index} field notes must be a string")
+        combination = (item["kind"], item["format"], item["parser"])
+        if combination not in _ALLOWED_COMBINATIONS:
+            raise ManifestError(
+                f"source {index} has unsupported kind/format/parser combination: "
+                f"{combination!r}"
+            )
+        source_id = item["id"]
+        url = item["url"]
         if source_id in seen_ids:
             raise ManifestError(f"duplicate source id: {source_id}")
         if url in seen_urls:
@@ -114,14 +166,14 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
         sources.append(
             Source(
                 id=source_id,
-                kind=str(item["kind"]),
-                format=str(item["format"]),
-                category=str(item["category"]),
-                policy=str(item["policy"]),
+                kind=item["kind"],
+                format=item["format"],
+                category=item["category"],
+                policy=item["policy"],
                 url=url,
-                parser=str(item["parser"]),
-                enabled=bool(item["enabled"]),
-                notes=str(item.get("notes", "")),
+                parser=item["parser"],
+                enabled=item["enabled"],
+                notes=item.get("notes", ""),
             )
         )
     return data, sources
