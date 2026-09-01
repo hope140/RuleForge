@@ -177,7 +177,7 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png"
     type: url-test
     include-all: true
-    filter: "(?i)(日本|日|JP|Japan)"
+    filter: "(?i)(日本|JP|Japan)"
     exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
     url: "https://www.gstatic.com/generate_204"
     interval: 600

@@ -1108,6 +1108,12 @@ sources:
         self.assertEqual(content.count("interval: 86400"), 28)
         self.assertNotIn("interval: 172800", content)
 
+    def test_mihomo_japan_group_does_not_use_ambiguous_single_character_match(self) -> None:
+        content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
+        japan_group = content.split("  - name: 日本节点", 1)[1].split("  - name: 韩国节点", 1)[0]
+        self.assertIn('filter: "(?i)(日本|JP|Japan)"', japan_group)
+        self.assertNotIn("日本|日|JP|Japan", japan_group)
+
     def test_mihomo_profile_declares_udp_disabled_by_default(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
         self.assertEqual(content.count("override:"), 2)
