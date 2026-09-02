@@ -89,7 +89,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "gateway.icloud.com",
-        "line_number": 97
+        "line_number": 96
       },
       "rendered_rule": "host,gateway.icloud.com,苹果服务",
       "confidence": "high",
@@ -105,7 +105,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "apps.mzstatic.com",
-        "line_number": 41
+        "line_number": 40
       },
       "rendered_rule": "host,apps.mzstatic.com,苹果服务",
       "confidence": "high",
@@ -328,7 +328,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "api-glb-sea.smoot.apple.com",
-        "line_number": 248
+        "line_number": 247
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
@@ -410,7 +410,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "api-p-ap-c.smoot.apple.com",
-        "line_number": 27
+        "line_number": 26
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
@@ -451,7 +451,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "api-p-ap-d.smoot.apple.com",
-        "line_number": 28
+        "line_number": 27
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
@@ -492,7 +492,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "api-p-ap-e.smoot.apple.com",
-        "line_number": 29
+        "line_number": 28
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
@@ -574,7 +574,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "guzzoni.smoot.apple.com",
-        "line_number": 121
+        "line_number": 120
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
@@ -697,7 +697,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "gateway.icloud.com",
-        "line_number": 97
+        "line_number": 96
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
@@ -738,7 +738,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "apps.mzstatic.com",
-        "line_number": 41
+        "line_number": 40
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
@@ -1517,7 +1517,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "gateway.icloud.com",
-        "line_number": 97
+        "line_number": 96
       },
       "compared_rule": {
         "source_id": "blackmatrix-direct",

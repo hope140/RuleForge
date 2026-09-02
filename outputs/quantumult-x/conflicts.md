@@ -3010,29 +3010,29 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 - decision: `prefer-category` -> `HOST-KEYWORD,buy.itunes.apple.com -> 苹果服务 (blackmatrix-apple)` (The configured business-category priority applies to this exact conflict.)
 
 ### 577. semantic-overlap / host-inside-host-suffix
-- left: `HOST,itunes.apple.com -> direct (blackmatrix-direct)`
-- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `ordered-overlap` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. The configured business-category priority provides the first-match order.)
-
-### 578. semantic-overlap / host-inside-host-suffix
 - left: `HOST,init.ess.apple.com -> direct (blackmatrix-direct)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `ordered-overlap` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. The configured business-category priority provides the first-match order.)
 
-### 579. semantic-overlap / host-inside-host-suffix
+### 578. semantic-overlap / host-inside-host-suffix
 - left: `HOST,smp-device-content.apple.com -> direct (blackmatrix-direct)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `ordered-overlap` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. The configured business-category priority provides the first-match order.)
 
-### 580. semantic-overlap / host-inside-host-suffix
+### 579. semantic-overlap / host-inside-host-suffix
 - left: `HOST,weather-data.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,weather-data.apple.com -> direct (blackmatrix-direct)`
 - decision: `ordered-overlap` -> `HOST,weather-data.apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. The configured business-category priority provides the first-match order.)
 
-### 581. semantic-overlap / host-inside-host-suffix
+### 580. semantic-overlap / host-inside-host-suffix
 - left: `HOST,weather-map.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,weather-map.apple.com -> direct (blackmatrix-direct)`
 - decision: `ordered-overlap` -> `HOST,weather-map.apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. The configured business-category priority provides the first-match order.)
+
+### 581. semantic-overlap / host-inside-host-suffix
+- left: `HOST,itunes.apple.com -> direct (blackmatrix-direct)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `ordered-overlap` -> `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. The configured business-category priority provides the first-match order.)
 
 ### 582. semantic-overlap / host-inside-host-suffix
 - left: `HOST,time.apple.com -> direct (blackmatrix-direct)`
@@ -3382,64 +3382,64 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 - decision: `ordered-overlap` -> `HOST,apps.apple.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
 ### 651. semantic-overlap / host-inside-host-suffix
-- left: `HOST,itunes.apple.com -> 全球加速 (rulego-proxy)`
-- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
-- decision: `ordered-overlap` -> `HOST,itunes.apple.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
-
-### 652. semantic-overlap / host-inside-host-suffix
 - left: `HOST,api-p-ap-c.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `ordered-overlap` -> `HOST,api-p-ap-c.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 653. semantic-overlap / host-inside-host-suffix
+### 652. semantic-overlap / host-inside-host-suffix
 - left: `HOST,api-p-ap-d.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `ordered-overlap` -> `HOST,api-p-ap-d.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 654. semantic-overlap / host-inside-host-suffix
+### 653. semantic-overlap / host-inside-host-suffix
 - left: `HOST,api-p-ap-e.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `ordered-overlap` -> `HOST,api-p-ap-e.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 655. semantic-overlap / host-inside-host-suffix
+### 654. semantic-overlap / host-inside-host-suffix
 - left: `HOST,beta.music.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,music.apple.com -> 苹果服务 (blackmatrix-apple-music)`
 - decision: `ordered-overlap` -> `HOST,beta.music.apple.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 656. semantic-overlap / host-inside-host-suffix
+### 655. semantic-overlap / host-inside-host-suffix
 - left: `HOST,beta.music.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `ordered-overlap` -> `HOST,beta.music.apple.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 657. semantic-overlap / host-inside-host-suffix
+### 656. semantic-overlap / host-inside-host-suffix
 - left: `HOST,gateway.icloud.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,icloud.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `ordered-overlap` -> `HOST,gateway.icloud.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 658. semantic-overlap / host-inside-host-suffix
+### 657. semantic-overlap / host-inside-host-suffix
 - left: `HOST,guzzoni.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `ordered-overlap` -> `HOST,guzzoni.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 659. semantic-overlap / host-inside-host-suffix
+### 658. semantic-overlap / host-inside-host-suffix
 - left: `HOST,news-client-search.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `ordered-overlap` -> `HOST,news-client-search.apple.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 660. semantic-overlap / host-inside-host-suffix
+### 659. semantic-overlap / host-inside-host-suffix
 - left: `HOST,api-glb-sea.smoot.apple.com -> 苹果服务 (blackmatrix-apple)`
 - right: `HOST-SUFFIX,smoot.apple.com -> 全球加速 (rulego-proxy)`
 - decision: `ordered-overlap` -> `HOST,api-glb-sea.smoot.apple.com -> 苹果服务 (blackmatrix-apple)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 661. semantic-overlap / host-inside-host-suffix
+### 660. semantic-overlap / host-inside-host-suffix
 - left: `HOST,apple.comscoreresearch.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.comscoreresearch.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `ordered-overlap` -> `HOST,apple.comscoreresearch.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 662. semantic-overlap / host-inside-host-suffix
+### 661. semantic-overlap / host-inside-host-suffix
 - left: `HOST,books.itunes.apple.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
 - decision: `ordered-overlap` -> `HOST,books.itunes.apple.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
+### 662. semantic-overlap / host-inside-host-suffix
+- left: `HOST,itunes.apple.com -> 全球加速 (rulego-proxy)`
+- right: `HOST-SUFFIX,apple.com -> 苹果服务 (blackmatrix-apple)`
+- decision: `ordered-overlap` -> `HOST,itunes.apple.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
 ### 663. semantic-overlap / host-inside-host-suffix
 - left: `HOST,lookup-api.apple.com -> 全球加速 (rulego-proxy)`
