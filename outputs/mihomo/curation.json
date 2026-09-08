@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 6731,
-  "dropped_rule_count": 25,
+  "kept_rule_count": 6730,
+  "dropped_rule_count": 26,
   "dropped": [
     {
       "source_id": "blackmatrix-openai",
@@ -120,6 +120,16 @@
       "value": "auth0.com",
       "line_number": 34,
       "raw": "DOMAIN-SUFFIX,auth0.com",
+      "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
+      "value": "challenges.cloudflare.com",
+      "line_number": 36,
+      "raw": "DOMAIN-SUFFIX,challenges.cloudflare.com",
       "reason": "shared-infrastructure-root-suffix"
     },
     {

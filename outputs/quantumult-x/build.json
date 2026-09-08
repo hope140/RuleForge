@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-30T12:43:29.808357+00:00",
+  "generated_at_utc": "2026-09-08T04:10:13.751177+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -975,12 +975,12 @@
   "source_count": 96,
   "enabled_source_count": 96,
   "parsed_rule_count": 13548,
-  "curated_rule_count": 13523,
-  "curation_drop_count": 25,
+  "curated_rule_count": 13522,
+  "curation_drop_count": 26,
   "candidate_kept_rule_count": 13105,
-  "kept_rule_count": 13094,
-  "safe_rule_count": 12903,
-  "resolved_rule_count": 12903,
+  "kept_rule_count": 13093,
+  "safe_rule_count": 12902,
+  "resolved_rule_count": 12902,
   "conflicted_rule_count": 1161,
   "duplicate_count": 429,
   "conflict_count": 1137,
@@ -994,7 +994,7 @@
   "routing_constraint_count": 944,
   "unresolved_conflict_count": 0,
   "resolution": {
-    "resolved_rule_count": 12903,
+    "resolved_rule_count": 12902,
     "rejected_rule_count": 191,
     "resolved_conflict_count": 1137,
     "blackmatrix_preferred_conflict_count": 66,
@@ -1355,7 +1355,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 127,
+      "rule_count": 126,
       "source_count": 9
     },
     {

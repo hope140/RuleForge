@@ -554,7 +554,7 @@ sources:
     def test_ai_curation_drops_shared_infrastructure_but_keeps_explicit_endpoints(self) -> None:
         ai = Source("blackmatrix-openai", "filter", "clash", "ai", "AI", "https://ai.test", "clash-classical")
         rules = parse_resource(
-            "IP-ASN,20473\nDOMAIN-SUFFIX,stripe.com\nDOMAIN-SUFFIX,openai.com\nDOMAIN,anthropic.auth0.com\n",
+            "IP-ASN,20473\nDOMAIN-SUFFIX,stripe.com\nDOMAIN-SUFFIX,challenges.cloudflare.com\nDOMAIN-SUFFIX,openai.com\nDOMAIN,anthropic.auth0.com\n",
             ai,
         ).rules
 

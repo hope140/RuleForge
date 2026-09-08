@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 13094,
-  "safe_rule_count": 12903,
+  "kept_rule_count": 13093,
+  "safe_rule_count": 12902,
   "conflicted_rule_count": 1161,
   "duplicate_count": 429,
   "conflict_count": 1137,
@@ -39942,10 +39942,10 @@
       }
     }
   ],
-  "conflict_free_rule_count": 11933,
-  "resolved_rule_count": 12903,
+  "conflict_free_rule_count": 11932,
+  "resolved_rule_count": 12902,
   "resolution": {
-    "resolved_rule_count": 12903,
+    "resolved_rule_count": 12902,
     "rejected_rule_count": 191,
     "resolved_conflict_count": 1137,
     "blackmatrix_preferred_conflict_count": 66,
