@@ -328,7 +328,7 @@
         "policy": "苹果服务",
         "rule_type": "HOST",
         "value": "api-glb-sea.smoot.apple.com",
-        "line_number": 247
+        "line_number": 246
       },
       "compared_rule": {
         "source_id": "rulego-ai-supplement",
