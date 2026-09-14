@@ -87,6 +87,17 @@ jobs:
             echo "Shared infrastructure curation leaked into Quantumult X AI output" >&2
             exit 1
           fi
+          # Cloud-provider ASNs must never appear in any safe category:
+          # pinning a whole ASN to one service force-routes every tenant
+          # (IP-ASN,132203 in wechat broke api.assrt.net for this reason).
+          if grep -RniE '^IP-ASN,(14061|20473|132203)' outputs/mihomo/categories/safe; then
+            echo "Shared cloud ASN leaked into a Mihomo safe category" >&2
+            exit 1
+          fi
+          if grep -RniE '^ip-asn,(14061|20473|132203)' outputs/quantumult-x/categories/safe; then
+            echo "Shared cloud ASN leaked into a Quantumult X safe category" >&2
+            exit 1
+          fi
 
       - name: Detect meaningful generated changes
         id: changes

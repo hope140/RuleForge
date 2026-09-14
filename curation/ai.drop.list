@@ -1,8 +1,12 @@
-# Explicit AI curation guardrails.
+# Explicit curation guardrails.
 # Root shared infrastructure is excluded from the AI category; explicit
 # service endpoints remain available in the source lists.
+# IP-ASN entries are dropped from every category: a whole cloud-provider ASN
+# is too broad to pin to one service (WeChat's IP-ASN,132203 force-DIRECTed
+# every Tencent Cloud tenant, breaking api.assrt.net behind the censor).
 IP-ASN,14061
 IP-ASN,20473
+IP-ASN,132203
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,algolia.net
 DOMAIN-SUFFIX,challenges.cloudflare.com

@@ -569,6 +569,32 @@ sources:
             {"shared-infrastructure-asn", "shared-infrastructure-root-suffix"},
         )
 
+    def test_shared_infra_asn_is_dropped_from_every_category(self) -> None:
+        wechat = Source(
+            "blackmatrix-wechat",
+            "filter",
+            "clash",
+            "wechat",
+            "direct",
+            "https://wx.test",
+            "clash-classical",
+        )
+        rules = parse_resource(
+            "IP-ASN,132203\nDOMAIN-SUFFIX,wechat.com\n",
+            wechat,
+        ).rules
+
+        result = curate_rules(rules)
+
+        self.assertEqual(
+            {(rule.rule_type, rule.value) for rule in result.rules},
+            {("HOST-SUFFIX", "wechat.com")},
+        )
+        self.assertEqual(
+            {drop.reason for drop in result.dropped},
+            {"shared-infrastructure-asn"},
+        )
+
     def test_routing_category_order_satisfies_declared_constraints(self) -> None:
         self.assertEqual(routing_order_violations(), ())
 

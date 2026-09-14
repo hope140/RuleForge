@@ -24,7 +24,11 @@ SHARED_INFRA_SUFFIXES = frozenset(
     }
 )
 
-SHARED_INFRA_ASNS = frozenset({"14061", "20473"})
+# Cloud provider ASNs that host unrelated third-party services; a whole ASN
+# must never be pinned to a single service category (see curation notes).
+# 14061=Hetzner, 20473=Vultr, 132203=Tencent Cloud International (its
+# WeChat-derived entry force-DIRECTed api.assrt.net and other tenants).
+SHARED_INFRA_ASNS = frozenset({"14061", "20473", "132203"})
 
 
 @dataclass(frozen=True)
@@ -98,10 +102,17 @@ class CurationResult:
 
 
 def _drop_reason(rule: Rule, policy: CurationPolicy) -> str | None:
-    if rule.category != "ai":
-        return None
+    # A whole cloud-provider ASN is too broad to pin to any single service:
+    # one blanket policy would force-route every tenant of the provider
+    # (e.g. api.assrt.net on Tencent Cloud international was pinned DIRECT by
+    # the WeChat category and then reset by the censor).  ASN entries are
+    # therefore dropped from every category and left to downstream rules.
+    # Root SaaS suffixes only ever leaked from third-party AI lists, so that
+    # guardrail stays limited to the AI category.
     if rule.rule_type == "IP-ASN" and rule.value in policy.shared_infra_asns:
         return "shared-infrastructure-asn"
+    if rule.category != "ai":
+        return None
     if (
         rule.rule_type in {"HOST", "HOST-SUFFIX"}
         and rule.value in policy.shared_infra_suffixes
