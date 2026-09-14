@@ -17,3 +17,17 @@ DOMAIN-SUFFIX,launchdarkly.com
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
+
+# Exact hosts in the Copilot list that are ordinary Bing/Microsoft/MSN,
+# Office, telemetry or App Center infrastructure.  These DOMAIN entries are
+# applied only to rules already classified as AI; the Microsoft/Bing sources
+# retain the ordinary service coverage.
+DOMAIN,api.msn.com
+DOMAIN,assets.msn.com
+DOMAIN,in.appcenter.ms
+DOMAIN,location.microsoft.com
+DOMAIN,odc.officeapps.live.com
+DOMAIN,r.bing.com
+DOMAIN,self.events.data.microsoft.com
+DOMAIN,services.bingapis.com
+DOMAIN,www.bing.com

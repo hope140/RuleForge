@@ -7,8 +7,8 @@ from pathlib import Path
 
 from .audit import Conflict, ConflictDecision, ResolutionResult
 from .model import Rule
-from .routing import rule_sort_key
-from .runtime import RouteProbe, order_rules_for_first_match, rule_matches, simulate_route
+from .routing import order_rules_for_category_providers, rule_sort_key
+from .runtime import RouteProbe, RouteResult, rule_matches, simulate_route
 
 
 _DOMAIN_RULE_TYPES = {"HOST", "HOST-SUFFIX", "HOST-KEYWORD", "HOST-WILDCARD"}
@@ -22,6 +22,13 @@ _APPLE_SERVICE_HOSTS = {
     "apple-relay.fastly-edge.com",
     "cp4.cloudflare.com",
 }
+_YOUTUBE_SERVICE_SUFFIXES = (
+    "youtube.com",
+    "youtubei.googleapis.com",
+    "googlevideo.com",
+    "ytimg.com",
+    "ggpht.com",
+)
 
 
 def _rule_ref(rule: Rule | None) -> dict[str, object] | None:
@@ -119,6 +126,20 @@ def _is_apple_service_probe(probe: RouteProbe | None) -> bool:
     )
 
 
+def _is_authoritative_youtube_route(
+    actual: RouteResult | None,
+    probe: RouteProbe | None,
+) -> bool:
+    if actual is None or probe is None or not probe.domain:
+        return False
+    rule = actual.rule
+    domain = probe.domain.casefold().rstrip(".")
+    return rule.category == "youtube" and any(
+        domain == suffix or domain.endswith("." + suffix)
+        for suffix in _YOUTUBE_SERVICE_SUFFIXES
+    )
+
+
 def _probe_for_rule(rule: Rule) -> RouteProbe | None:
     if rule.rule_type in {"HOST", "HOST-SUFFIX"}:
         return RouteProbe(domain=rule.value)
@@ -188,6 +209,8 @@ def _decision_confidence(decision: ConflictDecision) -> tuple[str, str]:
     reason = decision.reason
     if "explicit direct-exception" in reason or "Reject rules take precedence" in reason:
         return "high", "security-contract"
+    if "explicit value-category override" in reason or decision.decision == "prefer-value-category":
+        return "high", "value-category-contract"
     if "configured business-category priority" in reason:
         return "high", "business-contract"
     if "more specific rule" in reason:
@@ -308,7 +331,10 @@ class PriorityPreviewResult:
 
 def build_priority_preview(resolution: ResolutionResult, *, target: str) -> PriorityPreviewResult:
     live_rules = frozenset(resolution.rules)
-    ordered_rules = order_rules_for_first_match(resolution.rules)
+    ordered_rules = order_rules_for_category_providers(
+        resolution.rules,
+        priority_rules=resolution.priority_override_rules,
+    )
     issue_items: list[PriorityPreviewItem] = []
     statuses: Counter[str] = Counter()
     candidates: set[Rule] = set()
@@ -366,8 +392,13 @@ def build_priority_preview(resolution: ResolutionResult, *, target: str) -> Prio
             # A decision about winner/loser is not enough authority to move the
             # winner ahead of an unrelated third rule. A separate direct
             # overlap decision may still propose the same winner safely.
-            status = "review-required"
-            disposition_reason = "third-rule-interference"
+            if _is_authoritative_youtube_route(actual, probe):
+                status = "enforced-by-specific-service-rule"
+                method = "youtube-service-contract"
+                disposition_reason = "specific-youtube-rule-already-active"
+            else:
+                status = "review-required"
+                disposition_reason = "third-rule-interference"
         elif _candidate_eligible(decision, confidence, method):
             status = "preview-candidate"
             disposition_reason = "direct-blocker-candidate"
@@ -376,7 +407,11 @@ def build_priority_preview(resolution: ResolutionResult, *, target: str) -> Prio
             status = "review-required"
             disposition_reason = "not-auto-eligible"
         statuses[status] += 1
-        if status not in {"enforced", "equivalent-policy"}:
+        if status not in {
+            "enforced",
+            "equivalent-policy",
+            "enforced-by-specific-service-rule",
+        }:
             issue_items.append(
                 PriorityPreviewItem(
                     relation=decision.conflict.relation,

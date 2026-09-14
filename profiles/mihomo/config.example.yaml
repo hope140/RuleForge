@@ -268,6 +268,11 @@ rules:
   - RULE-SET,direct-exception,DIRECT
   - RULE-SET,reject,REJECT
   - RULE-SET,privacy,REJECT
+  # Cross-category specificity overrides, kept ahead of the broad YouTube rule.
+  - DOMAIN-SUFFIX,redirector.gcpcdn.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,redirector.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,redirector.snap.gvt1.com,谷歌服务
   - RULE-SET,ai,AI
   - GEOSITE,openai,AI
   - RULE-SET,google-voice,美国节点

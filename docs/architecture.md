@@ -51,9 +51,11 @@ Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、�
 
 当前输出按业务分类拆分，而不是按 `HOST`、`IP-CIDR` 等语法类型拆分。同一类可以同时包含多个规则类型，但只承载一个明确的业务意图和策略映射。远程过滤器片段按业务优先级输出，专项服务不会因为规则语法不同而被拆散。
 
-当前输出分为两层：`categories/candidates/<category>.list` 保留所有规范化后的候选规则；`categories/safe/<category>.list` 按保护性规则、业务边界、具体规则和来源优先级自动裁决，仍无法判断的冲突才从已裁决输出中排除，并写入冲突报告。审计优先使用目标客户端最终会看到的规则身份，避免源规则中被丢弃的选项制造隐性重复。
+当前输出分为两层：`categories/candidates/<category>.list` 保留所有规范化后的候选规则；`categories/safe/<category>.list` 按安全策略、显式业务 override、规则具体程度、业务分类语义、同分类来源优先级和 semantic overlap 的稳定 fallback 自动裁决。无明确依据的 exact conflict 保留 unresolved 并从已裁决输出中排除，写入冲突报告。审计优先使用目标客户端最终会看到的规则身份，避免源规则中被丢弃的选项制造隐性重复。
 
-每个业务分类的处理顺序是：先合并多个上游来源，再应用明确的 Curation 排除项，然后做精确去重和语义冲突审计。完全相同的 selector 才选择一个策略；语义覆盖关系保留双方并记录先后约束，后续的策略裁决器不再通过删除宽泛规则来掩盖重叠。
+每个业务分类的处理顺序是：先合并多个上游来源，再应用明确的 Curation 排除项和分类纠正，然后做精确去重和语义冲突审计。完全相同的 selector 才选择一个策略；语义覆盖关系保留双方并记录先后约束，后续的策略裁决器不再通过删除宽泛规则来掩盖重叠。
+
+审计还会检查共享基础设施根域，例如 `amazonaws.com`、`azure.com`、`digicert.com` 和 `onetrust.com`。专用分类直接声明这些根域时记录 high-risk warning，宽泛策略分类则降为 medium；位于根域下的明确业务 hostname 不会仅因后缀相同而被标记。已确认的 Netflix、Apple、Prime Video 宽规则通过 Curation 从正式候选中排除。
 
 ## 优先规则预览
 

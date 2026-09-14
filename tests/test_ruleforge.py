@@ -10,15 +10,24 @@ from unittest.mock import Mock, patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ruleforge.audit import audit_rules, resolve_conflicts  # noqa: E402
-from ruleforge.curation import curate_rules  # noqa: E402
+from ruleforge.audit import AuditResult, Conflict, audit_rules, resolve_conflicts  # noqa: E402
+from ruleforge.curation import audit_shared_infrastructure, curate_rules  # noqa: E402
 from ruleforge.fetch import FetchError, fetch_source  # noqa: E402
 from ruleforge.manifest import ManifestError, load_manifest  # noqa: E402
 from ruleforge.model import Source  # noqa: E402
 from ruleforge.parsers import parse_resource  # noqa: E402
 from ruleforge.preview import build_priority_preview, conflict_probe  # noqa: E402
-from ruleforge.routing import ROUTING_CATEGORY_ORDER, routing_order_violations  # noqa: E402
-from ruleforge.runtime import RouteProbe, rule_matches, simulate_first_match  # noqa: E402
+from ruleforge.routing import (  # noqa: E402
+    ROUTING_CATEGORY_ORDER,
+    order_rules_for_category_providers,
+    routing_order_violations,
+)
+from ruleforge.runtime import (  # noqa: E402
+    RouteProbe,
+    rule_matches,
+    simulate_first_match,
+    simulate_route,
+)
 
 
 class RuleForgeTests(unittest.TestCase):
@@ -338,6 +347,389 @@ sources:
         self.assertEqual(len(result.duplicates), 1)
         self.assertEqual(len(result.conflicts), 1)
         self.assertEqual(result.conflicts[0].kind, "exact-policy")
+
+    def test_source_preference_is_limited_to_same_category(self) -> None:
+        blackmatrix = Source(
+            "blackmatrix-github",
+            "filter",
+            "surge",
+            "github",
+            "GitHub",
+            "https://github.test",
+            "surge",
+        )
+        ai = Source(
+            "rulego-ai",
+            "filter",
+            "surge",
+            "ai",
+            "AI",
+            "https://ai.test",
+            "surge",
+        )
+        blackmatrix_rule = parse_resource("HOST,shared.example.com\n", blackmatrix).rules[0]
+        ai_rule = parse_resource("HOST,shared.example.com\n", ai).rules[0]
+
+        cross_category = resolve_conflicts(audit_rules((ai_rule, blackmatrix_rule)))
+
+        self.assertEqual(cross_category.rules, ())
+        self.assertEqual(len(cross_category.blackmatrix_decisions), 0)
+        self.assertEqual(len(cross_category.unresolved_decisions), 1)
+        self.assertEqual(cross_category.decisions[0].decision, "unresolved")
+
+        blackmatrix_developer = Source(
+            "blackmatrix-developer",
+            "filter",
+            "surge",
+            "developer",
+            "全球加速",
+            "https://developer.test",
+            "surge",
+        )
+        reverse_ai = Source(
+            "rulego-ai-reverse",
+            "filter",
+            "surge",
+            "ai",
+            "AI",
+            "https://ai-reverse.test",
+            "surge",
+        )
+        reverse = resolve_conflicts(
+            audit_rules(
+                (
+                    parse_resource("HOST,reverse.example.com\n", reverse_ai).rules[0],
+                    parse_resource(
+                        "HOST,reverse.example.com\n", blackmatrix_developer
+                    ).rules[0],
+                )
+            )
+        )
+        self.assertEqual(reverse.rules, ())
+        self.assertEqual(len(reverse.blackmatrix_decisions), 0)
+        self.assertEqual(len(reverse.unresolved_decisions), 1)
+
+        same_category_source = Source(
+            "rulego-github",
+            "filter",
+            "surge",
+            "github",
+            "Other",
+            "https://other-github.test",
+            "surge",
+        )
+        other_rule = parse_resource("HOST,shared.example.com\n", same_category_source).rules[0]
+        same_category = resolve_conflicts(audit_rules((other_rule, blackmatrix_rule)))
+
+        self.assertEqual(same_category.rules, (blackmatrix_rule,))
+        self.assertEqual(len(same_category.blackmatrix_decisions), 1)
+
+    def test_unknown_cross_category_exact_conflict_requires_review(self) -> None:
+        category_a = Source(
+            "rulego-category-a",
+            "filter",
+            "surge",
+            "category-a",
+            "policy-a",
+            "https://category-a.test",
+            "surge",
+        )
+        category_b = Source(
+            "rulego-category-b",
+            "filter",
+            "surge",
+            "category-b",
+            "policy-b",
+            "https://category-b.test",
+            "surge",
+        )
+        left = parse_resource(
+            "DOMAIN-SUFFIX,example-test.invalid\n", category_a
+        ).rules[0]
+        right = parse_resource(
+            "DOMAIN-SUFFIX,example-test.invalid\n", category_b
+        ).rules[0]
+
+        resolution = resolve_conflicts(audit_rules((left, right)))
+
+        self.assertEqual(resolution.rules, ())
+        self.assertEqual(len(resolution.unresolved_decisions), 1)
+        self.assertEqual(len(resolution.fallback_decisions), 0)
+        self.assertEqual(resolution.rejected_rules, frozenset((left, right)))
+
+    def test_category_fallback_only_orders_semantic_overlap(self) -> None:
+        category_a = Source(
+            "rulego-category-a",
+            "filter",
+            "surge",
+            "category-a",
+            "policy-a",
+            "https://category-a.test",
+            "surge",
+        )
+        category_b = Source(
+            "rulego-category-b",
+            "filter",
+            "surge",
+            "category-b",
+            "policy-b",
+            "https://category-b.test",
+            "surge",
+        )
+        left = parse_resource("HOST,semantic.example\n", category_a).rules[0]
+        right = parse_resource("HOST,semantic.example\n", category_b).rules[0]
+        conflict = Conflict("semantic-overlap", "unclassified-overlap", left, right)
+
+        resolution = resolve_conflicts(
+            AuditResult((left, right), (), (conflict,))
+        )
+
+        self.assertEqual(resolution.rules, (left, right))
+        self.assertEqual(len(resolution.unresolved_decisions), 0)
+        self.assertEqual(resolution.decisions[0].decision, "ordered-overlap")
+        self.assertIn("shared routing category order", resolution.decisions[0].reason)
+        self.assertEqual(resolution.constraints[0].before, left)
+
+    def test_specificity_precedes_cross_category_preference(self) -> None:
+        youtube = Source(
+            "blackmatrix-youtube",
+            "filter",
+            "clash",
+            "youtube",
+            "YouTube",
+            "https://youtube.test",
+            "clash-classical",
+        )
+        google = Source(
+            "blackmatrix-google",
+            "filter",
+            "clash",
+            "google",
+            "谷歌服务",
+            "https://google.test",
+            "clash-classical",
+        )
+        broad = parse_resource("DOMAIN-SUFFIX,gvt1.com\n", youtube).rules[0]
+        specific = parse_resource(
+            "DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com\n", google
+        ).rules[0]
+
+        resolution = resolve_conflicts(audit_rules((broad, specific)))
+        route = simulate_first_match(
+            resolution.rules,
+            RouteProbe(domain="redirector.offline-maps.gvt1.com"),
+        )
+
+        self.assertEqual(resolution.constraints[0].before, specific)
+        self.assertEqual(resolution.constraints[0].after, broad)
+        self.assertIsNotNone(route)
+        self.assertEqual(route.policy, "谷歌服务")
+
+    def test_shared_infrastructure_audit_distinguishes_roots_from_service_hosts(self) -> None:
+        netflix = Source(
+            "blackmatrix-netflix",
+            "filter",
+            "clash",
+            "netflix",
+            "Netflix",
+            "https://netflix.test",
+            "clash-classical",
+        )
+        root = parse_resource(
+            "DOMAIN-SUFFIX,us-west-2.amazonaws.com\n", netflix
+        ).rules[0]
+        specific = parse_resource(
+            "DOMAIN,some-netflix-specific-host.us-west-2.amazonaws.com\n", netflix
+        ).rules[0]
+
+        risks = audit_shared_infrastructure((root, specific))
+        self.assertEqual(len(risks), 1)
+        self.assertEqual(
+            risks[0].to_dict(),
+            {
+                "category": "netflix",
+                "rule": "HOST-SUFFIX,us-west-2.amazonaws.com",
+                "risk": "high",
+                "reason": "shared-infrastructure-root",
+                "source_id": "blackmatrix-netflix",
+                "policy": "Netflix",
+                "rule_type": "HOST-SUFFIX",
+                "value": "us-west-2.amazonaws.com",
+            },
+        )
+
+    def test_shared_infrastructure_audit_downgrades_broad_category_roots(self) -> None:
+        microsoft = Source(
+            "blackmatrix-microsoft",
+            "filter",
+            "clash",
+            "microsoft",
+            "全球加速",
+            "https://microsoft.test",
+            "clash-classical",
+        )
+        root = parse_resource("DOMAIN-SUFFIX,azure.com\n", microsoft).rules[0]
+
+        risks = audit_shared_infrastructure((root,))
+
+        self.assertEqual(len(risks), 1)
+        self.assertEqual(risks[0].risk, "medium")
+        self.assertEqual(risks[0].reason, "shared-infrastructure-root")
+
+    def test_high_confidence_apple_endpoints_are_reclassified(self) -> None:
+        proxy = Source(
+            "rulego-proxy",
+            "filter",
+            "surge",
+            "proxy",
+            "全球加速",
+            "https://proxy.test",
+            "surge",
+        )
+        ai = Source(
+            "rulego-ai",
+            "filter",
+            "surge",
+            "ai",
+            "AI",
+            "https://ai.test",
+            "surge",
+        )
+        rules = (
+            parse_resource("DOMAIN,amp-api.podcasts.apple.com\n", proxy).rules[0],
+            parse_resource("DOMAIN-SUFFIX,gateway.icloud.com\n", ai).rules[0],
+        )
+
+        result = curate_rules(rules)
+
+        self.assertEqual(
+            {(rule.category, rule.policy, rule.rule_type, rule.value) for rule in result.rules},
+            {
+                ("apple", "苹果服务", "HOST", "amp-api.podcasts.apple.com"),
+                ("apple", "苹果服务", "HOST-SUFFIX", "gateway.icloud.com"),
+            },
+        )
+        self.assertEqual(len(result.moved), 2)
+
+    def test_apple_specific_akadns_hostname_beats_shared_suffix(self) -> None:
+        apple = Source(
+            "blackmatrix-apple",
+            "filter",
+            "clash",
+            "apple",
+            "苹果服务",
+            "https://apple.test",
+            "clash-classical",
+        )
+        microsoft = Source(
+            "blackmatrix-microsoft",
+            "filter",
+            "clash",
+            "microsoft",
+            "全球加速",
+            "https://microsoft.test",
+            "clash-classical",
+        )
+        specific = parse_resource(
+            "DOMAIN,gsp4-cn.ls.apple.com.edgekey.net.globalredir.akadns.net\n", apple
+        ).rules[0]
+        shared = parse_resource("DOMAIN-SUFFIX,akadns.net\n", microsoft).rules[0]
+
+        resolution = resolve_conflicts(audit_rules((specific, shared)))
+        actual_order = order_rules_for_category_providers(
+            resolution.rules,
+            priority_rules=resolution.priority_override_rules,
+        )
+        route = simulate_route(
+            actual_order,
+            RouteProbe(domain="gsp4-cn.ls.apple.com.edgekey.net.globalredir.akadns.net"),
+        )
+
+        self.assertEqual(resolution.constraints[0].before, specific)
+        self.assertNotIn(shared, resolution.priority_override_rules)
+        self.assertIsNotNone(route)
+        self.assertEqual(route.policy, "苹果服务")
+
+    def test_preview_ignores_a_specific_youtube_third_rule_false_positive(self) -> None:
+        youtube = Source(
+            "blackmatrix-youtube",
+            "filter",
+            "clash",
+            "youtube",
+            "YouTube",
+            "https://youtube.test",
+            "clash-classical",
+        )
+        google = Source(
+            "blackmatrix-google",
+            "filter",
+            "clash",
+            "google",
+            "谷歌服务",
+            "https://google.test",
+            "clash-classical",
+        )
+        media = Source(
+            "rulego-global-media",
+            "filter",
+            "surge",
+            "global-media",
+            "国际媒体",
+            "https://media.test",
+            "surge",
+        )
+        rules = (
+            parse_resource("DOMAIN-SUFFIX,youtubei.googleapis.com\n", youtube).rules[0],
+            parse_resource("DOMAIN-SUFFIX,googleapis.com\n", google).rules[0],
+            parse_resource("DOMAIN,youtubei.googleapis.com\n", media).rules[0],
+        )
+
+        preview = build_priority_preview(
+            resolve_conflicts(audit_rules(rules)),
+            target="mihomo",
+        )
+
+        youtube_items = [
+            item
+            for item in preview.items
+            if item.probe is not None
+            and item.probe.domain == "youtubei.googleapis.com"
+        ]
+        self.assertEqual(preview.status_counts.get("review-required", 0), 0)
+        self.assertGreaterEqual(
+            preview.status_counts.get("enforced-by-specific-service-rule", 0), 1
+        )
+        self.assertEqual(youtube_items, [])
+
+    def test_known_business_curation_corrections_are_applied(self) -> None:
+        ai = Source("blackmatrix-copilot", "filter", "surge", "ai", "AI", "https://ai.test", "surge")
+        netflix = Source("blackmatrix-netflix", "filter", "surge", "netflix", "Netflix", "https://netflix.test", "surge")
+        apple = Source("blackmatrix-apple", "filter", "surge", "apple", "苹果服务", "https://apple.test", "surge")
+        media = Source("blackmatrix-prime", "filter", "surge", "global-media", "国际媒体", "https://media.test", "surge")
+        tiktok = Source("blackmatrix-tiktok", "filter", "surge", "tiktok", "海外抖音", "https://tiktok.test", "surge")
+        rules = tuple(
+            rule
+            for source, text in (
+                (ai, "DOMAIN,www.bing.com\nDOMAIN,sydney.bing.com\n"),
+                (netflix, "DOMAIN-SUFFIX,us-west-2.amazonaws.com\n"),
+                (apple, "DOMAIN-SUFFIX,digicert.com\n"),
+                (media, "DOMAIN,www.amazon.com\n"),
+                (tiktok, "DOMAIN-SUFFIX,trae.ai\nDOMAIN-SUFFIX,marscode.com\n"),
+            )
+            for rule in parse_resource(text, source).rules
+        )
+
+        result = curate_rules(rules)
+
+        self.assertEqual(
+            {(rule.category, rule.policy, rule.value) for rule in result.rules},
+            {("ai", "AI", "sydney.bing.com"), ("ai", "AI", "trae.ai"), ("ai", "AI", "marscode.com")},
+        )
+        self.assertEqual(len(result.moved), 2)
+        self.assertEqual(
+            {drop.reason for drop in result.dropped},
+            {"shared-microsoft-infrastructure-host", "shared-infrastructure-root"},
+        )
 
     def test_target_ignored_options_do_not_hide_policy_conflicts(self) -> None:
         ai = Source("rulego-ai", "filter", "surge", "ai", "AI", "https://ai.test", "surge")
@@ -661,13 +1053,14 @@ sources:
         )
 
         self.assertEqual(preview.live_cross_category_count, 1)
-        self.assertEqual(preview.status_counts["preview-candidate"], 2)
+        self.assertEqual(preview.status_counts["preview-candidate"], 1)
         self.assertEqual(len(preview.candidate_rules), 1)
         self.assertEqual(preview.candidate_rules[0].rule_type, "HOST-SUFFIX")
         self.assertEqual(preview.candidate_rules[0].value, "smoot.apple.com")
         self.assertEqual(preview.candidate_rules[0].policy, "苹果服务")
         item = preview.items[0]
-        self.assertEqual(item.probe.domain, "api.smoot.apple.com")
+        self.assertEqual(item.probe.domain, "smoot.apple.com")
+        self.assertEqual(item.expected_rule.value, "smoot.apple.com")
         self.assertEqual(item.expected_rule.policy, "苹果服务")
         self.assertEqual(item.actual_rule.policy, "AI")
         self.assertEqual(item.method, "apple-service-contract")
@@ -758,13 +1151,10 @@ sources:
         self.assertEqual(preview.candidate_rules[0].rule_type, "HOST-SUFFIX")
         self.assertEqual(preview.candidate_rules[0].value, "icloud.com")
         evidence = [item for item in preview.items if item.expected_rule == exact_apple]
-        self.assertEqual({item.status for item in evidence}, {"preview-candidate", "review-required"})
-        self.assertIn(
-            "third-rule-interference",
-            {item.disposition_reason for item in evidence},
-        )
+        self.assertEqual(evidence, [])
         candidate = preview.to_dict()["override_candidates"][0]
         self.assertEqual(candidate["confidence"], "high")
+        self.assertEqual(candidate["rule"]["source_id"], "apple-service-contract")
 
     def test_priority_preview_builds_a_cidr_witness(self) -> None:
         social = Source(
@@ -823,7 +1213,7 @@ sources:
         )
 
         self.assertEqual(preview.candidate_rules, ())
-        self.assertEqual(preview.status_counts["equivalent-policy"], 1)
+        self.assertEqual(preview.status_counts["enforced"], 1)
 
     def test_priority_preview_flags_missing_apple_policy_instead_of_proxy_candidate(self) -> None:
         ai = Source(
@@ -912,6 +1302,105 @@ sources:
             result = simulate_first_match(rules, RouteProbe(domain=domain))
             self.assertIsNotNone(result)
             self.assertEqual(result.policy, "AI")
+
+    def test_generated_routes_cover_known_business_boundary_regressions(self) -> None:
+        import json
+
+        expected = {
+            "githubcopilot.com": "AI",
+            "api.githubcopilot.com": "AI",
+            "copilot-proxy.githubusercontent.com": "AI",
+            "grok.com": "AI",
+            "x.ai": "AI",
+            "www.bing.com": "全球加速",
+            "r.bing.com": "全球加速",
+            "services.bingapis.com": "全球加速",
+            "api.msn.com": "全球加速",
+            "assets.msn.com": "全球加速",
+            "location.microsoft.com": "全球加速",
+            "self.events.data.microsoft.com": "全球加速",
+            "odc.officeapps.live.com": "全球加速",
+            "in.appcenter.ms": "全球加速",
+            "sydney.bing.com": "AI",
+            "redirector.gvt1.com": "谷歌服务",
+            "redirector.gcpcdn.gvt1.com": "谷歌服务",
+            "redirector.offline-maps.gvt1.com": "谷歌服务",
+            "redirector.snap.gvt1.com": "谷歌服务",
+            "gvt1.com": "YouTube",
+            "trae.ai": "AI",
+            "marscode.com": "AI",
+        }
+
+        for target in ("quantumult-x", "mihomo"):
+            with self.subTest(target=target):
+                root = ROOT / "outputs" / target
+                build = json.loads((root / "build.json").read_text(encoding="utf-8"))
+                rules = []
+                for entry in build["safe_categories"]:
+                    source = Source(
+                        f"generated-{entry['category']}",
+                        "filter",
+                        "quantumult-x" if target == "quantumult-x" else "clash",
+                        entry["category"],
+                        entry["policy"],
+                        "inline:generated",
+                        "quantumult-x" if target == "quantumult-x" else "inline",
+                    )
+                    relative = Path(entry["file"]).parts[2:]
+                    rules.extend(
+                        parse_resource(
+                            (root.joinpath(*relative)).read_text(encoding="utf-8"),
+                            source,
+                        ).rules
+                    )
+
+                for domain, policy in expected.items():
+                    result = simulate_first_match(rules, RouteProbe(domain=domain))
+                    self.assertIsNotNone(result, domain)
+                    self.assertEqual(result.policy, policy, domain)
+
+                for domain in (
+                    "us-west-2.amazonaws.com",
+                    "onetrust.com",
+                    "cookielaw.org",
+                    "digicert.com",
+                    "www.amazon.com",
+                ):
+                    self.assertIsNone(
+                        simulate_first_match(rules, RouteProbe(domain=domain)), domain
+                    )
+
+                if target == "quantumult-x":
+                    filter_remote = (root / "filter_remote.safe.conf").read_text(
+                        encoding="utf-8"
+                    )
+                    self.assertLess(
+                        filter_remote.index("priority-overrides.safe.list"),
+                        filter_remote.index("categories/safe/youtube.list"),
+                    )
+                else:
+                    generated_rules = (root / "rules.safe.yaml").read_text(
+                        encoding="utf-8"
+                    )
+                    self.assertLess(
+                        generated_rules.index(
+                            "DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com,谷歌服务"
+                        ),
+                        generated_rules.index("RULE-SET,youtube,YouTube"),
+                    )
+
+                audit = json.loads((root / "audit.json").read_text(encoding="utf-8"))
+                risks = audit["shared_infrastructure_risks"]
+                self.assertTrue(
+                    any(
+                        item["category"] == "netflix"
+                        and item["rule"] == "HOST-SUFFIX,us-west-2.amazonaws.com"
+                        and item["risk"] == "high"
+                        and item["reason"] == "shared-infrastructure-root"
+                        and item["source_id"] == "blackmatrix-netflix"
+                        for item in risks
+                    )
+                )
 
     def test_business_category_boundaries_are_applied(self) -> None:
         def source(source_id: str, category: str, policy: str) -> Source:

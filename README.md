@@ -14,7 +14,9 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [完整配置模板](profiles/quantumult-x/config.example.conf)沿用既有 Quantumult X 模板，已移除节点订阅和私有证书内容，可直接导入后补入自己的节点。
 - [构建摘要](outputs/quantumult-x/build.json)记录来源哈希、规则数量和裁决统计。
 - [冲突报告](outputs/quantumult-x/conflicts.md)记录冲突内容、处理结果和裁决原因。
-- [Curation 报告](outputs/quantumult-x/curation.json)记录从 AI 分类中排除的共享基础设施。
+- [Curation 报告](outputs/quantumult-x/curation.json)记录共享基础设施排除项和业务分类纠正。
+- [审计报告](outputs/quantumult-x/audit.json)记录共享基础设施根域的 risk 项。
+- [跨分类优先规则](outputs/quantumult-x/priority-overrides.safe.list)承载分类文件顺序无法表达的具体规则优先级。
 - [优先规则预览](outputs/quantumult-x/priority-preview.md)用实际 first-match 样例列出审计判断与当前路由不一致的规则；当前模板不会引用这些候选规则。
 - [AI Curation 清单](curation/ai.drop.list)记录可审计的排除项。
 
@@ -26,7 +28,8 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 - [路由规则片段](outputs/mihomo/rules.safe.yaml)按业务优先级引用 26 个 Rule Provider。
 - [通用配置示例](profiles/mihomo/config.example.yaml)提供双订阅、地区测速组和业务策略组。
 - [构建摘要](outputs/mihomo/build.json)与[冲突报告](outputs/mihomo/conflicts.md)记录 Mihomo 来源的构建结果。
-- [Curation 报告](outputs/mihomo/curation.json)记录从 AI 分类中排除的共享基础设施。
+- [Curation 报告](outputs/mihomo/curation.json)记录共享基础设施排除项和业务分类纠正。
+- [审计报告](outputs/mihomo/audit.json)记录共享基础设施根域的 risk 项。
 - [优先规则预览](outputs/mihomo/priority-preview.md)用 Mihomo 当前 Rule Provider 顺序模拟实际命中；当前模板不会引用这些候选规则。
 - [AI Curation 清单](curation/ai.drop.list)记录可审计的排除项。
 
@@ -89,11 +92,11 @@ Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域�
 4. 应用可审计的 Curation 规则，排除共享云厂商 ASN 和通用 SaaS 根域。
 5. 规范化规则并删除完全重复的内容。
 6. 检查语义重叠和策略冲突。
-7. 按安全策略、业务边界、规则具体程度和来源优先级进行裁决，并以最终目标客户端会实际匹配的语义为准。
+7. 按安全策略、显式业务 override、规则具体程度、业务分类语义、同分类来源优先级和稳定 fallback（仅用于 semantic overlap 排序）进行裁决，并以最终目标客户端会实际匹配的语义为准。
 8. 对仍然存活的跨分类重叠构造域名或 IP 样例，并按最终分类顺序模拟实际 first-match。
 9. 生成客户端规则、构建摘要、冲突报告、Curation 报告和不生效的优先规则预览。
 
-冲突裁决会处理域名关键词、通配符和 CIDR 重叠。完全相同的 selector 才会在策略冲突时选择一个结果；仅有覆盖关系的 semantic overlap 会保留两条规则，并记录 first-match 顺序约束，避免删除宽泛规则后造成其他域名失去覆盖。普通 `direct` 不覆盖 `reject`，只有明确的 `direct-exception` 才允许这样做。
+冲突裁决会处理域名关键词、通配符和 CIDR 重叠。裁决顺序为 `security > explicit override > specificity > category semantics > same-category source preference > fallback`。完全相同的 selector 只有在存在安全、显式业务或 category preference 时才选择一个结果，否则保持 unresolved；fallback 只用于 semantic overlap 的 first-match 排序。普通 `direct` 不覆盖 `reject`，只有明确的 `direct-exception` 才允许这样做。共享云厂商和 SaaS 根域会进入审计风险清单，专用业务分类通常为 high、宽泛策略分类为 medium；更具体的业务 hostname 不因位于同一根域而被一并标记。
 
 `categories/candidates/` 用于检查候选规则，`categories/safe/` 才是提供给客户端的已裁决版本。
 

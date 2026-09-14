@@ -3,6 +3,42 @@ rules:
   - RULE-SET,direct-exception,DIRECT
   - RULE-SET,reject,REJECT
   - RULE-SET,privacy,REJECT
+  - DOMAIN,api-glb-sea.smoot.apple.com,苹果服务
+  - DOMAIN,tvbtracking.azurewebsites.net,国际媒体
+  - DOMAIN,alt1-mtalk.google.com,DIRECT
+  - DOMAIN,alt2-mtalk.google.com,DIRECT
+  - DOMAIN,alt3-mtalk.google.com,DIRECT
+  - DOMAIN,alt4-mtalk.google.com,DIRECT
+  - DOMAIN,alt5-mtalk.google.com,DIRECT
+  - DOMAIN,alt6-mtalk.google.com,DIRECT
+  - DOMAIN,alt7-mtalk.google.com,DIRECT
+  - DOMAIN,alt8-mtalk.google.com,DIRECT
+  - DOMAIN,mtalk.google.com,DIRECT
+  - DOMAIN,new.c.mi.com,全球加速
+  - DOMAIN,c.mi.com,全球加速
+  - DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,redirector.gcpcdn.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,redirector.snap.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,hbo.com.edgesuite.net,国际媒体
+  - DOMAIN-SUFFIX,abcnews.edgesuite.net,国际媒体
+  - DOMAIN-SUFFIX,redirector.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,cdn.optimizely.com,国际媒体
+  - DOMAIN-SUFFIX,beacons2.gvt2.com,谷歌服务
+  - DOMAIN-SUFFIX,beacons3.gvt2.com,谷歌服务
+  - DOMAIN-SUFFIX,beacons.gvt2.com,谷歌服务
+  - DOMAIN-SUFFIX,gcp.gvt2.com,谷歌服务
+  - DOMAIN-SUFFIX,qingmail.com,DIRECT
+  - DOMAIN-SUFFIX,qingmail.cn,DIRECT
+  - IP-CIDR6,2001:b28:f23c::/48,no-resolve,全球加速
+  - IP-CIDR6,2001:b28:f23d::/48,no-resolve,全球加速
+  - IP-CIDR,23.211.15.99/32,DIRECT
+  - IP-CIDR6,2a0a:f280::/32,no-resolve,全球加速
+  - IP-CIDR,91.108.12.0/22,no-resolve,全球加速
+  - IP-CIDR,91.108.16.0/22,no-resolve,全球加速
+  - IP-CIDR,91.108.20.0/22,no-resolve,全球加速
+  - IP-CIDR,91.108.4.0/22,no-resolve,全球加速
+  - IP-CIDR,91.108.56.0/22,no-resolve,全球加速
+  - IP-CIDR,91.108.8.0/22,no-resolve,全球加速
   - RULE-SET,ai,AI
   - GEOSITE,openai,AI
   - RULE-SET,google-voice,美国节点

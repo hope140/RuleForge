@@ -8,8 +8,9 @@ from typing import Iterable
 
 from . import __version__
 from .audit import AuditResult, Conflict, ResolutionResult
+from .curation import SharedInfrastructureRisk
 from .model import Rule
-from .routing import category_sort_key, rule_sort_key
+from .routing import category_sort_key, rule_sort_key, rule_specificity_key
 
 
 def render_quantumultx(
@@ -64,7 +65,7 @@ def render_category_filters(
     for category in sorted(categories, key=category_sort_key):
         category_rules = sorted(
             grouped[category],
-            key=rule_sort_key,
+            key=lambda rule: (rule_specificity_key(rule), rule.policy),
         )
         policies = sorted({rule.policy for rule in category_rules if rule.policy})
         declared_policy = declared_policies.get(category)
@@ -121,7 +122,7 @@ def render_mihomo_category_filters(
     for category in sorted(categories, key=category_sort_key):
         category_rules = sorted(
             grouped[category],
-            key=rule_sort_key,
+            key=lambda rule: (rule_specificity_key(rule), rule.policy),
         )
         policies = sorted({rule.policy for rule in category_rules if rule.policy})
         declared_policy = declared_policies.get(category)
@@ -192,14 +193,44 @@ def render_mihomo_rule_providers(
     output.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
-def render_mihomo_rules(entries: Iterable[dict[str, object]], path: str | Path) -> None:
+def render_mihomo_rules(
+    entries: Iterable[dict[str, object]],
+    path: str | Path,
+    *,
+    priority_rules: Iterable[Rule] = (),
+) -> None:
     lines = ["# GENERATED FILE - DO NOT EDIT", "rules:"]
-    for entry in entries:
+    ordered_priority_rules = sorted(priority_rules, key=rule_sort_key)
+    priority_inserted = False
+    entries_list = list(entries)
+    security_categories = {"direct-exception", "reject", "privacy"}
+    for index, entry in enumerate(entries_list):
         category = str(entry["category"])
         lines.append(f"  - RULE-SET,{category},{_mihomo_policy(entry['policy'])}")
+        next_category = (
+            str(entries_list[index + 1]["category"])
+            if index + 1 < len(entries_list)
+            else None
+        )
+        if (
+            ordered_priority_rules
+            and category in security_categories
+            and next_category not in security_categories
+        ):
+            lines.extend(
+                f"  - {rule.to_mihomo()},{_mihomo_policy(rule.policy)}"
+                for rule in ordered_priority_rules
+            )
+            priority_inserted = True
         if category == "ai":
             # Cover OpenAI domains that are not present in the curated Rule Provider.
             lines.append("  - GEOSITE,openai,AI")
+    if ordered_priority_rules and not priority_inserted:
+        insertion = 2
+        lines[insertion:insertion] = [
+            f"  - {rule.to_mihomo()},{_mihomo_policy(rule.policy)}"
+            for rule in ordered_priority_rules
+        ]
     # Keep the broad CN domain fallback after all explicit business rules.
     # This covers Fake-IP/TUN traffic whose synthetic IP cannot match GEOIP,CN.
     lines.append("  - GEOSITE,cn,DIRECT")
@@ -208,12 +239,28 @@ def render_mihomo_rules(entries: Iterable[dict[str, object]], path: str | Path) 
     output.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
+def render_quantumultx_priority_overrides(
+    rules: Iterable[Rule],
+    path: str | Path,
+    *,
+    generated_at_utc: str | None = None,
+) -> None:
+    """Render mixed-policy rules that must precede whole category providers."""
+
+    render_quantumultx(
+        sorted(rules, key=rule_sort_key),
+        path,
+        generated_at_utc=generated_at_utc,
+    )
+
+
 def render_filter_remote_conf(
     entries: Iterable[dict[str, object]],
     path: str | Path,
     *,
     repository_base_url: str,
     title: str,
+    priority_file: str | None = None,
 ) -> None:
     lines = [
         "# GENERATED FILE - DO NOT EDIT",
@@ -223,7 +270,22 @@ def render_filter_remote_conf(
         "[filter_remote]",
     ]
     base_url = repository_base_url.rstrip("/")
-    for entry in entries:
+    priority_line = None
+    if priority_file:
+        priority_url = f"{base_url}/{priority_file.lstrip('/')}"
+        priority_line = ",".join(
+            [
+                priority_url,
+                "tag=priority-overrides@RuleForge",
+                "update-interval=86400",
+                "opt-parser=false",
+                "enabled=true",
+            ]
+        )
+    priority_inserted = False
+    entries_list = list(entries)
+    security_categories = {"direct-exception", "reject", "privacy"}
+    for index, entry in enumerate(entries_list):
         file_path = str(entry["file"]).lstrip("/")
         url = f"{base_url}/{file_path}"
         fields = [url, f"tag={entry['category']}@RuleForge"]
@@ -232,6 +294,20 @@ def render_filter_remote_conf(
             fields.append(f"force-policy={policy}")
         fields.extend(["update-interval=86400", "opt-parser=false", "enabled=true"])
         lines.append(",".join(fields))
+        next_category = (
+            str(entries_list[index + 1]["category"])
+            if index + 1 < len(entries_list)
+            else None
+        )
+        if (
+            priority_line
+            and entry.get("category") in security_categories
+            and next_category not in security_categories
+        ):
+            lines.append(priority_line)
+            priority_inserted = True
+    if priority_line and not priority_inserted:
+        lines.insert(5, priority_line)
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
@@ -248,8 +324,13 @@ def render_audit(
     path: str | Path,
     *,
     resolution: ResolutionResult | None = None,
+    shared_infrastructure_risks: Iterable[SharedInfrastructureRisk] | None = None,
 ) -> None:
     data = audit.to_dict()
+    if shared_infrastructure_risks is not None:
+        risks = tuple(shared_infrastructure_risks)
+        data["shared_infrastructure_risk_count"] = len(risks)
+        data["shared_infrastructure_risks"] = [item.to_dict() for item in risks]
     if resolution is not None:
         data["conflict_free_rule_count"] = len(audit.safe_rules)
         data["safe_rule_count"] = len(resolution.rules)
@@ -263,8 +344,10 @@ def render_conflicts(
     path: str | Path,
     *,
     resolution: ResolutionResult | None = None,
+    shared_infrastructure_risks: Iterable[SharedInfrastructureRisk] | None = None,
 ) -> None:
     conflict_list = list(conflicts)
+    risk_list = list(shared_infrastructure_risks or ())
     decisions = {}
     if resolution is not None:
         decisions = {id(item.conflict): item for item in resolution.decisions}
@@ -280,8 +363,8 @@ def render_conflicts(
     lines = [
         "# RuleForge conflict report",
         "",
-        f"These {len(conflict_list)} entries were evaluated by the source-priority resolver.",
-        "Exact conflicts use business and security priorities; semantic overlaps retain both rules and record first-match ordering.",
+        f"These {len(conflict_list)} entries were evaluated by the business-priority resolver.",
+        "Exact conflicts use security, explicit override, specificity, category semantics and same-category source priority; semantic overlaps retain both rules and record first-match ordering.",
         "Conflicts that match none of these priorities remain unresolved and are excluded.",
         "",
         "## Summary",
@@ -297,7 +380,9 @@ def render_conflicts(
                 f"- direct-preferred: {len(resolution.direct_decisions)}",
                 f"- specific-preferred: {len(resolution.specific_decisions)}",
                 f"- category-preferred: {len(resolution.category_decisions)}",
+                f"- value-category-preferred: {len(resolution.value_category_decisions)}",
                 f"- protective-reject: {len(resolution.protective_reject_decisions)}",
+                f"- fallback: {len(resolution.fallback_decisions)}",
                 f"- ordered-overlap: {len(resolution.ordered_overlap_decisions)}",
                 f"- unresolved: {len(resolution.unresolved_decisions)}",
             ]
@@ -325,6 +410,22 @@ def render_conflicts(
                     "",
                 ]
             )
+    if risk_list:
+        lines.extend(
+            [
+                "## Shared infrastructure audit",
+                "",
+                "| Category | Rule | Risk | Reason | Source |",
+                "| --- | --- | --- | --- | --- |",
+            ]
+        )
+        for item in risk_list:
+            data = item.to_dict()
+            lines.append(
+                f"| `{data['category']}` | `{data['rule']}` | `{data['risk']}` | "
+                f"`{data['reason']}` | `{data['source_id']}` |"
+            )
+        lines.append("")
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines), encoding="utf-8", newline="\n")

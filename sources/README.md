@@ -45,9 +45,9 @@
 
 冲突裁决按以下顺序执行。完全相同的 selector 是 exclusive conflict，只保留一个策略；域名后缀、关键词、通配符和 CIDR 的覆盖关系是 ordered overlap，两条规则都保留并记录 first-match 约束，避免删除宽泛规则造成未重叠地址失去覆盖。
 
-1. 明确的 `direct-exception` 可以覆盖 `reject`；普通 `direct` 不覆盖 `reject`。
-2. 业务边界优先于宽泛关键词和网段重叠：Google Voice > Google、AI > Google、YouTube > Google、Apple/Google > 国内直连；国内影音与国际影音按服务边界区分。
-3. 更具体的单独规则优先于更宽泛的整体规则，例如 `HOST` 优先于覆盖它的 `HOST-SUFFIX`，非关键词域名规则优先于覆盖它的 `HOST-KEYWORD`，更长的子网优先于父网段。
-4. 广告和隐私阻断规则优先于普通业务规则；开发者服务优先于泛 GitHub 分类，`naver.com` 优先国际媒体，社交与 Netflix 的专用网段优先各自业务分类。
-5. `china-media` 与 `global-media` 的完全相同规则按已登记的国内/国际媒体边界优先保留 `china-media`；其他完全相同且仍无法按业务边界判断的规则，再由 Blackmatrix 来源作为 tie-breaker。
-6. 没有稳定顺序的 exclusive conflict 保留在审计报告并从已裁决输出中排除；ordered overlap 不因无法自动决定类别胜负而删除整条规则。
+1. 安全策略优先：明确的 `direct-exception` 可以覆盖 `reject`，普通 `direct` 或 `proxy` 不覆盖 `reject`。
+2. 显式 value/category override 优先于一般规则，例如 GitHub Copilot、Grok 和 Apple 服务端点的明确业务归属。
+3. 规则 specificity 优先于业务分类：`HOST` > `HOST-SUFFIX`，更长的 `HOST-SUFFIX` > 更短的后缀，非关键词规则 > `HOST-KEYWORD`，更具体的 CIDR > 更宽的 CIDR。
+4. specificity 无法判断时，才使用业务 category preference，例如 AI > Google、YouTube > Google，以及已登记的国内/国际媒体边界。
+5. 来源优先级只用于同一 category 内部的冲突；其中 Blackmatrix 仅作为同类来源的 tie-breaker。
+6. 仍无法按上述规则区分的 exclusive conflict 保留为 unresolved 并从已裁决输出中排除；稳定的 category fallback 只用于 semantic overlap 的 first-match 排序。ordered overlap 不因无法自动决定类别胜负而删除整条规则。

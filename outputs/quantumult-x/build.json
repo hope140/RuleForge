@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-14T03:08:51.156324+00:00",
+  "generated_at_utc": "2026-09-14T15:58:58.060321+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -975,54 +975,61 @@
   "source_count": 96,
   "enabled_source_count": 96,
   "parsed_rule_count": 13548,
-  "curated_rule_count": 13521,
-  "curation_drop_count": 27,
+  "curated_rule_count": 13503,
+  "curation_drop_count": 45,
+  "curation_move_count": 4,
   "candidate_kept_rule_count": 13105,
-  "kept_rule_count": 13092,
-  "safe_rule_count": 12901,
-  "resolved_rule_count": 12901,
-  "conflicted_rule_count": 1161,
-  "duplicate_count": 429,
-  "conflict_count": 1137,
-  "resolved_conflict_count": 1137,
-  "blackmatrix_preferred_conflict_count": 66,
+  "kept_rule_count": 13076,
+  "safe_rule_count": 12887,
+  "resolved_rule_count": 12887,
+  "conflicted_rule_count": 1145,
+  "duplicate_count": 427,
+  "conflict_count": 1114,
+  "resolved_conflict_count": 1114,
+  "blackmatrix_preferred_conflict_count": 0,
   "direct_preferred_conflict_count": 0,
   "specific_preferred_conflict_count": 0,
-  "category_preferred_conflict_count": 113,
+  "category_preferred_conflict_count": 117,
+  "value_category_preferred_conflict_count": 60,
   "protective_reject_conflict_count": 14,
-  "ordered_overlap_count": 944,
-  "routing_constraint_count": 944,
+  "fallback_conflict_count": 0,
+  "ordered_overlap_count": 923,
+  "routing_constraint_count": 923,
+  "priority_override_rule_count": 46,
   "unresolved_conflict_count": 0,
+  "shared_infrastructure_risk_count": 16,
   "resolution": {
-    "resolved_rule_count": 12901,
-    "rejected_rule_count": 191,
-    "resolved_conflict_count": 1137,
-    "blackmatrix_preferred_conflict_count": 66,
+    "resolved_rule_count": 12887,
+    "rejected_rule_count": 189,
+    "resolved_conflict_count": 1114,
+    "blackmatrix_preferred_conflict_count": 0,
     "direct_preferred_conflict_count": 0,
     "specific_preferred_conflict_count": 0,
-    "category_preferred_conflict_count": 113,
+    "category_preferred_conflict_count": 117,
+    "value_category_preferred_conflict_count": 60,
     "protective_reject_conflict_count": 14,
-    "ordered_overlap_count": 944,
+    "fallback_conflict_count": 0,
+    "priority_override_rule_count": 46,
+    "ordered_overlap_count": 923,
     "unresolved_conflict_count": 0
   },
   "priority_preview": {
     "mode": "preview-only",
     "active": false,
     "target": "quantumult-x",
-    "ordered_overlap_count": 944,
-    "live_cross_category_count": 475,
-    "discarded_overlap_count": 469,
-    "apple_contract_gap_count": 6,
-    "actual_policy_mismatch_count": 33,
-    "preview_candidate_decision_count": 24,
-    "preview_candidate_rule_count": 18,
-    "review_required_count": 9,
+    "ordered_overlap_count": 923,
+    "live_cross_category_count": 465,
+    "discarded_overlap_count": 458,
+    "apple_contract_gap_count": 3,
+    "actual_policy_mismatch_count": 3,
+    "preview_candidate_decision_count": 3,
+    "preview_candidate_rule_count": 3,
+    "review_required_count": 0,
     "unwitnessed_count": 0,
     "status_counts": {
-      "enforced": 403,
-      "equivalent-policy": 45,
-      "preview-candidate": 24,
-      "review-required": 9
+      "enforced": 409,
+      "equivalent-policy": 56,
+      "preview-candidate": 3
     }
   },
   "candidate_categories": [
@@ -1322,7 +1329,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 16,
+      "rule_count": 20,
       "source_count": 1
     },
     {
@@ -1355,8 +1362,8 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 126,
-      "source_count": 9
+      "rule_count": 120,
+      "source_count": 10
     },
     {
       "category": "google-voice",
@@ -1388,7 +1395,7 @@
       "policies": [
         "Netflix"
       ],
-      "rule_count": 1158,
+      "rule_count": 1155,
       "source_count": 1
     },
     {
@@ -1399,7 +1406,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 32,
+      "rule_count": 30,
       "source_count": 1
     },
     {
@@ -1443,7 +1450,7 @@
       "policies": [
         "GitHub"
       ],
-      "rule_count": 28,
+      "rule_count": 27,
       "source_count": 1
     },
     {
@@ -1454,8 +1461,8 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1902,
-      "source_count": 7
+      "rule_count": 1903,
+      "source_count": 9
     },
     {
       "category": "social",
@@ -1465,7 +1472,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 693,
+      "rule_count": 692,
       "source_count": 9
     },
     {
@@ -1476,7 +1483,7 @@
       "policies": [
         "谷歌服务"
       ],
-      "rule_count": 717,
+      "rule_count": 713,
       "source_count": 3
     },
     {
@@ -1520,8 +1527,8 @@
       "policies": [
         "国际媒体"
       ],
-      "rule_count": 557,
-      "source_count": 17
+      "rule_count": 556,
+      "source_count": 16
     },
     {
       "category": "alipay",
@@ -1597,7 +1604,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 386,
+      "rule_count": 385,
       "source_count": 1
     }
   ],

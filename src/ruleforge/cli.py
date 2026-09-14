@@ -24,6 +24,7 @@ from .render import (
     render_mihomo_category_filters,
     render_mihomo_rule_providers,
     render_mihomo_rules,
+    render_quantumultx_priority_overrides,
 )
 
 
@@ -161,6 +162,7 @@ def _build(args: argparse.Namespace) -> int:
     curation = curate_rules(all_rules)
     audit = audit_rules(curation.rules)
     resolution = resolve_conflicts(audit)
+    priority_override_rules = resolution.priority_override_rules
     priority_preview = build_priority_preview(resolution, target=target)
     generated_at_utc = datetime.now(timezone.utc).isoformat()
     category_policies: dict[str, str] = {}
@@ -224,19 +226,36 @@ def _build(args: argparse.Namespace) -> int:
                 staging_output / "rule-providers.safe.yaml",
                 repository_base_url=args.repository_base_url,
             )
-            render_mihomo_rules(safe_categories, staging_output / "rules.safe.yaml")
+            render_mihomo_rules(
+                safe_categories,
+                staging_output / "rules.safe.yaml",
+                priority_rules=priority_override_rules,
+            )
         else:
+            priority_path = staging_output / "priority-overrides.safe.list"
+            render_quantumultx_priority_overrides(
+                priority_override_rules,
+                priority_path,
+                generated_at_utc=generated_at_utc,
+            )
             render_filter_remote_conf(
                 safe_categories,
                 staging_output / "filter_remote.safe.conf",
                 repository_base_url=args.repository_base_url,
-                title="Resolved category filters (Blackmatrix preferred)",
+                title="Resolved category filters (business priority)",
+                priority_file="outputs/quantumult-x/priority-overrides.safe.list",
             )
-        render_audit(audit, staging_output / "audit.json", resolution=resolution)
+        render_audit(
+            audit,
+            staging_output / "audit.json",
+            resolution=resolution,
+            shared_infrastructure_risks=candidate_audit.shared_infrastructure_risks,
+        )
         render_conflicts(
             audit.conflicts,
             staging_output / "conflicts.md",
             resolution=resolution,
+            shared_infrastructure_risks=candidate_audit.shared_infrastructure_risks,
         )
         render_json(priority_preview.to_dict(), staging_output / "priority-preview.json")
         render_priority_preview_markdown(
@@ -253,6 +272,7 @@ def _build(args: argparse.Namespace) -> int:
                 "parsed_rule_count": len(all_rules),
                 "curated_rule_count": len(curation.rules),
                 "curation_drop_count": len(curation.dropped),
+                "curation_move_count": len(curation.moved),
                 "candidate_kept_rule_count": len(candidate_audit.kept_rules),
                 "kept_rule_count": len(audit.kept_rules),
                 "safe_rule_count": len(resolution.rules),
@@ -265,10 +285,18 @@ def _build(args: argparse.Namespace) -> int:
                 "direct_preferred_conflict_count": len(resolution.direct_decisions),
                 "specific_preferred_conflict_count": len(resolution.specific_decisions),
                 "category_preferred_conflict_count": len(resolution.category_decisions),
+                "value_category_preferred_conflict_count": len(
+                    resolution.value_category_decisions
+                ),
                 "protective_reject_conflict_count": len(resolution.protective_reject_decisions),
+                "fallback_conflict_count": len(resolution.fallback_decisions),
                 "ordered_overlap_count": len(resolution.ordered_overlap_decisions),
                 "routing_constraint_count": len(resolution.constraints),
+                "priority_override_rule_count": len(priority_override_rules),
                 "unresolved_conflict_count": len(resolution.unresolved_decisions),
+                "shared_infrastructure_risk_count": len(
+                    candidate_audit.shared_infrastructure_risks
+                ),
                 "resolution": resolution.to_summary_dict(),
                 "priority_preview": priority_preview.summary_dict(),
                 "candidate_categories": candidate_categories,
@@ -289,6 +317,7 @@ def _build(args: argparse.Namespace) -> int:
     print(
         f"sources={len(source_metadata)} parsed_rules={len(all_rules)} "
         f"curated_rules={len(curation.rules)} curation_drops={len(curation.dropped)} "
+        f"curation_moves={len(curation.moved)} "
         f"kept_rules={len(audit.kept_rules)} resolved_rules={len(resolution.rules)}"
     )
     print(
@@ -297,7 +326,9 @@ def _build(args: argparse.Namespace) -> int:
         f"direct_preferred={len(resolution.direct_decisions)} "
         f"specific_preferred={len(resolution.specific_decisions)} "
         f"category_preferred={len(resolution.category_decisions)} "
+        f"value_category_preferred={len(resolution.value_category_decisions)} "
         f"protective_reject={len(resolution.protective_reject_decisions)} "
+        f"fallback={len(resolution.fallback_decisions)} "
         f"ordered_overlap={len(resolution.ordered_overlap_decisions)} "
         f"unresolved={len(resolution.unresolved_decisions)} parse_issues={len(parse_issues)}"
     )

@@ -5,8 +5,9 @@ import fnmatch
 import ipaddress
 from typing import Iterable
 
+from .curation import SharedInfrastructureRisk, audit_shared_infrastructure
 from .model import Rule
-from .routing import category_sort_key
+from .routing import category_sort_key, rule_sort_key
 
 
 @dataclass(frozen=True)
@@ -117,8 +118,34 @@ class ResolutionResult:
         return tuple(item for item in self.decisions if item.decision == "prefer-category")
 
     @property
+    def value_category_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "prefer-value-category")
+
+    @property
     def protective_reject_decisions(self) -> tuple[ConflictDecision, ...]:
         return tuple(item for item in self.decisions if item.decision == "prefer-reject")
+
+    @property
+    def fallback_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision == "prefer-fallback")
+
+    @property
+    def priority_override_rules(self) -> tuple[Rule, ...]:
+        """Rules that need an active first-match override across providers.
+
+        Category files are consumed as whole providers by both targets.  When
+        a cross-category constraint points from a later category to an earlier
+        one, the winning rule is duplicated into a small priority resource so
+        the generated client configuration can enforce the same decision.
+        """
+
+        candidates = {
+            constraint.before
+            for constraint in self.constraints
+            if category_sort_key(constraint.before.category)
+            >= category_sort_key(constraint.after.category)
+        }
+        return tuple(sorted(candidates, key=rule_sort_key))
 
     @property
     def ordered_overlap_decisions(self) -> tuple[ConflictDecision, ...]:
@@ -137,7 +164,10 @@ class ResolutionResult:
             "direct_preferred_conflict_count": len(self.direct_decisions),
             "specific_preferred_conflict_count": len(self.specific_decisions),
             "category_preferred_conflict_count": len(self.category_decisions),
+            "value_category_preferred_conflict_count": len(self.value_category_decisions),
             "protective_reject_conflict_count": len(self.protective_reject_decisions),
+            "fallback_conflict_count": len(self.fallback_decisions),
+            "priority_override_rule_count": len(self.priority_override_rules),
             "ordered_overlap_count": len(self.ordered_overlap_decisions),
             "unresolved_conflict_count": len(self.unresolved_decisions),
             "decisions": [item.to_dict() for item in self.decisions],
@@ -153,7 +183,10 @@ class ResolutionResult:
             "direct_preferred_conflict_count": len(self.direct_decisions),
             "specific_preferred_conflict_count": len(self.specific_decisions),
             "category_preferred_conflict_count": len(self.category_decisions),
+            "value_category_preferred_conflict_count": len(self.value_category_decisions),
             "protective_reject_conflict_count": len(self.protective_reject_decisions),
+            "fallback_conflict_count": len(self.fallback_decisions),
+            "priority_override_rule_count": len(self.priority_override_rules),
             "ordered_overlap_count": len(self.ordered_overlap_decisions),
             "unresolved_conflict_count": len(self.unresolved_decisions),
         }
@@ -164,6 +197,7 @@ class AuditResult:
     kept_rules: tuple[Rule, ...]
     duplicates: tuple[Duplicate, ...]
     conflicts: tuple[Conflict, ...]
+    shared_infrastructure_risks: tuple[SharedInfrastructureRisk, ...] = ()
 
     @property
     def conflicted_rules(self) -> frozenset[Rule]:
@@ -185,8 +219,12 @@ class AuditResult:
             "conflicted_rule_count": len(self.conflicted_rules),
             "duplicate_count": len(self.duplicates),
             "conflict_count": len(self.conflicts),
+            "shared_infrastructure_risk_count": len(self.shared_infrastructure_risks),
             "duplicates": [item.to_dict() for item in self.duplicates],
             "conflicts": [item.to_dict() for item in self.conflicts],
+            "shared_infrastructure_risks": [
+                item.to_dict() for item in self.shared_infrastructure_risks
+            ],
         }
 
 
@@ -317,7 +355,12 @@ def audit_rules(rules: Iterable[Rule]) -> AuditResult:
             if left_network.version == right_network.version and left_network.overlaps(right_network):
                 add_overlap(left_rule, right_rule, "ip-cidr-overlap")
 
-    return AuditResult(tuple(kept), tuple(duplicates), tuple(conflicts))
+    return AuditResult(
+        tuple(kept),
+        tuple(duplicates),
+        tuple(conflicts),
+        audit_shared_infrastructure(kept),
+    )
 
 
 def _is_blackmatrix(rule: Rule) -> bool:
@@ -346,6 +389,17 @@ _CATEGORY_PREFERENCES: dict[frozenset[str], str] = {
     frozenset(("youtube", "global-media")): "youtube",
     frozenset(("social", "netflix")): "netflix",
     frozenset(("proxy", "telegram")): "telegram",
+    frozenset(("apple", "microsoft")): "microsoft",
+    frozenset(("spotify", "global-media")): "spotify",
+    frozenset(("netflix", "global-media")): "netflix",
+    frozenset(("global-media", "china-services")): "china-services",
+    frozenset(("google", "direct-exception")): "direct-exception",
+    frozenset(("global-media", "proxy")): "global-media",
+    frozenset(("ai", "proxy")): "ai",
+    frozenset(("china-direct", "proxy")): "china-direct",
+    frozenset(("google", "proxy")): "google",
+    frozenset(("youtube", "proxy")): "youtube",
+    frozenset(("apple", "proxy")): "apple",
 }
 
 _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
@@ -360,21 +414,68 @@ _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
     (frozenset(("ai", "proxy")), "cp4.cloudflare.com"): "proxy",
     (frozenset(("global-media", "proxy")), "naver.com"): "global-media",
     (frozenset(("global-media", "proxy")), "s3-ap-southeast-1.amazonaws.com"): "proxy",
-    (frozenset(("apple", "microsoft")), "akadns.net"): "microsoft",
+    (frozenset(("ai", "github")), "githubcopilot.com"): "ai",
+    (frozenset(("ai", "social")), "grok.com"): "ai",
+    (frozenset(("ai", "social")), "x.ai"): "ai",
+    (frozenset(("ai", "apple")), "gspe1-ssl.ls.apple.com"): "apple",
+    (frozenset(("ai", "apple")), "guzzoni.apple.com"): "apple",
+    (frozenset(("ai", "tiktok")), "byteoversea.com"): "tiktok",
+    (frozenset(("ai", "developer")), "grazie.ai"): "developer",
+    (frozenset(("ai", "developer")), "jetbrains.ai"): "developer",
+    (frozenset(("ai", "proxy")), "openai.com"): "ai",
+    (frozenset(("ai", "proxy")), "chatgpt.com"): "ai",
+    (frozenset(("ai", "proxy")), "copilot.microsoft.com"): "ai",
+    (frozenset(("ai", "proxy")), "gateway.icloud.com"): "ai",
+    (frozenset(("github", "proxy")), "githubusercontent.com"): "github",
+    (frozenset(("github", "proxy")), "github.global.ssl.fastly.net"): "github",
+    (frozenset(("github", "proxy")), "github.com"): "github",
+    (frozenset(("github", "proxy")), "github.io"): "github",
+    (frozenset(("github", "proxy")), "github.blog"): "github",
+    (frozenset(("github", "proxy")), "githubassets.com"): "github",
+    (frozenset(("youtube", "global-media")), "youtube.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "youtubei.googleapis.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "yt3.ggpht.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "withyoutube.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "youtubeeducation.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "youtubegaming.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "youtubekids.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "youtube-nocookie.com"): "youtube",
+    (frozenset(("youtube", "global-media")), "googlevideo.com"): "youtube",
+    (frozenset(("google", "global-media")), "googlevideo.com"): "google",
+    (frozenset(("tiktok", "global-media")), "tiktok.com"): "tiktok",
+    (frozenset(("tiktok", "global-media")), "tiktokcdn.com"): "tiktok",
+    (frozenset(("tiktok", "global-media")), "tiktokcdn-eu.com"): "tiktok",
+    (frozenset(("tiktok", "global-media")), "tiktokv.com"): "tiktok",
+    (frozenset(("tiktok", "global-media")), "musical.ly"): "tiktok",
+    (frozenset(("tiktok", "global-media")), "tiktokcdn-"): "tiktok",
+    (frozenset(("spotify", "global-media")), "-spotify-com"): "spotify",
+    (frozenset(("spotify", "global-media")), "spotify.com"): "spotify",
+    (frozenset(("google", "global-media")), "youtubei.googleapis.com"): "google",
+    (frozenset(("google", "proxy")), "appspot.com"): "google",
+    (frozenset(("google", "proxy")), ".blogspot"): "google",
+    (frozenset(("google", "proxy")), "blogspot"): "google",
+    (frozenset(("apple", "global-media")), "tv.applemusic.com"): "apple",
+    (frozenset(("apple", "proxy")), "apple.news"): "apple",
+    (frozenset(("apple", "proxy")), "apple.comscoreresearch.com"): "apple",
+    (frozenset(("google", "direct-exception")), "redirector.gvt1.com"): "google",
 }
 
 _EXACT_CATEGORY_PREFERENCES = {
     frozenset(("china-media", "global-media")),
 }
 
+_APPLE_SERVICE_SUFFIXES = ("apple.com", "icloud.com", "mzstatic.com")
+_APPLE_SERVICE_HOSTS = {
+    "apple-relay.cloudflare.com",
+    "apple-relay.fastly-edge.com",
+    "cp4.cloudflare.com",
+}
 
-def _category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
-    categories = frozenset((conflict.left.category, conflict.right.category))
-    preferred_category = _VALUE_CATEGORY_PREFERENCES.get((categories, conflict.left.value))
-    if preferred_category is None and conflict.left.value == conflict.right.value:
-        preferred_category = _VALUE_CATEGORY_PREFERENCES.get((categories, conflict.right.value))
-    if preferred_category is None:
-        preferred_category = _CATEGORY_PREFERENCES.get(categories)
+
+def _preferred_category_rule(
+    conflict: Conflict,
+    preferred_category: str | None,
+) -> tuple[Rule, Rule] | None:
     if preferred_category is None:
         return None
     if conflict.left.category == preferred_category and conflict.right.category != preferred_category:
@@ -382,6 +483,42 @@ def _category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
     if conflict.right.category == preferred_category and conflict.left.category != preferred_category:
         return conflict.right, conflict.left
     return None
+
+
+def _value_category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
+    categories = frozenset((conflict.left.category, conflict.right.category))
+    for value in (conflict.left.value, conflict.right.value):
+        preferred = _VALUE_CATEGORY_PREFERENCES.get((categories, value.casefold()))
+        result = _preferred_category_rule(conflict, preferred)
+        if result is not None:
+            return result
+    # Apple service ownership is an explicit business contract.  Keep it in
+    # the value-category tier so a deliberately specific third-party rule
+    # cannot reclassify an Apple endpoint merely by being a HOST rule.
+    if "apple" in categories and "direct-exception" not in categories:
+        apple_values = (conflict.left.value, conflict.right.value)
+        if any(
+            value.casefold() in _APPLE_SERVICE_HOSTS
+            or any(
+                value.casefold() == suffix
+                or value.casefold().endswith("." + suffix)
+                for suffix in _APPLE_SERVICE_SUFFIXES
+            )
+            for value in apple_values
+        ):
+            return _preferred_category_rule(conflict, "apple")
+    return None
+
+
+def _category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
+    """Return the configured value or business-category preference."""
+
+    return _value_category_rule(conflict) or _business_category_rule(conflict)
+
+
+def _business_category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
+    categories = frozenset((conflict.left.category, conflict.right.category))
+    return _preferred_category_rule(conflict, _CATEGORY_PREFERENCES.get(categories))
 
 
 def _specific_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
@@ -450,13 +587,18 @@ def _security_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
 
 
 def _source_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
+    # Source trust is only meaningful after the business category is known.
+    # In particular, Blackmatrix must never decide whether a selector belongs
+    # to AI, GitHub, Social, Google or another business category.
+    if conflict.left.category != conflict.right.category:
+        return None
     left_is_preferred = _is_blackmatrix(conflict.left)
     right_is_preferred = _is_blackmatrix(conflict.right)
     if left_is_preferred == right_is_preferred:
         return None
     winner = conflict.left if left_is_preferred else conflict.right
     loser = conflict.right if left_is_preferred else conflict.left
-    return winner, loser, "Blackmatrix is the configured primary source tie-breaker."
+    return winner, loser, "Blackmatrix is the preferred source within this business category."
 
 
 def _fallback_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
@@ -475,12 +617,19 @@ def _ordered_overlap_rule(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
     security = _security_order(conflict)
     if security is not None:
         return security
-    category = _category_rule(conflict)
-    if category is not None:
-        return category[0], category[1], "The configured business-category priority provides the first-match order."
+    value_category = _value_category_rule(conflict)
+    if value_category is not None:
+        return (
+            value_category[0],
+            value_category[1],
+            "An explicit value-category override provides the first-match order.",
+        )
     specific = _specific_rule(conflict)
     if specific is not None:
         return specific[0], specific[1], "A more specific rule must be evaluated before its broader overlap."
+    category = _business_category_rule(conflict)
+    if category is not None:
+        return category[0], category[1], "The configured business-category priority provides the first-match order."
     source = _source_order(conflict)
     if source is not None:
         return source
@@ -493,7 +642,15 @@ def _exact_conflict_rule(conflict: Conflict) -> tuple[Rule, Rule, str, str] | No
         winner, loser, reason = security
         decision = "prefer-direct-exception" if _is_direct_exception(winner) else "prefer-reject"
         return winner, loser, decision, reason
-    category = _category_rule(conflict)
+    value_category = _value_category_rule(conflict)
+    if value_category is not None:
+        winner, loser = value_category
+        return winner, loser, "prefer-value-category", "An explicit value-category override applies to this exact conflict."
+    specific = _specific_rule(conflict)
+    if specific is not None:
+        winner, loser = specific
+        return winner, loser, "prefer-specific", "A more specific rule applies to this exact conflict."
+    category = _business_category_rule(conflict)
     if category is not None:
         winner, loser = category
         return winner, loser, "prefer-category", "The configured business-category priority applies to this exact conflict."

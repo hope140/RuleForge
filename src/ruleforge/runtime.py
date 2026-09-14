@@ -77,7 +77,7 @@ def rule_matches(rule: Rule, probe: RouteProbe) -> bool:
 
 
 def order_rules_for_first_match(rules: Iterable[Rule]) -> tuple[Rule, ...]:
-    """Order rules the same way the generated category outputs are consumed."""
+    """Order individual rules by security, specificity and fallback category."""
 
     return tuple(
         sorted(

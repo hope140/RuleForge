@@ -1,6 +1,7 @@
 {
-  "kept_rule_count": 13521,
-  "dropped_rule_count": 27,
+  "kept_rule_count": 13503,
+  "dropped_rule_count": 45,
+  "moved_rule_count": 4,
   "dropped": [
     {
       "source_id": "blackmatrix-openai",
@@ -101,6 +102,96 @@
       "line_number": 45,
       "raw": "IP-ASN,20473,OpenAI",
       "reason": "shared-infrastructure-asn"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "api.msn.com",
+      "line_number": 11,
+      "raw": "HOST,api.msn.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "assets.msn.com",
+      "line_number": 13,
+      "raw": "HOST,assets.msn.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "in.appcenter.ms",
+      "line_number": 19,
+      "raw": "HOST,in.appcenter.ms,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "location.microsoft.com",
+      "line_number": 20,
+      "raw": "HOST,location.microsoft.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "odc.officeapps.live.com",
+      "line_number": 21,
+      "raw": "HOST,odc.officeapps.live.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "r.bing.com",
+      "line_number": 25,
+      "raw": "HOST,r.bing.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "self.events.data.microsoft.com",
+      "line_number": 26,
+      "raw": "HOST,self.events.data.microsoft.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "services.bingapis.com",
+      "line_number": 27,
+      "raw": "HOST,services.bingapis.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "blackmatrix-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "www.bing.com",
+      "line_number": 30,
+      "raw": "HOST,www.bing.com,Copilot",
+      "reason": "shared-microsoft-infrastructure-host"
     },
     {
       "source_id": "blackmatrix-copilot",
@@ -223,6 +314,16 @@
       "reason": "shared-infrastructure-asn"
     },
     {
+      "source_id": "rulego-ai-supplement",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "www.bing.com",
+      "line_number": 96,
+      "raw": "DOMAIN,www.bing.com",
+      "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
       "source_id": "acl4ssr-ai",
       "category": "ai",
       "policy": "AI",
@@ -263,6 +364,66 @@
       "reason": "shared-infrastructure-root-suffix"
     },
     {
+      "source_id": "blackmatrix-apple",
+      "category": "apple",
+      "policy": "苹果服务",
+      "rule_type": "HOST-SUFFIX",
+      "value": "digicert.com",
+      "line_number": 1780,
+      "raw": "HOST-SUFFIX,digicert.com,Apple",
+      "reason": "shared-infrastructure-root"
+    },
+    {
+      "source_id": "blackmatrix-apple-proxy",
+      "category": "apple",
+      "policy": "苹果服务",
+      "rule_type": "HOST-SUFFIX",
+      "value": "digicert.com",
+      "line_number": 43,
+      "raw": "HOST-SUFFIX,digicert.com,AppleProxy",
+      "reason": "shared-infrastructure-root"
+    },
+    {
+      "source_id": "blackmatrix-netflix",
+      "category": "netflix",
+      "policy": "Netflix",
+      "rule_type": "HOST-SUFFIX",
+      "value": "cookielaw.org",
+      "line_number": 16,
+      "raw": "HOST-SUFFIX,cookielaw.org,Netflix",
+      "reason": "shared-infrastructure-root"
+    },
+    {
+      "source_id": "blackmatrix-netflix",
+      "category": "netflix",
+      "policy": "Netflix",
+      "rule_type": "HOST-SUFFIX",
+      "value": "onetrust.com",
+      "line_number": 44,
+      "raw": "HOST-SUFFIX,onetrust.com,Netflix",
+      "reason": "shared-infrastructure-root"
+    },
+    {
+      "source_id": "blackmatrix-netflix",
+      "category": "netflix",
+      "policy": "Netflix",
+      "rule_type": "HOST-SUFFIX",
+      "value": "us-west-2.amazonaws.com",
+      "line_number": 45,
+      "raw": "HOST-SUFFIX,us-west-2.amazonaws.com,Netflix",
+      "reason": "shared-infrastructure-root"
+    },
+    {
+      "source_id": "blackmatrix-global-media-prime-video",
+      "category": "global-media",
+      "policy": "国际媒体",
+      "rule_type": "HOST",
+      "value": "www.amazon.com",
+      "line_number": 18,
+      "raw": "HOST,www.amazon.com,PrimeVideo",
+      "reason": "shared-infrastructure-root"
+    },
+    {
       "source_id": "blackmatrix-wechat",
       "category": "wechat",
       "policy": "direct",
@@ -271,6 +432,68 @@
       "line_number": 52,
       "raw": "IP-ASN,132203,WeChat",
       "reason": "shared-infrastructure-asn"
+    },
+    {
+      "source_id": "rulego-direct-plus",
+      "category": "direct-exception",
+      "policy": "direct",
+      "rule_type": "HOST",
+      "value": "redirector.gvt1.com",
+      "line_number": 14,
+      "raw": "DOMAIN,redirector.gvt1.com",
+      "reason": "specificity-routing-correction"
+    },
+    {
+      "source_id": "rulego-proxy",
+      "category": "proxy",
+      "policy": "全球加速",
+      "rule_type": "HOST",
+      "value": "gateway.icloud.com",
+      "line_number": 551,
+      "raw": "DOMAIN,gateway.icloud.com",
+      "reason": "business-category-correction"
+    }
+  ],
+  "moved": [
+    {
+      "source_id": "rulego-ai-supplement",
+      "rule_type": "HOST-SUFFIX",
+      "value": "gateway.icloud.com",
+      "from_category": "ai",
+      "from_policy": "AI",
+      "to_category": "apple",
+      "to_policy": "苹果服务",
+      "reason": "apple-service"
+    },
+    {
+      "source_id": "blackmatrix-tiktok",
+      "rule_type": "HOST-SUFFIX",
+      "value": "marscode.com",
+      "from_category": "tiktok",
+      "from_policy": "海外抖音",
+      "to_category": "ai",
+      "to_policy": "AI",
+      "reason": "ai-tool"
+    },
+    {
+      "source_id": "blackmatrix-tiktok",
+      "rule_type": "HOST-SUFFIX",
+      "value": "trae.ai",
+      "from_category": "tiktok",
+      "from_policy": "海外抖音",
+      "to_category": "ai",
+      "to_policy": "AI",
+      "reason": "ai-tool"
+    },
+    {
+      "source_id": "rulego-proxy",
+      "rule_type": "HOST",
+      "value": "amp-api.podcasts.apple.com",
+      "from_category": "proxy",
+      "from_policy": "全球加速",
+      "to_category": "apple",
+      "to_policy": "苹果服务",
+      "reason": "apple-service"
     }
   ]
 }
