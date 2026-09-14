@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 6730,
-  "dropped_rule_count": 26,
+  "kept_rule_count": 6729,
+  "dropped_rule_count": 27,
   "dropped": [
     {
       "source_id": "blackmatrix-openai",
@@ -261,6 +261,16 @@
       "line_number": 38,
       "raw": "DOMAIN-SUFFIX,intercomcdn.com",
       "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "blackmatrix-wechat",
+      "category": "wechat",
+      "policy": "direct",
+      "rule_type": "IP-ASN",
+      "value": "132203",
+      "line_number": 40,
+      "raw": "IP-ASN,132203",
+      "reason": "shared-infrastructure-asn"
     }
   ]
 }
