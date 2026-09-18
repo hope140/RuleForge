@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-16T07:45:31.716807+00:00",
+  "generated_at_utc": "2026-09-18T07:27:42.157512+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1702,7 +1702,7 @@
     {
       "id": "blackmatrix-apple",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
-      "sha256": "1fcc6151008947fae7e79cf17cbb807bf6e96f8939cd9417b3faa229436bfb36",
+      "sha256": "c3ae54151146e8293dc4e676c7b076be02393593c08dadffc27d38616c0ef698",
       "from_cache": false,
       "rule_count": 1881,
       "issue_count": 0
