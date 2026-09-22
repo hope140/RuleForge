@@ -1767,7 +1767,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "apple.comscoreresearch.com",
         "options": [],
-        "line_number": 1740,
+        "line_number": 1789,
         "raw": "HOST-SUFFIX,apple.comscoreresearch.com,Apple"
       },
       "dropped": {
@@ -1791,7 +1791,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "apple.news",
         "options": [],
-        "line_number": 1778,
+        "line_number": 1827,
         "raw": "HOST-SUFFIX,apple.news,Apple"
       },
       "dropped": {
@@ -1815,7 +1815,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appleenews.com",
         "options": [],
-        "line_number": 1741,
+        "line_number": 1790,
         "raw": "HOST-SUFFIX,appleenews.com,Apple"
       },
       "dropped": {
@@ -1839,7 +1839,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.berlin",
         "options": [],
-        "line_number": 1742,
+        "line_number": 1791,
         "raw": "HOST-SUFFIX,applemusic.berlin,Apple"
       },
       "dropped": {
@@ -1863,7 +1863,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.co",
         "options": [],
-        "line_number": 1743,
+        "line_number": 1792,
         "raw": "HOST-SUFFIX,applemusic.co,Apple"
       },
       "dropped": {
@@ -1887,7 +1887,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.com",
         "options": [],
-        "line_number": 1776,
+        "line_number": 1825,
         "raw": "HOST-SUFFIX,applemusic.com,Apple"
       },
       "dropped": {
@@ -1911,7 +1911,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.com.au",
         "options": [],
-        "line_number": 1744,
+        "line_number": 1793,
         "raw": "HOST-SUFFIX,applemusic.com.au,Apple"
       },
       "dropped": {
@@ -1935,7 +1935,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.hamburg",
         "options": [],
-        "line_number": 1745,
+        "line_number": 1794,
         "raw": "HOST-SUFFIX,applemusic.hamburg,Apple"
       },
       "dropped": {
@@ -1959,7 +1959,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.wang",
         "options": [],
-        "line_number": 1746,
+        "line_number": 1795,
         "raw": "HOST-SUFFIX,applemusic.wang,Apple"
       },
       "dropped": {
@@ -1983,7 +1983,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusicconnect.com",
         "options": [],
-        "line_number": 1747,
+        "line_number": 1796,
         "raw": "HOST-SUFFIX,applemusicconnect.com,Apple"
       },
       "dropped": {
@@ -2007,7 +2007,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusicfestival.com",
         "options": [],
-        "line_number": 1748,
+        "line_number": 1797,
         "raw": "HOST-SUFFIX,applemusicfestival.com,Apple"
       },
       "dropped": {
@@ -2031,7 +2031,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applenews.berlin",
         "options": [],
-        "line_number": 1749,
+        "line_number": 1798,
         "raw": "HOST-SUFFIX,applenews.berlin,Apple"
       },
       "dropped": {
@@ -2055,7 +2055,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applenews.hamburg",
         "options": [],
-        "line_number": 1750,
+        "line_number": 1799,
         "raw": "HOST-SUFFIX,applenews.hamburg,Apple"
       },
       "dropped": {
@@ -2079,7 +2079,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applenews.tv",
         "options": [],
-        "line_number": 1751,
+        "line_number": 1800,
         "raw": "HOST-SUFFIX,applenews.tv,Apple"
       },
       "dropped": {
@@ -2103,7 +2103,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applenewsformat.com",
         "options": [],
-        "line_number": 1752,
+        "line_number": 1801,
         "raw": "HOST-SUFFIX,applenewsformat.com,Apple"
       },
       "dropped": {
@@ -2127,7 +2127,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appletv.com",
         "options": [],
-        "line_number": 1753,
+        "line_number": 1802,
         "raw": "HOST-SUFFIX,appletv.com,Apple"
       },
       "dropped": {
@@ -2151,7 +2151,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appletv.fr",
         "options": [],
-        "line_number": 1754,
+        "line_number": 1803,
         "raw": "HOST-SUFFIX,appletv.fr,Apple"
       },
       "dropped": {
@@ -2175,7 +2175,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appletv.wang",
         "options": [],
-        "line_number": 1755,
+        "line_number": 1804,
         "raw": "HOST-SUFFIX,appletv.wang,Apple"
       },
       "dropped": {
@@ -2199,7 +2199,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appletv4.cn",
         "options": [],
-        "line_number": 1756,
+        "line_number": 1805,
         "raw": "HOST-SUFFIX,appletv4.cn,Apple"
       },
       "dropped": {
@@ -2223,7 +2223,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appletv4.com.cn",
         "options": [],
-        "line_number": 1757,
+        "line_number": 1806,
         "raw": "HOST-SUFFIX,appletv4.com.cn,Apple"
       },
       "dropped": {
@@ -2247,7 +2247,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appletvapp.apple",
         "options": [],
-        "line_number": 1758,
+        "line_number": 1807,
         "raw": "HOST-SUFFIX,appletvapp.apple,Apple"
       },
       "dropped": {
@@ -2271,7 +2271,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "i-book.com",
         "options": [],
-        "line_number": 1759,
+        "line_number": 1808,
         "raw": "HOST-SUFFIX,i-book.com,Apple"
       },
       "dropped": {
@@ -2295,7 +2295,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "i-book.net",
         "options": [],
-        "line_number": 1760,
+        "line_number": 1809,
         "raw": "HOST-SUFFIX,i-book.net,Apple"
       },
       "dropped": {
@@ -2319,7 +2319,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ibook.co.nz",
         "options": [],
-        "line_number": 1761,
+        "line_number": 1810,
         "raw": "HOST-SUFFIX,ibook.co.nz,Apple"
       },
       "dropped": {
@@ -2343,7 +2343,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ibook.com",
         "options": [],
-        "line_number": 1762,
+        "line_number": 1811,
         "raw": "HOST-SUFFIX,ibook.com,Apple"
       },
       "dropped": {
@@ -2367,7 +2367,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ibook.eu",
         "options": [],
-        "line_number": 1763,
+        "line_number": 1812,
         "raw": "HOST-SUFFIX,ibook.eu,Apple"
       },
       "dropped": {
@@ -2391,7 +2391,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ibook.net",
         "options": [],
-        "line_number": 1764,
+        "line_number": 1813,
         "raw": "HOST-SUFFIX,ibook.net,Apple"
       },
       "dropped": {
@@ -2415,7 +2415,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ibookpartner.com",
         "options": [],
-        "line_number": 1765,
+        "line_number": 1814,
         "raw": "HOST-SUFFIX,ibookpartner.com,Apple"
       },
       "dropped": {
@@ -2439,7 +2439,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ibooksauthor.com",
         "options": [],
-        "line_number": 1766,
+        "line_number": 1815,
         "raw": "HOST-SUFFIX,ibooksauthor.com,Apple"
       },
       "dropped": {
@@ -2463,7 +2463,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "imovie.eu",
         "options": [],
-        "line_number": 1767,
+        "line_number": 1816,
         "raw": "HOST-SUFFIX,imovie.eu,Apple"
       },
       "dropped": {
@@ -2487,7 +2487,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "imoviegallery.com",
         "options": [],
-        "line_number": 1768,
+        "line_number": 1817,
         "raw": "HOST-SUFFIX,imoviegallery.com,Apple"
       },
       "dropped": {
@@ -2511,7 +2511,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "imoviestage.com",
         "options": [],
-        "line_number": 1769,
+        "line_number": 1818,
         "raw": "HOST-SUFFIX,imoviestage.com,Apple"
       },
       "dropped": {
@@ -2535,7 +2535,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "iphoto.eu",
         "options": [],
-        "line_number": 1770,
+        "line_number": 1819,
         "raw": "HOST-SUFFIX,iphoto.eu,Apple"
       },
       "dropped": {
@@ -2559,7 +2559,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "iphoto.no",
         "options": [],
-        "line_number": 1771,
+        "line_number": 1820,
         "raw": "HOST-SUFFIX,iphoto.no,Apple"
       },
       "dropped": {
@@ -2583,7 +2583,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "iphoto.se",
         "options": [],
-        "line_number": 1772,
+        "line_number": 1821,
         "raw": "HOST-SUFFIX,iphoto.se,Apple"
       },
       "dropped": {
@@ -2607,7 +2607,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "iphoto.wang",
         "options": [],
-        "line_number": 1773,
+        "line_number": 1822,
         "raw": "HOST-SUFFIX,iphoto.wang,Apple"
       },
       "dropped": {
@@ -2631,7 +2631,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "musickit.net",
         "options": [],
-        "line_number": 1774,
+        "line_number": 1823,
         "raw": "HOST-SUFFIX,musickit.net,Apple"
       },
       "dropped": {
@@ -2655,7 +2655,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "wwwapplemusic.com",
         "options": [],
-        "line_number": 1775,
+        "line_number": 1824,
         "raw": "HOST-SUFFIX,wwwapplemusic.com,Apple"
       },
       "dropped": {
@@ -2823,7 +2823,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.com",
         "options": [],
-        "line_number": 1776,
+        "line_number": 1825,
         "raw": "HOST-SUFFIX,applemusic.com,Apple"
       },
       "dropped": {
@@ -3207,7 +3207,7 @@
         "rule_type": "HOST",
         "value": "itunes.apple.com",
         "options": [],
-        "line_number": 257,
+        "line_number": 258,
         "raw": "HOST,itunes.apple.com,Apple"
       },
       "dropped": {
@@ -3231,7 +3231,7 @@
         "rule_type": "HOST",
         "value": "js-cdn.music.apple.com",
         "options": [],
-        "line_number": 258,
+        "line_number": 259,
         "raw": "HOST,js-cdn.music.apple.com,Apple"
       },
       "dropped": {
@@ -3255,7 +3255,7 @@
         "rule_type": "HOST",
         "value": "lookup-api.apple.com",
         "options": [],
-        "line_number": 259,
+        "line_number": 260,
         "raw": "HOST,lookup-api.apple.com,Apple"
       },
       "dropped": {
@@ -3279,7 +3279,7 @@
         "rule_type": "HOST",
         "value": "mask-api.icloud.com",
         "options": [],
-        "line_number": 261,
+        "line_number": 262,
         "raw": "HOST,mask-api.icloud.com,Apple"
       },
       "dropped": {
@@ -3303,7 +3303,7 @@
         "rule_type": "HOST",
         "value": "mask-h2.icloud.com",
         "options": [],
-        "line_number": 262,
+        "line_number": 263,
         "raw": "HOST,mask-h2.icloud.com,Apple"
       },
       "dropped": {
@@ -3327,7 +3327,7 @@
         "rule_type": "HOST",
         "value": "mask.icloud.com",
         "options": [],
-        "line_number": 265,
+        "line_number": 266,
         "raw": "HOST,mask.icloud.com,Apple"
       },
       "dropped": {
@@ -3351,7 +3351,7 @@
         "rule_type": "HOST",
         "value": "news-assets.apple.com",
         "options": [],
-        "line_number": 266,
+        "line_number": 267,
         "raw": "HOST,news-assets.apple.com,Apple"
       },
       "dropped": {
@@ -3375,7 +3375,7 @@
         "rule_type": "HOST",
         "value": "news-client.apple.com",
         "options": [],
-        "line_number": 267,
+        "line_number": 268,
         "raw": "HOST,news-client.apple.com,Apple"
       },
       "dropped": {
@@ -3399,7 +3399,7 @@
         "rule_type": "HOST",
         "value": "news-edge.apple.com",
         "options": [],
-        "line_number": 268,
+        "line_number": 269,
         "raw": "HOST,news-edge.apple.com,Apple"
       },
       "dropped": {
@@ -3423,7 +3423,7 @@
         "rule_type": "HOST",
         "value": "news-events.apple.com",
         "options": [],
-        "line_number": 269,
+        "line_number": 270,
         "raw": "HOST,news-events.apple.com,Apple"
       },
       "dropped": {
@@ -3447,7 +3447,7 @@
         "rule_type": "HOST",
         "value": "np-edge.itunes.apple.com",
         "options": [],
-        "line_number": 273,
+        "line_number": 271,
         "raw": "HOST,np-edge.itunes.apple.com,Apple"
       },
       "dropped": {
@@ -3471,7 +3471,7 @@
         "rule_type": "HOST",
         "value": "play-edge.itunes.apple.com",
         "options": [],
-        "line_number": 274,
+        "line_number": 272,
         "raw": "HOST,play-edge.itunes.apple.com,Apple"
       },
       "dropped": {
@@ -3495,7 +3495,7 @@
         "rule_type": "HOST",
         "value": "sandbox.itunes.apple.com",
         "options": [],
-        "line_number": 270,
+        "line_number": 273,
         "raw": "HOST,sandbox.itunes.apple.com,Apple"
       },
       "dropped": {
@@ -3519,7 +3519,7 @@
         "rule_type": "HOST",
         "value": "testflight.apple.com",
         "options": [],
-        "line_number": 283,
+        "line_number": 274,
         "raw": "HOST,testflight.apple.com,Apple"
       },
       "dropped": {
@@ -3591,7 +3591,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "apple-dns.net",
         "options": [],
-        "line_number": 1777,
+        "line_number": 1826,
         "raw": "HOST-SUFFIX,apple-dns.net,Apple"
       },
       "dropped": {
@@ -3615,7 +3615,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "apple.news",
         "options": [],
-        "line_number": 1778,
+        "line_number": 1827,
         "raw": "HOST-SUFFIX,apple.news,Apple"
       },
       "dropped": {
@@ -3639,7 +3639,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appsto.re",
         "options": [],
-        "line_number": 1465,
+        "line_number": 1828,
         "raw": "HOST-SUFFIX,appsto.re,Apple"
       },
       "dropped": {
@@ -3711,7 +3711,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cdn-apple.com",
         "options": [],
-        "line_number": 1786,
+        "line_number": 1829,
         "raw": "HOST-SUFFIX,cdn-apple.com,Apple"
       },
       "dropped": {
@@ -3831,7 +3831,7 @@
         "rule_type": "USER-AGENT",
         "value": "AppleTV*",
         "options": [],
-        "line_number": 1879,
+        "line_number": 1877,
         "raw": "USER-AGENT,AppleTV*,Apple"
       },
       "dropped": {
@@ -3855,7 +3855,7 @@
         "rule_type": "USER-AGENT",
         "value": "com.apple.news*",
         "options": [],
-        "line_number": 1877,
+        "line_number": 1878,
         "raw": "USER-AGENT,com.apple.news*,Apple"
       },
       "dropped": {
@@ -3879,7 +3879,7 @@
         "rule_type": "USER-AGENT",
         "value": "com.apple.trustd*",
         "options": [],
-        "line_number": 1878,
+        "line_number": 1879,
         "raw": "USER-AGENT,com.apple.trustd*,Apple"
       },
       "dropped": {
@@ -3927,7 +3927,7 @@
         "rule_type": "HOST",
         "value": "hls-amt.itunes.apple.com",
         "options": [],
-        "line_number": 271,
+        "line_number": 277,
         "raw": "HOST,hls-amt.itunes.apple.com,Apple"
       },
       "dropped": {
@@ -3951,7 +3951,7 @@
         "rule_type": "HOST",
         "value": "hls.itunes.apple.com",
         "options": [],
-        "line_number": 272,
+        "line_number": 257,
         "raw": "HOST,hls.itunes.apple.com,Apple"
       },
       "dropped": {
@@ -3975,7 +3975,7 @@
         "rule_type": "HOST",
         "value": "np-edge.itunes.apple.com",
         "options": [],
-        "line_number": 273,
+        "line_number": 271,
         "raw": "HOST,np-edge.itunes.apple.com,Apple"
       },
       "dropped": {
@@ -3999,7 +3999,7 @@
         "rule_type": "HOST",
         "value": "play-edge.itunes.apple.com",
         "options": [],
-        "line_number": 274,
+        "line_number": 272,
         "raw": "HOST,play-edge.itunes.apple.com,Apple"
       },
       "dropped": {
@@ -4095,7 +4095,7 @@
         "rule_type": "USER-AGENT",
         "value": "AppleTV*",
         "options": [],
-        "line_number": 1879,
+        "line_number": 1877,
         "raw": "USER-AGENT,AppleTV*,Apple"
       },
       "dropped": {
@@ -4167,7 +4167,7 @@
         "rule_type": "HOST",
         "value": "itunes.apple.com",
         "options": [],
-        "line_number": 257,
+        "line_number": 258,
         "raw": "HOST,itunes.apple.com,Apple"
       },
       "dropped": {
@@ -10312,7 +10312,7 @@
         "rule_type": "HOST",
         "value": "guzzoni.apple.com",
         "options": [],
-        "line_number": 281,
+        "line_number": 282,
         "raw": "HOST,guzzoni.apple.com,Apple"
       }
     },
@@ -10433,7 +10433,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "crashlytics.com",
         "options": [],
-        "line_number": 1473,
+        "line_number": 1475,
         "raw": "HOST-SUFFIX,crashlytics.com,Apple"
       },
       "right": {
@@ -11109,7 +11109,7 @@
         "rule_type": "HOST",
         "value": "play-edge.itunes.apple.com",
         "options": [],
-        "line_number": 274,
+        "line_number": 272,
         "raw": "HOST,play-edge.itunes.apple.com,Apple"
       },
       "right": {
@@ -13431,7 +13431,7 @@
         "rule_type": "HOST",
         "value": "itunes.apple.com",
         "options": [],
-        "line_number": 257,
+        "line_number": 258,
         "raw": "HOST,itunes.apple.com,Apple"
       },
       "right": {
@@ -13951,7 +13951,7 @@
         "rule_type": "HOST",
         "value": "testflight.apple.com",
         "options": [],
-        "line_number": 283,
+        "line_number": 274,
         "raw": "HOST,testflight.apple.com,Apple"
       },
       "right": {
@@ -14763,7 +14763,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "appsto.re",
         "options": [],
-        "line_number": 1465,
+        "line_number": 1828,
         "raw": "HOST-SUFFIX,appsto.re,Apple"
       },
       "right": {
@@ -14867,7 +14867,7 @@
         "rule_type": "HOST",
         "value": "lookup-api.apple.com",
         "options": [],
-        "line_number": 259,
+        "line_number": 260,
         "raw": "HOST,lookup-api.apple.com,Apple"
       },
       "right": {
@@ -15023,7 +15023,7 @@
         "rule_type": "HOST",
         "value": "itunes.apple.com",
         "options": [],
-        "line_number": 257,
+        "line_number": 258,
         "raw": "HOST,itunes.apple.com,Apple"
       },
       "right": {
@@ -15075,7 +15075,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "apple.news",
         "options": [],
-        "line_number": 1778,
+        "line_number": 1827,
         "raw": "HOST-SUFFIX,apple.news,Apple"
       },
       "right": {
@@ -15101,7 +15101,7 @@
         "rule_type": "HOST",
         "value": "news-assets.apple.com",
         "options": [],
-        "line_number": 266,
+        "line_number": 267,
         "raw": "HOST,news-assets.apple.com,Apple"
       },
       "right": {
@@ -15127,7 +15127,7 @@
         "rule_type": "HOST",
         "value": "news-client.apple.com",
         "options": [],
-        "line_number": 267,
+        "line_number": 268,
         "raw": "HOST,news-client.apple.com,Apple"
       },
       "right": {
@@ -15179,7 +15179,7 @@
         "rule_type": "HOST",
         "value": "news-edge.apple.com",
         "options": [],
-        "line_number": 268,
+        "line_number": 269,
         "raw": "HOST,news-edge.apple.com,Apple"
       },
       "right": {
@@ -15205,7 +15205,7 @@
         "rule_type": "HOST",
         "value": "news-events.apple.com",
         "options": [],
-        "line_number": 269,
+        "line_number": 270,
         "raw": "HOST,news-events.apple.com,Apple"
       },
       "right": {
@@ -19584,7 +19584,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "apple.comscoreresearch.com",
         "options": [],
-        "line_number": 1740,
+        "line_number": 1789,
         "raw": "HOST-SUFFIX,apple.comscoreresearch.com,Apple"
       }
     },
@@ -19956,6 +19956,32 @@
       "kind": "semantic-overlap",
       "relation": "host-inside-host-suffix",
       "left": {
+        "source_id": "rulego-proxy",
+        "source_format": "surge",
+        "category": "proxy",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "testflight.apple.com",
+        "options": [],
+        "line_number": 273,
+        "raw": "DOMAIN,testflight.apple.com"
+      },
+      "right": {
+        "source_id": "blackmatrix-apple",
+        "source_format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "rule_type": "HOST-SUFFIX",
+        "value": "apple.com",
+        "options": [],
+        "line_number": 369,
+        "raw": "HOST-SUFFIX,apple.com,Apple"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
         "source_id": "rulego-global-media",
         "source_format": "surge",
         "category": "global-media",
@@ -19974,7 +20000,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemusic.com",
         "options": [],
-        "line_number": 1776,
+        "line_number": 1825,
         "raw": "HOST-SUFFIX,applemusic.com,Apple"
       }
     },
@@ -19991,32 +20017,6 @@
         "options": [],
         "line_number": 83,
         "raw": "DOMAIN,uts-api.itunes.apple.com"
-      },
-      "right": {
-        "source_id": "blackmatrix-apple",
-        "source_format": "quantumult-x",
-        "category": "apple",
-        "policy": "苹果服务",
-        "rule_type": "HOST-SUFFIX",
-        "value": "apple.com",
-        "options": [],
-        "line_number": 369,
-        "raw": "HOST-SUFFIX,apple.com,Apple"
-      }
-    },
-    {
-      "kind": "semantic-overlap",
-      "relation": "host-inside-host-suffix",
-      "left": {
-        "source_id": "rulego-proxy",
-        "source_format": "surge",
-        "category": "proxy",
-        "policy": "全球加速",
-        "rule_type": "HOST",
-        "value": "testflight.apple.com",
-        "options": [],
-        "line_number": 273,
-        "raw": "DOMAIN,testflight.apple.com"
       },
       "right": {
         "source_id": "blackmatrix-apple",
@@ -28476,7 +28476,7 @@
         "rule_type": "HOST",
         "value": "amp-api.fitness.apple.com",
         "options": [],
-        "line_number": 280,
+        "line_number": 281,
         "raw": "HOST,amp-api.fitness.apple.com,Apple"
       }
     },
@@ -28606,7 +28606,7 @@
         "rule_type": "HOST",
         "value": "mask-api.icloud.com",
         "options": [],
-        "line_number": 261,
+        "line_number": 262,
         "raw": "HOST,mask-api.icloud.com,Apple"
       }
     },
@@ -28632,7 +28632,7 @@
         "rule_type": "HOST",
         "value": "mask-h2.icloud.com",
         "options": [],
-        "line_number": 262,
+        "line_number": 263,
         "raw": "HOST,mask-h2.icloud.com,Apple"
       }
     },
@@ -28658,7 +28658,7 @@
         "rule_type": "HOST",
         "value": "mask.icloud.com",
         "options": [],
-        "line_number": 265,
+        "line_number": 266,
         "raw": "HOST,mask.icloud.com,Apple"
       }
     },
@@ -28684,7 +28684,7 @@
         "rule_type": "HOST",
         "value": "fmfmobile.icloud.com",
         "options": [],
-        "line_number": 277,
+        "line_number": 278,
         "raw": "HOST,fmfmobile.icloud.com,Apple"
       }
     },
@@ -28710,7 +28710,7 @@
         "rule_type": "HOST",
         "value": "fmipmobile.icloud.com",
         "options": [],
-        "line_number": 278,
+        "line_number": 279,
         "raw": "HOST,fmipmobile.icloud.com,Apple"
       }
     },
@@ -28736,7 +28736,7 @@
         "rule_type": "HOST",
         "value": "statici.icloud.com",
         "options": [],
-        "line_number": 279,
+        "line_number": 280,
         "raw": "HOST,statici.icloud.com,Apple"
       }
     },
@@ -28788,7 +28788,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "applemx-icloud.com",
         "options": [],
-        "line_number": 1784,
+        "line_number": 1432,
         "raw": "HOST-SUFFIX,applemx-icloud.com,Apple"
       }
     },
@@ -28814,7 +28814,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "icloud.com",
         "options": [],
-        "line_number": 1794,
+        "line_number": 1484,
         "raw": "HOST-SUFFIX,icloud.com,Apple"
       }
     },
@@ -28840,7 +28840,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "icloud.com.cn",
         "options": [],
-        "line_number": 1795,
+        "line_number": 1485,
         "raw": "HOST-SUFFIX,icloud.com.cn,Apple"
       }
     },
@@ -28866,7 +28866,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ios-icloud.com",
         "options": [],
-        "line_number": 1831,
+        "line_number": 1522,
         "raw": "HOST-SUFFIX,ios-icloud.com,Apple"
       }
     },
@@ -28892,7 +28892,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "wwwicloud.com",
         "options": [],
-        "line_number": 1835,
+        "line_number": 1561,
         "raw": "HOST-SUFFIX,wwwicloud.com,Apple"
       }
     },
@@ -46904,6 +46904,26 @@
           "source_id": "blackmatrix-apple",
           "category": "apple",
           "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "loser": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "testflight.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
           "value": "applemusic.com",
           "policy": "苹果服务"
         },
@@ -46933,26 +46953,6 @@
           "rule_type": "HOST",
           "value": "uts-api.itunes.apple.com",
           "policy": "国际媒体"
-        },
-        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
-      },
-      {
-        "kind": "semantic-overlap",
-        "relation": "host-inside-host-suffix",
-        "decision": "ordered-overlap",
-        "winner": {
-          "source_id": "blackmatrix-apple",
-          "category": "apple",
-          "rule_type": "HOST-SUFFIX",
-          "value": "apple.com",
-          "policy": "苹果服务"
-        },
-        "loser": {
-          "source_id": "rulego-proxy",
-          "category": "proxy",
-          "rule_type": "HOST",
-          "value": "testflight.apple.com",
-          "policy": "全球加速"
         },
         "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
@@ -64823,6 +64823,23 @@
           "source_id": "blackmatrix-apple",
           "category": "apple",
           "rule_type": "HOST-SUFFIX",
+          "value": "apple.com",
+          "policy": "苹果服务"
+        },
+        "after": {
+          "source_id": "rulego-proxy",
+          "category": "proxy",
+          "rule_type": "HOST",
+          "value": "testflight.apple.com",
+          "policy": "全球加速"
+        },
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
+          "source_id": "blackmatrix-apple",
+          "category": "apple",
+          "rule_type": "HOST-SUFFIX",
           "value": "applemusic.com",
           "policy": "苹果服务"
         },
@@ -64849,23 +64866,6 @@
           "rule_type": "HOST",
           "value": "uts-api.itunes.apple.com",
           "policy": "国际媒体"
-        },
-        "reason": "An explicit value-category override provides the first-match order."
-      },
-      {
-        "before": {
-          "source_id": "blackmatrix-apple",
-          "category": "apple",
-          "rule_type": "HOST-SUFFIX",
-          "value": "apple.com",
-          "policy": "苹果服务"
-        },
-        "after": {
-          "source_id": "rulego-proxy",
-          "category": "proxy",
-          "rule_type": "HOST",
-          "value": "testflight.apple.com",
-          "policy": "全球加速"
         },
         "reason": "An explicit value-category override provides the first-match order."
       },

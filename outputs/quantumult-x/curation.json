@@ -369,7 +369,7 @@
       "policy": "苹果服务",
       "rule_type": "HOST-SUFFIX",
       "value": "digicert.com",
-      "line_number": 1779,
+      "line_number": 1830,
       "raw": "HOST-SUFFIX,digicert.com,Apple",
       "reason": "shared-infrastructure-root"
     },
