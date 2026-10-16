@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-14T07:45:32.760097+00:00",
+  "generated_at_utc": "2026-10-16T07:18:01.424461+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -963,14 +963,14 @@
   },
   "source_count": 95,
   "enabled_source_count": 95,
-  "parsed_rule_count": 6756,
-  "curated_rule_count": 6712,
+  "parsed_rule_count": 6759,
+  "curated_rule_count": 6715,
   "curation_drop_count": 44,
   "curation_move_count": 4,
-  "candidate_kept_rule_count": 6432,
-  "kept_rule_count": 6403,
-  "safe_rule_count": 6231,
-  "resolved_rule_count": 6231,
+  "candidate_kept_rule_count": 6435,
+  "kept_rule_count": 6406,
+  "safe_rule_count": 6234,
+  "resolved_rule_count": 6234,
   "conflicted_rule_count": 952,
   "duplicate_count": 309,
   "conflict_count": 911,
@@ -988,7 +988,7 @@
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 16,
   "resolution": {
-    "resolved_rule_count": 6231,
+    "resolved_rule_count": 6234,
     "rejected_rule_count": 172,
     "resolved_conflict_count": 911,
     "blackmatrix_preferred_conflict_count": 0,
@@ -1108,7 +1108,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 32,
+      "rule_count": 35,
       "source_count": 1
     },
     {
@@ -1396,7 +1396,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 30,
+      "rule_count": 33,
       "source_count": 1
     },
     {
@@ -1772,9 +1772,9 @@
     {
       "id": "blackmatrix-tiktok",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml",
-      "sha256": "c93113e0f7d84302868ae8a1a7bfd024dbc03e54c5953f5439d20ca9c04005b7",
+      "sha256": "71c372b476ff9b641bb619b74c1192dd1b831c374bcd8cd0ae8fa34374c9fff2",
       "from_cache": false,
-      "rule_count": 32,
+      "rule_count": 35,
       "issue_count": 0
     },
     {

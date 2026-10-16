@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-14T07:45:16.033678+00:00",
+  "generated_at_utc": "2026-10-16T07:17:39.237533+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -974,14 +974,14 @@
   },
   "source_count": 96,
   "enabled_source_count": 96,
-  "parsed_rule_count": 13548,
-  "curated_rule_count": 13503,
+  "parsed_rule_count": 13551,
+  "curated_rule_count": 13506,
   "curation_drop_count": 45,
   "curation_move_count": 4,
-  "candidate_kept_rule_count": 13105,
-  "kept_rule_count": 13076,
-  "safe_rule_count": 12887,
-  "resolved_rule_count": 12887,
+  "candidate_kept_rule_count": 13108,
+  "kept_rule_count": 13079,
+  "safe_rule_count": 12890,
+  "resolved_rule_count": 12890,
   "conflicted_rule_count": 1145,
   "duplicate_count": 427,
   "conflict_count": 1114,
@@ -999,7 +999,7 @@
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 16,
   "resolution": {
-    "resolved_rule_count": 12887,
+    "resolved_rule_count": 12890,
     "rejected_rule_count": 189,
     "resolved_conflict_count": 1114,
     "blackmatrix_preferred_conflict_count": 0,
@@ -1118,7 +1118,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 32,
+      "rule_count": 35,
       "source_count": 1
     },
     {
@@ -1406,7 +1406,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 30,
+      "rule_count": 33,
       "source_count": 1
     },
     {
@@ -1702,7 +1702,7 @@
     {
       "id": "blackmatrix-apple",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
-      "sha256": "5beba6036776de5a38b4b2f5e19e8e94ab94b3a8cdd50b5db2b4ad6bbd0b1bf0",
+      "sha256": "1cc4ef32491931de170811b2c86b215dd88448953d664b6ebab3b93b7388f680",
       "from_cache": false,
       "rule_count": 1881,
       "issue_count": 0
@@ -1790,9 +1790,9 @@
     {
       "id": "blackmatrix-tiktok",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list",
-      "sha256": "d1e594680d94bec9575ebc584d03c224c8ac5b74daba1fa8f87b44f48b7724bb",
+      "sha256": "b1a9cc643f72d4f105bf2eb1ba916ae7c56d34014355d97c1ff98f41006b9f75",
       "from_cache": false,
-      "rule_count": 32,
+      "rule_count": 35,
       "issue_count": 0
     },
     {

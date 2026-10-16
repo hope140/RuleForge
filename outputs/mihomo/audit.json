@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 6403,
-  "safe_rule_count": 6231,
+  "kept_rule_count": 6406,
+  "safe_rule_count": 6234,
   "conflicted_rule_count": 952,
   "duplicate_count": 309,
   "conflict_count": 911,
@@ -8539,7 +8539,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ibytedtos.com",
         "options": [],
-        "line_number": 20,
+        "line_number": 23,
         "raw": "DOMAIN-SUFFIX,ibytedtos.com"
       },
       "right": {
@@ -8565,7 +8565,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "muscdn.com",
         "options": [],
-        "line_number": 25,
+        "line_number": 28,
         "raw": "DOMAIN-SUFFIX,muscdn.com"
       },
       "right": {
@@ -8591,7 +8591,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "musical.ly",
         "options": [],
-        "line_number": 26,
+        "line_number": 29,
         "raw": "DOMAIN-SUFFIX,musical.ly"
       },
       "right": {
@@ -8617,7 +8617,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tiktok.com",
         "options": [],
-        "line_number": 30,
+        "line_number": 33,
         "raw": "DOMAIN-SUFFIX,tiktok.com"
       },
       "right": {
@@ -8643,7 +8643,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tik-tokapi.com",
         "options": [],
-        "line_number": 29,
+        "line_number": 32,
         "raw": "DOMAIN-SUFFIX,tik-tokapi.com"
       },
       "right": {
@@ -8669,7 +8669,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tiktokcdn.com",
         "options": [],
-        "line_number": 32,
+        "line_number": 35,
         "raw": "DOMAIN-SUFFIX,tiktokcdn.com"
       },
       "right": {
@@ -8695,7 +8695,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tiktokv.com",
         "options": [],
-        "line_number": 36,
+        "line_number": 39,
         "raw": "DOMAIN-SUFFIX,tiktokv.com"
       },
       "right": {
@@ -12514,7 +12514,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "snssdk.com",
         "options": [],
-        "line_number": 28,
+        "line_number": 31,
         "raw": "DOMAIN-SUFFIX,snssdk.com"
       }
     },
@@ -18509,7 +18509,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "musical.ly",
         "options": [],
-        "line_number": 40,
+        "line_number": 43,
         "raw": "DOMAIN-KEYWORD,musical.ly"
       },
       "right": {
@@ -18535,7 +18535,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 41,
+        "line_number": 44,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -18561,7 +18561,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 41,
+        "line_number": 44,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -18587,7 +18587,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 41,
+        "line_number": 44,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -18613,7 +18613,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 41,
+        "line_number": 44,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -18639,7 +18639,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 41,
+        "line_number": 44,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -21328,7 +21328,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tiktokcdn-us.com",
         "options": [],
-        "line_number": 31,
+        "line_number": 34,
         "raw": "DOMAIN-SUFFIX,tiktokcdn-us.com"
       }
     },
@@ -31349,10 +31349,10 @@
       "value": "azurefd.net"
     }
   ],
-  "conflict_free_rule_count": 5451,
-  "resolved_rule_count": 6231,
+  "conflict_free_rule_count": 5454,
+  "resolved_rule_count": 6234,
   "resolution": {
-    "resolved_rule_count": 6231,
+    "resolved_rule_count": 6234,
     "rejected_rule_count": 172,
     "resolved_conflict_count": 911,
     "blackmatrix_preferred_conflict_count": 0,
