@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-24T07:23:05.088648+00:00",
+  "generated_at_utc": "2026-10-26T07:53:15.328464+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -974,14 +974,14 @@
   },
   "source_count": 96,
   "enabled_source_count": 96,
-  "parsed_rule_count": 13551,
-  "curated_rule_count": 13506,
+  "parsed_rule_count": 13550,
+  "curated_rule_count": 13505,
   "curation_drop_count": 45,
   "curation_move_count": 4,
-  "candidate_kept_rule_count": 13108,
-  "kept_rule_count": 13079,
-  "safe_rule_count": 12890,
-  "resolved_rule_count": 12890,
+  "candidate_kept_rule_count": 13107,
+  "kept_rule_count": 13078,
+  "safe_rule_count": 12889,
+  "resolved_rule_count": 12889,
   "conflicted_rule_count": 1145,
   "duplicate_count": 427,
   "conflict_count": 1114,
@@ -999,7 +999,7 @@
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 16,
   "resolution": {
-    "resolved_rule_count": 12890,
+    "resolved_rule_count": 12889,
     "rejected_rule_count": 189,
     "resolved_conflict_count": 1114,
     "blackmatrix_preferred_conflict_count": 0,
@@ -1173,7 +1173,7 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1904,
+      "rule_count": 1903,
       "source_count": 7
     },
     {
@@ -1461,7 +1461,7 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1903,
+      "rule_count": 1902,
       "source_count": 9
     },
     {
@@ -1702,9 +1702,9 @@
     {
       "id": "blackmatrix-apple",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
-      "sha256": "cd0d7efae7868ddac50f82826bb21d3e50b8bc2b60d59ebf55c96907439fefab",
+      "sha256": "d7eb3998cbdc61717dba9bd64e7df5c7ff7e8c0742fd054aa0dd544727091605",
       "from_cache": false,
-      "rule_count": 1881,
+      "rule_count": 1880,
       "issue_count": 0
     },
     {
