@@ -31362,7 +31362,7 @@
     "value_category_preferred_conflict_count": 54,
     "protective_reject_conflict_count": 11,
     "fallback_conflict_count": 0,
-    "priority_override_rule_count": 36,
+    "priority_override_rule_count": 35,
     "ordered_overlap_count": 737,
     "unresolved_conflict_count": 0,
     "decisions": [

@@ -193,6 +193,13 @@ def render_mihomo_rule_providers(
     output.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
+def _mihomo_routed_rule(rule: Rule) -> str:
+    # Classical providers omit policy; inline rules put it before all options.
+    fields = rule.to_mihomo().split(",")
+    fields.insert(2, _mihomo_policy(rule.policy))
+    return ",".join(fields)
+
+
 def render_mihomo_rules(
     entries: Iterable[dict[str, object]],
     path: str | Path,
@@ -218,7 +225,7 @@ def render_mihomo_rules(
             and next_category not in security_categories
         ):
             lines.extend(
-                f"  - {rule.to_mihomo()},{_mihomo_policy(rule.policy)}"
+                f"  - {_mihomo_routed_rule(rule)}"
                 for rule in ordered_priority_rules
             )
             priority_inserted = True
@@ -228,7 +235,7 @@ def render_mihomo_rules(
     if ordered_priority_rules and not priority_inserted:
         insertion = 2
         lines[insertion:insertion] = [
-            f"  - {rule.to_mihomo()},{_mihomo_policy(rule.policy)}"
+            f"  - {_mihomo_routed_rule(rule)}"
             for rule in ordered_priority_rules
         ]
     # Keep the broad CN domain fallback after all explicit business rules.
@@ -237,6 +244,29 @@ def render_mihomo_rules(
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+
+
+MIHOMO_RULES_BEGIN = "  # BEGIN RULEFORGE GENERATED RULES"
+MIHOMO_RULES_END = "  # END RULEFORGE GENERATED RULES"
+
+
+def sync_mihomo_profile(profile: str, generated: str) -> str:
+    """Replace only the managed routing block, preserving local settings."""
+
+    if profile.count(MIHOMO_RULES_BEGIN) != 1 or profile.count(MIHOMO_RULES_END) != 1:
+        raise ValueError("Mihomo profile must contain exactly one generated rules marker pair")
+    start = profile.index(MIHOMO_RULES_BEGIN) + len(MIHOMO_RULES_BEGIN)
+    end = profile.index(MIHOMO_RULES_END)
+    if end < start:
+        raise ValueError("Mihomo generated rules markers are reversed")
+    lines = generated.splitlines()
+    if lines.count("rules:") != 1:
+        raise ValueError("generated Mihomo rules must contain exactly one rules section")
+    body = lines[lines.index("rules:") + 1:]
+    if not body or any(line and not line.startswith("  - ") for line in body):
+        raise ValueError("generated Mihomo rules contain an invalid routing block")
+    newline = "\r\n" if "\r\n" in profile else "\n"
+    return profile[:start] + newline + newline.join(body) + newline + profile[end:]
 
 
 def render_quantumultx_priority_overrides(

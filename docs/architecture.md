@@ -57,6 +57,10 @@ Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、�
 
 审计还会检查共享基础设施根域，例如 `amazonaws.com`、`azure.com`、`digicert.com` 和 `onetrust.com`。专用分类直接声明这些根域时记录 high-risk warning，宽泛策略分类则降为 medium；位于根域下的明确业务 hostname 不会仅因后缀相同而被标记。已确认的 Netflix、Apple、Prime Video 宽规则通过 Curation 从正式候选中排除。
 
+跨分类优先规则只从裁决后仍然存活的约束双方生成，已淘汰规则不得重新进入正式优先文件。Mihomo 的内联规则按 `类型,值,策略,选项` 渲染，Classical Provider 仍保持无策略列。
+
+完整 Mihomo 模板通过 `sync-mihomo-profile` 同步生成路由区块，区块外配置保持不变。CI 在构建和同步之后运行产物回归，并校验模板及由片段组装的完整配置。
+
 ## 优先规则预览
 
 审计裁决后会单独生成 `priority-preview.json` 与 `priority-preview.md`，但不会改变 `categories/safe/` 或模板引用。预览只检查仍存在于最终安全规则中的跨分类重叠，并为域名、关键词、通配符和 CIDR 重叠构造可复现的匹配样例，再按当前目标渲染器的分类顺序执行 first-match 模拟。

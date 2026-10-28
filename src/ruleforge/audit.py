@@ -139,10 +139,13 @@ class ResolutionResult:
         the generated client configuration can enforce the same decision.
         """
 
+        live_rules = frozenset(self.rules)
         candidates = {
             constraint.before
             for constraint in self.constraints
-            if category_sort_key(constraint.before.category)
+            if constraint.before in live_rules
+            and constraint.after in live_rules
+            and category_sort_key(constraint.before.category)
             >= category_sort_key(constraint.after.category)
         }
         return tuple(sorted(candidates, key=rule_sort_key))

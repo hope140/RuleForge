@@ -22,7 +22,6 @@ host,alt7-mtalk.google.com,direct
 host,alt8-mtalk.google.com,direct
 host,redirector.gvt1.com,谷歌服务
 host,login.alibaba.com,全球加速
-host,mtalk.google.com,direct
 host,new.c.mi.com,全球加速
 host,c.mi.com,全球加速
 host-suffix,redirector.offline-maps.gvt1.com,谷歌服务
@@ -40,7 +39,6 @@ host-suffix,qingmail.com,direct
 host-suffix,qingmail.cn,direct
 ip6-cidr,2001:b28:f23c::/48,全球加速,no-resolve
 ip6-cidr,2001:b28:f23d::/48,全球加速,no-resolve
-ip-cidr,23.211.15.99/32,direct
 ip6-cidr,2a0a:f280::/32,全球加速,no-resolve
 ip-cidr,91.108.12.0/22,全球加速,no-resolve
 ip-cidr,91.108.16.0/22,全球加速,no-resolve

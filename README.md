@@ -122,9 +122,11 @@ Quantumult X 与 Mihomo 使用两份独立清单。两份清单保持相同的�
 ```powershell
 python tools/ruleforge.py lint --manifest sources/quantumultx.yaml
 python tools/ruleforge.py lint --manifest sources/mihomo.yaml
-python -m unittest discover -s tests -v
 python tools/ruleforge.py build --manifest sources/quantumultx.yaml --refresh --fail-on-conflict
 python tools/ruleforge.py build --manifest sources/mihomo.yaml --refresh --fail-on-conflict
+python tools/ruleforge.py sync-mihomo-profile
+python tools/ruleforge.py sync-mihomo-profile --check
+python -m unittest discover -s tests -v
 ```
 
 带有 `--refresh` 的构建会访问上游来源。任一来源抓取失败、没有解析出规则、出现解析异常、不受支持的规则类型或仍有未决冲突时，命令会失败。生成过程先写入同盘暂存目录，全部检查和渲染成功后才替换正式输出；失败构建不会覆盖上一次可用结果。
@@ -133,9 +135,9 @@ python tools/ruleforge.py build --manifest sources/mihomo.yaml --refresh --fail-
 
 [Update proxy rules](.github/workflows/update-rules.yml) 每天在 UTC 2 时 17 分运行，对应中国时间 10 时 17 分。也可以从 GitHub Actions 页面手动触发。
 
-工作流先运行回归测试，再依次构建 Quantumult X 与 Mihomo。两个目标全部通过后才会提交生成结果。单纯的生成时间和缓存状态变化不会产生提交。
+工作流先依次构建 Quantumult X 与 Mihomo，再同步 Mihomo 模板的生成路由区块，对刚生成的产物运行回归测试。模板与生成片段必须一致，完整模板和由片段组装的配置均通过内核检查后才会提交生成结果与模板。单纯的生成时间和缓存状态变化不会产生提交。
 
-CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 26 个 Mihomo、26 个 Quantumult X 规则文件、QX 远程过滤器片段和两套优先规则预览，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
+CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 26 个 Mihomo、26 个 Quantumult X 规则文件、QX 远程过滤器及优先规则、Mihomo 路由片段及完整模板和两套优先规则预览，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
 
 ## 使用边界
 

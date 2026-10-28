@@ -27,9 +27,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run regression tests
-        run: python -m unittest discover -s tests -v
-
       - name: Refresh, build and audit Quantumult X rules
         run: >-
           python tools/ruleforge.py build
@@ -43,6 +40,12 @@ jobs:
           --manifest sources/mihomo.yaml
           --refresh
           --fail-on-conflict
+
+      - name: Sync example profile and test freshly generated outputs
+        run: |
+          python tools/ruleforge.py sync-mihomo-profile
+          python tools/ruleforge.py sync-mihomo-profile --check
+          python -m unittest discover -s tests -v
 
       - name: Install pinned Mihomo validator
         shell: bash
@@ -75,6 +78,8 @@ jobs:
           printf '%s\n' 'proxies:' '  - { name: "Validation Node 2", type: http, server: 127.0.0.1, port: 8081 }' \
             > "$home/proxy_providers/provider-2.yaml"
           "$RUNNER_TEMP/mihomo" -t -d "$home" -f "$GITHUB_WORKSPACE/profiles/mihomo/config.example.yaml"
+          python tools/ruleforge.py sync-mihomo-profile --output "$home/generated-profile.yaml"
+          "$RUNNER_TEMP/mihomo" -t -d "$home" -f "$home/generated-profile.yaml"
 
           test -f outputs/mihomo/curation.json
           test -f outputs/quantumult-x/curation.json
@@ -116,7 +121,7 @@ jobs:
             -I'^# Generated at ' \
             -I'^[[:space:]]*"generated_at_utc":' \
             -I'^[[:space:]]*"from_cache":' \
-            -- outputs/quantumult-x outputs/mihomo; then
+            -- outputs/quantumult-x outputs/mihomo profiles/mihomo/config.example.yaml; then
             git restore -- outputs/quantumult-x outputs/mihomo
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
@@ -128,7 +133,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add outputs/quantumult-x outputs/mihomo
+          git add outputs/quantumult-x outputs/mihomo profiles/mihomo/config.example.yaml
           git commit -m "chore: update proxy rules"
           git push
 
@@ -178,6 +183,13 @@ jobs:
             --output "$filter_download" \
             "https://raw.githubusercontent.com/hope140/RuleForge/${revision}/outputs/quantumult-x/filter_remote.safe.conf"
           cmp -- "$filter" "$filter_download"
+
+          for relative in outputs/quantumult-x/priority-overrides.safe.list outputs/mihomo/rules.safe.yaml profiles/mihomo/config.example.yaml; do
+            downloaded="$download_dir/$(basename "$relative")"
+            curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 \
+              --output "$downloaded" "https://raw.githubusercontent.com/hope140/RuleForge/${revision}/$relative"
+            cmp -- "$GITHUB_WORKSPACE/$relative" "$downloaded"
+          done
 
           for target in quantumult-x mihomo; do
             for name in priority-preview.json priority-preview.md; do

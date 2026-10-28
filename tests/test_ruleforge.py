@@ -28,6 +28,7 @@ from ruleforge.runtime import (  # noqa: E402
     simulate_first_match,
     simulate_route,
 )
+from route_helpers import active_routes
 
 
 class RuleForgeTests(unittest.TestCase):
@@ -1280,26 +1281,10 @@ sources:
         self.assertEqual(preview.status_counts["enforced"], 1)
 
     def test_generated_quantumultx_routes_pass_openai_probes(self) -> None:
-        import json
-
-        build = json.loads((ROOT / "outputs" / "quantumult-x" / "build.json").read_text(encoding="utf-8"))
-        rules = []
-        for entry in build["safe_categories"]:
-            source = Source(
-                f"generated-{entry['category']}",
-                "filter",
-                "quantumult-x",
-                entry["category"],
-                entry["policy"],
-                "inline:generated",
-                "quantumult-x",
-            )
-            rules.extend(
-                parse_resource((ROOT / entry["file"]).read_text(encoding="utf-8"), source).rules
-            )
+        rules = active_routes(ROOT, "quantumult-x")
 
         for domain in ("auth.openai.com", "chatgpt.com", "persistent.oaistatic.com", "api.oaistatsig.com"):
-            result = simulate_first_match(rules, RouteProbe(domain=domain))
+            result = simulate_route(rules, RouteProbe(domain=domain))
             self.assertIsNotNone(result)
             self.assertEqual(result.policy, "AI")
 
@@ -1334,30 +1319,14 @@ sources:
         for target in ("quantumult-x", "mihomo"):
             with self.subTest(target=target):
                 root = ROOT / "outputs" / target
-                build = json.loads((root / "build.json").read_text(encoding="utf-8"))
-                rules = []
-                for entry in build["safe_categories"]:
-                    source = Source(
-                        f"generated-{entry['category']}",
-                        "filter",
-                        "quantumult-x" if target == "quantumult-x" else "clash",
-                        entry["category"],
-                        entry["policy"],
-                        "inline:generated",
-                        "quantumult-x" if target == "quantumult-x" else "inline",
-                    )
-                    relative = Path(entry["file"]).parts[2:]
-                    rules.extend(
-                        parse_resource(
-                            (root.joinpath(*relative)).read_text(encoding="utf-8"),
-                            source,
-                        ).rules
-                    )
+                rules = active_routes(ROOT, target)
+                profile_rules = active_routes(ROOT, target, profile=True)
 
                 for domain, policy in expected.items():
-                    result = simulate_first_match(rules, RouteProbe(domain=domain))
-                    self.assertIsNotNone(result, domain)
-                    self.assertEqual(result.policy, policy, domain)
+                    for active in (rules, profile_rules):
+                        result = simulate_route(active, RouteProbe(domain=domain))
+                        self.assertIsNotNone(result, domain)
+                        self.assertEqual(result.policy, policy, domain)
 
                 for domain in (
                     "us-west-2.amazonaws.com",
@@ -1367,7 +1336,7 @@ sources:
                     "www.amazon.com",
                 ):
                     self.assertIsNone(
-                        simulate_first_match(rules, RouteProbe(domain=domain)), domain
+                        simulate_route(rules, RouteProbe(domain=domain)), domain
                     )
 
                 if target == "quantumult-x":

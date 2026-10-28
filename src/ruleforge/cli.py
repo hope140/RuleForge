@@ -25,6 +25,7 @@ from .render import (
     render_mihomo_rule_providers,
     render_mihomo_rules,
     render_quantumultx_priority_overrides,
+    sync_mihomo_profile,
 )
 
 
@@ -341,6 +342,25 @@ def _build(args: argparse.Namespace) -> int:
     return 0
 
 
+def _sync_mihomo_profile(args: argparse.Namespace) -> int:
+    profile_path = Path(args.profile)
+    original = profile_path.read_bytes().decode("utf-8")
+    try:
+        updated = sync_mihomo_profile(original, Path(args.rules).read_text(encoding="utf-8"))
+    except ValueError as exc:
+        raise ManifestError(str(exc)) from exc
+    if args.check:
+        if original != updated:
+            print("error: Mihomo profile routing differs from generated rules; run sync-mihomo-profile", file=sys.stderr)
+            return 1
+        print("Mihomo profile routing matches generated rules")
+        return 0
+    output = Path(args.output) if args.output else profile_path
+    output.write_bytes(updated.encode("utf-8"))
+    print(f"profile={output}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="ruleforge")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -363,6 +383,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     build.add_argument("--fail-on-conflict", action="store_true")
     build.set_defaults(handler=_build)
+
+    sync = subparsers.add_parser("sync-mihomo-profile", help="sync the example profile's managed routing block")
+    sync.add_argument("--profile", default="profiles/mihomo/config.example.yaml")
+    sync.add_argument("--rules", default="outputs/mihomo/rules.safe.yaml")
+    mode = sync.add_mutually_exclusive_group()
+    mode.add_argument("--output", help="write an assembled profile to another file")
+    mode.add_argument("--check", action="store_true", help="fail on drift without writing")
+    sync.set_defaults(handler=_sync_mihomo_profile)
     return parser
 
 

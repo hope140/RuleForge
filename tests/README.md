@@ -11,6 +11,9 @@
 - 规则源失效、返回 HTML 或格式异常时构建应失败或明确报警。
 - 规则源没有解析出任何规则时构建应失败，且抓取、解析或渲染失败不得覆盖已有正式输出。
 - first-match route simulator 应保证 OpenAI、reject/direct 和 direct-exception 探针命中预期策略。
+- 最终产物回归按 QX 远程过滤器、优先规则文件及 Mihomo 路由片段的实际顺序读取规则，同时检查完整模板；不得重新按规则具体程度排序后代替实际命中。离线探针只覆盖明确的域名和 IP 规则，不模拟 GeoSite、GEOIP 数据库、DNS 或系统进程发现。
+- 优先文件只能包含最终保留的规则；`mtalk.google.com` 和 `23.211.15.99/32` 的已淘汰规则不得复活。IPv4/IPv6 内联规则的策略列必须位于 `no-resolve` 等选项之前。
+- Mihomo 模板的生成区块必须与 `rules.safe.yaml` 一致；同步需保留区块外配置和换行，拒绝缺失、重复或反向标记。CI 构建、同步后再运行回归和内核检查。
 - 优先规则预览应过滤已淘汰规则，为存活重叠生成域名或 CIDR 样例，并把第三条规则干扰留在待审阅状态。
 - Apple 服务统一契约应把 Apple Intelligence、iCloud 和 Apple 内容端点归入苹果服务，同时保留 reject 与 direct-exception 的安全优先级。
 - GitHub Copilot、Grok、Bing/Copilot、gvt1、Netflix/Apple 共享基础设施、Prime Video 和 Trae/MarsCode 的业务边界应通过生成后的路由样例复核。
