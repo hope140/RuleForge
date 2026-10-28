@@ -48,3 +48,5 @@
 单独的 `filter_remote.safe.conf` 输出只是 `[filter_remote]` 片段，不包含 `[policy]`、节点订阅、最终规则、DNS、重写或 MITM。导入前必须确认本地存在上面列出的策略名；`force-policy` 只对实际命中的远程资源生效，未命中的域名仍由本地其他规则和最终策略处理。QX 没有 Mihomo 的 `GEOSITE,openai` 兜底，也没有 Mihomo 的 `GEOSITE,cn` 域名兜底，因此 `oaistatsig.com` 已作为 QX 专用补充规则登记。QX 规则文件也不能声明订阅节点的 UDP 能力；完整模板默认使用 `fallback_udp_policy = reject`，使用地区敏感服务时仍应在 QX 客户端确认节点支持 UDP，或按客户端能力关闭 QUIC/HTTP3。
 
 节点订阅、服务器标签、mitm 配置和本地证书不进入公共生成模板。
+
+微博重写使用本目录的 `weibo.snippet`，基于 fmz200/wool_scripts 的快照修改三条远程 `echo-response` 为 `reject-dict`，保留原匹配条件。该快照不会自动跟随上游更新；引用的外部脚本仍按原地址加载。来源、作者与许可见文件头及 `LICENSE.weibo`。现有配置需将 `[rewrite_remote]` 中的微博地址替换为模板中的地址，更新远程重写后生效。
