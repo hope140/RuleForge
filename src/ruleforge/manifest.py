@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 from .model import Source
 
@@ -21,6 +22,7 @@ _ALLOWED_SOURCE_FIELDS = {
     "parser",
     "enabled",
     "notes",
+    "resolver",
 }
 _ALLOWED_TARGETS = {"quantumult-x", "mihomo"}
 _ALLOWED_COMBINATIONS = {
@@ -147,6 +149,17 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
             raise ManifestError(f"source {index} field enabled must be a boolean")
         if "notes" in item and type(item["notes"]) is not str:
             raise ManifestError(f"source {index} field notes must be a string")
+        resolver = item.get("resolver", "")
+        if type(resolver) is not str or resolver not in {"", "magicrule"}:
+            raise ManifestError(f"source {index} has unsupported resolver: {resolver!r}")
+        if resolver == "magicrule":
+            client = "QuantumultX" if data["target"] == "quantumult-x" else "Mihomo"
+            parts = urlsplit(item["url"])
+            expected = ("quantumult-x", "quantumult-x") if client == "QuantumultX" else ("clash", "clash-classical")
+            if (item["kind"] != "filter" or (item["format"], item["parser"]) != expected
+                    or parts.scheme != "https" or parts.netloc != "magicrule.pages.dev"
+                    or parts.path != f"/data/index/{client}.json" or not parts.fragment or parts.query):
+                raise ManifestError(f"source {index} has invalid MagicRule index URL or format")
         combination = (item["kind"], item["format"], item["parser"])
         if combination not in _ALLOWED_COMBINATIONS:
             raise ManifestError(
@@ -174,6 +187,7 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
                 parser=item["parser"],
                 enabled=item["enabled"],
                 notes=item.get("notes", ""),
+                resolver=resolver,
             )
         )
     return data, sources

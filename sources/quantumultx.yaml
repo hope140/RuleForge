@@ -20,57 +20,43 @@ sources:
     parser: surge
     enabled: true
 
-  - id: blackmatrix-openai
+  - id: magicrule-openai
     kind: filter
     format: quantumult-x
     category: ai
     policy: AI
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#OpenAI
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-claude
+  - id: magicrule-gemini
     kind: filter
     format: quantumult-x
     category: ai
     policy: AI
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Gemini
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-gemini
+  - id: magicrule-copilot
     kind: filter
     format: quantumult-x
     category: ai
     policy: AI
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Copilot
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-copilot
+  - id: magicrule-anthropic
     kind: filter
     format: quantumult-x
     category: ai
     policy: AI
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Copilot/Copilot.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-anthropic
-    kind: filter
-    format: quantumult-x
-    category: ai
-    policy: AI
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Anthropic/Anthropic.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-civitai
-    kind: filter
-    format: quantumult-x
-    category: ai
-    policy: AI
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Civitai/Civitai.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Anthropic
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
@@ -104,381 +90,393 @@ sources:
     enabled: true
     notes: QX 没有 Mihomo 的 GEOSITE,openai 兜底，补充 OpenAI Statsig telemetry 根域。
 
-  - id: blackmatrix-apple
+  - id: magicrule-apple
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Apple
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-apple-id
+  - id: magicrule-apple-media
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleID/AppleID.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMedia
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-apple-mail
+  - id: magicrule-apple-music
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMail/AppleMail.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMusic
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-apple-media
+  - id: magicrule-apple-news
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMedia/AppleMedia.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AppleNews
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-apple-music
+  - id: magicrule-apple-proxy
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMusic/AppleMusic.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AppleProxy
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-apple-news
+  - id: magicrule-apple-tv
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleNews/AppleNews.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AppleTV
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-apple-proxy
+  - id: magicrule-appstore
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleProxy/AppleProxy.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AppStore
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-apple-tv
-    kind: filter
-    format: quantumult-x
-    category: apple
-    policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleTV/AppleTV.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-appstore
-    kind: filter
-    format: quantumult-x
-    category: apple
-    policy: 苹果服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppStore/AppStore.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-youtube
+  - id: magicrule-youtube
     kind: filter
     format: quantumult-x
     category: youtube
     policy: YouTube
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#YouTube
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-netflix
+  - id: magicrule-netflix
     kind: filter
     format: quantumult-x
     category: netflix
     policy: Netflix
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Netflix
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-tiktok
+  - id: magicrule-tiktok
     kind: filter
     format: quantumult-x
     category: tiktok
     policy: 海外抖音
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#TikTok
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-google-voice
+  - id: magicrule-google-voice
     kind: filter
     format: quantumult-x
     category: google-voice
     policy: 美国节点
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleVoice/GoogleVoice.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleVoice
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-google
+  - id: magicrule-google
     kind: filter
     format: quantumult-x
     category: google
     policy: 谷歌服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Google
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-google-drive
+  - id: magicrule-google-earth
     kind: filter
     format: quantumult-x
     category: google
     policy: 谷歌服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleDrive/GoogleDrive.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleEarth
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-google-earth
-    kind: filter
-    format: quantumult-x
-    category: google
-    policy: 谷歌服务
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleEarth/GoogleEarth.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-microsoft
+  - id: magicrule-microsoft
     kind: filter
     format: quantumult-x
     category: microsoft
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Microsoft
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-onedrive
+  - id: magicrule-onedrive
     kind: filter
     format: quantumult-x
     category: cloud
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OneDrive/OneDrive.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#OneDrive
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-dropbox
+  - id: magicrule-dropbox
     kind: filter
     format: quantumult-x
     category: cloud
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Dropbox/Dropbox.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Dropbox
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-mega
+  - id: magicrule-mega
     kind: filter
     format: quantumult-x
     category: cloud
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MEGA/MEGA.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#MEGA
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-bing
+  - id: magicrule-bing
     kind: filter
     format: quantumult-x
     category: microsoft
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bing/Bing.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Bing
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-github
+  - id: magicrule-github
     kind: filter
     format: quantumult-x
     category: github
     policy: GitHub
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#GitHub
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-spotify
+  - id: magicrule-spotify
     kind: filter
     format: quantumult-x
     category: spotify
     policy: Spotify
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Spotify
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-telegram
+  - id: magicrule-telegram
     kind: filter
     format: quantumult-x
     category: telegram
     policy: 电报代理
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Telegram
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-twitter
+  - id: magicrule-social-twitter
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitter/Twitter.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Twitter
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-facebook
+  - id: magicrule-social-facebook
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Facebook/Facebook.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Facebook
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-instagram
+  - id: magicrule-social-instagram
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Instagram
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-whatsapp
+  - id: magicrule-social-whatsapp
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Whatsapp/Whatsapp.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Whatsapp
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-line
+  - id: magicrule-social-line
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Line/Line.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Line
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-kakaotalk
+  - id: magicrule-social-kakaotalk
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KakaoTalk/KakaoTalk.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#KakaoTalk
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-discord
+  - id: magicrule-social-discord
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Discord/Discord.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Discord
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-reddit
+  - id: magicrule-social-reddit
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Reddit/Reddit.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Reddit
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-social-threads
+  - id: magicrule-social-threads
     kind: filter
     format: quantumult-x
     category: social
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Threads/Threads.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Threads
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-gitlab
+  - id: magicrule-developer-gitlab
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitLab/GitLab.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#GitLab
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-docker
+  - id: magicrule-developer-docker
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Docker/Docker.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Docker
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-figma
+  - id: magicrule-developer-figma
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Figma/Figma.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Figma
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-notion
+  - id: magicrule-developer-notion
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Notion/Notion.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Notion
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-npmjs
+  - id: magicrule-developer-npmjs
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Npmjs/Npmjs.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#NPM
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-jetbrains
+  - id: magicrule-developer-jetbrains
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Jetbrains/Jetbrains.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Jetbrains
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-sourceforge
+  - id: magicrule-developer-sourceforge
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/SourceForge/SourceForge.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#SourceForge
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-vercel
+  - id: magicrule-developer-vercel
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Vercel/Vercel.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Vercel
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-developer-slack
+  - id: magicrule-developer-slack
     kind: filter
     format: quantumult-x
     category: developer
     policy: 全球加速
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Slack/Slack.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Slack
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
@@ -500,327 +498,333 @@ sources:
     parser: surge
     enabled: true
 
-  - id: blackmatrix-global-media-disney
+  - id: magicrule-global-media-disney
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Disney
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-hbo
+  - id: magicrule-global-media-hbo
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/HBO/HBO.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#HBO
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-hulu
+  - id: magicrule-global-media-hulu
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hulu/Hulu.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Hulu
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-amazon-prime-video
+  - id: magicrule-global-media-amazon-prime-video
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AmazonPrimeVideo/AmazonPrimeVideo.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AmazonPrimeVideo
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-prime-video
+  - id: magicrule-global-media-prime-video
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/PrimeVideo/PrimeVideo.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#PrimeVideo
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-twitch
+  - id: magicrule-global-media-twitch
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitch/Twitch.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Twitch
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-abema-tv
+  - id: magicrule-global-media-abema-tv
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AbemaTV/AbemaTV.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AbemaTV
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-bilibili-intl
+  - id: magicrule-global-media-iqiyi-intl
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBiliIntl/BiliBiliIntl.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYIIntl
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-iqiyi-intl
+  - id: magicrule-global-media-naver-tv
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYIIntl/iQIYIIntl.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#NaverTV
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-naver-tv
+  - id: magicrule-global-media-tvb
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/NaverTV/NaverTV.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#TVB
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-tvb
+  - id: magicrule-global-media-asian
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TVB/TVB.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AsianMedia
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-asian
+  - id: magicrule-global-media-joox
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AsianMedia/AsianMedia.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#JOOX
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-joox
+  - id: magicrule-global-media-kkbox
     kind: filter
     format: quantumult-x
     category: global-media
     policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JOOX/JOOX.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#KKBOX
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-global-media-kkbox
-    kind: filter
-    format: quantumult-x
-    category: global-media
-    policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KKBOX/KKBOX.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-global-media-paramount-plus
-    kind: filter
-    format: quantumult-x
-    category: global-media
-    policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ParamountPlus/ParamountPlus.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-global-media-peacock
-    kind: filter
-    format: quantumult-x
-    category: global-media
-    policy: 国际媒体
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Peacock/Peacock.list
-    parser: quantumult-x
-    enabled: true
-
-  - id: blackmatrix-youtube-music
+  - id: magicrule-youtube-music
     kind: filter
     format: quantumult-x
     category: youtube
     policy: YouTube
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTubeMusic/YouTubeMusic.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#YouTubeMusic
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-streaming-bilibili
+  - id: magicrule-china-streaming-bilibili
     kind: filter
     format: quantumult-x
     category: china-streaming
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#BiliBili
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-streaming-youku
+  - id: magicrule-china-streaming-youku
     kind: filter
     format: quantumult-x
     category: china-streaming
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Youku/Youku.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Youku
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-streaming-iqiyi
+  - id: magicrule-china-streaming-iqiyi
     kind: filter
     format: quantumult-x
     category: china-streaming
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYI/iQIYI.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYI
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-streaming-acfun
+  - id: magicrule-china-streaming-acfun
     kind: filter
     format: quantumult-x
     category: china-streaming
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AcFun/AcFun.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AcFun
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-alibaba
+  - id: magicrule-china-services-alibaba
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Alibaba/Alibaba.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Alibaba
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-baidu
+  - id: magicrule-china-services-baidu
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Baidu/Baidu.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Baidu
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-tencent
+  - id: magicrule-china-services-tencent
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Tencent
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-xiaomi
+  - id: magicrule-china-services-xiaomi
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/XiaoMi/XiaoMi.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#XiaoMi
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-jingdong
+  - id: magicrule-china-services-jingdong
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#JingDong
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-pinduoduo
+  - id: magicrule-china-services-pinduoduo
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pinduoduo/Pinduoduo.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Pinduoduo
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-meituan
+  - id: magicrule-china-services-meituan
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#MeiTuan
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-didi
+  - id: magicrule-china-services-didi
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DiDi/DiDi.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#DiDi
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-12306
+  - id: magicrule-china-services-12306
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/12306/12306.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#12306
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-sina
+  - id: magicrule-china-services-sina
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Sina/Sina.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Sina
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-weibo
+  - id: magicrule-china-services-weibo
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Weibo/Weibo.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Weibo
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-zhihu
+  - id: magicrule-china-services-zhihu
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Zhihu/Zhihu.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Zhihu
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-china-services-douban
+  - id: magicrule-china-services-douban
     kind: filter
     format: quantumult-x
     category: china-services
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DouBan/DouBan.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#DouBan
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-alipay
+  - id: magicrule-alipay
     kind: filter
     format: quantumult-x
     category: alipay
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#AliPay
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
-  - id: blackmatrix-wechat
+  - id: magicrule-wechat
     kind: filter
     format: quantumult-x
     category: wechat
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#WeChat
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
@@ -833,12 +837,13 @@ sources:
     parser: surge
     enabled: true
 
-  - id: blackmatrix-direct
+  - id: magicrule-direct
     kind: filter
     format: quantumult-x
     category: china-direct
     policy: direct
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Direct
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
 
@@ -868,4 +873,473 @@ sources:
     url: "inline:HOST,cma2.itunes.apple.com"
     parser: quantumult-x
     enabled: true
+
+  - id: local-tvb-tracking
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST,tvbtracking.azurewebsites.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve the existing dedicated TVB endpoint over the shared Azure suffix.
     notes: 补充 Apple 的精确 cma2 主机，避免 HOST,cma 规则误以为覆盖了 cma2。
+
+  - id: local-claude-1
+    kind: inline
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: "inline:HOST,cdn.usefathom.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for Claude; preserve existing service coverage."
+
+  - id: local-claude-2
+    kind: inline
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: "inline:HOST-SUFFIX,anthropic.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for Claude; preserve existing service coverage."
+
+  - id: local-claude-3
+    kind: inline
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: "inline:HOST-SUFFIX,claude.ai"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for Claude; preserve existing service coverage."
+
+  - id: local-civitai-1
+    kind: inline
+    format: quantumult-x
+    category: ai
+    policy: AI
+    url: "inline:HOST-SUFFIX,civitai.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for Civitai; preserve existing service coverage."
+
+  - id: local-apple-id-1
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,appleid.apple.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for AppleID; preserve existing service coverage."
+
+  - id: local-apple-id-2
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,appleid.cdn-apple.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for AppleID; preserve existing service coverage."
+
+  - id: local-apple-id-3
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,gsa.apple.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for AppleID; preserve existing service coverage."
+
+  - id: local-apple-id-4
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,idmsa.apple.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for AppleID; preserve existing service coverage."
+
+  - id: local-apple-mail-1
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST-SUFFIX,mail.icloud.com.cn"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for AppleMail; preserve existing service coverage."
+
+  - id: local-apple-mail-2
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST-SUFFIX,mail.me.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for AppleMail; preserve existing service coverage."
+
+  - id: local-google-drive-1
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:HOST,www.googleapis.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-google-drive-2
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:HOST-SUFFIX,docs.google.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-google-drive-3
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:HOST-SUFFIX,drive.google.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-google-drive-4
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:HOST-SUFFIX,googledrive.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-google-drive-5
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:HOST-SUFFIX,googleusercontent.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-google-drive-6
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-google-drive-7
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:USER-AGENT,*com.google.Drive*"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-google-drive-8
+    kind: inline
+    format: quantumult-x
+    category: google
+    policy: 谷歌服务
+    url: "inline:USER-AGENT,Google.Drive*"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for GoogleDrive; preserve existing service coverage."
+
+  - id: local-global-media-bilibili-intl-1
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,bilibili.tv"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for BiliBiliIntl; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-1
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST,cbsi.live.ott.irdeto.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-2
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST,cbsplaylistserver.aws.syncbak.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-3
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST,cbsservice.aws.syncbak.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-4
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST,link.theplatform.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-5
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,cbsaavideo.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-6
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,cbsi.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-7
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,cbsivideo.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-8
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,paramountplus.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-9
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,pplusstatic.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-paramount-plus-10
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:USER-AGENT,PPlus*"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for ParamountPlus; preserve existing service coverage."
+
+  - id: local-global-media-peacock-1
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,peacocktv.com"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for Peacock; preserve existing service coverage."
+  - id: local-global-media-peacock-2
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:USER-AGENT,PeacockMobile*"
+    parser: quantumult-x
+    enabled: true
+    notes: "Migration supplement for Peacock; preserve existing service coverage."
+
+  - id: local-alias-apple-events-akamaized-net
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,apple-events.akamaized.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-cdn-apple-mapkit-com
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST-SUFFIX,cdn-apple-mapkit.com"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-gsp4-cn-ls-apple-com-edgekey-net
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,gsp4-cn.ls.apple.com.edgekey.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-lookup-api-apple-com-edgekey-net
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,lookup-api.apple.com.edgekey.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-www-apple-com-edgekey-net
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,www.apple.com.edgekey.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-e16991-b-akamaiedge-net
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,e16991.b.akamaiedge.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-ls-apple-com-edgesuite-net
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST-SUFFIX,ls.apple.com.edgesuite.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-e13252-dscg-akamaiedge-net
+    kind: inline
+    format: quantumult-x
+    category: netflix
+    policy: Netflix
+    url: "inline:HOST,e13252.dscg.akamaiedge.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-h-netflix-online-metrix-net
+    kind: inline
+    format: quantumult-x
+    category: netflix
+    policy: Netflix
+    url: "inline:HOST,h-netflix.online-metrix.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-api-imem-app
+    kind: inline
+    format: quantumult-x
+    category: telegram
+    policy: 电报代理
+    url: "inline:HOST,api.imem.app"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-api-swiftgram-app
+    kind: inline
+    format: quantumult-x
+    category: telegram
+    policy: 电报代理
+    url: "inline:HOST,api.swiftgram.app"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-mbrx-app
+    kind: inline
+    format: quantumult-x
+    category: telegram
+    policy: 电报代理
+    url: "inline:HOST-SUFFIX,mbrx.app"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-i-joox-com
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,i-joox.com"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-sanook-com
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST-SUFFIX,sanook.com"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.
+
+  - id: local-alias-live-mediashield-ava-hulustream-com-akamaized-net
+    kind: inline
+    format: quantumult-x
+    category: global-media
+    policy: 国际媒体
+    url: "inline:HOST,live-mediashield-ava-hulustream-com.akamaized.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Preserve a dedicated service alias present before the upstream migration.

@@ -107,6 +107,7 @@ def _build(args: argparse.Namespace) -> int:
     parse_issues = []
     fetch_errors = []
     source_metadata = []
+    metadata_cache: dict[str, bytes] = {}
     for source in sources:
         if not source.enabled:
             continue
@@ -117,6 +118,7 @@ def _build(args: argparse.Namespace) -> int:
                 timeout=args.timeout,
                 offline=args.offline,
                 refresh=args.refresh,
+                metadata_cache=metadata_cache,
             )
         except FetchError as exc:
             fetch_errors.append(str(exc))
@@ -137,6 +139,7 @@ def _build(args: argparse.Namespace) -> int:
             {
                 "id": source.id,
                 "url": source.url,
+                "resolved_url": resource.resolved_url or source.url,
                 "sha256": resource.sha256,
                 "from_cache": resource.from_cache,
                 "rule_count": len(result.rules),
@@ -283,6 +286,7 @@ def _build(args: argparse.Namespace) -> int:
                 "conflict_count": len(audit.conflicts),
                 "resolved_conflict_count": len(resolution.preferred_decisions),
                 "blackmatrix_preferred_conflict_count": len(resolution.blackmatrix_decisions),
+                "source_preferred_conflict_count": len(resolution.source_decisions),
                 "direct_preferred_conflict_count": len(resolution.direct_decisions),
                 "specific_preferred_conflict_count": len(resolution.specific_decisions),
                 "category_preferred_conflict_count": len(resolution.category_decisions),
@@ -323,7 +327,7 @@ def _build(args: argparse.Namespace) -> int:
     )
     print(
         f"duplicates={len(audit.duplicates)} conflicts={len(audit.conflicts)} "
-        f"blackmatrix_preferred={len(resolution.blackmatrix_decisions)} "
+        f"source_preferred={len(resolution.source_decisions)} "
         f"direct_preferred={len(resolution.direct_decisions)} "
         f"specific_preferred={len(resolution.specific_decisions)} "
         f"category_preferred={len(resolution.category_decisions)} "

@@ -104,7 +104,9 @@ Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域�
 
 ## 规则来源
 
-当前主要来源为 [Blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)，并使用 [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo) 与 [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 补充和交叉检查。
+当前主要来源为 [MagicRule](https://github.com/magical404/MagicRule)，并使用 [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo) 与 [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 补充和交叉检查。每个客户端接入 77 个 MagicRule 分类，刷新时通过客户端索引和分类 manifest 解析当前规则文件并核验上游 SHA256，避免固定内容哈希地址后停止更新。
+
+原 Blackmatrix 远程来源已经由 MagicRule 接替。Npmjs 对应新站 NPM；Claude、Civitai、Apple ID/邮件、Google Drive、BiliBili 国际版、Paramount+ 和 Peacock 的既有规则以可审阅的本地补充保留，不再从旧仓库下载。新站 Copilot 分类包含其他 AI 厂商，因此只纳入明确的 Copilot 服务端点，其余服务继续由各自来源负责。分类映射、补充规则和兼容处理见[迁移说明](docs/magicrule-migration.md)。
 
 Quantumult X 与 Mihomo 使用两份独立清单。两份清单保持相同的业务分类和策略边界，各自采用适合目标客户端的上游格式，生成结果不会互相作为输入。QX 没有 Mihomo 的 `GEOSITE,openai` 兜底，因此额外登记了 `oaistatsig.com` 的 QX 补充规则。
 
@@ -152,6 +154,7 @@ CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内
 
 感谢以下公开规则项目及其维护者。
 
-- [Blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
+- [MagicRule](https://github.com/magical404/MagicRule)
+- [Blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)（原规则来源，部分本地补充保留其贡献）
 - [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo)
 - [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)

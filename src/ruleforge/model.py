@@ -61,6 +61,7 @@ class Source:
     parser: str
     enabled: bool = True
     notes: str = ""
+    resolver: str = ""
 
 
 @dataclass(frozen=True)

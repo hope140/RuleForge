@@ -106,6 +106,10 @@ class ResolutionResult:
         return tuple(item for item in self.decisions if item.decision == "prefer-blackmatrix")
 
     @property
+    def source_decisions(self) -> tuple[ConflictDecision, ...]:
+        return tuple(item for item in self.decisions if item.decision in {"prefer-source", "prefer-blackmatrix"})
+
+    @property
     def direct_decisions(self) -> tuple[ConflictDecision, ...]:
         return tuple(item for item in self.decisions if item.decision == "prefer-direct")
 
@@ -164,6 +168,7 @@ class ResolutionResult:
             "rejected_rule_count": len(self.rejected_rules),
             "resolved_conflict_count": len(self.preferred_decisions),
             "blackmatrix_preferred_conflict_count": len(self.blackmatrix_decisions),
+            "source_preferred_conflict_count": len(self.source_decisions),
             "direct_preferred_conflict_count": len(self.direct_decisions),
             "specific_preferred_conflict_count": len(self.specific_decisions),
             "category_preferred_conflict_count": len(self.category_decisions),
@@ -183,6 +188,7 @@ class ResolutionResult:
             "rejected_rule_count": len(self.rejected_rules),
             "resolved_conflict_count": len(self.preferred_decisions),
             "blackmatrix_preferred_conflict_count": len(self.blackmatrix_decisions),
+            "source_preferred_conflict_count": len(self.source_decisions),
             "direct_preferred_conflict_count": len(self.direct_decisions),
             "specific_preferred_conflict_count": len(self.specific_decisions),
             "category_preferred_conflict_count": len(self.category_decisions),
@@ -370,11 +376,21 @@ def _is_blackmatrix(rule: Rule) -> bool:
     return rule.source_id.lower().startswith("blackmatrix")
 
 
+def _is_preferred_source(rule: Rule) -> bool:
+    return rule.source_id.lower().startswith("magicrule-") or _is_blackmatrix(rule)
+
+
 def _is_policy(rule: Rule, name: str) -> bool:
     return rule.policy.casefold() == name.casefold()
 
 
 _CATEGORY_PREFERENCES: dict[frozenset[str], str] = {
+    # Dedicated GitHub and Microsoft services keep their existing strategies
+    # when the new upstream includes them in an umbrella Microsoft/direct set.
+    frozenset(("github", "microsoft")): "github",
+    frozenset(("ai", "microsoft")): "ai",
+    frozenset(("microsoft", "china-direct")): "microsoft",
+    frozenset(("china-media", "china-streaming")): "china-media",
     frozenset(("google-voice", "google")): "google-voice",
     frozenset(("apple", "google")): "google",
     frozenset(("ai", "google")): "ai",
@@ -406,6 +422,13 @@ _CATEGORY_PREFERENCES: dict[frozenset[str], str] = {
 }
 
 _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
+    (frozenset(("ai", "developer")), "grazie.aws.intellij.net"): "ai",
+    (frozenset(("ai", "github")), "copilot-proxy.githubusercontent.com"): "ai",
+    (frozenset(("ai", "github")), "copilot-telemetry-service.githubusercontent.com"): "github",
+    (frozenset(("ai", "github")), "copilot-telemetry.githubusercontent.com"): "github",
+    (frozenset(("ai", "github")), "copilot-workspace.githubnext.com"): "github",
+    (frozenset(("google", "microsoft")), "tenor.com"): "microsoft",
+    (frozenset(("global-media", "social")), "linetv.tw"): "global-media",
     (frozenset(("ai", "proxy")), "perplexity.ai"): "ai",
     (frozenset(("ai", "proxy")), "meta.ai"): "ai",
     (frozenset(("ai", "proxy")), "grok.com"): "ai",
@@ -591,17 +614,17 @@ def _security_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
 
 def _source_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
     # Source trust is only meaningful after the business category is known.
-    # In particular, Blackmatrix must never decide whether a selector belongs
+    # In particular, upstream source trust must never decide whether a selector belongs
     # to AI, GitHub, Social, Google or another business category.
     if conflict.left.category != conflict.right.category:
         return None
-    left_is_preferred = _is_blackmatrix(conflict.left)
-    right_is_preferred = _is_blackmatrix(conflict.right)
+    left_is_preferred = _is_preferred_source(conflict.left)
+    right_is_preferred = _is_preferred_source(conflict.right)
     if left_is_preferred == right_is_preferred:
         return None
     winner = conflict.left if left_is_preferred else conflict.right
     loser = conflict.right if left_is_preferred else conflict.left
-    return winner, loser, "Blackmatrix is the preferred source within this business category."
+    return winner, loser, "The primary upstream is preferred within this business category."
 
 
 def _fallback_order(conflict: Conflict) -> tuple[Rule, Rule, str] | None:
@@ -660,7 +683,8 @@ def _exact_conflict_rule(conflict: Conflict) -> tuple[Rule, Rule, str, str] | No
     source = _source_order(conflict)
     if source is not None:
         winner, loser, reason = source
-        return winner, loser, "prefer-blackmatrix", reason
+        decision = "prefer-blackmatrix" if _is_blackmatrix(winner) else "prefer-source"
+        return winner, loser, decision, reason
     return None
 
 

@@ -269,7 +269,19 @@ rules:
   - RULE-SET,reject,REJECT
   - RULE-SET,privacy,REJECT
   - DOMAIN,api-glb-sea.smoot.apple.com,苹果服务
+  - DOMAIN,guzzoni.smoot.apple.com,苹果服务
+  - DOMAIN-SUFFIX,guzzoni.smoot.apple.com,苹果服务
+  - DOMAIN-SUFFIX,apple.com,苹果服务
+  - DOMAIN,redirector.offline-maps.gvt1.com,谷歌服务
+  - DOMAIN,s3-ap-southeast-1.amazonaws.com,全球加速
+  - DOMAIN,googletraveladservices-cn.com,谷歌服务
   - DOMAIN,tvbtracking.azurewebsites.net,国际媒体
+  - DOMAIN,res-h3.public.cdn.office.net,DIRECT
+  - DOMAIN,merchant-rating.alibaba.com,全球加速
+  - DOMAIN,googletraveladservices.com,谷歌服务
+  - DOMAIN,redirector.gcpcdn.gvt1.com,谷歌服务
+  - DOMAIN,dg-meta.video.google.com,谷歌服务
+  - DOMAIN,redirector.snap.gvt1.com,谷歌服务
   - DOMAIN,alt1-mtalk.google.com,DIRECT
   - DOMAIN,alt2-mtalk.google.com,DIRECT
   - DOMAIN,alt3-mtalk.google.com,DIRECT
@@ -278,31 +290,77 @@ rules:
   - DOMAIN,alt6-mtalk.google.com,DIRECT
   - DOMAIN,alt7-mtalk.google.com,DIRECT
   - DOMAIN,alt8-mtalk.google.com,DIRECT
+  - DOMAIN,beacons.gcp.gvt2.com,谷歌服务
+  - DOMAIN,res-1.cdn.office.net,DIRECT
+  - DOMAIN,res-2.cdn.office.net,DIRECT
+  - DOMAIN,redirector.gvt1.com,谷歌服务
+  - DOMAIN,res.cdn.office.net,DIRECT
+  - DOMAIN,beacons2.gvt2.com,谷歌服务
+  - DOMAIN,beacons3.gvt2.com,谷歌服务
+  - DOMAIN,login.alibaba.com,全球加速
+  - DOMAIN,beacons.gvt2.com,谷歌服务
   - DOMAIN,mtalk.google.com,DIRECT
   - DOMAIN,new.c.mi.com,全球加速
   - DOMAIN,c.mi.com,全球加速
+  - DOMAIN-SUFFIX,b.c2r.ts.cdn.office.net,DIRECT
+  - DOMAIN-SUFFIX,f.c2r.ts.cdn.office.net,DIRECT
+  - DOMAIN-SUFFIX,storecorefulfillment.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,mpnbenefitsrtluat.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,azuremigratetest.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,azurestackhubuat.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,collaborateppe.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,mpnbenefitsrtl.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,azurestackhub.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,dreamsparkuat.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,azuremigrate.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,itacademyuat.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,officemktuat.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,collaborate.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,mpnbenefits.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,dreamspark.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,msdprod-ad.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,itacademy.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,msproduct.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,oemsocuat.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,officemkt.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,osrelease.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,cbdstest.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,software.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,surface.downloads.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,vlportal.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,surface.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,lexuat.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,oemsoc.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,vscode.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,windbg.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,volic.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,msdn.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,myvs.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,lex.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,mbs.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,rsm.download.prss.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,vz.download.prss.microsoft.com,DIRECT
   - DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com,谷歌服务
   - DOMAIN-SUFFIX,redirector.gcpcdn.gvt1.com,谷歌服务
+  - DOMAIN-SUFFIX,dg-meta.video.google.com,谷歌服务
   - DOMAIN-SUFFIX,redirector.snap.gvt1.com,谷歌服务
   - DOMAIN-SUFFIX,hbo.com.edgesuite.net,国际媒体
+  - DOMAIN-SUFFIX,beacons.gcp.gvt2.com,谷歌服务
+  - DOMAIN-SUFFIX,ctldl.windowsupdate.com,DIRECT
+  - DOMAIN-SUFFIX,officecdn.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,storeedge.microsoft.com,DIRECT
   - DOMAIN-SUFFIX,abcnews.edgesuite.net,国际媒体
+  - DOMAIN-SUFFIX,cn.windowssearch.com,DIRECT
   - DOMAIN-SUFFIX,redirector.gvt1.com,谷歌服务
   - DOMAIN-SUFFIX,cdn.optimizely.com,国际媒体
   - DOMAIN-SUFFIX,beacons2.gvt2.com,谷歌服务
   - DOMAIN-SUFFIX,beacons3.gvt2.com,谷歌服务
+  - DOMAIN-SUFFIX,sdx.microsoft.com,DIRECT
   - DOMAIN-SUFFIX,beacons.gvt2.com,谷歌服务
   - DOMAIN-SUFFIX,gcp.gvt2.com,谷歌服务
+  - DOMAIN-SUFFIX,instanttelegram.com,全球加速
   - DOMAIN-SUFFIX,qingmail.com,DIRECT
   - DOMAIN-SUFFIX,qingmail.cn,DIRECT
-  - IP-CIDR6,2001:b28:f23c::/48,全球加速,no-resolve
-  - IP-CIDR6,2001:b28:f23d::/48,全球加速,no-resolve
-  - IP-CIDR6,2a0a:f280::/32,全球加速,no-resolve
-  - IP-CIDR,91.108.12.0/22,全球加速,no-resolve
-  - IP-CIDR,91.108.16.0/22,全球加速,no-resolve
-  - IP-CIDR,91.108.20.0/22,全球加速,no-resolve
-  - IP-CIDR,91.108.4.0/22,全球加速,no-resolve
-  - IP-CIDR,91.108.56.0/22,全球加速,no-resolve
-  - IP-CIDR,91.108.8.0/22,全球加速,no-resolve
   - RULE-SET,ai,AI
   - GEOSITE,openai,AI
   - RULE-SET,google-voice,美国节点

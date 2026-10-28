@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
+import ipaddress
 from pathlib import Path
 from typing import Iterable
 
 from .model import Rule
+from .shared_cloud import NETFLIX_SHARED_AWS_CIDRS
 
 
 # These are shared SaaS/cloud surfaces found in third-party AI lists.  A root
@@ -21,6 +23,7 @@ SHARED_INFRA_SUFFIXES = frozenset(
         "segment.io",
         "sentry.io",
         "stripe.com",
+        "statsigapi.net",
     }
 )
 
@@ -87,6 +90,8 @@ CATEGORY_RULE_EXCLUSIONS = frozenset(
         ("netflix", "HOST-SUFFIX", "us-west-2.amazonaws.com"),
         ("apple", "HOST-SUFFIX", "digicert.com"),
         ("global-media", "HOST", "www.amazon.com"),
+        ("ai", "HOST", "storage.googleapis.com"),
+        ("ai", "HOST-SUFFIX", "storage.googleapis.com"),
     }
 )
 
@@ -106,6 +111,20 @@ BUSINESS_RULE_EXCLUSIONS = frozenset(
 # Keep the source manifests stable while correcting a few high-confidence
 # business ownership exceptions from upstream classifications.
 CATEGORY_RECLASSIFICATIONS = {
+    # Reclassify before exact deduplication: Microsoft and NPM use the same
+    # policy, so deduplication would otherwise discard the developer owner.
+    **{
+        (category, kind, value): ("developer", "全球加速", "package-registry-service")
+        for category in ("microsoft", "github")
+        for kind in ("HOST", "HOST-SUFFIX")
+        for value in ("npm.community", "npmjs.com", "npmjs.org")
+    },
+    ("ai", "HOST", "copilotprodattachments.blob.core.windows.net"): (
+        "microsoft", "全球加速", "microsoft-attachment-service",
+    ),
+    ("github", "HOST", "copilotprodattachments.blob.core.windows.net"): (
+        "microsoft", "全球加速", "microsoft-attachment-service",
+    ),
     ("tiktok", "HOST-SUFFIX", "trae.ai"): ("ai", "AI", "ai-tool"),
     ("tiktok", "HOST-SUFFIX", "marscode.com"): ("ai", "AI", "ai-tool"),
     ("proxy", "HOST", "amp-api.podcasts.apple.com"): (
@@ -131,6 +150,36 @@ _BROAD_CATEGORY_RISK = frozenset(
 # WeChat-derived entry force-DIRECTed api.assrt.net and other tenants).
 SHARED_INFRA_ASNS = frozenset({"14061", "20473", "132203"})
 
+# MagicRule's Copilot list aggregates unrelated AI vendors.  This source is
+# registered for Copilot, not as a replacement for every domestic/foreign AI
+# business boundary. Other AI sources and local supplements keep their roles.
+COPILOT_SUFFIXES = ("githubcopilot.com", "copilot.microsoft.com", "copilot.cloud.microsoft")
+COPILOT_HOSTS = frozenset({
+    "sydney.bing.com", "edgeservices.bing.com", "gateway.bingviz.microsoft.net",
+    "gateway.bingviz.microsoftapp.net", "api.microsoftapp.net",
+    "bing-shopping.microsoft-falcon.io", "copilotprodattachments.blob.core.windows.net",
+})
+UPSTREAM_MARKER_HOST = "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"
+GOOGLE_FCM_HOSTS = frozenset({"mtalk.google.com", *(f"alt{i}-mtalk.google.com" for i in range(1, 9))})
+INTERNATIONAL_MEDIA_SUFFIXES = ("wetv.vip", "wetvinfo.com", "joox.com", "i-joox.com", "sanook.com")
+AI_GENERIC_KEYWORDS = frozenset({"datadog", "sentry", "sift", "codex", "colab", "developerprofiles"})
+_COUNTRY_WIDE_CATEGORIES = frozenset({
+    "china-direct", "proxy", "proxy-exception", "direct-exception", "reject", "privacy",
+})
+
+
+def _copilot_selector(rule: Rule) -> bool:
+    value = rule.value.casefold()
+    if rule.rule_type in {"HOST", "HOST-SUFFIX"}:
+        return (value in COPILOT_HOSTS
+                or any(value == suffix or value.endswith("." + suffix) for suffix in COPILOT_SUFFIXES)
+                or (value.startswith("copilot-") and value.endswith((".githubusercontent.com", ".githubnext.com"))))
+    return rule.rule_type == "PROCESS-NAME" and value in {"copilot.exe", "copilot"}
+
+
+def _netflix_shared_cloud_networks() -> tuple[ipaddress.IPv4Network | ipaddress.IPv6Network, ...]:
+    return tuple(ipaddress.ip_network(value) for value in NETFLIX_SHARED_AWS_CIDRS)
+
 
 @dataclass(frozen=True)
 class CurationPolicy:
@@ -142,6 +191,9 @@ class CurationPolicy:
     business_rule_exclusions: frozenset[tuple[str, str, str]] = BUSINESS_RULE_EXCLUSIONS
     category_reclassifications: dict[tuple[str, str, str], tuple[str, str, str]] = field(
         default_factory=lambda: dict(CATEGORY_RECLASSIFICATIONS)
+    )
+    netflix_shared_cloud_networks: tuple[ipaddress.IPv4Network | ipaddress.IPv6Network, ...] = field(
+        default_factory=_netflix_shared_cloud_networks,
     )
 
 
@@ -258,6 +310,26 @@ class CurationResult:
 
 
 def _drop_reason(rule: Rule, policy: CurationPolicy) -> str | None:
+    # A shared EC2/CloudFront pool cannot identify Netflix by destination IP.
+    # Preserve explicit host endpoints, while domains still select Netflix.
+    if rule.category == "netflix" and rule.rule_type in {"IP-CIDR", "IP6-CIDR"}:
+        network = ipaddress.ip_network(rule.value, strict=False)
+        if network.prefixlen < network.max_prefixlen and any(
+            network.version == shared.version and network.overlaps(shared)
+            for shared in policy.netflix_shared_cloud_networks
+        ):
+            return "shared-cloud-network"
+    # A brand may own its own gTLD (.google), but not every site in .hk/.tw.
+    if (rule.rule_type == "HOST-SUFFIX" and len(rule.value) == 2
+            and rule.value.isascii() and rule.value.isalpha()
+            and rule.category not in _COUNTRY_WIDE_CATEGORIES):
+        return "country-tld-business-overreach"
+    if rule.category == "ai" and rule.rule_type == "HOST-KEYWORD" and rule.value in AI_GENERIC_KEYWORDS:
+        return "shared-or-ambiguous-ai-keyword"
+    if rule.rule_type == "HOST" and rule.value == UPSTREAM_MARKER_HOST:
+        return "upstream-attribution-marker"
+    if rule.source_id == "magicrule-copilot" and not _copilot_selector(rule):
+        return "copilot-source-business-boundary"
     # A whole cloud-provider ASN is too broad to pin to any single service:
     # one blanket policy would force-route every tenant of the provider
     # (e.g. api.assrt.net on Tencent Cloud international was pinned DIRECT by
@@ -340,6 +412,19 @@ def curate_rules(
         move = active_policy.category_reclassifications.get(
             (rule.category, rule.rule_type, rule.value)
         )
+        # Corporate Tencent lists also include its overseas media products.
+        # Classify the product domains before deduplication or broad direct
+        # rules can erase their dedicated regional streaming strategy.
+        if (rule.rule_type in {"HOST", "HOST-SUFFIX"}
+                and rule.category not in {"reject", "privacy", "direct-exception"}
+                and any(rule.value == suffix or rule.value.endswith("." + suffix)
+                        for suffix in INTERNATIONAL_MEDIA_SUFFIXES)):
+            move = ("global-media", "国际媒体", "international-media-service")
+        # Preserve the deployed FCM split: all nine hosts are direct in
+        # Mihomo, while QX has eight direct alternate hosts and a Google main.
+        if (rule.category == "google" and rule.rule_type == "HOST" and rule.value in GOOGLE_FCM_HOSTS
+                and (rule.source_format == "clash" or rule.value != "mtalk.google.com")):
+            move = ("china-direct", "direct", "fcm-direct-compatibility")
         if move is None:
             kept.append(rule)
             continue

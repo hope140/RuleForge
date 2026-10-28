@@ -2,37 +2,22 @@
   "mode": "preview-only",
   "active": false,
   "target": "quantumult-x",
-  "ordered_overlap_count": 923,
-  "live_cross_category_count": 465,
-  "discarded_overlap_count": 458,
-  "apple_contract_gap_count": 3,
-  "actual_policy_mismatch_count": 3,
-  "preview_candidate_decision_count": 3,
-  "preview_candidate_rule_count": 3,
-  "review_required_count": 0,
+  "ordered_overlap_count": 1705,
+  "live_cross_category_count": 756,
+  "discarded_overlap_count": 949,
+  "apple_contract_gap_count": 2,
+  "actual_policy_mismatch_count": 49,
+  "preview_candidate_decision_count": 47,
+  "preview_candidate_rule_count": 47,
+  "review_required_count": 2,
   "unwitnessed_count": 0,
   "status_counts": {
-    "enforced": 409,
-    "equivalent-policy": 56,
-    "preview-candidate": 3
+    "enforced": 621,
+    "equivalent-policy": 88,
+    "preview-candidate": 47,
+    "review-required": 2
   },
   "override_candidates": [
-    {
-      "rule": {
-        "source_id": "apple-service-contract",
-        "category": "apple",
-        "policy": "苹果服务",
-        "rule_type": "HOST",
-        "value": "apple-relay.fastly-edge.com",
-        "line_number": 0
-      },
-      "rendered_rule": "host,apple-relay.fastly-edge.com,苹果服务",
-      "confidence": "high",
-      "evidence_count": 1,
-      "witnesses": [
-        "apple-relay.fastly-edge.com"
-      ]
-    },
     {
       "rule": {
         "source_id": "apple-service-contract",
@@ -64,50 +49,729 @@
       "witnesses": [
         "cp4.cloudflare.com"
       ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "storecorefulfillment.download.prss.microsoft.com",
+        "line_number": 105
+      },
+      "rendered_rule": "host,storecorefulfillment.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "storecorefulfillment.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
+        "line_number": 57
+      },
+      "rendered_rule": "host,mpnbenefitsrtluat.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "mpnbenefitsrtluat.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azuremigratetest.download.prss.microsoft.com",
+        "line_number": 13
+      },
+      "rendered_rule": "host,azuremigratetest.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "azuremigratetest.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azurestackhubuat.download.prss.microsoft.com",
+        "line_number": 15
+      },
+      "rendered_rule": "host,azurestackhubuat.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "azurestackhubuat.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "collaborateppe.download.prss.microsoft.com",
+        "line_number": 22
+      },
+      "rendered_rule": "host,collaborateppe.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "collaborateppe.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mpnbenefitsrtl.download.prss.microsoft.com",
+        "line_number": 56
+      },
+      "rendered_rule": "host,mpnbenefitsrtl.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "mpnbenefitsrtl.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azurestackhub.download.prss.microsoft.com",
+        "line_number": 14
+      },
+      "rendered_rule": "host,azurestackhub.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "azurestackhub.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "dreamsparkuat.download.prss.microsoft.com",
+        "line_number": 34
+      },
+      "rendered_rule": "host,dreamsparkuat.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "dreamsparkuat.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azuremigrate.download.prss.microsoft.com",
+        "line_number": 12
+      },
+      "rendered_rule": "host,azuremigrate.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "azuremigrate.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "itacademyuat.download.prss.microsoft.com",
+        "line_number": 50
+      },
+      "rendered_rule": "host,itacademyuat.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "itacademyuat.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "officemktuat.download.prss.microsoft.com",
+        "line_number": 71
+      },
+      "rendered_rule": "host,officemktuat.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "officemktuat.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "collaborate.download.prss.microsoft.com",
+        "line_number": 21
+      },
+      "rendered_rule": "host,collaborate.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "collaborate.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mpnbenefits.download.prss.microsoft.com",
+        "line_number": 55
+      },
+      "rendered_rule": "host,mpnbenefits.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "mpnbenefits.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "dreamspark.download.prss.microsoft.com",
+        "line_number": 33
+      },
+      "rendered_rule": "host,dreamspark.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "dreamspark.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "msdprod-ad.download.prss.microsoft.com",
+        "line_number": 60
+      },
+      "rendered_rule": "host,msdprod-ad.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "msdprod-ad.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "itacademy.download.prss.microsoft.com",
+        "line_number": 49
+      },
+      "rendered_rule": "host,itacademy.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "itacademy.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "msproduct.download.prss.microsoft.com",
+        "line_number": 62
+      },
+      "rendered_rule": "host,msproduct.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "msproduct.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "oemsocuat.download.prss.microsoft.com",
+        "line_number": 67
+      },
+      "rendered_rule": "host,oemsocuat.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "oemsocuat.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "officemkt.download.prss.microsoft.com",
+        "line_number": 70
+      },
+      "rendered_rule": "host,officemkt.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "officemkt.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "osrelease.download.prss.microsoft.com",
+        "line_number": 73
+      },
+      "rendered_rule": "host,osrelease.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "osrelease.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "cbdstest.download.prss.microsoft.com",
+        "line_number": 19
+      },
+      "rendered_rule": "host,cbdstest.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "cbdstest.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "software.download.prss.microsoft.com",
+        "line_number": 100
+      },
+      "rendered_rule": "host,software.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "software.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "surface.downloads.prss.microsoft.com",
+        "line_number": 109
+      },
+      "rendered_rule": "host,surface.downloads.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "surface.downloads.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "vlportal.download.prss.microsoft.com",
+        "line_number": 110
+      },
+      "rendered_rule": "host,vlportal.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "vlportal.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "surface.download.prss.microsoft.com",
+        "line_number": 108
+      },
+      "rendered_rule": "host,surface.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "surface.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "lexuat.download.prss.microsoft.com",
+        "line_number": 52
+      },
+      "rendered_rule": "host,lexuat.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "lexuat.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "oemsoc.download.prss.microsoft.com",
+        "line_number": 66
+      },
+      "rendered_rule": "host,oemsoc.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "oemsoc.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "vscode.download.prss.microsoft.com",
+        "line_number": 115
+      },
+      "rendered_rule": "host,vscode.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "vscode.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "windbg.download.prss.microsoft.com",
+        "line_number": 119
+      },
+      "rendered_rule": "host,windbg.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "windbg.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "volic.download.prss.microsoft.com",
+        "line_number": 111
+      },
+      "rendered_rule": "host,volic.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "volic.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "msdn.download.prss.microsoft.com",
+        "line_number": 59
+      },
+      "rendered_rule": "host,msdn.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "msdn.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "myvs.download.prss.microsoft.com",
+        "line_number": 64
+      },
+      "rendered_rule": "host,myvs.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "myvs.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "lex.download.prss.microsoft.com",
+        "line_number": 51
+      },
+      "rendered_rule": "host,lex.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "lex.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mbs.download.prss.microsoft.com",
+        "line_number": 54
+      },
+      "rendered_rule": "host,mbs.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "mbs.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "rsm.download.prss.microsoft.com",
+        "line_number": 97
+      },
+      "rendered_rule": "host,rsm.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "rsm.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "vz.download.prss.microsoft.com",
+        "line_number": 118
+      },
+      "rendered_rule": "host,vz.download.prss.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "vz.download.prss.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST",
+        "value": "googletraveladservices-cn.com",
+        "line_number": 108
+      },
+      "rendered_rule": "host,googletraveladservices-cn.com,谷歌服务",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "googletraveladservices-cn.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST",
+        "value": "googletraveladservices.com",
+        "line_number": 109
+      },
+      "rendered_rule": "host,googletraveladservices.com,谷歌服务",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "googletraveladservices.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "b.c2r.ts.cdn.office.net",
+        "line_number": 16
+      },
+      "rendered_rule": "host,b.c2r.ts.cdn.office.net,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "b.c2r.ts.cdn.office.net"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "ctldl.windowsupdate.com",
+        "line_number": 29
+      },
+      "rendered_rule": "host,ctldl.windowsupdate.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "ctldl.windowsupdate.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "f.c2r.ts.cdn.office.net",
+        "line_number": 38
+      },
+      "rendered_rule": "host,f.c2r.ts.cdn.office.net,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "f.c2r.ts.cdn.office.net"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "officecdn.microsoft.com",
+        "line_number": 69
+      },
+      "rendered_rule": "host,officecdn.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "officecdn.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "storeedge.microsoft.com",
+        "line_number": 106
+      },
+      "rendered_rule": "host,storeedge.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "storeedge.microsoft.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "cn.windowssearch.com",
+        "line_number": 20
+      },
+      "rendered_rule": "host,cn.windowssearch.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "cn.windowssearch.com"
+      ]
+    },
+    {
+      "rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "sdx.microsoft.com",
+        "line_number": 98
+      },
+      "rendered_rule": "host,sdx.microsoft.com,全球加速",
+      "confidence": "medium",
+      "evidence_count": 1,
+      "witnesses": [
+        "sdx.microsoft.com"
+      ]
     }
   ],
   "items": [
-    {
-      "relation": "apple-service-contract",
-      "confidence": "high",
-      "method": "apple-service-contract",
-      "status": "preview-candidate",
-      "disposition_reason": "apple-contract-candidate",
-      "reason": "Apple-related traffic is unified under the Apple service policy.",
-      "probe": {
-        "domain": "apple-relay.fastly-edge.com",
-        "ip": null,
-        "process": null,
-        "destination_port": null,
-        "inbound_port": null
-      },
-      "expected_rule": {
-        "source_id": "apple-service-contract",
-        "category": "apple",
-        "policy": "苹果服务",
-        "rule_type": "HOST",
-        "value": "apple-relay.fastly-edge.com",
-        "line_number": 0
-      },
-      "compared_rule": {
-        "source_id": "rulego-proxy",
-        "category": "proxy",
-        "policy": "全球加速",
-        "rule_type": "HOST",
-        "value": "apple-relay.fastly-edge.com",
-        "line_number": 540
-      },
-      "actual_rule": {
-        "source_id": "rulego-proxy",
-        "category": "proxy",
-        "policy": "全球加速",
-        "rule_type": "HOST",
-        "value": "apple-relay.fastly-edge.com",
-        "line_number": 540
-      },
-      "expected_policy": "苹果服务",
-      "actual_policy": "全球加速"
-    },
     {
       "relation": "apple-service-contract",
       "confidence": "high",
@@ -189,6 +853,1933 @@
       },
       "expected_policy": "苹果服务",
       "actual_policy": "全球加速"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "storecorefulfillment.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "storecorefulfillment.download.prss.microsoft.com",
+        "line_number": 105
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "storecorefulfillment.download.prss.microsoft.com",
+        "line_number": 235
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "storecorefulfillment.download.prss.microsoft.com",
+        "line_number": 235
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "mpnbenefitsrtluat.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
+        "line_number": 57
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
+        "line_number": 183
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
+        "line_number": 183
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "azuremigratetest.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azuremigratetest.download.prss.microsoft.com",
+        "line_number": 13
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azuremigratetest.download.prss.microsoft.com",
+        "line_number": 73
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azuremigratetest.download.prss.microsoft.com",
+        "line_number": 73
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "azurestackhubuat.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azurestackhubuat.download.prss.microsoft.com",
+        "line_number": 15
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azurestackhubuat.download.prss.microsoft.com",
+        "line_number": 75
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azurestackhubuat.download.prss.microsoft.com",
+        "line_number": 75
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "collaborateppe.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "collaborateppe.download.prss.microsoft.com",
+        "line_number": 22
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "collaborateppe.download.prss.microsoft.com",
+        "line_number": 99
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "collaborateppe.download.prss.microsoft.com",
+        "line_number": 99
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "mpnbenefitsrtl.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mpnbenefitsrtl.download.prss.microsoft.com",
+        "line_number": 56
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mpnbenefitsrtl.download.prss.microsoft.com",
+        "line_number": 182
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mpnbenefitsrtl.download.prss.microsoft.com",
+        "line_number": 182
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "azurestackhub.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azurestackhub.download.prss.microsoft.com",
+        "line_number": 14
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azurestackhub.download.prss.microsoft.com",
+        "line_number": 74
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azurestackhub.download.prss.microsoft.com",
+        "line_number": 74
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "dreamsparkuat.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "dreamsparkuat.download.prss.microsoft.com",
+        "line_number": 34
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "dreamsparkuat.download.prss.microsoft.com",
+        "line_number": 114
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "dreamsparkuat.download.prss.microsoft.com",
+        "line_number": 114
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "azuremigrate.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "azuremigrate.download.prss.microsoft.com",
+        "line_number": 12
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azuremigrate.download.prss.microsoft.com",
+        "line_number": 72
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "azuremigrate.download.prss.microsoft.com",
+        "line_number": 72
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "itacademyuat.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "itacademyuat.download.prss.microsoft.com",
+        "line_number": 50
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "itacademyuat.download.prss.microsoft.com",
+        "line_number": 162
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "itacademyuat.download.prss.microsoft.com",
+        "line_number": 162
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "officemktuat.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "officemktuat.download.prss.microsoft.com",
+        "line_number": 71
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "officemktuat.download.prss.microsoft.com",
+        "line_number": 201
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "officemktuat.download.prss.microsoft.com",
+        "line_number": 201
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "collaborate.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "collaborate.download.prss.microsoft.com",
+        "line_number": 21
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "collaborate.download.prss.microsoft.com",
+        "line_number": 98
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "collaborate.download.prss.microsoft.com",
+        "line_number": 98
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "mpnbenefits.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mpnbenefits.download.prss.microsoft.com",
+        "line_number": 55
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mpnbenefits.download.prss.microsoft.com",
+        "line_number": 181
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mpnbenefits.download.prss.microsoft.com",
+        "line_number": 181
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "dreamspark.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "dreamspark.download.prss.microsoft.com",
+        "line_number": 33
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "dreamspark.download.prss.microsoft.com",
+        "line_number": 113
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "dreamspark.download.prss.microsoft.com",
+        "line_number": 113
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "msdprod-ad.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "msdprod-ad.download.prss.microsoft.com",
+        "line_number": 60
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "msdprod-ad.download.prss.microsoft.com",
+        "line_number": 185
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "msdprod-ad.download.prss.microsoft.com",
+        "line_number": 185
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "itacademy.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "itacademy.download.prss.microsoft.com",
+        "line_number": 49
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "itacademy.download.prss.microsoft.com",
+        "line_number": 161
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "itacademy.download.prss.microsoft.com",
+        "line_number": 161
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "msproduct.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "msproduct.download.prss.microsoft.com",
+        "line_number": 62
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "msproduct.download.prss.microsoft.com",
+        "line_number": 187
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "msproduct.download.prss.microsoft.com",
+        "line_number": 187
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "oemsocuat.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "oemsocuat.download.prss.microsoft.com",
+        "line_number": 67
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oemsocuat.download.prss.microsoft.com",
+        "line_number": 198
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oemsocuat.download.prss.microsoft.com",
+        "line_number": 198
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "officemkt.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "officemkt.download.prss.microsoft.com",
+        "line_number": 70
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "officemkt.download.prss.microsoft.com",
+        "line_number": 200
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "officemkt.download.prss.microsoft.com",
+        "line_number": 200
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "osrelease.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "osrelease.download.prss.microsoft.com",
+        "line_number": 73
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "osrelease.download.prss.microsoft.com",
+        "line_number": 207
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "osrelease.download.prss.microsoft.com",
+        "line_number": 207
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "cbdstest.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "cbdstest.download.prss.microsoft.com",
+        "line_number": 19
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cbdstest.download.prss.microsoft.com",
+        "line_number": 89
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cbdstest.download.prss.microsoft.com",
+        "line_number": 89
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "software.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "software.download.prss.microsoft.com",
+        "line_number": 100
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "software.download.prss.microsoft.com",
+        "line_number": 229
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "software.download.prss.microsoft.com",
+        "line_number": 229
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "surface.downloads.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "surface.downloads.prss.microsoft.com",
+        "line_number": 109
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "surface.downloads.prss.microsoft.com",
+        "line_number": 238
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "surface.downloads.prss.microsoft.com",
+        "line_number": 238
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "vlportal.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "vlportal.download.prss.microsoft.com",
+        "line_number": 110
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "vlportal.download.prss.microsoft.com",
+        "line_number": 254
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "vlportal.download.prss.microsoft.com",
+        "line_number": 254
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "surface.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "surface.download.prss.microsoft.com",
+        "line_number": 108
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "surface.download.prss.microsoft.com",
+        "line_number": 237
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "surface.download.prss.microsoft.com",
+        "line_number": 237
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "lexuat.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "lexuat.download.prss.microsoft.com",
+        "line_number": 52
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "lexuat.download.prss.microsoft.com",
+        "line_number": 175
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "lexuat.download.prss.microsoft.com",
+        "line_number": 175
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "oemsoc.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "oemsoc.download.prss.microsoft.com",
+        "line_number": 66
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oemsoc.download.prss.microsoft.com",
+        "line_number": 197
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "oemsoc.download.prss.microsoft.com",
+        "line_number": 197
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "vscode.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "vscode.download.prss.microsoft.com",
+        "line_number": 115
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "vscode.download.prss.microsoft.com",
+        "line_number": 256
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "vscode.download.prss.microsoft.com",
+        "line_number": 256
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "windbg.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "windbg.download.prss.microsoft.com",
+        "line_number": 119
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "windbg.download.prss.microsoft.com",
+        "line_number": 260
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "windbg.download.prss.microsoft.com",
+        "line_number": 260
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "volic.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "volic.download.prss.microsoft.com",
+        "line_number": 111
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "volic.download.prss.microsoft.com",
+        "line_number": 255
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "volic.download.prss.microsoft.com",
+        "line_number": 255
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "msdn.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "msdn.download.prss.microsoft.com",
+        "line_number": 59
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "msdn.download.prss.microsoft.com",
+        "line_number": 184
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "msdn.download.prss.microsoft.com",
+        "line_number": 184
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "myvs.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "myvs.download.prss.microsoft.com",
+        "line_number": 64
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "myvs.download.prss.microsoft.com",
+        "line_number": 190
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "myvs.download.prss.microsoft.com",
+        "line_number": 190
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "lex.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "lex.download.prss.microsoft.com",
+        "line_number": 51
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "lex.download.prss.microsoft.com",
+        "line_number": 174
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "lex.download.prss.microsoft.com",
+        "line_number": 174
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "mbs.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "mbs.download.prss.microsoft.com",
+        "line_number": 54
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mbs.download.prss.microsoft.com",
+        "line_number": 179
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "mbs.download.prss.microsoft.com",
+        "line_number": 179
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "rsm.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "rsm.download.prss.microsoft.com",
+        "line_number": 97
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "rsm.download.prss.microsoft.com",
+        "line_number": 221
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "rsm.download.prss.microsoft.com",
+        "line_number": 221
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "vz.download.prss.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "vz.download.prss.microsoft.com",
+        "line_number": 118
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "vz.download.prss.microsoft.com",
+        "line_number": 257
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "vz.download.prss.microsoft.com",
+        "line_number": 257
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "googletraveladservices-cn.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST",
+        "value": "googletraveladservices-cn.com",
+        "line_number": 108
+      },
+      "compared_rule": {
+        "source_id": "rulego-direct-plus",
+        "category": "direct-exception",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "googletraveladservices-cn.com",
+        "line_number": 18
+      },
+      "actual_rule": {
+        "source_id": "rulego-direct-plus",
+        "category": "direct-exception",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "googletraveladservices-cn.com",
+        "line_number": 18
+      },
+      "expected_policy": "谷歌服务",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "googletraveladservices.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST",
+        "value": "googletraveladservices.com",
+        "line_number": 109
+      },
+      "compared_rule": {
+        "source_id": "rulego-direct-plus",
+        "category": "direct-exception",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "googletraveladservices.com",
+        "line_number": 17
+      },
+      "actual_rule": {
+        "source_id": "rulego-direct-plus",
+        "category": "direct-exception",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "googletraveladservices.com",
+        "line_number": 17
+      },
+      "expected_policy": "谷歌服务",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "b.c2r.ts.cdn.office.net",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "b.c2r.ts.cdn.office.net",
+        "line_number": 16
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "b.c2r.ts.cdn.office.net",
+        "line_number": 76
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "b.c2r.ts.cdn.office.net",
+        "line_number": 76
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "ctldl.windowsupdate.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "ctldl.windowsupdate.com",
+        "line_number": 29
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "ctldl.windowsupdate.com",
+        "line_number": 103
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "ctldl.windowsupdate.com",
+        "line_number": 103
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "f.c2r.ts.cdn.office.net",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "f.c2r.ts.cdn.office.net",
+        "line_number": 38
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "f.c2r.ts.cdn.office.net",
+        "line_number": 126
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "f.c2r.ts.cdn.office.net",
+        "line_number": 126
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "officecdn.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "officecdn.microsoft.com",
+        "line_number": 69
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "officecdn.microsoft.com",
+        "line_number": 199
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "officecdn.microsoft.com",
+        "line_number": 199
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "storeedge.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "storeedge.microsoft.com",
+        "line_number": 106
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "storeedge.microsoft.com",
+        "line_number": 236
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "storeedge.microsoft.com",
+        "line_number": 236
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "cn.windowssearch.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "cn.windowssearch.com",
+        "line_number": 20
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cn.windowssearch.com",
+        "line_number": 97
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "cn.windowssearch.com",
+        "line_number": 97
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-inside-host-suffix",
+      "confidence": "medium",
+      "method": "specificity",
+      "status": "preview-candidate",
+      "disposition_reason": "direct-blocker-candidate",
+      "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap.",
+      "probe": {
+        "domain": "sdx.microsoft.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "magicrule-microsoft",
+        "category": "microsoft",
+        "policy": "全球加速",
+        "rule_type": "HOST",
+        "value": "sdx.microsoft.com",
+        "line_number": 98
+      },
+      "compared_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "sdx.microsoft.com",
+        "line_number": 226
+      },
+      "actual_rule": {
+        "source_id": "magicrule-direct",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "sdx.microsoft.com",
+        "line_number": 226
+      },
+      "expected_policy": "全球加速",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "high",
+      "method": "security-contract",
+      "status": "review-required",
+      "disposition_reason": "third-rule-interference",
+      "reason": "Both rules are retained. Reject rules take precedence over ordinary direct or proxy rules.",
+      "probe": {
+        "domain": "googletraveladservices-cn.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-advertising",
+        "category": "reject",
+        "policy": "reject",
+        "rule_type": "HOST-KEYWORD",
+        "value": "adservice",
+        "line_number": 3
+      },
+      "compared_rule": {
+        "source_id": "magicrule-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST",
+        "value": "googletraveladservices-cn.com",
+        "line_number": 108
+      },
+      "actual_rule": {
+        "source_id": "rulego-direct-plus",
+        "category": "direct-exception",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "googletraveladservices-cn.com",
+        "line_number": 18
+      },
+      "expected_policy": "reject",
+      "actual_policy": "direct"
+    },
+    {
+      "relation": "host-keyword-overlap",
+      "confidence": "high",
+      "method": "security-contract",
+      "status": "review-required",
+      "disposition_reason": "third-rule-interference",
+      "reason": "Both rules are retained. Reject rules take precedence over ordinary direct or proxy rules.",
+      "probe": {
+        "domain": "googletraveladservices.com",
+        "ip": null,
+        "process": null,
+        "destination_port": null,
+        "inbound_port": null
+      },
+      "expected_rule": {
+        "source_id": "rulego-advertising",
+        "category": "reject",
+        "policy": "reject",
+        "rule_type": "HOST-KEYWORD",
+        "value": "adservice",
+        "line_number": 3
+      },
+      "compared_rule": {
+        "source_id": "magicrule-google",
+        "category": "google",
+        "policy": "谷歌服务",
+        "rule_type": "HOST",
+        "value": "googletraveladservices.com",
+        "line_number": 109
+      },
+      "actual_rule": {
+        "source_id": "rulego-direct-plus",
+        "category": "direct-exception",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "googletraveladservices.com",
+        "line_number": 17
+      },
+      "expected_policy": "reject",
+      "actual_policy": "direct"
     }
   ]
 }

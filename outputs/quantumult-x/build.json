@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-28T08:41:34.256999+00:00",
+  "generated_at_utc": "2026-10-28T09:16:39.077879+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -27,62 +27,46 @@
         "enabled": true
       },
       {
-        "id": "blackmatrix-openai",
+        "id": "magicrule-openai",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "ai",
         "policy": "AI",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#OpenAI",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-claude",
+        "id": "magicrule-gemini",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "ai",
         "policy": "AI",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Gemini",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-gemini",
+        "id": "magicrule-copilot",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "ai",
         "policy": "AI",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Copilot",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-copilot",
+        "id": "magicrule-anthropic",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "ai",
         "policy": "AI",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Copilot/Copilot.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-anthropic",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "ai",
-        "policy": "AI",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Anthropic/Anthropic.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-civitai",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "ai",
-        "policy": "AI",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Civitai/Civitai.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Anthropic",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
@@ -120,422 +104,431 @@
         "notes": "QX 没有 Mihomo 的 GEOSITE,openai 兜底，补充 OpenAI Statsig telemetry 根域。"
       },
       {
-        "id": "blackmatrix-apple",
+        "id": "magicrule-apple",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "apple",
         "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Apple",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-apple-id",
+        "id": "magicrule-apple-media",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "apple",
         "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleID/AppleID.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMedia",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-apple-mail",
+        "id": "magicrule-apple-music",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "apple",
         "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMail/AppleMail.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMusic",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-apple-media",
+        "id": "magicrule-apple-news",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "apple",
         "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMedia/AppleMedia.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleNews",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-apple-music",
+        "id": "magicrule-apple-proxy",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "apple",
         "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMusic/AppleMusic.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleProxy",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-apple-news",
+        "id": "magicrule-apple-tv",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "apple",
         "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleNews/AppleNews.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleTV",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-apple-proxy",
+        "id": "magicrule-appstore",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "apple",
         "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleProxy/AppleProxy.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppStore",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-apple-tv",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "apple",
-        "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleTV/AppleTV.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-appstore",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "apple",
-        "policy": "苹果服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppStore/AppStore.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-youtube",
+        "id": "magicrule-youtube",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "youtube",
         "policy": "YouTube",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#YouTube",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-netflix",
+        "id": "magicrule-netflix",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "netflix",
         "policy": "Netflix",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Netflix",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-tiktok",
+        "id": "magicrule-tiktok",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "tiktok",
         "policy": "海外抖音",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#TikTok",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-google-voice",
+        "id": "magicrule-google-voice",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "google-voice",
         "policy": "美国节点",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleVoice/GoogleVoice.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleVoice",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-google",
+        "id": "magicrule-google",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "google",
         "policy": "谷歌服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Google",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-google-drive",
+        "id": "magicrule-google-earth",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "google",
         "policy": "谷歌服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleDrive/GoogleDrive.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleEarth",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-google-earth",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "google",
-        "policy": "谷歌服务",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleEarth/GoogleEarth.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-microsoft",
+        "id": "magicrule-microsoft",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "microsoft",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Microsoft",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-onedrive",
+        "id": "magicrule-onedrive",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "cloud",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OneDrive/OneDrive.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#OneDrive",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-dropbox",
+        "id": "magicrule-dropbox",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "cloud",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Dropbox/Dropbox.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Dropbox",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-mega",
+        "id": "magicrule-mega",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "cloud",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MEGA/MEGA.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#MEGA",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-bing",
+        "id": "magicrule-bing",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "microsoft",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bing/Bing.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Bing",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-github",
+        "id": "magicrule-github",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "github",
         "policy": "GitHub",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GitHub",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-spotify",
+        "id": "magicrule-spotify",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "spotify",
         "policy": "Spotify",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Spotify",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-telegram",
+        "id": "magicrule-telegram",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "telegram",
         "policy": "电报代理",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Telegram",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-twitter",
+        "id": "magicrule-social-twitter",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitter/Twitter.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Twitter",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-facebook",
+        "id": "magicrule-social-facebook",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Facebook/Facebook.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Facebook",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-instagram",
+        "id": "magicrule-social-instagram",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Instagram",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-whatsapp",
+        "id": "magicrule-social-whatsapp",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Whatsapp/Whatsapp.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Whatsapp",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-line",
+        "id": "magicrule-social-line",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Line/Line.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Line",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-kakaotalk",
+        "id": "magicrule-social-kakaotalk",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KakaoTalk/KakaoTalk.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#KakaoTalk",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-discord",
+        "id": "magicrule-social-discord",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Discord/Discord.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Discord",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-reddit",
+        "id": "magicrule-social-reddit",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Reddit/Reddit.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Reddit",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-social-threads",
+        "id": "magicrule-social-threads",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "social",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Threads/Threads.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Threads",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-gitlab",
+        "id": "magicrule-developer-gitlab",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitLab/GitLab.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GitLab",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-docker",
+        "id": "magicrule-developer-docker",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Docker/Docker.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Docker",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-figma",
+        "id": "magicrule-developer-figma",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Figma/Figma.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Figma",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-notion",
+        "id": "magicrule-developer-notion",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Notion/Notion.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Notion",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-npmjs",
+        "id": "magicrule-developer-npmjs",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Npmjs/Npmjs.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#NPM",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-jetbrains",
+        "id": "magicrule-developer-jetbrains",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Jetbrains/Jetbrains.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Jetbrains",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-sourceforge",
+        "id": "magicrule-developer-sourceforge",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/SourceForge/SourceForge.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#SourceForge",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-vercel",
+        "id": "magicrule-developer-vercel",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Vercel/Vercel.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Vercel",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-developer-slack",
+        "id": "magicrule-developer-slack",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "developer",
         "policy": "全球加速",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Slack/Slack.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Slack",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
@@ -560,362 +553,365 @@
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-disney",
+        "id": "magicrule-global-media-disney",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Disney",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-hbo",
+        "id": "magicrule-global-media-hbo",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/HBO/HBO.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#HBO",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-hulu",
+        "id": "magicrule-global-media-hulu",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hulu/Hulu.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Hulu",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-amazon-prime-video",
+        "id": "magicrule-global-media-amazon-prime-video",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AmazonPrimeVideo/AmazonPrimeVideo.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AmazonPrimeVideo",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-prime-video",
+        "id": "magicrule-global-media-prime-video",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/PrimeVideo/PrimeVideo.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#PrimeVideo",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-twitch",
+        "id": "magicrule-global-media-twitch",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitch/Twitch.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Twitch",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-abema-tv",
+        "id": "magicrule-global-media-abema-tv",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AbemaTV/AbemaTV.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AbemaTV",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-bilibili-intl",
+        "id": "magicrule-global-media-iqiyi-intl",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBiliIntl/BiliBiliIntl.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYIIntl",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-iqiyi-intl",
+        "id": "magicrule-global-media-naver-tv",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYIIntl/iQIYIIntl.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#NaverTV",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-naver-tv",
+        "id": "magicrule-global-media-tvb",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/NaverTV/NaverTV.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#TVB",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-tvb",
+        "id": "magicrule-global-media-asian",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TVB/TVB.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AsianMedia",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-asian",
+        "id": "magicrule-global-media-joox",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AsianMedia/AsianMedia.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#JOOX",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-joox",
+        "id": "magicrule-global-media-kkbox",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "global-media",
         "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JOOX/JOOX.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#KKBOX",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-global-media-kkbox",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "global-media",
-        "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KKBOX/KKBOX.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-global-media-paramount-plus",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "global-media",
-        "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ParamountPlus/ParamountPlus.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-global-media-peacock",
-        "kind": "filter",
-        "format": "quantumult-x",
-        "category": "global-media",
-        "policy": "国际媒体",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Peacock/Peacock.list",
-        "parser": "quantumult-x",
-        "enabled": true
-      },
-      {
-        "id": "blackmatrix-youtube-music",
+        "id": "magicrule-youtube-music",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "youtube",
         "policy": "YouTube",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTubeMusic/YouTubeMusic.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#YouTubeMusic",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-streaming-bilibili",
+        "id": "magicrule-china-streaming-bilibili",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-streaming",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#BiliBili",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-streaming-youku",
+        "id": "magicrule-china-streaming-youku",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-streaming",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Youku/Youku.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Youku",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-streaming-iqiyi",
+        "id": "magicrule-china-streaming-iqiyi",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-streaming",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYI/iQIYI.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYI",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-streaming-acfun",
+        "id": "magicrule-china-streaming-acfun",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-streaming",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AcFun/AcFun.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AcFun",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-alibaba",
+        "id": "magicrule-china-services-alibaba",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Alibaba/Alibaba.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Alibaba",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-baidu",
+        "id": "magicrule-china-services-baidu",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Baidu/Baidu.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Baidu",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-tencent",
+        "id": "magicrule-china-services-tencent",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Tencent",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-xiaomi",
+        "id": "magicrule-china-services-xiaomi",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/XiaoMi/XiaoMi.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#XiaoMi",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-jingdong",
+        "id": "magicrule-china-services-jingdong",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#JingDong",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-pinduoduo",
+        "id": "magicrule-china-services-pinduoduo",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pinduoduo/Pinduoduo.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Pinduoduo",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-meituan",
+        "id": "magicrule-china-services-meituan",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#MeiTuan",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-didi",
+        "id": "magicrule-china-services-didi",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DiDi/DiDi.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#DiDi",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-12306",
+        "id": "magicrule-china-services-12306",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/12306/12306.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#12306",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-sina",
+        "id": "magicrule-china-services-sina",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Sina/Sina.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Sina",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-weibo",
+        "id": "magicrule-china-services-weibo",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Weibo/Weibo.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Weibo",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-zhihu",
+        "id": "magicrule-china-services-zhihu",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Zhihu/Zhihu.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Zhihu",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-china-services-douban",
+        "id": "magicrule-china-services-douban",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-services",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DouBan/DouBan.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#DouBan",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-alipay",
+        "id": "magicrule-alipay",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "alipay",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AliPay",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
       {
-        "id": "blackmatrix-wechat",
+        "id": "magicrule-wechat",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "wechat",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#WeChat",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
@@ -930,12 +926,13 @@
         "enabled": true
       },
       {
-        "id": "blackmatrix-direct",
+        "id": "magicrule-direct",
         "kind": "filter",
         "format": "quantumult-x",
         "category": "china-direct",
         "policy": "direct",
-        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list",
+        "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Direct",
+        "resolver": "magicrule",
         "parser": "quantumult-x",
         "enabled": true
       },
@@ -967,69 +964,588 @@
         "policy": "苹果服务",
         "url": "inline:HOST,cma2.itunes.apple.com",
         "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-tvb-tracking",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST,tvbtracking.azurewebsites.net",
+        "parser": "quantumult-x",
         "enabled": true,
         "notes": "补充 Apple 的精确 cma2 主机，避免 HOST,cma 规则误以为覆盖了 cma2。"
+      },
+      {
+        "id": "local-claude-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "url": "inline:HOST,cdn.usefathom.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for Claude; preserve existing service coverage."
+      },
+      {
+        "id": "local-claude-2",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "url": "inline:HOST-SUFFIX,anthropic.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for Claude; preserve existing service coverage."
+      },
+      {
+        "id": "local-claude-3",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "url": "inline:HOST-SUFFIX,claude.ai",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for Claude; preserve existing service coverage."
+      },
+      {
+        "id": "local-civitai-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "ai",
+        "policy": "AI",
+        "url": "inline:HOST-SUFFIX,civitai.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for Civitai; preserve existing service coverage."
+      },
+      {
+        "id": "local-apple-id-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,appleid.apple.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for AppleID; preserve existing service coverage."
+      },
+      {
+        "id": "local-apple-id-2",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,appleid.cdn-apple.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for AppleID; preserve existing service coverage."
+      },
+      {
+        "id": "local-apple-id-3",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,gsa.apple.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for AppleID; preserve existing service coverage."
+      },
+      {
+        "id": "local-apple-id-4",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,idmsa.apple.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for AppleID; preserve existing service coverage."
+      },
+      {
+        "id": "local-apple-mail-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST-SUFFIX,mail.icloud.com.cn",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for AppleMail; preserve existing service coverage."
+      },
+      {
+        "id": "local-apple-mail-2",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST-SUFFIX,mail.me.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for AppleMail; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:HOST,www.googleapis.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-2",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:HOST-SUFFIX,docs.google.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-3",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:HOST-SUFFIX,drive.google.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-4",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:HOST-SUFFIX,googledrive.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-5",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:HOST-SUFFIX,googleusercontent.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-6",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-7",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:USER-AGENT,*com.google.Drive*",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-google-drive-8",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "google",
+        "policy": "谷歌服务",
+        "url": "inline:USER-AGENT,Google.Drive*",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for GoogleDrive; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-bilibili-intl-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,bilibili.tv",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for BiliBiliIntl; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST,cbsi.live.ott.irdeto.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-2",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST,cbsplaylistserver.aws.syncbak.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-3",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST,cbsservice.aws.syncbak.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-4",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST,link.theplatform.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-5",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,cbsaavideo.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-6",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,cbsi.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-7",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,cbsivideo.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-8",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,paramountplus.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-9",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,pplusstatic.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-paramount-plus-10",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:USER-AGENT,PPlus*",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for ParamountPlus; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-peacock-1",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,peacocktv.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for Peacock; preserve existing service coverage."
+      },
+      {
+        "id": "local-global-media-peacock-2",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:USER-AGENT,PeacockMobile*",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Migration supplement for Peacock; preserve existing service coverage."
+      },
+      {
+        "id": "local-alias-apple-events-akamaized-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,apple-events.akamaized.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-cdn-apple-mapkit-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST-SUFFIX,cdn-apple-mapkit.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-gsp4-cn-ls-apple-com-edgekey-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,gsp4-cn.ls.apple.com.edgekey.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-lookup-api-apple-com-edgekey-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,lookup-api.apple.com.edgekey.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-www-apple-com-edgekey-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,www.apple.com.edgekey.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-e16991-b-akamaiedge-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST,e16991.b.akamaiedge.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-ls-apple-com-edgesuite-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "apple",
+        "policy": "苹果服务",
+        "url": "inline:HOST-SUFFIX,ls.apple.com.edgesuite.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-e13252-dscg-akamaiedge-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "netflix",
+        "policy": "Netflix",
+        "url": "inline:HOST,e13252.dscg.akamaiedge.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-h-netflix-online-metrix-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "netflix",
+        "policy": "Netflix",
+        "url": "inline:HOST,h-netflix.online-metrix.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-api-imem-app",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "telegram",
+        "policy": "电报代理",
+        "url": "inline:HOST,api.imem.app",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-api-swiftgram-app",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "telegram",
+        "policy": "电报代理",
+        "url": "inline:HOST,api.swiftgram.app",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-mbrx-app",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "telegram",
+        "policy": "电报代理",
+        "url": "inline:HOST-SUFFIX,mbrx.app",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-i-joox-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,i-joox.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-sanook-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST-SUFFIX,sanook.com",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
+      },
+      {
+        "id": "local-alias-live-mediashield-ava-hulustream-com-akamaized-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "global-media",
+        "policy": "国际媒体",
+        "url": "inline:HOST,live-mediashield-ava-hulustream-com.akamaized.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Preserve a dedicated service alias present before the upstream migration."
       }
     ]
   },
-  "source_count": 96,
-  "enabled_source_count": 96,
-  "parsed_rule_count": 13550,
-  "curated_rule_count": 13505,
-  "curation_drop_count": 45,
-  "curation_move_count": 4,
-  "candidate_kept_rule_count": 13107,
-  "kept_rule_count": 13078,
-  "safe_rule_count": 12889,
-  "resolved_rule_count": 12889,
-  "conflicted_rule_count": 1145,
-  "duplicate_count": 427,
-  "conflict_count": 1114,
-  "resolved_conflict_count": 1114,
+  "source_count": 135,
+  "enabled_source_count": 135,
+  "parsed_rule_count": 16655,
+  "curated_rule_count": 15091,
+  "curation_drop_count": 1564,
+  "curation_move_count": 32,
+  "candidate_kept_rule_count": 15822,
+  "kept_rule_count": 14410,
+  "safe_rule_count": 14105,
+  "resolved_rule_count": 14105,
+  "conflicted_rule_count": 1816,
+  "duplicate_count": 681,
+  "conflict_count": 2018,
+  "resolved_conflict_count": 2018,
   "blackmatrix_preferred_conflict_count": 0,
+  "source_preferred_conflict_count": 0,
   "direct_preferred_conflict_count": 0,
   "specific_preferred_conflict_count": 0,
-  "category_preferred_conflict_count": 117,
-  "value_category_preferred_conflict_count": 60,
-  "protective_reject_conflict_count": 14,
+  "category_preferred_conflict_count": 225,
+  "value_category_preferred_conflict_count": 64,
+  "protective_reject_conflict_count": 24,
   "fallback_conflict_count": 0,
-  "ordered_overlap_count": 923,
-  "routing_constraint_count": 923,
-  "priority_override_rule_count": 44,
+  "ordered_overlap_count": 1705,
+  "routing_constraint_count": 1705,
+  "priority_override_rule_count": 92,
   "unresolved_conflict_count": 0,
-  "shared_infrastructure_risk_count": 16,
+  "shared_infrastructure_risk_count": 15,
   "resolution": {
-    "resolved_rule_count": 12889,
-    "rejected_rule_count": 189,
-    "resolved_conflict_count": 1114,
+    "resolved_rule_count": 14105,
+    "rejected_rule_count": 305,
+    "resolved_conflict_count": 2018,
     "blackmatrix_preferred_conflict_count": 0,
+    "source_preferred_conflict_count": 0,
     "direct_preferred_conflict_count": 0,
     "specific_preferred_conflict_count": 0,
-    "category_preferred_conflict_count": 117,
-    "value_category_preferred_conflict_count": 60,
-    "protective_reject_conflict_count": 14,
+    "category_preferred_conflict_count": 225,
+    "value_category_preferred_conflict_count": 64,
+    "protective_reject_conflict_count": 24,
     "fallback_conflict_count": 0,
-    "priority_override_rule_count": 44,
-    "ordered_overlap_count": 923,
+    "priority_override_rule_count": 92,
+    "ordered_overlap_count": 1705,
     "unresolved_conflict_count": 0
   },
   "priority_preview": {
     "mode": "preview-only",
     "active": false,
     "target": "quantumult-x",
-    "ordered_overlap_count": 923,
-    "live_cross_category_count": 465,
-    "discarded_overlap_count": 458,
-    "apple_contract_gap_count": 3,
-    "actual_policy_mismatch_count": 3,
-    "preview_candidate_decision_count": 3,
-    "preview_candidate_rule_count": 3,
-    "review_required_count": 0,
+    "ordered_overlap_count": 1705,
+    "live_cross_category_count": 756,
+    "discarded_overlap_count": 949,
+    "apple_contract_gap_count": 2,
+    "actual_policy_mismatch_count": 49,
+    "preview_candidate_decision_count": 47,
+    "preview_candidate_rule_count": 47,
+    "review_required_count": 2,
     "unwitnessed_count": 0,
     "status_counts": {
-      "enforced": 409,
-      "equivalent-policy": 56,
-      "preview-candidate": 3
+      "enforced": 621,
+      "equivalent-policy": 88,
+      "preview-candidate": 47,
+      "review-required": 2
     }
   },
   "candidate_categories": [
@@ -1074,8 +1590,8 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 148,
-      "source_count": 9
+      "rule_count": 432,
+      "source_count": 6
     },
     {
       "category": "google-voice",
@@ -1096,8 +1612,8 @@
       "policies": [
         "YouTube"
       ],
-      "rule_count": 196,
-      "source_count": 1
+      "rule_count": 194,
+      "source_count": 2
     },
     {
       "category": "netflix",
@@ -1107,8 +1623,8 @@
       "policies": [
         "Netflix"
       ],
-      "rule_count": 1158,
-      "source_count": 1
+      "rule_count": 1622,
+      "source_count": 3
     },
     {
       "category": "tiktok",
@@ -1118,7 +1634,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 35,
+      "rule_count": 62,
       "source_count": 1
     },
     {
@@ -1129,8 +1645,8 @@
       "policies": [
         "电报代理"
       ],
-      "rule_count": 40,
-      "source_count": 1
+      "rule_count": 66,
+      "source_count": 4
     },
     {
       "category": "spotify",
@@ -1140,7 +1656,7 @@
       "policies": [
         "Spotify"
       ],
-      "rule_count": 30,
+      "rule_count": 39,
       "source_count": 1
     },
     {
@@ -1151,8 +1667,8 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 79,
-      "source_count": 9
+      "rule_count": 97,
+      "source_count": 8
     },
     {
       "category": "github",
@@ -1162,7 +1678,7 @@
       "policies": [
         "GitHub"
       ],
-      "rule_count": 31,
+      "rule_count": 73,
       "source_count": 1
     },
     {
@@ -1173,8 +1689,8 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1903,
-      "source_count": 7
+      "rule_count": 2098,
+      "source_count": 14
     },
     {
       "category": "social",
@@ -1184,7 +1700,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 694,
+      "rule_count": 801,
       "source_count": 9
     },
     {
@@ -1195,8 +1711,8 @@
       "policies": [
         "谷歌服务"
       ],
-      "rule_count": 729,
-      "source_count": 3
+      "rule_count": 1202,
+      "source_count": 8
     },
     {
       "category": "microsoft",
@@ -1206,7 +1722,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 712,
+      "rule_count": 903,
       "source_count": 1
     },
     {
@@ -1217,8 +1733,8 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 36,
-      "source_count": 3
+      "rule_count": 40,
+      "source_count": 2
     },
     {
       "category": "china-media",
@@ -1239,8 +1755,8 @@
       "policies": [
         "国际媒体"
       ],
-      "rule_count": 615,
-      "source_count": 17
+      "rule_count": 715,
+      "source_count": 21
     },
     {
       "category": "alipay",
@@ -1250,7 +1766,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 12,
+      "rule_count": 10,
       "source_count": 1
     },
     {
@@ -1261,7 +1777,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 32,
+      "rule_count": 2,
       "source_count": 1
     },
     {
@@ -1272,7 +1788,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 4663,
+      "rule_count": 5394,
       "source_count": 12
     },
     {
@@ -1283,7 +1799,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 231,
+      "rule_count": 279,
       "source_count": 4
     },
     {
@@ -1294,7 +1810,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 214,
+      "rule_count": 254,
       "source_count": 1
     },
     {
@@ -1316,7 +1832,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 449,
+      "rule_count": 439,
       "source_count": 1
     }
   ],
@@ -1362,8 +1878,8 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 120,
-      "source_count": 10
+      "rule_count": 183,
+      "source_count": 8
     },
     {
       "category": "google-voice",
@@ -1384,8 +1900,8 @@
       "policies": [
         "YouTube"
       ],
-      "rule_count": 196,
-      "source_count": 1
+      "rule_count": 194,
+      "source_count": 2
     },
     {
       "category": "netflix",
@@ -1395,8 +1911,8 @@
       "policies": [
         "Netflix"
       ],
-      "rule_count": 1155,
-      "source_count": 1
+      "rule_count": 489,
+      "source_count": 3
     },
     {
       "category": "tiktok",
@@ -1406,7 +1922,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 33,
+      "rule_count": 60,
       "source_count": 1
     },
     {
@@ -1417,8 +1933,8 @@
       "policies": [
         "电报代理"
       ],
-      "rule_count": 40,
-      "source_count": 1
+      "rule_count": 65,
+      "source_count": 4
     },
     {
       "category": "spotify",
@@ -1428,7 +1944,7 @@
       "policies": [
         "Spotify"
       ],
-      "rule_count": 30,
+      "rule_count": 39,
       "source_count": 1
     },
     {
@@ -1439,7 +1955,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 79,
+      "rule_count": 99,
       "source_count": 9
     },
     {
@@ -1450,7 +1966,7 @@
       "policies": [
         "GitHub"
       ],
-      "rule_count": 27,
+      "rule_count": 67,
       "source_count": 1
     },
     {
@@ -1461,8 +1977,8 @@
       "policies": [
         "苹果服务"
       ],
-      "rule_count": 1902,
-      "source_count": 9
+      "rule_count": 2094,
+      "source_count": 15
     },
     {
       "category": "social",
@@ -1472,7 +1988,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 692,
+      "rule_count": 798,
       "source_count": 9
     },
     {
@@ -1483,8 +1999,8 @@
       "policies": [
         "谷歌服务"
       ],
-      "rule_count": 713,
-      "source_count": 3
+      "rule_count": 1103,
+      "source_count": 8
     },
     {
       "category": "microsoft",
@@ -1494,8 +2010,8 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 710,
-      "source_count": 1
+      "rule_count": 835,
+      "source_count": 2
     },
     {
       "category": "cloud",
@@ -1505,8 +2021,8 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 36,
-      "source_count": 3
+      "rule_count": 40,
+      "source_count": 2
     },
     {
       "category": "china-media",
@@ -1527,8 +2043,8 @@
       "policies": [
         "国际媒体"
       ],
-      "rule_count": 556,
-      "source_count": 16
+      "rule_count": 671,
+      "source_count": 22
     },
     {
       "category": "alipay",
@@ -1538,7 +2054,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 12,
+      "rule_count": 10,
       "source_count": 1
     },
     {
@@ -1549,7 +2065,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 31,
+      "rule_count": 2,
       "source_count": 1
     },
     {
@@ -1560,7 +2076,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 4660,
+      "rule_count": 5379,
       "source_count": 12
     },
     {
@@ -1571,7 +2087,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 205,
+      "rule_count": 250,
       "source_count": 4
     },
     {
@@ -1582,8 +2098,8 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 208,
-      "source_count": 1
+      "rule_count": 256,
+      "source_count": 2
     },
     {
       "category": "proxy-exception",
@@ -1604,7 +2120,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 385,
+      "rule_count": 372,
       "source_count": 1
     }
   ],
@@ -1614,767 +2130,1214 @@
     {
       "id": "rulego-advertising",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
       "sha256": "2536aacb61b0d40b205d459df7f9beac4e3c0e23744a963e111a6147fabc8cc9",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 976,
       "issue_count": 0
     },
     {
       "id": "rulego-tracking",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list",
       "sha256": "b27f44faaf04388f5cf6effb82c9d4cdcf931a153f1d33c056f84855d20678f2",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 90,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-openai",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list",
-      "sha256": "6ec16f5da986a15c62e80192f5b445dcdaf88607987923120761c1388eeb243d",
-      "from_cache": false,
-      "rule_count": 35,
+      "id": "magicrule-openai",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#OpenAI",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OpenAI_rules_194f9925afa57744.list",
+      "sha256": "e8966220a43caaffd1cafc3bde14c756013639966f10f5880b4b5f9121adabd5",
+      "from_cache": true,
+      "rule_count": 52,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-claude",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list",
-      "sha256": "bcf41ba79464a16d8305cf1c6f18c69d023ccd33ea1b84834daaa47cc0d5dfea",
-      "from_cache": false,
-      "rule_count": 3,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-gemini",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list",
-      "sha256": "9e488fd027a55ec5bfeeeda1ab4a9022364c1d47dfd140293e02835d3303980f",
-      "from_cache": false,
-      "rule_count": 13,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-copilot",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Copilot/Copilot.list",
-      "sha256": "b6bd07a9aaa109d44915b23b19d1d05948cc137dc7e2a5c3240d9a81c6e6b3a4",
-      "from_cache": false,
+      "id": "magicrule-gemini",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Gemini",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Gemini_rules_636eeb64c51e7ee6.list",
+      "sha256": "f8e854ff035cda19283ee26a2a9e1f5670f6903a901f5143920d944af67cd623",
+      "from_cache": true,
       "rule_count": 51,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-anthropic",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Anthropic/Anthropic.list",
-      "sha256": "b1e7ccfe4a5d39e297d030ad53ee93b1b0b1d558dd1134956ca114321eb0bd3a",
-      "from_cache": false,
-      "rule_count": 3,
+      "id": "magicrule-copilot",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Copilot",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Copilot_rules_019506b27dd4c36a.list",
+      "sha256": "f2b45cf693d0bb4007c10824eccfbf802437c68f1e409faff51ee67cb51e1046",
+      "from_cache": true,
+      "rule_count": 382,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-civitai",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Civitai/Civitai.list",
-      "sha256": "6e900ebd1040e186b529f0baaef19d380cd0ba39f84b0dbcf6af2f2b8587e846",
-      "from_cache": false,
-      "rule_count": 1,
+      "id": "magicrule-anthropic",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Anthropic",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Anthropic_rules_c755bfcadd066598.list",
+      "sha256": "09c8efec5fd7743f8f60d6c62837478c4fbcc0c4d60ec0a420a7f2f95bd0f882",
+      "from_cache": true,
+      "rule_count": 45,
       "issue_count": 0
     },
     {
       "id": "rulego-ai-supplement",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
       "sha256": "18bffe9e41f878787d31b537f423078bc396131e5a577c9ec919b0fe27c5a5a0",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 74,
       "issue_count": 0
     },
     {
       "id": "acl4ssr-ai",
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
+      "resolved_url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
       "sha256": "63e70895ac8c04c3b28965dc0b4ba9ceb3a1313a66b49487ed96005debc97e1e",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 49,
       "issue_count": 0
     },
     {
       "id": "local-openai-oaistatsig",
       "url": "inline:HOST-SUFFIX,oaistatsig.com",
+      "resolved_url": "inline:HOST-SUFFIX,oaistatsig.com",
       "sha256": "807f70e698793584a186dcdc26e7796959f8ade647522149b0df557e6c0912a9",
       "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-apple",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list",
-      "sha256": "966cb314803464ea516243104ed97aaa695d44da71f46b4c72bf8a14e7c67931",
-      "from_cache": false,
-      "rule_count": 1880,
+      "id": "magicrule-apple",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Apple",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_60fc94eb42cdb5a8.list",
+      "sha256": "81fb3cf87165b170421b94b6c34eea87bdf33bdc4379b72a3ac2c3a567d37e71",
+      "from_cache": true,
+      "rule_count": 2085,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-apple-id",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleID/AppleID.list",
-      "sha256": "3e8130e1d985eee5d3b68ef1eb5e57b364715a5703756af2a15b365e3fd14dbb",
-      "from_cache": false,
-      "rule_count": 4,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-apple-mail",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMail/AppleMail.list",
-      "sha256": "0f0f270817dc95160f75a95d0d70b4db2650426bf59d22a73273aa2241a99661",
-      "from_cache": false,
-      "rule_count": 2,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-apple-media",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMedia/AppleMedia.list",
-      "sha256": "53e7a5f64d5f4c956226ea52622a517b5e4e245407fc3d311bcdb94bc9b44def",
-      "from_cache": false,
+      "id": "magicrule-apple-media",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMedia",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleMedia_rules_aad33b7ffdee304d.list",
+      "sha256": "2ba44c1317a1dfcc4c4d2e49f0e89eacd8c20dadd479bdc118ee4764fca03f31",
+      "from_cache": true,
       "rule_count": 52,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-apple-music",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleMusic/AppleMusic.list",
-      "sha256": "47a5e04d517816386eedd2761806ccc8c63fbb6af10c82d3a800271e2da23343",
-      "from_cache": false,
-      "rule_count": 10,
+      "id": "magicrule-apple-music",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMusic",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleMusic_rules_aa9d57e007c42162.list",
+      "sha256": "72d7a38ec8046147f2e8c9f45edd853ca3e50b9bf87cfc379160bddcadd51c67",
+      "from_cache": true,
+      "rule_count": 18,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-apple-news",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleNews/AppleNews.list",
-      "sha256": "5f330ee83e017d6edbde0cfbf73fc2ac6a9f741bea69d766d40bb9a4c0f0fa1b",
-      "from_cache": false,
-      "rule_count": 2,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-apple-proxy",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleProxy/AppleProxy.list",
-      "sha256": "ef0acbccd04a766b052d1a1c6473315fc3795484882c89e9601bc08976c290ad",
-      "from_cache": false,
-      "rule_count": 44,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-apple-tv",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleTV/AppleTV.list",
-      "sha256": "20226007d5a0268b70fc3adf56d6152f9efce614cf8dab9fdc0976eeb93c04ee",
-      "from_cache": false,
-      "rule_count": 9,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-appstore",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppStore/AppStore.list",
-      "sha256": "8189ba2f921fe1c25e6c4a78ee5ab1fee35ac9c62ed80d744925b93994fcc6d7",
-      "from_cache": false,
-      "rule_count": 2,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-youtube",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list",
-      "sha256": "6c011f1b2d03f664799bd8f01718bef9c8b071209d5602bfed18bb5db4a8c9e4",
-      "from_cache": false,
-      "rule_count": 196,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-netflix",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list",
-      "sha256": "eb95ba340fc9b3013e6b66a64270d20e4142b0f9b8cde1bac060725742331ec7",
-      "from_cache": false,
-      "rule_count": 1158,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-tiktok",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list",
-      "sha256": "b1a9cc643f72d4f105bf2eb1ba916ae7c56d34014355d97c1ff98f41006b9f75",
-      "from_cache": false,
-      "rule_count": 35,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-google-voice",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleVoice/GoogleVoice.list",
-      "sha256": "b0e49655ed123a5ed8f6c492f4693853c05bf015e82c4bbbdbbfcbeb9bf3e496",
-      "from_cache": false,
+      "id": "magicrule-apple-news",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleNews",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleNews_rules_e7b82caad7a8e119.list",
+      "sha256": "bd111ff77068405c4855f2a18a755b8fd3064581c029fc7dfd6c9e6d22302e78",
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-google",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list",
-      "sha256": "eb56706413fab41ded77194ae73f690af583bd56ad7d470273e026fa5ccb7b93",
-      "from_cache": false,
-      "rule_count": 711,
+      "id": "magicrule-apple-proxy",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleProxy",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleProxy_rules_a318a47a0aff2ce7.list",
+      "sha256": "eceed498be3de0270f65127c10ecf79802b1c089f7e4144bdcb755257fc22e85",
+      "from_cache": true,
+      "rule_count": 65,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-google-drive",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleDrive/GoogleDrive.list",
-      "sha256": "4969e8ba55a0d03ba5dd13d8b626a28b73823c1e57991187e5c05a792b7f9144",
-      "from_cache": false,
+      "id": "magicrule-apple-tv",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleTV",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleTV_rules_cf771653fa2d2e61.list",
+      "sha256": "ca57444eb7db8fcc232d8b27e6cb06d943a6866c2d96126cfa2faab810108e66",
+      "from_cache": true,
       "rule_count": 8,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-google-earth",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleEarth/GoogleEarth.list",
-      "sha256": "56dde6bbd6b8ed9f1f46fcc2dd9ff57196b019df796d0fc0582df421e909cd45",
-      "from_cache": false,
+      "id": "magicrule-appstore",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppStore",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppStore_rules_e5cd4e256705da82.list",
+      "sha256": "ee4101d672a563b18b9c48150ae5f9387ae2a48c05bb0df20c671758136eb5eb",
+      "from_cache": true,
+      "rule_count": 2,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-youtube",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#YouTube",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/YouTube_rules_82fafe057cef879f.list",
+      "sha256": "c195fcf616a88eaa86aca9e67666957dec63dc832802919e99e727ec2b7a1502",
+      "from_cache": true,
+      "rule_count": 193,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-netflix",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Netflix",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Netflix_rules_6baa6e1abb8b7973.list",
+      "sha256": "9f6222e4ffe1a96bd9b659b6f2abb68ab2e24d7bffa20ac16a7305b1c1e6c9fc",
+      "from_cache": true,
+      "rule_count": 1620,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-tiktok",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#TikTok",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TikTok_rules_91f7adc5c25cabca.list",
+      "sha256": "f034045cb90358a605cf4162b0ff76e7108753d60d1d51542eda0565ae8a9d67",
+      "from_cache": true,
+      "rule_count": 62,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-google-voice",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleVoice",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GoogleVoice_rules_d7ad73d5b3292164.list",
+      "sha256": "2893aed97a23eb016542ad007235b4a4304f1518a8797140ad50e3916de68a1f",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-google",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Google",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Google_rules_d1123fc9c30418d4.list",
+      "sha256": "0dbd57601bc5e6f2bc47d6850beab2240a65e43a68677e3522fcd9db9f404184",
+      "from_cache": true,
+      "rule_count": 1180,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-google-earth",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleEarth",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GoogleEarth_rules_a8e26a1a012c3ebf.list",
+      "sha256": "52d43c97a3e4f4684748c0720be6279e91ef47206c311cfc6db94b2337c910ae",
+      "from_cache": true,
       "rule_count": 16,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-microsoft",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list",
-      "sha256": "7de40c9424a4a1ab793a38f58dbf64c25ef68f9e812618abf3751a853561c800",
-      "from_cache": false,
-      "rule_count": 712,
+      "id": "magicrule-microsoft",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Microsoft",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Microsoft_rules_de644bdb97d4d9ff.list",
+      "sha256": "014f284712048f8c5616decb9535656c319fbb15239dc16335df962a7d27eedb",
+      "from_cache": true,
+      "rule_count": 903,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-onedrive",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OneDrive/OneDrive.list",
-      "sha256": "ff3c4a9b4bf9ff4a5095b653e8c9af69a90c4074b3d136a8a82f8cfbb701f676",
-      "from_cache": false,
-      "rule_count": 17,
+      "id": "magicrule-onedrive",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#OneDrive",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OneDrive_rules_73ae902f418a9bc0.list",
+      "sha256": "3371f850d1dd53fb1383dc99417161d2b349a8280cc8a50aebadea69435a53b2",
+      "from_cache": true,
+      "rule_count": 22,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-dropbox",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Dropbox/Dropbox.list",
-      "sha256": "2dab7fdb4ebeb89e2012e23a85bb5a6c7f074ff3911160291923e51242937f82",
-      "from_cache": false,
-      "rule_count": 17,
+      "id": "magicrule-dropbox",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Dropbox",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Dropbox_rules_a9b45d64639554bb.list",
+      "sha256": "b9becbf5f1e8114cdc7a153e37cb2ef9e3b6fa6a3e436f76cefbf62d7ddcce3f",
+      "from_cache": true,
+      "rule_count": 18,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-mega",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MEGA/MEGA.list",
-      "sha256": "0530860f50f5afbb96bf0a74699cfbf3566b7904872505fb7464cbffd057bf60",
-      "from_cache": false,
-      "rule_count": 13,
+      "id": "magicrule-mega",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#MEGA",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/MEGA_rules_cc9587baaf5421aa.list",
+      "sha256": "b9f894d6812af1f74a54aac51923d49197e61ec9b29115821ed419aacd9bbeb8",
+      "from_cache": true,
+      "rule_count": 22,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-bing",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bing/Bing.list",
-      "sha256": "104a58946d9e1411c3d18db64754ea667888ce42224209a3707888a9430655c6",
-      "from_cache": false,
-      "rule_count": 9,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-github",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list",
-      "sha256": "413f664aa29692e83879422ee6d35ced46dd135ebd85f67afaf554ab14391f77",
-      "from_cache": false,
-      "rule_count": 31,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-spotify",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list",
-      "sha256": "d29fa087d00317231e7de7c8cd4aa9ca91ed0c51660fbf76101b719d8ac5e78c",
-      "from_cache": false,
-      "rule_count": 30,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-telegram",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list",
-      "sha256": "986f8e7d587ce42c3bb472e6a2e9cffd42a413240d32c02cc363c4d6367141fe",
-      "from_cache": false,
+      "id": "magicrule-bing",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Bing",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Bing_rules_b25bcc7b82afa012.list",
+      "sha256": "1e9b526c3028ca23e1d6c1a838cdfc4cc25530f9beb5bce1073a3c54dd1a0c3d",
+      "from_cache": true,
       "rule_count": 40,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-twitter",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitter/Twitter.list",
-      "sha256": "71cc825be928852e43158d45075e036fad558d0d212c0703c192ed5651bbfcb4",
-      "from_cache": false,
-      "rule_count": 33,
+      "id": "magicrule-github",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GitHub",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitHub_rules_8ae314ae6a73a225.list",
+      "sha256": "2ec159f2425d66421a75493693893709b8ab498b2254ed591361e4a6d05a5e72",
+      "from_cache": true,
+      "rule_count": 73,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-facebook",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Facebook/Facebook.list",
-      "sha256": "9f437681b4e84671e9cfab5c85e29bc74dc85d071486c259e19cac78edf3b521",
-      "from_cache": false,
-      "rule_count": 570,
+      "id": "magicrule-spotify",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Spotify",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Spotify_rules_e2de74aedecac710.list",
+      "sha256": "8c8078efcd32d0ce1e94ea6e50bc74e684ca51a571fc189453483ce4f6aff84f",
+      "from_cache": true,
+      "rule_count": 39,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-instagram",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list",
-      "sha256": "6e38a62bfb1681ec875882c95a3df94b4180ccb45d17ef716289b0c7dd9f56c9",
-      "from_cache": false,
-      "rule_count": 4,
+      "id": "magicrule-telegram",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Telegram",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Telegram_rules_d7c1725f903c116d.list",
+      "sha256": "048744c2639536681a760ca86fa477580f4a9af0169930e3de8cd049b8a540d1",
+      "from_cache": true,
+      "rule_count": 63,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-whatsapp",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Whatsapp/Whatsapp.list",
-      "sha256": "ed5d84c175a72357092e6013d828fa94135aee5b41d1515254bcd168ad4747f8",
-      "from_cache": false,
-      "rule_count": 17,
+      "id": "magicrule-social-twitter",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Twitter",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Twitter_rules_35d2852b8ae02eef.list",
+      "sha256": "3d035360b93c250215355b1d1fb926ed908f821ac2c48fff15d0ddde4dcaa351",
+      "from_cache": true,
+      "rule_count": 36,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-line",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Line/Line.list",
-      "sha256": "65589a46f0ed967ffa9825923f9739bfa504f9a196a55af093ef40fd429091dc",
-      "from_cache": false,
-      "rule_count": 24,
+      "id": "magicrule-social-facebook",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Facebook",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Facebook_rules_47e83cad9c0e1fd2.list",
+      "sha256": "4daee932585ad2f854f878dabd80c11b0a60d0cd0007584443ca15f966413b8c",
+      "from_cache": true,
+      "rule_count": 592,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-kakaotalk",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KakaoTalk/KakaoTalk.list",
-      "sha256": "fd7f297ccf8a53337972d8678f9201c09d32f606eb725a7adf96394b48a796ef",
-      "from_cache": false,
+      "id": "magicrule-social-instagram",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Instagram",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Instagram_rules_be400ee3be6dcbd1.list",
+      "sha256": "4a4c717f8bb9d05e9cecffe10579de53f1fdaf46d7d4c99b7e49ba4c44675b0e",
+      "from_cache": true,
+      "rule_count": 76,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-social-whatsapp",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Whatsapp",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Whatsapp_rules_540ba7d38c630590.list",
+      "sha256": "19b9956dee447172fd4b975fd8e4b747d8481cfcbb89950c60e0a48cdc387a1e",
+      "from_cache": true,
+      "rule_count": 30,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-social-line",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Line",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Line_rules_f82449963c701072.list",
+      "sha256": "c588e977d40c578a8b06ead763e7d34a84dbd0c4602064a08db85be79a4bb50b",
+      "from_cache": true,
+      "rule_count": 41,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-social-kakaotalk",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#KakaoTalk",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/KakaoTalk_rules_e6aa6906b170151b.list",
+      "sha256": "4ebf115cbc38b71bd609fd658073aef65c213f6f854f9d6ea970ee9641c829f8",
+      "from_cache": true,
+      "rule_count": 65,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-social-discord",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Discord",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Discord_rules_c05c363f062b9558.list",
+      "sha256": "215b27452f51eb3174a7a7485b8b529d19f1bb3aa941b47955b03655dc679e93",
+      "from_cache": true,
+      "rule_count": 31,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-social-reddit",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Reddit",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Reddit_rules_23e8e269eb8c40d2.list",
+      "sha256": "7240693ece3745d1565434cc20c1aa27a5ac9382a6925c6120d9ac376c5a0c41",
+      "from_cache": true,
       "rule_count": 15,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-discord",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Discord/Discord.list",
-      "sha256": "8b4ea92aa617fc9697f45a1cd276b47d3b96bd07019584aebcde5f6aae0fddf2",
-      "from_cache": false,
-      "rule_count": 29,
+      "id": "magicrule-social-threads",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Threads",
+      "resolved_url": "https://rule-26r.pages.dev/data/_shared/artifacts/Threads_rules_6ad78fe6c0460829.list",
+      "sha256": "57f9a6b9c0355ca0da4ac59d8d2e1c61a5d533da1e846150bedc06da58373bd7",
+      "from_cache": true,
+      "rule_count": 2,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-reddit",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Reddit/Reddit.list",
-      "sha256": "628f0a3341498af9717559996d611c78c2e7abfccd5eb5b2e84debb1f23b8c8e",
-      "from_cache": false,
+      "id": "magicrule-developer-gitlab",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GitLab",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitLab_rules_7435224c094f2142.list",
+      "sha256": "6bbe134b1efb90abdf2896c22bbb5dbd77db77d252b4a33e45ef9df26928822a",
+      "from_cache": true,
       "rule_count": 8,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-social-threads",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Threads/Threads.list",
-      "sha256": "9c0e3bfffd65fb7f551f35de72630605f9380abfbae9656ddad0d0933844e5a3",
-      "from_cache": false,
+      "id": "magicrule-developer-docker",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Docker",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Docker_rules_f90eb19f7cb25c86.list",
+      "sha256": "58ee0859bc99c0b650b5829760679d304fca147683f4c537b507070bc31e94b9",
+      "from_cache": true,
+      "rule_count": 10,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-developer-figma",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Figma",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Figma_rules_08091bdf0cbbef27.list",
+      "sha256": "a842945e3497ec3ae068b891d00e39449dc8d32385020cbe3bbab168afb33d18",
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-developer-gitlab",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitLab/GitLab.list",
-      "sha256": "a6cf1745a19aa5ca7396be9bb6761c4126e5c285a072829f597f5a07deed9e58",
-      "from_cache": false,
-      "rule_count": 6,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-developer-docker",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Docker/Docker.list",
-      "sha256": "bc9e5e88fed658b202e3beebcb977f93070cc18ca4e2bbb955db6bdfda8d6d09",
-      "from_cache": false,
+      "id": "magicrule-developer-notion",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Notion",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Notion_rules_ca839208a396a5a9.list",
+      "sha256": "a869ce907380dc3168f85085f86aa6bd7f0b94fc29360f98cf633dc31699335c",
+      "from_cache": true,
       "rule_count": 7,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-developer-figma",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Figma/Figma.list",
-      "sha256": "befb9ad2d976cb57591484d8bdbeb045f28ee1bc7a414cc2da86faa098564b13",
-      "from_cache": false,
-      "rule_count": 1,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-developer-notion",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Notion/Notion.list",
-      "sha256": "51f54ca90d78a61cd321fbfc266d8025d9eeb506b92157464140e15aa14b3872",
-      "from_cache": false,
-      "rule_count": 6,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-developer-npmjs",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Npmjs/Npmjs.list",
-      "sha256": "5cc48c7ebaa1df807c653332028a8c1b73b665934feffe9083282fd9c97943fd",
-      "from_cache": false,
+      "id": "magicrule-developer-npmjs",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#NPM",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/NPM_rules_91d6f9b1db747080.list",
+      "sha256": "a57603f1235fcc16c53cc57845b2cd4e8a9ef739e8942edf6b76098139719b3f",
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-developer-jetbrains",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Jetbrains/Jetbrains.list",
-      "sha256": "3eecf0dd67c07548516282292c4033fe2ae9434bb376f5f27da0df076d145d09",
-      "from_cache": false,
-      "rule_count": 14,
+      "id": "magicrule-developer-jetbrains",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Jetbrains",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Jetbrains_rules_62ab5956fbd0399b.list",
+      "sha256": "79c7d1646322d08b9c8a9a310704244e05889d6db27a19aba95cceb37702721b",
+      "from_cache": true,
+      "rule_count": 26,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-developer-sourceforge",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/SourceForge/SourceForge.list",
-      "sha256": "79682e0dc681a224aafe695aa73e73b1c207b6902e80366462fedf331c3df791",
-      "from_cache": false,
+      "id": "magicrule-developer-sourceforge",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#SourceForge",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/SourceForge_rules_2b326b01fccadb44.list",
+      "sha256": "2ccbfff75e90cceee2162eaa566d7fe673cac7f8c13400d89a2fecb6b7821bb7",
+      "from_cache": true,
       "rule_count": 4,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-developer-vercel",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Vercel/Vercel.list",
-      "sha256": "309e068b794cef2c2c9e5580ca9b8f3137e21e0f3de322249e6b18bddcca174d",
-      "from_cache": false,
-      "rule_count": 27,
+      "id": "magicrule-developer-vercel",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Vercel",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Vercel_rules_312ec5423618f477.list",
+      "sha256": "549f9f96116f4f9b32da17a22d3991076ec9b5cecd4478f2250500c9400b0a00",
+      "from_cache": true,
+      "rule_count": 30,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-developer-slack",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Slack/Slack.list",
-      "sha256": "efb342b17ca908c48a0ac645f20a9b176fb0b3ac21333fce246c3733aca049a2",
-      "from_cache": false,
+      "id": "magicrule-developer-slack",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Slack",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Slack_rules_de7177b2992a9bc1.list",
+      "sha256": "0538bc994afafdf3a78d7e85be78b525fbade815f99ea3a7ad7b3996772e66b2",
+      "from_cache": true,
       "rule_count": 11,
       "issue_count": 0
     },
     {
       "id": "rulego-china-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list",
       "sha256": "8a79fd534b92d7ac33e9290bd141b423822dc50525a525938486a340b6b5bcda",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 16,
       "issue_count": 0
     },
     {
       "id": "rulego-global-media",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
       "sha256": "8e3a7945de96310575837ad55fd724aecaf3b3894a7eac2a979311d6d5fa88ce",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 242,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-disney",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list",
-      "sha256": "f2682e12018f9019b2edae52ceee57cb1964d792ae4b3647c88b81f30fe41022",
-      "from_cache": false,
-      "rule_count": 174,
+      "id": "magicrule-global-media-disney",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Disney",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Disney_rules_9dcd23156c2640aa.list",
+      "sha256": "774d4c829d4608bc8be3558f6e600f9188f8a5e28cf05ae3d8c4bb5409f396b2",
+      "from_cache": true,
+      "rule_count": 248,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-hbo",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/HBO/HBO.list",
-      "sha256": "824fcce1ad8bee157a94e048a4130832cc1d21d843cbdea86def1c378ec59b3d",
-      "from_cache": false,
-      "rule_count": 49,
+      "id": "magicrule-global-media-hbo",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#HBO",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/HBO_rules_7bb2b26b5a13c71b.list",
+      "sha256": "13c3b84c2fbaa455e953369b55c4014236099be5db2bb47e7c53be801f6a441a",
+      "from_cache": true,
+      "rule_count": 93,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-hulu",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hulu/Hulu.list",
-      "sha256": "1ce2813c7b9060e99ae8c0ebee8313c6fb330acbbcaa78826098e4735249015a",
-      "from_cache": false,
+      "id": "magicrule-global-media-hulu",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Hulu",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Hulu_rules_99e27aae4f80b90f.list",
+      "sha256": "8792c5086723b1cd25828569d43c0b4f77a70176961a3096df69d1e2480653f1",
+      "from_cache": true,
       "rule_count": 58,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-amazon-prime-video",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AmazonPrimeVideo/AmazonPrimeVideo.list",
-      "sha256": "e4e39b8ae62781e543268f1829af15b4c904da4e3126b1fbfdde92fa6cdf3a6b",
-      "from_cache": false,
+      "id": "magicrule-global-media-amazon-prime-video",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AmazonPrimeVideo",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AmazonPrimeVideo_rules_732981d9832821ea.list",
+      "sha256": "df4c536c5a37f25330dbf671aa1a37748a73dca61c788b2c86991346d22faf93",
+      "from_cache": true,
       "rule_count": 27,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-prime-video",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/PrimeVideo/PrimeVideo.list",
-      "sha256": "c51ccfea4d51a4b259a2cabb7988cd28c02c60b7265617d2f866ace7a150f4af",
-      "from_cache": false,
-      "rule_count": 18,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-global-media-twitch",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitch/Twitch.list",
-      "sha256": "1f79f5ec91170a7ab00bfbe3fb13a44be7e693de10b0ac9810d2bd850867b1b6",
-      "from_cache": false,
-      "rule_count": 21,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-global-media-abema-tv",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AbemaTV/AbemaTV.list",
-      "sha256": "38e06aed84cdafe32e4b44a3cccb9f8a36a1b2c0d733fbe866cac2b6719184ca",
-      "from_cache": false,
-      "rule_count": 24,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-global-media-bilibili-intl",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBiliIntl/BiliBiliIntl.list",
-      "sha256": "e13cbff83ce460e84534ca7c1fb6c860bd659cbdbe4afbe36b58aa54f6c09318",
-      "from_cache": false,
-      "rule_count": 1,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-global-media-iqiyi-intl",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYIIntl/iQIYIIntl.list",
-      "sha256": "80e677f8af295ca2b7c0806f9330dd4d97e3ed67b9e9af086d132e47f6be7cb5",
-      "from_cache": false,
-      "rule_count": 19,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-global-media-naver-tv",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/NaverTV/NaverTV.list",
-      "sha256": "c25bbd8e688077ebd7486b4586d38ae091e80fe6ee5047771f0570a84eaeaa7d",
-      "from_cache": false,
-      "rule_count": 3,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-global-media-tvb",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TVB/TVB.list",
-      "sha256": "5681f12279fea07dece1400ae75f642efb9a99bec7bf50099ec205afc30a5e8a",
-      "from_cache": false,
+      "id": "magicrule-global-media-prime-video",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#PrimeVideo",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/PrimeVideo_rules_cad791b7223d2bc6.list",
+      "sha256": "b3aba6c3965ed43786bd2c3dd93865ad2c3c3044ef00c2fd81a435842d280076",
+      "from_cache": true,
       "rule_count": 23,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-asian",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AsianMedia/AsianMedia.list",
-      "sha256": "9f46dd3665fe85ad5f3572260c2f3a508caf7a43451676a96c2abe1a3a2f7eb4",
-      "from_cache": false,
-      "rule_count": 31,
+      "id": "magicrule-global-media-twitch",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Twitch",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Twitch_rules_567d40522d52ef93.list",
+      "sha256": "9baddfe0ea0218dc52e5259eb78ba045d1d690ce528bbc9d48dd108578b87ebc",
+      "from_cache": true,
+      "rule_count": 57,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-joox",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JOOX/JOOX.list",
-      "sha256": "492f77be9a9941a050c9dd093e041386bfc69cccfbe833d1ffb2f5027bd05d23",
-      "from_cache": false,
-      "rule_count": 8,
+      "id": "magicrule-global-media-abema-tv",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AbemaTV",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AbemaTV_rules_afa0f4fc4ae90287.list",
+      "sha256": "6e7de6030d3955d60a20cecc27a7a0f4b2ac6bc25aaf63fccca4fdd57cc73370",
+      "from_cache": true,
+      "rule_count": 24,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-kkbox",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KKBOX/KKBOX.list",
-      "sha256": "1434fdafab0fcc7f28e66568f471f92e0aae600c70303bf71846e7801c110003",
-      "from_cache": false,
-      "rule_count": 9,
+      "id": "magicrule-global-media-iqiyi-intl",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYIIntl",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYIIntl_rules_bba58ec9df2bdacf.list",
+      "sha256": "56e0a0d91cf9cee5ddb8147bf1a92892d34647294b1209c46fa5c3ead718e256",
+      "from_cache": true,
+      "rule_count": 20,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-global-media-paramount-plus",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ParamountPlus/ParamountPlus.list",
-      "sha256": "4b7ce915f3ce5767a8be537d700da785b00a76825acdd2a90621b06763f4ad90",
-      "from_cache": false,
-      "rule_count": 10,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-global-media-peacock",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Peacock/Peacock.list",
-      "sha256": "9c1f5b3db55a995971eb49d5fd95a41d203fb9c829707d7d99fa853704670db1",
-      "from_cache": false,
-      "rule_count": 2,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-youtube-music",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTubeMusic/YouTubeMusic.list",
-      "sha256": "33730080645d727e4e9ab44f18a3f1dbe730e27e00d3f6e11faf48927237359f",
-      "from_cache": false,
-      "rule_count": 5,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-streaming-bilibili",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list",
-      "sha256": "fd0f422e30fb78a490adfd23cae3cb02ddc9c85a1a1c46a1e620c2de5b987df6",
-      "from_cache": false,
-      "rule_count": 127,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-streaming-youku",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Youku/Youku.list",
-      "sha256": "f5269239fd71ffe59bb6550d09b2f635ee8ab83f818e2698ad76244ee4ec1500",
-      "from_cache": false,
-      "rule_count": 37,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-streaming-iqiyi",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/iQIYI/iQIYI.list",
-      "sha256": "4d69e50dab93a60f970b96dc7ce8c9be5b6e532606b467da85b21b32a903c54c",
-      "from_cache": false,
-      "rule_count": 62,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-streaming-acfun",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AcFun/AcFun.list",
-      "sha256": "357e820efa98fb9c497e95a4af6a26e60514b5b77a6924da72fc976692713fa9",
-      "from_cache": false,
-      "rule_count": 5,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-alibaba",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Alibaba/Alibaba.list",
-      "sha256": "176fe8d2c87403be0d7bdec6d5f6731a4b1491f96ba97f0a827aa9a6df1f14c4",
-      "from_cache": false,
-      "rule_count": 1320,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-baidu",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Baidu/Baidu.list",
-      "sha256": "6d5b61a7b6aa286f46ef1a9660462a7d5159c01ff87804d1c1aa7857fe7e3e69",
-      "from_cache": false,
-      "rule_count": 251,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-tencent",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list",
-      "sha256": "2389edcd00c769b59073cff27ce27d69f9d7b2f00c8da79ff7f4f89a13eaade3",
-      "from_cache": false,
-      "rule_count": 2523,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-xiaomi",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/XiaoMi/XiaoMi.list",
-      "sha256": "a396fb0ebf3e72a31bcc2f274dda2409c80a28f2d76782b38342adbc6218825a",
-      "from_cache": false,
-      "rule_count": 157,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-jingdong",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list",
-      "sha256": "0fbd12756395e4357fff89acc861e4ae7bb0d93cbdbdcbee11d83028ac032af3",
-      "from_cache": false,
-      "rule_count": 249,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-pinduoduo",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pinduoduo/Pinduoduo.list",
-      "sha256": "0c4769294b6b3408253b576a0fce24d86922a56725936763a588aee4be915080",
-      "from_cache": false,
+      "id": "magicrule-global-media-naver-tv",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#NaverTV",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/NaverTV_rules_424efb2273155f3b.list",
+      "sha256": "7373194adf8442d8b3419d53ef7450d1786fb9bb43e4e35b83017ad15b855be9",
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-china-services-meituan",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list",
-      "sha256": "11ff7a8666db242133af2691d851cac9b838c1514bab54c477061d2fc5355160",
-      "from_cache": false,
-      "rule_count": 7,
+      "id": "magicrule-global-media-tvb",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#TVB",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TVB_rules_39cbc3d9c70fff8a.list",
+      "sha256": "d2ab13a881eed870c20491fcf11d0e1fbec78d8164d7ed58db204b47054f6c52",
+      "from_cache": true,
+      "rule_count": 22,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-china-services-didi",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DiDi/DiDi.list",
-      "sha256": "adec00b9905ada06850643266715a43d57a799889ac17ba8bf21b59c3bf312e4",
-      "from_cache": false,
-      "rule_count": 25,
+      "id": "magicrule-global-media-asian",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AsianMedia",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AsianMedia_rules_01ba9a26ab3e7141.list",
+      "sha256": "fa645ca72647c65d0e5f9d6920e65e71251253a7c263bb9d4624d899947e90ba",
+      "from_cache": true,
+      "rule_count": 19,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-china-services-12306",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/12306/12306.list",
-      "sha256": "ac4cb2f7805b48e261b24b22d048b7e9cb9d94bd0e793598187a55f138119755",
-      "from_cache": false,
-      "rule_count": 15,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-sina",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Sina/Sina.list",
-      "sha256": "6c520a3a174f90cd444c001ed2fcdbd423569dc507bfff2e857b78f36628d4cc",
-      "from_cache": false,
-      "rule_count": 108,
-      "issue_count": 0
-    },
-    {
-      "id": "blackmatrix-china-services-weibo",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Weibo/Weibo.list",
-      "sha256": "1699c8fbc366874880b1b96c4288269c41c595213bb23b5dbce702e56066d6a6",
-      "from_cache": false,
+      "id": "magicrule-global-media-joox",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#JOOX",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/JOOX_rules_ae1d2092413a04ee.list",
+      "sha256": "22421d702c47201ec0c52f065076d6d85a495dc1fea5fb5d188baee23077b067",
+      "from_cache": true,
       "rule_count": 4,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-china-services-zhihu",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Zhihu/Zhihu.list",
-      "sha256": "6ae5266b68dc3a6a23eea99b86bf97f77e5bedad072750c64282ca3200239b69",
-      "from_cache": false,
+      "id": "magicrule-global-media-kkbox",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#KKBOX",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/KKBOX_rules_2f3c16fdc3989522.list",
+      "sha256": "7d9e446f05b2db2f00b2bd6795533710e76abe919b19e2acb48209eccc0622c4",
+      "from_cache": true,
+      "rule_count": 9,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-youtube-music",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#YouTubeMusic",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/YouTubeMusic_rules_987066cad8e6a281.list",
+      "sha256": "79d79aaabd9658563463ce5352bff488e01faea514f1a6606f40bd1af2915f18",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-streaming-bilibili",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#BiliBili",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/BiliBili_rules_eaa7f3f129f365c0.list",
+      "sha256": "86b945023aff79f5fda81b0dd502137331dd6a98e9d70db0aa160a8128682f1f",
+      "from_cache": true,
+      "rule_count": 125,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-streaming-youku",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Youku",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Youku_rules_b4d6f14725e52440.list",
+      "sha256": "c05eb07ddb24ea46e9e354ab09348b02716c13fa8fb244b087e3724aedcb2c20",
+      "from_cache": true,
+      "rule_count": 62,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-streaming-iqiyi",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYI",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYI_rules_3c9494ad00352fe5.list",
+      "sha256": "f78b5dc809b27ee2fd4aebaaebef2c26dde4dc4263b2b927f0cf245623065479",
+      "from_cache": true,
+      "rule_count": 81,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-streaming-acfun",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AcFun",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AcFun_rules_95f6708090e93107.list",
+      "sha256": "b7e07deaf2dace0a204aab35357f91bbb5a0a7490a5879bc921b4b603b22258b",
+      "from_cache": true,
+      "rule_count": 11,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-alibaba",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Alibaba",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Alibaba_rules_3f5cfbafcebd3c82.list",
+      "sha256": "6bb0f421311208fd3f525358dfa97f6b950d3396eeaea2be506e3168886811e9",
+      "from_cache": true,
+      "rule_count": 1624,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-baidu",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Baidu",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Baidu_rules_cfa3f390b0cce394.list",
+      "sha256": "c7782dba2d1335f243ab0aa4d2b19ca082ad6beeb8da955a5ebaa87c78ae4eaa",
+      "from_cache": true,
+      "rule_count": 337,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-tencent",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Tencent",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Tencent_rules_a85c384378e7fe8b.list",
+      "sha256": "47c4af434f5a2fcd843ccbf2bafc9a6ebf28236f1a6dbcdfb4a5c3b16fe8200f",
+      "from_cache": true,
+      "rule_count": 2775,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-xiaomi",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#XiaoMi",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/XiaoMi_rules_29d3ea69ec2ba703.list",
+      "sha256": "daf3da41299e0bc6572c2a4ed4707c2b002d2ebed65e2a7c1efb84ca425e5f8a",
+      "from_cache": true,
+      "rule_count": 196,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-jingdong",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#JingDong",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/JingDong_rules_20c96f0a9ef1e588.list",
+      "sha256": "21159a36f2fb4c2e7230a29bbfe07f8d2474bd63c9aff387da7303a0150d5892",
+      "from_cache": true,
+      "rule_count": 277,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-pinduoduo",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Pinduoduo",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Pinduoduo_rules_fffa017794886f08.list",
+      "sha256": "fa9c6712900f63ea986d9ef9cae3ceb15d70c888420e5273709ef9b1190f2003",
+      "from_cache": true,
       "rule_count": 7,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-china-services-douban",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/DouBan/DouBan.list",
-      "sha256": "db24f402138457ef1844b5a38149bba377e8cfa19c55a36f07ce55c4744040b2",
-      "from_cache": false,
+      "id": "magicrule-china-services-meituan",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#MeiTuan",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/MeiTuan_rules_9bab0ba131b6016b.list",
+      "sha256": "9b0873d45248e1b51d898dde6f44a9677fb296607575ad204e2030d9ed2ec8c8",
+      "from_cache": true,
+      "rule_count": 19,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-didi",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#DiDi",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/DiDi_rules_fb38d3f925ee9fc1.list",
+      "sha256": "474398e4a6c244869e55b21e41edf5011e9d311b4c1eebcfdf1b1b76076fd230",
+      "from_cache": true,
+      "rule_count": 26,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-12306",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#12306",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/12306_rules_9e9de21cca6d702e.list",
+      "sha256": "b268df36b227298e64fe3e3a17dfaf39ba337a2d96ee520d4ec7dfc8ecc9dc65",
+      "from_cache": true,
+      "rule_count": 15,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-sina",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Sina",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Sina_rules_08cf2139ef44babe.list",
+      "sha256": "5a87f0e64e9be3080a7cb2901139af02499d5e2227bff9813fa53403c38e870e",
+      "from_cache": true,
+      "rule_count": 142,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-weibo",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Weibo",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Weibo_rules_b2fd8d4ac71c9351.list",
+      "sha256": "ba743291dfaad52b85b6c52fba4150b0561d8628856951c4983c0d026aa557ac",
+      "from_cache": true,
+      "rule_count": 4,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-zhihu",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Zhihu",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Zhihu_rules_f24fc11ab0421a09.list",
+      "sha256": "9b63eece1192a493101350880b7b67e52f58d595b0f2311a217a7f3daf8a9a97",
+      "from_cache": true,
+      "rule_count": 6,
+      "issue_count": 0
+    },
+    {
+      "id": "magicrule-china-services-douban",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#DouBan",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/DouBan_rules_0fb34d449fb84b2b.list",
+      "sha256": "1d35dc2fa34a6bcaa0b63441a77cc02a9b24f0abe1df9fd89f146103e263e53a",
+      "from_cache": true,
       "rule_count": 3,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-alipay",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list",
-      "sha256": "80b1c0e09de197f235ded8abb53a6d65b2093b9fbdbe62fdd57cb8d591d5e72d",
-      "from_cache": false,
+      "id": "magicrule-alipay",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AliPay",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AliPay_rules_3ced55bb5c2f7596.list",
+      "sha256": "9bce52c5477686f6155969f7d8d79baa3e1584c266d0b2a45a90f64fb8bccbf7",
+      "from_cache": true,
       "rule_count": 21,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-wechat",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list",
-      "sha256": "f2b1097292162858845d3b4f99058f047e0715bef4a0e6202b40a10af5c38e2c",
-      "from_cache": false,
-      "rule_count": 43,
+      "id": "magicrule-wechat",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#WeChat",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/WeChat_rules_5edae392a8febe8e.list",
+      "sha256": "e0a9e03855901ad55fe87d46858f3956365a16146ae99200a7e8084319b75ea9",
+      "from_cache": true,
+      "rule_count": 21,
       "issue_count": 0
     },
     {
       "id": "rulego-direct-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list",
       "sha256": "467d7173ed8d0541ed2436c0f686aee63b8850c0f1452469a7c8439f542cfd32",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 21,
       "issue_count": 0
     },
     {
-      "id": "blackmatrix-direct",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list",
-      "sha256": "5ba475db11bd85c7f92699760c15d935d6011616143c99fff54827783772dc7a",
-      "from_cache": false,
-      "rule_count": 232,
+      "id": "magicrule-direct",
+      "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Direct",
+      "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Direct_rules_5f402d63e48a2f60.list",
+      "sha256": "bfaa9a018601a690ca4ffef328e4de4eeb61f4c85c58a957d6994a9b25c34848",
+      "from_cache": true,
+      "rule_count": 263,
       "issue_count": 0
     },
     {
       "id": "rulego-proxy-plus",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list",
       "sha256": "2d4f4e156663de6b5d1e4d49be23799f8a0a08ef7c061cb0d133e194be07bf7c",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
     },
     {
       "id": "rulego-proxy",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
+      "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
       "sha256": "2292abb55f20caf031ffbb7011c84b85c2246f54ae050fe416323da1fd2b8ead",
-      "from_cache": false,
+      "from_cache": true,
       "rule_count": 513,
       "issue_count": 0
     },
     {
       "id": "local-apple-cma2",
       "url": "inline:HOST,cma2.itunes.apple.com",
+      "resolved_url": "inline:HOST,cma2.itunes.apple.com",
       "sha256": "396472da5dd589ed52bbff6ba5e722c3dd92230a0605c07e520682fb0989d96a",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-tvb-tracking",
+      "url": "inline:HOST,tvbtracking.azurewebsites.net",
+      "resolved_url": "inline:HOST,tvbtracking.azurewebsites.net",
+      "sha256": "9036f50f7bcafd823e437b3b804ad8927621117590bf8559273bd7e5f5331be4",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-claude-1",
+      "url": "inline:HOST,cdn.usefathom.com",
+      "resolved_url": "inline:HOST,cdn.usefathom.com",
+      "sha256": "83e161abd2b52b46616f9ecaffe06e906b617733859bdf7ebc8c8547f7bb8739",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-claude-2",
+      "url": "inline:HOST-SUFFIX,anthropic.com",
+      "resolved_url": "inline:HOST-SUFFIX,anthropic.com",
+      "sha256": "028fadb1d656e624ab46a519c28c8a778683c2b7c80424a4ecd33813f337b4be",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-claude-3",
+      "url": "inline:HOST-SUFFIX,claude.ai",
+      "resolved_url": "inline:HOST-SUFFIX,claude.ai",
+      "sha256": "e45c5bba849910c0a78eb8323a9493a47eac009aa9b52af8f482b8a96d7f9a6b",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-civitai-1",
+      "url": "inline:HOST-SUFFIX,civitai.com",
+      "resolved_url": "inline:HOST-SUFFIX,civitai.com",
+      "sha256": "f876d21d4c425c289bf4520d0d3acb702c4fc7d8ace0b5d15ee29034dd00ea55",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-apple-id-1",
+      "url": "inline:HOST,appleid.apple.com",
+      "resolved_url": "inline:HOST,appleid.apple.com",
+      "sha256": "0d58557e35ae7c593512cc5f49c45a7680d0b9c1d80b256a2862db6aefb82be7",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-apple-id-2",
+      "url": "inline:HOST,appleid.cdn-apple.com",
+      "resolved_url": "inline:HOST,appleid.cdn-apple.com",
+      "sha256": "bbda0eb17509d2e8b792a794125e4a3d44aa6c91da5a61c0069d80650a20562c",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-apple-id-3",
+      "url": "inline:HOST,gsa.apple.com",
+      "resolved_url": "inline:HOST,gsa.apple.com",
+      "sha256": "71f736508ca3a5dd854b567238a371fd239213098076e83de4e3d5b06d234d48",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-apple-id-4",
+      "url": "inline:HOST,idmsa.apple.com",
+      "resolved_url": "inline:HOST,idmsa.apple.com",
+      "sha256": "d9109d9aa3477f58eaa016177295b27bddeae5303c2ca961af6386aa429affd6",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-apple-mail-1",
+      "url": "inline:HOST-SUFFIX,mail.icloud.com.cn",
+      "resolved_url": "inline:HOST-SUFFIX,mail.icloud.com.cn",
+      "sha256": "73614c77d40f70371574f515b2740599225a4902611ccfb8823bab850923656b",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-apple-mail-2",
+      "url": "inline:HOST-SUFFIX,mail.me.com",
+      "resolved_url": "inline:HOST-SUFFIX,mail.me.com",
+      "sha256": "25705da965c0382e0f4a7bc01dc7cbad7489683761fc0d02fc17c9c92be03497",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-1",
+      "url": "inline:HOST,www.googleapis.com",
+      "resolved_url": "inline:HOST,www.googleapis.com",
+      "sha256": "ff945757e28bcfe53f734e63814510fae0eff1aec7157b66339ecf8329f8f2c1",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-2",
+      "url": "inline:HOST-SUFFIX,docs.google.com",
+      "resolved_url": "inline:HOST-SUFFIX,docs.google.com",
+      "sha256": "21f6d12bb5f06271aae888bd288f0e138229b2d79f74eae63fd37339947bacfe",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-3",
+      "url": "inline:HOST-SUFFIX,drive.google.com",
+      "resolved_url": "inline:HOST-SUFFIX,drive.google.com",
+      "sha256": "316c828b5de72170d89c7ce963029e162ec190dcad8aec03f119c5bc57e57cf0",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-4",
+      "url": "inline:HOST-SUFFIX,googledrive.com",
+      "resolved_url": "inline:HOST-SUFFIX,googledrive.com",
+      "sha256": "7419076972c077004ceb3e5b117fe383244e26907c0964d17b72a3f804099d58",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-5",
+      "url": "inline:HOST-SUFFIX,googleusercontent.com",
+      "resolved_url": "inline:HOST-SUFFIX,googleusercontent.com",
+      "sha256": "4df021ec68321fd779c5977265c47d59a40d046982d03b158fe35e5fb0b5b092",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-6",
+      "url": "inline:USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*",
+      "resolved_url": "inline:USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*",
+      "sha256": "f7fb3ec744d88902de96d6bca5aa4a49f8cc326b2508b556d543bb9ae1648991",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-7",
+      "url": "inline:USER-AGENT,*com.google.Drive*",
+      "resolved_url": "inline:USER-AGENT,*com.google.Drive*",
+      "sha256": "d454ba9ca4837a5738d1b25b62454cda0e919bc34a7b8dd8154df59d8c30355c",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-google-drive-8",
+      "url": "inline:USER-AGENT,Google.Drive*",
+      "resolved_url": "inline:USER-AGENT,Google.Drive*",
+      "sha256": "3051c06222d264c64d8fdc2d9e17ffcf6b8fdf3d40caef944b40734997315e68",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-bilibili-intl-1",
+      "url": "inline:HOST-SUFFIX,bilibili.tv",
+      "resolved_url": "inline:HOST-SUFFIX,bilibili.tv",
+      "sha256": "90abd56f8d20e1cc12f2e5eed24b5e5636075c71cd407ecbfff05582aa4033ff",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-1",
+      "url": "inline:HOST,cbsi.live.ott.irdeto.com",
+      "resolved_url": "inline:HOST,cbsi.live.ott.irdeto.com",
+      "sha256": "d9d80c6d51a428cef27bacf24b33e1c34baf01addde88f4c7a6a938a6a82590f",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-2",
+      "url": "inline:HOST,cbsplaylistserver.aws.syncbak.com",
+      "resolved_url": "inline:HOST,cbsplaylistserver.aws.syncbak.com",
+      "sha256": "54c36daff99cc1468536d37d0cdb1238b058ee38bd5d3b58a05db8d0928287b5",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-3",
+      "url": "inline:HOST,cbsservice.aws.syncbak.com",
+      "resolved_url": "inline:HOST,cbsservice.aws.syncbak.com",
+      "sha256": "6678fdcae4c0787b8ebced263ad59a28e80a6dd1a6b8add8f51699a197ee6fa3",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-4",
+      "url": "inline:HOST,link.theplatform.com",
+      "resolved_url": "inline:HOST,link.theplatform.com",
+      "sha256": "7f8296686994bd5b6b1884c08f83d568492339751567ffbed5e8779720b22b7a",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-5",
+      "url": "inline:HOST-SUFFIX,cbsaavideo.com",
+      "resolved_url": "inline:HOST-SUFFIX,cbsaavideo.com",
+      "sha256": "366d71e0b9825567cdfa0fbc766f8469ee5517233e78619c1391f7adef1f514a",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-6",
+      "url": "inline:HOST-SUFFIX,cbsi.com",
+      "resolved_url": "inline:HOST-SUFFIX,cbsi.com",
+      "sha256": "7c4a1c1368c63cf46f15ca91d30b34e684c1b64e2789d0274b49df0d5da8c391",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-7",
+      "url": "inline:HOST-SUFFIX,cbsivideo.com",
+      "resolved_url": "inline:HOST-SUFFIX,cbsivideo.com",
+      "sha256": "17d5f41af1f492019147d86f1b9d1e6ec4d60632df1903f463035e5e52003876",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-8",
+      "url": "inline:HOST-SUFFIX,paramountplus.com",
+      "resolved_url": "inline:HOST-SUFFIX,paramountplus.com",
+      "sha256": "94fa42e5b1dda58e0ba988e3f4fa5a0344b4700b5642312e0999f7b2ba98b0cf",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-9",
+      "url": "inline:HOST-SUFFIX,pplusstatic.com",
+      "resolved_url": "inline:HOST-SUFFIX,pplusstatic.com",
+      "sha256": "80631f0801aa88d621bed4488033ca43c5587c61778c28414336a197c693c177",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-paramount-plus-10",
+      "url": "inline:USER-AGENT,PPlus*",
+      "resolved_url": "inline:USER-AGENT,PPlus*",
+      "sha256": "a8211b87f2445fafc0c4d8d001afa0cf57a12bdb49b768b522dd969849fc4d98",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-peacock-1",
+      "url": "inline:HOST-SUFFIX,peacocktv.com",
+      "resolved_url": "inline:HOST-SUFFIX,peacocktv.com",
+      "sha256": "5f59dc1cd2a1e4892c95eedd3b28506933ee2b93a0d3efb16e3b521f480a4b22",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-global-media-peacock-2",
+      "url": "inline:USER-AGENT,PeacockMobile*",
+      "resolved_url": "inline:USER-AGENT,PeacockMobile*",
+      "sha256": "a0114bd9dc82653d548368466d4fbd66942d7fb38b8fc577611848b7aded9ec6",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-apple-events-akamaized-net",
+      "url": "inline:HOST,apple-events.akamaized.net",
+      "resolved_url": "inline:HOST,apple-events.akamaized.net",
+      "sha256": "ef9f114ca0d4b3103d63731d347b65e5603140d66c996179c8a04c88d5220f15",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-cdn-apple-mapkit-com",
+      "url": "inline:HOST-SUFFIX,cdn-apple-mapkit.com",
+      "resolved_url": "inline:HOST-SUFFIX,cdn-apple-mapkit.com",
+      "sha256": "ea140b6264c9ca8cfeffa8969fa18b445906cc16efc9a570700d99b32f63f632",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-gsp4-cn-ls-apple-com-edgekey-net",
+      "url": "inline:HOST,gsp4-cn.ls.apple.com.edgekey.net",
+      "resolved_url": "inline:HOST,gsp4-cn.ls.apple.com.edgekey.net",
+      "sha256": "350fb21278fdaa31f761a5245fe3e7afeaf5a7796475d4ced3a83dca15fff372",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-lookup-api-apple-com-edgekey-net",
+      "url": "inline:HOST,lookup-api.apple.com.edgekey.net",
+      "resolved_url": "inline:HOST,lookup-api.apple.com.edgekey.net",
+      "sha256": "26b924a8b0d908d3adbd5458c318f4aa4bd5e61ab4362461dbb14b04d5b03d5b",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-www-apple-com-edgekey-net",
+      "url": "inline:HOST,www.apple.com.edgekey.net",
+      "resolved_url": "inline:HOST,www.apple.com.edgekey.net",
+      "sha256": "b261a3cda244c292748205104a01c7e69236d8b8943a8b09ec4d2b67c1380d05",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-e16991-b-akamaiedge-net",
+      "url": "inline:HOST,e16991.b.akamaiedge.net",
+      "resolved_url": "inline:HOST,e16991.b.akamaiedge.net",
+      "sha256": "32c4424db9bf25d74499c2d9908be35e8ed1e12438b7a4582218c0f3a371abb8",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-ls-apple-com-edgesuite-net",
+      "url": "inline:HOST-SUFFIX,ls.apple.com.edgesuite.net",
+      "resolved_url": "inline:HOST-SUFFIX,ls.apple.com.edgesuite.net",
+      "sha256": "c8ca39c8b88b6796ab3b6ddd006faee72f5e90383bcc1a856add53d1b5a984f2",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-e13252-dscg-akamaiedge-net",
+      "url": "inline:HOST,e13252.dscg.akamaiedge.net",
+      "resolved_url": "inline:HOST,e13252.dscg.akamaiedge.net",
+      "sha256": "1381a4bfa739030851328045db5074fcb2d4f9fdcecb911834b8656ab212d89f",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-h-netflix-online-metrix-net",
+      "url": "inline:HOST,h-netflix.online-metrix.net",
+      "resolved_url": "inline:HOST,h-netflix.online-metrix.net",
+      "sha256": "c431ad7367e6991bc37ae2f9a55b7ad71216ccf48e21bd88429a6376880cff7f",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-api-imem-app",
+      "url": "inline:HOST,api.imem.app",
+      "resolved_url": "inline:HOST,api.imem.app",
+      "sha256": "1d38fd2e1ea8d77ac2c904ab2c55cd00266dbb23a8f1d29a07826be18ef6dc0c",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-api-swiftgram-app",
+      "url": "inline:HOST,api.swiftgram.app",
+      "resolved_url": "inline:HOST,api.swiftgram.app",
+      "sha256": "f7b0005f08b5a04963d2f78d74ac20157735e693b433c91e22dd9702b2017dbe",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-mbrx-app",
+      "url": "inline:HOST-SUFFIX,mbrx.app",
+      "resolved_url": "inline:HOST-SUFFIX,mbrx.app",
+      "sha256": "213d943a7a6cb2110de59386e32beeae1ef1d4af1e812dfd0a143f6e5a8b48e5",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-i-joox-com",
+      "url": "inline:HOST-SUFFIX,i-joox.com",
+      "resolved_url": "inline:HOST-SUFFIX,i-joox.com",
+      "sha256": "f7d82945eb245c8df93330e753afd7ed7cb111004dab114d2f544d9542f4eab2",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-sanook-com",
+      "url": "inline:HOST-SUFFIX,sanook.com",
+      "resolved_url": "inline:HOST-SUFFIX,sanook.com",
+      "sha256": "5946b41de6a337ebb8ff7a8ac44da1450a4a0da8db82c2f39fdafd4720ade39b",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-alias-live-mediashield-ava-hulustream-com-akamaized-net",
+      "url": "inline:HOST,live-mediashield-ava-hulustream-com.akamaized.net",
+      "resolved_url": "inline:HOST,live-mediashield-ava-hulustream-com.akamaized.net",
+      "sha256": "1ae2a0e5ab8226d2ad9ea92d9ea6accd17b150ef5f942dea2c0ffb472963977d",
       "from_cache": true,
       "rule_count": 1,
       "issue_count": 0

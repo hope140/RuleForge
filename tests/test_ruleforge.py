@@ -169,7 +169,7 @@ class RuleForgeTests(unittest.TestCase):
             self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
 
     def test_manifest_has_unique_seed_sources(self) -> None:
-        expected_counts = {"quantumultx.yaml": 96, "mihomo.yaml": 95}
+        expected_counts = {"quantumultx.yaml": 135, "mihomo.yaml": 131}
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
             manifest, sources = load_manifest(ROOT / "sources" / filename)
             self.assertEqual(manifest["target"], target)
@@ -279,12 +279,11 @@ sources:
 
     def test_mihomo_manifest_uses_native_clash_sources(self) -> None:
         _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
-        blackmatrix = [source for source in sources if source.id.startswith("blackmatrix-")]
-        self.assertEqual(len(blackmatrix), 85)
-        self.assertTrue(all(source.format == "clash" for source in blackmatrix))
-        self.assertTrue(all(source.parser == "clash-classical" for source in blackmatrix))
-        self.assertTrue(all("/rule/Clash/" in source.url for source in blackmatrix))
-        self.assertTrue(all(source.url.endswith(".yaml") for source in blackmatrix))
+        magicrule = [source for source in sources if source.resolver == "magicrule"]
+        self.assertEqual(len(magicrule), 77)
+        self.assertTrue(all(source.format == "clash" for source in magicrule))
+        self.assertTrue(all(source.parser == "clash-classical" for source in magicrule))
+        self.assertTrue(all("/data/index/Mihomo.json#" in source.url for source in magicrule))
 
     def test_surge_domain_is_rendered_as_quantumultx_host(self) -> None:
         source = Source("test", "filter", "surge", "demo", "direct", "https://example.test", "surge")
@@ -1366,7 +1365,7 @@ sources:
                         and item["rule"] == "HOST-SUFFIX,us-west-2.amazonaws.com"
                         and item["risk"] == "high"
                         and item["reason"] == "shared-infrastructure-root"
-                        and item["source_id"] == "blackmatrix-netflix"
+                        and item["source_id"] == "magicrule-netflix"
                         for item in risks
                     )
                 )

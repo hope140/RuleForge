@@ -407,6 +407,7 @@ def render_conflicts(
             [
                 f"- resolved: {len(resolution.preferred_decisions)}",
                 f"- blackmatrix-preferred: {len(resolution.blackmatrix_decisions)}",
+                f"- source-preferred: {len(resolution.source_decisions)}",
                 f"- direct-preferred: {len(resolution.direct_decisions)}",
                 f"- specific-preferred: {len(resolution.specific_decisions)}",
                 f"- category-preferred: {len(resolution.category_decisions)}",
