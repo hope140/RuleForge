@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 15143,
-  "dropped_rule_count": 1587,
+  "kept_rule_count": 15174,
+  "dropped_rule_count": 1593,
   "moved_rule_count": 33,
   "dropped": [
     {
@@ -9,7 +9,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "algolia.net",
-      "line_number": 27,
+      "line_number": 28,
       "raw": "DOMAIN-SUFFIX,algolia.net",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -19,7 +19,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "auth0.com",
-      "line_number": 29,
+      "line_number": 30,
       "raw": "DOMAIN-SUFFIX,auth0.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -29,7 +29,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "identrust.com",
-      "line_number": 39,
+      "line_number": 40,
       "raw": "DOMAIN-SUFFIX,identrust.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -39,7 +39,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercom.io",
-      "line_number": 40,
+      "line_number": 41,
       "raw": "DOMAIN-SUFFIX,intercom.io",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -49,7 +49,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercomcdn.com",
-      "line_number": 41,
+      "line_number": 42,
       "raw": "DOMAIN-SUFFIX,intercomcdn.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -59,7 +59,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "launchdarkly.com",
-      "line_number": 42,
+      "line_number": 43,
       "raw": "DOMAIN-SUFFIX,launchdarkly.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -69,7 +69,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "segment.io",
-      "line_number": 52,
+      "line_number": 53,
       "raw": "DOMAIN-SUFFIX,segment.io",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -79,7 +79,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sentry.io",
-      "line_number": 53,
+      "line_number": 54,
       "raw": "DOMAIN-SUFFIX,sentry.io",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -89,7 +89,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "statsigapi.net",
-      "line_number": 55,
+      "line_number": 56,
       "raw": "DOMAIN-SUFFIX,statsigapi.net",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -99,7 +99,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "stripe.com",
-      "line_number": 56,
+      "line_number": 57,
       "raw": "DOMAIN-SUFFIX,stripe.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -109,7 +109,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "codex",
-      "line_number": 60,
+      "line_number": 61,
       "raw": "DOMAIN-KEYWORD,codex",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -119,7 +119,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "colab",
-      "line_number": 59,
+      "line_number": 62,
       "raw": "DOMAIN-KEYWORD,colab",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -129,7 +129,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "developerprofiles",
-      "line_number": 60,
+      "line_number": 63,
       "raw": "DOMAIN-KEYWORD,developerprofiles",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -278,8 +278,38 @@
       "category": "ai",
       "policy": "AI",
       "rule_type": "HOST",
-      "value": "ark.cn-beijing.volces.com",
+      "value": "appsgenaiserver-pa.clients.google.com",
       "line_number": 29,
+      "raw": "DOMAIN,appsgenaiserver-pa.clients.google.com",
+      "reason": "copilot-source-business-boundary"
+    },
+    {
+      "source_id": "magicrule-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "appsgenaiserver-pa.clients6.google.com",
+      "line_number": 30,
+      "raw": "DOMAIN,appsgenaiserver-pa.clients6.google.com",
+      "reason": "copilot-source-business-boundary"
+    },
+    {
+      "source_id": "magicrule-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "appsgenaiserver-pa.googleapis.com",
+      "line_number": 31,
+      "raw": "DOMAIN,appsgenaiserver-pa.googleapis.com",
+      "reason": "copilot-source-business-boundary"
+    },
+    {
+      "source_id": "magicrule-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST",
+      "value": "ark.cn-beijing.volces.com",
+      "line_number": 32,
       "raw": "DOMAIN,ark.cn-beijing.volces.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -289,7 +319,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "assets.msn.com",
-      "line_number": 30,
+      "line_number": 33,
       "raw": "DOMAIN,assets.msn.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -299,7 +329,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "aws-language-servers.us-east-1.amazonaws.com",
-      "line_number": 31,
+      "line_number": 34,
       "raw": "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -309,7 +339,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "aws-toolkit-language-servers.amazonaws.com",
-      "line_number": 32,
+      "line_number": 35,
       "raw": "DOMAIN,aws-toolkit-language-servers.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -319,7 +349,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "bailian.console.aliyun.com",
-      "line_number": 33,
+      "line_number": 36,
       "raw": "DOMAIN,bailian.console.aliyun.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -329,7 +359,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "browser-intake-datadoghq.com",
-      "line_number": 34,
+      "line_number": 37,
       "raw": "DOMAIN,browser-intake-datadoghq.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -339,7 +369,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "browser-intake-us5-datadoghq.com",
-      "line_number": 35,
+      "line_number": 38,
       "raw": "DOMAIN,browser-intake-us5-datadoghq.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -349,7 +379,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "cdn.growthbook.io",
-      "line_number": 36,
+      "line_number": 39,
       "raw": "DOMAIN,cdn.growthbook.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -359,7 +389,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "cdn.usefathom.com",
-      "line_number": 37,
+      "line_number": 40,
       "raw": "DOMAIN,cdn.usefathom.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -369,7 +399,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "client-telemetry.us-east-1.amazonaws.com",
-      "line_number": 38,
+      "line_number": 41,
       "raw": "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -379,7 +409,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "cloudaicompanion.googleapis.com",
-      "line_number": 39,
+      "line_number": 42,
       "raw": "DOMAIN,cloudaicompanion.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -389,7 +419,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "cloudcode-pa.googleapis.com",
-      "line_number": 40,
+      "line_number": 43,
       "raw": "DOMAIN,cloudcode-pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -399,7 +429,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "codewhisperer.us-east-1.amazonaws.com",
-      "line_number": 41,
+      "line_number": 44,
       "raw": "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -409,7 +439,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "cognito-identity.us-east-1.amazonaws.com",
-      "line_number": 42,
+      "line_number": 45,
       "raw": "DOMAIN,cognito-identity.us-east-1.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -419,7 +449,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "daily-cloudcode-pa.googleapis.com",
-      "line_number": 48,
+      "line_number": 51,
       "raw": "DOMAIN,daily-cloudcode-pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -429,7 +459,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "dashscope.aliyuncs.com",
-      "line_number": 49,
+      "line_number": 52,
       "raw": "DOMAIN,dashscope.aliyuncs.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -439,7 +469,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "developer.meta.com",
-      "line_number": 50,
+      "line_number": 53,
       "raw": "DOMAIN,developer.meta.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -449,7 +479,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "ernie.baidu.com",
-      "line_number": 51,
+      "line_number": 54,
       "raw": "DOMAIN,ernie.baidu.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -459,7 +489,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "geminiweb-pa.clients.google.com",
-      "line_number": 54,
+      "line_number": 57,
       "raw": "DOMAIN,geminiweb-pa.clients.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -469,7 +499,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "geminiweb-pa.clients6.google.com",
-      "line_number": 55,
+      "line_number": 58,
       "raw": "DOMAIN,geminiweb-pa.clients6.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -479,7 +509,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "hunyuan.tencentcloudapi.com",
-      "line_number": 56,
+      "line_number": 59,
       "raw": "DOMAIN,hunyuan.tencentcloudapi.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -489,7 +519,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "idetoolkits-hostedfiles.amazonaws.com",
-      "line_number": 57,
+      "line_number": 60,
       "raw": "DOMAIN,idetoolkits-hostedfiles.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -499,7 +529,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "idetoolkits.amazonwebservices.com",
-      "line_number": 58,
+      "line_number": 61,
       "raw": "DOMAIN,idetoolkits.amazonwebservices.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -509,7 +539,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "in.appcenter.ms",
-      "line_number": 59,
+      "line_number": 62,
       "raw": "DOMAIN,in.appcenter.ms",
       "reason": "copilot-source-business-boundary"
     },
@@ -519,7 +549,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "llama.developer.meta.com",
-      "line_number": 60,
+      "line_number": 63,
       "raw": "DOMAIN,llama.developer.meta.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -529,7 +559,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "location.microsoft.com",
-      "line_number": 61,
+      "line_number": 64,
       "raw": "DOMAIN,location.microsoft.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -539,7 +569,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "notebooklm-pa.googleapis.com",
-      "line_number": 62,
+      "line_number": 65,
       "raw": "DOMAIN,notebooklm-pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -549,7 +579,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "notebooklm.googleapis.com",
-      "line_number": 63,
+      "line_number": 66,
       "raw": "DOMAIN,notebooklm.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -559,7 +589,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "odc.officeapps.live.com",
-      "line_number": 64,
+      "line_number": 67,
       "raw": "DOMAIN,odc.officeapps.live.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -569,7 +599,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "openai-api.arkoselabs.com",
-      "line_number": 65,
+      "line_number": 68,
       "raw": "DOMAIN,openai-api.arkoselabs.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -579,7 +609,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "openaiassets.blob.core.windows.net",
-      "line_number": 66,
+      "line_number": 69,
       "raw": "DOMAIN,openaiassets.blob.core.windows.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -589,7 +619,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
-      "line_number": 67,
+      "line_number": 70,
       "raw": "DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -599,7 +629,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "openaicomproductionae4b.blob.core.windows.net",
-      "line_number": 68,
+      "line_number": 71,
       "raw": "DOMAIN,openaicomproductionae4b.blob.core.windows.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -609,7 +639,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "ppl-ai-file-upload.s3.amazonaws.com",
-      "line_number": 69,
+      "line_number": 72,
       "raw": "DOMAIN,ppl-ai-file-upload.s3.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -619,7 +649,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "pplx-res.cloudinary.com",
-      "line_number": 70,
+      "line_number": 73,
       "raw": "DOMAIN,pplx-res.cloudinary.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -629,7 +659,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "production-openaicom-storage.azureedge.net",
-      "line_number": 71,
+      "line_number": 74,
       "raw": "DOMAIN,production-openaicom-storage.azureedge.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -639,7 +669,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "q-developer-integration.us-east-1.api.aws",
-      "line_number": 72,
+      "line_number": 75,
       "raw": "DOMAIN,q-developer-integration.us-east-1.api.aws",
       "reason": "copilot-source-business-boundary"
     },
@@ -649,7 +679,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "qianfan.baidubce.com",
-      "line_number": 73,
+      "line_number": 76,
       "raw": "DOMAIN,qianfan.baidubce.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -659,7 +689,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "qodercn-jb.oss-cn-hangzhou.aliyuncs.com",
-      "line_number": 74,
+      "line_number": 77,
       "raw": "DOMAIN,qodercn-jb.oss-cn-hangzhou.aliyuncs.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -669,7 +699,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "self.events.data.microsoft.com",
-      "line_number": 75,
+      "line_number": 78,
       "raw": "DOMAIN,self.events.data.microsoft.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -679,7 +709,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "servd-anthropic-website.b-cdn.net",
-      "line_number": 76,
+      "line_number": 79,
       "raw": "DOMAIN,servd-anthropic-website.b-cdn.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -689,7 +719,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "static.cloudflareinsights.com",
-      "line_number": 77,
+      "line_number": 80,
       "raw": "DOMAIN,static.cloudflareinsights.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -699,7 +729,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "storage.googleapis.com",
-      "line_number": 78,
+      "line_number": 81,
       "raw": "DOMAIN,storage.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -709,7 +739,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "webchannel-alkalimakersuite-pa.clients6.google.com",
-      "line_number": 80,
+      "line_number": 83,
       "raw": "DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -719,7 +749,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "yiyan.baidu.com",
-      "line_number": 81,
+      "line_number": 84,
       "raw": "DOMAIN,yiyan.baidu.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -729,7 +759,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "abtestvm-sg.bytedance.com",
-      "line_number": 82,
+      "line_number": 85,
       "raw": "DOMAIN-SUFFIX,abtestvm-sg.bytedance.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -739,7 +769,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ai.cloudflare.com",
-      "line_number": 83,
+      "line_number": 86,
       "raw": "DOMAIN-SUFFIX,ai.cloudflare.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -749,7 +779,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ai.com",
-      "line_number": 84,
+      "line_number": 87,
       "raw": "DOMAIN-SUFFIX,ai.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -759,7 +789,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ai.google.dev",
-      "line_number": 85,
+      "line_number": 88,
       "raw": "DOMAIN-SUFFIX,ai.google.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -769,7 +799,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ai.studio",
-      "line_number": 86,
+      "line_number": 89,
       "raw": "DOMAIN-SUFFIX,ai.studio",
       "reason": "copilot-source-business-boundary"
     },
@@ -779,7 +809,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "aicode.googleapis.com",
-      "line_number": 87,
+      "line_number": 90,
       "raw": "DOMAIN-SUFFIX,aicode.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -789,7 +819,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "aida.googleapis.com",
-      "line_number": 88,
+      "line_number": 91,
       "raw": "DOMAIN-SUFFIX,aida.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -799,7 +829,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "aisandbox-pa.googleapis.com",
-      "line_number": 89,
+      "line_number": 92,
       "raw": "DOMAIN-SUFFIX,aisandbox-pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -809,7 +839,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "aistudio.google.com",
-      "line_number": 90,
+      "line_number": 93,
       "raw": "DOMAIN-SUFFIX,aistudio.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -819,7 +849,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "algolia.net",
-      "line_number": 91,
+      "line_number": 94,
       "raw": "DOMAIN-SUFFIX,algolia.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -829,7 +859,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ampcode.com",
-      "line_number": 92,
+      "line_number": 95,
       "raw": "DOMAIN-SUFFIX,ampcode.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -839,7 +869,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ampworkers.com",
-      "line_number": 93,
+      "line_number": 96,
       "raw": "DOMAIN-SUFFIX,ampworkers.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -848,8 +878,18 @@
       "category": "ai",
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
+      "value": "ant.dev",
+      "line_number": 97,
+      "raw": "DOMAIN-SUFFIX,ant.dev",
+      "reason": "copilot-source-business-boundary"
+    },
+    {
+      "source_id": "magicrule-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
       "value": "anthropic.com",
-      "line_number": 94,
+      "line_number": 98,
       "raw": "DOMAIN-SUFFIX,anthropic.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -859,7 +899,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "anthropic.com.cn",
-      "line_number": 95,
+      "line_number": 99,
       "raw": "DOMAIN-SUFFIX,anthropic.com.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -869,7 +909,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "anthropic.team",
-      "line_number": 96,
+      "line_number": 100,
       "raw": "DOMAIN-SUFFIX,anthropic.team",
       "reason": "copilot-source-business-boundary"
     },
@@ -879,7 +919,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "antigravity-unleash.goog",
-      "line_number": 97,
+      "line_number": 101,
       "raw": "DOMAIN-SUFFIX,antigravity-unleash.goog",
       "reason": "copilot-source-business-boundary"
     },
@@ -889,7 +929,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "antigravity.google",
-      "line_number": 98,
+      "line_number": 102,
       "raw": "DOMAIN-SUFFIX,antigravity.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -899,7 +939,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "antigravity.google.com",
-      "line_number": 99,
+      "line_number": 103,
       "raw": "DOMAIN-SUFFIX,antigravity.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -909,7 +949,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "antspace.dev",
-      "line_number": 100,
+      "line_number": 104,
       "raw": "DOMAIN-SUFFIX,antspace.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -919,7 +959,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "api.statsig.com",
-      "line_number": 102,
+      "line_number": 106,
       "raw": "DOMAIN-SUFFIX,api.statsig.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -929,7 +969,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "atmeta.com",
-      "line_number": 103,
+      "line_number": 107,
       "raw": "DOMAIN-SUFFIX,atmeta.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -939,7 +979,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "augmentcode.com",
-      "line_number": 104,
+      "line_number": 108,
       "raw": "DOMAIN-SUFFIX,augmentcode.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -949,7 +989,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "auth0.com",
-      "line_number": 105,
+      "line_number": 109,
       "raw": "DOMAIN-SUFFIX,auth0.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -959,7 +999,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "aws.dev",
-      "line_number": 106,
+      "line_number": 110,
       "raw": "DOMAIN-SUFFIX,aws.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -969,7 +1009,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "awsapps.com",
-      "line_number": 107,
+      "line_number": 111,
       "raw": "DOMAIN-SUFFIX,awsapps.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -979,7 +1019,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "awsstatic.com",
-      "line_number": 108,
+      "line_number": 112,
       "raw": "DOMAIN-SUFFIX,awsstatic.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -989,7 +1029,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "bard.google.com",
-      "line_number": 109,
+      "line_number": 113,
       "raw": "DOMAIN-SUFFIX,bard.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -999,7 +1039,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "bfl.ai",
-      "line_number": 110,
+      "line_number": 114,
       "raw": "DOMAIN-SUFFIX,bfl.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1009,7 +1049,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "bigmodel.cn",
-      "line_number": 111,
+      "line_number": 115,
       "raw": "DOMAIN-SUFFIX,bigmodel.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -1019,7 +1059,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "bolt.new",
-      "line_number": 113,
+      "line_number": 117,
       "raw": "DOMAIN-SUFFIX,bolt.new",
       "reason": "copilot-source-business-boundary"
     },
@@ -1029,7 +1069,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "bytegate-sg.byteintlapi.com",
-      "line_number": 114,
+      "line_number": 118,
       "raw": "DOMAIN-SUFFIX,bytegate-sg.byteintlapi.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1039,7 +1079,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "byteoversea.com",
-      "line_number": 115,
+      "line_number": 119,
       "raw": "DOMAIN-SUFFIX,byteoversea.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1049,7 +1089,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cerebras.ai",
-      "line_number": 116,
+      "line_number": 120,
       "raw": "DOMAIN-SUFFIX,cerebras.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1059,7 +1099,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "challenges.cloudflare.com",
-      "line_number": 117,
+      "line_number": 121,
       "raw": "DOMAIN-SUFFIX,challenges.cloudflare.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1069,7 +1109,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "character.ai",
-      "line_number": 118,
+      "line_number": 122,
       "raw": "DOMAIN-SUFFIX,character.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1079,7 +1119,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "chat.com",
-      "line_number": 119,
+      "line_number": 123,
       "raw": "DOMAIN-SUFFIX,chat.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1089,7 +1129,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "chatbotclaude.com",
-      "line_number": 120,
+      "line_number": 124,
       "raw": "DOMAIN-SUFFIX,chatbotclaude.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1099,7 +1139,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "chatglm.cn",
-      "line_number": 121,
+      "line_number": 125,
       "raw": "DOMAIN-SUFFIX,chatglm.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -1109,7 +1149,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "chatgpt.com",
-      "line_number": 122,
+      "line_number": 126,
       "raw": "DOMAIN-SUFFIX,chatgpt.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1119,7 +1159,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "chatgpt.livekit.cloud",
-      "line_number": 123,
+      "line_number": 127,
       "raw": "DOMAIN-SUFFIX,chatgpt.livekit.cloud",
       "reason": "copilot-source-business-boundary"
     },
@@ -1129,7 +1169,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "chatgpt.site",
-      "line_number": 124,
+      "line_number": 128,
       "raw": "DOMAIN-SUFFIX,chatgpt.site",
       "reason": "copilot-source-business-boundary"
     },
@@ -1139,7 +1179,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "chutes.ai",
-      "line_number": 125,
+      "line_number": 129,
       "raw": "DOMAIN-SUFFIX,chutes.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1149,7 +1189,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cici.com",
-      "line_number": 126,
+      "line_number": 130,
       "raw": "DOMAIN-SUFFIX,cici.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1159,7 +1199,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ciciai.com",
-      "line_number": 127,
+      "line_number": 131,
       "raw": "DOMAIN-SUFFIX,ciciai.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1169,7 +1209,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ciciaicdn.com",
-      "line_number": 128,
+      "line_number": 132,
       "raw": "DOMAIN-SUFFIX,ciciaicdn.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1179,7 +1219,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "civitai.com",
-      "line_number": 129,
+      "line_number": 133,
       "raw": "DOMAIN-SUFFIX,civitai.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1189,7 +1229,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "clau.de",
-      "line_number": 130,
+      "line_number": 134,
       "raw": "DOMAIN-SUFFIX,clau.de",
       "reason": "copilot-source-business-boundary"
     },
@@ -1199,7 +1239,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claude.ai",
-      "line_number": 131,
+      "line_number": 135,
       "raw": "DOMAIN-SUFFIX,claude.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1209,7 +1249,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claude.app",
-      "line_number": 132,
+      "line_number": 136,
       "raw": "DOMAIN-SUFFIX,claude.app",
       "reason": "copilot-source-business-boundary"
     },
@@ -1219,7 +1259,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claude.com",
-      "line_number": 133,
+      "line_number": 137,
       "raw": "DOMAIN-SUFFIX,claude.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1229,7 +1269,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claude.dev",
-      "line_number": 134,
+      "line_number": 138,
       "raw": "DOMAIN-SUFFIX,claude.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -1239,7 +1279,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claude.new",
-      "line_number": 135,
+      "line_number": 139,
       "raw": "DOMAIN-SUFFIX,claude.new",
       "reason": "copilot-source-business-boundary"
     },
@@ -1249,7 +1289,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claude.site",
-      "line_number": 136,
+      "line_number": 140,
       "raw": "DOMAIN-SUFFIX,claude.site",
       "reason": "copilot-source-business-boundary"
     },
@@ -1258,8 +1298,18 @@
       "category": "ai",
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
+      "value": "claudeacademy.com",
+      "line_number": 141,
+      "raw": "DOMAIN-SUFFIX,claudeacademy.com",
+      "reason": "copilot-source-business-boundary"
+    },
+    {
+      "source_id": "magicrule-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
       "value": "claudemcpclient.com",
-      "line_number": 137,
+      "line_number": 142,
       "raw": "DOMAIN-SUFFIX,claudemcpclient.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1269,7 +1319,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claudemcpcontent.com",
-      "line_number": 138,
+      "line_number": 143,
       "raw": "DOMAIN-SUFFIX,claudemcpcontent.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1279,7 +1329,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claudepages.dev",
-      "line_number": 139,
+      "line_number": 144,
       "raw": "DOMAIN-SUFFIX,claudepages.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -1289,7 +1339,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claudestudio.com",
-      "line_number": 140,
+      "line_number": 145,
       "raw": "DOMAIN-SUFFIX,claudestudio.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1299,7 +1349,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "claudeusercontent.com",
-      "line_number": 141,
+      "line_number": 146,
       "raw": "DOMAIN-SUFFIX,claudeusercontent.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1309,7 +1359,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "client-api.arkoselabs.com",
-      "line_number": 142,
+      "line_number": 147,
       "raw": "DOMAIN-SUFFIX,client-api.arkoselabs.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1319,7 +1369,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cline.bot",
-      "line_number": 143,
+      "line_number": 148,
       "raw": "DOMAIN-SUFFIX,cline.bot",
       "reason": "copilot-source-business-boundary"
     },
@@ -1329,7 +1379,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "clipdrop.co",
-      "line_number": 144,
+      "line_number": 149,
       "raw": "DOMAIN-SUFFIX,clipdrop.co",
       "reason": "copilot-source-business-boundary"
     },
@@ -1339,7 +1389,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "codeium.com",
-      "line_number": 145,
+      "line_number": 150,
       "raw": "DOMAIN-SUFFIX,codeium.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1349,7 +1399,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "codeiumdata.com",
-      "line_number": 146,
+      "line_number": 151,
       "raw": "DOMAIN-SUFFIX,codeiumdata.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1359,7 +1409,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "coderabbit.ai",
-      "line_number": 147,
+      "line_number": 152,
       "raw": "DOMAIN-SUFFIX,coderabbit.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1369,7 +1419,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cody.dev",
-      "line_number": 148,
+      "line_number": 153,
       "raw": "DOMAIN-SUFFIX,cody.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -1379,7 +1429,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cohere.ai",
-      "line_number": 149,
+      "line_number": 154,
       "raw": "DOMAIN-SUFFIX,cohere.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1389,7 +1439,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cohere.com",
-      "line_number": 150,
+      "line_number": 155,
       "raw": "DOMAIN-SUFFIX,cohere.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1399,7 +1449,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "comfy.org",
-      "line_number": 151,
+      "line_number": 156,
       "raw": "DOMAIN-SUFFIX,comfy.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -1409,7 +1459,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "comfyregistry.org",
-      "line_number": 152,
+      "line_number": 157,
       "raw": "DOMAIN-SUFFIX,comfyregistry.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -1419,7 +1469,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "commandcode.ai",
-      "line_number": 153,
+      "line_number": 158,
       "raw": "DOMAIN-SUFFIX,commandcode.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1429,7 +1479,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "console.aws.a2z.com",
-      "line_number": 154,
+      "line_number": 159,
       "raw": "DOMAIN-SUFFIX,console.aws.a2z.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1439,7 +1489,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "continue.dev",
-      "line_number": 155,
+      "line_number": 160,
       "raw": "DOMAIN-SUFFIX,continue.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -1449,7 +1499,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "coze.cn",
-      "line_number": 157,
+      "line_number": 162,
       "raw": "DOMAIN-SUFFIX,coze.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -1459,7 +1509,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "coze.com",
-      "line_number": 158,
+      "line_number": 163,
       "raw": "DOMAIN-SUFFIX,coze.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1469,7 +1519,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozeapp.net",
-      "line_number": 159,
+      "line_number": 164,
       "raw": "DOMAIN-SUFFIX,cozeapp.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -1479,7 +1529,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozebaas.cn",
-      "line_number": 160,
+      "line_number": 165,
       "raw": "DOMAIN-SUFFIX,cozebaas.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -1489,7 +1539,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozebuild.com",
-      "line_number": 161,
+      "line_number": 166,
       "raw": "DOMAIN-SUFFIX,cozebuild.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1499,7 +1549,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozecdn.com",
-      "line_number": 162,
+      "line_number": 167,
       "raw": "DOMAIN-SUFFIX,cozecdn.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1509,7 +1559,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozedeploy.com",
-      "line_number": 163,
+      "line_number": 168,
       "raw": "DOMAIN-SUFFIX,cozedeploy.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1519,7 +1569,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozefn.cn",
-      "line_number": 164,
+      "line_number": 169,
       "raw": "DOMAIN-SUFFIX,cozefn.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -1529,7 +1579,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozeide.cn",
-      "line_number": 165,
+      "line_number": 170,
       "raw": "DOMAIN-SUFFIX,cozeide.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -1539,7 +1589,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cozesdk.com",
-      "line_number": 166,
+      "line_number": 171,
       "raw": "DOMAIN-SUFFIX,cozesdk.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1549,7 +1599,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "crewai.com",
-      "line_number": 167,
+      "line_number": 172,
       "raw": "DOMAIN-SUFFIX,crewai.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1559,7 +1609,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "crixet.com",
-      "line_number": 168,
+      "line_number": 173,
       "raw": "DOMAIN-SUFFIX,crixet.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1569,7 +1619,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cursor-cdn.com",
-      "line_number": 169,
+      "line_number": 174,
       "raw": "DOMAIN-SUFFIX,cursor-cdn.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1579,7 +1629,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cursor.com",
-      "line_number": 170,
+      "line_number": 175,
       "raw": "DOMAIN-SUFFIX,cursor.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1589,7 +1639,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cursor.sh",
-      "line_number": 171,
+      "line_number": 176,
       "raw": "DOMAIN-SUFFIX,cursor.sh",
       "reason": "copilot-source-business-boundary"
     },
@@ -1599,7 +1649,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cursorapi.com",
-      "line_number": 172,
+      "line_number": 177,
       "raw": "DOMAIN-SUFFIX,cursorapi.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1609,7 +1659,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "cursorvm.com",
-      "line_number": 173,
+      "line_number": 178,
       "raw": "DOMAIN-SUFFIX,cursorvm.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1619,7 +1669,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "deepinfra.com",
-      "line_number": 174,
+      "line_number": 179,
       "raw": "DOMAIN-SUFFIX,deepinfra.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1629,7 +1679,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "deepmind.com",
-      "line_number": 175,
+      "line_number": 180,
       "raw": "DOMAIN-SUFFIX,deepmind.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1639,7 +1689,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "deepmind.google",
-      "line_number": 176,
+      "line_number": 181,
       "raw": "DOMAIN-SUFFIX,deepmind.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -1649,7 +1699,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "deepseek.com",
-      "line_number": 177,
+      "line_number": 182,
       "raw": "DOMAIN-SUFFIX,deepseek.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1659,7 +1709,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "deepseeksvc.com",
-      "line_number": 178,
+      "line_number": 183,
       "raw": "DOMAIN-SUFFIX,deepseeksvc.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1669,7 +1719,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "descript.com",
-      "line_number": 179,
+      "line_number": 184,
       "raw": "DOMAIN-SUFFIX,descript.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1679,7 +1729,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "devin.ai",
-      "line_number": 180,
+      "line_number": 185,
       "raw": "DOMAIN-SUFFIX,devin.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1689,7 +1739,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "diabrowser.com",
-      "line_number": 181,
+      "line_number": 186,
       "raw": "DOMAIN-SUFFIX,diabrowser.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1699,7 +1749,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "diabrowser.engineering",
-      "line_number": 182,
+      "line_number": 187,
       "raw": "DOMAIN-SUFFIX,diabrowser.engineering",
       "reason": "copilot-source-business-boundary"
     },
@@ -1709,7 +1759,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "dify.ai",
-      "line_number": 183,
+      "line_number": 188,
       "raw": "DOMAIN-SUFFIX,dify.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1719,7 +1769,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "doubao.com",
-      "line_number": 184,
+      "line_number": 189,
       "raw": "DOMAIN-SUFFIX,doubao.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1729,7 +1779,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "doudou.com",
-      "line_number": 185,
+      "line_number": 190,
       "raw": "DOMAIN-SUFFIX,doudou.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1739,7 +1789,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "duck.ai",
-      "line_number": 186,
+      "line_number": 191,
       "raw": "DOMAIN-SUFFIX,duck.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1749,7 +1799,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "eigent.ai",
-      "line_number": 188,
+      "line_number": 193,
       "raw": "DOMAIN-SUFFIX,eigent.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1759,7 +1809,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "elevenlabs.com",
-      "line_number": 189,
+      "line_number": 194,
       "raw": "DOMAIN-SUFFIX,elevenlabs.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1769,7 +1819,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "elevenlabs.io",
-      "line_number": 190,
+      "line_number": 195,
       "raw": "DOMAIN-SUFFIX,elevenlabs.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -1779,7 +1829,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "factory.ai",
-      "line_number": 191,
+      "line_number": 196,
       "raw": "DOMAIN-SUFFIX,factory.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1789,7 +1839,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "featuregates.org",
-      "line_number": 192,
+      "line_number": 197,
       "raw": "DOMAIN-SUFFIX,featuregates.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -1799,7 +1849,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "firefly.adobe.com",
-      "line_number": 193,
+      "line_number": 198,
       "raw": "DOMAIN-SUFFIX,firefly.adobe.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1809,7 +1859,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "firefly.adobe.io",
-      "line_number": 194,
+      "line_number": 199,
       "raw": "DOMAIN-SUFFIX,firefly.adobe.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -1819,7 +1869,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "fireworks.ai",
-      "line_number": 195,
+      "line_number": 200,
       "raw": "DOMAIN-SUFFIX,fireworks.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1829,7 +1879,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "flow.google",
-      "line_number": 196,
+      "line_number": 201,
       "raw": "DOMAIN-SUFFIX,flow.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -1839,7 +1889,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "flow.google.com",
-      "line_number": 197,
+      "line_number": 202,
       "raw": "DOMAIN-SUFFIX,flow.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1849,7 +1899,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "gamma.app",
-      "line_number": 198,
+      "line_number": 203,
       "raw": "DOMAIN-SUFFIX,gamma.app",
       "reason": "copilot-source-business-boundary"
     },
@@ -1859,7 +1909,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "geller-pa.googleapis.com",
-      "line_number": 199,
+      "line_number": 204,
       "raw": "DOMAIN-SUFFIX,geller-pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1869,7 +1919,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "gemini.google",
-      "line_number": 200,
+      "line_number": 205,
       "raw": "DOMAIN-SUFFIX,gemini.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -1879,7 +1929,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "gemini.google.com",
-      "line_number": 201,
+      "line_number": 206,
       "raw": "DOMAIN-SUFFIX,gemini.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1889,7 +1939,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "gemini.gstatic.com",
-      "line_number": 202,
+      "line_number": 207,
       "raw": "DOMAIN-SUFFIX,gemini.gstatic.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1899,7 +1949,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "generativeai.google",
-      "line_number": 203,
+      "line_number": 208,
       "raw": "DOMAIN-SUFFIX,generativeai.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -1909,7 +1959,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "generativelanguage.googleapis.com",
-      "line_number": 204,
+      "line_number": 209,
       "raw": "DOMAIN-SUFFIX,generativelanguage.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1919,7 +1969,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "genspark.ai",
-      "line_number": 205,
+      "line_number": 210,
       "raw": "DOMAIN-SUFFIX,genspark.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1929,7 +1979,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "grammarly.com",
-      "line_number": 207,
+      "line_number": 212,
       "raw": "DOMAIN-SUFFIX,grammarly.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1939,7 +1989,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "grazie.ai",
-      "line_number": 208,
+      "line_number": 213,
       "raw": "DOMAIN-SUFFIX,grazie.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -1949,7 +1999,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "grazie.aws.intellij.net",
-      "line_number": 209,
+      "line_number": 214,
       "raw": "DOMAIN-SUFFIX,grazie.aws.intellij.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -1959,7 +2009,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "grok.com",
-      "line_number": 210,
+      "line_number": 215,
       "raw": "DOMAIN-SUFFIX,grok.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1969,7 +2019,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "grok.x.com",
-      "line_number": 211,
+      "line_number": 216,
       "raw": "DOMAIN-SUFFIX,grok.x.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1979,7 +2029,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "grokipedia.com",
-      "line_number": 212,
+      "line_number": 217,
       "raw": "DOMAIN-SUFFIX,grokipedia.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1989,7 +2039,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "groq.com",
-      "line_number": 213,
+      "line_number": 218,
       "raw": "DOMAIN-SUFFIX,groq.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -1999,7 +2049,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "h2o.ai",
-      "line_number": 214,
+      "line_number": 219,
       "raw": "DOMAIN-SUFFIX,h2o.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2009,7 +2059,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "hailuoai.com",
-      "line_number": 215,
+      "line_number": 220,
       "raw": "DOMAIN-SUFFIX,hailuoai.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2019,7 +2069,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "hermes-agent.nousresearch.com",
-      "line_number": 216,
+      "line_number": 221,
       "raw": "DOMAIN-SUFFIX,hermes-agent.nousresearch.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2029,7 +2079,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "heygen.com",
-      "line_number": 217,
+      "line_number": 222,
       "raw": "DOMAIN-SUFFIX,heygen.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2039,7 +2089,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "hf.co",
-      "line_number": 218,
+      "line_number": 223,
       "raw": "DOMAIN-SUFFIX,hf.co",
       "reason": "copilot-source-business-boundary"
     },
@@ -2049,7 +2099,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "hf.space",
-      "line_number": 219,
+      "line_number": 224,
       "raw": "DOMAIN-SUFFIX,hf.space",
       "reason": "copilot-source-business-boundary"
     },
@@ -2059,7 +2109,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "host.livekit.cloud",
-      "line_number": 220,
+      "line_number": 225,
       "raw": "DOMAIN-SUFFIX,host.livekit.cloud",
       "reason": "copilot-source-business-boundary"
     },
@@ -2069,7 +2119,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "huggingface.co",
-      "line_number": 221,
+      "line_number": 226,
       "raw": "DOMAIN-SUFFIX,huggingface.co",
       "reason": "copilot-source-business-boundary"
     },
@@ -2079,7 +2129,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "hunyuan.tencent.com",
-      "line_number": 222,
+      "line_number": 227,
       "raw": "DOMAIN-SUFFIX,hunyuan.tencent.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2089,7 +2139,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "identrust.com",
-      "line_number": 223,
+      "line_number": 228,
       "raw": "DOMAIN-SUFFIX,identrust.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2099,7 +2149,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ideogram.ai",
-      "line_number": 224,
+      "line_number": 229,
       "raw": "DOMAIN-SUFFIX,ideogram.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2109,7 +2159,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "inflection.ai",
-      "line_number": 225,
+      "line_number": 230,
       "raw": "DOMAIN-SUFFIX,inflection.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2119,7 +2169,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercom.io",
-      "line_number": 226,
+      "line_number": 231,
       "raw": "DOMAIN-SUFFIX,intercom.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -2129,7 +2179,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercomcdn.com",
-      "line_number": 227,
+      "line_number": 232,
       "raw": "DOMAIN-SUFFIX,intercomcdn.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2139,7 +2189,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "interface.feedback",
-      "line_number": 228,
+      "line_number": 233,
       "raw": "DOMAIN-SUFFIX,interface.feedback",
       "reason": "copilot-source-business-boundary"
     },
@@ -2149,7 +2199,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "jasper.ai",
-      "line_number": 229,
+      "line_number": 234,
       "raw": "DOMAIN-SUFFIX,jasper.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2159,7 +2209,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "jetbrains.ai",
-      "line_number": 230,
+      "line_number": 235,
       "raw": "DOMAIN-SUFFIX,jetbrains.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2169,7 +2219,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "jules.google",
-      "line_number": 231,
+      "line_number": 236,
       "raw": "DOMAIN-SUFFIX,jules.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -2179,7 +2229,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "jules.google.com",
-      "line_number": 232,
+      "line_number": 237,
       "raw": "DOMAIN-SUFFIX,jules.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2189,7 +2239,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "kilo.ai",
-      "line_number": 233,
+      "line_number": 238,
       "raw": "DOMAIN-SUFFIX,kilo.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2199,7 +2249,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "kilo.codes",
-      "line_number": 234,
+      "line_number": 239,
       "raw": "DOMAIN-SUFFIX,kilo.codes",
       "reason": "copilot-source-business-boundary"
     },
@@ -2209,7 +2259,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "kimi.com",
-      "line_number": 235,
+      "line_number": 240,
       "raw": "DOMAIN-SUFFIX,kimi.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2219,7 +2269,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "kiro.dev",
-      "line_number": 236,
+      "line_number": 241,
       "raw": "DOMAIN-SUFFIX,kiro.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -2229,7 +2279,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "labs.google",
-      "line_number": 237,
+      "line_number": 242,
       "raw": "DOMAIN-SUFFIX,labs.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -2239,7 +2289,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "labs.google.com",
-      "line_number": 238,
+      "line_number": 243,
       "raw": "DOMAIN-SUFFIX,labs.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2249,7 +2299,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "labstailwind.pa.googleapis.com",
-      "line_number": 239,
+      "line_number": 244,
       "raw": "DOMAIN-SUFFIX,labstailwind.pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2259,7 +2309,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "langchain.com",
-      "line_number": 240,
+      "line_number": 245,
       "raw": "DOMAIN-SUFFIX,langchain.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2269,7 +2319,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "launchdarkly.com",
-      "line_number": 241,
+      "line_number": 246,
       "raw": "DOMAIN-SUFFIX,launchdarkly.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2279,7 +2329,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lcicat.org",
-      "line_number": 242,
+      "line_number": 247,
       "raw": "DOMAIN-SUFFIX,lcicat.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -2289,7 +2339,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lcicollections.org",
-      "line_number": 243,
+      "line_number": 248,
       "raw": "DOMAIN-SUFFIX,lcicollections.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -2299,7 +2349,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "leonardo.ai",
-      "line_number": 244,
+      "line_number": 249,
       "raw": "DOMAIN-SUFFIX,leonardo.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2309,7 +2359,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lf3-static.bytednsdoc.com",
-      "line_number": 245,
+      "line_number": 250,
       "raw": "DOMAIN-SUFFIX,lf3-static.bytednsdoc.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2319,7 +2369,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "llama.com",
-      "line_number": 246,
+      "line_number": 251,
       "raw": "DOMAIN-SUFFIX,llama.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2329,7 +2379,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "llamameta.net",
-      "line_number": 247,
+      "line_number": 252,
       "raw": "DOMAIN-SUFFIX,llamameta.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -2339,7 +2389,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lmarena.ai",
-      "line_number": 248,
+      "line_number": 253,
       "raw": "DOMAIN-SUFFIX,lmarena.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2349,7 +2399,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lmstudio.ai",
-      "line_number": 249,
+      "line_number": 254,
       "raw": "DOMAIN-SUFFIX,lmstudio.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2359,7 +2409,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lovable.dev",
-      "line_number": 250,
+      "line_number": 255,
       "raw": "DOMAIN-SUFFIX,lovable.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -2369,7 +2419,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lovart.ai",
-      "line_number": 251,
+      "line_number": 256,
       "raw": "DOMAIN-SUFFIX,lovart.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2379,7 +2429,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "lumalabs.ai",
-      "line_number": 252,
+      "line_number": 257,
       "raw": "DOMAIN-SUFFIX,lumalabs.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2389,7 +2439,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "makersuite.google.com",
-      "line_number": 253,
+      "line_number": 258,
       "raw": "DOMAIN-SUFFIX,makersuite.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2399,7 +2449,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "manus.im",
-      "line_number": 254,
+      "line_number": 259,
       "raw": "DOMAIN-SUFFIX,manus.im",
       "reason": "copilot-source-business-boundary"
     },
@@ -2409,7 +2459,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "manuscdn.com",
-      "line_number": 255,
+      "line_number": 260,
       "raw": "DOMAIN-SUFFIX,manuscdn.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2419,7 +2469,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "marscode.cn",
-      "line_number": 256,
+      "line_number": 261,
       "raw": "DOMAIN-SUFFIX,marscode.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -2429,7 +2479,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "marscode.com",
-      "line_number": 257,
+      "line_number": 262,
       "raw": "DOMAIN-SUFFIX,marscode.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2439,7 +2489,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "marscode.com.cn",
-      "line_number": 258,
+      "line_number": 263,
       "raw": "DOMAIN-SUFFIX,marscode.com.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -2449,7 +2499,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "mcbaas.work",
-      "line_number": 259,
+      "line_number": 264,
       "raw": "DOMAIN-SUFFIX,mcbaas.work",
       "reason": "copilot-source-business-boundary"
     },
@@ -2459,7 +2509,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "mcdemo.show",
-      "line_number": 260,
+      "line_number": 265,
       "raw": "DOMAIN-SUFFIX,mcdemo.show",
       "reason": "copilot-source-business-boundary"
     },
@@ -2469,7 +2519,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "mchost.guru",
-      "line_number": 261,
+      "line_number": 266,
       "raw": "DOMAIN-SUFFIX,mchost.guru",
       "reason": "copilot-source-business-boundary"
     },
@@ -2479,7 +2529,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "mcprev.cn",
-      "line_number": 262,
+      "line_number": 267,
       "raw": "DOMAIN-SUFFIX,mcprev.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -2489,7 +2539,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "mcpservertest.online",
-      "line_number": 263,
+      "line_number": 268,
       "raw": "DOMAIN-SUFFIX,mcpservertest.online",
       "reason": "copilot-source-business-boundary"
     },
@@ -2499,7 +2549,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "meta.ai",
-      "line_number": 264,
+      "line_number": 269,
       "raw": "DOMAIN-SUFFIX,meta.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2508,8 +2558,18 @@
       "category": "ai",
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
+      "value": "metaaiusercontent.com",
+      "line_number": 270,
+      "raw": "DOMAIN-SUFFIX,metaaiusercontent.com",
+      "reason": "copilot-source-business-boundary"
+    },
+    {
+      "source_id": "magicrule-copilot",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-SUFFIX",
       "value": "metaaivm.com",
-      "line_number": 265,
+      "line_number": 271,
       "raw": "DOMAIN-SUFFIX,metaaivm.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2519,7 +2579,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "miaibox.com",
-      "line_number": 266,
+      "line_number": 272,
       "raw": "DOMAIN-SUFFIX,miaibox.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2529,7 +2589,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "midjourney.com",
-      "line_number": 267,
+      "line_number": 273,
       "raw": "DOMAIN-SUFFIX,midjourney.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2539,7 +2599,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "mistral.ai",
-      "line_number": 268,
+      "line_number": 274,
       "raw": "DOMAIN-SUFFIX,mistral.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2549,7 +2609,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "modelcontextprotocol.com",
-      "line_number": 269,
+      "line_number": 275,
       "raw": "DOMAIN-SUFFIX,modelcontextprotocol.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2559,7 +2619,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "modelcontextprotocol.io",
-      "line_number": 270,
+      "line_number": 276,
       "raw": "DOMAIN-SUFFIX,modelcontextprotocol.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -2569,7 +2629,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "modelcontextprotocol.net",
-      "line_number": 271,
+      "line_number": 277,
       "raw": "DOMAIN-SUFFIX,modelcontextprotocol.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -2579,7 +2639,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "modelcontextprotocol.org",
-      "line_number": 272,
+      "line_number": 278,
       "raw": "DOMAIN-SUFFIX,modelcontextprotocol.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -2589,7 +2649,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "modelscope.cn",
-      "line_number": 273,
+      "line_number": 279,
       "raw": "DOMAIN-SUFFIX,modelscope.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -2599,7 +2659,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "modelscope.com",
-      "line_number": 274,
+      "line_number": 280,
       "raw": "DOMAIN-SUFFIX,modelscope.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2609,7 +2669,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "moonshot.ai",
-      "line_number": 275,
+      "line_number": 281,
       "raw": "DOMAIN-SUFFIX,moonshot.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2619,7 +2679,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "moonshot.cn",
-      "line_number": 276,
+      "line_number": 282,
       "raw": "DOMAIN-SUFFIX,moonshot.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -2629,7 +2689,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "muse.ai",
-      "line_number": 277,
+      "line_number": 283,
       "raw": "DOMAIN-SUFFIX,muse.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2639,7 +2699,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "muthos.com",
-      "line_number": 278,
+      "line_number": 284,
       "raw": "DOMAIN-SUFFIX,muthos.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2649,7 +2709,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "notebook.google",
-      "line_number": 279,
+      "line_number": 285,
       "raw": "DOMAIN-SUFFIX,notebook.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -2659,7 +2719,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "notebook.google.com",
-      "line_number": 280,
+      "line_number": 286,
       "raw": "DOMAIN-SUFFIX,notebook.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2669,7 +2729,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "notebooklm.google",
-      "line_number": 281,
+      "line_number": 287,
       "raw": "DOMAIN-SUFFIX,notebooklm.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -2679,7 +2739,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "notebooklm.google.com",
-      "line_number": 282,
+      "line_number": 288,
       "raw": "DOMAIN-SUFFIX,notebooklm.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2689,7 +2749,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "novita.ai",
-      "line_number": 283,
+      "line_number": 289,
       "raw": "DOMAIN-SUFFIX,novita.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2699,7 +2759,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "oaistatic.com",
-      "line_number": 284,
+      "line_number": 290,
       "raw": "DOMAIN-SUFFIX,oaistatic.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2709,7 +2769,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "oaistatsig.com",
-      "line_number": 285,
+      "line_number": 291,
       "raw": "DOMAIN-SUFFIX,oaistatsig.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2719,7 +2779,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "oaiusercontent.com",
-      "line_number": 286,
+      "line_number": 292,
       "raw": "DOMAIN-SUFFIX,oaiusercontent.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2729,7 +2789,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "observeit.net",
-      "line_number": 287,
+      "line_number": 293,
       "raw": "DOMAIN-SUFFIX,observeit.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -2739,7 +2799,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ollama.com",
-      "line_number": 288,
+      "line_number": 294,
       "raw": "DOMAIN-SUFFIX,ollama.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2749,7 +2809,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "opal.google",
-      "line_number": 289,
+      "line_number": 295,
       "raw": "DOMAIN-SUFFIX,opal.google",
       "reason": "copilot-source-business-boundary"
     },
@@ -2759,7 +2819,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "opal.google.com",
-      "line_number": 290,
+      "line_number": 296,
       "raw": "DOMAIN-SUFFIX,opal.google.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2769,7 +2829,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openai.com",
-      "line_number": 291,
+      "line_number": 297,
       "raw": "DOMAIN-SUFFIX,openai.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2779,7 +2839,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openai.com.cdn.cloudflare.net",
-      "line_number": 292,
+      "line_number": 298,
       "raw": "DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -2789,7 +2849,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openai.org",
-      "line_number": 293,
+      "line_number": 299,
       "raw": "DOMAIN-SUFFIX,openai.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -2799,7 +2859,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openaiapi-site.azureedge.net",
-      "line_number": 294,
+      "line_number": 300,
       "raw": "DOMAIN-SUFFIX,openaiapi-site.azureedge.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -2809,7 +2869,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openaicom.imgix.net",
-      "line_number": 295,
+      "line_number": 301,
       "raw": "DOMAIN-SUFFIX,openaicom.imgix.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -2819,7 +2879,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openart.ai",
-      "line_number": 296,
+      "line_number": 302,
       "raw": "DOMAIN-SUFFIX,openart.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2829,7 +2889,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openclaw.ai",
-      "line_number": 297,
+      "line_number": 303,
       "raw": "DOMAIN-SUFFIX,openclaw.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2839,7 +2899,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "opencode.ai",
-      "line_number": 298,
+      "line_number": 304,
       "raw": "DOMAIN-SUFFIX,opencode.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2849,7 +2909,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "openrouter.ai",
-      "line_number": 299,
+      "line_number": 305,
       "raw": "DOMAIN-SUFFIX,openrouter.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2859,7 +2919,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "otter.ai",
-      "line_number": 300,
+      "line_number": 306,
       "raw": "DOMAIN-SUFFIX,otter.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2869,7 +2929,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "perplexity.ai",
-      "line_number": 301,
+      "line_number": 307,
       "raw": "DOMAIN-SUFFIX,perplexity.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2879,7 +2939,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "perplexity.com",
-      "line_number": 302,
+      "line_number": 308,
       "raw": "DOMAIN-SUFFIX,perplexity.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2889,7 +2949,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "phind.com",
-      "line_number": 303,
+      "line_number": 309,
       "raw": "DOMAIN-SUFFIX,phind.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2899,7 +2959,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "pi.ai",
-      "line_number": 304,
+      "line_number": 310,
       "raw": "DOMAIN-SUFFIX,pi.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2909,7 +2969,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "pika.art",
-      "line_number": 305,
+      "line_number": 311,
       "raw": "DOMAIN-SUFFIX,pika.art",
       "reason": "copilot-source-business-boundary"
     },
@@ -2919,7 +2979,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "poe.com",
-      "line_number": 306,
+      "line_number": 312,
       "raw": "DOMAIN-SUFFIX,poe.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2929,7 +2989,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "poecdn.net",
-      "line_number": 307,
+      "line_number": 313,
       "raw": "DOMAIN-SUFFIX,poecdn.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -2939,7 +2999,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ppio.cn",
-      "line_number": 308,
+      "line_number": 314,
       "raw": "DOMAIN-SUFFIX,ppio.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -2949,7 +3009,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "ppio.com",
-      "line_number": 309,
+      "line_number": 315,
       "raw": "DOMAIN-SUFFIX,ppio.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2959,7 +3019,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "pplx.ai",
-      "line_number": 310,
+      "line_number": 316,
       "raw": "DOMAIN-SUFFIX,pplx.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -2969,7 +3029,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "proactivebackend-pa.googleapis.com",
-      "line_number": 311,
+      "line_number": 317,
       "raw": "DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2979,7 +3039,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "q.eu-central-1.amazonaws.com",
-      "line_number": 312,
+      "line_number": 318,
       "raw": "DOMAIN-SUFFIX,q.eu-central-1.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2989,7 +3049,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "q.us-east-1.amazonaws.com",
-      "line_number": 313,
+      "line_number": 319,
       "raw": "DOMAIN-SUFFIX,q.us-east-1.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -2999,7 +3059,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "qianwen.aliyun.com",
-      "line_number": 314,
+      "line_number": 320,
       "raw": "DOMAIN-SUFFIX,qianwen.aliyun.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3009,7 +3069,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "qianwen.com",
-      "line_number": 315,
+      "line_number": 321,
       "raw": "DOMAIN-SUFFIX,qianwen.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3019,7 +3079,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "qoder.cn",
-      "line_number": 316,
+      "line_number": 322,
       "raw": "DOMAIN-SUFFIX,qoder.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -3029,7 +3089,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "qoder.com",
-      "line_number": 317,
+      "line_number": 323,
       "raw": "DOMAIN-SUFFIX,qoder.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3039,7 +3099,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "qoder.com.cn",
-      "line_number": 318,
+      "line_number": 324,
       "raw": "DOMAIN-SUFFIX,qoder.com.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -3049,7 +3109,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "qwen.ai",
-      "line_number": 319,
+      "line_number": 325,
       "raw": "DOMAIN-SUFFIX,qwen.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3059,7 +3119,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "qwenlm.ai",
-      "line_number": 320,
+      "line_number": 326,
       "raw": "DOMAIN-SUFFIX,qwenlm.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3069,7 +3129,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "recraft.ai",
-      "line_number": 321,
+      "line_number": 327,
       "raw": "DOMAIN-SUFFIX,recraft.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3079,7 +3139,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "repl.co",
-      "line_number": 322,
+      "line_number": 328,
       "raw": "DOMAIN-SUFFIX,repl.co",
       "reason": "copilot-source-business-boundary"
     },
@@ -3089,7 +3149,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "repl.it",
-      "line_number": 323,
+      "line_number": 329,
       "raw": "DOMAIN-SUFFIX,repl.it",
       "reason": "copilot-source-business-boundary"
     },
@@ -3099,7 +3159,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "replicate.com",
-      "line_number": 324,
+      "line_number": 330,
       "raw": "DOMAIN-SUFFIX,replicate.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3109,7 +3169,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "replicate.delivery",
-      "line_number": 325,
+      "line_number": 331,
       "raw": "DOMAIN-SUFFIX,replicate.delivery",
       "reason": "copilot-source-business-boundary"
     },
@@ -3119,7 +3179,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "replit.app",
-      "line_number": 326,
+      "line_number": 332,
       "raw": "DOMAIN-SUFFIX,replit.app",
       "reason": "copilot-source-business-boundary"
     },
@@ -3129,7 +3189,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "replit.com",
-      "line_number": 327,
+      "line_number": 333,
       "raw": "DOMAIN-SUFFIX,replit.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3139,7 +3199,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "replit.dev",
-      "line_number": 328,
+      "line_number": 334,
       "raw": "DOMAIN-SUFFIX,replit.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -3149,7 +3209,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "robinfrontend-pa.googleapis.com",
-      "line_number": 329,
+      "line_number": 335,
       "raw": "DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3159,7 +3219,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "runway.com",
-      "line_number": 330,
+      "line_number": 336,
       "raw": "DOMAIN-SUFFIX,runway.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3169,7 +3229,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "runwayml.com",
-      "line_number": 331,
+      "line_number": 337,
       "raw": "DOMAIN-SUFFIX,runwayml.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3179,7 +3239,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "segment.io",
-      "line_number": 332,
+      "line_number": 338,
       "raw": "DOMAIN-SUFFIX,segment.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -3189,7 +3249,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sentry.io",
-      "line_number": 333,
+      "line_number": 339,
       "raw": "DOMAIN-SUFFIX,sentry.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -3199,7 +3259,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sf16-short-sg.bytedapm.com",
-      "line_number": 334,
+      "line_number": 340,
       "raw": "DOMAIN-SUFFIX,sf16-short-sg.bytedapm.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3209,7 +3269,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "siliconflow.cn",
-      "line_number": 335,
+      "line_number": 341,
       "raw": "DOMAIN-SUFFIX,siliconflow.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -3219,7 +3279,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "siliconflow.com",
-      "line_number": 336,
+      "line_number": 342,
       "raw": "DOMAIN-SUFFIX,siliconflow.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3229,7 +3289,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sillylittleguy.org",
-      "line_number": 337,
+      "line_number": 343,
       "raw": "DOMAIN-SUFFIX,sillylittleguy.org",
       "reason": "copilot-source-business-boundary"
     },
@@ -3239,7 +3299,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sora.com",
-      "line_number": 338,
+      "line_number": 344,
       "raw": "DOMAIN-SUFFIX,sora.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3249,7 +3309,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sourcegraph.com",
-      "line_number": 339,
+      "line_number": 345,
       "raw": "DOMAIN-SUFFIX,sourcegraph.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3259,7 +3319,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sso.amazonaws.com",
-      "line_number": 340,
+      "line_number": 346,
       "raw": "DOMAIN-SUFFIX,sso.amazonaws.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3269,7 +3329,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "stability.ai",
-      "line_number": 341,
+      "line_number": 347,
       "raw": "DOMAIN-SUFFIX,stability.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3279,7 +3339,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "starling.zijieapi.com",
-      "line_number": 342,
+      "line_number": 348,
       "raw": "DOMAIN-SUFFIX,starling.zijieapi.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3289,7 +3349,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "statsigapi.net",
-      "line_number": 343,
+      "line_number": 349,
       "raw": "DOMAIN-SUFFIX,statsigapi.net",
       "reason": "copilot-source-business-boundary"
     },
@@ -3299,7 +3359,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "stepfun.ai",
-      "line_number": 344,
+      "line_number": 350,
       "raw": "DOMAIN-SUFFIX,stepfun.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3309,7 +3369,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "stepfun.com",
-      "line_number": 345,
+      "line_number": 351,
       "raw": "DOMAIN-SUFFIX,stepfun.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3319,7 +3379,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "stitch.withgoogle.com",
-      "line_number": 346,
+      "line_number": 352,
       "raw": "DOMAIN-SUFFIX,stitch.withgoogle.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3329,7 +3389,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "stripe.com",
-      "line_number": 347,
+      "line_number": 353,
       "raw": "DOMAIN-SUFFIX,stripe.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3339,7 +3399,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "suno.ai",
-      "line_number": 348,
+      "line_number": 354,
       "raw": "DOMAIN-SUFFIX,suno.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3349,7 +3409,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "suno.com",
-      "line_number": 349,
+      "line_number": 355,
       "raw": "DOMAIN-SUFFIX,suno.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3359,7 +3419,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "synthesia.io",
-      "line_number": 350,
+      "line_number": 356,
       "raw": "DOMAIN-SUFFIX,synthesia.io",
       "reason": "copilot-source-business-boundary"
     },
@@ -3369,7 +3429,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "tabnine.com",
-      "line_number": 351,
+      "line_number": 357,
       "raw": "DOMAIN-SUFFIX,tabnine.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3379,7 +3439,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "tcwqqdy.guru",
-      "line_number": 352,
+      "line_number": 358,
       "raw": "DOMAIN-SUFFIX,tcwqqdy.guru",
       "reason": "copilot-source-business-boundary"
     },
@@ -3389,7 +3449,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "together.ai",
-      "line_number": 353,
+      "line_number": 359,
       "raw": "DOMAIN-SUFFIX,together.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3399,7 +3459,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "together.xyz",
-      "line_number": 354,
+      "line_number": 360,
       "raw": "DOMAIN-SUFFIX,together.xyz",
       "reason": "copilot-source-business-boundary"
     },
@@ -3409,7 +3469,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "tongyi.aliyun.com",
-      "line_number": 355,
+      "line_number": 361,
       "raw": "DOMAIN-SUFFIX,tongyi.aliyun.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3419,7 +3479,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "tongyi.com",
-      "line_number": 356,
+      "line_number": 362,
       "raw": "DOMAIN-SUFFIX,tongyi.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3429,7 +3489,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "trae.ai",
-      "line_number": 357,
+      "line_number": 363,
       "raw": "DOMAIN-SUFFIX,trae.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3439,7 +3499,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "trae.cn",
-      "line_number": 358,
+      "line_number": 364,
       "raw": "DOMAIN-SUFFIX,trae.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -3449,7 +3509,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "trae.com.cn",
-      "line_number": 359,
+      "line_number": 365,
       "raw": "DOMAIN-SUFFIX,trae.com.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -3459,7 +3519,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "trae.guru",
-      "line_number": 360,
+      "line_number": 366,
       "raw": "DOMAIN-SUFFIX,trae.guru",
       "reason": "copilot-source-business-boundary"
     },
@@ -3469,7 +3529,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "tron-sg.bytelemon.com",
-      "line_number": 361,
+      "line_number": 367,
       "raw": "DOMAIN-SUFFIX,tron-sg.bytelemon.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3479,7 +3539,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "turn.livekit.cloud",
-      "line_number": 362,
+      "line_number": 368,
       "raw": "DOMAIN-SUFFIX,turn.livekit.cloud",
       "reason": "copilot-source-business-boundary"
     },
@@ -3489,7 +3549,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "udio.com",
-      "line_number": 363,
+      "line_number": 369,
       "raw": "DOMAIN-SUFFIX,udio.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3499,7 +3559,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "v0.app",
-      "line_number": 364,
+      "line_number": 370,
       "raw": "DOMAIN-SUFFIX,v0.app",
       "reason": "copilot-source-business-boundary"
     },
@@ -3509,7 +3569,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "v0.dev",
-      "line_number": 365,
+      "line_number": 371,
       "raw": "DOMAIN-SUFFIX,v0.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -3519,7 +3579,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "windsurf.build",
-      "line_number": 366,
+      "line_number": 372,
       "raw": "DOMAIN-SUFFIX,windsurf.build",
       "reason": "copilot-source-business-boundary"
     },
@@ -3529,7 +3589,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "windsurf.com",
-      "line_number": 367,
+      "line_number": 373,
       "raw": "DOMAIN-SUFFIX,windsurf.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3539,7 +3599,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "x.ai",
-      "line_number": 368,
+      "line_number": 374,
       "raw": "DOMAIN-SUFFIX,x.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3549,7 +3609,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "xiaoaiassist.com",
-      "line_number": 369,
+      "line_number": 375,
       "raw": "DOMAIN-SUFFIX,xiaoaiassist.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3559,7 +3619,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "xiaomimimo.com",
-      "line_number": 370,
+      "line_number": 376,
       "raw": "DOMAIN-SUFFIX,xiaomimimo.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3569,7 +3629,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "xingyeai.com",
-      "line_number": 371,
+      "line_number": 377,
       "raw": "DOMAIN-SUFFIX,xingyeai.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3579,7 +3639,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "yoma.cn",
-      "line_number": 372,
+      "line_number": 378,
       "raw": "DOMAIN-SUFFIX,yoma.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -3589,7 +3649,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "you.com",
-      "line_number": 373,
+      "line_number": 379,
       "raw": "DOMAIN-SUFFIX,you.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3599,7 +3659,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "youmind.ai",
-      "line_number": 374,
+      "line_number": 380,
       "raw": "DOMAIN-SUFFIX,youmind.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3609,7 +3669,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "youmind.com",
-      "line_number": 375,
+      "line_number": 381,
       "raw": "DOMAIN-SUFFIX,youmind.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3619,7 +3679,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "youmind.site",
-      "line_number": 376,
+      "line_number": 382,
       "raw": "DOMAIN-SUFFIX,youmind.site",
       "reason": "copilot-source-business-boundary"
     },
@@ -3629,7 +3689,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "yuanbao.tencent.com",
-      "line_number": 377,
+      "line_number": 383,
       "raw": "DOMAIN-SUFFIX,yuanbao.tencent.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3639,7 +3699,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "yuanqi.tencent.com",
-      "line_number": 378,
+      "line_number": 384,
       "raw": "DOMAIN-SUFFIX,yuanqi.tencent.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3649,7 +3709,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "z.ai",
-      "line_number": 379,
+      "line_number": 385,
       "raw": "DOMAIN-SUFFIX,z.ai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3659,7 +3719,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "zed.dev",
-      "line_number": 380,
+      "line_number": 386,
       "raw": "DOMAIN-SUFFIX,zed.dev",
       "reason": "copilot-source-business-boundary"
     },
@@ -3669,7 +3729,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "zhipuai.cn",
-      "line_number": 381,
+      "line_number": 387,
       "raw": "DOMAIN-SUFFIX,zhipuai.cn",
       "reason": "copilot-source-business-boundary"
     },
@@ -3679,7 +3739,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "zhipucn.com",
-      "line_number": 382,
+      "line_number": 388,
       "raw": "DOMAIN-SUFFIX,zhipucn.com",
       "reason": "copilot-source-business-boundary"
     },
@@ -3689,7 +3749,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "chatgpt-async-webps-prod",
-      "line_number": 383,
+      "line_number": 389,
       "raw": "DOMAIN-KEYWORD,chatgpt-async-webps-prod",
       "reason": "copilot-source-business-boundary"
     },
@@ -3699,7 +3759,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "datadog",
-      "line_number": 384,
+      "line_number": 390,
       "raw": "DOMAIN-KEYWORD,datadog",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -3709,7 +3769,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "openai",
-      "line_number": 385,
+      "line_number": 391,
       "raw": "DOMAIN-KEYWORD,openai",
       "reason": "copilot-source-business-boundary"
     },
@@ -3719,7 +3779,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "sentry",
-      "line_number": 386,
+      "line_number": 392,
       "raw": "DOMAIN-KEYWORD,sentry",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -3729,7 +3789,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "sift",
-      "line_number": 387,
+      "line_number": 393,
       "raw": "DOMAIN-KEYWORD,sift",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -3739,7 +3799,7 @@
       "policy": "AI",
       "rule_type": "IP-CIDR",
       "value": "160.79.104.0/21",
-      "line_number": 388,
+      "line_number": 394,
       "raw": "IP-CIDR,160.79.104.0/21,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3749,7 +3809,7 @@
       "policy": "AI",
       "rule_type": "IP-CIDR",
       "value": "199.47.142.0/23",
-      "line_number": 389,
+      "line_number": 395,
       "raw": "IP-CIDR,199.47.142.0/23,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3759,7 +3819,7 @@
       "policy": "AI",
       "rule_type": "IP-CIDR",
       "value": "24.199.123.28/32",
-      "line_number": 390,
+      "line_number": 396,
       "raw": "IP-CIDR,24.199.123.28/32,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3769,7 +3829,7 @@
       "policy": "AI",
       "rule_type": "IP-CIDR",
       "value": "64.23.132.171/32",
-      "line_number": 391,
+      "line_number": 397,
       "raw": "IP-CIDR,64.23.132.171/32,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3779,7 +3839,7 @@
       "policy": "AI",
       "rule_type": "IP6-CIDR",
       "value": "2604:f20::/32",
-      "line_number": 392,
+      "line_number": 398,
       "raw": "IP-CIDR6,2604:f20::/32,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3789,7 +3849,7 @@
       "policy": "AI",
       "rule_type": "IP6-CIDR",
       "value": "2607:6bc0::/32",
-      "line_number": 393,
+      "line_number": 399,
       "raw": "IP-CIDR6,2607:6bc0::/32,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3799,7 +3859,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "14061",
-      "line_number": 394,
+      "line_number": 400,
       "raw": "IP-ASN,14061",
       "reason": "copilot-source-business-boundary"
     },
@@ -3809,7 +3869,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "399358",
-      "line_number": 395,
+      "line_number": 401,
       "raw": "IP-ASN,399358",
       "reason": "copilot-source-business-boundary"
     },
@@ -3819,7 +3879,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "401518",
-      "line_number": 396,
+      "line_number": 402,
       "raw": "IP-ASN,401518",
       "reason": "copilot-source-business-boundary"
     },
@@ -3829,7 +3889,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Antigravity",
-      "line_number": 397,
+      "line_number": 403,
       "raw": "PROCESS-NAME,Antigravity",
       "reason": "copilot-source-business-boundary"
     },
@@ -3839,7 +3899,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Antigravity.exe",
-      "line_number": 398,
+      "line_number": 404,
       "raw": "PROCESS-NAME,Antigravity.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3849,7 +3909,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Augment",
-      "line_number": 399,
+      "line_number": 405,
       "raw": "PROCESS-NAME,Augment",
       "reason": "copilot-source-business-boundary"
     },
@@ -3859,7 +3919,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Augment.exe",
-      "line_number": 400,
+      "line_number": 406,
       "raw": "PROCESS-NAME,Augment.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3869,7 +3929,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "ChatGPT",
-      "line_number": 401,
+      "line_number": 407,
       "raw": "PROCESS-NAME,ChatGPT",
       "reason": "copilot-source-business-boundary"
     },
@@ -3879,7 +3939,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "ChatGPT.exe",
-      "line_number": 402,
+      "line_number": 408,
       "raw": "PROCESS-NAME,ChatGPT.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3889,7 +3949,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Claude",
-      "line_number": 403,
+      "line_number": 409,
       "raw": "PROCESS-NAME,Claude",
       "reason": "copilot-source-business-boundary"
     },
@@ -3899,7 +3959,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Claude.exe",
-      "line_number": 404,
+      "line_number": 410,
       "raw": "PROCESS-NAME,Claude.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3909,7 +3969,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Codex",
-      "line_number": 405,
+      "line_number": 411,
       "raw": "PROCESS-NAME,Codex",
       "reason": "copilot-source-business-boundary"
     },
@@ -3919,7 +3979,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Codex.exe",
-      "line_number": 406,
+      "line_number": 412,
       "raw": "PROCESS-NAME,Codex.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3929,7 +3989,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Cursor",
-      "line_number": 407,
+      "line_number": 413,
       "raw": "PROCESS-NAME,Cursor",
       "reason": "copilot-source-business-boundary"
     },
@@ -3939,7 +3999,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Cursor.exe",
-      "line_number": 408,
+      "line_number": 414,
       "raw": "PROCESS-NAME,Cursor.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3949,7 +4009,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Windsurf",
-      "line_number": 409,
+      "line_number": 415,
       "raw": "PROCESS-NAME,Windsurf",
       "reason": "copilot-source-business-boundary"
     },
@@ -3959,7 +4019,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Windsurf.exe",
-      "line_number": 410,
+      "line_number": 416,
       "raw": "PROCESS-NAME,Windsurf.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3969,7 +4029,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "antigravity",
-      "line_number": 411,
+      "line_number": 417,
       "raw": "PROCESS-NAME,antigravity",
       "reason": "copilot-source-business-boundary"
     },
@@ -3979,7 +4039,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "augment",
-      "line_number": 412,
+      "line_number": 418,
       "raw": "PROCESS-NAME,augment",
       "reason": "copilot-source-business-boundary"
     },
@@ -3989,7 +4049,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "chatgpt",
-      "line_number": 413,
+      "line_number": 419,
       "raw": "PROCESS-NAME,chatgpt",
       "reason": "copilot-source-business-boundary"
     },
@@ -3999,7 +4059,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "claude",
-      "line_number": 414,
+      "line_number": 420,
       "raw": "PROCESS-NAME,claude",
       "reason": "copilot-source-business-boundary"
     },
@@ -4009,7 +4069,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "claude.exe",
-      "line_number": 415,
+      "line_number": 421,
       "raw": "PROCESS-NAME,claude.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -4019,7 +4079,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "codex",
-      "line_number": 416,
+      "line_number": 422,
       "raw": "PROCESS-NAME,codex",
       "reason": "copilot-source-business-boundary"
     },
@@ -4029,7 +4089,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "cowork-svc.exe",
-      "line_number": 417,
+      "line_number": 423,
       "raw": "PROCESS-NAME,cowork-svc.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -4039,7 +4099,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "cursor",
-      "line_number": 418,
+      "line_number": 424,
       "raw": "PROCESS-NAME,cursor",
       "reason": "copilot-source-business-boundary"
     },
@@ -4049,7 +4109,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "windsurf",
-      "line_number": 419,
+      "line_number": 425,
       "raw": "PROCESS-NAME,windsurf",
       "reason": "copilot-source-business-boundary"
     },
@@ -4069,7 +4129,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercom.io",
-      "line_number": 40,
+      "line_number": 42,
       "raw": "DOMAIN-SUFFIX,intercom.io",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -4079,7 +4139,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercomcdn.com",
-      "line_number": 41,
+      "line_number": 43,
       "raw": "DOMAIN-SUFFIX,intercomcdn.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -4089,7 +4149,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "sentry.io",
-      "line_number": 51,
+      "line_number": 53,
       "raw": "DOMAIN-SUFFIX,sentry.io",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -4099,7 +4159,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "statsigapi.net",
-      "line_number": 53,
+      "line_number": 55,
       "raw": "DOMAIN-SUFFIX,statsigapi.net",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -4109,7 +4169,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "datadog",
-      "line_number": 54,
+      "line_number": 56,
       "raw": "DOMAIN-KEYWORD,datadog",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -4119,7 +4179,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "sentry",
-      "line_number": 55,
+      "line_number": 57,
       "raw": "DOMAIN-KEYWORD,sentry",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -4129,7 +4189,7 @@
       "policy": "AI",
       "rule_type": "HOST-KEYWORD",
       "value": "sift",
-      "line_number": 56,
+      "line_number": 58,
       "raw": "DOMAIN-KEYWORD,sift",
       "reason": "shared-or-ambiguous-ai-keyword"
     },
@@ -4199,7 +4259,7 @@
       "policy": "苹果服务",
       "rule_type": "HOST-SUFFIX",
       "value": "digicert.com",
-      "line_number": 1207,
+      "line_number": 1209,
       "raw": "DOMAIN-SUFFIX,digicert.com",
       "reason": "shared-infrastructure-root"
     },
@@ -15559,7 +15619,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "ar",
-      "line_number": 305,
+      "line_number": 308,
       "raw": "DOMAIN-SUFFIX,ar",
       "reason": "country-tld-business-overreach"
     },
@@ -15569,7 +15629,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "au",
-      "line_number": 308,
+      "line_number": 311,
       "raw": "DOMAIN-SUFFIX,au",
       "reason": "country-tld-business-overreach"
     },
@@ -15579,7 +15639,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "bo",
-      "line_number": 400,
+      "line_number": 403,
       "raw": "DOMAIN-SUFFIX,bo",
       "reason": "country-tld-business-overreach"
     },
@@ -15589,7 +15649,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "br",
-      "line_number": 401,
+      "line_number": 404,
       "raw": "DOMAIN-SUFFIX,br",
       "reason": "country-tld-business-overreach"
     },
@@ -15599,7 +15659,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "co",
-      "line_number": 443,
+      "line_number": 446,
       "raw": "DOMAIN-SUFFIX,co",
       "reason": "country-tld-business-overreach"
     },
@@ -15609,7 +15669,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "cu",
-      "line_number": 463,
+      "line_number": 466,
       "raw": "DOMAIN-SUFFIX,cu",
       "reason": "country-tld-business-overreach"
     },
@@ -15619,7 +15679,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "do",
-      "line_number": 487,
+      "line_number": 490,
       "raw": "DOMAIN-SUFFIX,do",
       "reason": "country-tld-business-overreach"
     },
@@ -15629,7 +15689,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "ec",
-      "line_number": 495,
+      "line_number": 498,
       "raw": "DOMAIN-SUFFIX,ec",
       "reason": "country-tld-business-overreach"
     },
@@ -15639,7 +15699,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "eg",
-      "line_number": 496,
+      "line_number": 499,
       "raw": "DOMAIN-SUFFIX,eg",
       "reason": "country-tld-business-overreach"
     },
@@ -15649,7 +15709,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "gt",
-      "line_number": 845,
+      "line_number": 848,
       "raw": "DOMAIN-SUFFIX,gt",
       "reason": "country-tld-business-overreach"
     },
@@ -15659,7 +15719,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "hk",
-      "line_number": 864,
+      "line_number": 867,
       "raw": "DOMAIN-SUFFIX,hk",
       "reason": "country-tld-business-overreach"
     },
@@ -15669,7 +15729,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "ly",
-      "line_number": 892,
+      "line_number": 895,
       "raw": "DOMAIN-SUFFIX,ly",
       "reason": "country-tld-business-overreach"
     },
@@ -15679,7 +15739,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "mx",
-      "line_number": 904,
+      "line_number": 907,
       "raw": "DOMAIN-SUFFIX,mx",
       "reason": "country-tld-business-overreach"
     },
@@ -15689,7 +15749,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "my",
-      "line_number": 905,
+      "line_number": 908,
       "raw": "DOMAIN-SUFFIX,my",
       "reason": "country-tld-business-overreach"
     },
@@ -15699,7 +15759,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "ni",
-      "line_number": 911,
+      "line_number": 914,
       "raw": "DOMAIN-SUFFIX,ni",
       "reason": "country-tld-business-overreach"
     },
@@ -15709,7 +15769,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "pa",
-      "line_number": 934,
+      "line_number": 937,
       "raw": "DOMAIN-SUFFIX,pa",
       "reason": "country-tld-business-overreach"
     },
@@ -15719,7 +15779,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "pe",
-      "line_number": 944,
+      "line_number": 947,
       "raw": "DOMAIN-SUFFIX,pe",
       "reason": "country-tld-business-overreach"
     },
@@ -15729,7 +15789,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "ph",
-      "line_number": 946,
+      "line_number": 949,
       "raw": "DOMAIN-SUFFIX,ph",
       "reason": "country-tld-business-overreach"
     },
@@ -15739,7 +15799,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "pk",
-      "line_number": 954,
+      "line_number": 957,
       "raw": "DOMAIN-SUFFIX,pk",
       "reason": "country-tld-business-overreach"
     },
@@ -15749,7 +15809,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "pr",
-      "line_number": 967,
+      "line_number": 970,
       "raw": "DOMAIN-SUFFIX,pr",
       "reason": "country-tld-business-overreach"
     },
@@ -15759,7 +15819,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "py",
-      "line_number": 977,
+      "line_number": 980,
       "raw": "DOMAIN-SUFFIX,py",
       "reason": "country-tld-business-overreach"
     },
@@ -15769,7 +15829,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "sg",
-      "line_number": 1086,
+      "line_number": 1089,
       "raw": "DOMAIN-SUFFIX,sg",
       "reason": "country-tld-business-overreach"
     },
@@ -15779,7 +15839,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "sv",
-      "line_number": 1107,
+      "line_number": 1110,
       "raw": "DOMAIN-SUFFIX,sv",
       "reason": "country-tld-business-overreach"
     },
@@ -15789,7 +15849,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "tr",
-      "line_number": 1122,
+      "line_number": 1125,
       "raw": "DOMAIN-SUFFIX,tr",
       "reason": "country-tld-business-overreach"
     },
@@ -15799,7 +15859,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "tw",
-      "line_number": 1123,
+      "line_number": 1126,
       "raw": "DOMAIN-SUFFIX,tw",
       "reason": "country-tld-business-overreach"
     },
@@ -15809,7 +15869,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "ua",
-      "line_number": 1126,
+      "line_number": 1129,
       "raw": "DOMAIN-SUFFIX,ua",
       "reason": "country-tld-business-overreach"
     },
@@ -15819,7 +15879,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "uy",
-      "line_number": 1134,
+      "line_number": 1137,
       "raw": "DOMAIN-SUFFIX,uy",
       "reason": "country-tld-business-overreach"
     },
@@ -15829,7 +15889,7 @@
       "policy": "谷歌服务",
       "rule_type": "HOST-SUFFIX",
       "value": "vn",
-      "line_number": 1143,
+      "line_number": 1146,
       "raw": "DOMAIN-SUFFIX,vn",
       "reason": "country-tld-business-overreach"
     },

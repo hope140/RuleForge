@@ -2,9 +2,9 @@
   "mode": "preview-only",
   "active": false,
   "target": "mihomo",
-  "ordered_overlap_count": 1707,
-  "live_cross_category_count": 758,
-  "discarded_overlap_count": 949,
+  "ordered_overlap_count": 1719,
+  "live_cross_category_count": 764,
+  "discarded_overlap_count": 955,
   "apple_contract_gap_count": 2,
   "actual_policy_mismatch_count": 49,
   "preview_candidate_decision_count": 47,
@@ -12,7 +12,7 @@
   "review_required_count": 2,
   "unwitnessed_count": 0,
   "status_counts": {
-    "enforced": 623,
+    "enforced": 629,
     "equivalent-policy": 88,
     "preview-candidate": 47,
     "review-required": 2
@@ -57,7 +57,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "storecorefulfillment.download.prss.microsoft.com",
-        "line_number": 107
+        "line_number": 111
       },
       "rendered_rule": "DOMAIN,storecorefulfillment.download.prss.microsoft.com",
       "confidence": "medium",
@@ -73,7 +73,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
-        "line_number": 59
+        "line_number": 62
       },
       "rendered_rule": "DOMAIN,mpnbenefitsrtluat.download.prss.microsoft.com",
       "confidence": "medium",
@@ -137,7 +137,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mpnbenefitsrtl.download.prss.microsoft.com",
-        "line_number": 58
+        "line_number": 61
       },
       "rendered_rule": "DOMAIN,mpnbenefitsrtl.download.prss.microsoft.com",
       "confidence": "medium",
@@ -169,7 +169,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "dreamsparkuat.download.prss.microsoft.com",
-        "line_number": 36
+        "line_number": 38
       },
       "rendered_rule": "DOMAIN,dreamsparkuat.download.prss.microsoft.com",
       "confidence": "medium",
@@ -201,7 +201,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "itacademyuat.download.prss.microsoft.com",
-        "line_number": 52
+        "line_number": 54
       },
       "rendered_rule": "DOMAIN,itacademyuat.download.prss.microsoft.com",
       "confidence": "medium",
@@ -217,7 +217,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "officemktuat.download.prss.microsoft.com",
-        "line_number": 73
+        "line_number": 76
       },
       "rendered_rule": "DOMAIN,officemktuat.download.prss.microsoft.com",
       "confidence": "medium",
@@ -249,7 +249,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mpnbenefits.download.prss.microsoft.com",
-        "line_number": 57
+        "line_number": 60
       },
       "rendered_rule": "DOMAIN,mpnbenefits.download.prss.microsoft.com",
       "confidence": "medium",
@@ -265,7 +265,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "dreamspark.download.prss.microsoft.com",
-        "line_number": 35
+        "line_number": 37
       },
       "rendered_rule": "DOMAIN,dreamspark.download.prss.microsoft.com",
       "confidence": "medium",
@@ -281,7 +281,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "msdprod-ad.download.prss.microsoft.com",
-        "line_number": 62
+        "line_number": 65
       },
       "rendered_rule": "DOMAIN,msdprod-ad.download.prss.microsoft.com",
       "confidence": "medium",
@@ -297,7 +297,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "itacademy.download.prss.microsoft.com",
-        "line_number": 51
+        "line_number": 53
       },
       "rendered_rule": "DOMAIN,itacademy.download.prss.microsoft.com",
       "confidence": "medium",
@@ -313,7 +313,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "msproduct.download.prss.microsoft.com",
-        "line_number": 64
+        "line_number": 67
       },
       "rendered_rule": "DOMAIN,msproduct.download.prss.microsoft.com",
       "confidence": "medium",
@@ -329,7 +329,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "oemsocuat.download.prss.microsoft.com",
-        "line_number": 69
+        "line_number": 72
       },
       "rendered_rule": "DOMAIN,oemsocuat.download.prss.microsoft.com",
       "confidence": "medium",
@@ -345,7 +345,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "officemkt.download.prss.microsoft.com",
-        "line_number": 72
+        "line_number": 75
       },
       "rendered_rule": "DOMAIN,officemkt.download.prss.microsoft.com",
       "confidence": "medium",
@@ -361,7 +361,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "osrelease.download.prss.microsoft.com",
-        "line_number": 75
+        "line_number": 78
       },
       "rendered_rule": "DOMAIN,osrelease.download.prss.microsoft.com",
       "confidence": "medium",
@@ -393,7 +393,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "software.download.prss.microsoft.com",
-        "line_number": 102
+        "line_number": 106
       },
       "rendered_rule": "DOMAIN,software.download.prss.microsoft.com",
       "confidence": "medium",
@@ -409,7 +409,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "surface.downloads.prss.microsoft.com",
-        "line_number": 111
+        "line_number": 115
       },
       "rendered_rule": "DOMAIN,surface.downloads.prss.microsoft.com",
       "confidence": "medium",
@@ -425,7 +425,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "vlportal.download.prss.microsoft.com",
-        "line_number": 112
+        "line_number": 116
       },
       "rendered_rule": "DOMAIN,vlportal.download.prss.microsoft.com",
       "confidence": "medium",
@@ -441,7 +441,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "surface.download.prss.microsoft.com",
-        "line_number": 110
+        "line_number": 114
       },
       "rendered_rule": "DOMAIN,surface.download.prss.microsoft.com",
       "confidence": "medium",
@@ -457,7 +457,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "lexuat.download.prss.microsoft.com",
-        "line_number": 54
+        "line_number": 56
       },
       "rendered_rule": "DOMAIN,lexuat.download.prss.microsoft.com",
       "confidence": "medium",
@@ -473,7 +473,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "oemsoc.download.prss.microsoft.com",
-        "line_number": 68
+        "line_number": 71
       },
       "rendered_rule": "DOMAIN,oemsoc.download.prss.microsoft.com",
       "confidence": "medium",
@@ -489,7 +489,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "vscode.download.prss.microsoft.com",
-        "line_number": 117
+        "line_number": 121
       },
       "rendered_rule": "DOMAIN,vscode.download.prss.microsoft.com",
       "confidence": "medium",
@@ -505,7 +505,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "windbg.download.prss.microsoft.com",
-        "line_number": 121
+        "line_number": 125
       },
       "rendered_rule": "DOMAIN,windbg.download.prss.microsoft.com",
       "confidence": "medium",
@@ -521,7 +521,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "volic.download.prss.microsoft.com",
-        "line_number": 113
+        "line_number": 117
       },
       "rendered_rule": "DOMAIN,volic.download.prss.microsoft.com",
       "confidence": "medium",
@@ -537,7 +537,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "msdn.download.prss.microsoft.com",
-        "line_number": 61
+        "line_number": 64
       },
       "rendered_rule": "DOMAIN,msdn.download.prss.microsoft.com",
       "confidence": "medium",
@@ -553,7 +553,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "myvs.download.prss.microsoft.com",
-        "line_number": 66
+        "line_number": 69
       },
       "rendered_rule": "DOMAIN,myvs.download.prss.microsoft.com",
       "confidence": "medium",
@@ -569,7 +569,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "lex.download.prss.microsoft.com",
-        "line_number": 53
+        "line_number": 55
       },
       "rendered_rule": "DOMAIN,lex.download.prss.microsoft.com",
       "confidence": "medium",
@@ -585,7 +585,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mbs.download.prss.microsoft.com",
-        "line_number": 56
+        "line_number": 59
       },
       "rendered_rule": "DOMAIN,mbs.download.prss.microsoft.com",
       "confidence": "medium",
@@ -601,7 +601,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "rsm.download.prss.microsoft.com",
-        "line_number": 99
+        "line_number": 102
       },
       "rendered_rule": "DOMAIN,rsm.download.prss.microsoft.com",
       "confidence": "medium",
@@ -617,7 +617,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "vz.download.prss.microsoft.com",
-        "line_number": 120
+        "line_number": 124
       },
       "rendered_rule": "DOMAIN,vz.download.prss.microsoft.com",
       "confidence": "medium",
@@ -633,7 +633,7 @@
         "policy": "谷歌服务",
         "rule_type": "HOST",
         "value": "googletraveladservices-cn.com",
-        "line_number": 111
+        "line_number": 114
       },
       "rendered_rule": "DOMAIN,googletraveladservices-cn.com",
       "confidence": "medium",
@@ -649,7 +649,7 @@
         "policy": "谷歌服务",
         "rule_type": "HOST",
         "value": "googletraveladservices.com",
-        "line_number": 112
+        "line_number": 115
       },
       "rendered_rule": "DOMAIN,googletraveladservices.com",
       "confidence": "medium",
@@ -697,7 +697,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "f.c2r.ts.cdn.office.net",
-        "line_number": 40
+        "line_number": 42
       },
       "rendered_rule": "DOMAIN,f.c2r.ts.cdn.office.net",
       "confidence": "medium",
@@ -713,7 +713,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "officecdn.microsoft.com",
-        "line_number": 71
+        "line_number": 74
       },
       "rendered_rule": "DOMAIN,officecdn.microsoft.com",
       "confidence": "medium",
@@ -729,7 +729,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "storeedge.microsoft.com",
-        "line_number": 108
+        "line_number": 112
       },
       "rendered_rule": "DOMAIN,storeedge.microsoft.com",
       "confidence": "medium",
@@ -761,7 +761,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "sdx.microsoft.com",
-        "line_number": 100
+        "line_number": 104
       },
       "rendered_rule": "DOMAIN,sdx.microsoft.com",
       "confidence": "medium",
@@ -874,7 +874,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "storecorefulfillment.download.prss.microsoft.com",
-        "line_number": 107
+        "line_number": 111
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -915,7 +915,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
-        "line_number": 59
+        "line_number": 62
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1079,7 +1079,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mpnbenefitsrtl.download.prss.microsoft.com",
-        "line_number": 58
+        "line_number": 61
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1161,7 +1161,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "dreamsparkuat.download.prss.microsoft.com",
-        "line_number": 36
+        "line_number": 38
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1243,7 +1243,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "itacademyuat.download.prss.microsoft.com",
-        "line_number": 52
+        "line_number": 54
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1284,7 +1284,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "officemktuat.download.prss.microsoft.com",
-        "line_number": 73
+        "line_number": 76
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1366,7 +1366,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mpnbenefits.download.prss.microsoft.com",
-        "line_number": 57
+        "line_number": 60
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1407,7 +1407,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "dreamspark.download.prss.microsoft.com",
-        "line_number": 35
+        "line_number": 37
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1448,7 +1448,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "msdprod-ad.download.prss.microsoft.com",
-        "line_number": 62
+        "line_number": 65
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1489,7 +1489,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "itacademy.download.prss.microsoft.com",
-        "line_number": 51
+        "line_number": 53
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1530,7 +1530,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "msproduct.download.prss.microsoft.com",
-        "line_number": 64
+        "line_number": 67
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1571,7 +1571,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "oemsocuat.download.prss.microsoft.com",
-        "line_number": 69
+        "line_number": 72
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1612,7 +1612,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "officemkt.download.prss.microsoft.com",
-        "line_number": 72
+        "line_number": 75
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1653,7 +1653,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "osrelease.download.prss.microsoft.com",
-        "line_number": 75
+        "line_number": 78
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1735,7 +1735,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "software.download.prss.microsoft.com",
-        "line_number": 102
+        "line_number": 106
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1776,7 +1776,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "surface.downloads.prss.microsoft.com",
-        "line_number": 111
+        "line_number": 115
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1817,7 +1817,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "vlportal.download.prss.microsoft.com",
-        "line_number": 112
+        "line_number": 116
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1858,7 +1858,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "surface.download.prss.microsoft.com",
-        "line_number": 110
+        "line_number": 114
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1899,7 +1899,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "lexuat.download.prss.microsoft.com",
-        "line_number": 54
+        "line_number": 56
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1940,7 +1940,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "oemsoc.download.prss.microsoft.com",
-        "line_number": 68
+        "line_number": 71
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -1981,7 +1981,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "vscode.download.prss.microsoft.com",
-        "line_number": 117
+        "line_number": 121
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2022,7 +2022,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "windbg.download.prss.microsoft.com",
-        "line_number": 121
+        "line_number": 125
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2063,7 +2063,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "volic.download.prss.microsoft.com",
-        "line_number": 113
+        "line_number": 117
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2104,7 +2104,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "msdn.download.prss.microsoft.com",
-        "line_number": 61
+        "line_number": 64
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2145,7 +2145,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "myvs.download.prss.microsoft.com",
-        "line_number": 66
+        "line_number": 69
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2186,7 +2186,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "lex.download.prss.microsoft.com",
-        "line_number": 53
+        "line_number": 55
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2227,7 +2227,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "mbs.download.prss.microsoft.com",
-        "line_number": 56
+        "line_number": 59
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2268,7 +2268,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "rsm.download.prss.microsoft.com",
-        "line_number": 99
+        "line_number": 102
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2309,7 +2309,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "vz.download.prss.microsoft.com",
-        "line_number": 120
+        "line_number": 124
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2350,7 +2350,7 @@
         "policy": "谷歌服务",
         "rule_type": "HOST",
         "value": "googletraveladservices-cn.com",
-        "line_number": 111
+        "line_number": 114
       },
       "compared_rule": {
         "source_id": "rulego-direct-plus",
@@ -2391,7 +2391,7 @@
         "policy": "谷歌服务",
         "rule_type": "HOST",
         "value": "googletraveladservices.com",
-        "line_number": 112
+        "line_number": 115
       },
       "compared_rule": {
         "source_id": "rulego-direct-plus",
@@ -2514,7 +2514,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "f.c2r.ts.cdn.office.net",
-        "line_number": 40
+        "line_number": 42
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2555,7 +2555,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "officecdn.microsoft.com",
-        "line_number": 71
+        "line_number": 74
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2596,7 +2596,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "storeedge.microsoft.com",
-        "line_number": 108
+        "line_number": 112
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2678,7 +2678,7 @@
         "policy": "全球加速",
         "rule_type": "HOST",
         "value": "sdx.microsoft.com",
-        "line_number": 100
+        "line_number": 104
       },
       "compared_rule": {
         "source_id": "magicrule-direct",
@@ -2727,7 +2727,7 @@
         "policy": "谷歌服务",
         "rule_type": "HOST",
         "value": "googletraveladservices-cn.com",
-        "line_number": 111
+        "line_number": 114
       },
       "actual_rule": {
         "source_id": "rulego-direct-plus",
@@ -2768,7 +2768,7 @@
         "policy": "谷歌服务",
         "rule_type": "HOST",
         "value": "googletraveladservices.com",
-        "line_number": 112
+        "line_number": 115
       },
       "actual_rule": {
         "source_id": "rulego-direct-plus",
