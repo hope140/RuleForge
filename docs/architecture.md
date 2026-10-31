@@ -1,4 +1,4 @@
-# 架构草案
+# 处理架构
 
 ## 处理链路
 
@@ -23,8 +23,8 @@ source manifest
 - 规则类型：HOST、HOST-SUFFIX、HOST-KEYWORD、IP-CIDR、USER-AGENT 等
 - 规则值：规范化后的域名、地址或模式
 - 策略：direct、reject、业务策略或代理策略
-- 来源：source id、原始 URL 和抓取时间
-- 处理状态：保留、合并、冲突、忽略
+- 来源：source id、源格式、原始行号；下载 URL、内容哈希和本次构建时间在构建摘要中记录
+- 处理结果：保留、重复、冲突和 Curation 记录分别由审计与裁决结果保存
 - 原始文本：用于审计和回溯
 
 ## 去重边界
@@ -55,9 +55,9 @@ Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、�
 
 每个业务分类的处理顺序是：先合并多个上游来源，再应用明确的 Curation 排除项和分类纠正，然后做精确去重和语义冲突审计。完全相同的 selector 才选择一个策略；语义覆盖关系保留双方并记录先后约束，后续的策略裁决器不再通过删除宽泛规则来掩盖重叠。
 
-审计还会检查共享基础设施根域，例如 `amazonaws.com`、`azure.com`、`digicert.com` 和 `onetrust.com`。专用分类直接声明这些根域时记录 high-risk warning，宽泛策略分类则降为 medium；位于根域下的明确业务 hostname 不会仅因后缀相同而被标记。已确认的 Netflix、Apple、Prime Video 宽规则通过 Curation 从正式候选中排除。
+审计还会检查共享基础设施根域，例如 `amazonaws.com`、`azure.com`、`digicert.com` 和 `onetrust.com`。专用分类直接声明这些根域时记录 high-risk warning，宽泛策略分类则降为 medium；位于根域下的明确业务 hostname 不会仅因后缀相同而被标记。已确认的 Netflix、Apple、Prime Video 宽规则通过 Curation 从正式安全产物中排除；`categories/candidates/` 保留 Curation 前去重后的规则，供审阅来源差异。
 
-跨分类优先规则只从裁决后仍然存活的约束双方生成，已淘汰规则不得重新进入正式优先文件。Mihomo 的内联规则按 `类型,值,策略,选项` 渲染，Classical Provider 仍保持无策略列。
+跨分类优先规则只从裁决后仍然存活的约束双方生成，已淘汰规则不得重新进入正式优先文件。提升某条业务规则时，递归纳入它仍存活的业务前驱，并对这些规则做稳定拓扑排序；无约束的规则继续按具体程度等既有顺序排列。渲染器和预览保留裁决顺序，不再重新按具体程度排序。业务约束有环时构建失败。`direct-exception`、`reject`、`privacy` 是两端固定的安全前缀，不参与可移动业务规则的拓扑排序。Mihomo 的内联规则按 `类型,值,策略,选项` 渲染，Classical Provider 仍保持无策略列。
 
 完整 Mihomo 模板通过 `sync-mihomo-profile` 同步生成路由区块，区块外配置保持不变。CI 在构建和同步之后运行产物回归，并校验模板及由片段组装的完整配置。
 

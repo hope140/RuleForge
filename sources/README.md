@@ -2,7 +2,7 @@
 
 来源清单登记公开规则地址、格式、策略映射和维护说明，也允许极少量经过审阅的 `inline:` 精确例外；不登记节点订阅或其他私密地址。
 
-清单只接受 `schema_version: 1`，`target` 必须是 `quantumult-x` 或 `mihomo`。根字段、来源字段、字段类型以及 `kind` / `format` / `parser` 组合都会严格校验；`enabled` 必须使用不带引号的 YAML 布尔值，未知字段会使 lint 和构建失败。
+清单只接受 `schema_version: 1`，`target` 必须是 `quantumult-x` 或 `mihomo`。根字段、来源字段、字段类型以及 `kind` / `format` / `parser` 组合都会严格校验；`enabled` 必须使用不带引号的 YAML 布尔值，未知或重复字段会使 lint 和构建失败。`sources:` 必须声明为来源列表，且至少有一个启用来源；空清单或全部禁用不能用于覆盖正式产物。同一分类中所有启用来源必须使用相同策略。
 
 ## 字段约定
 
@@ -24,8 +24,8 @@ MagicRule 的 `url` 使用 `https://magicrule.pages.dev/data/index/<客户端>.j
 ## 命名约定
 
 - `id` 使用 `来源-业务分类[-补充说明]` 的小写 kebab-case，例如 `magicrule-openai`、`rulego-ai-supplement`。
-- `category` 使用稳定的小写 kebab-case，表示业务归属，例如 `ai`、`apple`、`social`、`china-services`；同类来源必须使用同一个分类名。
-- `policy` 只填写目标配置中已经存在的策略名，例如 `AI`、`苹果服务`、`direct`，不在来源名称里重复表达策略。
+- `category` 使用稳定的小写 kebab-case，表示业务归属，例如 `ai`、`apple`、`social`、`china-services`；仅接受小写字母、数字与分隔用的单个连字符，避免分类文件名称碰撞。同类来源必须使用同一个分类名。
+- `policy` 只填写目标配置中已经存在的策略名，例如 `AI`、`苹果服务`、`direct`，不能为空或包含逗号、换行，不在来源名称里重复表达策略。
 
 规则源更新后，先记录变更，再运行解析、Curation、去重和冲突审计；不要直接覆盖生成结果。
 

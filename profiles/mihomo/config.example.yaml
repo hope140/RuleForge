@@ -149,12 +149,13 @@ proxy-groups:
     type: select
     proxies: [全球加速, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, DIRECT]
 
+  # Latin country codes require letter boundaries; numbered labels such as HK01 still match.
   - name: 香港节点
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png"
     type: url-test
     include-all: true
-    filter: "(?i)(香港|港|HK|Hong Kong|HongKong)"
-    exclude-filter: "(?i)(台湾|台|TW|Taiwan|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
+    filter: "(?i)(香港|港|Hong Kong|HongKong|(?:^|[^a-z])HK(?:[^a-z]|$))"
+    exclude-filter: "(?i)(台湾|台|Taiwan|日本|Japan|韩国|韩|Korea|🇰🇷|新加坡|狮城|狮|坡|Singapore|美国|美|United States|America|(?:^|[^a-z])(?:TW|JP|KR|SG|US)(?:[^a-z]|$))"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
     timeout: 5000
@@ -165,8 +166,8 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png"
     type: url-test
     include-all: true
-    filter: "(?i)(台湾|台|TW|Taiwan)"
-    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
+    filter: "(?i)(台湾|台|Taiwan|(?:^|[^a-z])TW(?:[^a-z]|$))"
+    exclude-filter: "(?i)(香港|港|Hong Kong|HongKong|日本|Japan|韩国|韩|Korea|🇰🇷|新加坡|狮城|狮|坡|Singapore|美国|美|United States|America|(?:^|[^a-z])(?:HK|JP|KR|SG|US)(?:[^a-z]|$))"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
     timeout: 5000
@@ -177,8 +178,8 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png"
     type: url-test
     include-all: true
-    filter: "(?i)(日本|JP|Japan)"
-    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
+    filter: "(?i)(日本|Japan|(?:^|[^a-z])JP(?:[^a-z]|$))"
+    exclude-filter: "(?i)(香港|港|Hong Kong|HongKong|台湾|台|Taiwan|韩国|韩|Korea|🇰🇷|新加坡|狮城|狮|坡|Singapore|美国|美|United States|America|(?:^|[^a-z])(?:HK|TW|KR|SG|US)(?:[^a-z]|$))"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
     timeout: 5000
@@ -189,8 +190,8 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png"
     type: url-test
     include-all: true
-    filter: "(?i)(韩国|韩|KR|Korea|🇰🇷)"
-    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|日本|日|JP|Japan|新加坡|狮城|坡|SG|Singapore|美国|美|US|United States|America)"
+    filter: "(?i)(韩国|韩|Korea|🇰🇷|(?:^|[^a-z])KR(?:[^a-z]|$))"
+    exclude-filter: "(?i)(香港|港|Hong Kong|HongKong|台湾|台|Taiwan|日本|Japan|新加坡|狮城|狮|坡|Singapore|美国|美|United States|America|(?:^|[^a-z])(?:HK|TW|JP|SG|US)(?:[^a-z]|$))"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
     timeout: 5000
@@ -201,8 +202,8 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png"
     type: url-test
     include-all: true
-    filter: "(?i)(新加坡|狮城|狮|坡|SG|Singapore)"
-    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|美国|美|US|United States|America)"
+    filter: "(?i)(新加坡|狮城|狮|坡|Singapore|(?:^|[^a-z])SG(?:[^a-z]|$))"
+    exclude-filter: "(?i)(香港|港|Hong Kong|HongKong|台湾|台|Taiwan|日本|Japan|韩国|韩|Korea|🇰🇷|美国|美|United States|America|(?:^|[^a-z])(?:HK|TW|JP|KR|US)(?:[^a-z]|$))"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
     timeout: 5000
@@ -213,8 +214,8 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png"
     type: url-test
     include-all: true
-    filter: "(?i)(美国|美|US|United States|America)"
-    exclude-filter: "(?i)(香港|港|HK|Hong Kong|HongKong|台湾|台|TW|Taiwan|日本|日|JP|Japan|韩国|韩|KR|Korea|🇰🇷|新加坡|狮城|坡|SG|Singapore)"
+    filter: "(?i)(美国|美|United States|America|(?:^|[^a-z])US(?:[^a-z]|$))"
+    exclude-filter: "(?i)(香港|港|Hong Kong|HongKong|台湾|台|Taiwan|日本|Japan|韩国|韩|Korea|🇰🇷|新加坡|狮城|狮|坡|Singapore|(?:^|[^a-z])(?:HK|TW|JP|KR|SG)(?:[^a-z]|$))"
     url: "https://www.gstatic.com/generate_204"
     interval: 600
     timeout: 5000

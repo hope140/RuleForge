@@ -107,6 +107,8 @@ class PriorityRegressionTests(unittest.TestCase):
             "api-glb-sea.smoot.apple.com": "苹果服务",
             "tvbtracking.azurewebsites.net": "国际媒体",
             "beacons.gvt2.com": "谷歌服务",
+            "ctldl.windowsupdate.com": "direct",
+            "azuremigrate.download.prss.microsoft.com": "direct",
         }
         for target in ("quantumult-x", "mihomo"):
             for profile in (False, True):

@@ -12,6 +12,7 @@ TYPE_MAP = {
     "DOMAIN-KEYWORD": "HOST-KEYWORD",
     "DOMAIN-WILDCARD": "HOST-WILDCARD",
     "IP-CIDR6": "IP6-CIDR",
+    "DST-PORT": "DEST-PORT",
 }
 KNOWN_TYPES = {
     "HOST",
@@ -81,7 +82,11 @@ def _options(source: Source, parts: list[str]) -> tuple[str, ...]:
             if item.split("=", 1)[0].casefold() in supported
             or item.casefold().startswith("via-interface=")
         )
-    return tuple(item for item in extras if item.lower() in KNOWN_OPTIONS)
+    return tuple(
+        item for item in extras
+        if item.lower() in KNOWN_OPTIONS | QUANTUMULTX_OPTIONS
+        or item.lower().startswith("via-interface=")
+    )
 
 
 def _unwrap_clash_payload(raw: str, source: Source) -> str | None:

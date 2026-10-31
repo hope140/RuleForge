@@ -873,6 +873,7 @@ sources:
     url: "inline:HOST,cma2.itunes.apple.com"
     parser: quantumult-x
     enabled: true
+    notes: 补充 Apple 的精确 cma2 主机，避免 HOST,cma 规则误以为覆盖了 cma2。
 
   - id: local-tvb-tracking
     kind: inline
@@ -883,7 +884,6 @@ sources:
     parser: quantumult-x
     enabled: true
     notes: Preserve the existing dedicated TVB endpoint over the shared Azure suffix.
-    notes: 补充 Apple 的精确 cma2 主机，避免 HOST,cma 规则误以为覆盖了 cma2。
 
   - id: local-claude-1
     kind: inline

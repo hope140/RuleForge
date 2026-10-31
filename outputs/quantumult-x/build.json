@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-29T08:37:30.273723+00:00",
+  "generated_at_utc": "2026-10-31T04:58:27.680502+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -964,7 +964,8 @@
         "policy": "苹果服务",
         "url": "inline:HOST,cma2.itunes.apple.com",
         "parser": "quantumult-x",
-        "enabled": true
+        "enabled": true,
+        "notes": "补充 Apple 的精确 cma2 主机，避免 HOST,cma 规则误以为覆盖了 cma2。"
       },
       {
         "id": "local-tvb-tracking",
@@ -975,7 +976,7 @@
         "url": "inline:HOST,tvbtracking.azurewebsites.net",
         "parser": "quantumult-x",
         "enabled": true,
-        "notes": "补充 Apple 的精确 cma2 主机，避免 HOST,cma 规则误以为覆盖了 cma2。"
+        "notes": "Preserve the existing dedicated TVB endpoint over the shared Azure suffix."
       },
       {
         "id": "local-claude-1",
@@ -1536,15 +1537,15 @@
     "live_cross_category_count": 762,
     "discarded_overlap_count": 955,
     "apple_contract_gap_count": 2,
-    "actual_policy_mismatch_count": 49,
-    "preview_candidate_decision_count": 47,
-    "preview_candidate_rule_count": 47,
+    "actual_policy_mismatch_count": 6,
+    "preview_candidate_decision_count": 4,
+    "preview_candidate_rule_count": 4,
     "review_required_count": 2,
     "unwitnessed_count": 0,
     "status_counts": {
-      "enforced": 627,
+      "enforced": 670,
       "equivalent-policy": 88,
-      "preview-candidate": 47,
+      "preview-candidate": 4,
       "review-required": 2
     }
   },

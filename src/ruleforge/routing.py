@@ -157,26 +157,31 @@ def order_rules_for_category_providers(
     *,
     priority_rules: list[Rule] | tuple[Rule, ...] = (),
 ) -> tuple[Rule, ...]:
-    """Model the active order of category providers plus priority overrides."""
+    """Model the emitted provider order and the supplied priority resource.
 
-    priority = tuple(sorted(priority_rules, key=rule_sort_key))
-    priority_set = frozenset(priority)
+    The caller supplies priority rules in their resolved constraint order.
+    They follow the available security providers, and remain present in their
+    original category providers exactly as they do in the emitted resources.
+    """
+
+    priority = tuple(priority_rules)
     grouped: dict[str, list[Rule]] = {}
     for rule in rules:
-        if rule in priority_set:
-            continue
         grouped.setdefault(rule.category, []).append(rule)
 
     ordered: list[Rule] = []
     priority_inserted = False
-    for category in sorted(grouped, key=category_sort_key):
+    categories = sorted(grouped, key=category_sort_key)
+    security_categories = {"direct-exception", "reject", "privacy"}
+    for index, category in enumerate(categories):
         ordered.extend(
             sorted(
                 grouped[category],
                 key=lambda rule: (rule_specificity_key(rule), rule.policy),
             )
         )
-        if category == "privacy" and priority:
+        next_category = categories[index + 1] if index + 1 < len(categories) else None
+        if priority and category in security_categories and next_category not in security_categories:
             ordered.extend(priority)
             priority_inserted = True
     if priority and not priority_inserted:

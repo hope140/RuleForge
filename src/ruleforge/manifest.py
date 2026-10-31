@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
@@ -59,6 +60,8 @@ def _assign(target: dict[str, Any], text: str, line_number: int) -> None:
     key = key.strip()
     if not key:
         raise ManifestError(f"line {line_number}: empty key")
+    if key in target:
+        raise ManifestError(f"line {line_number}: duplicate field: {key}")
     target[key] = _scalar(value)
 
 
@@ -85,6 +88,9 @@ def _parse_subset_yaml(path: Path) -> dict[str, Any]:
         if stripped == "sources:":
             if indent != 0:
                 raise ManifestError(f"line {line_number}: sources must be top-level")
+            if "sources" in root:
+                raise ManifestError(f"line {line_number}: duplicate field: sources")
+            root["sources"] = sources
             in_sources = True
             continue
         if in_sources:
@@ -105,7 +111,6 @@ def _parse_subset_yaml(path: Path) -> dict[str, Any]:
             raise ManifestError(f"line {line_number}: unexpected indentation")
         _assign(root, stripped, line_number)
 
-    root["sources"] = sources
     return root
 
 
@@ -132,6 +137,7 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
     sources: list[Source] = []
     seen_ids: set[str] = set()
     seen_urls: set[str] = set()
+    category_policies: dict[str, str] = {}
     required_source = {"id", "kind", "format", "category", "policy", "url", "parser", "enabled"}
     for index, item in enumerate(data["sources"], start=1):
         if not isinstance(item, dict):
@@ -147,6 +153,10 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
                 raise ManifestError(f"source {index} field {field} must be a string")
         if type(item["enabled"]) is not bool:
             raise ManifestError(f"source {index} field enabled must be a boolean")
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", item["category"]):
+            raise ManifestError(f"source {index} category must use lowercase kebab-case")
+        if not item["policy"].strip() or any(char in item["policy"] for char in ",\r\n"):
+            raise ManifestError(f"source {index} policy must be nonempty and contain no commas or newlines")
         if "notes" in item and type(item["notes"]) is not str:
             raise ManifestError(f"source {index} field notes must be a string")
         resolver = item.get("resolver", "")
@@ -176,6 +186,14 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
             raise ManifestError(f"source {source_id} must use HTTP(S) or inline data: {url}")
         seen_ids.add(source_id)
         seen_urls.add(url)
+        if item["enabled"]:
+            previous_policy = category_policies.get(item["category"])
+            if previous_policy is not None and previous_policy != item["policy"]:
+                raise ManifestError(
+                    f"category {item['category']} has mixed policies: "
+                    f"{previous_policy!r} and {item['policy']!r}"
+                )
+            category_policies[item["category"]] = item["policy"]
         sources.append(
             Source(
                 id=source_id,
@@ -190,4 +208,6 @@ def load_manifest(path: str | Path) -> tuple[dict[str, Any], list[Source]]:
                 resolver=resolver,
             )
         )
+    if not any(source.enabled for source in sources):
+        raise ManifestError("manifest must contain at least one enabled source")
     return data, sources

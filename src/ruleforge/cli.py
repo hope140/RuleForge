@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from . import __version__
-from .audit import audit_rules, resolve_conflicts
+from .audit import RoutingOrderError, audit_rules, resolve_conflicts
 from .curation import curate_rules
 from .fetch import FetchError, fetch_source
 from .manifest import ManifestError, load_manifest
@@ -403,6 +403,6 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         return int(args.handler(args))
-    except (ManifestError, OSError) as exc:
+    except (ManifestError, RoutingOrderError, OSError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

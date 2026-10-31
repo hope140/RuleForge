@@ -82174,200 +82174,200 @@
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "azuremigrate.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azuremigrate.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "azuremigrate.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "azuremigratetest.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azuremigratetest.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "azuremigratetest.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "azurestackhub.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azurestackhub.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "azurestackhub.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "azurestackhubuat.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azurestackhubuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "azurestackhubuat.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "b.c2r.ts.cdn.office.net",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "b.c2r.ts.cdn.office.net",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "b.c2r.ts.cdn.office.net",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "cbdstest.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "cbdstest.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "cbdstest.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "cn.windowssearch.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "cn.windowssearch.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "cn.windowssearch.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "collaborate.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "collaborate.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "collaborate.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "collaborateppe.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "collaborateppe.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "collaborateppe.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "ctldl.windowsupdate.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "ctldl.windowsupdate.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "ctldl.windowsupdate.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
@@ -82414,60 +82414,60 @@
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "dreamspark.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "dreamspark.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "dreamspark.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "dreamsparkuat.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "dreamsparkuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "dreamsparkuat.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "f.c2r.ts.cdn.office.net",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "f.c2r.ts.cdn.office.net",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "f.c2r.ts.cdn.office.net",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
@@ -82494,360 +82494,360 @@
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "itacademy.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "itacademy.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "itacademy.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "itacademyuat.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "itacademyuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "itacademyuat.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "lex.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "lex.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "lex.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "lexuat.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "lexuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "lexuat.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "mbs.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mbs.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "mbs.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "mpnbenefits.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mpnbenefits.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "mpnbenefits.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "mpnbenefitsrtl.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mpnbenefitsrtl.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "mpnbenefitsrtl.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "msdn.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "msdn.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "msdn.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "msdprod-ad.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "msdprod-ad.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "msdprod-ad.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "msproduct.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "msproduct.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "msproduct.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "myvs.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "myvs.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "myvs.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "oemsoc.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "oemsoc.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "oemsoc.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "oemsocuat.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "oemsocuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "oemsocuat.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "officecdn.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "officecdn.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "officecdn.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "officemkt.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "officemkt.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "officemkt.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "officemktuat.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "officemktuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "officemktuat.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "osrelease.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "osrelease.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "osrelease.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
@@ -83254,60 +83254,60 @@
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "rsm.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "rsm.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "rsm.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "sdx.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "sdx.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "sdx.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "software.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "software.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "software.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
@@ -83334,180 +83334,180 @@
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "storecorefulfillment.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "storecorefulfillment.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "storecorefulfillment.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "storeedge.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "storeedge.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "storeedge.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "surface.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "surface.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "surface.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "surface.downloads.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "surface.downloads.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "surface.downloads.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "vlportal.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "vlportal.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "vlportal.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "volic.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "volic.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "volic.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "vscode.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "vscode.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "vscode.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "vz.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "vz.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "vz.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
         "relation": "host-inside-host-suffix",
         "decision": "ordered-overlap",
         "winner": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "windbg.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "loser": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "windbg.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+        "loser": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "windbg.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "Both rules are retained. An explicit value-category override provides the first-match order."
       },
       {
         "kind": "semantic-overlap",
@@ -115565,173 +115565,173 @@
       },
       {
         "before": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "azuremigrate.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "after": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azuremigrate.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "azuremigratetest.download.prss.microsoft.com",
+          "value": "azuremigrate.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azuremigratetest.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "azurestackhub.download.prss.microsoft.com",
+          "value": "azuremigratetest.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azurestackhub.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "azurestackhubuat.download.prss.microsoft.com",
+          "value": "azurestackhub.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "azurestackhubuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "b.c2r.ts.cdn.office.net",
+          "value": "azurestackhubuat.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "b.c2r.ts.cdn.office.net",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "cbdstest.download.prss.microsoft.com",
+          "value": "b.c2r.ts.cdn.office.net",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "cbdstest.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "cn.windowssearch.com",
+          "value": "cbdstest.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "cn.windowssearch.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "collaborate.download.prss.microsoft.com",
+          "value": "cn.windowssearch.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "collaborate.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "collaborateppe.download.prss.microsoft.com",
+          "value": "collaborate.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "collaborateppe.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "ctldl.windowsupdate.com",
+          "value": "collaborateppe.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "ctldl.windowsupdate.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
+        "after": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "ctldl.windowsupdate.com",
+          "policy": "全球加速"
+        },
+        "reason": "An explicit value-category override provides the first-match order."
       },
       {
         "before": {
@@ -115769,54 +115769,54 @@
       },
       {
         "before": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "dreamspark.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "after": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "dreamspark.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "dreamsparkuat.download.prss.microsoft.com",
+          "value": "dreamspark.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "dreamsparkuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "f.c2r.ts.cdn.office.net",
+          "value": "dreamsparkuat.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "f.c2r.ts.cdn.office.net",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
+        "after": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "f.c2r.ts.cdn.office.net",
+          "policy": "全球加速"
+        },
+        "reason": "An explicit value-category override provides the first-match order."
       },
       {
         "before": {
@@ -115837,309 +115837,309 @@
       },
       {
         "before": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "itacademy.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "after": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "itacademy.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "itacademyuat.download.prss.microsoft.com",
+          "value": "itacademy.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "itacademyuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "lex.download.prss.microsoft.com",
+          "value": "itacademyuat.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "lex.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "lexuat.download.prss.microsoft.com",
+          "value": "lex.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "lexuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "mbs.download.prss.microsoft.com",
+          "value": "lexuat.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mbs.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "mpnbenefits.download.prss.microsoft.com",
+          "value": "mbs.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mpnbenefits.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "mpnbenefitsrtl.download.prss.microsoft.com",
+          "value": "mpnbenefits.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mpnbenefitsrtl.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
+          "value": "mpnbenefitsrtl.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "msdn.download.prss.microsoft.com",
+          "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "msdn.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "msdprod-ad.download.prss.microsoft.com",
+          "value": "msdn.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "msdprod-ad.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "msproduct.download.prss.microsoft.com",
+          "value": "msdprod-ad.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "msproduct.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "myvs.download.prss.microsoft.com",
+          "value": "msproduct.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "myvs.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "oemsoc.download.prss.microsoft.com",
+          "value": "myvs.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "oemsoc.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "oemsocuat.download.prss.microsoft.com",
+          "value": "oemsoc.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "oemsocuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "officecdn.microsoft.com",
+          "value": "oemsocuat.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "officecdn.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "officemkt.download.prss.microsoft.com",
+          "value": "officecdn.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "officemkt.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "officemktuat.download.prss.microsoft.com",
+          "value": "officemkt.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "officemktuat.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "osrelease.download.prss.microsoft.com",
+          "value": "officemktuat.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "osrelease.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
+        "after": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "osrelease.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "An explicit value-category override provides the first-match order."
       },
       {
         "before": {
@@ -116483,54 +116483,54 @@
       },
       {
         "before": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "rsm.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "after": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "rsm.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "sdx.microsoft.com",
+          "value": "rsm.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "sdx.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "software.download.prss.microsoft.com",
+          "value": "sdx.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "software.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
+        "after": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "software.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "An explicit value-category override provides the first-match order."
       },
       {
         "before": {
@@ -116551,156 +116551,156 @@
       },
       {
         "before": {
-          "source_id": "magicrule-microsoft",
-          "category": "microsoft",
-          "rule_type": "HOST",
-          "value": "storecorefulfillment.download.prss.microsoft.com",
-          "policy": "全球加速"
-        },
-        "after": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "storecorefulfillment.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "storeedge.microsoft.com",
+          "value": "storecorefulfillment.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "storeedge.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "surface.download.prss.microsoft.com",
+          "value": "storeedge.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "surface.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "surface.downloads.prss.microsoft.com",
+          "value": "surface.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "surface.downloads.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "vlportal.download.prss.microsoft.com",
+          "value": "surface.downloads.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "vlportal.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "volic.download.prss.microsoft.com",
+          "value": "vlportal.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "volic.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "vscode.download.prss.microsoft.com",
+          "value": "volic.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "vscode.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "vz.download.prss.microsoft.com",
+          "value": "vscode.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "vz.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
+        "after": {
           "source_id": "magicrule-microsoft",
           "category": "microsoft",
           "rule_type": "HOST",
-          "value": "windbg.download.prss.microsoft.com",
+          "value": "vz.download.prss.microsoft.com",
           "policy": "全球加速"
         },
-        "after": {
+        "reason": "An explicit value-category override provides the first-match order."
+      },
+      {
+        "before": {
           "source_id": "magicrule-direct",
           "category": "china-direct",
           "rule_type": "HOST-SUFFIX",
           "value": "windbg.download.prss.microsoft.com",
           "policy": "direct"
         },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
+        "after": {
+          "source_id": "magicrule-microsoft",
+          "category": "microsoft",
+          "rule_type": "HOST",
+          "value": "windbg.download.prss.microsoft.com",
+          "policy": "全球加速"
+        },
+        "reason": "An explicit value-category override provides the first-match order."
       },
       {
         "before": {

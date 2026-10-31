@@ -40,6 +40,8 @@ QX 保留 31 条迁移补充，Mihomo 保留 28 条；差异是 QX 的 Google Dr
 - 根据 [AWS 官方公开地址池](https://ip-ranges.amazonaws.com/ip-ranges.json) 核对 Netflix IP 列表，排除其中覆盖共享 EC2/CloudFront 地址的非单机网段，避免无关云流量进入 Netflix 策略。保留明确的单 IP 端点和 Netflix 自有网段，已知 Netflix 域名仍走 Netflix。经审阅的 129 个共享地址池、数据日期和源哈希记录在 `src/ruleforge/shared_cloud.py`，构建不新增网络依赖；该清单需随后续审阅维护。
 - 保留合理的业务细化，包括 Microsoft 下载/CDN 直连、jsDelivr 全球加速、Telegram 专项 IP 策略，以及 Google AI 服务进入 AI、Apple 专用中继进入苹果服务。
 
+Microsoft 下载/CDN 的直连边界在裁决器中显式登记：包括 `officecdn.microsoft.com`、`ctldl.windowsupdate.com`、Office 更新、商店及下载服务主机。仅在国内直连来源明确声明同一端点时，该例外才优先于 Microsoft 汇总来源；宽泛的 `microsoft.com` 或 `windowsupdate.com` 直连后缀不能据此覆盖其他 Microsoft 服务。这样优先规则重新排序后，已确认的下载/CDN 直连行为仍保持一致。
+
 静态解析、完整构建、路由回归与 Mihomo 内核检查用于验证文件和引用关系；真实客户端、节点和业务访问仍需单独验收。
 
 ## 本地验证记录

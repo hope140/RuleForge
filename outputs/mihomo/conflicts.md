@@ -9123,52 +9123,52 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 1795. semantic-overlap / host-inside-host-suffix
 - left: `HOST,azuremigrate.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,azuremigrate.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,azuremigrate.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,azuremigrate.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1796. semantic-overlap / host-inside-host-suffix
 - left: `HOST,azuremigratetest.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,azuremigratetest.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,azuremigratetest.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,azuremigratetest.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1797. semantic-overlap / host-inside-host-suffix
 - left: `HOST,azurestackhub.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,azurestackhub.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,azurestackhub.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,azurestackhub.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1798. semantic-overlap / host-inside-host-suffix
 - left: `HOST,azurestackhubuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,azurestackhubuat.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,azurestackhubuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,azurestackhubuat.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1799. semantic-overlap / host-inside-host-suffix
 - left: `HOST,b.c2r.ts.cdn.office.net -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,b.c2r.ts.cdn.office.net -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,b.c2r.ts.cdn.office.net -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,b.c2r.ts.cdn.office.net -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1800. semantic-overlap / host-inside-host-suffix
 - left: `HOST,cbdstest.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,cbdstest.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,cbdstest.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,cbdstest.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1801. semantic-overlap / host-inside-host-suffix
 - left: `HOST,cn.windowssearch.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,cn.windowssearch.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,cn.windowssearch.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,cn.windowssearch.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1802. semantic-overlap / host-inside-host-suffix
 - left: `HOST,collaborate.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,collaborate.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,collaborate.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,collaborate.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1803. semantic-overlap / host-inside-host-suffix
 - left: `HOST,collaborateppe.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,collaborateppe.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,collaborateppe.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,collaborateppe.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1804. semantic-overlap / host-inside-host-suffix
 - left: `HOST,ctldl.windowsupdate.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,ctldl.windowsupdate.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,ctldl.windowsupdate.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,ctldl.windowsupdate.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1805. semantic-overlap / host-inside-host-suffix
 - left: `HOST,download.microsoft.com -> 全球加速 (magicrule-microsoft)`
@@ -9183,122 +9183,122 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 1807. semantic-overlap / host-inside-host-suffix
 - left: `HOST,dreamspark.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,dreamspark.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,dreamspark.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,dreamspark.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1808. semantic-overlap / host-inside-host-suffix
 - left: `HOST,dreamsparkuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,dreamsparkuat.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,dreamsparkuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,dreamsparkuat.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1809. semantic-overlap / host-inside-host-suffix
 - left: `HOST,f.c2r.ts.cdn.office.net -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,f.c2r.ts.cdn.office.net -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,f.c2r.ts.cdn.office.net -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,f.c2r.ts.cdn.office.net -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1810. semantic-overlap / host-inside-host-suffix
 - left: `HOST,itacademy.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,itacademy.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,itacademy.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,itacademy.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1811. semantic-overlap / host-inside-host-suffix
 - left: `HOST,itacademyuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,itacademyuat.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,itacademyuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,itacademyuat.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1812. semantic-overlap / host-inside-host-suffix
 - left: `HOST,lex.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,lex.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,lex.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,lex.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1813. semantic-overlap / host-inside-host-suffix
 - left: `HOST,lexuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,lexuat.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,lexuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,lexuat.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1814. semantic-overlap / host-inside-host-suffix
 - left: `HOST,mbs.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,mbs.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,mbs.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,mbs.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1815. semantic-overlap / host-inside-host-suffix
 - left: `HOST,mpnbenefits.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,mpnbenefits.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,mpnbenefits.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,mpnbenefits.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1816. semantic-overlap / host-inside-host-suffix
 - left: `HOST,mpnbenefitsrtl.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,mpnbenefitsrtl.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,mpnbenefitsrtl.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,mpnbenefitsrtl.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1817. semantic-overlap / host-inside-host-suffix
 - left: `HOST,mpnbenefitsrtluat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,mpnbenefitsrtluat.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,mpnbenefitsrtluat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,mpnbenefitsrtluat.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1818. semantic-overlap / host-inside-host-suffix
 - left: `HOST,msdn.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,msdn.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,msdn.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,msdn.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1819. semantic-overlap / host-inside-host-suffix
 - left: `HOST,msdprod-ad.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,msdprod-ad.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,msdprod-ad.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,msdprod-ad.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1820. semantic-overlap / host-inside-host-suffix
 - left: `HOST,msproduct.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,msproduct.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,msproduct.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,msproduct.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1821. semantic-overlap / host-inside-host-suffix
 - left: `HOST,myvs.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,myvs.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,myvs.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,myvs.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1822. semantic-overlap / host-inside-host-suffix
 - left: `HOST,oemsoc.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,oemsoc.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,oemsoc.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,oemsoc.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1823. semantic-overlap / host-inside-host-suffix
 - left: `HOST,oemsocuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,oemsocuat.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,oemsocuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,oemsocuat.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1824. semantic-overlap / host-inside-host-suffix
 - left: `HOST,officecdn.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,officecdn.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,officecdn.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,officecdn.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1825. semantic-overlap / host-inside-host-suffix
 - left: `HOST,officemkt.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,officemkt.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,officemkt.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,officemkt.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1826. semantic-overlap / host-inside-host-suffix
 - left: `HOST,officemktuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,officemktuat.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,officemktuat.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,officemktuat.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1827. semantic-overlap / host-inside-host-suffix
 - left: `HOST,osrelease.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,osrelease.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,osrelease.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,osrelease.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1828. semantic-overlap / host-inside-host-suffix
 - left: `HOST,rsm.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,rsm.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,rsm.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,rsm.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1829. semantic-overlap / host-inside-host-suffix
 - left: `HOST,sdx.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,sdx.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,sdx.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,sdx.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1830. semantic-overlap / host-inside-host-suffix
 - left: `HOST,software.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,software.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,software.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,software.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1831. semantic-overlap / host-inside-host-suffix
 - left: `HOST,statics.teams.cdn.office.net -> direct (magicrule-direct)`
@@ -9308,47 +9308,47 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 ### 1832. semantic-overlap / host-inside-host-suffix
 - left: `HOST,storecorefulfillment.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,storecorefulfillment.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,storecorefulfillment.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,storecorefulfillment.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1833. semantic-overlap / host-inside-host-suffix
 - left: `HOST,storeedge.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,storeedge.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,storeedge.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,storeedge.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1834. semantic-overlap / host-inside-host-suffix
 - left: `HOST,surface.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,surface.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,surface.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,surface.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1835. semantic-overlap / host-inside-host-suffix
 - left: `HOST,surface.downloads.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,surface.downloads.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,surface.downloads.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,surface.downloads.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1836. semantic-overlap / host-inside-host-suffix
 - left: `HOST,vlportal.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,vlportal.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,vlportal.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,vlportal.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1837. semantic-overlap / host-inside-host-suffix
 - left: `HOST,volic.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,volic.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,volic.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,volic.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1838. semantic-overlap / host-inside-host-suffix
 - left: `HOST,vscode.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,vscode.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,vscode.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,vscode.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1839. semantic-overlap / host-inside-host-suffix
 - left: `HOST,vz.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,vz.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,vz.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,vz.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1840. semantic-overlap / host-inside-host-suffix
 - left: `HOST,windbg.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)`
 - right: `HOST-SUFFIX,windbg.download.prss.microsoft.com -> direct (magicrule-direct)`
-- decision: `ordered-overlap` -> `HOST,windbg.download.prss.microsoft.com -> 全球加速 (magicrule-microsoft)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+- decision: `ordered-overlap` -> `HOST-SUFFIX,windbg.download.prss.microsoft.com -> direct (magicrule-direct)` (Both rules are retained. An explicit value-category override provides the first-match order.)
 
 ### 1841. semantic-overlap / host-inside-host-suffix
 - left: `HOST,res-1.cdn.office.net -> direct (magicrule-direct)`

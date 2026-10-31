@@ -1594,8 +1594,13 @@ sources:
     def test_mihomo_japan_group_does_not_use_ambiguous_single_character_match(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
         japan_group = content.split("  - name: 日本节点", 1)[1].split("  - name: 韩国节点", 1)[0]
-        self.assertIn('filter: "(?i)(日本|JP|Japan)"', japan_group)
-        self.assertNotIn("日本|日|JP|Japan", japan_group)
+        import re
+
+        pattern = re.search(r'^    filter: "(.+)"$', japan_group, re.MULTILINE).group(1)
+        for name in ("日本 01", "JP01", "Japan 01"):
+            self.assertRegex(name, pattern)
+        for name in ("每日流量 10GB", "剩余 30 日"):
+            self.assertNotRegex(name, pattern)
 
     def test_mihomo_profile_declares_udp_disabled_by_default(self) -> None:
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")

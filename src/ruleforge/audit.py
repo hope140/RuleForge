@@ -2,12 +2,17 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import fnmatch
+import heapq
 import ipaddress
 from typing import Iterable
 
 from .curation import SharedInfrastructureRisk, audit_shared_infrastructure
 from .model import Rule
 from .routing import category_sort_key, rule_sort_key
+
+
+class RoutingOrderError(ValueError):
+    pass
 
 
 @dataclass(frozen=True)
@@ -144,15 +149,64 @@ class ResolutionResult:
         """
 
         live_rules = frozenset(self.rules)
+        constraints = tuple(
+            constraint for constraint in self.constraints
+            if constraint.before in live_rules and constraint.after in live_rules
+        )
         candidates = {
             constraint.before
-            for constraint in self.constraints
-            if constraint.before in live_rules
-            and constraint.after in live_rules
-            and category_sort_key(constraint.before.category)
+            for constraint in constraints
+            if category_sort_key(constraint.before.category)
             >= category_sort_key(constraint.after.category)
         }
-        return tuple(sorted(candidates, key=rule_sort_key))
+        predecessors: dict[Rule, set[Rule]] = {}
+        security_categories = {"direct-exception", "reject", "privacy"}
+        for constraint in constraints:
+            # These providers are a fixed prefix in both clients. Business
+            # overrides cannot move across that boundary; modeling those
+            # edges here would create false cycles through the fixed prefix.
+            if (constraint.before.category in security_categories
+                    or constraint.after.category in security_categories):
+                continue
+            predecessors.setdefault(constraint.after, set()).add(constraint.before)
+
+        # Promoting a rule also moves it ahead of earlier category providers.
+        # Bring its required predecessors along so promotion cannot reverse an
+        # already-correct explicit business or security decision.
+        pending = list(candidates)
+        while pending:
+            for before in predecessors.get(pending.pop(), ()):
+                if before not in candidates:
+                    candidates.add(before)
+                    pending.append(before)
+
+        # Specificity is only a tie-breaker between unconstrained rules. An
+        # explicit value/category override may require a suffix before a HOST.
+        stable = sorted(candidates, key=lambda rule: (rule_sort_key(rule), rule.source_id, rule.line_number))
+        rank = {rule: index for index, rule in enumerate(stable)}
+        indegree = {rule: 0 for rule in stable}
+        successors: dict[Rule, set[Rule]] = {}
+        for after in stable:
+            for before in predecessors.get(after, ()):
+                successors.setdefault(before, set()).add(after)
+                indegree[after] += 1
+        ready = [rank[rule] for rule in stable if indegree[rule] == 0]
+        heapq.heapify(ready)
+        ordered: list[Rule] = []
+        while ready:
+            rule = stable[heapq.heappop(ready)]
+            ordered.append(rule)
+            for after in successors.get(rule, ()):
+                indegree[after] -= 1
+                if indegree[after] == 0:
+                    heapq.heappush(ready, rank[after])
+        if len(ordered) != len(stable):
+            sample = ", ".join(
+                f"{rule.category}:{rule.rule_type},{rule.value}"
+                for rule in stable if indegree[rule] > 0
+            )
+            raise RoutingOrderError(f"cyclic routing constraints: {sample}")
+        return tuple(ordered)
 
     @property
     def ordered_overlap_decisions(self) -> tuple[ConflictDecision, ...]:
@@ -497,6 +551,24 @@ _APPLE_SERVICE_HOSTS = {
     "cp4.cloudflare.com",
 }
 
+# The migration review preserves these download/CDN endpoints on Direct.
+# Only honor the contract when the direct source explicitly names the same
+# endpoint; a broad microsoft.com or windowsupdate.com suffix is insufficient.
+_MICROSOFT_DIRECT_HOSTS = frozenset({
+    "b.c2r.ts.cdn.office.net", "f.c2r.ts.cdn.office.net",
+    "ctldl.windowsupdate.com", "officecdn.microsoft.com",
+    "storeedge.microsoft.com", "cn.windowssearch.com", "sdx.microsoft.com",
+    "surface.downloads.prss.microsoft.com",
+    *(f"{name}.download.prss.microsoft.com" for name in (
+        "storecorefulfillment", "mpnbenefitsrtluat", "azuremigratetest", "azurestackhubuat",
+        "collaborateppe", "mpnbenefitsrtl", "azurestackhub", "dreamsparkuat", "azuremigrate",
+        "itacademyuat", "officemktuat", "collaborate", "mpnbenefits", "dreamspark", "msdprod-ad",
+        "itacademy", "msproduct", "oemsocuat", "officemkt", "osrelease", "cbdstest", "software",
+        "vlportal", "surface", "lexuat", "oemsoc", "vscode", "windbg", "volic", "msdn", "myvs",
+        "lex", "mbs", "rsm", "vz",
+    )),
+})
+
 
 def _preferred_category_rule(
     conflict: Conflict,
@@ -513,6 +585,13 @@ def _preferred_category_rule(
 
 def _value_category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
     categories = frozenset((conflict.left.category, conflict.right.category))
+    if (categories == {"microsoft", "china-direct"}
+            and conflict.left.value == conflict.right.value
+            and all(rule.rule_type in {"HOST", "HOST-SUFFIX"} for rule in (conflict.left, conflict.right))
+            and conflict.left.value in _MICROSOFT_DIRECT_HOSTS):
+        direct = _preferred_category_rule(conflict, "china-direct")
+        if direct is not None and _is_policy(direct[0], "direct"):
+            return direct
     for value in (conflict.left.value, conflict.right.value):
         preferred = _VALUE_CATEGORY_PREFERENCES.get((categories, value.casefold()))
         result = _preferred_category_rule(conflict, preferred)
@@ -695,7 +774,9 @@ def resolve_conflicts(audit: AuditResult) -> ResolutionResult:
     overlaps are not exclusive: both rules stay in the output, while the
     preferred first-match rule is recorded as a routing constraint.  Only an
     unresolved exact conflict or an overlap with no stable ordering removes
-    rules from the safe result.
+    rules from the safe result. A disagreement between exact candidates is
+    superseded only when another candidate directly defeats every other rule
+    in that selector group using the existing priority rules.
     """
 
     rejected: set[Rule] = set()
@@ -704,13 +785,52 @@ def resolve_conflicts(audit: AuditResult) -> ResolutionResult:
     constraints: list[RoutingConstraint] = []
     constraint_keys: set[tuple[Rule, Rule]] = set()
 
+    exact_results: dict[Conflict, tuple[Rule, Rule, str, str] | None] = {}
+    exact_groups: dict[tuple[str, str, tuple[str, ...]], set[Rule]] = {}
+    direct_wins: dict[Rule, set[Rule]] = {}
+    for conflict in audit.conflicts:
+        if conflict.kind != "exact-policy":
+            continue
+        exact_groups.setdefault(conflict.left.identity_key, set()).update(
+            (conflict.left, conflict.right)
+        )
+        exact = _exact_conflict_rule(conflict)
+        exact_results[conflict] = exact
+        if exact is not None:
+            winner, loser, _, _ = exact
+            direct_wins.setdefault(winner, set()).add(loser)
+
+    dominant_exact_rules: dict[tuple[str, str, tuple[str, ...]], Rule] = {}
+    for identity, group in exact_groups.items():
+        winners = [rule for rule in group if group - {rule} <= direct_wins.get(rule, set())]
+        if len(winners) == 1:
+            dominant_exact_rules[identity] = winners[0]
+
     for conflict in audit.conflicts:
         if conflict.kind == "exact-policy":
-            exact = _exact_conflict_rule(conflict)
+            exact = exact_results[conflict]
             if exact is not None:
                 winner, loser, decision, reason = exact
                 rejected.add(loser)
                 decisions.append(ConflictDecision(conflict, decision, winner, loser, reason))
+                continue
+            dominant = dominant_exact_rules.get(conflict.left.identity_key)
+            if dominant is not None:
+                # Rejecting both candidates elsewhere is insufficient: a
+                # chain of pairwise wins must not invent a missing preference.
+                # This winner has a direct decision against every candidate.
+                rejected.update((conflict.left, conflict.right))
+                decisions.append(
+                    ConflictDecision(
+                        conflict=conflict,
+                        decision="superseded-exact",
+                        winner=dominant,
+                        reason=(
+                            "Both conflicting candidates lose directly to the same exact-selector "
+                            "winner, which defeats every other candidate under the existing priorities."
+                        ),
+                    )
+                )
                 continue
             unresolved_rules.update((conflict.left, conflict.right))
             decisions.append(

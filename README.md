@@ -41,11 +41,11 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 
 ## Mihomo 配置示例
 
-下载 [`profiles/mihomo/config.example.yaml`](profiles/mihomo/config.example.yaml) 后，替换下面两个订阅地址占位符。
+下载 [`profiles/mihomo/config.example.yaml`](profiles/mihomo/config.example.yaml) 后，将 `proxy-providers` 下两个 `url` 的完整值替换为自己的订阅地址，包括占位地址的 `https://example.invalid/` 前缀。
 
 ```yaml
-REPLACE_WITH_SUBSCRIPTION_1
-REPLACE_WITH_SUBSCRIPTION_2
+https://example.invalid/REPLACE_WITH_SUBSCRIPTION_1
+https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2
 ```
 
 模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。Proxy Provider 节点 UDP 默认显式关闭，确认服务端支持后再按 provider 开启。业务策略组排在地区测速组之前，保留订阅原始节点名称，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
@@ -98,6 +98,8 @@ Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域�
 
 冲突裁决会处理域名关键词、通配符和 CIDR 重叠。裁决顺序为 `security > explicit override > specificity > category semantics > same-category source preference > fallback`。完全相同的 selector 只有在存在安全、显式业务或 category preference 时才选择一个结果，否则保持 unresolved；fallback 只用于 semantic overlap 的 first-match 排序。普通 `direct` 不覆盖 `reject`，只有明确的 `direct-exception` 才允许这样做。共享云厂商和 SaaS 根域会进入审计风险清单，专用业务分类通常为 high、宽泛策略分类为 medium；更具体的业务 hostname 不因位于同一根域而被一并标记。
 
+跨分类优先规则会同时纳入必须排在其前面的业务规则，并按裁决约束排序，避免提升一条规则时反过来遮挡已有业务归属。`direct-exception`、`reject`、`privacy` 安全分类仍固定排在优先文件之前；业务约束存在循环、无法生成一致顺序时，构建失败并保留旧输出。
+
 `categories/candidates/` 用于检查候选规则，`categories/safe/` 才是提供给客户端的已裁决版本。
 
 `priority-preview.json` 和 `priority-preview.md` 只用于观察潜在路由变化。预览会过滤已经被其他冲突淘汰的规则；精确域名、更窄后缀或 CIDR 等可以构造可靠样例的差异会列为候选，关键词及受到第三条规则干扰的关系继续标记为待审阅。Apple 自有域名及官方 Apple Intelligence/iCloud 端点统一以“苹果服务”为预期策略，避免 QX 与 Mihomo 分别落入 AI、国际媒体或通用代理；明确的 reject 和 direct-exception 仍然优先。预览文件不会被完整模板或远程片段引用。
@@ -131,7 +133,7 @@ python tools/ruleforge.py sync-mihomo-profile --check
 python -m unittest discover -s tests -v
 ```
 
-带有 `--refresh` 的构建会访问上游来源。任一来源抓取失败、没有解析出规则、出现解析异常、不受支持的规则类型或仍有未决冲突时，命令会失败。生成过程先写入同盘暂存目录，全部检查和渲染成功后才替换正式输出；失败构建不会覆盖上一次可用结果。
+带有 `--refresh` 的构建会访问上游来源；使用 `--offline` 可复用已有缓存进行本地验证，缓存缺失时直接失败。清单缺少有效来源、字段重复或分类策略不一致时，lint 和构建都会失败。任一来源抓取失败、没有解析出规则、出现解析异常、不受支持的规则类型或在 `--fail-on-conflict` 下仍有未决冲突时，构建会失败。生成过程先写入同盘暂存目录，全部检查和渲染成功后才替换正式输出；失败构建不会覆盖上一次可用结果。
 
 ## 自动更新
 

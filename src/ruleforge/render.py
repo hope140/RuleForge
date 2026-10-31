@@ -10,7 +10,7 @@ from . import __version__
 from .audit import AuditResult, Conflict, ResolutionResult
 from .curation import SharedInfrastructureRisk
 from .model import Rule
-from .routing import category_sort_key, rule_sort_key, rule_specificity_key
+from .routing import category_sort_key, rule_specificity_key
 
 
 def render_quantumultx(
@@ -207,7 +207,8 @@ def render_mihomo_rules(
     priority_rules: Iterable[Rule] = (),
 ) -> None:
     lines = ["# GENERATED FILE - DO NOT EDIT", "rules:"]
-    ordered_priority_rules = sorted(priority_rules, key=rule_sort_key)
+    # The resolver has already ordered these by the full routing constraints.
+    ordered_priority_rules = tuple(priority_rules)
     priority_inserted = False
     entries_list = list(entries)
     security_categories = {"direct-exception", "reject", "privacy"}
@@ -278,7 +279,7 @@ def render_quantumultx_priority_overrides(
     """Render mixed-policy rules that must precede whole category providers."""
 
     render_quantumultx(
-        sorted(rules, key=rule_sort_key),
+        rules,
         path,
         generated_at_utc=generated_at_utc,
     )
