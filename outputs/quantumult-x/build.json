@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T04:58:27.680502+00:00",
+  "generated_at_utc": "2026-11-05T09:35:53.848591+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1488,14 +1488,14 @@
   },
   "source_count": 135,
   "enabled_source_count": 135,
-  "parsed_rule_count": 16691,
-  "curated_rule_count": 15121,
+  "parsed_rule_count": 16701,
+  "curated_rule_count": 15131,
   "curation_drop_count": 1570,
   "curation_move_count": 32,
-  "candidate_kept_rule_count": 15852,
-  "kept_rule_count": 14439,
-  "safe_rule_count": 14131,
-  "resolved_rule_count": 14131,
+  "candidate_kept_rule_count": 15862,
+  "kept_rule_count": 14449,
+  "safe_rule_count": 14141,
+  "resolved_rule_count": 14141,
   "conflicted_rule_count": 1822,
   "duplicate_count": 682,
   "conflict_count": 2033,
@@ -1514,7 +1514,7 @@
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 15,
   "resolution": {
-    "resolved_rule_count": 14131,
+    "resolved_rule_count": 14141,
     "rejected_rule_count": 308,
     "resolved_conflict_count": 2033,
     "blackmatrix_preferred_conflict_count": 0,
@@ -1635,7 +1635,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 63,
+      "rule_count": 66,
       "source_count": 1
     },
     {
@@ -1723,7 +1723,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 910,
+      "rule_count": 912,
       "source_count": 1
     },
     {
@@ -1789,7 +1789,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 5394,
+      "rule_count": 5399,
       "source_count": 12
     },
     {
@@ -1923,7 +1923,7 @@
       "policies": [
         "海外抖音"
       ],
-      "rule_count": 61,
+      "rule_count": 64,
       "source_count": 1
     },
     {
@@ -2011,7 +2011,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 842,
+      "rule_count": 844,
       "source_count": 2
     },
     {
@@ -2077,7 +2077,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 5379,
+      "rule_count": 5384,
       "source_count": 12
     },
     {
@@ -2294,9 +2294,9 @@
       "id": "magicrule-tiktok",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#TikTok",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TikTok_rules_91f7adc5c25cabca.list",
-      "sha256": "51aea59c1204462ee030497218452125ddd2834a730f1fc731812cd66f0aeb9d",
+      "sha256": "baedf8cb242b90ce84960910170f4f8e14e0ffab439c9be7a74a985637bf8f26",
       "from_cache": false,
-      "rule_count": 63,
+      "rule_count": 66,
       "issue_count": 0
     },
     {
@@ -2330,9 +2330,9 @@
       "id": "magicrule-microsoft",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Microsoft",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Microsoft_rules_de644bdb97d4d9ff.list",
-      "sha256": "f509b59e67d2ba1dac2a611913c8f450f38f8f02e30138b1587e0c95cf43f951",
+      "sha256": "db6cdcde6f41210d3c5a5065a1c20a45a2498ab8dcdaded5d9c62479af830fd4",
       "from_cache": false,
-      "rule_count": 910,
+      "rule_count": 912,
       "issue_count": 0
     },
     {
@@ -2744,9 +2744,9 @@
       "id": "magicrule-china-services-alibaba",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Alibaba",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Alibaba_rules_3f5cfbafcebd3c82.list",
-      "sha256": "6bb0f421311208fd3f525358dfa97f6b950d3396eeaea2be506e3168886811e9",
+      "sha256": "7206a8441406715224e428d648bcae221f8a1cc9fcde6231dac730639fef0da4",
       "from_cache": false,
-      "rule_count": 1624,
+      "rule_count": 1626,
       "issue_count": 0
     },
     {
@@ -2762,9 +2762,9 @@
       "id": "magicrule-china-services-tencent",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Tencent",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Tencent_rules_a85c384378e7fe8b.list",
-      "sha256": "47c4af434f5a2fcd843ccbf2bafc9a6ebf28236f1a6dbcdfb4a5c3b16fe8200f",
+      "sha256": "38ad6de49a68381524ffe6602a1054fee5588cee3229657537ce802c6bc908e3",
       "from_cache": false,
-      "rule_count": 2775,
+      "rule_count": 2778,
       "issue_count": 0
     },
     {

@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 14487,
-  "safe_rule_count": 14179,
+  "kept_rule_count": 14497,
+  "safe_rule_count": 14189,
   "conflicted_rule_count": 1822,
   "duplicate_count": 687,
   "conflict_count": 2035,
@@ -5275,7 +5275,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "livefilestore.com",
         "options": [],
-        "line_number": 452,
+        "line_number": 453,
         "raw": "DOMAIN-SUFFIX,livefilestore.com"
       },
       "dropped": {
@@ -5299,7 +5299,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftpersonalcontent.com",
         "options": [],
-        "line_number": 585,
+        "line_number": 586,
         "raw": "DOMAIN-SUFFIX,microsoftpersonalcontent.com"
       },
       "dropped": {
@@ -5323,7 +5323,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "oneclient.sfx.ms",
         "options": [],
-        "line_number": 718,
+        "line_number": 720,
         "raw": "DOMAIN-SUFFIX,oneclient.sfx.ms"
       },
       "dropped": {
@@ -5347,7 +5347,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.co",
         "options": [],
-        "line_number": 721,
+        "line_number": 723,
         "raw": "DOMAIN-SUFFIX,onedrive.co"
       },
       "dropped": {
@@ -5371,7 +5371,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.co.uk",
         "options": [],
-        "line_number": 722,
+        "line_number": 724,
         "raw": "DOMAIN-SUFFIX,onedrive.co.uk"
       },
       "dropped": {
@@ -5395,7 +5395,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.com",
         "options": [],
-        "line_number": 723,
+        "line_number": 725,
         "raw": "DOMAIN-SUFFIX,onedrive.com"
       },
       "dropped": {
@@ -5419,7 +5419,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.eu",
         "options": [],
-        "line_number": 724,
+        "line_number": 726,
         "raw": "DOMAIN-SUFFIX,onedrive.eu"
       },
       "dropped": {
@@ -5443,7 +5443,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.live.com",
         "options": [],
-        "line_number": 725,
+        "line_number": 727,
         "raw": "DOMAIN-SUFFIX,onedrive.live.com"
       },
       "dropped": {
@@ -5467,7 +5467,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.net",
         "options": [],
-        "line_number": 726,
+        "line_number": 728,
         "raw": "DOMAIN-SUFFIX,onedrive.net"
       },
       "dropped": {
@@ -5491,7 +5491,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.org",
         "options": [],
-        "line_number": 727,
+        "line_number": 729,
         "raw": "DOMAIN-SUFFIX,onedrive.org"
       },
       "dropped": {
@@ -5515,7 +5515,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "photos.live.com",
         "options": [],
-        "line_number": 749,
+        "line_number": 751,
         "raw": "DOMAIN-SUFFIX,photos.live.com"
       },
       "dropped": {
@@ -5539,7 +5539,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "sharepoint.com",
         "options": [],
-        "line_number": 788,
+        "line_number": 790,
         "raw": "DOMAIN-SUFFIX,sharepoint.com"
       },
       "dropped": {
@@ -5563,7 +5563,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "sharepointonline.com",
         "options": [],
-        "line_number": 789,
+        "line_number": 791,
         "raw": "DOMAIN-SUFFIX,sharepointonline.com"
       },
       "dropped": {
@@ -5587,7 +5587,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "skydrive.wns.windows.com",
         "options": [],
-        "line_number": 791,
+        "line_number": 793,
         "raw": "DOMAIN-SUFFIX,skydrive.wns.windows.com"
       },
       "dropped": {
@@ -5611,7 +5611,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "spoprod-a.akamaihd.net",
         "options": [],
-        "line_number": 805,
+        "line_number": 807,
         "raw": "DOMAIN-SUFFIX,spoprod-a.akamaihd.net"
       },
       "dropped": {
@@ -5635,7 +5635,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "storage.live.com",
         "options": [],
-        "line_number": 814,
+        "line_number": 816,
         "raw": "DOMAIN-SUFFIX,storage.live.com"
       },
       "dropped": {
@@ -5659,7 +5659,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "storage.msn.com",
         "options": [],
-        "line_number": 815,
+        "line_number": 817,
         "raw": "DOMAIN-SUFFIX,storage.msn.com"
       },
       "dropped": {
@@ -5683,7 +5683,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "1drv",
         "options": [],
-        "line_number": 915,
+        "line_number": 917,
         "raw": "DOMAIN-KEYWORD,1drv"
       },
       "dropped": {
@@ -5707,7 +5707,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "onedrive",
         "options": [],
-        "line_number": 917,
+        "line_number": 919,
         "raw": "DOMAIN-KEYWORD,onedrive"
       },
       "dropped": {
@@ -5731,7 +5731,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "skydrive",
         "options": [],
-        "line_number": 918,
+        "line_number": 920,
         "raw": "DOMAIN-KEYWORD,skydrive"
       },
       "dropped": {
@@ -5755,7 +5755,7 @@
         "rule_type": "PROCESS-NAME",
         "value": "OneDrive",
         "options": [],
-        "line_number": 920,
+        "line_number": 922,
         "raw": "PROCESS-NAME,OneDrive"
       },
       "dropped": {
@@ -5779,7 +5779,7 @@
         "rule_type": "PROCESS-NAME",
         "value": "OneDriveUpdater",
         "options": [],
-        "line_number": 921,
+        "line_number": 923,
         "raw": "PROCESS-NAME,OneDriveUpdater"
       },
       "dropped": {
@@ -6115,7 +6115,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "bingvisualsearch.com",
         "options": [],
-        "line_number": 289,
+        "line_number": 290,
         "raw": "DOMAIN-SUFFIX,bingvisualsearch.com"
       },
       "dropped": {
@@ -6139,7 +6139,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "bingworld.com",
         "options": [],
-        "line_number": 290,
+        "line_number": 291,
         "raw": "DOMAIN-SUFFIX,bingworld.com"
       },
       "dropped": {
@@ -6163,7 +6163,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "bluehatnights.com",
         "options": [],
-        "line_number": 299,
+        "line_number": 300,
         "raw": "DOMAIN-SUFFIX,bluehatnights.com"
       },
       "dropped": {
@@ -6187,7 +6187,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cn.bing.com",
         "options": [],
-        "line_number": 320,
+        "line_number": 321,
         "raw": "DOMAIN-SUFFIX,cn.bing.com"
       },
       "dropped": {
@@ -6211,7 +6211,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cn.bing.net",
         "options": [],
-        "line_number": 321,
+        "line_number": 322,
         "raw": "DOMAIN-SUFFIX,cn.bing.net"
       },
       "dropped": {
@@ -6235,7 +6235,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cn.mm.bing.net",
         "options": [],
-        "line_number": 322,
+        "line_number": 323,
         "raw": "DOMAIN-SUFFIX,cn.mm.bing.net"
       },
       "dropped": {
@@ -6259,7 +6259,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "copilot-stg.com",
         "options": [],
-        "line_number": 325,
+        "line_number": 326,
         "raw": "DOMAIN-SUFFIX,copilot-stg.com"
       },
       "dropped": {
@@ -6283,7 +6283,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "copilot.cloud.microsoft",
         "options": [],
-        "line_number": 326,
+        "line_number": 327,
         "raw": "DOMAIN-SUFFIX,copilot.cloud.microsoft"
       },
       "dropped": {
@@ -6307,7 +6307,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "copilot.com",
         "options": [],
-        "line_number": 327,
+        "line_number": 328,
         "raw": "DOMAIN-SUFFIX,copilot.com"
       },
       "dropped": {
@@ -6331,7 +6331,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "copilot.microsoft.com",
         "options": [],
-        "line_number": 328,
+        "line_number": 329,
         "raw": "DOMAIN-SUFFIX,copilot.microsoft.com"
       },
       "dropped": {
@@ -6355,7 +6355,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "dictate.ms",
         "options": [],
-        "line_number": 344,
+        "line_number": 345,
         "raw": "DOMAIN-SUFFIX,dictate.ms"
       },
       "dropped": {
@@ -6379,7 +6379,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ditu.live.com",
         "options": [],
-        "line_number": 346,
+        "line_number": 347,
         "raw": "DOMAIN-SUFFIX,ditu.live.com"
       },
       "dropped": {
@@ -6403,7 +6403,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "flipwithsurface.com",
         "options": [],
-        "line_number": 369,
+        "line_number": 370,
         "raw": "DOMAIN-SUFFIX,flipwithsurface.com"
       },
       "dropped": {
@@ -6427,7 +6427,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "masalladeloslimites.com",
         "options": [],
-        "line_number": 467,
+        "line_number": 468,
         "raw": "DOMAIN-SUFFIX,masalladeloslimites.com"
       },
       "dropped": {
@@ -6451,7 +6451,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft-give.com",
         "options": [],
-        "line_number": 477,
+        "line_number": 478,
         "raw": "DOMAIN-SUFFIX,microsoft-give.com"
       },
       "dropped": {
@@ -6475,7 +6475,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftcloudsummit.com",
         "options": [],
-        "line_number": 539,
+        "line_number": 540,
         "raw": "DOMAIN-SUFFIX,microsoftcloudsummit.com"
       },
       "dropped": {
@@ -6499,7 +6499,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftdiplomados.com",
         "options": [],
-        "line_number": 542,
+        "line_number": 543,
         "raw": "DOMAIN-SUFFIX,microsoftdiplomados.com"
       },
       "dropped": {
@@ -6523,7 +6523,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftlatamholiday.com",
         "options": [],
-        "line_number": 555,
+        "line_number": 556,
         "raw": "DOMAIN-SUFFIX,microsoftlatamholiday.com"
       },
       "dropped": {
@@ -6547,7 +6547,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftmxfilantropia.com",
         "options": [],
-        "line_number": 558,
+        "line_number": 559,
         "raw": "DOMAIN-SUFFIX,microsoftmxfilantropia.com"
       },
       "dropped": {
@@ -6571,7 +6571,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftpartnersolutions.com",
         "options": [],
-        "line_number": 584,
+        "line_number": 585,
         "raw": "DOMAIN-SUFFIX,microsoftpartnersolutions.com"
       },
       "dropped": {
@@ -6595,7 +6595,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msunlimitedcloudsummit.com",
         "options": [],
-        "line_number": 679,
+        "line_number": 681,
         "raw": "DOMAIN-SUFFIX,msunlimitedcloudsummit.com"
       },
       "dropped": {
@@ -6619,7 +6619,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office365love.com",
         "options": [],
-        "line_number": 710,
+        "line_number": 712,
         "raw": "DOMAIN-SUFFIX,office365love.com"
       },
       "dropped": {
@@ -6643,7 +6643,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office365tw.com",
         "options": [],
-        "line_number": 711,
+        "line_number": 713,
         "raw": "DOMAIN-SUFFIX,office365tw.com"
       },
       "dropped": {
@@ -6667,7 +6667,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "r.bing.com",
         "options": [],
-        "line_number": 770,
+        "line_number": 772,
         "raw": "DOMAIN-SUFFIX,r.bing.com"
       },
       "dropped": {
@@ -6691,7 +6691,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "renovacionoffice.com",
         "options": [],
-        "line_number": 773,
+        "line_number": 775,
         "raw": "DOMAIN-SUFFIX,renovacionoffice.com"
       },
       "dropped": {
@@ -6715,7 +6715,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "sprinklesapp.com",
         "options": [],
-        "line_number": 806,
+        "line_number": 808,
         "raw": "DOMAIN-SUFFIX,sprinklesapp.com"
       },
       "dropped": {
@@ -6739,7 +6739,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "th.bing.com",
         "options": [],
-        "line_number": 832,
+        "line_number": 834,
         "raw": "DOMAIN-SUFFIX,th.bing.com"
       },
       "dropped": {
@@ -6787,7 +6787,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "npm.community",
         "options": [],
-        "line_number": 690,
+        "line_number": 692,
         "raw": "DOMAIN-SUFFIX,npm.community"
       },
       "dropped": {
@@ -6811,7 +6811,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "npmjs.com",
         "options": [],
-        "line_number": 691,
+        "line_number": 693,
         "raw": "DOMAIN-SUFFIX,npmjs.com"
       },
       "dropped": {
@@ -6835,7 +6835,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "npmjs.org",
         "options": [],
-        "line_number": 692,
+        "line_number": 694,
         "raw": "DOMAIN-SUFFIX,npmjs.org"
       },
       "dropped": {
@@ -8955,7 +8955,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "npm.community",
         "options": [],
-        "line_number": 690,
+        "line_number": 692,
         "raw": "DOMAIN-SUFFIX,npm.community"
       },
       "dropped": {
@@ -8979,7 +8979,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "npmjs.com",
         "options": [],
-        "line_number": 691,
+        "line_number": 693,
         "raw": "DOMAIN-SUFFIX,npmjs.com"
       },
       "dropped": {
@@ -9003,7 +9003,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "npmjs.org",
         "options": [],
-        "line_number": 692,
+        "line_number": 694,
         "raw": "DOMAIN-SUFFIX,npmjs.org"
       },
       "dropped": {
@@ -12722,7 +12722,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "kumiao.com",
         "options": [],
-        "line_number": 982,
+        "line_number": 983,
         "raw": "DOMAIN-SUFFIX,kumiao.com"
       }
     },
@@ -12746,7 +12746,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "lstat.youku.com",
         "options": [],
-        "line_number": 1020,
+        "line_number": 1021,
         "raw": "DOMAIN-SUFFIX,lstat.youku.com"
       }
     },
@@ -12770,7 +12770,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "mobilemsg.youku.com",
         "options": [],
-        "line_number": 1055,
+        "line_number": 1057,
         "raw": "DOMAIN-SUFFIX,mobilemsg.youku.com"
       }
     },
@@ -12794,7 +12794,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msg.youku.com",
         "options": [],
-        "line_number": 1059,
+        "line_number": 1061,
         "raw": "DOMAIN-SUFFIX,msg.youku.com"
       }
     },
@@ -12818,7 +12818,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "p-log.ykimg.com",
         "options": [],
-        "line_number": 1127,
+        "line_number": 1129,
         "raw": "DOMAIN-SUFFIX,p-log.ykimg.com"
       }
     },
@@ -12842,7 +12842,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "passport-log.youku.com",
         "options": [],
-        "line_number": 1130,
+        "line_number": 1132,
         "raw": "DOMAIN-SUFFIX,passport-log.youku.com"
       }
     },
@@ -12866,7 +12866,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "pl.youku.com",
         "options": [],
-        "line_number": 1137,
+        "line_number": 1139,
         "raw": "DOMAIN-SUFFIX,pl.youku.com"
       }
     },
@@ -12890,7 +12890,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "s-adashx.ut.youku.com",
         "options": [],
-        "line_number": 1167,
+        "line_number": 1169,
         "raw": "DOMAIN-SUFFIX,s-adashx.ut.youku.com"
       }
     },
@@ -12914,7 +12914,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "soku.com",
         "options": [],
-        "line_number": 1287,
+        "line_number": 1289,
         "raw": "DOMAIN-SUFFIX,soku.com"
       }
     },
@@ -12938,7 +12938,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "stat.youku.com",
         "options": [],
-        "line_number": 1291,
+        "line_number": 1293,
         "raw": "DOMAIN-SUFFIX,stat.youku.com"
       }
     },
@@ -12962,7 +12962,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "statis.api.3g.youku.com",
         "options": [],
-        "line_number": 1292,
+        "line_number": 1294,
         "raw": "DOMAIN-SUFFIX,statis.api.3g.youku.com"
       }
     },
@@ -12986,7 +12986,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tudou.com",
         "options": [],
-        "line_number": 1367,
+        "line_number": 1369,
         "raw": "DOMAIN-SUFFIX,tudou.com"
       }
     },
@@ -13010,7 +13010,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "v6-adashx.ut.youku.com",
         "options": [],
-        "line_number": 1395,
+        "line_number": 1397,
         "raw": "DOMAIN-SUFFIX,v6-adashx.ut.youku.com"
       }
     },
@@ -13034,7 +13034,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "yk-ssp.ad.youku.com",
         "options": [],
-        "line_number": 1459,
+        "line_number": 1461,
         "raw": "DOMAIN-SUFFIX,yk-ssp.ad.youku.com"
       }
     },
@@ -13058,7 +13058,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ykad-data.youku.com",
         "options": [],
-        "line_number": 1460,
+        "line_number": 1462,
         "raw": "DOMAIN-SUFFIX,ykad-data.youku.com"
       }
     },
@@ -13082,7 +13082,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ykimg.com",
         "options": [],
-        "line_number": 1461,
+        "line_number": 1463,
         "raw": "DOMAIN-SUFFIX,ykimg.com"
       }
     },
@@ -13106,7 +13106,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youku.com",
         "options": [],
-        "line_number": 1462,
+        "line_number": 1464,
         "raw": "DOMAIN-SUFFIX,youku.com"
       }
     },
@@ -13130,7 +13130,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youku.tv",
         "options": [],
-        "line_number": 1463,
+        "line_number": 1465,
         "raw": "DOMAIN-SUFFIX,youku.tv"
       }
     },
@@ -13154,7 +13154,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youkuhonor.com",
         "options": [],
-        "line_number": 1464,
+        "line_number": 1466,
         "raw": "DOMAIN-SUFFIX,youkuhonor.com"
       }
     },
@@ -13178,7 +13178,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youkuplay.com",
         "options": [],
-        "line_number": 1465,
+        "line_number": 1467,
         "raw": "DOMAIN-SUFFIX,youkuplay.com"
       }
     },
@@ -13206,7 +13206,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 1495,
+        "line_number": 1497,
         "raw": "IP-CIDR,106.11.0.0/16,no-resolve"
       }
     },
@@ -13278,7 +13278,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "wetv.vip",
         "options": [],
-        "line_number": 2596,
+        "line_number": 2599,
         "raw": "DOMAIN-SUFFIX,wetv.vip"
       }
     },
@@ -13302,7 +13302,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "wetvinfo.com",
         "options": [],
-        "line_number": 2597,
+        "line_number": 2600,
         "raw": "DOMAIN-SUFFIX,wetvinfo.com"
       }
     },
@@ -13771,7 +13771,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "wechat.com",
         "options": [],
-        "line_number": 2547,
+        "line_number": 2548,
         "raw": "DOMAIN-SUFFIX,wechat.com"
       },
       "dropped": {
@@ -13795,7 +13795,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "wechatlegal.net",
         "options": [],
-        "line_number": 2557,
+        "line_number": 2558,
         "raw": "DOMAIN-SUFFIX,wechatlegal.net"
       },
       "dropped": {
@@ -13819,7 +13819,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "wechatpay.com",
         "options": [],
-        "line_number": 2561,
+        "line_number": 2562,
         "raw": "DOMAIN-SUFFIX,wechatpay.com"
       },
       "dropped": {
@@ -13843,7 +13843,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "weixin.com",
         "options": [],
-        "line_number": 2578,
+        "line_number": 2579,
         "raw": "DOMAIN-SUFFIX,weixin.com"
       },
       "dropped": {
@@ -13867,7 +13867,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "weixinbridge.com",
         "options": [],
-        "line_number": 2579,
+        "line_number": 2580,
         "raw": "DOMAIN-SUFFIX,weixinbridge.com"
       },
       "dropped": {
@@ -13891,7 +13891,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "weixinsxy.com",
         "options": [],
-        "line_number": 2581,
+        "line_number": 2582,
         "raw": "DOMAIN-SUFFIX,weixinsxy.com"
       },
       "dropped": {
@@ -13917,7 +13917,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2757,
+        "line_number": 2760,
         "raw": "IP-CIDR,101.32.104.4/32,no-resolve"
       },
       "dropped": {
@@ -13945,7 +13945,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2758,
+        "line_number": 2761,
         "raw": "IP-CIDR,101.32.104.41/32,no-resolve"
       },
       "dropped": {
@@ -13973,7 +13973,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2759,
+        "line_number": 2762,
         "raw": "IP-CIDR,101.32.104.56/32,no-resolve"
       },
       "dropped": {
@@ -14001,7 +14001,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2760,
+        "line_number": 2763,
         "raw": "IP-CIDR,101.32.118.25/32,no-resolve"
       },
       "dropped": {
@@ -14029,7 +14029,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2761,
+        "line_number": 2764,
         "raw": "IP-CIDR,101.32.133.16/32,no-resolve"
       },
       "dropped": {
@@ -14057,7 +14057,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2762,
+        "line_number": 2765,
         "raw": "IP-CIDR,101.32.133.209/32,no-resolve"
       },
       "dropped": {
@@ -14085,7 +14085,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2763,
+        "line_number": 2766,
         "raw": "IP-CIDR,101.32.133.53/32,no-resolve"
       },
       "dropped": {
@@ -14113,7 +14113,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2773,
+        "line_number": 2776,
         "raw": "IP-CIDR,129.226.107.244/32,no-resolve"
       },
       "dropped": {
@@ -14141,7 +14141,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 2774,
+        "line_number": 2777,
         "raw": "IP-CIDR,129.226.3.47/32,no-resolve"
       },
       "dropped": {
@@ -14455,7 +14455,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "git.io",
         "options": [],
-        "line_number": 389,
+        "line_number": 390,
         "raw": "DOMAIN-SUFFIX,git.io"
       },
       "dropped": {
@@ -14623,7 +14623,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tenor.com",
         "options": [],
-        "line_number": 830,
+        "line_number": 832,
         "raw": "DOMAIN-SUFFIX,tenor.com"
       },
       "dropped": {
@@ -15575,7 +15575,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.blog",
         "options": [],
-        "line_number": 391,
+        "line_number": 392,
         "raw": "DOMAIN-SUFFIX,github.blog"
       },
       "dropped": {
@@ -15599,7 +15599,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.com",
         "options": [],
-        "line_number": 393,
+        "line_number": 394,
         "raw": "DOMAIN-SUFFIX,github.com"
       },
       "dropped": {
@@ -15623,7 +15623,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.io",
         "options": [],
-        "line_number": 396,
+        "line_number": 397,
         "raw": "DOMAIN-SUFFIX,github.io"
       },
       "dropped": {
@@ -15647,7 +15647,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubassets.com",
         "options": [],
-        "line_number": 398,
+        "line_number": 399,
         "raw": "DOMAIN-SUFFIX,githubassets.com"
       },
       "dropped": {
@@ -15671,7 +15671,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       },
       "dropped": {
@@ -15695,7 +15695,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onedrive.live.com",
         "options": [],
-        "line_number": 725,
+        "line_number": 727,
         "raw": "DOMAIN-SUFFIX,onedrive.live.com"
       },
       "dropped": {
@@ -16175,7 +16175,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msn.com",
         "options": [],
-        "line_number": 659,
+        "line_number": 661,
         "raw": "DOMAIN-SUFFIX,msn.com"
       },
       "dropped": {
@@ -18446,7 +18446,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "copilot.cloud.microsoft",
         "options": [],
-        "line_number": 326,
+        "line_number": 327,
         "raw": "DOMAIN-SUFFIX,copilot.cloud.microsoft"
       }
     },
@@ -18472,7 +18472,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "copilot.microsoft.com",
         "options": [],
-        "line_number": 328,
+        "line_number": 329,
         "raw": "DOMAIN-SUFFIX,copilot.microsoft.com"
       }
     },
@@ -18498,7 +18498,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 399,
+        "line_number": 400,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       }
     },
@@ -18524,7 +18524,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "localytics.com",
         "options": [],
-        "line_number": 455,
+        "line_number": 456,
         "raw": "DOMAIN-SUFFIX,localytics.com"
       }
     },
@@ -18550,7 +18550,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msads.net",
         "options": [],
-        "line_number": 623,
+        "line_number": 624,
         "raw": "DOMAIN-SUFFIX,msads.net"
       }
     },
@@ -18576,7 +18576,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tenor.com",
         "options": [],
-        "line_number": 830,
+        "line_number": 832,
         "raw": "DOMAIN-SUFFIX,tenor.com"
       }
     },
@@ -19527,7 +19527,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cafe.github.com",
         "options": [],
-        "line_number": 307,
+        "line_number": 308,
         "raw": "DOMAIN-SUFFIX,cafe.github.com"
       },
       "right": {
@@ -19553,7 +19553,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "collector.github.com",
         "options": [],
-        "line_number": 324,
+        "line_number": 325,
         "raw": "DOMAIN-SUFFIX,collector.github.com"
       },
       "right": {
@@ -19579,7 +19579,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "dependabot.com",
         "options": [],
-        "line_number": 341,
+        "line_number": 342,
         "raw": "DOMAIN-SUFFIX,dependabot.com"
       },
       "right": {
@@ -19605,7 +19605,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "gh.io",
         "options": [],
-        "line_number": 385,
+        "line_number": 386,
         "raw": "DOMAIN-SUFFIX,gh.io"
       },
       "right": {
@@ -19631,7 +19631,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ghcr.io",
         "options": [],
-        "line_number": 386,
+        "line_number": 387,
         "raw": "DOMAIN-SUFFIX,ghcr.io"
       },
       "right": {
@@ -19657,7 +19657,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ghe.com",
         "options": [],
-        "line_number": 387,
+        "line_number": 388,
         "raw": "DOMAIN-SUFFIX,ghe.com"
       },
       "right": {
@@ -19683,7 +19683,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "git.io",
         "options": [],
-        "line_number": 389,
+        "line_number": 390,
         "raw": "DOMAIN-SUFFIX,git.io"
       },
       "right": {
@@ -19709,7 +19709,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.ai",
         "options": [],
-        "line_number": 390,
+        "line_number": 391,
         "raw": "DOMAIN-SUFFIX,github.ai"
       },
       "right": {
@@ -19735,7 +19735,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.blog",
         "options": [],
-        "line_number": 391,
+        "line_number": 392,
         "raw": "DOMAIN-SUFFIX,github.blog"
       },
       "right": {
@@ -19761,7 +19761,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.career",
         "options": [],
-        "line_number": 392,
+        "line_number": 393,
         "raw": "DOMAIN-SUFFIX,github.career"
       },
       "right": {
@@ -19787,7 +19787,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.com",
         "options": [],
-        "line_number": 393,
+        "line_number": 394,
         "raw": "DOMAIN-SUFFIX,github.com"
       },
       "right": {
@@ -19813,7 +19813,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.community",
         "options": [],
-        "line_number": 394,
+        "line_number": 395,
         "raw": "DOMAIN-SUFFIX,github.community"
       },
       "right": {
@@ -19839,7 +19839,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.dev",
         "options": [],
-        "line_number": 395,
+        "line_number": 396,
         "raw": "DOMAIN-SUFFIX,github.dev"
       },
       "right": {
@@ -19865,7 +19865,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.io",
         "options": [],
-        "line_number": 396,
+        "line_number": 397,
         "raw": "DOMAIN-SUFFIX,github.io"
       },
       "right": {
@@ -19891,7 +19891,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubapp.com",
         "options": [],
-        "line_number": 397,
+        "line_number": 398,
         "raw": "DOMAIN-SUFFIX,githubapp.com"
       },
       "right": {
@@ -19917,7 +19917,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubassets.com",
         "options": [],
-        "line_number": 398,
+        "line_number": 399,
         "raw": "DOMAIN-SUFFIX,githubassets.com"
       },
       "right": {
@@ -19969,7 +19969,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 399,
+        "line_number": 400,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       },
       "right": {
@@ -19995,7 +19995,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubhackathon.com",
         "options": [],
-        "line_number": 400,
+        "line_number": 401,
         "raw": "DOMAIN-SUFFIX,githubhackathon.com"
       },
       "right": {
@@ -20021,7 +20021,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubnext.com",
         "options": [],
-        "line_number": 401,
+        "line_number": 402,
         "raw": "DOMAIN-SUFFIX,githubnext.com"
       },
       "right": {
@@ -20047,7 +20047,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubpreview.dev",
         "options": [],
-        "line_number": 402,
+        "line_number": 403,
         "raw": "DOMAIN-SUFFIX,githubpreview.dev"
       },
       "right": {
@@ -20073,7 +20073,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubstatus.com",
         "options": [],
-        "line_number": 403,
+        "line_number": 404,
         "raw": "DOMAIN-SUFFIX,githubstatus.com"
       },
       "right": {
@@ -20099,7 +20099,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubsupport.com",
         "options": [],
-        "line_number": 404,
+        "line_number": 405,
         "raw": "DOMAIN-SUFFIX,githubsupport.com"
       },
       "right": {
@@ -20125,7 +20125,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubuniverse.com",
         "options": [],
-        "line_number": 405,
+        "line_number": 406,
         "raw": "DOMAIN-SUFFIX,githubuniverse.com"
       },
       "right": {
@@ -20151,7 +20151,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       },
       "right": {
@@ -20177,7 +20177,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "myoctocat.com",
         "options": [],
-        "line_number": 687,
+        "line_number": 689,
         "raw": "DOMAIN-SUFFIX,myoctocat.com"
       },
       "right": {
@@ -20203,7 +20203,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "octocaptcha.com",
         "options": [],
-        "line_number": 703,
+        "line_number": 705,
         "raw": "DOMAIN-SUFFIX,octocaptcha.com"
       },
       "right": {
@@ -20229,7 +20229,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "opensource.guide",
         "options": [],
-        "line_number": 733,
+        "line_number": 735,
         "raw": "DOMAIN-SUFFIX,opensource.guide"
       },
       "right": {
@@ -20255,7 +20255,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "repo.new",
         "options": [],
-        "line_number": 775,
+        "line_number": 777,
         "raw": "DOMAIN-SUFFIX,repo.new"
       },
       "right": {
@@ -20281,7 +20281,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "thegithubshop.com",
         "options": [],
-        "line_number": 833,
+        "line_number": 835,
         "raw": "DOMAIN-SUFFIX,thegithubshop.com"
       },
       "right": {
@@ -21219,7 +21219,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tiktokv.com",
         "options": [],
-        "line_number": 57,
+        "line_number": 59,
         "raw": "DOMAIN-SUFFIX,tiktokv.com"
       },
       "right": {
@@ -21245,7 +21245,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ttwstatic.com",
         "options": [],
-        "line_number": 69,
+        "line_number": 72,
         "raw": "DOMAIN-SUFFIX,ttwstatic.com"
       },
       "right": {
@@ -22454,7 +22454,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tanx.com",
         "options": [],
-        "line_number": 1301,
+        "line_number": 1303,
         "raw": "DOMAIN-SUFFIX,tanx.com"
       }
     },
@@ -22480,7 +22480,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "yukhj.com",
         "options": [],
-        "line_number": 1468,
+        "line_number": 1470,
         "raw": "DOMAIN-SUFFIX,yukhj.com"
       }
     },
@@ -22937,7 +22937,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "dl.delivery.mp.microsoft.com",
         "options": [],
-        "line_number": 347,
+        "line_number": 348,
         "raw": "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com"
       },
       "right": {
@@ -22963,7 +22963,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "download.microsoft.com",
         "options": [],
-        "line_number": 351,
+        "line_number": 352,
         "raw": "DOMAIN-SUFFIX,download.microsoft.com"
       },
       "right": {
@@ -22989,7 +22989,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "download.visualstudio.microsoft.com",
         "options": [],
-        "line_number": 352,
+        "line_number": 353,
         "raw": "DOMAIN-SUFFIX,download.visualstudio.microsoft.com"
       },
       "right": {
@@ -23015,7 +23015,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "download.windowsupdate.com",
         "options": [],
-        "line_number": 353,
+        "line_number": 354,
         "raw": "DOMAIN-SUFFIX,download.windowsupdate.com"
       },
       "right": {
@@ -25188,7 +25188,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "sm.cn",
         "options": [],
-        "line_number": 1286,
+        "line_number": 1288,
         "raw": "DOMAIN-SUFFIX,sm.cn"
       }
     },
@@ -25214,7 +25214,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "taobao.com",
         "options": [],
-        "line_number": 1305,
+        "line_number": 1307,
         "raw": "DOMAIN-SUFFIX,taobao.com"
       }
     },
@@ -25370,7 +25370,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "optimus-ads.amap.com",
         "options": [],
-        "line_number": 1097,
+        "line_number": 1099,
         "raw": "DOMAIN-SUFFIX,optimus-ads.amap.com"
       }
     },
@@ -25994,7 +25994,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msn.com",
         "options": [],
-        "line_number": 659,
+        "line_number": 661,
         "raw": "DOMAIN-SUFFIX,msn.com"
       }
     },
@@ -26384,7 +26384,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ugdtimg.com",
         "options": [],
-        "line_number": 2440,
+        "line_number": 2441,
         "raw": "DOMAIN-SUFFIX,ugdtimg.com"
       }
     },
@@ -26488,7 +26488,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ugdtimg.com",
         "options": [],
-        "line_number": 2440,
+        "line_number": 2441,
         "raw": "DOMAIN-SUFFIX,ugdtimg.com"
       }
     },
@@ -26956,7 +26956,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tmead.y.qq.com",
         "options": [],
-        "line_number": 2317,
+        "line_number": 2318,
         "raw": "DOMAIN-SUFFIX,tmead.y.qq.com"
       }
     },
@@ -26982,7 +26982,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "y.qq.com",
         "options": [],
-        "line_number": 2696,
+        "line_number": 2699,
         "raw": "DOMAIN-SUFFIX,y.qq.com"
       }
     },
@@ -27190,7 +27190,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -27216,7 +27216,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -27268,7 +27268,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -27320,7 +27320,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -27346,7 +27346,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -27398,7 +27398,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -27424,7 +27424,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -27450,7 +27450,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ximalaya.com",
         "options": [],
-        "line_number": 2671,
+        "line_number": 2674,
         "raw": "DOMAIN-SUFFIX,ximalaya.com"
       }
     },
@@ -28074,7 +28074,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "clarity.ms",
         "options": [],
-        "line_number": 317,
+        "line_number": 318,
         "raw": "DOMAIN-SUFFIX,clarity.ms"
       }
     },
@@ -28100,7 +28100,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "clarity.ms",
         "options": [],
-        "line_number": 317,
+        "line_number": 318,
         "raw": "DOMAIN-SUFFIX,clarity.ms"
       }
     },
@@ -28126,7 +28126,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "clarity.ms",
         "options": [],
-        "line_number": 317,
+        "line_number": 318,
         "raw": "DOMAIN-SUFFIX,clarity.ms"
       }
     },
@@ -28204,7 +28204,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -28256,7 +28256,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -28776,7 +28776,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       }
     },
@@ -28802,7 +28802,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       }
     },
@@ -28880,7 +28880,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       }
     },
@@ -28906,7 +28906,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       }
     },
@@ -28984,7 +28984,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       }
     },
@@ -29010,7 +29010,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       }
     },
@@ -29088,7 +29088,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubnext.com",
         "options": [],
-        "line_number": 401,
+        "line_number": 402,
         "raw": "DOMAIN-SUFFIX,githubnext.com"
       }
     },
@@ -29114,7 +29114,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubnext.com",
         "options": [],
-        "line_number": 401,
+        "line_number": 402,
         "raw": "DOMAIN-SUFFIX,githubnext.com"
       }
     },
@@ -29192,7 +29192,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.net",
         "options": [],
-        "line_number": 513,
+        "line_number": 514,
         "raw": "DOMAIN-SUFFIX,microsoft.net"
       }
     },
@@ -29218,7 +29218,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftapp.net",
         "options": [],
-        "line_number": 533,
+        "line_number": 534,
         "raw": "DOMAIN-SUFFIX,microsoftapp.net"
       }
     },
@@ -29738,7 +29738,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "copilot.microsoft.com",
         "options": [],
-        "line_number": 328,
+        "line_number": 329,
         "raw": "DOMAIN-SUFFIX,copilot.microsoft.com"
       }
     },
@@ -29764,7 +29764,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -29790,7 +29790,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 399,
+        "line_number": 400,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       }
     },
@@ -32078,7 +32078,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       }
     },
@@ -34080,7 +34080,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34106,7 +34106,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34132,7 +34132,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34158,7 +34158,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34184,7 +34184,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34210,7 +34210,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34236,7 +34236,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34262,7 +34262,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34288,7 +34288,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34314,7 +34314,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34340,7 +34340,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34366,7 +34366,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34392,7 +34392,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34418,7 +34418,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34444,7 +34444,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34470,7 +34470,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34496,7 +34496,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34522,7 +34522,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34548,7 +34548,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34574,7 +34574,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.net",
         "options": [],
-        "line_number": 872,
+        "line_number": 874,
         "raw": "DOMAIN-SUFFIX,windows.net"
       }
     },
@@ -34678,7 +34678,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office.net",
         "options": [],
-        "line_number": 706,
+        "line_number": 708,
         "raw": "DOMAIN-SUFFIX,office.net"
       }
     },
@@ -35042,7 +35042,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "oss-cn-hongkong.aliyuncs.com",
         "options": [],
-        "line_number": 1113,
+        "line_number": 1115,
         "raw": "DOMAIN-SUFFIX,oss-cn-hongkong.aliyuncs.com"
       }
     },
@@ -36212,7 +36212,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office.net",
         "options": [],
-        "line_number": 706,
+        "line_number": 708,
         "raw": "DOMAIN-SUFFIX,office.net"
       }
     },
@@ -36238,7 +36238,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office.net",
         "options": [],
-        "line_number": 706,
+        "line_number": 708,
         "raw": "DOMAIN-SUFFIX,office.net"
       }
     },
@@ -36264,7 +36264,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office.net",
         "options": [],
-        "line_number": 706,
+        "line_number": 708,
         "raw": "DOMAIN-SUFFIX,office.net"
       }
     },
@@ -36290,7 +36290,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office.net",
         "options": [],
-        "line_number": 706,
+        "line_number": 708,
         "raw": "DOMAIN-SUFFIX,office.net"
       }
     },
@@ -36810,7 +36810,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       }
     },
@@ -37018,7 +37018,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msn.com",
         "options": [],
-        "line_number": 659,
+        "line_number": 661,
         "raw": "DOMAIN-SUFFIX,msn.com"
       }
     },
@@ -37070,7 +37070,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msn.com",
         "options": [],
-        "line_number": 659,
+        "line_number": 661,
         "raw": "DOMAIN-SUFFIX,msn.com"
       }
     },
@@ -37096,7 +37096,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msn.com",
         "options": [],
-        "line_number": 659,
+        "line_number": 661,
         "raw": "DOMAIN-SUFFIX,msn.com"
       }
     },
@@ -38032,7 +38032,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "live.com.akadns.net",
         "options": [],
-        "line_number": 448,
+        "line_number": 449,
         "raw": "DOMAIN-SUFFIX,live.com.akadns.net"
       }
     },
@@ -38136,7 +38136,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com.akadns.net",
         "options": [],
-        "line_number": 494,
+        "line_number": 495,
         "raw": "DOMAIN-SUFFIX,microsoft.com.akadns.net"
       }
     },
@@ -38162,7 +38162,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "oaspapps.com.akadns.net",
         "options": [],
-        "line_number": 702,
+        "line_number": 704,
         "raw": "DOMAIN-SUFFIX,oaspapps.com.akadns.net"
       }
     },
@@ -38188,7 +38188,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "onecollector.cloudapp.aria.akadns.net",
         "options": [],
-        "line_number": 720,
+        "line_number": 722,
         "raw": "DOMAIN-SUFFIX,onecollector.cloudapp.aria.akadns.net"
       }
     },
@@ -38318,7 +38318,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "skype-edf.akadns.net",
         "options": [],
-        "line_number": 793,
+        "line_number": 795,
         "raw": "DOMAIN-SUFFIX,skype-edf.akadns.net"
       }
     },
@@ -38344,7 +38344,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "skypedata.akadns.net",
         "options": [],
-        "line_number": 798,
+        "line_number": 800,
         "raw": "DOMAIN-SUFFIX,skypedata.akadns.net"
       }
     },
@@ -38630,7 +38630,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windows.com.akadns.net",
         "options": [],
-        "line_number": 871,
+        "line_number": 873,
         "raw": "DOMAIN-SUFFIX,windows.com.akadns.net"
       }
     },
@@ -38864,7 +38864,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoftapp.net",
         "options": [],
-        "line_number": 533,
+        "line_number": 534,
         "raw": "DOMAIN-SUFFIX,microsoftapp.net"
       }
     },
@@ -38916,7 +38916,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       }
     },
@@ -39124,7 +39124,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39150,7 +39150,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39176,7 +39176,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39202,7 +39202,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39228,7 +39228,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office.net",
         "options": [],
-        "line_number": 706,
+        "line_number": 708,
         "raw": "DOMAIN-SUFFIX,office.net"
       }
     },
@@ -39488,7 +39488,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft-falcon.io",
         "options": [],
-        "line_number": 476,
+        "line_number": 477,
         "raw": "DOMAIN-SUFFIX,microsoft-falcon.io"
       }
     },
@@ -39540,7 +39540,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39763,7 +39763,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cafe.github.com",
         "options": [],
-        "line_number": 307,
+        "line_number": 308,
         "raw": "DOMAIN-SUFFIX,cafe.github.com"
       },
       "right": {
@@ -39800,7 +39800,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.com",
         "options": [],
-        "line_number": 393,
+        "line_number": 394,
         "raw": "DOMAIN-SUFFIX,github.com"
       }
     },
@@ -39826,7 +39826,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39852,7 +39852,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "optimizely.com",
         "options": [],
-        "line_number": 736,
+        "line_number": 738,
         "raw": "DOMAIN-SUFFIX,optimizely.com"
       }
     },
@@ -39878,7 +39878,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windowssearch.com",
         "options": [],
-        "line_number": 883,
+        "line_number": 885,
         "raw": "DOMAIN-SUFFIX,windowssearch.com"
       }
     },
@@ -39904,7 +39904,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39930,7 +39930,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -39945,7 +39945,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "collector.github.com",
         "options": [],
-        "line_number": 324,
+        "line_number": 325,
         "raw": "DOMAIN-SUFFIX,collector.github.com"
       },
       "right": {
@@ -39982,7 +39982,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.com",
         "options": [],
-        "line_number": 393,
+        "line_number": 394,
         "raw": "DOMAIN-SUFFIX,github.com"
       }
     },
@@ -40008,7 +40008,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft",
         "options": [],
-        "line_number": 475,
+        "line_number": 476,
         "raw": "DOMAIN-SUFFIX,microsoft"
       }
     },
@@ -40034,7 +40034,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -40112,7 +40112,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windowsupdate.com",
         "options": [],
-        "line_number": 884,
+        "line_number": 886,
         "raw": "DOMAIN-SUFFIX,windowsupdate.com"
       }
     },
@@ -40242,7 +40242,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -40268,7 +40268,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tlu.dl.delivery.mp.microsoft.com",
         "options": [],
-        "line_number": 835,
+        "line_number": 837,
         "raw": "DOMAIN-SUFFIX,tlu.dl.delivery.mp.microsoft.com"
       }
     },
@@ -40294,7 +40294,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -40320,7 +40320,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -40346,7 +40346,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "windowsupdate.com",
         "options": [],
-        "line_number": 884,
+        "line_number": 886,
         "raw": "DOMAIN-SUFFIX,windowsupdate.com"
       }
     },
@@ -40372,7 +40372,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -40398,7 +40398,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -40439,7 +40439,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       },
       "right": {
@@ -40465,7 +40465,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       },
       "right": {
@@ -40491,7 +40491,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       },
       "right": {
@@ -40517,7 +40517,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       },
       "right": {
@@ -40543,7 +40543,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       },
       "right": {
@@ -40569,7 +40569,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       },
       "right": {
@@ -40595,7 +40595,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "edgesuite.net",
         "options": [],
-        "line_number": 358,
+        "line_number": 359,
         "raw": "DOMAIN-SUFFIX,edgesuite.net"
       },
       "right": {
@@ -40606,7 +40606,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tiktokv.com.edgesuite.net",
         "options": [],
-        "line_number": 59,
+        "line_number": 61,
         "raw": "DOMAIN-SUFFIX,tiktokv.com.edgesuite.net"
       }
     },
@@ -40632,7 +40632,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "office.net",
         "options": [],
-        "line_number": 706,
+        "line_number": 708,
         "raw": "DOMAIN-SUFFIX,office.net"
       }
     },
@@ -40970,7 +40970,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "oss-cn-hongkong.aliyuncs.com",
         "options": [],
-        "line_number": 1113,
+        "line_number": 1115,
         "raw": "DOMAIN-SUFFIX,oss-cn-hongkong.aliyuncs.com"
       }
     },
@@ -40996,7 +40996,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "oss-cn-hongkong.aliyuncs.com",
         "options": [],
-        "line_number": 1113,
+        "line_number": 1115,
         "raw": "DOMAIN-SUFFIX,oss-cn-hongkong.aliyuncs.com"
       }
     },
@@ -41958,7 +41958,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -41984,7 +41984,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -42036,7 +42036,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -42062,7 +42062,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -42088,7 +42088,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       }
     },
@@ -42103,7 +42103,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42129,7 +42129,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42155,7 +42155,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42181,7 +42181,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42207,7 +42207,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42233,7 +42233,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42259,7 +42259,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42285,7 +42285,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42311,7 +42311,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42337,7 +42337,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42363,7 +42363,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42389,7 +42389,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42415,7 +42415,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42441,7 +42441,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42467,7 +42467,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42493,7 +42493,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42519,7 +42519,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42545,7 +42545,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42571,7 +42571,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42597,7 +42597,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42623,7 +42623,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42649,7 +42649,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42675,7 +42675,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42701,7 +42701,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42727,7 +42727,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "microsoft.com",
         "options": [],
-        "line_number": 493,
+        "line_number": 494,
         "raw": "DOMAIN-SUFFIX,microsoft.com"
       },
       "right": {
@@ -42779,7 +42779,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "msn.com",
         "options": [],
-        "line_number": 659,
+        "line_number": 661,
         "raw": "DOMAIN-SUFFIX,msn.com"
       },
       "right": {
@@ -43871,7 +43871,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "-tiktokcdn-com",
         "options": [],
-        "line_number": 70,
+        "line_number": 73,
         "raw": "DOMAIN-KEYWORD,-tiktokcdn-com"
       },
       "right": {
@@ -43897,7 +43897,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "musical.ly",
         "options": [],
-        "line_number": 71,
+        "line_number": 74,
         "raw": "DOMAIN-KEYWORD,musical.ly"
       },
       "right": {
@@ -43923,7 +43923,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 72,
+        "line_number": 75,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -43949,7 +43949,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 72,
+        "line_number": 75,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -43975,7 +43975,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 72,
+        "line_number": 75,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -44001,7 +44001,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 72,
+        "line_number": 75,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -44027,7 +44027,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktok",
         "options": [],
-        "line_number": 72,
+        "line_number": 75,
         "raw": "DOMAIN-KEYWORD,tiktok"
       },
       "right": {
@@ -44053,7 +44053,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktokcdn",
         "options": [],
-        "line_number": 73,
+        "line_number": 76,
         "raw": "DOMAIN-KEYWORD,tiktokcdn"
       },
       "right": {
@@ -44079,7 +44079,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktokcdn",
         "options": [],
-        "line_number": 73,
+        "line_number": 76,
         "raw": "DOMAIN-KEYWORD,tiktokcdn"
       },
       "right": {
@@ -44105,7 +44105,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "tiktokcdn",
         "options": [],
-        "line_number": 73,
+        "line_number": 76,
         "raw": "DOMAIN-KEYWORD,tiktokcdn"
       },
       "right": {
@@ -46627,7 +46627,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46653,7 +46653,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46679,7 +46679,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46705,7 +46705,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46731,7 +46731,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46757,7 +46757,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46783,7 +46783,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46809,7 +46809,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46835,7 +46835,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46861,7 +46861,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46887,7 +46887,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46913,7 +46913,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46939,7 +46939,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46965,7 +46965,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -46991,7 +46991,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47017,7 +47017,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47043,7 +47043,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47069,7 +47069,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47095,7 +47095,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47121,7 +47121,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47147,7 +47147,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47173,7 +47173,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47199,7 +47199,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47225,7 +47225,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47251,7 +47251,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47277,7 +47277,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47303,7 +47303,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47329,7 +47329,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47355,7 +47355,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47381,7 +47381,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47407,7 +47407,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47433,7 +47433,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47459,7 +47459,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47485,7 +47485,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47511,7 +47511,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47537,7 +47537,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47563,7 +47563,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47589,7 +47589,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47615,7 +47615,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47641,7 +47641,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47667,7 +47667,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47693,7 +47693,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47719,7 +47719,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47745,7 +47745,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47771,7 +47771,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47797,7 +47797,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47823,7 +47823,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47849,7 +47849,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47875,7 +47875,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -47901,7 +47901,7 @@
         "rule_type": "HOST-KEYWORD",
         "value": "microsoft",
         "options": [],
-        "line_number": 916,
+        "line_number": 918,
         "raw": "DOMAIN-KEYWORD,microsoft"
       },
       "right": {
@@ -48380,7 +48380,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "cafe.github.com",
         "options": [],
-        "line_number": 307,
+        "line_number": 308,
         "raw": "DOMAIN-SUFFIX,cafe.github.com"
       }
     },
@@ -48406,7 +48406,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "collector.github.com",
         "options": [],
-        "line_number": 324,
+        "line_number": 325,
         "raw": "DOMAIN-SUFFIX,collector.github.com"
       }
     },
@@ -48432,7 +48432,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.ai",
         "options": [],
-        "line_number": 390,
+        "line_number": 391,
         "raw": "DOMAIN-SUFFIX,github.ai"
       }
     },
@@ -48458,7 +48458,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.blog",
         "options": [],
-        "line_number": 391,
+        "line_number": 392,
         "raw": "DOMAIN-SUFFIX,github.blog"
       }
     },
@@ -48484,7 +48484,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.career",
         "options": [],
-        "line_number": 392,
+        "line_number": 393,
         "raw": "DOMAIN-SUFFIX,github.career"
       }
     },
@@ -48510,7 +48510,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.com",
         "options": [],
-        "line_number": 393,
+        "line_number": 394,
         "raw": "DOMAIN-SUFFIX,github.com"
       }
     },
@@ -48536,7 +48536,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.community",
         "options": [],
-        "line_number": 394,
+        "line_number": 395,
         "raw": "DOMAIN-SUFFIX,github.community"
       }
     },
@@ -48562,7 +48562,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.dev",
         "options": [],
-        "line_number": 395,
+        "line_number": 396,
         "raw": "DOMAIN-SUFFIX,github.dev"
       }
     },
@@ -48588,7 +48588,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "github.io",
         "options": [],
-        "line_number": 396,
+        "line_number": 397,
         "raw": "DOMAIN-SUFFIX,github.io"
       }
     },
@@ -48614,7 +48614,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubapp.com",
         "options": [],
-        "line_number": 397,
+        "line_number": 398,
         "raw": "DOMAIN-SUFFIX,githubapp.com"
       }
     },
@@ -48640,7 +48640,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubassets.com",
         "options": [],
-        "line_number": 398,
+        "line_number": 399,
         "raw": "DOMAIN-SUFFIX,githubassets.com"
       }
     },
@@ -48666,7 +48666,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 399,
+        "line_number": 400,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       }
     },
@@ -48692,7 +48692,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubhackathon.com",
         "options": [],
-        "line_number": 400,
+        "line_number": 401,
         "raw": "DOMAIN-SUFFIX,githubhackathon.com"
       }
     },
@@ -48718,7 +48718,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubnext.com",
         "options": [],
-        "line_number": 401,
+        "line_number": 402,
         "raw": "DOMAIN-SUFFIX,githubnext.com"
       }
     },
@@ -48744,7 +48744,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubpreview.dev",
         "options": [],
-        "line_number": 402,
+        "line_number": 403,
         "raw": "DOMAIN-SUFFIX,githubpreview.dev"
       }
     },
@@ -48770,7 +48770,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubstatus.com",
         "options": [],
-        "line_number": 403,
+        "line_number": 404,
         "raw": "DOMAIN-SUFFIX,githubstatus.com"
       }
     },
@@ -48796,7 +48796,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubsupport.com",
         "options": [],
-        "line_number": 404,
+        "line_number": 405,
         "raw": "DOMAIN-SUFFIX,githubsupport.com"
       }
     },
@@ -48822,7 +48822,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubuniverse.com",
         "options": [],
-        "line_number": 405,
+        "line_number": 406,
         "raw": "DOMAIN-SUFFIX,githubuniverse.com"
       }
     },
@@ -48848,7 +48848,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubusercontent.com",
         "options": [],
-        "line_number": 406,
+        "line_number": 407,
         "raw": "DOMAIN-SUFFIX,githubusercontent.com"
       }
     },
@@ -48874,7 +48874,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "thegithubshop.com",
         "options": [],
-        "line_number": 833,
+        "line_number": 835,
         "raw": "DOMAIN-SUFFIX,thegithubshop.com"
       }
     },
@@ -69911,10 +69911,10 @@
       "value": "azurefd.net"
     }
   ],
-  "conflict_free_rule_count": 12665,
-  "resolved_rule_count": 14179,
+  "conflict_free_rule_count": 12675,
+  "resolved_rule_count": 14189,
   "resolution": {
-    "resolved_rule_count": 14179,
+    "resolved_rule_count": 14189,
     "rejected_rule_count": 308,
     "resolved_conflict_count": 2035,
     "blackmatrix_preferred_conflict_count": 0,
