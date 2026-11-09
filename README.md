@@ -24,8 +24,8 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 
 - [已裁决 Classical 规则](outputs/mihomo/categories/safe/)不包含策略列，具体策略由配置中的 `RULE-SET` 指定。
 - [候选分类规则](outputs/mihomo/categories/candidates/)用于审阅合并和裁决前的候选项。
-- [Rule Provider 片段](outputs/mihomo/rule-providers.safe.yaml)包含 26 个远程规则提供者。
-- [路由规则片段](outputs/mihomo/rules.safe.yaml)按业务优先级引用 26 个 Rule Provider。
+- [Rule Provider 片段](outputs/mihomo/rule-providers.safe.yaml)包含 28 个远程规则提供者。
+- [路由规则片段](outputs/mihomo/rules.safe.yaml)按业务优先级引用 28 个 Rule Provider。
 - [通用配置示例](profiles/mihomo/config.example.yaml)提供双订阅、地区测速组和业务策略组。
 - [构建摘要](outputs/mihomo/build.json)与[冲突报告](outputs/mihomo/conflicts.md)记录 Mihomo 来源的构建结果。
 - [Curation 报告](outputs/mihomo/curation.json)记录共享基础设施排除项和业务分类纠正。
@@ -50,7 +50,7 @@ https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2
 
 模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。Proxy Provider 节点 UDP 默认显式关闭，确认服务端支持后再按 provider 开启。业务策略组排在地区测速组之前，保留订阅原始节点名称，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
 
-26 个 Mihomo Rule Provider 指向本仓库 `main` 分支，每 86400 秒刷新一次；GeoSite 数据也按 24 小时自动更新。Quantumult X 完整模板中的远程规则和重写资源同样统一为每日刷新。
+28 个 Mihomo Rule Provider 指向本仓库 `main` 分支，每 86400 秒刷新一次；GeoSite 数据也按 24 小时自动更新。Quantumult X 完整模板中的远程规则和重写资源同样统一为每日刷新。
 
 ## 业务分类
 
@@ -74,6 +74,8 @@ https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2
 | `tiktok` | `海外抖音` | TikTok |
 | `youtube` | `YouTube` | YouTube |
 | `netflix` | `Netflix` | Netflix |
+| `game-store` | 游戏商店 | Steam、Epic 商店、账户和启动器服务，默认跟随全球加速 |
+| `game-download` | 游戏下载 | Steam、Epic 专用内容下载域名，默认直连 |
 | `china-media` | `港台番剧` | 国内及港台媒体补充规则 |
 | `global-media` | `国际媒体` | 国际流媒体 |
 | `proxy-exception`、`proxy` | `全球加速` | 明确的代理例外与全球代理兜底 |
@@ -128,6 +130,8 @@ python tools/ruleforge.py lint --manifest sources/quantumultx.yaml
 python tools/ruleforge.py lint --manifest sources/mihomo.yaml
 python tools/ruleforge.py build --manifest sources/quantumultx.yaml --refresh --fail-on-conflict
 python tools/ruleforge.py build --manifest sources/mihomo.yaml --refresh --fail-on-conflict
+python tools/ruleforge.py sync-qx-profile
+python tools/ruleforge.py sync-qx-profile --check
 python tools/ruleforge.py sync-mihomo-profile
 python tools/ruleforge.py sync-mihomo-profile --check
 python -m unittest discover -s tests -v
@@ -139,9 +143,9 @@ python -m unittest discover -s tests -v
 
 [Update proxy rules](.github/workflows/update-rules.yml) 每天在 UTC 2 时 17 分运行，对应中国时间 10 时 17 分。也可以从 GitHub Actions 页面手动触发。
 
-工作流先依次构建 Quantumult X 与 Mihomo，再同步 Mihomo 模板的生成路由区块，对刚生成的产物运行回归测试。模板与生成片段必须一致，完整模板和由片段组装的配置均通过内核检查后才会提交生成结果与模板。单纯的生成时间和缓存状态变化不会产生提交。
+工作流先依次构建 Quantumult X 与 Mihomo，再同步两端模板的生成路由区块，对刚生成的产物运行回归测试。模板与生成片段必须一致，完整模板和由片段组装的配置均通过内核检查后才会提交生成结果与模板。单纯的生成时间和缓存状态变化不会产生提交。
 
-CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 26 个 Mihomo、26 个 Quantumult X 规则文件、QX 远程过滤器及优先规则、Mihomo 路由片段及完整模板和两套优先规则预览，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
+CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 28 个 Mihomo、28 个 Quantumult X 规则文件、QX 远程过滤器及优先规则、Mihomo 路由片段及完整模板和两套优先规则预览，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
 
 ## 使用边界
 

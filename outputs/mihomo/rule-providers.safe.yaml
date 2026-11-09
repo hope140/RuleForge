@@ -133,6 +133,20 @@ rule-providers:
     url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/global-media.list"
     path: ./rule_providers/global-media.list
     interval: 86400
+  game-download:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/game-download.list"
+    path: ./rule_providers/game-download.list
+    interval: 86400
+  game-store:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/game-store.list"
+    path: ./rule_providers/game-store.list
+    interval: 86400
   alipay:
     type: http
     behavior: classical

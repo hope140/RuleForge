@@ -270,6 +270,30 @@ def sync_mihomo_profile(profile: str, generated: str) -> str:
     return profile[:start] + newline + newline.join(body) + newline + profile[end:]
 
 
+def sync_quantumultx_profile(profile: str, generated: str) -> str:
+    """Replace the example profile's managed remote filter section."""
+
+    header = "[filter_remote]"
+    sections = list(re.finditer(r"(?m)^\[[^\]\r\n]+\][ \t]*\r?$", profile))
+    remote = [index for index, section in enumerate(sections) if section.group().rstrip() == header]
+    if len(remote) != 1:
+        raise ValueError("Quantumult X profile must contain exactly one [filter_remote] section")
+    lines = generated.splitlines()
+    if lines.count(header) != 1:
+        raise ValueError("generated Quantumult X rules must contain exactly one [filter_remote] section")
+    body = lines[lines.index(header) + 1:]
+    if not body or any(not line.startswith(("https://", "http://")) for line in body):
+        raise ValueError("generated Quantumult X rules contain an invalid remote filter section")
+    index = remote[0]
+    start = sections[index].start()
+    end = sections[index + 1].start() if index + 1 < len(sections) else len(profile)
+    newline = "\r\n" if "\r\n" in profile else "\n"
+    section = newline.join([header, *body]) + newline
+    if end < len(profile):
+        section += newline
+    return profile[:start] + section + profile[end:]
+
+
 def render_quantumultx_priority_overrides(
     rules: Iterable[Rule],
     path: str | Path,

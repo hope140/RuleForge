@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 15184,
-  "dropped_rule_count": 1593,
+  "kept_rule_count": 15217,
+  "dropped_rule_count": 1594,
   "moved_rule_count": 33,
   "dropped": [
     {
@@ -15922,6 +15922,16 @@
       "line_number": 13,
       "raw": "DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe",
       "reason": "upstream-attribution-marker"
+    },
+    {
+      "source_id": "magicrule-direct",
+      "category": "china-direct",
+      "policy": "direct",
+      "rule_type": "PROCESS-NAME",
+      "value": "qbittorrent*",
+      "line_number": 299,
+      "raw": "PROCESS-NAME,qbittorrent*",
+      "reason": "shared-infrastructure-root"
     },
     {
       "source_id": "rulego-proxy",

@@ -1,6 +1,6 @@
 # Mihomo 示例配置
 
-[`config.example.yaml`](config.example.yaml) 是一份不含真实订阅和密钥的通用 Mihomo 配置。它使用两个订阅提供者，并引用本仓库生成的 26 个远程 Rule Provider。
+[`config.example.yaml`](config.example.yaml) 是一份不含真实订阅和密钥的通用 Mihomo 配置。它使用两个订阅提供者，并引用本仓库生成的 28 个远程 Rule Provider。
 
 ## 使用方法
 
@@ -34,9 +34,11 @@
 
 策略组图标使用 Orz-3 `mini/Color`。地区测速要求健康检查返回 HTTP 204；如果订阅没有匹配地区，模板不会显式把空组回退到 `DIRECT`，应在客户端检查 provider 内容和节点筛选结果。业务组中是否允许 `DIRECT` 仍由各业务组的 `proxies` 列表决定。
 
+「游戏商店」默认跟随全球加速，「游戏下载」默认直连。使用旧配置时，一起添加这两个策略组、对应的 Rule Provider 和生成的路由规则。
+
 ## 规则更新
 
-模板引用 26 个 Classical 文本 Rule Provider，并额外加载 GeoSite 数据库。规则文件不带策略列，`rules` 中的 `RULE-SET` 负责把分类交给对应策略组；跨分类 priority 规则在安全分类之后、业务 Rule Provider 之前显式命中，`RULE-SET,ai,AI` 后紧跟 `GEOSITE,openai,AI`，用于覆盖 curated AI 清单之外的 OpenAI 域名；`GEOSITE,cn,DIRECT` 负责中国域名兜底。构建时会将共享云厂商 ASN 和通用 SaaS 根域从 AI 分类中排除，并把宽泛共享根域写入 `outputs/mihomo/audit.json` 的风险清单，专用分类为 high、宽泛策略分类为 medium。
+模板引用 28 个 Classical 文本 Rule Provider，并额外加载 GeoSite 数据库。规则文件不带策略列，`rules` 中的 `RULE-SET` 负责把分类交给对应策略组；跨分类 priority 规则在安全分类之后、业务 Rule Provider 之前显式命中，`RULE-SET,ai,AI` 后紧跟 `GEOSITE,openai,AI`，用于覆盖 curated AI 清单之外的 OpenAI 域名；`GEOSITE,cn,DIRECT` 负责中国域名兜底。构建时会将共享云厂商 ASN 和通用 SaaS 根域从 AI 分类中排除，并把宽泛共享根域写入 `outputs/mihomo/audit.json` 的风险清单，专用分类为 high、宽泛策略分类为 medium。
 
 每个 Rule Provider 的刷新间隔为 86400 秒，也就是 24 小时。GitHub Actions 每天更新一次仓库中的规则文件，客户端按自己的刷新间隔重新下载。若订阅节点本身经过实测支持 UDP，再把对应 Proxy Provider 的 `override.udp` 从 `false` 改为 `true`，不能仅修改策略组的 UDP 标记。若不支持 UDP，应保持关闭，或对地区敏感的 UDP/443 流量明确阻止并使用 TCP fallback。
 

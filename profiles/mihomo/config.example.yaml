@@ -144,6 +144,12 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png"
     type: select
     proxies: [全球加速, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点]
+  - name: 游戏商店
+    type: select
+    proxies: [全球加速, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, DIRECT]
+  - name: 游戏下载
+    type: select
+    proxies: [DIRECT, 全球加速, 游戏商店]
   - name: 兜底策略
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png"
     type: select
@@ -252,6 +258,8 @@ rule-providers:
   tiktok: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/tiktok.list", path: ./rule_providers/tiktok.list, interval: 86400 }
   youtube: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/youtube.list", path: ./rule_providers/youtube.list, interval: 86400 }
   netflix: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/netflix.list", path: ./rule_providers/netflix.list, interval: 86400 }
+  game-store: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/game-store.list", path: ./rule_providers/game-store.list, interval: 86400 }
+  game-download: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/game-download.list", path: ./rule_providers/game-download.list, interval: 86400 }
   china-media: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/china-media.list", path: ./rule_providers/china-media.list, interval: 86400 }
   global-media: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/global-media.list", path: ./rule_providers/global-media.list, interval: 86400 }
   proxy-exception: { type: http, behavior: classical, format: text, url: "https://raw.githubusercontent.com/hope140/RuleForge/main/outputs/mihomo/categories/safe/proxy-exception.list", path: ./rule_providers/proxy-exception.list, interval: 86400 }
@@ -379,6 +387,8 @@ rules:
   - RULE-SET,cloud,全球加速
   - RULE-SET,china-media,港台番剧
   - RULE-SET,global-media,国际媒体
+  - RULE-SET,game-download,游戏下载
+  - RULE-SET,game-store,游戏商店
   - RULE-SET,alipay,DIRECT
   - RULE-SET,wechat,DIRECT
   - RULE-SET,china-services,DIRECT

@@ -89,6 +89,7 @@ CATEGORY_RULE_EXCLUSIONS = frozenset(
         ("netflix", "HOST-SUFFIX", "onetrust.com"),
         ("netflix", "HOST-SUFFIX", "us-west-2.amazonaws.com"),
         ("apple", "HOST-SUFFIX", "digicert.com"),
+        ("china-direct", "PROCESS-NAME", "qbittorrent*"),
         ("global-media", "HOST", "www.amazon.com"),
         ("ai", "HOST", "storage.googleapis.com"),
         ("ai", "HOST-SUFFIX", "storage.googleapis.com"),

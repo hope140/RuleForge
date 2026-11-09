@@ -25,6 +25,6 @@
 - 共享基础设施根域审计应记录 category、rule、risk、reason 和 source_id，并允许明确的服务 hostname 继续参与正常审计。
 - 地区筛选同时验证 include/exclude，保留 `HK01` 等编号标签和混合地区归属；`Australia`、`Business`、`每日专线` 等词不得造成短码或单字误匹配。
 
-双目标回归还应保证原有关键业务路由、Mihomo 不含 QX 类型或内嵌策略列、26 个 Rule Provider 与模板引用一致，并使用固定且校验过 SHA256 的 Mihomo 内核执行配置测试。
+双目标回归还应保证原有关键业务路由、Mihomo 不含 QX 类型或内嵌策略列、28 个 Rule Provider 与模板引用一致，并使用固定且校验过 SHA256 的 Mihomo 内核执行配置测试。
 
 静态生成、route simulator 和 Mihomo 配置测试不等于 Quantumult X 或真实 Mihomo 客户端运行验证；客户端导入、订阅兼容性、节点 UDP 能力和真实业务页面仍需单独验收。

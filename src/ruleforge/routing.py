@@ -26,6 +26,8 @@ ROUTING_CATEGORY_ORDER = (
     "cloud",
     "china-media",
     "global-media",
+    "game-download",
+    "game-store",
     "alipay",
     "wechat",
     "china-services",

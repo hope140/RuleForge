@@ -9,6 +9,8 @@
 
 完整模板中的 `[filter_remote]` 使用当前生成的分类顺序和 `update-interval=86400`，并在安全分类后、AI 分类前接入 `priority-overrides.safe.list`。该小文件只承载跨分类 specificity/业务 override 必须提前命中的规则，例如 Google 的 gvt1 子域；后续可以只更新规则片段，不必改动节点配置。
 
+维护示例配置时，构建后运行 `python tools/ruleforge.py sync-qx-profile` 同步整个 `[filter_remote]` 段，或加 `--check` 核对内容和顺序。
+
 当前策略名称沿用个人配置中的稳定名称：
 
 - 苹果服务
@@ -21,6 +23,8 @@
 - YouTube
 - Netflix
 - 海外抖音
+- 游戏商店（默认跟随全球加速）
+- 游戏下载（默认直连）
 - 电报代理
 - 美国节点
 - direct
@@ -37,9 +41,10 @@
 2. `reject`、`privacy`
 3. 跨分类优先规则
 4. AI 与 Google Voice、YouTube、Netflix、TikTok、Telegram、Spotify 等地区敏感专项服务
-5. 支付宝、微信、国内服务和国内影音直连例外
-6. Apple、Google、Microsoft、云服务、社交、开发者、GitHub、港台番剧和国际媒体
-7. 代理例外和全球代理兜底
+5. 开发者、GitHub、Apple、社交、Google、Microsoft、云服务、港台番剧和国际媒体
+6. 游戏下载和游戏商店
+7. 支付宝、微信、国内服务和国内影音直连规则
+8. 代理例外和全球代理兜底
 
 这是远程过滤器的业务优先级。跨分类 priority 文件只复制已经通过审计、但所在分类文件顺序无法表达的获胜规则，不改变分类文件的归属。完全相同 selector 的策略冲突按 `security > explicit override > specificity > category semantics > same-category source preference > fallback` 裁决；只有明确的 `direct-exception` 可以覆盖 `reject`。域名后缀、关键词、通配符和 CIDR 的 ordered overlap 会保留双方，并在审计报告中记录 first-match 约束。
 

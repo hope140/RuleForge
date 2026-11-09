@@ -1343,3 +1343,206 @@ sources:
     parser: quantumult-x
     enabled: true
     notes: Preserve a dedicated service alias present before the upstream migration.
+
+  # Reviewed Apple relay endpoints on a shared CDN.
+  - id: local-apple-apple-relay-cloudflare-com
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,apple-relay.cloudflare.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-apple-cp4-cloudflare-com
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST,cp4.cloudflare.com"
+    parser: quantumult-x
+    enabled: true
+
+
+  # Steam and Epic web store, accounts and launcher services.
+  - id: local-game-store-steampowered-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-SUFFIX,steampowered.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-steamcommunity-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-SUFFIX,steamcommunity.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-steamgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-SUFFIX,steamgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-steamstatic-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-SUFFIX,steamstatic.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-store-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-SUFFIX,store.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-accounts-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-SUFFIX,accounts.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-www-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,www.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-account-public-service-prod03-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,account-public-service-prod03.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-launcher-public-service-prod06-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,launcher-public-service-prod06.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-entitlement-public-service-prod08-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,entitlement-public-service-prod08.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-catalog-public-service-prod06-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,catalog-public-service-prod06.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-orderprocessor-public-service-ecomprod01-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,orderprocessor-public-service-ecomprod01.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+
+  # Steam and Epic content downloads. Use only dedicated CDN names.
+  - id: local-game-download-steamcontent-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST-SUFFIX,steamcontent.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-download-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,download.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-download2-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,download2.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-download3-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,download3.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-download4-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,download4.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-fastly-download-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,fastly-download.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-epicgames-download1-akamaized-net
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,epicgames-download1.akamaized.net"
+    parser: quantumult-x
+    enabled: true

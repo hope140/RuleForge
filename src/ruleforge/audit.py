@@ -535,6 +535,7 @@ _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
     (frozenset(("google", "proxy")), ".blogspot"): "google",
     (frozenset(("google", "proxy")), "blogspot"): "google",
     (frozenset(("apple", "global-media")), "tv.applemusic.com"): "apple",
+    (frozenset(("game-store", "proxy")), "steamcommunity.com"): "game-store",
     (frozenset(("apple", "proxy")), "apple.news"): "apple",
     (frozenset(("apple", "proxy")), "apple.comscoreresearch.com"): "apple",
     (frozenset(("google", "direct-exception")), "redirector.gvt1.com"): "google",

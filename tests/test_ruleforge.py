@@ -169,7 +169,7 @@ class RuleForgeTests(unittest.TestCase):
             self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
 
     def test_manifest_has_unique_seed_sources(self) -> None:
-        expected_counts = {"quantumultx.yaml": 135, "mihomo.yaml": 131}
+        expected_counts = {"quantumultx.yaml": 157, "mihomo.yaml": 155}
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
             manifest, sources = load_manifest(ROOT / "sources" / filename)
             self.assertEqual(manifest["target"], target)
@@ -1525,9 +1525,8 @@ sources:
             line for line in generated.splitlines() if line == "[filter_remote]" or line.startswith("https://")
         ]
         profile_filter = profile.split("[filter_remote]", 1)[1].split("[rewrite_remote]", 1)[0]
-        for line in generated_filter_lines:
-            if line != "[filter_remote]":
-                self.assertIn(line, profile_filter)
+        profile_filter_lines = [line for line in profile_filter.splitlines() if line.strip()]
+        self.assertEqual(profile_filter_lines, generated_filter_lines[1:])
         self.assertIn("static=AI, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点", profile)
         self.assertIn("event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX", profile)
 
@@ -1556,7 +1555,7 @@ sources:
         _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
         content = (ROOT / "profiles" / "mihomo" / "config.example.yaml").read_text(encoding="utf-8")
         categories = {source.category for source in sources}
-        self.assertEqual(len(categories), 26)
+        self.assertEqual(len(categories), 28)
         for category in categories:
             self.assertIn(f"  {category}:", content)
             self.assertIn(f"RULE-SET,{category},", content)
@@ -1588,7 +1587,7 @@ sources:
         self.assertEqual(content.count("expected-status: 204"), 8)
         self.assertNotIn("empty-fallback: DIRECT", content)
         self.assertIn("tolerance: 10", content)
-        self.assertEqual(content.count("interval: 86400"), 28)
+        self.assertEqual(content.count("interval: 86400"), 30)
         self.assertNotIn("interval: 172800", content)
 
     def test_mihomo_japan_group_does_not_use_ambiguous_single_character_match(self) -> None:

@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from ruleforge.audit import audit_rules, resolve_conflicts
 from ruleforge.model import Rule
-from ruleforge.render import MIHOMO_RULES_BEGIN, MIHOMO_RULES_END, render_mihomo_rules, sync_mihomo_profile
+from ruleforge.render import MIHOMO_RULES_BEGIN, MIHOMO_RULES_END, render_mihomo_rules, sync_mihomo_profile, sync_quantumultx_profile
 from ruleforge.runtime import RouteProbe, simulate_route
 from route_helpers import active_routes, policy_name
 
@@ -101,9 +101,28 @@ class PriorityRegressionTests(unittest.TestCase):
                     count += 1
                 self.assertEqual(count, build["priority_override_rule_count"])
 
+    def test_qx_sync_repairs_order_and_preserves_other_sections(self) -> None:
+        original = "[policy]\r\nstatic=games, direct\r\n\r\n[filter_remote]\r\n"
+        tail = "\r\n[rewrite_remote]\r\n# Local rewrite settings\r\n"
+        first, second = "https://example.com/first", "https://example.com/second"
+        generated = f"[filter_remote]\n{first}\n{second}\n"
+        reversed_profile = original + f"{second}\r\n{first}\r\n" + tail
+        expected = original + f"{first}\r\n{second}\r\n" + tail
+        self.assertEqual(sync_quantumultx_profile(reversed_profile, generated), expected)
+        self.assertEqual(sync_quantumultx_profile(expected, generated), expected)
+
     def test_emitted_routes_enforce_priority_and_exact_conflict_decisions(self) -> None:
         expected = {
             "c.mi.com": "全球加速",
+            "apple-relay.cloudflare.com": "苹果服务",
+            "cp4.cloudflare.com": "苹果服务",
+            "store.steampowered.com": "游戏商店",
+            "steamcommunity.com": "游戏商店",
+            "store.epicgames.com": "游戏商店",
+            "account-public-service-prod03.ol.epicgames.com": "游戏商店",
+            "cache14-dfw2.steamcontent.com": "游戏下载",
+            "download2.epicgames.com": "游戏下载",
+            "epicgames-download1.akamaized.net": "游戏下载",
             "api-glb-sea.smoot.apple.com": "苹果服务",
             "tvbtracking.azurewebsites.net": "国际媒体",
             "beacons.gvt2.com": "谷歌服务",
@@ -118,6 +137,11 @@ class PriorityRegressionTests(unittest.TestCase):
                         result = simulate_route(rules, RouteProbe(domain=domain))
                         self.assertIsNotNone(result, domain)
                         self.assertEqual(result.policy, policy, domain)
+                    if target == "mihomo":
+                        for executable in ("qbittorrent.exe", "aria2c.exe"):
+                            result = simulate_route(rules, RouteProbe(process=executable))
+                            self.assertIsNotNone(result, executable)
+                            self.assertEqual(result.policy, "direct")
                     result = simulate_route(rules, RouteProbe(ip="23.211.15.99"))
                     self.assertIsNotNone(result)
                     self.assertEqual(result.policy, "国际媒体")

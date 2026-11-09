@@ -67,5 +67,27 @@ class MihomoRegionFilterTests(unittest.TestCase):
                 self.assertEqual(self.matching_regions(node), [])
 
 
+class QuantumultXRegionFilterTests(MihomoRegionFilterTests):
+    @classmethod
+    def setUpClass(cls) -> None:
+        profile = (ROOT / "profiles/quantumult-x/config.example.conf").read_text(encoding="utf-8")
+        cls.filters = {
+            name: re.compile(pattern)
+            for name, pattern in re.findall(
+                r"^url-latency-benchmark=([^,]+), server-tag-regex=([^,]+),", profile, re.MULTILINE
+            )
+        }
+        match = re.search(r"^static=特殊节点, server-tag-regex=([^,]+),", profile, re.MULTILINE)
+        assert match is not None
+        cls.manual = re.compile(match.group(1))
+
+    def matching_regions(self, node: str) -> list[str]:
+        return [name for name, pattern in self.filters.items() if pattern.search(node)]
+
+    def test_manual_group_includes_all_node_labels(self) -> None:
+        for node in ("HK01", "HK-SG 01", "ASGARD 01"):
+            self.assertRegex(node, self.manual)
+
+
 if __name__ == "__main__":
     unittest.main()

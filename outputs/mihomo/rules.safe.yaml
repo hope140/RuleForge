@@ -113,6 +113,8 @@ rules:
   - RULE-SET,cloud,全球加速
   - RULE-SET,china-media,港台番剧
   - RULE-SET,global-media,国际媒体
+  - RULE-SET,game-download,游戏下载
+  - RULE-SET,game-store,游戏商店
   - RULE-SET,alipay,DIRECT
   - RULE-SET,wechat,DIRECT
   - RULE-SET,china-services,DIRECT

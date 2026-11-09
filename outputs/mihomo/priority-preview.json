@@ -2,54 +2,22 @@
   "mode": "preview-only",
   "active": false,
   "target": "mihomo",
-  "ordered_overlap_count": 1719,
-  "live_cross_category_count": 764,
+  "ordered_overlap_count": 1724,
+  "live_cross_category_count": 769,
   "discarded_overlap_count": 955,
-  "apple_contract_gap_count": 2,
-  "actual_policy_mismatch_count": 6,
-  "preview_candidate_decision_count": 4,
-  "preview_candidate_rule_count": 4,
+  "apple_contract_gap_count": 0,
+  "actual_policy_mismatch_count": 4,
+  "preview_candidate_decision_count": 2,
+  "preview_candidate_rule_count": 2,
   "review_required_count": 2,
   "unwitnessed_count": 0,
   "status_counts": {
-    "enforced": 672,
+    "enforced": 677,
     "equivalent-policy": 88,
-    "preview-candidate": 4,
+    "preview-candidate": 2,
     "review-required": 2
   },
   "override_candidates": [
-    {
-      "rule": {
-        "source_id": "apple-service-contract",
-        "category": "apple",
-        "policy": "苹果服务",
-        "rule_type": "HOST",
-        "value": "apple-relay.cloudflare.com",
-        "line_number": 0
-      },
-      "rendered_rule": "DOMAIN,apple-relay.cloudflare.com",
-      "confidence": "high",
-      "evidence_count": 1,
-      "witnesses": [
-        "apple-relay.cloudflare.com"
-      ]
-    },
-    {
-      "rule": {
-        "source_id": "apple-service-contract",
-        "category": "apple",
-        "policy": "苹果服务",
-        "rule_type": "HOST",
-        "value": "cp4.cloudflare.com",
-        "line_number": 0
-      },
-      "rendered_rule": "DOMAIN,cp4.cloudflare.com",
-      "confidence": "high",
-      "evidence_count": 1,
-      "witnesses": [
-        "cp4.cloudflare.com"
-      ]
-    },
     {
       "rule": {
         "source_id": "magicrule-google",
@@ -84,88 +52,6 @@
     }
   ],
   "items": [
-    {
-      "relation": "apple-service-contract",
-      "confidence": "high",
-      "method": "apple-service-contract",
-      "status": "preview-candidate",
-      "disposition_reason": "apple-contract-candidate",
-      "reason": "Apple-related traffic is unified under the Apple service policy.",
-      "probe": {
-        "domain": "apple-relay.cloudflare.com",
-        "ip": null,
-        "process": null,
-        "destination_port": null,
-        "inbound_port": null
-      },
-      "expected_rule": {
-        "source_id": "apple-service-contract",
-        "category": "apple",
-        "policy": "苹果服务",
-        "rule_type": "HOST",
-        "value": "apple-relay.cloudflare.com",
-        "line_number": 0
-      },
-      "compared_rule": {
-        "source_id": "rulego-proxy",
-        "category": "proxy",
-        "policy": "全球加速",
-        "rule_type": "HOST",
-        "value": "apple-relay.cloudflare.com",
-        "line_number": 539
-      },
-      "actual_rule": {
-        "source_id": "rulego-proxy",
-        "category": "proxy",
-        "policy": "全球加速",
-        "rule_type": "HOST",
-        "value": "apple-relay.cloudflare.com",
-        "line_number": 539
-      },
-      "expected_policy": "苹果服务",
-      "actual_policy": "全球加速"
-    },
-    {
-      "relation": "apple-service-contract",
-      "confidence": "high",
-      "method": "apple-service-contract",
-      "status": "preview-candidate",
-      "disposition_reason": "apple-contract-candidate",
-      "reason": "Apple-related traffic is unified under the Apple service policy.",
-      "probe": {
-        "domain": "cp4.cloudflare.com",
-        "ip": null,
-        "process": null,
-        "destination_port": null,
-        "inbound_port": null
-      },
-      "expected_rule": {
-        "source_id": "apple-service-contract",
-        "category": "apple",
-        "policy": "苹果服务",
-        "rule_type": "HOST",
-        "value": "cp4.cloudflare.com",
-        "line_number": 0
-      },
-      "compared_rule": {
-        "source_id": "rulego-proxy",
-        "category": "proxy",
-        "policy": "全球加速",
-        "rule_type": "HOST",
-        "value": "cp4.cloudflare.com",
-        "line_number": 541
-      },
-      "actual_rule": {
-        "source_id": "rulego-proxy",
-        "category": "proxy",
-        "policy": "全球加速",
-        "rule_type": "HOST",
-        "value": "cp4.cloudflare.com",
-        "line_number": 541
-      },
-      "expected_policy": "苹果服务",
-      "actual_policy": "全球加速"
-    },
     {
       "relation": "host-inside-host-suffix",
       "confidence": "medium",
