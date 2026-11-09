@@ -18,12 +18,14 @@
 - 优先文件只能包含最终保留的规则；`mtalk.google.com` 和 `23.211.15.99/32` 的已淘汰规则不得复活。IPv4/IPv6 内联规则的策略列必须位于 `no-resolve` 等选项之前。
 - 提升优先规则必须保留其业务前驱及裁决顺序；循环业务约束不能发布。安全分类缺失或为空时，预览仍须与渲染器的实际顺序一致。
 - Microsoft 已审阅的下载/CDN 直连端点在优先排序后仍保持直连，该契约不得扩展成 Microsoft 根域直连；同 selector 已存在直接击败全部候选的唯一赢家时，低优先级候选之间的冲突不再阻止严格构建。
+- QX 模板的远程过滤器段必须与生成片段逐项同序，修复顺序时保留段外配置和换行。
+- 两端应分别匹配 Steam、Epic 的商店与下载域名；Mihomo 应将 Windows 的 qBittorrent 和 aria2 进程导向直连。
 - Mihomo 模板的生成区块必须与 `rules.safe.yaml` 一致；同步需保留区块外配置和换行，拒绝缺失、重复或反向标记。CI 构建、同步后再运行回归和内核检查。
 - 优先规则预览应过滤已淘汰规则，为存活重叠生成域名或 CIDR 样例，并把第三条规则干扰留在待审阅状态。
 - Apple 服务统一契约应把 Apple Intelligence、iCloud 和 Apple 内容端点归入苹果服务，同时保留 reject 与 direct-exception 的安全优先级。
 - GitHub Copilot、Grok、Bing/Copilot、gvt1、Netflix/Apple 共享基础设施、Prime Video 和 Trae/MarsCode 的业务边界应通过生成后的路由样例复核。
 - 共享基础设施根域审计应记录 category、rule、risk、reason 和 source_id，并允许明确的服务 hostname 继续参与正常审计。
-- 地区筛选同时验证 include/exclude，保留 `HK01` 等编号标签和混合地区归属；`Australia`、`Business`、`每日专线` 等词不得造成短码或单字误匹配。
+- 地区筛选同时验证 include/exclude，保留 `HK01` 等编号标签，混合地区节点由「特殊节点」手选。`Australia`、`Business`、`每日专线` 等词不得造成短码或单字误匹配。
 
 双目标回归还应保证原有关键业务路由、Mihomo 不含 QX 类型或内嵌策略列、28 个 Rule Provider 与模板引用一致，并使用固定且校验过 SHA256 的 Mihomo 内核执行配置测试。
 

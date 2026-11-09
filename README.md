@@ -37,7 +37,7 @@ RuleForge 收集多个公开项目的代理分流规则，经过统一解析、�
 
 下载 [完整 Quantumult X 配置模板](profiles/quantumult-x/config.example.conf) 后，在 `[server_remote]` 或客户端的节点管理中加入自己的订阅。模板的策略组、DNS、远程重写、本地规则、定时任务和 MITM 分区沿用既有实际模板；公共文件不包含节点订阅、账号信息或本地证书材料。
 
-模板内的 `[filter_remote]` 已接入仓库当前的分类片段，规则内容会由远程分类文件独立更新，每日刷新一次。已有配置只想更新规则时，继续使用 [远程过滤器片段](outputs/quantumult-x/filter_remote.safe.conf) 即可。模板同时显式设置 `fallback_udp_policy = reject`，未匹配的 UDP 默认拒绝；需要 QUIC/UDP 时请确认所选节点确实支持。
+模板每天刷新 28 个分类规则文件及跨分类优先规则。使用旧配置时，先从模板复制「游戏商店」和「游戏下载」两条策略定义，再合入[远程过滤器片段](outputs/quantumult-x/filter_remote.safe.conf)。已配置这两个策略组的用户，只需更新对应策略行即可获得新图标。具体合入位置见 [QX 模板说明](profiles/quantumult-x/README.md)。
 
 ## Mihomo 配置示例
 
@@ -48,13 +48,13 @@ https://example.invalid/REPLACE_WITH_SUBSCRIPTION_1
 https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2
 ```
 
-模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。Proxy Provider 节点 UDP 默认显式关闭，确认服务端支持后再按 provider 开启。业务策略组排在地区测速组之前，保留订阅原始节点名称，图标来自 Orz-3 `mini/Color`。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
+模板默认只监听本机，`secret` 为空，TUN 与 IPv6 关闭，DNS 使用 Fake-IP。模板同时启用 GeoSite 中国域名数据库，避免 Fake-IP 流量只能依赖 `GEOIP,CN`。Proxy Provider 节点 UDP 默认显式关闭，确认服务端支持后再按 provider 开启。业务策略组排在地区测速组之前，保留订阅原始节点名称，策略组图标主要来自 Orz-3 mini，两个游戏组与 QX 共用 Koolson Qure 彩色图标。完整使用说明见 [Mihomo 模板说明](profiles/mihomo/README.md)。
 
 28 个 Mihomo Rule Provider 指向本仓库 `main` 分支，每 86400 秒刷新一次；GeoSite 数据也按 24 小时自动更新。Quantumult X 完整模板中的远程规则和重写资源同样统一为每日刷新。
 
 ## 业务分类
 
-| 分类 | 默认策略 | 用途 |
+| 分类 | 策略 | 用途 |
 | --- | --- | --- |
 | `reject`、`privacy` | `reject` | 广告、跟踪和隐私规则 |
 | `alipay`、`wechat` | `direct` | 支付宝与微信直连 |
@@ -78,7 +78,8 @@ https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2
 | `game-download` | 游戏下载 | Steam、Epic 专用内容下载域名，默认直连 |
 | `china-media` | `港台番剧` | 国内及港台媒体补充规则 |
 | `global-media` | `国际媒体` | 国际流媒体 |
-| `proxy-exception`、`proxy` | `全球加速` | 明确的代理例外与全球代理兜底 |
+| `proxy-exception` | QX 内置 `proxy`，Mihomo 为「全球加速」 | 明确的代理例外 |
+| `proxy` | `全球加速` | 全球代理兜底 |
 
 Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域名，再处理其他业务和代理规则；最后使用 `GEOSITE,cn,DIRECT` 作为中国域名兜底，再使用 `GEOIP,CN,DIRECT` 处理已经拿到真实目标 IP 的连接。
 
@@ -143,9 +144,9 @@ python -m unittest discover -s tests -v
 
 [Update proxy rules](.github/workflows/update-rules.yml) 每天在 UTC 2 时 17 分运行，对应中国时间 10 时 17 分。也可以从 GitHub Actions 页面手动触发。
 
-工作流先依次构建 Quantumult X 与 Mihomo，再同步两端模板的生成路由区块，对刚生成的产物运行回归测试。模板与生成片段必须一致，完整模板和由片段组装的配置均通过内核检查后才会提交生成结果与模板。单纯的生成时间和缓存状态变化不会产生提交。
+工作流先依次构建 Quantumult X 与 Mihomo，再同步两端模板的生成路由区块，对刚生成的产物运行回归测试。两端模板都检查与生成片段的一致性。Mihomo 完整模板及由片段组装的配置另经内核检查，全部通过后才提交生成结果与模板。单纯的生成时间和缓存状态变化不会产生提交。
 
-CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 28 个 Mihomo、28 个 Quantumult X 规则文件、QX 远程过滤器及优先规则、Mihomo 路由片段及完整模板和两套优先规则预览，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
+CI 使用固定版本的 Mihomo v1.19.30，并校验下载文件的 SHA256。内核检查通过后，工作流会按刚发布的提交 SHA 下载 28 个 Mihomo、28 个 Quantumult X 规则文件、QX 远程过滤器及优先规则、Mihomo 路由片段、两端完整模板和两套优先规则预览，与本地构建结果逐字节比对；同时确认 `main` 分支公开地址仍可读取。
 
 ## 使用边界
 

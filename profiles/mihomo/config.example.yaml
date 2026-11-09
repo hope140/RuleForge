@@ -145,9 +145,11 @@ proxy-groups:
     type: select
     proxies: [全球加速, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点]
   - name: 游戏商店
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png"
     type: select
     proxies: [全球加速, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 特殊节点, DIRECT]
   - name: 游戏下载
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Download.png"
     type: select
     proxies: [DIRECT, 全球加速, 游戏商店]
   - name: 兜底策略

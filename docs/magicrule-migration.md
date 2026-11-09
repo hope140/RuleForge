@@ -1,6 +1,6 @@
 # MagicRule 来源迁移
 
-MagicRule 接替原 Blackmatrix 远程来源，保留 RuleForge 的 26 个业务分类和客户端订阅地址。迁移不新增策略组，也不改变订阅、DNS 或节点设置。
+本文记录 2026-10-28 的来源迁移。当时 MagicRule 接替了原 Blackmatrix 远程来源，保留了 26 个业务分类和客户端订阅地址。当前分类及使用方法见[项目 README](../README.md)。
 
 ## 分类映射
 

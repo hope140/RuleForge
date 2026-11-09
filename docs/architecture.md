@@ -59,7 +59,7 @@ Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、�
 
 跨分类优先规则只从裁决后仍然存活的约束双方生成，已淘汰规则不得重新进入正式优先文件。提升某条业务规则时，递归纳入它仍存活的业务前驱，并对这些规则做稳定拓扑排序；无约束的规则继续按具体程度等既有顺序排列。渲染器和预览保留裁决顺序，不再重新按具体程度排序。业务约束有环时构建失败。`direct-exception`、`reject`、`privacy` 是两端固定的安全前缀，不参与可移动业务规则的拓扑排序。Mihomo 的内联规则按 `类型,值,策略,选项` 渲染，Classical Provider 仍保持无策略列。
 
-完整 Mihomo 模板通过 `sync-mihomo-profile` 同步生成路由区块，区块外配置保持不变。CI 在构建和同步之后运行产物回归，并校验模板及由片段组装的完整配置。
+QX 用 `sync-qx-profile` 同步示例模板的整个远程过滤器段，Mihomo 用 `sync-mihomo-profile` 同步标记之间的路由区块。CI 在构建和同步后运行产物回归，并用 Mihomo 内核检查该端模板及组装配置。
 
 ## 优先规则预览
 
@@ -67,7 +67,7 @@ Quantumult X 与 Mihomo 各自使用原生来源清单，但共享规范化、�
 
 预期策略与实际策略不同时，只有明确安全契约或更具体的 HOST、HOST-SUFFIX、CIDR 规则直接被比较规则挡住，才会进入候选列表。涉及关键词、宽泛规则或第三条更早规则的情况继续标记为待审阅。
 
-预览层同时执行 Apple 服务统一契约：`apple.com`、`icloud.com`、`mzstatic.com` 体系以及 Apple 官方使用的 Private Cloud Compute 中继端点都归入“苹果服务”，即使上游将其登记为 AI、国际媒体、直连或通用代理。明确的 reject 与 direct-exception 高于 Apple 契约。该契约只生成预览候选，不改变正式安全规则。
+预览层同时执行 Apple 服务统一契约：`apple.com`、`icloud.com`、`mzstatic.com` 体系以及 Apple 官方使用的 Private Cloud Compute 中继端点都归入“苹果服务”，即使上游将其登记为 AI、国际媒体、直连或通用代理。明确的 reject 与 direct-exception 高于 Apple 契约。预览负责报告偏差。已确认的两个 Apple 中继主机 apple-relay.cloudflare.com 和 cp4.cloudflare.com 已登记为两端清单的本地补充，由正式构建纳入苹果服务。
 
 所有预览均带有 `active: false`，在正式启用阶段完成前不得被 QX 或 Mihomo 模板引用。
 

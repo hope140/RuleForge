@@ -17,7 +17,7 @@
 - `enabled`：是否纳入构建
 - `notes`：特殊处理或保留原因
 
-`inline:` 地址只用于稳定、可审计的本地补充规则，不访问网络，也不应放入订阅或凭据。除 Apple 的 `cma2.itunes.apple.com` 和 QX 的 `oaistatsig.com` 外，也保留上游迁移时缺少独立分类的少量服务规则；这些本地条目需要人工维护。
+`inline:` 地址只用于稳定、可审计的本地补充规则，不访问网络，也不应放入订阅或凭据。除 Apple 的 `cma2.itunes.apple.com` 和 QX 的 `oaistatsig.com` 外，也保留上游迁移时缺少独立分类的少量服务规则；两端的游戏商店、游戏下载和 Apple 中继补充，以及 Mihomo 的 Windows 下载工具进程规则，也通过本地条目维护。
 
 MagicRule 的 `url` 使用 `https://magicrule.pages.dev/data/index/<客户端>.json#<分类名>`，例如 `QuantumultX.json#OpenAI` 或 `Mihomo.json#NPM`，并显式设置 `resolver: magicrule`。客户端名称、来源格式和解析器必须对应。刷新时先从索引查找唯一分类，再读取其 manifest，QX 选择 `rules` 文本、Mihomo 选择 `classical` 文本；不选择二进制 MRS 或仅含域名的变体。上游若提供文件 SHA256 则必须一致。实际下载 URL 和文件哈希记录在构建摘要中，离线构建复用已解析文件；索引和 manifest 的内存复用只限单次构建，不跨刷新固定地址。
 
