@@ -74,8 +74,8 @@ https://example.invalid/REPLACE_WITH_SUBSCRIPTION_2
 | `tiktok` | `海外抖音` | TikTok |
 | `youtube` | `YouTube` | YouTube |
 | `netflix` | `Netflix` | Netflix |
-| `game-store` | 游戏商店 | Steam、Epic 商店、账户和启动器服务，默认跟随全球加速 |
-| `game-download` | 游戏下载 | Steam、Epic 专用内容下载域名，默认直连 |
+| `game-store` | 游戏商店 | Steam 商店、社区和客户端连接，以及 Epic 商店、账户、启动器和游戏库服务，默认跟随全球加速 |
+| `game-download` | 游戏下载 | Steam、Epic 专用内容下载域名及 Steam 客户端更新主机，默认直连 |
 | `china-media` | `港台番剧` | 国内及港台媒体补充规则 |
 | `global-media` | `国际媒体` | 国际流媒体 |
 | `proxy-exception` | QX 内置 `proxy`，Mihomo 为「全球加速」 | 明确的代理例外 |

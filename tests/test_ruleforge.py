@@ -169,7 +169,7 @@ class RuleForgeTests(unittest.TestCase):
             self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
 
     def test_manifest_has_unique_seed_sources(self) -> None:
-        expected_counts = {"quantumultx.yaml": 157, "mihomo.yaml": 155}
+        expected_counts = {"quantumultx.yaml": 173, "mihomo.yaml": 171}
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
             manifest, sources = load_manifest(ROOT / "sources" / filename)
             self.assertEqual(manifest["target"], target)

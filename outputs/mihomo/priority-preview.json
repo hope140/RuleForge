@@ -2,8 +2,8 @@
   "mode": "preview-only",
   "active": false,
   "target": "mihomo",
-  "ordered_overlap_count": 1724,
-  "live_cross_category_count": 769,
+  "ordered_overlap_count": 1731,
+  "live_cross_category_count": 776,
   "discarded_overlap_count": 955,
   "apple_contract_gap_count": 0,
   "actual_policy_mismatch_count": 4,
@@ -12,7 +12,7 @@
   "review_required_count": 2,
   "unwitnessed_count": 0,
   "status_counts": {
-    "enforced": 677,
+    "enforced": 684,
     "equivalent-policy": 88,
     "preview-candidate": 2,
     "review-required": 2

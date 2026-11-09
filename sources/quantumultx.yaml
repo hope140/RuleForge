@@ -1374,6 +1374,34 @@ sources:
     parser: quantumult-x
     enabled: true
 
+  - id: local-game-store-steam-connection-managers
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-WILDCARD,cmp*.steamserver.net"
+    parser: quantumult-x
+    enabled: true
+    notes: Steam Connection Manager hosts listed by the Steam server directory.
+
+  - id: local-game-store-steam-external-connection-managers
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-WILDCARD,ext*.steamserver.net"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-steamusercontent-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST-SUFFIX,steamusercontent.com"
+    parser: quantumult-x
+    enabled: true
+
   - id: local-game-store-steamcommunity-com
     kind: inline
     format: quantumult-x
@@ -1483,6 +1511,87 @@ sources:
     enabled: true
 
 
+  - id: local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,launcherwaitingroom-public-service-prod06.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-launcher-website-prod07-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,launcher-website-prod07.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-accounts-launcher-website-prod07-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,accounts.launcher-website-prod07.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-accountportal-website-prod07-ol-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,accountportal-website-prod07.ol.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-static-assets-prod-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,static-assets-prod.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-store-site-backend-static-ak-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,store-site-backend-static.ak.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-store-content-ak-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,store-content.ak.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-library-service-live-use1a-on-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,library-service.live.use1a.on.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-store-datastorage-public-service-liveegs-live-use1a-on-epicgames-com
+    kind: inline
+    format: quantumult-x
+    category: game-store
+    policy: 游戏商店
+    url: "inline:HOST,datastorage-public-service-liveegs.live.use1a.on.epicgames.com"
+    parser: quantumult-x
+    enabled: true
+
   # Steam and Epic content downloads. Use only dedicated CDN names.
   - id: local-game-download-steamcontent-com
     kind: inline
@@ -1490,6 +1599,42 @@ sources:
     category: game-download
     policy: 游戏下载
     url: "inline:HOST-SUFFIX,steamcontent.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-steampipe-akamaized-net
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,steampipe.akamaized.net"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-client-update-steamstatic-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,client-update.steamstatic.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-client-update-fastly-steamstatic-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,client-update.fastly.steamstatic.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-game-download-client-update-akamai-steamstatic-com
+    kind: inline
+    format: quantumult-x
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,client-update.akamai.steamstatic.com"
     parser: quantumult-x
     enabled: true
 

@@ -1,14 +1,14 @@
 # RuleForge conflict report
 
-These 2045 entries were evaluated by the business-priority resolver.
+These 2052 entries were evaluated by the business-priority resolver.
 Exact conflicts use security, explicit override, specificity, category semantics and same-category source priority; semantic overlaps retain both rules and record first-match ordering.
 Conflicts that match none of these priorities remain unresolved and are excluded.
 
 ## Summary
 
 - exact-policy: 321
-- semantic-overlap: 1724
-- resolved: 2045
+- semantic-overlap: 1731
+- resolved: 2052
 - blackmatrix-preferred: 0
 - source-preferred: 0
 - direct-preferred: 0
@@ -17,7 +17,7 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 - value-category-preferred: 69
 - protective-reject: 24
 - fallback: 0
-- ordered-overlap: 1724
+- ordered-overlap: 1731
 - unresolved: 0
 
 ## direct-exception ↔ reject
@@ -10278,115 +10278,152 @@ Conflicts that match none of these priorities remain unresolved and are excluded
 - right: `HOST,youtubei.googleapis.com -> 国际媒体 (rulego-global-media)`
 - decision: `ordered-overlap` -> `HOST,youtubei.googleapis.com -> 国际媒体 (rulego-global-media)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-## game-store ↔ china-direct
+## game-download ↔ game-store
 
 ### 2025. semantic-overlap / host-inside-host-suffix
+- left: `HOST,client-update.steamstatic.com -> 游戏下载 (local-game-download-client-update-steamstatic-com)`
+- right: `HOST-SUFFIX,steamstatic.com -> 游戏商店 (local-game-store-steamstatic-com)`
+- decision: `ordered-overlap` -> `HOST,client-update.steamstatic.com -> 游戏下载 (local-game-download-client-update-steamstatic-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
+### 2026. semantic-overlap / host-inside-host-suffix
+- left: `HOST,client-update.fastly.steamstatic.com -> 游戏下载 (local-game-download-client-update-fastly-steamstatic-com)`
+- right: `HOST-SUFFIX,steamstatic.com -> 游戏商店 (local-game-store-steamstatic-com)`
+- decision: `ordered-overlap` -> `HOST,client-update.fastly.steamstatic.com -> 游戏下载 (local-game-download-client-update-fastly-steamstatic-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
+### 2027. semantic-overlap / host-inside-host-suffix
+- left: `HOST,client-update.akamai.steamstatic.com -> 游戏下载 (local-game-download-client-update-akamai-steamstatic-com)`
+- right: `HOST-SUFFIX,steamstatic.com -> 游戏商店 (local-game-store-steamstatic-com)`
+- decision: `ordered-overlap` -> `HOST,client-update.akamai.steamstatic.com -> 游戏下载 (local-game-download-client-update-akamai-steamstatic-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
+## game-store ↔ china-direct
+
+### 2028. semantic-overlap / host-inside-host-suffix
 - left: `HOST,account-public-service-prod03.ol.epicgames.com -> 游戏商店 (local-game-store-account-public-service-prod03-ol-epicgames-com)`
 - right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
 - decision: `ordered-overlap` -> `HOST,account-public-service-prod03.ol.epicgames.com -> 游戏商店 (local-game-store-account-public-service-prod03-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2026. semantic-overlap / host-inside-host-suffix
+### 2029. semantic-overlap / host-inside-host-suffix
 - left: `HOST,launcher-public-service-prod06.ol.epicgames.com -> 游戏商店 (local-game-store-launcher-public-service-prod06-ol-epicgames-com)`
 - right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
 - decision: `ordered-overlap` -> `HOST,launcher-public-service-prod06.ol.epicgames.com -> 游戏商店 (local-game-store-launcher-public-service-prod06-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2027. semantic-overlap / host-inside-host-suffix
+### 2030. semantic-overlap / host-inside-host-suffix
 - left: `HOST,entitlement-public-service-prod08.ol.epicgames.com -> 游戏商店 (local-game-store-entitlement-public-service-prod08-ol-epicgames-com)`
 - right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
 - decision: `ordered-overlap` -> `HOST,entitlement-public-service-prod08.ol.epicgames.com -> 游戏商店 (local-game-store-entitlement-public-service-prod08-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2028. semantic-overlap / host-inside-host-suffix
+### 2031. semantic-overlap / host-inside-host-suffix
 - left: `HOST,catalog-public-service-prod06.ol.epicgames.com -> 游戏商店 (local-game-store-catalog-public-service-prod06-ol-epicgames-com)`
 - right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
 - decision: `ordered-overlap` -> `HOST,catalog-public-service-prod06.ol.epicgames.com -> 游戏商店 (local-game-store-catalog-public-service-prod06-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2029. semantic-overlap / host-inside-host-suffix
+### 2032. semantic-overlap / host-inside-host-suffix
 - left: `HOST,orderprocessor-public-service-ecomprod01.ol.epicgames.com -> 游戏商店 (local-game-store-orderprocessor-public-service-ecomprod01-ol-epicgames-com)`
 - right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
 - decision: `ordered-overlap` -> `HOST,orderprocessor-public-service-ecomprod01.ol.epicgames.com -> 游戏商店 (local-game-store-orderprocessor-public-service-ecomprod01-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
+### 2033. semantic-overlap / host-inside-host-suffix
+- left: `HOST,launcherwaitingroom-public-service-prod06.ol.epicgames.com -> 游戏商店 (local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com)`
+- right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
+- decision: `ordered-overlap` -> `HOST,launcherwaitingroom-public-service-prod06.ol.epicgames.com -> 游戏商店 (local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
+### 2034. semantic-overlap / host-inside-host-suffix
+- left: `HOST,launcher-website-prod07.ol.epicgames.com -> 游戏商店 (local-game-store-launcher-website-prod07-ol-epicgames-com)`
+- right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
+- decision: `ordered-overlap` -> `HOST,launcher-website-prod07.ol.epicgames.com -> 游戏商店 (local-game-store-launcher-website-prod07-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
+### 2035. semantic-overlap / host-inside-host-suffix
+- left: `HOST,accounts.launcher-website-prod07.ol.epicgames.com -> 游戏商店 (local-game-store-accounts-launcher-website-prod07-ol-epicgames-com)`
+- right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
+- decision: `ordered-overlap` -> `HOST,accounts.launcher-website-prod07.ol.epicgames.com -> 游戏商店 (local-game-store-accounts-launcher-website-prod07-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
+### 2036. semantic-overlap / host-inside-host-suffix
+- left: `HOST,accountportal-website-prod07.ol.epicgames.com -> 游戏商店 (local-game-store-accountportal-website-prod07-ol-epicgames-com)`
+- right: `HOST-SUFFIX,ol.epicgames.com -> direct (magicrule-direct)`
+- decision: `ordered-overlap` -> `HOST,accountportal-website-prod07.ol.epicgames.com -> 游戏商店 (local-game-store-accountportal-website-prod07-ol-epicgames-com)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
+
 ## game-store ↔ proxy
 
-### 2030. exact-policy / same-rule-different-policy
+### 2037. exact-policy / same-rule-different-policy
 - left: `HOST-SUFFIX,steamcommunity.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,steamcommunity.com -> 游戏商店 (local-game-store-steamcommunity-com)`
 - decision: `prefer-value-category` -> `HOST-SUFFIX,steamcommunity.com -> 游戏商店 (local-game-store-steamcommunity-com)` (An explicit value-category override applies to this exact conflict.)
 
 ## china-services ↔ proxy
 
-### 2031. semantic-overlap / host-inside-host-suffix
+### 2038. semantic-overlap / host-inside-host-suffix
 - left: `HOST,login.alibaba.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,alibaba.com -> direct (magicrule-china-services-alibaba)`
 - decision: `ordered-overlap` -> `HOST,login.alibaba.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2032. semantic-overlap / host-inside-host-suffix
+### 2039. semantic-overlap / host-inside-host-suffix
 - left: `HOST,merchant-rating.alibaba.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,alibaba.com -> direct (magicrule-china-services-alibaba)`
 - decision: `ordered-overlap` -> `HOST,merchant-rating.alibaba.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2033. semantic-overlap / host-inside-host-suffix
+### 2040. semantic-overlap / host-inside-host-suffix
 - left: `HOST,c.mi.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,c.mi.com -> direct (magicrule-china-services-xiaomi)`
 - decision: `ordered-overlap` -> `HOST,c.mi.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2034. semantic-overlap / host-inside-host-suffix
+### 2041. semantic-overlap / host-inside-host-suffix
 - left: `HOST,c.mi.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,mi.com -> direct (magicrule-china-services-xiaomi)`
 - decision: `ordered-overlap` -> `HOST,c.mi.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2035. semantic-overlap / host-inside-host-suffix
+### 2042. semantic-overlap / host-inside-host-suffix
 - left: `HOST,new.c.mi.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,c.mi.com -> direct (magicrule-china-services-xiaomi)`
 - decision: `ordered-overlap` -> `HOST,new.c.mi.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2036. semantic-overlap / host-inside-host-suffix
+### 2043. semantic-overlap / host-inside-host-suffix
 - left: `HOST,new.c.mi.com -> 全球加速 (rulego-proxy)`
 - right: `HOST-SUFFIX,mi.com -> direct (magicrule-china-services-xiaomi)`
 - decision: `ordered-overlap` -> `HOST,new.c.mi.com -> 全球加速 (rulego-proxy)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
 ## china-direct ↔ proxy
 
-### 2037. semantic-overlap / host-keyword-overlap
+### 2044. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt1-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt1-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2038. semantic-overlap / host-keyword-overlap
+### 2045. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt2-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt2-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2039. semantic-overlap / host-keyword-overlap
+### 2046. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt3-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt3-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2040. semantic-overlap / host-keyword-overlap
+### 2047. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt4-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt4-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2041. semantic-overlap / host-keyword-overlap
+### 2048. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt5-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt5-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2042. semantic-overlap / host-keyword-overlap
+### 2049. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt6-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt6-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2043. semantic-overlap / host-keyword-overlap
+### 2050. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt7-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt7-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2044. semantic-overlap / host-keyword-overlap
+### 2051. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,alt8-mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,alt8-mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)
 
-### 2045. semantic-overlap / host-keyword-overlap
+### 2052. semantic-overlap / host-keyword-overlap
 - left: `HOST-KEYWORD,google -> 全球加速 (rulego-proxy)`
 - right: `HOST,mtalk.google.com -> direct (magicrule-google)`
 - decision: `ordered-overlap` -> `HOST,mtalk.google.com -> direct (magicrule-google)` (Both rules are retained. A more specific rule must be evaluated before its broader overlap.)

@@ -118,9 +118,27 @@ class PriorityRegressionTests(unittest.TestCase):
             "cp4.cloudflare.com": "苹果服务",
             "store.steampowered.com": "游戏商店",
             "steamcommunity.com": "游戏商店",
+            "cmp1-hkg1.steamserver.net": "游戏商店",
+            "cmp2-dfw2.steamserver.net": "游戏商店",
+            "ext1-maa2.steamserver.net": "游戏商店",
+            "ext2-maa2.steamserver.net": "游戏商店",
+            "cdn.steamusercontent.com": "游戏商店",
             "store.epicgames.com": "游戏商店",
             "account-public-service-prod03.ol.epicgames.com": "游戏商店",
+            "launcherwaitingroom-public-service-prod06.ol.epicgames.com": "游戏商店",
+            "launcher-website-prod07.ol.epicgames.com": "游戏商店",
+            "accounts.launcher-website-prod07.ol.epicgames.com": "游戏商店",
+            "accountportal-website-prod07.ol.epicgames.com": "游戏商店",
+            "static-assets-prod.epicgames.com": "游戏商店",
+            "store-site-backend-static.ak.epicgames.com": "游戏商店",
+            "store-content.ak.epicgames.com": "游戏商店",
+            "library-service.live.use1a.on.epicgames.com": "游戏商店",
+            "datastorage-public-service-liveegs.live.use1a.on.epicgames.com": "游戏商店",
             "cache14-dfw2.steamcontent.com": "游戏下载",
+            "steampipe.akamaized.net": "游戏下载",
+            "client-update.steamstatic.com": "游戏下载",
+            "client-update.fastly.steamstatic.com": "游戏下载",
+            "client-update.akamai.steamstatic.com": "游戏下载",
             "download2.epicgames.com": "游戏下载",
             "epicgames-download1.akamaized.net": "游戏下载",
             "api-glb-sea.smoot.apple.com": "苹果服务",
@@ -137,6 +155,10 @@ class PriorityRegressionTests(unittest.TestCase):
                         result = simulate_route(rules, RouteProbe(domain=domain))
                         self.assertIsNotNone(result, domain)
                         self.assertEqual(result.policy, policy, domain)
+                    for domain in ("ipv6check-http.steamserver.net", "ye1.c.lencr.org", "other.akamaized.net"):
+                        result = simulate_route(rules, RouteProbe(domain=domain))
+                        if result is not None:
+                            self.assertNotIn(result.policy, {"游戏商店", "游戏下载"}, domain)
                     if target == "mihomo":
                         for executable in ("qbittorrent.exe", "aria2c.exe"):
                             result = simulate_route(rules, RouteProbe(process=executable))

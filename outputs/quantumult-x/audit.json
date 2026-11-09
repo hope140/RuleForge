@@ -1,9 +1,9 @@
 {
-  "kept_rule_count": 14481,
-  "safe_rule_count": 14170,
-  "conflicted_rule_count": 1832,
+  "kept_rule_count": 14497,
+  "safe_rule_count": 14186,
+  "conflicted_rule_count": 1840,
   "duplicate_count": 682,
-  "conflict_count": 2043,
+  "conflict_count": 2050,
   "shared_infrastructure_risk_count": 15,
   "duplicates": [
     {
@@ -36756,6 +36756,188 @@
     },
     {
       "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com",
+        "source_format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "rule_type": "HOST",
+        "value": "launcherwaitingroom-public-service-prod06.ol.epicgames.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST,launcherwaitingroom-public-service-prod06.ol.epicgames.com"
+      },
+      "right": {
+        "source_id": "magicrule-direct",
+        "source_format": "quantumult-x",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "ol.epicgames.com",
+        "options": [],
+        "line_number": 202,
+        "raw": "HOST-SUFFIX,ol.epicgames.com,Direct"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "local-game-store-launcher-website-prod07-ol-epicgames-com",
+        "source_format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "rule_type": "HOST",
+        "value": "launcher-website-prod07.ol.epicgames.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST,launcher-website-prod07.ol.epicgames.com"
+      },
+      "right": {
+        "source_id": "magicrule-direct",
+        "source_format": "quantumult-x",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "ol.epicgames.com",
+        "options": [],
+        "line_number": 202,
+        "raw": "HOST-SUFFIX,ol.epicgames.com,Direct"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "local-game-store-accounts-launcher-website-prod07-ol-epicgames-com",
+        "source_format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "rule_type": "HOST",
+        "value": "accounts.launcher-website-prod07.ol.epicgames.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST,accounts.launcher-website-prod07.ol.epicgames.com"
+      },
+      "right": {
+        "source_id": "magicrule-direct",
+        "source_format": "quantumult-x",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "ol.epicgames.com",
+        "options": [],
+        "line_number": 202,
+        "raw": "HOST-SUFFIX,ol.epicgames.com,Direct"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "local-game-store-accountportal-website-prod07-ol-epicgames-com",
+        "source_format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "rule_type": "HOST",
+        "value": "accountportal-website-prod07.ol.epicgames.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST,accountportal-website-prod07.ol.epicgames.com"
+      },
+      "right": {
+        "source_id": "magicrule-direct",
+        "source_format": "quantumult-x",
+        "category": "china-direct",
+        "policy": "direct",
+        "rule_type": "HOST-SUFFIX",
+        "value": "ol.epicgames.com",
+        "options": [],
+        "line_number": 202,
+        "raw": "HOST-SUFFIX,ol.epicgames.com,Direct"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "local-game-download-client-update-steamstatic-com",
+        "source_format": "quantumult-x",
+        "category": "game-download",
+        "policy": "游戏下载",
+        "rule_type": "HOST",
+        "value": "client-update.steamstatic.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST,client-update.steamstatic.com"
+      },
+      "right": {
+        "source_id": "local-game-store-steamstatic-com",
+        "source_format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "rule_type": "HOST-SUFFIX",
+        "value": "steamstatic.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST-SUFFIX,steamstatic.com"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "local-game-download-client-update-fastly-steamstatic-com",
+        "source_format": "quantumult-x",
+        "category": "game-download",
+        "policy": "游戏下载",
+        "rule_type": "HOST",
+        "value": "client-update.fastly.steamstatic.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST,client-update.fastly.steamstatic.com"
+      },
+      "right": {
+        "source_id": "local-game-store-steamstatic-com",
+        "source_format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "rule_type": "HOST-SUFFIX",
+        "value": "steamstatic.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST-SUFFIX,steamstatic.com"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
+      "relation": "host-inside-host-suffix",
+      "left": {
+        "source_id": "local-game-download-client-update-akamai-steamstatic-com",
+        "source_format": "quantumult-x",
+        "category": "game-download",
+        "policy": "游戏下载",
+        "rule_type": "HOST",
+        "value": "client-update.akamai.steamstatic.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST,client-update.akamai.steamstatic.com"
+      },
+      "right": {
+        "source_id": "local-game-store-steamstatic-com",
+        "source_format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "rule_type": "HOST-SUFFIX",
+        "value": "steamstatic.com",
+        "options": [],
+        "line_number": 1,
+        "raw": "HOST-SUFFIX,steamstatic.com"
+      }
+    },
+    {
+      "kind": "semantic-overlap",
       "relation": "nested-host-suffix",
       "left": {
         "source_id": "magicrule-global-media-disney",
@@ -69771,12 +69953,12 @@
       "value": "azurefd.net"
     }
   ],
-  "conflict_free_rule_count": 12649,
-  "resolved_rule_count": 14170,
+  "conflict_free_rule_count": 12657,
+  "resolved_rule_count": 14186,
   "resolution": {
-    "resolved_rule_count": 14170,
+    "resolved_rule_count": 14186,
     "rejected_rule_count": 311,
-    "resolved_conflict_count": 2043,
+    "resolved_conflict_count": 2050,
     "blackmatrix_preferred_conflict_count": 0,
     "source_preferred_conflict_count": 0,
     "direct_preferred_conflict_count": 0,
@@ -69786,7 +69968,7 @@
     "protective_reject_conflict_count": 24,
     "fallback_conflict_count": 0,
     "priority_override_rule_count": 92,
-    "ordered_overlap_count": 1722,
+    "ordered_overlap_count": 1729,
     "unresolved_conflict_count": 0,
     "decisions": [
       {
@@ -85406,6 +85588,146 @@
           "rule_type": "HOST-SUFFIX",
           "value": "ol.epicgames.com",
           "policy": "direct"
+        },
+        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "launcherwaitingroom-public-service-prod06.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "loser": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "local-game-store-launcher-website-prod07-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "launcher-website-prod07.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "loser": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "local-game-store-accounts-launcher-website-prod07-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "accounts.launcher-website-prod07.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "loser": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "local-game-store-accountportal-website-prod07-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "accountportal-website-prod07.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "loser": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "local-game-download-client-update-steamstatic-com",
+          "category": "game-download",
+          "rule_type": "HOST",
+          "value": "client-update.steamstatic.com",
+          "policy": "游戏下载"
+        },
+        "loser": {
+          "source_id": "local-game-store-steamstatic-com",
+          "category": "game-store",
+          "rule_type": "HOST-SUFFIX",
+          "value": "steamstatic.com",
+          "policy": "游戏商店"
+        },
+        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "local-game-download-client-update-fastly-steamstatic-com",
+          "category": "game-download",
+          "rule_type": "HOST",
+          "value": "client-update.fastly.steamstatic.com",
+          "policy": "游戏下载"
+        },
+        "loser": {
+          "source_id": "local-game-store-steamstatic-com",
+          "category": "game-store",
+          "rule_type": "HOST-SUFFIX",
+          "value": "steamstatic.com",
+          "policy": "游戏商店"
+        },
+        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "kind": "semantic-overlap",
+        "relation": "host-inside-host-suffix",
+        "decision": "ordered-overlap",
+        "winner": {
+          "source_id": "local-game-download-client-update-akamai-steamstatic-com",
+          "category": "game-download",
+          "rule_type": "HOST",
+          "value": "client-update.akamai.steamstatic.com",
+          "policy": "游戏下载"
+        },
+        "loser": {
+          "source_id": "local-game-store-steamstatic-com",
+          "category": "game-store",
+          "rule_type": "HOST-SUFFIX",
+          "value": "steamstatic.com",
+          "policy": "游戏商店"
         },
         "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
       },
@@ -118468,6 +118790,125 @@
           "rule_type": "HOST-SUFFIX",
           "value": "ol.epicgames.com",
           "policy": "direct"
+        },
+        "reason": "A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "before": {
+          "source_id": "local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "launcherwaitingroom-public-service-prod06.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "after": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "before": {
+          "source_id": "local-game-store-launcher-website-prod07-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "launcher-website-prod07.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "after": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "before": {
+          "source_id": "local-game-store-accounts-launcher-website-prod07-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "accounts.launcher-website-prod07.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "after": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "before": {
+          "source_id": "local-game-store-accountportal-website-prod07-ol-epicgames-com",
+          "category": "game-store",
+          "rule_type": "HOST",
+          "value": "accountportal-website-prod07.ol.epicgames.com",
+          "policy": "游戏商店"
+        },
+        "after": {
+          "source_id": "magicrule-direct",
+          "category": "china-direct",
+          "rule_type": "HOST-SUFFIX",
+          "value": "ol.epicgames.com",
+          "policy": "direct"
+        },
+        "reason": "A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "before": {
+          "source_id": "local-game-download-client-update-steamstatic-com",
+          "category": "game-download",
+          "rule_type": "HOST",
+          "value": "client-update.steamstatic.com",
+          "policy": "游戏下载"
+        },
+        "after": {
+          "source_id": "local-game-store-steamstatic-com",
+          "category": "game-store",
+          "rule_type": "HOST-SUFFIX",
+          "value": "steamstatic.com",
+          "policy": "游戏商店"
+        },
+        "reason": "A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "before": {
+          "source_id": "local-game-download-client-update-fastly-steamstatic-com",
+          "category": "game-download",
+          "rule_type": "HOST",
+          "value": "client-update.fastly.steamstatic.com",
+          "policy": "游戏下载"
+        },
+        "after": {
+          "source_id": "local-game-store-steamstatic-com",
+          "category": "game-store",
+          "rule_type": "HOST-SUFFIX",
+          "value": "steamstatic.com",
+          "policy": "游戏商店"
+        },
+        "reason": "A more specific rule must be evaluated before its broader overlap."
+      },
+      {
+        "before": {
+          "source_id": "local-game-download-client-update-akamai-steamstatic-com",
+          "category": "game-download",
+          "rule_type": "HOST",
+          "value": "client-update.akamai.steamstatic.com",
+          "policy": "游戏下载"
+        },
+        "after": {
+          "source_id": "local-game-store-steamstatic-com",
+          "category": "game-store",
+          "rule_type": "HOST-SUFFIX",
+          "value": "steamstatic.com",
+          "policy": "游戏商店"
         },
         "reason": "A more specific rule must be evaluated before its broader overlap."
       },

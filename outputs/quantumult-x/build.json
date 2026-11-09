@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-09T03:45:44.392149+00:00",
+  "generated_at_utc": "2026-11-09T09:15:39.126226+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1515,6 +1515,37 @@
         "enabled": true
       },
       {
+        "id": "local-game-store-steam-connection-managers",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST-WILDCARD,cmp*.steamserver.net",
+        "parser": "quantumult-x",
+        "enabled": true,
+        "notes": "Steam Connection Manager hosts listed by the Steam server directory."
+      },
+      {
+        "id": "local-game-store-steam-external-connection-managers",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST-WILDCARD,ext*.steamserver.net",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-steamusercontent-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST-SUFFIX,steamusercontent.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
         "id": "local-game-store-steamcommunity-com",
         "kind": "inline",
         "format": "quantumult-x",
@@ -1635,12 +1666,142 @@
         "enabled": true
       },
       {
+        "id": "local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,launcherwaitingroom-public-service-prod06.ol.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-launcher-website-prod07-ol-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,launcher-website-prod07.ol.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-accounts-launcher-website-prod07-ol-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,accounts.launcher-website-prod07.ol.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-accountportal-website-prod07-ol-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,accountportal-website-prod07.ol.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-static-assets-prod-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,static-assets-prod.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-store-site-backend-static-ak-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,store-site-backend-static.ak.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-store-content-ak-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,store-content.ak.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-library-service-live-use1a-on-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,library-service.live.use1a.on.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-store-datastorage-public-service-liveegs-live-use1a-on-epicgames-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-store",
+        "policy": "游戏商店",
+        "url": "inline:HOST,datastorage-public-service-liveegs.live.use1a.on.epicgames.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
         "id": "local-game-download-steamcontent-com",
         "kind": "inline",
         "format": "quantumult-x",
         "category": "game-download",
         "policy": "游戏下载",
         "url": "inline:HOST-SUFFIX,steamcontent.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-download-steampipe-akamaized-net",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-download",
+        "policy": "游戏下载",
+        "url": "inline:HOST,steampipe.akamaized.net",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-download-client-update-steamstatic-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-download",
+        "policy": "游戏下载",
+        "url": "inline:HOST,client-update.steamstatic.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-download-client-update-fastly-steamstatic-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-download",
+        "policy": "游戏下载",
+        "url": "inline:HOST,client-update.fastly.steamstatic.com",
+        "parser": "quantumult-x",
+        "enabled": true
+      },
+      {
+        "id": "local-game-download-client-update-akamai-steamstatic-com",
+        "kind": "inline",
+        "format": "quantumult-x",
+        "category": "game-download",
+        "policy": "游戏下载",
+        "url": "inline:HOST,client-update.akamai.steamstatic.com",
         "parser": "quantumult-x",
         "enabled": true
       },
@@ -1706,20 +1867,20 @@
       }
     ]
   },
-  "source_count": 157,
-  "enabled_source_count": 157,
-  "parsed_rule_count": 16733,
-  "curated_rule_count": 15163,
+  "source_count": 173,
+  "enabled_source_count": 173,
+  "parsed_rule_count": 16749,
+  "curated_rule_count": 15179,
   "curation_drop_count": 1570,
   "curation_move_count": 32,
-  "candidate_kept_rule_count": 15894,
-  "kept_rule_count": 14481,
-  "safe_rule_count": 14170,
-  "resolved_rule_count": 14170,
-  "conflicted_rule_count": 1832,
+  "candidate_kept_rule_count": 15910,
+  "kept_rule_count": 14497,
+  "safe_rule_count": 14186,
+  "resolved_rule_count": 14186,
+  "conflicted_rule_count": 1840,
   "duplicate_count": 682,
-  "conflict_count": 2043,
-  "resolved_conflict_count": 2043,
+  "conflict_count": 2050,
+  "resolved_conflict_count": 2050,
   "blackmatrix_preferred_conflict_count": 0,
   "source_preferred_conflict_count": 0,
   "direct_preferred_conflict_count": 0,
@@ -1728,15 +1889,15 @@
   "value_category_preferred_conflict_count": 69,
   "protective_reject_conflict_count": 24,
   "fallback_conflict_count": 0,
-  "ordered_overlap_count": 1722,
-  "routing_constraint_count": 1722,
+  "ordered_overlap_count": 1729,
+  "routing_constraint_count": 1729,
   "priority_override_rule_count": 92,
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 15,
   "resolution": {
-    "resolved_rule_count": 14170,
+    "resolved_rule_count": 14186,
     "rejected_rule_count": 311,
-    "resolved_conflict_count": 2043,
+    "resolved_conflict_count": 2050,
     "blackmatrix_preferred_conflict_count": 0,
     "source_preferred_conflict_count": 0,
     "direct_preferred_conflict_count": 0,
@@ -1746,15 +1907,15 @@
     "protective_reject_conflict_count": 24,
     "fallback_conflict_count": 0,
     "priority_override_rule_count": 92,
-    "ordered_overlap_count": 1722,
+    "ordered_overlap_count": 1729,
     "unresolved_conflict_count": 0
   },
   "priority_preview": {
     "mode": "preview-only",
     "active": false,
     "target": "quantumult-x",
-    "ordered_overlap_count": 1722,
-    "live_cross_category_count": 767,
+    "ordered_overlap_count": 1729,
+    "live_cross_category_count": 774,
     "discarded_overlap_count": 955,
     "apple_contract_gap_count": 0,
     "actual_policy_mismatch_count": 4,
@@ -1763,7 +1924,7 @@
     "review_required_count": 2,
     "unwitnessed_count": 0,
     "status_counts": {
-      "enforced": 675,
+      "enforced": 682,
       "equivalent-policy": 88,
       "preview-candidate": 2,
       "review-required": 2
@@ -1987,8 +2148,8 @@
       "policies": [
         "游戏下载"
       ],
-      "rule_count": 7,
-      "source_count": 7
+      "rule_count": 11,
+      "source_count": 11
     },
     {
       "category": "game-store",
@@ -1998,8 +2159,8 @@
       "policies": [
         "游戏商店"
       ],
-      "rule_count": 13,
-      "source_count": 13
+      "rule_count": 25,
+      "source_count": 25
     },
     {
       "category": "alipay",
@@ -2297,8 +2458,8 @@
       "policies": [
         "游戏下载"
       ],
-      "rule_count": 7,
-      "source_count": 7
+      "rule_count": 11,
+      "source_count": 11
     },
     {
       "category": "game-store",
@@ -2308,8 +2469,8 @@
       "policies": [
         "游戏商店"
       ],
-      "rule_count": 13,
-      "source_count": 13
+      "rule_count": 25,
+      "source_count": 25
     },
     {
       "category": "alipay",
@@ -3635,6 +3796,33 @@
       "issue_count": 0
     },
     {
+      "id": "local-game-store-steam-connection-managers",
+      "url": "inline:HOST-WILDCARD,cmp*.steamserver.net",
+      "resolved_url": "inline:HOST-WILDCARD,cmp*.steamserver.net",
+      "sha256": "ec5d8d0fca3ee30e6db437ee56365940dcb27c7f1ac25b91e8516b5c136cb892",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-steam-external-connection-managers",
+      "url": "inline:HOST-WILDCARD,ext*.steamserver.net",
+      "resolved_url": "inline:HOST-WILDCARD,ext*.steamserver.net",
+      "sha256": "e0c0e84af62fd3692f43fb2d1212d4b4fa7d90bbce7614ce8c5ca31aec59c6f5",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-steamusercontent-com",
+      "url": "inline:HOST-SUFFIX,steamusercontent.com",
+      "resolved_url": "inline:HOST-SUFFIX,steamusercontent.com",
+      "sha256": "e6763cfb7bf8afae74a2065248a4be4ad0143298d3bd6b05db11058b5af3adad",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
       "id": "local-game-store-steamcommunity-com",
       "url": "inline:HOST-SUFFIX,steamcommunity.com",
       "resolved_url": "inline:HOST-SUFFIX,steamcommunity.com",
@@ -3743,10 +3931,127 @@
       "issue_count": 0
     },
     {
+      "id": "local-game-store-launcherwaitingroom-public-service-prod06-ol-epicgames-com",
+      "url": "inline:HOST,launcherwaitingroom-public-service-prod06.ol.epicgames.com",
+      "resolved_url": "inline:HOST,launcherwaitingroom-public-service-prod06.ol.epicgames.com",
+      "sha256": "4bf786491c3f5fc744f8057d74d25cf7954c6ce90ccd4713cd9b688f316d1f8a",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-launcher-website-prod07-ol-epicgames-com",
+      "url": "inline:HOST,launcher-website-prod07.ol.epicgames.com",
+      "resolved_url": "inline:HOST,launcher-website-prod07.ol.epicgames.com",
+      "sha256": "283ee1d4a50d6cebc8e21b8d753f9259e5d555275beb041a982811304c9d3438",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-accounts-launcher-website-prod07-ol-epicgames-com",
+      "url": "inline:HOST,accounts.launcher-website-prod07.ol.epicgames.com",
+      "resolved_url": "inline:HOST,accounts.launcher-website-prod07.ol.epicgames.com",
+      "sha256": "41fccb8f01233e6acb9bb54e4b96fd5f81ed2f9327ebc84792e7f65d9db3c086",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-accountportal-website-prod07-ol-epicgames-com",
+      "url": "inline:HOST,accountportal-website-prod07.ol.epicgames.com",
+      "resolved_url": "inline:HOST,accountportal-website-prod07.ol.epicgames.com",
+      "sha256": "5e046c224b6b6cfa61e2b5b8c8143cc18e963a05e57821f9b13b0c0194ebc5a7",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-static-assets-prod-epicgames-com",
+      "url": "inline:HOST,static-assets-prod.epicgames.com",
+      "resolved_url": "inline:HOST,static-assets-prod.epicgames.com",
+      "sha256": "7c8f33c4012e25c60947fe78e4d1b1bcf6b6690d81f68bb600b4b9f6b885288a",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-store-site-backend-static-ak-epicgames-com",
+      "url": "inline:HOST,store-site-backend-static.ak.epicgames.com",
+      "resolved_url": "inline:HOST,store-site-backend-static.ak.epicgames.com",
+      "sha256": "7f315dde4c76ebd85474288eb19c89a40a6b850018b9a1ba5a4ef089a35fe5e0",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-store-content-ak-epicgames-com",
+      "url": "inline:HOST,store-content.ak.epicgames.com",
+      "resolved_url": "inline:HOST,store-content.ak.epicgames.com",
+      "sha256": "351e09b6c059c181ed3d4ae22a53b2ee07efeeeb536689b2ad24d52c0227258e",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-library-service-live-use1a-on-epicgames-com",
+      "url": "inline:HOST,library-service.live.use1a.on.epicgames.com",
+      "resolved_url": "inline:HOST,library-service.live.use1a.on.epicgames.com",
+      "sha256": "3215cc50fc0cb44dac79c83ab3cb3f6e70e654fb239394911128c6e030b1b379",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-store-datastorage-public-service-liveegs-live-use1a-on-epicgames-com",
+      "url": "inline:HOST,datastorage-public-service-liveegs.live.use1a.on.epicgames.com",
+      "resolved_url": "inline:HOST,datastorage-public-service-liveegs.live.use1a.on.epicgames.com",
+      "sha256": "da3697ad15a2cc427699260a33b39b890ce22d33110d5ffada0a20da8fed22ae",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
       "id": "local-game-download-steamcontent-com",
       "url": "inline:HOST-SUFFIX,steamcontent.com",
       "resolved_url": "inline:HOST-SUFFIX,steamcontent.com",
       "sha256": "1513fa593edf589154b9348cdb2b103907e6c4efd9ecf5a4d87618b6458a203a",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-download-steampipe-akamaized-net",
+      "url": "inline:HOST,steampipe.akamaized.net",
+      "resolved_url": "inline:HOST,steampipe.akamaized.net",
+      "sha256": "e5d2283cf6bf348fe53f7adf2a89c594faa59d36832f789e22db47d8e5ea4fd9",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-download-client-update-steamstatic-com",
+      "url": "inline:HOST,client-update.steamstatic.com",
+      "resolved_url": "inline:HOST,client-update.steamstatic.com",
+      "sha256": "bc7e0c8f047a7d00cb0443655740f522acd7e09c581ac0d67b9af4fd447696a0",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-download-client-update-fastly-steamstatic-com",
+      "url": "inline:HOST,client-update.fastly.steamstatic.com",
+      "resolved_url": "inline:HOST,client-update.fastly.steamstatic.com",
+      "sha256": "eecd7048efdc2ec0439d4f665ed7757704580f8f4ef5d8e7e70b4e96c515cf35",
+      "from_cache": true,
+      "rule_count": 1,
+      "issue_count": 0
+    },
+    {
+      "id": "local-game-download-client-update-akamai-steamstatic-com",
+      "url": "inline:HOST,client-update.akamai.steamstatic.com",
+      "resolved_url": "inline:HOST,client-update.akamai.steamstatic.com",
+      "sha256": "6a388ddf1b20ccf2504d6e640b33804250fe42286109c9c2fed2e1a314f4cf52",
       "from_cache": true,
       "rule_count": 1,
       "issue_count": 0
