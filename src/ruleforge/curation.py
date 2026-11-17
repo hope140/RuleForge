@@ -106,7 +106,16 @@ ROUTING_RULE_EXCLUSIONS = frozenset(
 # an explicit AI/Apple owner.  Remove only the known endpoint, not the whole
 # parent domain.
 BUSINESS_RULE_EXCLUSIONS = frozenset(
-    {("proxy", "HOST", "gateway.icloud.com")}
+    {
+        ("proxy", "HOST", "gateway.icloud.com"),
+        # Shared Facebook CDN wildcard has no verified AI-only boundary.
+        # Keep the established social fbcdn.net route; do not exclude precise
+        # AI hosts or all Facebook content from other business categories.
+        ("ai", "HOST-WILDCARD", "scontent-*.xx.fbcdn.net"),
+        # Datadog documents this as its shared US5 log API, not an AI tenant.
+        # Claude uses it, but hostname routing cannot identify the sender.
+        ("ai", "HOST", "http-intake.logs.us5.datadoghq.com"),
+    }
 )
 
 # Keep the source manifests stable while correcting a few high-confidence

@@ -586,6 +586,13 @@ def _preferred_category_rule(
 
 def _value_category_rule(conflict: Conflict) -> tuple[Rule, Rule] | None:
     categories = frozenset((conflict.left.category, conflict.right.category))
+    # Meta Graph API is shared Facebook/WhatsApp infrastructure, not AI-only.
+    # This exception is exact-host-only; never promote a broader Facebook rule.
+    # https://developers.facebook.com/docs/graph-api/overview/
+    if (conflict.kind == "exact-policy" and categories == {"ai", "social"}
+            and all(rule.rule_type == "HOST" and rule.value == "graph.facebook.com"
+                    for rule in (conflict.left, conflict.right))):
+        return _preferred_category_rule(conflict, "social")
     if (categories == {"microsoft", "china-direct"}
             and conflict.left.value == conflict.right.value
             and all(rule.rule_type in {"HOST", "HOST-SUFFIX"} for rule in (conflict.left, conflict.right))

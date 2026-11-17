@@ -1,0 +1,52 @@
+name: Diagnose rule conflicts
+on:
+  push:
+    branches: [work/ruleforge-conflict-diagnostics]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        manifest: [quantumultx, mihomo]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Refresh and audit without publishing
+        run: >-
+          python tools/ruleforge.py build
+          --manifest sources/${{ matrix.manifest }}.yaml
+          --refresh --fail-on-conflict
+          --output-dir "${{ runner.temp }}/candidate-${{ matrix.manifest }}"
+          --diagnostics-dir "${{ runner.temp }}/diagnostics-${{ matrix.manifest }}"
+      - name: Verify freshly generated routes in an isolated copy
+        run: |
+          cp -a . "${{ runner.temp }}/validation"
+          target="${{ matrix.manifest }}"
+          if [ "$target" = quantumultx ]; then target=quantumult-x; fi
+          cp -a "${{ runner.temp }}/candidate-${{ matrix.manifest }}/." "${{ runner.temp }}/validation/outputs/$target/"
+          cd "${{ runner.temp }}/validation"
+          python tools/ruleforge.py sync-qx-profile
+          python tools/ruleforge.py sync-mihomo-profile
+          python -m unittest discover -s tests -v
+      - name: Preserve public-source diagnosis
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rule-diagnostics-${{ matrix.manifest }}
+          path: |
+            ${{ runner.temp }}/diagnostics-${{ matrix.manifest }}
+            ${{ runner.temp }}/candidate-${{ matrix.manifest }}
+            .cache/ruleforge
+          include-hidden-files: true
+          retention-days: 7

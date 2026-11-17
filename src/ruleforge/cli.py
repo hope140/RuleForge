@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import shutil
 import sys
 import tempfile
@@ -104,6 +105,12 @@ def _build(args: argparse.Namespace) -> int:
         raise ManifestError(f"unsupported target: {target}")
     output_dir = Path(args.output_dir or f"outputs/{target}")
     cache_dir = Path(args.cache_dir)
+    diagnostics_dir = Path(args.diagnostics_dir) if args.diagnostics_dir else None
+    if diagnostics_dir is not None:
+        diagnostic_path, output_path = diagnostics_dir.resolve(), output_dir.resolve()
+        if (diagnostic_path == output_path or diagnostic_path in output_path.parents
+                or output_path in diagnostic_path.parents):
+            raise ManifestError("diagnostics directory must not overlap the output directory")
     all_rules = []
     parse_issues = []
     fetch_errors = []
@@ -197,6 +204,33 @@ def _build(args: argparse.Namespace) -> int:
                 file=sys.stderr,
             )
             return 3
+    if diagnostics_dir is not None:
+        unresolved = resolution.unresolved_decisions
+        counts = Counter(
+            (item.conflict.kind, *sorted((item.conflict.left.category, item.conflict.right.category)))
+            for item in unresolved
+        )
+        render_json({
+            "generated_at_utc": generated_at_utc,
+            "target": target,
+            "sources": source_metadata,
+            "summary": resolution.to_summary_dict(),
+            "unresolved_groups": [
+                {"kind": key[0], "categories": list(key[1:]), "count": count}
+                for key, count in counts.most_common()
+            ],
+            "unresolved": [
+                {"conflict": item.conflict.to_dict(), "reason": item.reason}
+                for item in unresolved
+            ],
+        }, diagnostics_dir / "conflicts.json")
+        for key, count in counts.most_common(10):
+            print(f"unresolved group: {key[0]} {key[1]} / {key[2]} = {count}")
+        for item in unresolved[:10]:
+            conflict = item.conflict
+            print(f"unresolved sample: {conflict.left.rule_type},{conflict.left.value} "
+                  f"{conflict.left.source_id}:{conflict.left.policy} / "
+                  f"{conflict.right.source_id}:{conflict.right.policy}")
     if args.fail_on_conflict and resolution.unresolved_decisions:
         print(
             f"error: unresolved conflicts={len(resolution.unresolved_decisions)}; "
@@ -377,6 +411,7 @@ def build_parser() -> argparse.ArgumentParser:
     build = subparsers.add_parser("build", help="fetch, parse, audit and render rules")
     _manifest_arg(build)
     build.add_argument("--output-dir")
+    build.add_argument("--diagnostics-dir", help="independent audit directory; never publishes rules")
     build.add_argument("--cache-dir", default=".cache/ruleforge")
     build.add_argument("--timeout", type=float, default=30.0)
     build.add_argument("--offline", action="store_true")

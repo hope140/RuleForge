@@ -80,15 +80,15 @@ sources:
     enabled: true
     notes: 作为 AI 交叉来源，按 Mihomo Classical 规则参与统一去重和冲突审计。
 
-  - id: magicrule-apple
+  - id: snapshot-reviewed-apple
     kind: filter
     format: clash
     category: apple
     policy: 苹果服务
-    url: https://magicrule.pages.dev/data/index/Mihomo.json#Apple
-    resolver: magicrule
+    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/mihomo/categories/safe/apple.list
     parser: clash-classical
     enabled: true
+    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: magicrule-apple-media
     kind: filter
@@ -128,7 +128,7 @@ sources:
     url: https://magicrule.pages.dev/data/index/Mihomo.json#AppleProxy
     resolver: magicrule
     parser: clash-classical
-    enabled: true
+    enabled: false
 
   - id: magicrule-apple-tv
     kind: filter
@@ -280,15 +280,15 @@ sources:
     parser: clash-classical
     enabled: true
 
-  - id: magicrule-telegram
+  - id: snapshot-reviewed-telegram
     kind: filter
     format: clash
     category: telegram
     policy: 电报代理
-    url: https://magicrule.pages.dev/data/index/Mihomo.json#Telegram
-    resolver: magicrule
+    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/mihomo/categories/safe/telegram.list
     parser: clash-classical
     enabled: true
+    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: magicrule-social-twitter
     kind: filter
@@ -827,15 +827,15 @@ sources:
     parser: surge
     enabled: true
 
-  - id: magicrule-direct
+  - id: snapshot-reviewed-china-direct
     kind: filter
     format: clash
     category: china-direct
     policy: direct
-    url: https://magicrule.pages.dev/data/index/Mihomo.json#Direct
-    resolver: magicrule
+    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/mihomo/categories/safe/china-direct.list
     parser: clash-classical
     enabled: true
+    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: rulego-proxy-plus
     kind: filter
