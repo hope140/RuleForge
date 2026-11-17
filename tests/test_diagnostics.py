@@ -91,6 +91,22 @@ class DiagnosticsTests(unittest.TestCase):
         self.assertEqual(len(result.dropped), 1)
         self.assertEqual(result.dropped[0].reason, 'business-category-correction')
 
+    def test_anthropic_telemetry_respects_shared_service_boundary(self):
+        from ruleforge.curation import curate_rules
+        from ruleforge.model import Rule
+        shared = Rule('magicrule-anthropic', 'quantumult-x', 'ai', 'AI',
+                      'HOST', 'http-intake.logs.us5.datadoghq.com')
+        scoped = Rule('magicrule-anthropic', 'quantumult-x', 'ai', 'AI',
+                      'HOST', 'o1158394.ingest.us.sentry.io')
+        core = Rule('magicrule-anthropic', 'quantumult-x', 'ai', 'AI',
+                    'HOST-SUFFIX', 'anthropic.com')
+        reject = Rule('privacy', 'surge', 'privacy', 'reject',
+                      'HOST', 'http-intake.logs.us5.datadoghq.com')
+        result = curate_rules([shared, scoped, core, reject])
+        self.assertEqual(result.rules, (scoped, core, reject))
+        self.assertEqual(len(result.dropped), 1)
+        self.assertEqual(result.dropped[0].reason, 'business-category-correction')
+
 
 if __name__ == '__main__':
     unittest.main()
