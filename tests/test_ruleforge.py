@@ -279,8 +279,8 @@ sources:
 
     def test_mihomo_manifest_uses_native_clash_sources(self) -> None:
         _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
-        magicrule = [source for source in sources if source.resolver == "magicrule"]
-        self.assertEqual(len(magicrule), 77)
+        magicrule = [source for source in sources if source.resolver == "magicrule" and source.enabled]
+        self.assertEqual(len(magicrule), 73)
         self.assertTrue(all(source.format == "clash" for source in magicrule))
         self.assertTrue(all(source.parser == "clash-classical" for source in magicrule))
         self.assertTrue(all("/data/index/Mihomo.json#" in source.url for source in magicrule))

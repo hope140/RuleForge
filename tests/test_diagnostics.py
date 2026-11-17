@@ -43,6 +43,32 @@ class DiagnosticsTests(unittest.TestCase):
                 self.assertEqual(main(args + ['--diagnostics-dir', str(path)]), 1)
                 self.assertEqual(sentinel.read_bytes(), b'existing published rules\n')
 
+    def test_graph_api_stays_social_without_reclassifying_meta_ai(self):
+        from ruleforge.audit import audit_rules, resolve_conflicts
+        from ruleforge.model import Rule
+        rules = [Rule(source, "quantumult-x", category, policy, "HOST", "graph.facebook.com")
+                 for source, category, policy in [('rulego-ai-supplement', 'ai', 'AI'),
+                                                  ('magicrule-social-whatsapp', 'social', '全球加速')]]
+        result = resolve_conflicts(audit_rules(rules))
+        self.assertEqual(result.rules, (rules[1],))
+        self.assertEqual(result.unresolved_decisions, ())
+        ai = Rule('test', 'quantumult-x', 'ai', 'AI', 'HOST-SUFFIX', 'meta.ai')
+        self.assertIn(ai, resolve_conflicts(audit_rules([*rules, ai])).rules)
+        reject = Rule('reject', 'quantumult-x', 'reject', 'reject', 'HOST', 'graph.facebook.com')
+        self.assertEqual(resolve_conflicts(audit_rules([*rules, reject])).rules, (reject,))
+
+    def test_quarantine_uses_immutable_same_target_snapshots(self):
+        from ruleforge.manifest import load_manifest
+        for name, target in [('quantumultx', 'quantumult-x'), ('mihomo', 'mihomo')]:
+            _, sources = load_manifest(ROOT / 'sources' / (name + '.yaml'))
+            snapshots = [s for s in sources if s.id.startswith('snapshot-reviewed-')]
+            self.assertEqual({s.category for s in snapshots}, {'apple', 'telegram', 'china-direct'})
+            for source in snapshots:
+                self.assertIn('/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/' + target + '/', source.url)
+                self.assertEqual(source.resolver, '')
+                self.assertTrue(source.enabled)
+            self.assertFalse(next(s for s in sources if s.id == 'magicrule-apple-proxy').enabled)
+
 
 if __name__ == '__main__':
     unittest.main()

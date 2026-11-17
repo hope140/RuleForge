@@ -109,7 +109,7 @@ Mihomo 模板在 AI 规则后使用 `GEOSITE,openai,AI` 覆盖官方 OpenAI 域�
 
 ## 规则来源
 
-当前主要来源为 [MagicRule](https://github.com/magical404/MagicRule)，并使用 [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo) 与 [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 补充和交叉检查。每个客户端接入 77 个 MagicRule 分类，刷新时通过客户端索引和分类 manifest 解析当前规则文件并核验上游 SHA256，避免固定内容哈希地址后停止更新。
+当前主要来源为 [MagicRule](https://github.com/magical404/MagicRule)，并使用 [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo) 与 [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) 补充和交叉检查。原接入每客户端 77 个 MagicRule 分类；当前 4 个异常来源被临时隔离，73 个继续刷新（见[上游隔离说明](docs/upstream-quarantine.md)），刷新时通过客户端索引和分类 manifest 解析当前规则文件并核验上游 SHA256，避免固定内容哈希地址后停止更新。
 
 原 Blackmatrix 远程来源已经由 MagicRule 接替。Npmjs 对应新站 NPM；Claude、Civitai、Apple ID/邮件、Google Drive、BiliBili 国际版、Paramount+ 和 Peacock 的既有规则以可审阅的本地补充保留，不再从旧仓库下载。新站 Copilot 分类包含其他 AI 厂商，因此只纳入明确的 Copilot 服务端点，其余服务继续由各自来源负责。分类映射、补充规则和兼容处理见[迁移说明](docs/magicrule-migration.md)。
 

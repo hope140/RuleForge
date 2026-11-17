@@ -33,6 +33,7 @@ jobs:
           --manifest sources/quantumultx.yaml
           --refresh
           --fail-on-conflict
+          --diagnostics-dir "${{ runner.temp }}/diagnostics-quantumultx"
 
       - name: Refresh, build and audit Mihomo rules
         run: >-
@@ -40,6 +41,7 @@ jobs:
           --manifest sources/mihomo.yaml
           --refresh
           --fail-on-conflict
+          --diagnostics-dir "${{ runner.temp }}/diagnostics-mihomo"
 
       - name: Sync example profile and test freshly generated outputs
         run: |
@@ -248,3 +250,12 @@ jobs:
               test -s "$downloaded"
             done
           done
+
+      - name: Preserve refresh diagnosis
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-diagnostics
+          path: ${{ runner.temp }}/diagnostics-*
+          retention-days: 7
+          if-no-files-found: ignore

@@ -29,6 +29,16 @@ jobs:
           --refresh --fail-on-conflict
           --output-dir "${{ runner.temp }}/candidate-${{ matrix.manifest }}"
           --diagnostics-dir "${{ runner.temp }}/diagnostics-${{ matrix.manifest }}"
+      - name: Verify freshly generated routes in an isolated copy
+        run: |
+          cp -a . "${{ runner.temp }}/validation"
+          target="${{ matrix.manifest }}"
+          if [ "$target" = quantumultx ]; then target=quantumult-x; fi
+          cp -a "${{ runner.temp }}/candidate-${{ matrix.manifest }}/." "${{ runner.temp }}/validation/outputs/$target/"
+          cd "${{ runner.temp }}/validation"
+          python tools/ruleforge.py sync-qx-profile
+          python tools/ruleforge.py sync-mihomo-profile
+          python -m unittest discover -s tests -v
       - name: Preserve public-source diagnosis
         if: always()
         uses: actions/upload-artifact@v4
@@ -36,6 +46,7 @@ jobs:
           name: rule-diagnostics-${{ matrix.manifest }}
           path: |
             ${{ runner.temp }}/diagnostics-${{ matrix.manifest }}
+            ${{ runner.temp }}/candidate-${{ matrix.manifest }}
             .cache/ruleforge
           include-hidden-files: true
           retention-days: 7

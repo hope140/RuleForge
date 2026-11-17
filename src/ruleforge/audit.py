@@ -476,6 +476,9 @@ _CATEGORY_PREFERENCES: dict[frozenset[str], str] = {
 }
 
 _VALUE_CATEGORY_PREFERENCES: dict[tuple[frozenset[str], str], str] = {
+    # Meta Graph API is shared Facebook/WhatsApp infrastructure, not AI-only.
+    # https://developers.facebook.com/docs/graph-api/overview/
+    (frozenset(("ai", "social")), "graph.facebook.com"): "social",
     (frozenset(("ai", "developer")), "grazie.aws.intellij.net"): "ai",
     (frozenset(("ai", "github")), "copilot-proxy.githubusercontent.com"): "ai",
     (frozenset(("ai", "github")), "copilot-telemetry-service.githubusercontent.com"): "github",
