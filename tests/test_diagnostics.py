@@ -56,6 +56,15 @@ class DiagnosticsTests(unittest.TestCase):
         self.assertIn(ai, resolve_conflicts(audit_rules([*rules, ai])).rules)
         reject = Rule('reject', 'quantumult-x', 'reject', 'reject', 'HOST', 'graph.facebook.com')
         self.assertEqual(resolve_conflicts(audit_rules([*rules, reject])).rules, (reject,))
+        from ruleforge.audit import _value_category_rule
+        for kind, value in [('HOST-SUFFIX', 'facebook.com'),
+                            ('HOST-SUFFIX', 'graph.facebook.com'),
+                            ('HOST-KEYWORD', 'facebook')]:
+            broad = Rule('social', 'quantumult-x', 'social', '全球加速', kind, value)
+            audit = audit_rules([rules[0], broad])
+            self.assertTrue(audit.conflicts)
+            for conflict in audit.conflicts:
+                self.assertIsNone(_value_category_rule(conflict))
 
     def test_quarantine_uses_immutable_same_target_snapshots(self):
         from ruleforge.manifest import load_manifest
