@@ -78,6 +78,19 @@ class DiagnosticsTests(unittest.TestCase):
                 self.assertTrue(source.enabled)
             self.assertFalse(next(s for s in sources if s.id == 'magicrule-apple-proxy').enabled)
 
+    def test_shared_facebook_cdn_is_not_pinned_to_ai(self):
+        from ruleforge.curation import curate_rules
+        from ruleforge.model import Rule
+        wildcard = Rule('rulego-ai-supplement', 'surge', 'ai', 'AI',
+                        'HOST-WILDCARD', 'scontent-*.xx.fbcdn.net')
+        social = Rule('social', 'quantumult-x', 'social', '全球加速', 'HOST-SUFFIX', 'fbcdn.net')
+        precise = Rule('ai', 'quantumult-x', 'ai', 'AI', 'HOST', 'specific.xx.fbcdn.net')
+        meta = Rule('ai', 'quantumult-x', 'ai', 'AI', 'HOST-SUFFIX', 'meta.ai')
+        result = curate_rules([wildcard, social, precise, meta])
+        self.assertEqual(result.rules, (social, precise, meta))
+        self.assertEqual(len(result.dropped), 1)
+        self.assertEqual(result.dropped[0].reason, 'business-category-correction')
+
 
 if __name__ == '__main__':
     unittest.main()

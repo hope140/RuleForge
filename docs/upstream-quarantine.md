@@ -24,3 +24,29 @@ RuleGo AI 新增 `graph.facebook.com`，与 WhatsApp/social 的现有归属冲�
 上游修复后，在独立分支恢复四个原始来源，对比快照、当前新增/删除以及分类重叠；确认无大批无关域名、双端严格构建及实际路由回归通过，才移除隔离。不能仅因为未决数量变成零就自动恢复，也不能用批量优先级掩盖上游内容异常。
 
 诊断工作流只读、无提交/发布步骤。`--diagnostics-dir` 的报告写入独立目录，保留来源哈希、具体冲突和分组统计；公共来源缓存以 7 天 artifact 保存，便于复现。运行本地诊断也必须与正式输出目录分离。
+
+## 非冲突变更审阅
+
+2026-11-17 来源快照相对已发布规则还有以下变化；不把“无冲突”当作业务正确性的充分证明。
+
+- RuleGo AI 新增 `scontent-*.xx.fbcdn.net`。无法证明该通配范围只用于 AI；历史已审核 social 已含 `HOST-SUFFIX,fbcdn.net` 和 `HOST-KEYWORD,fbcdn`，因此保守地只排除此条 AI 通配规则，维持已有社交路由。不阻断该域名，不强制直连，也不删除具体 AI 主机或 `meta.ai`。风险：如果 Meta AI 某些图片也用这些共享主机，会继续走社交策略而非独立 AI 策略，这是避免将全部共享图片流量划到 AI 的明确取舍。
+- Anthropic 来源新增两个精确日志端点：`http-intake.logs.us5.datadoghq.com`、`o1158394.ingest.us.sentry.io`，保留来源给出的精确主机。没有扩大到 `datadoghq.com` / `sentry.io` 根域。这是上游归属声明，并非我们独立确认全部租户用途。
+- `production-copilot-host-westus.webpubsub.azure.com` 从 Microsoft 的全球加速归入 GitHub，由既有 GitHub/Microsoft 业务优先级裁决。没有扩大到 `azure.com`。
+- 国际媒体新增 `h264.io`，来源给出的流媒体补充项。
+- Google 来源删除 13 个单标签后缀规则，随上游移除。现有服务域名及回归仍保留；单标签后缀不再有专门谷歌策略，可能落入其余规则或默认策略。
+- Mihomo 的部分 IP-ASN 新增 `no-resolve` 选项；审计模型忽略其作为 selector 身份差异，但原生格式保留该选项。这不是更换 ASN 或业务类别。
+
+三份被冻结分类的新输出与已审核版本逐条一致：QX Apple 2098 / Telegram 65 / 中国直连 256 条；Mihomo 分别 2102 / 71 / 293 条。
+
+## 固定快照字节校验
+
+全部来自上述固定 Git 提交，以下是包含注释头的 SHA256：
+
+|目标|分类|SHA256|
+|---|---|---|
+|quantumult-x|apple|`f841490b91553d20f2f19bd6472c143842a8b89b5dc68fe4ab3260c6ebd5be55`|
+|quantumult-x|telegram|`4143d7997696f227808968583a1ea1b17136f9ab925c03e8f3e6feb3c35d648b`|
+|quantumult-x|china-direct|`7faf846d449ee12d393a0e03224360d856ea9372b392ac724f06dfe56e67f18e`|
+|mihomo|apple|`befaaa040fc818c433c6ac8b616342dda628a42fe7c47288f29e7fc812c21edd`|
+|mihomo|telegram|`1fee155f6e1ed64692ddd6b6658ca0a4bab5c22210fcce79d88055973c0c34c7`|
+|mihomo|china-direct|`370c54f6d97e57e01cafcbc79b49c525dde4d4c063bb534658ff9fe65ce0c121`|

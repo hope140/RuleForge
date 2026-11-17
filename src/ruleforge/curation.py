@@ -106,7 +106,13 @@ ROUTING_RULE_EXCLUSIONS = frozenset(
 # an explicit AI/Apple owner.  Remove only the known endpoint, not the whole
 # parent domain.
 BUSINESS_RULE_EXCLUSIONS = frozenset(
-    {("proxy", "HOST", "gateway.icloud.com")}
+    {
+        ("proxy", "HOST", "gateway.icloud.com"),
+        # Shared Facebook CDN wildcard has no verified AI-only boundary.
+        # Keep the established social fbcdn.net route; do not exclude precise
+        # AI hosts or all Facebook content from other business categories.
+        ("ai", "HOST-WILDCARD", "scontent-*.xx.fbcdn.net"),
+    }
 )
 
 # Keep the source manifests stable while correcting a few high-confidence
