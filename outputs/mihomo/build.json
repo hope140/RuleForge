@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-17T07:42:44.494428+00:00",
+  "generated_at_utc": "2026-11-17T10:50:40.509338+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1845,14 +1845,14 @@
   },
   "source_count": 171,
   "enabled_source_count": 170,
-  "parsed_rule_count": 16734,
-  "curated_rule_count": 15171,
+  "parsed_rule_count": 16735,
+  "curated_rule_count": 15172,
   "curation_drop_count": 1563,
   "curation_move_count": 33,
   "candidate_kept_rule_count": 15936,
-  "kept_rule_count": 14529,
-  "safe_rule_count": 14224,
-  "resolved_rule_count": 14224,
+  "kept_rule_count": 14530,
+  "safe_rule_count": 14225,
+  "resolved_rule_count": 14225,
   "conflicted_rule_count": 1817,
   "duplicate_count": 642,
   "conflict_count": 2013,
@@ -1871,7 +1871,7 @@
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 14,
   "resolution": {
-    "resolved_rule_count": 14224,
+    "resolved_rule_count": 14225,
     "rejected_rule_count": 305,
     "resolved_conflict_count": 2013,
     "blackmatrix_preferred_conflict_count": 0,
@@ -2080,7 +2080,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 918,
+      "rule_count": 921,
       "source_count": 1
     },
     {
@@ -2168,7 +2168,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 5400,
+      "rule_count": 5397,
       "source_count": 12
     },
     {
@@ -2258,7 +2258,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 202,
+      "rule_count": 203,
       "source_count": 8
     },
     {
@@ -2390,7 +2390,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 849,
+      "rule_count": 852,
       "source_count": 2
     },
     {
@@ -2478,7 +2478,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 5385,
+      "rule_count": 5382,
       "source_count": 12
     },
     {
@@ -2551,7 +2551,7 @@
       "id": "magicrule-openai",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#OpenAI",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OpenAI_classical_cda01886e7b2ee62.yaml",
-      "sha256": "ea95bed5233820ebde5b1293144ee347bcea574236724f2ca7368a8a6a061740",
+      "sha256": "3271954d784c88b6fe066b14cd00eb6122a6f45890c2825091e4f8726d338ccd",
       "from_cache": false,
       "rule_count": 60,
       "issue_count": 0
@@ -2560,7 +2560,7 @@
       "id": "magicrule-gemini",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Gemini",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Gemini_classical_5cce94bda31ad8d5.yaml",
-      "sha256": "89c850cdbfcc818276d946d4318d77ccb6b90702662002e43207b60a72e99d86",
+      "sha256": "aee9df8a1c4ac6ee44feb0427f35431c5040480a92723be571294e4bc21422e1",
       "from_cache": false,
       "rule_count": 54,
       "issue_count": 0
@@ -2569,7 +2569,7 @@
       "id": "magicrule-copilot",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Copilot",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Copilot_classical_fc7aed44f2e6746c.yaml",
-      "sha256": "fa5f76a3b3763d4cdfbe6614ea12c8a74180b59c53a63c6b8cc5cd962aa21476",
+      "sha256": "1eedaae5d9a6a054561650e757aee4f3fe6e94f15aae44c7693b40af8c80b012",
       "from_cache": false,
       "rule_count": 413,
       "issue_count": 0
@@ -2578,7 +2578,7 @@
       "id": "magicrule-anthropic",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Anthropic",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Anthropic_classical_e8dc18b70475045a.yaml",
-      "sha256": "04e61f1f7f8a49883716d204fcdbac12841cb8928fc3aedc0d1edcfde1658874",
+      "sha256": "fb269304a9e780cd99a5b8b77ebaa6ba637463ce396138164e98e30c35012cb2",
       "from_cache": false,
       "rule_count": 54,
       "issue_count": 0
@@ -2587,9 +2587,9 @@
       "id": "rulego-ai-supplement",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
       "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
-      "sha256": "4d480fb6eefe54e935c63fa50c96db1b47d193ce29a181fb154434b07d82b6e3",
+      "sha256": "815a182344e1a1ab77a2bd3d693a219ec45419490e8bb06cbcd3d130843e79d1",
       "from_cache": false,
-      "rule_count": 76,
+      "rule_count": 77,
       "issue_count": 0
     },
     {
@@ -2614,7 +2614,7 @@
       "id": "magicrule-apple-media",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AppleMedia",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleMedia_classical_91951093a153e994.yaml",
-      "sha256": "f4dd85fc03fff673390ff532017ec35ee8764b4db9f78ccf820d5afaf2ad1c8c",
+      "sha256": "eb4cc1ebff357b889197e43283777729a6168b2e50a2683526cd0900c907c3f8",
       "from_cache": false,
       "rule_count": 52,
       "issue_count": 0
@@ -2623,7 +2623,7 @@
       "id": "magicrule-apple-music",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AppleMusic",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleMusic_classical_d29fca5460d9ff94.yaml",
-      "sha256": "7aedb127b055c90c2f495d862f529f889ad37d3ef00420e29adc0e4e3115278b",
+      "sha256": "4ca94c37cb38cebf0df3860da42ce2b33c545b49f1eec61c0ad80e322519da8d",
       "from_cache": false,
       "rule_count": 18,
       "issue_count": 0
@@ -2632,7 +2632,7 @@
       "id": "magicrule-apple-news",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AppleNews",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleNews_classical_cf057b111b812553.yaml",
-      "sha256": "1144682f9de3882f37cb8c07930160213949fc2af49f80f6e9cf9a82c30f2a5e",
+      "sha256": "7ac7f2fd00e8bc663eaaf2e9b67dacf8ab565298cf7dd1e31e4782b832366f78",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -2641,7 +2641,7 @@
       "id": "magicrule-apple-tv",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AppleTV",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleTV_classical_86f028de323ba85a.yaml",
-      "sha256": "9df276cc68149e563e08abc54ff93e972c5eb00c1a2e35951483bdcdad894fc4",
+      "sha256": "49c6a23ddd39c012ac76afbe8f2e3128b741a193179084799d9d0e49c6b4186e",
       "from_cache": false,
       "rule_count": 8,
       "issue_count": 0
@@ -2650,7 +2650,7 @@
       "id": "magicrule-appstore",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AppStore",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppStore_classical_4b40a053943d24c8.yaml",
-      "sha256": "a4a690f4c00743bb4dc502185fb3248301e61fcdb9eb5e34cc92ed704027e11d",
+      "sha256": "24f037b70deaab2cc36c881863561e3c15c165d3e0be2b40e6a87ef756b53bed",
       "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
@@ -2659,7 +2659,7 @@
       "id": "magicrule-youtube",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#YouTube",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/YouTube_classical_59b6d0fe3b15c19e.yaml",
-      "sha256": "aeb15ed60d53f1a09d3e41354ffa518a91c0e4fc59772e410c0e0298cb7c2299",
+      "sha256": "889fb2763c6b5d5ef44723454d030d60946c8cad69e9abfeaa86a320c11fca71",
       "from_cache": false,
       "rule_count": 191,
       "issue_count": 0
@@ -2668,7 +2668,7 @@
       "id": "magicrule-netflix",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Netflix",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Netflix_classical_c2f68b0a92395ef4.yaml",
-      "sha256": "f2595005ad79498de7b7608c14ace22d93e22a82e33fb80c62d6a7b83db401dd",
+      "sha256": "1b9f9206b088f68a80c67e20b1be2399c24d95a1ff9ff42ffd94b2349e2498d5",
       "from_cache": false,
       "rule_count": 1620,
       "issue_count": 0
@@ -2677,7 +2677,7 @@
       "id": "magicrule-tiktok",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#TikTok",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TikTok_classical_c510421d706b99d3.yaml",
-      "sha256": "ea6100d711c7f51b88ef71b354598e2aba0854c84799a8de99edd9aa836bb055",
+      "sha256": "cc1aa56c73a980d3a762e44626a16f34b13831769c8e3392630b9042c834978a",
       "from_cache": false,
       "rule_count": 66,
       "issue_count": 0
@@ -2686,7 +2686,7 @@
       "id": "magicrule-google-voice",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#GoogleVoice",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GoogleVoice_classical_5939bf00c0227fdc.yaml",
-      "sha256": "0061a02035c50d70b60ab3c768945cc50d4a5feda66ff9bd4eabce03fd8f3783",
+      "sha256": "be79814141330a1f6edf3220b404bd5cafaa9e848a93b50c59738489ef5a3569",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -2695,7 +2695,7 @@
       "id": "magicrule-google",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Google",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Google_classical_fe2edb12daf1b32f.yaml",
-      "sha256": "48b5f7c47f70083b0eb08ae074e8f36380332763c7dd086113412ba894b24cc2",
+      "sha256": "ec43e974c5bac7aadcc122c95d0c76d60a1ea3b9bcfdd4cf1150e0c81e369cce",
       "from_cache": false,
       "rule_count": 1147,
       "issue_count": 0
@@ -2704,7 +2704,7 @@
       "id": "magicrule-google-earth",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#GoogleEarth",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GoogleEarth_classical_6b852c735b9db3cf.yaml",
-      "sha256": "6f126d952e864a5927ac42129c2cfd36efa757b89e0aae16e86d209dd5a29db6",
+      "sha256": "ae4bbf6d886ab54ad72ef0bacf0d00bd85ab9668a67256ddccd824f530bad795",
       "from_cache": false,
       "rule_count": 16,
       "issue_count": 0
@@ -2713,16 +2713,16 @@
       "id": "magicrule-microsoft",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Microsoft",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Microsoft_classical_e67099aa280f921f.yaml",
-      "sha256": "cceffa2e504eea0e5ee9a642177a521c2c7a7d24fbbdb56e126af216f8730212",
+      "sha256": "c376e4d2b40f82d31d2fef205785d8124fa85abb8e0de6ac4d2f5c36e06bcb0e",
       "from_cache": false,
-      "rule_count": 918,
+      "rule_count": 921,
       "issue_count": 0
     },
     {
       "id": "magicrule-onedrive",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#OneDrive",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OneDrive_classical_b66da0833f479d0f.yaml",
-      "sha256": "8bca52706106154a81722cb9129a70db8c791b9d4903c4f9478670ae89c36990",
+      "sha256": "d1801cdf789fbf43b4dfac0946fdcab76968843c71d6ea5cc4594ff31103aba9",
       "from_cache": false,
       "rule_count": 24,
       "issue_count": 0
@@ -2731,7 +2731,7 @@
       "id": "magicrule-dropbox",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Dropbox",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Dropbox_classical_8183d9c29efe5545.yaml",
-      "sha256": "78f0ec99a8ddcabad33e95644e7b73719f2a7c4d096159d99b10ec6934833f3c",
+      "sha256": "b8161e8f4f2f66ac2a98a4d139c2fb25de02ca30e740a4950d0cae83975bd075",
       "from_cache": false,
       "rule_count": 27,
       "issue_count": 0
@@ -2740,7 +2740,7 @@
       "id": "magicrule-mega",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#MEGA",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/MEGA_classical_e5048bca30c502ba.yaml",
-      "sha256": "31cc05835236221adcc8a906330d7ffe7c727f574b04c4680d02798b1cc0796c",
+      "sha256": "5d7f6aff3564299bfbbc61c0c808ec66d5fda23c004eccd3e7a6d6ff968cfa81",
       "from_cache": false,
       "rule_count": 23,
       "issue_count": 0
@@ -2749,7 +2749,7 @@
       "id": "magicrule-bing",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Bing",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Bing_classical_882bef9c77b77af5.yaml",
-      "sha256": "ce8d9633f9146893fb212cc82b48599f353de3450e9fdecff712c703546606a8",
+      "sha256": "44f5bbbdd0aa8545ba16725a26ea05baa679d13869c2fcdfbcc8a6b42e222625",
       "from_cache": false,
       "rule_count": 41,
       "issue_count": 0
@@ -2758,7 +2758,7 @@
       "id": "magicrule-github",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#GitHub",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitHub_classical_66f5a463ca33f147.yaml",
-      "sha256": "adae02862feb26f325b0bbd2ab3ceabfcfebadacaad6069cb2c90f3535b99bd6",
+      "sha256": "3842aec18b4dd5c858801bedb55069c2c603119611e43c14fb7c0311945ceb55",
       "from_cache": false,
       "rule_count": 74,
       "issue_count": 0
@@ -2767,7 +2767,7 @@
       "id": "magicrule-spotify",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Spotify",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Spotify_classical_822ce41d873a2ee4.yaml",
-      "sha256": "b15b937d2c6ac1692fc31b2fffcc10928036e87a42028d1f64a4b1a8d18e0168",
+      "sha256": "6545e38d6243f4273f861e29455a31bbc8d889c8c67cf1ea0ca57c16b680f855",
       "from_cache": false,
       "rule_count": 39,
       "issue_count": 0
@@ -2785,7 +2785,7 @@
       "id": "magicrule-social-twitter",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Twitter",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Twitter_classical_d405159ccf6c8682.yaml",
-      "sha256": "23ccdfece970562d414f11c13e664a2f024fbaf159b7c88e6f7ac80964535279",
+      "sha256": "7f5493e4b6577ae5b3f23f27968196618f590ab3e233caf9a677746ce9728b48",
       "from_cache": false,
       "rule_count": 36,
       "issue_count": 0
@@ -2794,7 +2794,7 @@
       "id": "magicrule-social-facebook",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Facebook",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Facebook_classical_3eb8d1939ee51178.yaml",
-      "sha256": "64d73ec24a3996b24c2f4bdf6a93542783ee859601461d426778cea95ebb732f",
+      "sha256": "1d63357952e1db1488906c602e235cce5131a496ff4127332bbf6bf423066556",
       "from_cache": false,
       "rule_count": 592,
       "issue_count": 0
@@ -2803,7 +2803,7 @@
       "id": "magicrule-social-instagram",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Instagram",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Instagram_classical_8f2bea3580d2acf2.yaml",
-      "sha256": "06ef85acc2fa347a35bc152fabaeceafa15cd58578a9b3a7e128b9b030f50aa9",
+      "sha256": "2d6b16fa60d2956a7a2af78936bc265e4629b771364a44186b54766ec4721242",
       "from_cache": false,
       "rule_count": 76,
       "issue_count": 0
@@ -2812,7 +2812,7 @@
       "id": "magicrule-social-whatsapp",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Whatsapp",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Whatsapp_classical_cd2dafda3f58a9b4.yaml",
-      "sha256": "4570128ae80012e1fa09069dbe769eb20db38b3c0814b4f2246ab6a7b0f45dcc",
+      "sha256": "91365a8c734d81c8eac7103afa4c4838211a21a3f2677d462841c10dd0c3b08d",
       "from_cache": false,
       "rule_count": 30,
       "issue_count": 0
@@ -2821,7 +2821,7 @@
       "id": "magicrule-social-line",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Line",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Line_classical_74c30b8c4a9b2e0e.yaml",
-      "sha256": "4ba2bafd6bafb1e0fd668e4ce4163a9ec4f57dacfa002834ab808ea6497770e2",
+      "sha256": "6b6df33d0c761c00311dd80a3fda1a3d7baa95fc6a4d26ba0655f2c136c787c9",
       "from_cache": false,
       "rule_count": 41,
       "issue_count": 0
@@ -2830,7 +2830,7 @@
       "id": "magicrule-social-kakaotalk",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#KakaoTalk",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/KakaoTalk_classical_f766060b80cf4370.yaml",
-      "sha256": "32d4af155e4b8b4bed37a09c7c623f9593e7c47cacad5c0ea081ca6727159fd5",
+      "sha256": "32e2a40dbe198e4d9990bf387588f284067f1d2b8bfe077b3e9acfbcbaecfbcc",
       "from_cache": false,
       "rule_count": 65,
       "issue_count": 0
@@ -2839,7 +2839,7 @@
       "id": "magicrule-social-discord",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Discord",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Discord_classical_6d212a56316192c6.yaml",
-      "sha256": "a5711a984ec9258bba11e4b785b95c2aa71cc35de0939e516578d06b3a4f6f37",
+      "sha256": "5a965edb29b975d3cae8240991f5dd0ed0e6f6f5e4011393b193e7f742cff88c",
       "from_cache": false,
       "rule_count": 31,
       "issue_count": 0
@@ -2848,7 +2848,7 @@
       "id": "magicrule-social-reddit",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Reddit",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Reddit_classical_cbad68a48ebdfd73.yaml",
-      "sha256": "d41e4401c4e5f652f993ca318956cddab4a4f453b035073be448d1be2e9a8b14",
+      "sha256": "21703bc69e61dbe53702fef2b99e0d5b296a40ea401994471568443159e6cec6",
       "from_cache": false,
       "rule_count": 15,
       "issue_count": 0
@@ -2857,7 +2857,7 @@
       "id": "magicrule-social-threads",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Threads",
       "resolved_url": "https://rule-26r.pages.dev/data/_shared/artifacts/Threads_classical_bc78c862bfbd600c.yaml",
-      "sha256": "747cd4f5726f13bf9b9795ad3199a51ce21a815189709bd025517a7445e8813f",
+      "sha256": "3d9d85a48b0ea219f860ba29c8b31a757ca8c1e3ec2455ac0a3936393b84bea8",
       "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
@@ -2866,7 +2866,7 @@
       "id": "magicrule-developer-gitlab",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#GitLab",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitLab_classical_9c36f4c59060f246.yaml",
-      "sha256": "41a0cdfe7b4a31706d8713bdb7aa595d4368b6f60b5e3252622a043619e46a30",
+      "sha256": "23b128ac74ec87040b7f954ba8b874c6826a5de411c6782932159885f8a1df0f",
       "from_cache": false,
       "rule_count": 8,
       "issue_count": 0
@@ -2875,7 +2875,7 @@
       "id": "magicrule-developer-docker",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Docker",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Docker_classical_65b736f34eb8e008.yaml",
-      "sha256": "e2c3b4013d67dbb4a1738a9256d73eed11daf28aa7a399044504f7105b256f8b",
+      "sha256": "78fd34f41bb8fda56eaf0725aa40a2c6d2e8eb4bd558fc0a3e928de11e48a6f9",
       "from_cache": false,
       "rule_count": 10,
       "issue_count": 0
@@ -2884,7 +2884,7 @@
       "id": "magicrule-developer-figma",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Figma",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Figma_classical_47276f241a62f8b0.yaml",
-      "sha256": "3f00035bd9588de878c8ef866b00a237d1f17fd9e98f739f8e8bfab0733726fe",
+      "sha256": "3bdf0724c631cbced796698903efecb2bfe68952f397298b128e6d9d4af3c5f7",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -2893,7 +2893,7 @@
       "id": "magicrule-developer-notion",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Notion",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Notion_classical_7d77c180a9827eba.yaml",
-      "sha256": "2c5fc2e53acc2a97d54eb414ab7dbe3850acb76c408c2b7751aa65397d68d8da",
+      "sha256": "048dc668c61c2e0f1d0872daca79528d591a5e2ef7d01be22987ee8287706255",
       "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
@@ -2902,7 +2902,7 @@
       "id": "magicrule-developer-npmjs",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#NPM",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/NPM_classical_3cd85be22db5b5f3.yaml",
-      "sha256": "7e950e6ec295701d7e8b6371fc4fe11eb6163ec430768d3a4dd03a92c705455b",
+      "sha256": "dfc4adf6a4a4b25e2d1700160ccc231b4c7551cd73c8de774daf7f303f07ddd8",
       "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
@@ -2911,7 +2911,7 @@
       "id": "magicrule-developer-jetbrains",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Jetbrains",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Jetbrains_classical_23fb1523bfe2f521.yaml",
-      "sha256": "124df08e78b89fd2d3d7688cafc2b975dea931b3570449c239f1495e704f366c",
+      "sha256": "3825cf5e0e167833cabb6e2d119eb71fb33a08897526f767a6e2011de98927db",
       "from_cache": false,
       "rule_count": 26,
       "issue_count": 0
@@ -2920,7 +2920,7 @@
       "id": "magicrule-developer-sourceforge",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#SourceForge",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/SourceForge_classical_4c5a50858cb262e3.yaml",
-      "sha256": "679e9c529a5c804249ba363c93f17008ddaf79e4e5e817adf79589569308c45d",
+      "sha256": "dbb18de7fee5f477eb41166409f4bbf7a6db1c8ba90422c7944714da0392b401",
       "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
@@ -2929,7 +2929,7 @@
       "id": "magicrule-developer-vercel",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Vercel",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Vercel_classical_4ead8ce42aadafcd.yaml",
-      "sha256": "eb76860ba32099272c74593ecfb2755cf34d1683fa379425415c495702e19e88",
+      "sha256": "7ce5761d157e2944f1624c923bbefde4c4b7ef8c9806233c44788af055b0c38b",
       "from_cache": false,
       "rule_count": 30,
       "issue_count": 0
@@ -2938,7 +2938,7 @@
       "id": "magicrule-developer-slack",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Slack",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Slack_classical_e674242c7956c707.yaml",
-      "sha256": "203ca2bd93e16634fb62bdae52fb9562d3d3087cd618ba6783cc2a8610535efc",
+      "sha256": "34c07d5b72640ef85167ee482154beaed77989be604a31a918faf59173ca349c",
       "from_cache": false,
       "rule_count": 11,
       "issue_count": 0
@@ -2965,7 +2965,7 @@
       "id": "magicrule-global-media-disney",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Disney",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Disney_classical_4359ca60d289bb6f.yaml",
-      "sha256": "94dc0d8e7586cd00a1975496a0e916a58cef09f9a43e33815bab3a77e75313bb",
+      "sha256": "8b505627b8d3ed754304fa86754c5f3c9b97cbd77e1d4baaef97acebd2e8b0c9",
       "from_cache": false,
       "rule_count": 250,
       "issue_count": 0
@@ -2974,7 +2974,7 @@
       "id": "magicrule-global-media-hbo",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#HBO",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/HBO_classical_441bde82fa9edd3b.yaml",
-      "sha256": "ec72f172217c808cde5927bb87c4fdb7a416d1f58c79eb88c23168de5173e263",
+      "sha256": "9db9641e48177cbabb6c83b713cd635ceffd2c6ca786531b505084e0e9735cdd",
       "from_cache": false,
       "rule_count": 93,
       "issue_count": 0
@@ -2983,7 +2983,7 @@
       "id": "magicrule-global-media-hulu",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Hulu",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Hulu_classical_3ab1bf5853c5c37d.yaml",
-      "sha256": "0a6f4dc48c819cf2116542e60900b9c675fb5bb8c33a898f3b24170a1dfc7e03",
+      "sha256": "9dffbc2342590f148ac76b257ac7c7fe3e9cd8967454bd0fd0957bc05354a4ae",
       "from_cache": false,
       "rule_count": 59,
       "issue_count": 0
@@ -2992,7 +2992,7 @@
       "id": "magicrule-global-media-amazon-prime-video",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AmazonPrimeVideo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AmazonPrimeVideo_classical_d392e14ba5915e35.yaml",
-      "sha256": "0582c7d214039a01c281a4baa1bd071de6ff17bf34383f73d2137b191c401a7a",
+      "sha256": "d69efffbaceb51aa4d1424fa33bd70211aaac4f627ae17464bebb1dca377c819",
       "from_cache": false,
       "rule_count": 26,
       "issue_count": 0
@@ -3001,7 +3001,7 @@
       "id": "magicrule-global-media-prime-video",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#PrimeVideo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/PrimeVideo_classical_b6b3ccc981f605f8.yaml",
-      "sha256": "032d54abce9cb105c2770416d4419e60047a74076eb883aad51850e99c6adf37",
+      "sha256": "d6548f1ed98daa583db7da14b554f6e9f183bb5a36bbfbfca8ca73c2e741350b",
       "from_cache": false,
       "rule_count": 24,
       "issue_count": 0
@@ -3010,7 +3010,7 @@
       "id": "magicrule-global-media-twitch",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Twitch",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Twitch_classical_eb9925a7faea684e.yaml",
-      "sha256": "481d7e53ab75a12af15f7099e4da642e4e3e245773220299c67461a150481fd8",
+      "sha256": "47d416e706f6e72d30612ad9c8933e1119d534ed2e50b34c16effde70bf3a4b2",
       "from_cache": false,
       "rule_count": 59,
       "issue_count": 0
@@ -3019,7 +3019,7 @@
       "id": "magicrule-global-media-abema-tv",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AbemaTV",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AbemaTV_classical_807b1ae8af5e7b35.yaml",
-      "sha256": "17869a1fbba740c00c924cec528560216bfbe8b39df18d07b33e4b100bb45e8a",
+      "sha256": "47f9580d5513e9e451986d08ce347854da633a8191519dba464cf6cd938daf11",
       "from_cache": false,
       "rule_count": 23,
       "issue_count": 0
@@ -3028,7 +3028,7 @@
       "id": "magicrule-global-media-iqiyi-intl",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#iQIYIIntl",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYIIntl_classical_97f30cd7073efeba.yaml",
-      "sha256": "5307038afc4b62d011d5e94957aed7f3d7ca5902cd1156d8ba6ca86b8e6279e8",
+      "sha256": "6871b477c2e37b68247ce0bdf690e2af15a11d6ee36b12fe4211857ac8940d79",
       "from_cache": false,
       "rule_count": 22,
       "issue_count": 0
@@ -3037,7 +3037,7 @@
       "id": "magicrule-global-media-naver-tv",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#NaverTV",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/NaverTV_classical_f69373b70ccf0e3a.yaml",
-      "sha256": "8a5e4b8f86d2ea29ecc045e2df58a92db4e4aa73537cd966f9f9269d70e264ad",
+      "sha256": "ea1c0d4b09c87e24654a75d4013de89d9cad198189f3a82c557d90620c405bf6",
       "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
@@ -3046,7 +3046,7 @@
       "id": "magicrule-global-media-tvb",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#TVB",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TVB_classical_52b0dcd782451ab7.yaml",
-      "sha256": "7f6f125ea11b71d1272877d24b84e3bc1fbefbe7a771c6e3d1d9e575a1fb7242",
+      "sha256": "8526f7c9b7a367bf0720c79f504eef79e84618f53a481d51f8329bfd86eb14c8",
       "from_cache": false,
       "rule_count": 20,
       "issue_count": 0
@@ -3055,7 +3055,7 @@
       "id": "magicrule-global-media-asian",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AsianMedia",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AsianMedia_classical_042510ed016d25cf.yaml",
-      "sha256": "5d094c46dd386e252f62abb63cd986cf32b6ad53bab47857452683b4fb4c00f7",
+      "sha256": "ec7b79774bc73e0125ed7d82727b4a92ebdb773f83bc86a13a14b14ade539e4c",
       "from_cache": false,
       "rule_count": 19,
       "issue_count": 0
@@ -3064,7 +3064,7 @@
       "id": "magicrule-global-media-joox",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#JOOX",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/JOOX_classical_16bd7ee04ec7d015.yaml",
-      "sha256": "8457e3a9a152d1269453c49488938456a47b6600379015b6087c1833df676a0e",
+      "sha256": "486b729bb305689bb936951b7f42bea6803efe63a9a8b5d64612387a8b71bf9d",
       "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
@@ -3073,7 +3073,7 @@
       "id": "magicrule-global-media-kkbox",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#KKBOX",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/KKBOX_classical_2b9ab40fec93ce43.yaml",
-      "sha256": "db756b94b9f2d602a21cacd3a5ccad20a6dd3795ae9d662432d7ab40710aba97",
+      "sha256": "4ac83fdcd0da72cf5674f41cde17d598cadbf70c1afdd3e3b623d8aff1642c1b",
       "from_cache": false,
       "rule_count": 9,
       "issue_count": 0
@@ -3082,7 +3082,7 @@
       "id": "magicrule-youtube-music",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#YouTubeMusic",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/YouTubeMusic_classical_40446f6e1acd3a36.yaml",
-      "sha256": "c83d363300a9968f5d58b808da01db66d2550bab1434e748fa5a5b8f334f3660",
+      "sha256": "08778348b3b74f508e9eab5f050ec388b92ddbb2584994699674eb0b0cb26ee1",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -3091,7 +3091,7 @@
       "id": "magicrule-china-streaming-bilibili",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#BiliBili",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/BiliBili_classical_e094628621c39bfc.yaml",
-      "sha256": "acea73260e61ad55f154cd8d0e12a68b729a4ff8fe54a31b7e354189c69b4b30",
+      "sha256": "23483332b9f1c142cc6fb35d4d84bef733acfd22edfea897688e387ae628dcb1",
       "from_cache": false,
       "rule_count": 127,
       "issue_count": 0
@@ -3100,7 +3100,7 @@
       "id": "magicrule-china-streaming-youku",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Youku",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Youku_classical_c0d246121f504f1a.yaml",
-      "sha256": "7490950abc74423cbf6aaec4b1ebfa09091ec446b767e1df1d59eda77445538a",
+      "sha256": "68be34af58b5fa4ce98146dcca68847370e70eeb94a2c2e99b7abe9177811320",
       "from_cache": false,
       "rule_count": 60,
       "issue_count": 0
@@ -3109,7 +3109,7 @@
       "id": "magicrule-china-streaming-iqiyi",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#iQIYI",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYI_classical_9762f1d3d0d013dc.yaml",
-      "sha256": "cbc9252f875aafcf0c943d1b7dc853e556d0e9067a23564cfcf4e1a021d88aaf",
+      "sha256": "a817bac3a2beeecb220317b9d9758dc6afe2cdd54a8a346bf32d39f90328195e",
       "from_cache": false,
       "rule_count": 76,
       "issue_count": 0
@@ -3118,7 +3118,7 @@
       "id": "magicrule-china-streaming-acfun",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AcFun",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AcFun_classical_b18f3b5f4b4372fd.yaml",
-      "sha256": "2ae51297ccab510e8033ba5d3f8005d0b1920e57f8ec0cae0d88732f279e26ce",
+      "sha256": "7d037b5de1e1f7171162a5b8b6405e200bbc5a48ad8a62ed093ef1b79c4a82a9",
       "from_cache": false,
       "rule_count": 10,
       "issue_count": 0
@@ -3127,16 +3127,16 @@
       "id": "magicrule-china-services-alibaba",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Alibaba",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Alibaba_classical_ae4d06b78cdea198.yaml",
-      "sha256": "77ca76c20ca5bc637e662539117760b36fae1fdc1ad2bfd2d08ef772496199c3",
+      "sha256": "70b2d2dc390d5e650859dd20055f1d2ee340bfcaedf774569b9d9fed23adfa4e",
       "from_cache": false,
-      "rule_count": 1627,
+      "rule_count": 1624,
       "issue_count": 0
     },
     {
       "id": "magicrule-china-services-baidu",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Baidu",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Baidu_classical_a5f8ba9722539264.yaml",
-      "sha256": "da67f4f1e6880f20598beea1ed66c07fc1d5de5ae6475ae0a8e1b3bec16dec8e",
+      "sha256": "0b83e5a1e7f61c5efb7860fdda80eba55bfb153bca1c0f018041647279132a8d",
       "from_cache": false,
       "rule_count": 337,
       "issue_count": 0
@@ -3145,7 +3145,7 @@
       "id": "magicrule-china-services-tencent",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Tencent",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Tencent_classical_c59bfb7f2928fde2.yaml",
-      "sha256": "f97fe71b34309dbb64558705026cdd0eb77140ccbf1922427047f30c5e1ecdc4",
+      "sha256": "61c9421fc20707c6470bb55ff32c6a1236798cd6ed3f2bd945df63bb134f69fe",
       "from_cache": false,
       "rule_count": 2776,
       "issue_count": 0
@@ -3154,7 +3154,7 @@
       "id": "magicrule-china-services-xiaomi",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#XiaoMi",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/XiaoMi_classical_b52a4f21f89b5ef5.yaml",
-      "sha256": "27a054f8d603954d7ed26623cd20530c155c7c520623f0c5ca512f90069cd9bb",
+      "sha256": "c9501a57814f8c6fb64d3ecbde9b9aace5b5780cb9129156ad724c769e3b02c8",
       "from_cache": false,
       "rule_count": 198,
       "issue_count": 0
@@ -3163,7 +3163,7 @@
       "id": "magicrule-china-services-jingdong",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#JingDong",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/JingDong_classical_a455ebb28217b73e.yaml",
-      "sha256": "e4ae2f541233d347a1b1cc79dd4d9bcf0b81b21617067dbea96cc941224011ca",
+      "sha256": "b9a2cfd24d74678084a35f371e1efd7cdc197bbe806e4da0e064528d39bfe152",
       "from_cache": false,
       "rule_count": 277,
       "issue_count": 0
@@ -3172,7 +3172,7 @@
       "id": "magicrule-china-services-pinduoduo",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Pinduoduo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Pinduoduo_classical_a442634d122a265e.yaml",
-      "sha256": "45ed47152288e59d4c7b3492c3261dd6408d0add18971b5e1ac2b38fee5697ee",
+      "sha256": "40a25eae182cf6be075e86b991e09bf4b239b6d851fa8872296e3c97f83018ef",
       "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
@@ -3181,7 +3181,7 @@
       "id": "magicrule-china-services-meituan",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#MeiTuan",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/MeiTuan_classical_a71b04b32af70b7b.yaml",
-      "sha256": "a4510acbda199e9c52d5f9de631e7171e495d300e1eca081c4b6af02ad6d5209",
+      "sha256": "4da891db64674847f85b8f4301aa5f7ba98142cc557c9a5218ac493edfffb44a",
       "from_cache": false,
       "rule_count": 19,
       "issue_count": 0
@@ -3190,7 +3190,7 @@
       "id": "magicrule-china-services-didi",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#DiDi",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/DiDi_classical_adf00cacc778e5c8.yaml",
-      "sha256": "d4cc128dd876646130034555fc018a15515c1b9557f5e3fa8c2ded4de42b9f2c",
+      "sha256": "aca2b9c6cecc24cdf11e9c6f2bbe1e3f5062626d22a831b0fbca6cfbf03b61b6",
       "from_cache": false,
       "rule_count": 26,
       "issue_count": 0
@@ -3199,7 +3199,7 @@
       "id": "magicrule-china-services-12306",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#12306",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/12306_classical_a8a81cd3e9c56565.yaml",
-      "sha256": "99639a9b32836c40a4d76b6268b46d59102a542e4404c684c224b0b138e1f662",
+      "sha256": "a2389c85a1dfc5d3cbd23b48e33b141af0cfc1f9d888af276cdec4bb80d52b2d",
       "from_cache": false,
       "rule_count": 15,
       "issue_count": 0
@@ -3208,7 +3208,7 @@
       "id": "magicrule-china-services-sina",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Sina",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Sina_classical_9f4de81ac65076bf.yaml",
-      "sha256": "1e6321075b40c2caf10051f6e93ad52976af00650f995159a9e58938c5f03155",
+      "sha256": "ce8c7812c1e7a71d08ab8959ac74f9cb4b4d05ed71df2a1c4892cbed3217911f",
       "from_cache": false,
       "rule_count": 142,
       "issue_count": 0
@@ -3217,7 +3217,7 @@
       "id": "magicrule-china-services-weibo",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Weibo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Weibo_classical_b0ce727871009368.yaml",
-      "sha256": "bda689ef70c76d905210e7258e659c09246e00306df9a25ce567cbf1237e623f",
+      "sha256": "8885b860c293e44cfc71bc7b1fedce074023dd3e7d912c2a956915d59474cb3b",
       "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
@@ -3226,7 +3226,7 @@
       "id": "magicrule-china-services-zhihu",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Zhihu",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Zhihu_classical_9a18393b2929111d.yaml",
-      "sha256": "dfc27869984dee88b8e627361be0ae1fa5d59a46250a664fe4c1c0c28a60f1c0",
+      "sha256": "dfdf1dad5909dec3a1c23abc45dc7d9c4948ee0a1a1042dfccbf000ff78e303e",
       "from_cache": false,
       "rule_count": 6,
       "issue_count": 0
@@ -3235,7 +3235,7 @@
       "id": "magicrule-china-services-douban",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#DouBan",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/DouBan_classical_70d9731c32ed4abe.yaml",
-      "sha256": "89ce89b2374a56fa6ba7bb4b90ab72854c9a1ff858f0004bb526015642d7bc71",
+      "sha256": "b25085c13c8d35891e8a5f4a5405196b44fd1fd7c7ab1ba438a504d518edda4b",
       "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
@@ -3244,7 +3244,7 @@
       "id": "magicrule-alipay",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#AliPay",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AliPay_classical_f046199a4ae2f296.yaml",
-      "sha256": "c5bca87cca6476490890f27e9955efeeea52f96763b7ae5f16479812bba497bd",
+      "sha256": "f8f2c68bd00a574f5a0292e41388c2c1914394cc95e945bf75a651963da79d45",
       "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
@@ -3253,7 +3253,7 @@
       "id": "magicrule-wechat",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#WeChat",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/WeChat_classical_b33d1fc8be9d6b0b.yaml",
-      "sha256": "beefb6ffd5bb8f087db3a0d7325b4ceceb4ea9eb6fc9c3cc4d13a72f7b4fbaa4",
+      "sha256": "3cb9d12099c05e512302bc2d5000f4ee7f75106743a9495b499048e567b3d8f6",
       "from_cache": false,
       "rule_count": 21,
       "issue_count": 0

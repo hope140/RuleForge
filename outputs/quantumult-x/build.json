@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-17T07:42:13.233904+00:00",
+  "generated_at_utc": "2026-11-17T10:49:42.594832+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1869,14 +1869,14 @@
   },
   "source_count": 173,
   "enabled_source_count": 172,
-  "parsed_rule_count": 16658,
-  "curated_rule_count": 15118,
+  "parsed_rule_count": 16659,
+  "curated_rule_count": 15119,
   "curation_drop_count": 1540,
   "curation_move_count": 32,
   "candidate_kept_rule_count": 15874,
-  "kept_rule_count": 14480,
-  "safe_rule_count": 14175,
-  "resolved_rule_count": 14175,
+  "kept_rule_count": 14481,
+  "safe_rule_count": 14176,
+  "resolved_rule_count": 14176,
   "conflicted_rule_count": 1817,
   "duplicate_count": 638,
   "conflict_count": 2011,
@@ -1895,7 +1895,7 @@
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 14,
   "resolution": {
-    "resolved_rule_count": 14175,
+    "resolved_rule_count": 14176,
     "rejected_rule_count": 305,
     "resolved_conflict_count": 2011,
     "blackmatrix_preferred_conflict_count": 0,
@@ -2104,7 +2104,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 919,
+      "rule_count": 922,
       "source_count": 1
     },
     {
@@ -2192,7 +2192,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 5402,
+      "rule_count": 5399,
       "source_count": 12
     },
     {
@@ -2282,7 +2282,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 190,
+      "rule_count": 191,
       "source_count": 8
     },
     {
@@ -2414,7 +2414,7 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 850,
+      "rule_count": 853,
       "source_count": 2
     },
     {
@@ -2502,7 +2502,7 @@
       "policies": [
         "direct"
       ],
-      "rule_count": 5387,
+      "rule_count": 5384,
       "source_count": 12
     },
     {
@@ -2575,7 +2575,7 @@
       "id": "magicrule-openai",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#OpenAI",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OpenAI_rules_194f9925afa57744.list",
-      "sha256": "4510e6c0b2dcc3cb2c3c4d413004b8c578452c7509aee530cf52fe8e300707ec",
+      "sha256": "620f59f52f795831ddac39b82d01346a678126ac026fdc426c516de2661b36b5",
       "from_cache": false,
       "rule_count": 53,
       "issue_count": 0
@@ -2584,7 +2584,7 @@
       "id": "magicrule-gemini",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Gemini",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Gemini_rules_636eeb64c51e7ee6.list",
-      "sha256": "81da2799342b8050dde8c91ddf53067d2e54deefdbe124cf64e0ec5726aeccf2",
+      "sha256": "7556841314cd2afbce999fdf61c0a9b34949ee0e6f978af462751bc123423957",
       "from_cache": false,
       "rule_count": 54,
       "issue_count": 0
@@ -2593,7 +2593,7 @@
       "id": "magicrule-copilot",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Copilot",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Copilot_rules_019506b27dd4c36a.list",
-      "sha256": "56038c70c5c1f960bbbcb2fc6eb6fff4d0479c8a6474d9eab740fa8ac0832dbe",
+      "sha256": "a35834d4ce6aaf7bea25b426253cc12b491fc4aa465eb7324774c929118acd1a",
       "from_cache": false,
       "rule_count": 390,
       "issue_count": 0
@@ -2602,7 +2602,7 @@
       "id": "magicrule-anthropic",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Anthropic",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Anthropic_rules_c755bfcadd066598.list",
-      "sha256": "a3d9666e2bcb614ab04290d22771381cd8221699e5b8f26dfb1191e91c9b5095",
+      "sha256": "e3f0e6b41332533b6ce7680caaf021096184d5a49793d75da55d889f2143571f",
       "from_cache": false,
       "rule_count": 49,
       "issue_count": 0
@@ -2611,9 +2611,9 @@
       "id": "rulego-ai-supplement",
       "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
       "resolved_url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
-      "sha256": "4d480fb6eefe54e935c63fa50c96db1b47d193ce29a181fb154434b07d82b6e3",
+      "sha256": "815a182344e1a1ab77a2bd3d693a219ec45419490e8bb06cbcd3d130843e79d1",
       "from_cache": false,
-      "rule_count": 76,
+      "rule_count": 77,
       "issue_count": 0
     },
     {
@@ -2647,7 +2647,7 @@
       "id": "magicrule-apple-media",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMedia",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleMedia_rules_aad33b7ffdee304d.list",
-      "sha256": "3338509021160c5ce7f0f5feaae376c1e5443b979e9cbf2b35b6bac804d6cb46",
+      "sha256": "7ef832ffbc63ef7e4eedcd8b79863f574ac309894693850950fe7c724e3b168b",
       "from_cache": false,
       "rule_count": 52,
       "issue_count": 0
@@ -2656,7 +2656,7 @@
       "id": "magicrule-apple-music",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleMusic",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleMusic_rules_aa9d57e007c42162.list",
-      "sha256": "937a59dd1304633308bda4c6632eb5ce3ac2db6942bc19582e41667e4a7a76b9",
+      "sha256": "cf870c7b048e400771bfde0e9b65abd7d55aa4418597d58e42b732947012d0bc",
       "from_cache": false,
       "rule_count": 18,
       "issue_count": 0
@@ -2665,7 +2665,7 @@
       "id": "magicrule-apple-news",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleNews",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleNews_rules_e7b82caad7a8e119.list",
-      "sha256": "a54ca7eb14f109d29921c8f2d5b3088213e27792aad4f41f32a883791ba40221",
+      "sha256": "dea15f68956ddd20b28bf1472a364ab452d479bc4e1dd922bedc07baa5a48761",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -2674,7 +2674,7 @@
       "id": "magicrule-apple-tv",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppleTV",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppleTV_rules_cf771653fa2d2e61.list",
-      "sha256": "e5cfd77d38fb68b756978db2c34dd32c3efc109e54b5bd013d2c026dd39d2eac",
+      "sha256": "55e38a633115701fe965cccdaebe846ebeaba3d4ce3d79fb375ff34fe4b0b696",
       "from_cache": false,
       "rule_count": 8,
       "issue_count": 0
@@ -2683,7 +2683,7 @@
       "id": "magicrule-appstore",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AppStore",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AppStore_rules_e5cd4e256705da82.list",
-      "sha256": "024a18b7a846bd5ac79de6bcf2d7a74a2fb3184f1273c46a96f2d119c3f98051",
+      "sha256": "eb4f945c23398a96bcf20c7736504826595acf7db5d63fa5057467b0ea701c9c",
       "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
@@ -2692,7 +2692,7 @@
       "id": "magicrule-youtube",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#YouTube",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/YouTube_rules_82fafe057cef879f.list",
-      "sha256": "feda074fd751ebab9a2a118cd0d95abe83c614ec0bceef4407b8fc0a7165c1e8",
+      "sha256": "d29b771fb728351a3f76ec16c1c284abb7332163eed0f8567ed0d7c24eb24686",
       "from_cache": false,
       "rule_count": 193,
       "issue_count": 0
@@ -2701,7 +2701,7 @@
       "id": "magicrule-netflix",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Netflix",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Netflix_rules_6baa6e1abb8b7973.list",
-      "sha256": "3da074a21793836005361927c0ff27261ee9d5c85d3120e7c310e00ed7efdcb6",
+      "sha256": "aa09e363bd66320d23a69040919224e39e184a44183cdd4129d596f5e12afe52",
       "from_cache": false,
       "rule_count": 1620,
       "issue_count": 0
@@ -2710,7 +2710,7 @@
       "id": "magicrule-tiktok",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#TikTok",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TikTok_rules_91f7adc5c25cabca.list",
-      "sha256": "7b01e47e3b73cf6baba9ae45638c4d7ade498392a22a8daabd60e5cb13526008",
+      "sha256": "df6158850b2e857feae1518ce325b4845ecdbf9f8176a60c119c46082cf7d137",
       "from_cache": false,
       "rule_count": 66,
       "issue_count": 0
@@ -2719,7 +2719,7 @@
       "id": "magicrule-google-voice",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleVoice",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GoogleVoice_rules_d7ad73d5b3292164.list",
-      "sha256": "1dbde93ab51d01e5fc751efc5b3f28536e82447ce415bcbc556cc5270ed08ef1",
+      "sha256": "71271ab1df4a38b15b2ca26343fbcdbdbf5d4798057e8e9acf264b83f029673c",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -2728,7 +2728,7 @@
       "id": "magicrule-google",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Google",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Google_rules_d1123fc9c30418d4.list",
-      "sha256": "34223463ba70cc84f852f452b2405e8fb27c114b2f0ac6d95e70a52ee5eadb03",
+      "sha256": "c51ff3316c3db89fc881223b63e98a02b33324321f1620e71a07fedfe852cea9",
       "from_cache": false,
       "rule_count": 1142,
       "issue_count": 0
@@ -2737,7 +2737,7 @@
       "id": "magicrule-google-earth",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GoogleEarth",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GoogleEarth_rules_a8e26a1a012c3ebf.list",
-      "sha256": "7c59e2a49ab845d36bd529fe9a1139c0def4976cde997a70aad67a593903304f",
+      "sha256": "08844b3a77576f0ba41bb453e1a425e3c91d895a9a7f16d9adbaebb53d27c005",
       "from_cache": false,
       "rule_count": 16,
       "issue_count": 0
@@ -2746,16 +2746,16 @@
       "id": "magicrule-microsoft",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Microsoft",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Microsoft_rules_de644bdb97d4d9ff.list",
-      "sha256": "8f92a0c01eb6cf5976a591b20ccc7f343c9090467703c0ad5df72c1e2da44e60",
+      "sha256": "13c8b127bd01f4d29b801bdf957095a05d8c1e4d3aa468d9f5770445db93db78",
       "from_cache": false,
-      "rule_count": 919,
+      "rule_count": 922,
       "issue_count": 0
     },
     {
       "id": "magicrule-onedrive",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#OneDrive",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OneDrive_rules_73ae902f418a9bc0.list",
-      "sha256": "66c94f4638e961d558b2c550b34abe96438fb16402cfe541e5b763dc52815349",
+      "sha256": "90edef85fbe1a8ef1d6f7c024c9be00c3f1e09ced0f6cc71239e601a643c294b",
       "from_cache": false,
       "rule_count": 22,
       "issue_count": 0
@@ -2764,7 +2764,7 @@
       "id": "magicrule-dropbox",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Dropbox",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Dropbox_rules_a9b45d64639554bb.list",
-      "sha256": "10f4973efee3f1e7779c4b66fc506eadaaab90f68e72add22d8e58f95bab3a14",
+      "sha256": "f409d151a45e41d8a2a2c891f5a067771e148330e62402d51336932a3a27fb76",
       "from_cache": false,
       "rule_count": 27,
       "issue_count": 0
@@ -2773,7 +2773,7 @@
       "id": "magicrule-mega",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#MEGA",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/MEGA_rules_cc9587baaf5421aa.list",
-      "sha256": "3305b8753137f0a7e55a84e943d9e3b0a6a06991e70f019c9ef64041dd904d23",
+      "sha256": "f77338618297830280051796bf5cfbfea2c672f20900033aee0bb67aed568246",
       "from_cache": false,
       "rule_count": 22,
       "issue_count": 0
@@ -2782,7 +2782,7 @@
       "id": "magicrule-bing",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Bing",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Bing_rules_b25bcc7b82afa012.list",
-      "sha256": "9427b9c86cc9fdae91580a13e92271cc43191638d3b75cc8856d06c3ef2434af",
+      "sha256": "a06a1a490a369fd1fb3d3998b3e2977aed2b3c060f526fd08516ec1145165c71",
       "from_cache": false,
       "rule_count": 41,
       "issue_count": 0
@@ -2791,7 +2791,7 @@
       "id": "magicrule-github",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GitHub",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitHub_rules_8ae314ae6a73a225.list",
-      "sha256": "00704af71507e04697be7703141447fb4043f1a09f41431655c295ee93f2610a",
+      "sha256": "8662f6c9521ec24e9d63eb887874a4bf57f4a8e13184867c69bd6e7aae188710",
       "from_cache": false,
       "rule_count": 74,
       "issue_count": 0
@@ -2800,7 +2800,7 @@
       "id": "magicrule-spotify",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Spotify",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Spotify_rules_e2de74aedecac710.list",
-      "sha256": "b58924e9455fc47c27ccf329080253398449f1880c82ddad58161ebc95940d81",
+      "sha256": "5357ea8527dc16ce66f1dd29604bcd276448891b98a09da480b7d68f3f762091",
       "from_cache": false,
       "rule_count": 39,
       "issue_count": 0
@@ -2818,7 +2818,7 @@
       "id": "magicrule-social-twitter",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Twitter",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Twitter_rules_35d2852b8ae02eef.list",
-      "sha256": "b856900f4c5bccba556a4d0445ca552ed76bc578b8a5b295a35c91c8b65f24b4",
+      "sha256": "2b84647d7332faae0d6be9be1ad450d30bb835faf7b53c515053a3865b1c2bf3",
       "from_cache": false,
       "rule_count": 36,
       "issue_count": 0
@@ -2827,7 +2827,7 @@
       "id": "magicrule-social-facebook",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Facebook",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Facebook_rules_47e83cad9c0e1fd2.list",
-      "sha256": "97ba32aa2fcd6563c5546b015caf6273a3d6072aec650fabbab6a38d6917a05b",
+      "sha256": "886f67756b281e2b5ab1471d1973af731b56ee00a4b9a5d717f6d9e797c4a1dd",
       "from_cache": false,
       "rule_count": 592,
       "issue_count": 0
@@ -2836,7 +2836,7 @@
       "id": "magicrule-social-instagram",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Instagram",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Instagram_rules_be400ee3be6dcbd1.list",
-      "sha256": "cfee017fa7f26519c05134adc3c2146fac04ac38582b683d0f88f3aeab3163a0",
+      "sha256": "fd79b9d02d4c1cd0a2e1e654dd296dc594c28ba65e78f55f88fc268856e504a8",
       "from_cache": false,
       "rule_count": 76,
       "issue_count": 0
@@ -2845,7 +2845,7 @@
       "id": "magicrule-social-whatsapp",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Whatsapp",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Whatsapp_rules_540ba7d38c630590.list",
-      "sha256": "cde5ad856155b8b49c18b6547e500dc1671c70155135203c459798af84058e0d",
+      "sha256": "a6f9274ed1478f4c013833628d4a555f61342ecdd877c01e6e7cad125b509f7c",
       "from_cache": false,
       "rule_count": 30,
       "issue_count": 0
@@ -2854,7 +2854,7 @@
       "id": "magicrule-social-line",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Line",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Line_rules_f82449963c701072.list",
-      "sha256": "d3a65424addc92368a3262eafe2bdddc818568e5ae1660f75a841e3de6e93cd6",
+      "sha256": "d9c71284f816aa0d55d1c260b40c2420b74678753460f039fe9acb25b72d9831",
       "from_cache": false,
       "rule_count": 41,
       "issue_count": 0
@@ -2863,7 +2863,7 @@
       "id": "magicrule-social-kakaotalk",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#KakaoTalk",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/KakaoTalk_rules_e6aa6906b170151b.list",
-      "sha256": "72272f9e7a74f4a7aae119d48fea2a2be7a2cc1ab426911dcad66217333c331a",
+      "sha256": "348a1017b18b4499a8e1b79c30a3f7a0d983d4c925bfeb8ac70955438fd30431",
       "from_cache": false,
       "rule_count": 65,
       "issue_count": 0
@@ -2872,7 +2872,7 @@
       "id": "magicrule-social-discord",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Discord",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Discord_rules_c05c363f062b9558.list",
-      "sha256": "c6a3a979f8e44cbd0d1ecabfb8fd2ef7a0997f4a359cc5b1419e757606bfb2ea",
+      "sha256": "e7a903e44d03ec607876eb87597a8024422430930e850c7989b8293fc3df90a9",
       "from_cache": false,
       "rule_count": 31,
       "issue_count": 0
@@ -2881,7 +2881,7 @@
       "id": "magicrule-social-reddit",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Reddit",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Reddit_rules_23e8e269eb8c40d2.list",
-      "sha256": "263c6cae535e9be79a5ebc187b3f33479fd55b8e1330abd9e45302f08dd5ed0b",
+      "sha256": "60fc6d3f1663f7e5c27d507713745bba3610fa1c6e375fe5a884f0311af3edcc",
       "from_cache": false,
       "rule_count": 15,
       "issue_count": 0
@@ -2890,7 +2890,7 @@
       "id": "magicrule-social-threads",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Threads",
       "resolved_url": "https://rule-26r.pages.dev/data/_shared/artifacts/Threads_rules_6ad78fe6c0460829.list",
-      "sha256": "c8c4e1181c6c28af55918a3d3e84288f5087cdaf8c6934851920c912828f01ca",
+      "sha256": "750494449795b704a29dbb10d4854d69125385a4f99f1a35ff39406ba6c6fd2f",
       "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
@@ -2899,7 +2899,7 @@
       "id": "magicrule-developer-gitlab",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#GitLab",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitLab_rules_7435224c094f2142.list",
-      "sha256": "c3a74c43c78349df9580e18700d89548165a314df497061a8d7b895165bd3c81",
+      "sha256": "ba3ba72843a9856276c9e28fa67edbdc0ac14fb358e0e0776b54acaf5400b4c8",
       "from_cache": false,
       "rule_count": 8,
       "issue_count": 0
@@ -2908,7 +2908,7 @@
       "id": "magicrule-developer-docker",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Docker",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Docker_rules_f90eb19f7cb25c86.list",
-      "sha256": "dd5e4089801edec4769f2abae828c48326f3a193dda7edee9dd71b44f2e78f63",
+      "sha256": "9275170a55249fa81ab4844406a16b9f7a26484a35ced781ecd83bd8756193ed",
       "from_cache": false,
       "rule_count": 10,
       "issue_count": 0
@@ -2917,7 +2917,7 @@
       "id": "magicrule-developer-figma",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Figma",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Figma_rules_08091bdf0cbbef27.list",
-      "sha256": "0eb2a60991965092f7eba5071467060e9fc6d91e1ea784f3bc43139935ec3f77",
+      "sha256": "5afc890881728f87ef380e2fa78b278e981dad27752d2d62f128f25b0c123e44",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -2926,7 +2926,7 @@
       "id": "magicrule-developer-notion",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Notion",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Notion_rules_ca839208a396a5a9.list",
-      "sha256": "9209c2512b66a66d76adf08d0cfd1e2cb1fa35dd854a4855da5c1d1ca013ca89",
+      "sha256": "6cdd64e71908070b22a1bb905d8a707dd5a998931a6c46e18bb6dfb6d46eae0e",
       "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
@@ -2935,7 +2935,7 @@
       "id": "magicrule-developer-npmjs",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#NPM",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/NPM_rules_91d6f9b1db747080.list",
-      "sha256": "09f3dbaaaaf3a8b89a8fd3067e3b05c09bfce6743a75ab284241e79ff59c35e5",
+      "sha256": "ac61ced3eb96c57c49980b1ca2146b97bcc9a652a07fb4a47dd46e260d1bed42",
       "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
@@ -2944,7 +2944,7 @@
       "id": "magicrule-developer-jetbrains",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Jetbrains",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Jetbrains_rules_62ab5956fbd0399b.list",
-      "sha256": "23dafac315a860b8cafffc798a676d3e5b000d811353dffa09e0a1cc76a87af2",
+      "sha256": "8ae450718a9d751c54fd7fd0bdabbaf363154d66078ebc47ab4eda3b2663b2cb",
       "from_cache": false,
       "rule_count": 26,
       "issue_count": 0
@@ -2953,7 +2953,7 @@
       "id": "magicrule-developer-sourceforge",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#SourceForge",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/SourceForge_rules_2b326b01fccadb44.list",
-      "sha256": "46753665b5685cc0c771b03a87c4cb368bd6ad88fc9935b91e27c4ed632b0c7b",
+      "sha256": "0f89b3b101a1465ac155d292245bcf56142af8a88e4747d293fd996be2e54f8e",
       "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
@@ -2962,7 +2962,7 @@
       "id": "magicrule-developer-vercel",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Vercel",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Vercel_rules_312ec5423618f477.list",
-      "sha256": "1e130a416015dafac453b5d08a54ff3851d159f85aac470f7f8328d09e6ffd55",
+      "sha256": "64b242ffba46f4739c704a7cce35dca6ea4a9461aab8bc68ae2db5f3e5049c95",
       "from_cache": false,
       "rule_count": 30,
       "issue_count": 0
@@ -2971,7 +2971,7 @@
       "id": "magicrule-developer-slack",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Slack",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Slack_rules_de7177b2992a9bc1.list",
-      "sha256": "7ab2df51f2b9f8340df9a594f73a1970d7a2a6d4c8f1890511776d9ff1edc23e",
+      "sha256": "52af2e9969275fe57ada5f4f5a0a8d17b963da2e9e223e21ccc18caf09580fe2",
       "from_cache": false,
       "rule_count": 11,
       "issue_count": 0
@@ -2998,7 +2998,7 @@
       "id": "magicrule-global-media-disney",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Disney",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Disney_rules_9dcd23156c2640aa.list",
-      "sha256": "cba5a7104ea4749a0d251256f3d8e9eac1ecdca3a141868169a2a46a2602119c",
+      "sha256": "8e9058002ec68d74ce7691a6062eb57616e9b6ee78bc4a286c48ec1bc5f90d62",
       "from_cache": false,
       "rule_count": 248,
       "issue_count": 0
@@ -3007,7 +3007,7 @@
       "id": "magicrule-global-media-hbo",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#HBO",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/HBO_rules_7bb2b26b5a13c71b.list",
-      "sha256": "379026f9e86ac89acbb1f56ede754d269d5bb521ba5957e3711dd88253ec99d1",
+      "sha256": "272f431a6a04e831abdeee6b55f92135dcd20d1f72c27fc96fae133b20a97417",
       "from_cache": false,
       "rule_count": 94,
       "issue_count": 0
@@ -3016,7 +3016,7 @@
       "id": "magicrule-global-media-hulu",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Hulu",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Hulu_rules_99e27aae4f80b90f.list",
-      "sha256": "5db22e592fbf921c36d164e423664b46cb97d4fc81730936ad21ca0ec1a69bfd",
+      "sha256": "2b560419d6ede30739568de82176e6fb13a191e7ec2c018de8056943fc0ef1e9",
       "from_cache": false,
       "rule_count": 58,
       "issue_count": 0
@@ -3025,7 +3025,7 @@
       "id": "magicrule-global-media-amazon-prime-video",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AmazonPrimeVideo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AmazonPrimeVideo_rules_732981d9832821ea.list",
-      "sha256": "abeea74fd69edacb2e0133b9c8df7e76da005b35ff51fbe42cebcfc79b30af12",
+      "sha256": "35a50971b3ee7e5e5c5a75f715dcbbafca3f00e4dc9d6331612bc7cff8a10fb4",
       "from_cache": false,
       "rule_count": 27,
       "issue_count": 0
@@ -3034,7 +3034,7 @@
       "id": "magicrule-global-media-prime-video",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#PrimeVideo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/PrimeVideo_rules_cad791b7223d2bc6.list",
-      "sha256": "e451744a53f9da17d182add7b254c8f3bde616f0d56bdd4ed76b70e2d7fc882f",
+      "sha256": "4c5b05946755a08a21b4cf631bc906624d8a2c73046eb9701e93bae6d06d152d",
       "from_cache": false,
       "rule_count": 24,
       "issue_count": 0
@@ -3043,7 +3043,7 @@
       "id": "magicrule-global-media-twitch",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Twitch",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Twitch_rules_567d40522d52ef93.list",
-      "sha256": "4fa76ef3d4a48a48a746c80fbc1a768e242314dc0a24c242666a48bff4e8c0db",
+      "sha256": "5477a9e7c2c71b95465e5d790d276f9a033cbfdab279ed5051dc4ea08f66aa52",
       "from_cache": false,
       "rule_count": 58,
       "issue_count": 0
@@ -3052,7 +3052,7 @@
       "id": "magicrule-global-media-abema-tv",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AbemaTV",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AbemaTV_rules_afa0f4fc4ae90287.list",
-      "sha256": "d8c38be5f06de73d144542803bb337f3931a008ddd7f3d51df0f7445962fe833",
+      "sha256": "f9377eba2dc43d2e9765646a48d595093b6b6f2d8114d96aeb90d6017c185058",
       "from_cache": false,
       "rule_count": 24,
       "issue_count": 0
@@ -3061,7 +3061,7 @@
       "id": "magicrule-global-media-iqiyi-intl",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYIIntl",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYIIntl_rules_bba58ec9df2bdacf.list",
-      "sha256": "2d7a334dd23b4cfcef7fda383470665b1c8fe6c61e7c64ed35ea3008bbadab9b",
+      "sha256": "5d67871237cad3466612551712770b16c78e766e832960dd6a4b3bbb8a6aef3e",
       "from_cache": false,
       "rule_count": 20,
       "issue_count": 0
@@ -3070,7 +3070,7 @@
       "id": "magicrule-global-media-naver-tv",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#NaverTV",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/NaverTV_rules_424efb2273155f3b.list",
-      "sha256": "3f2ce494f2b6c356fab03e8abb78afa312319413baf8baf4e7e475dc2bef7131",
+      "sha256": "c40b8884d939e8d5396a47a8690d23636db21db6629700132f20a1664369424b",
       "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
@@ -3079,7 +3079,7 @@
       "id": "magicrule-global-media-tvb",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#TVB",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TVB_rules_39cbc3d9c70fff8a.list",
-      "sha256": "7b54656476a607ac41c2a414de271c6dc8f472618d93d666d2a1fda008b44277",
+      "sha256": "9916c403b24140cb7b0704c40b77daf4816036f59f0d7c7466a1396271531bbd",
       "from_cache": false,
       "rule_count": 22,
       "issue_count": 0
@@ -3088,7 +3088,7 @@
       "id": "magicrule-global-media-asian",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AsianMedia",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AsianMedia_rules_01ba9a26ab3e7141.list",
-      "sha256": "1abd9844aa801d844163fedeb827944861ec960f7d3fa37e444932319392d612",
+      "sha256": "06665adb0760b46412a9e63a6b0f9a030869899a8311249c07b116feba18d761",
       "from_cache": false,
       "rule_count": 19,
       "issue_count": 0
@@ -3097,7 +3097,7 @@
       "id": "magicrule-global-media-joox",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#JOOX",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/JOOX_rules_ae1d2092413a04ee.list",
-      "sha256": "aba3c455669700e5323f56305b724ec14f0d987d9d4d9832fed17b2d9cd41ae4",
+      "sha256": "7808d9dcdefd0f026923cf2e8a3134817949170b292f700ce14bdf33aa178196",
       "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
@@ -3106,7 +3106,7 @@
       "id": "magicrule-global-media-kkbox",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#KKBOX",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/KKBOX_rules_2f3c16fdc3989522.list",
-      "sha256": "a456a12f3f80123a79b37e6a660bd3ce806fe5790b5125e125699400ecd6b69d",
+      "sha256": "479267cdce1687d6dd69787622a48ba463b502232d5c189e12ae55d33d5dbdf4",
       "from_cache": false,
       "rule_count": 9,
       "issue_count": 0
@@ -3115,7 +3115,7 @@
       "id": "magicrule-youtube-music",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#YouTubeMusic",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/YouTubeMusic_rules_987066cad8e6a281.list",
-      "sha256": "6b91e57b08eea6408bb8e29c83e8bc19de65a4639b5c5e7c98b96ecd647512c0",
+      "sha256": "5f7b8c7f320dbc9b1a108c3cc52cabb532fd1885f82cbf34f69522d4c4196d40",
       "from_cache": false,
       "rule_count": 1,
       "issue_count": 0
@@ -3124,7 +3124,7 @@
       "id": "magicrule-china-streaming-bilibili",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#BiliBili",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/BiliBili_rules_eaa7f3f129f365c0.list",
-      "sha256": "1d13a1abea8994da4b423bdddd26e4a1a80a3afe7a2c9b53058001bb304ca56c",
+      "sha256": "7735548f072e151edb029fd5a83630efa6ed2a46cec4eed4b30f1c8d87c6fc5c",
       "from_cache": false,
       "rule_count": 125,
       "issue_count": 0
@@ -3133,7 +3133,7 @@
       "id": "magicrule-china-streaming-youku",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Youku",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Youku_rules_b4d6f14725e52440.list",
-      "sha256": "c137deee8461583246935c25270af12a2838298973ffd64a812fec8536aeeab8",
+      "sha256": "a29edd591ea4785b30406e378cb253e5132d6438d69078ecde16cfa82fbe3769",
       "from_cache": false,
       "rule_count": 62,
       "issue_count": 0
@@ -3142,7 +3142,7 @@
       "id": "magicrule-china-streaming-iqiyi",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#iQIYI",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYI_rules_3c9494ad00352fe5.list",
-      "sha256": "c269c427088fa8ffed430cfbbd0f2a99faaece88bb501e7c5b9488bd5d538df1",
+      "sha256": "f4ccc1c73058627f8214118b72c9508a7f78d0518a467f06c21a4eaacb1b796c",
       "from_cache": false,
       "rule_count": 81,
       "issue_count": 0
@@ -3151,7 +3151,7 @@
       "id": "magicrule-china-streaming-acfun",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AcFun",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AcFun_rules_95f6708090e93107.list",
-      "sha256": "7005a5f993ce31f88829d2e4e0de2a51287057e3e382f6460da12329b4d31c55",
+      "sha256": "009822594993b0e341f95136edc5b0eaef26fd7faaa3b3dd9a4c595b5c5ca8a5",
       "from_cache": false,
       "rule_count": 11,
       "issue_count": 0
@@ -3160,16 +3160,16 @@
       "id": "magicrule-china-services-alibaba",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Alibaba",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Alibaba_rules_3f5cfbafcebd3c82.list",
-      "sha256": "22d2878f760413506f44350cb6d89c92b07eff067c613ec2cbd766eeb2bb5d9d",
+      "sha256": "c7120cb0f431e9ad1b106182767acfddb02d10083da114208d2fb2182fde7271",
       "from_cache": false,
-      "rule_count": 1626,
+      "rule_count": 1623,
       "issue_count": 0
     },
     {
       "id": "magicrule-china-services-baidu",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Baidu",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Baidu_rules_cfa3f390b0cce394.list",
-      "sha256": "a66fabaf65a91a124c495cfaec28e9bc3d8bc54bc81043fa2664ca0c26331665",
+      "sha256": "88c9f84293b725de4c9f81218e44a1f765f6a88e788bfdd53517464ae93ccf82",
       "from_cache": false,
       "rule_count": 337,
       "issue_count": 0
@@ -3178,7 +3178,7 @@
       "id": "magicrule-china-services-tencent",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Tencent",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Tencent_rules_a85c384378e7fe8b.list",
-      "sha256": "78fbcf3b1e3f7a8915177d5274b14bf7f2b6d252c31f1bd7bf993f280502e7d6",
+      "sha256": "dabc313c08d92e049456acd55e2e3956522fc11c28c3a90b15eb1e0971c7b9e2",
       "from_cache": false,
       "rule_count": 2781,
       "issue_count": 0
@@ -3187,7 +3187,7 @@
       "id": "magicrule-china-services-xiaomi",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#XiaoMi",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/XiaoMi_rules_29d3ea69ec2ba703.list",
-      "sha256": "940060f781ee70900f6215781859b3394f4aad5f76a80182ac8601ba4359761e",
+      "sha256": "de3f1707632e5db3fe063e2ab9332ecc9378d4eeda07abcbce18e0daf52863e4",
       "from_cache": false,
       "rule_count": 196,
       "issue_count": 0
@@ -3196,7 +3196,7 @@
       "id": "magicrule-china-services-jingdong",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#JingDong",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/JingDong_rules_20c96f0a9ef1e588.list",
-      "sha256": "46a0c4210580ce865d83a042f541c647a2cd499f58e40441ecad9448af0f058d",
+      "sha256": "0ce6a623440a871d1eb5c87315f46e8e4b9cc5f5dfab72279cb3c9ee01fd9120",
       "from_cache": false,
       "rule_count": 277,
       "issue_count": 0
@@ -3205,7 +3205,7 @@
       "id": "magicrule-china-services-pinduoduo",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Pinduoduo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Pinduoduo_rules_fffa017794886f08.list",
-      "sha256": "acc58c910adfe903ecbab0cbbeb25d4fe309d80bf18d4bd99b4c25fd703bb18b",
+      "sha256": "05adfb0a6c1e2bdc70b585c08d47edb60c641708cbd8ad2215e99b87b4c48c7d",
       "from_cache": false,
       "rule_count": 7,
       "issue_count": 0
@@ -3214,7 +3214,7 @@
       "id": "magicrule-china-services-meituan",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#MeiTuan",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/MeiTuan_rules_9bab0ba131b6016b.list",
-      "sha256": "47a17a46293b13b19af10c49dca88ebfd44671408b5ec83e535d76db264b285a",
+      "sha256": "5ece4a38f2ed50d558e6e2276f40da40ba004b52e8aeb9814ab182b6513f2617",
       "from_cache": false,
       "rule_count": 19,
       "issue_count": 0
@@ -3223,7 +3223,7 @@
       "id": "magicrule-china-services-didi",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#DiDi",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/DiDi_rules_fb38d3f925ee9fc1.list",
-      "sha256": "f754cd1f16c183b065e110935ac12686c517437ff6c49125c97aeac9c8d2f5c5",
+      "sha256": "ad80afecca055200e93753829e32aba564ba70f718f66835c4a5227bfe36029e",
       "from_cache": false,
       "rule_count": 26,
       "issue_count": 0
@@ -3232,7 +3232,7 @@
       "id": "magicrule-china-services-12306",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#12306",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/12306_rules_9e9de21cca6d702e.list",
-      "sha256": "ddcc549b076007bdd2ca422415f0aea3feac5174b88cfb4001fd0323737ec54f",
+      "sha256": "d600eb2937b1c8b2f579c0635c07341456e56e9c7f04f4922ae45ceb575b89ef",
       "from_cache": false,
       "rule_count": 15,
       "issue_count": 0
@@ -3241,7 +3241,7 @@
       "id": "magicrule-china-services-sina",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Sina",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Sina_rules_08cf2139ef44babe.list",
-      "sha256": "43e01263484bdd12b4a1e948fb3c711376a12ced19e70ba560bbdeff17d112fb",
+      "sha256": "7059ed9e48b4f435fa99775982915a78024d89899722db9eb2187af45fff39dd",
       "from_cache": false,
       "rule_count": 142,
       "issue_count": 0
@@ -3250,7 +3250,7 @@
       "id": "magicrule-china-services-weibo",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Weibo",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Weibo_rules_b2fd8d4ac71c9351.list",
-      "sha256": "491af69ee2817601df1875d852698e006c72fa05f81c6f9bd6db88779c463816",
+      "sha256": "4116f8216f9df33e5429498871a6dd3271f5650c7f4edc67c327977c35886321",
       "from_cache": false,
       "rule_count": 4,
       "issue_count": 0
@@ -3259,7 +3259,7 @@
       "id": "magicrule-china-services-zhihu",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Zhihu",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Zhihu_rules_f24fc11ab0421a09.list",
-      "sha256": "0aaadc941c9bc640c8805b198577b8603746236f9e5c60eef52a4e94c6fcf655",
+      "sha256": "f5a00473197379a4e7f489c1afc7f926f4a118630ec7704df452191d1264324b",
       "from_cache": false,
       "rule_count": 6,
       "issue_count": 0
@@ -3268,7 +3268,7 @@
       "id": "magicrule-china-services-douban",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#DouBan",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/DouBan_rules_0fb34d449fb84b2b.list",
-      "sha256": "19a06509edb6e8481cbae14d6fd8b5f65045eb0c1b98436ca525f5d6eb1c6de7",
+      "sha256": "3fe8f1bb3b65c2193ab1b49969a65353e601cf431eb3438d54b110c21c36499e",
       "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
@@ -3277,7 +3277,7 @@
       "id": "magicrule-alipay",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#AliPay",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/AliPay_rules_3ced55bb5c2f7596.list",
-      "sha256": "f1d8b3758b211ca6346141b7594fd785b227517b41d4c4faebedb6bb27f3ebd4",
+      "sha256": "d86022d1c3f0479e3227f682a169f96d70d5850a2d535acb091432b3f22db143",
       "from_cache": false,
       "rule_count": 21,
       "issue_count": 0
@@ -3286,7 +3286,7 @@
       "id": "magicrule-wechat",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#WeChat",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/WeChat_rules_5edae392a8febe8e.list",
-      "sha256": "1406e8ea9bfeb56c1004d28b31e35c01ac64067d691a55426d6ce84c2b6dc060",
+      "sha256": "54405354ffc928b6b77616f35099552d054a2f1ff80adcaa03237a19cd776f3e",
       "from_cache": false,
       "rule_count": 21,
       "issue_count": 0

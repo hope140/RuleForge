@@ -1,5 +1,5 @@
 {
-  "kept_rule_count": 15118,
+  "kept_rule_count": 15119,
   "dropped_rule_count": 1540,
   "moved_rule_count": 32,
   "dropped": [
@@ -3999,7 +3999,7 @@
       "policy": "AI",
       "rule_type": "HOST-WILDCARD",
       "value": "scontent-*.xx.fbcdn.net",
-      "line_number": 90,
+      "line_number": 91,
       "raw": "DOMAIN-WILDCARD,scontent-*.xx.fbcdn.net",
       "reason": "business-category-correction"
     },
@@ -4009,7 +4009,7 @@
       "policy": "AI",
       "rule_type": "HOST",
       "value": "www.bing.com",
-      "line_number": 98,
+      "line_number": 99,
       "raw": "DOMAIN,www.bing.com",
       "reason": "shared-microsoft-infrastructure-host"
     },
