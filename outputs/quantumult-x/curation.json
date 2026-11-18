@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 15119,
-  "dropped_rule_count": 1540,
+  "kept_rule_count": 15112,
+  "dropped_rule_count": 1537,
   "moved_rule_count": 32,
   "dropped": [
     {
@@ -3827,39 +3827,9 @@
       "source_id": "magicrule-copilot",
       "category": "ai",
       "policy": "AI",
-      "rule_type": "IP-CIDR",
-      "value": "199.47.142.0/23",
-      "line_number": 394,
-      "raw": "IP-CIDR,199.47.142.0/23,Copilot",
-      "reason": "copilot-source-business-boundary"
-    },
-    {
-      "source_id": "magicrule-copilot",
-      "category": "ai",
-      "policy": "AI",
-      "rule_type": "IP-CIDR",
-      "value": "24.199.123.28/32",
-      "line_number": 395,
-      "raw": "IP-CIDR,24.199.123.28/32,Copilot",
-      "reason": "copilot-source-business-boundary"
-    },
-    {
-      "source_id": "magicrule-copilot",
-      "category": "ai",
-      "policy": "AI",
-      "rule_type": "IP-CIDR",
-      "value": "64.23.132.171/32",
-      "line_number": 396,
-      "raw": "IP-CIDR,64.23.132.171/32,Copilot",
-      "reason": "copilot-source-business-boundary"
-    },
-    {
-      "source_id": "magicrule-copilot",
-      "category": "ai",
-      "policy": "AI",
       "rule_type": "IP6-CIDR",
       "value": "2604:f20::/32",
-      "line_number": 397,
+      "line_number": 394,
       "raw": "IP6-CIDR,2604:f20::/32,Copilot",
       "reason": "copilot-source-business-boundary"
     },
@@ -3869,7 +3839,7 @@
       "policy": "AI",
       "rule_type": "IP6-CIDR",
       "value": "2607:6bc0::/32",
-      "line_number": 398,
+      "line_number": 395,
       "raw": "IP6-CIDR,2607:6bc0::/32,Copilot",
       "reason": "copilot-source-business-boundary"
     },
@@ -3879,7 +3849,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "14061",
-      "line_number": 399,
+      "line_number": 396,
       "raw": "IP-ASN,14061,Copilot",
       "reason": "copilot-source-business-boundary"
     },
@@ -3889,7 +3859,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "399358",
-      "line_number": 400,
+      "line_number": 397,
       "raw": "IP-ASN,399358,Copilot",
       "reason": "copilot-source-business-boundary"
     },
@@ -3899,7 +3869,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "401518",
-      "line_number": 401,
+      "line_number": 398,
       "raw": "IP-ASN,401518,Copilot",
       "reason": "copilot-source-business-boundary"
     },

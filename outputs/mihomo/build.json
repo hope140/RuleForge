@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-17T10:50:40.509338+00:00",
+  "generated_at_utc": "2026-11-18T10:19:03.868837+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1845,18 +1845,18 @@
   },
   "source_count": 171,
   "enabled_source_count": 170,
-  "parsed_rule_count": 16735,
-  "curated_rule_count": 15172,
-  "curation_drop_count": 1563,
+  "parsed_rule_count": 16725,
+  "curated_rule_count": 15165,
+  "curation_drop_count": 1560,
   "curation_move_count": 33,
-  "candidate_kept_rule_count": 15936,
-  "kept_rule_count": 14530,
-  "safe_rule_count": 14225,
-  "resolved_rule_count": 14225,
-  "conflicted_rule_count": 1817,
-  "duplicate_count": 642,
-  "conflict_count": 2013,
-  "resolved_conflict_count": 2013,
+  "candidate_kept_rule_count": 15930,
+  "kept_rule_count": 14524,
+  "safe_rule_count": 14219,
+  "resolved_rule_count": 14219,
+  "conflicted_rule_count": 1816,
+  "duplicate_count": 641,
+  "conflict_count": 2012,
+  "resolved_conflict_count": 2012,
   "blackmatrix_preferred_conflict_count": 0,
   "source_preferred_conflict_count": 0,
   "direct_preferred_conflict_count": 0,
@@ -1865,15 +1865,15 @@
   "value_category_preferred_conflict_count": 70,
   "protective_reject_conflict_count": 23,
   "fallback_conflict_count": 0,
-  "ordered_overlap_count": 1698,
-  "routing_constraint_count": 1698,
+  "ordered_overlap_count": 1697,
+  "routing_constraint_count": 1697,
   "priority_override_rule_count": 93,
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 14,
   "resolution": {
-    "resolved_rule_count": 14225,
+    "resolved_rule_count": 14219,
     "rejected_rule_count": 305,
-    "resolved_conflict_count": 2013,
+    "resolved_conflict_count": 2012,
     "blackmatrix_preferred_conflict_count": 0,
     "source_preferred_conflict_count": 0,
     "direct_preferred_conflict_count": 0,
@@ -1883,15 +1883,15 @@
     "protective_reject_conflict_count": 23,
     "fallback_conflict_count": 0,
     "priority_override_rule_count": 93,
-    "ordered_overlap_count": 1698,
+    "ordered_overlap_count": 1697,
     "unresolved_conflict_count": 0
   },
   "priority_preview": {
     "mode": "preview-only",
     "active": false,
     "target": "mihomo",
-    "ordered_overlap_count": 1698,
-    "live_cross_category_count": 763,
+    "ordered_overlap_count": 1697,
+    "live_cross_category_count": 762,
     "discarded_overlap_count": 935,
     "apple_contract_gap_count": 0,
     "actual_policy_mismatch_count": 4,
@@ -1900,7 +1900,7 @@
     "review_required_count": 2,
     "unwitnessed_count": 0,
     "status_counts": {
-      "enforced": 673,
+      "enforced": 672,
       "equivalent-policy": 86,
       "preview-candidate": 2,
       "review-required": 2
@@ -1970,7 +1970,7 @@
       "policies": [
         "YouTube"
       ],
-      "rule_count": 192,
+      "rule_count": 191,
       "source_count": 2
     },
     {
@@ -2080,8 +2080,8 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 921,
-      "source_count": 1
+      "rule_count": 916,
+      "source_count": 2
     },
     {
       "category": "cloud",
@@ -2280,7 +2280,7 @@
       "policies": [
         "YouTube"
       ],
-      "rule_count": 192,
+      "rule_count": 191,
       "source_count": 2
     },
     {
@@ -2390,8 +2390,8 @@
       "policies": [
         "全球加速"
       ],
-      "rule_count": 852,
-      "source_count": 2
+      "rule_count": 847,
+      "source_count": 3
     },
     {
       "category": "cloud",
@@ -2551,7 +2551,7 @@
       "id": "magicrule-openai",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#OpenAI",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OpenAI_classical_cda01886e7b2ee62.yaml",
-      "sha256": "3271954d784c88b6fe066b14cd00eb6122a6f45890c2825091e4f8726d338ccd",
+      "sha256": "4a9bf9105b29ce9d4cbc4568120f2731fed25925481fb867db4717e955129b82",
       "from_cache": false,
       "rule_count": 60,
       "issue_count": 0
@@ -2560,7 +2560,7 @@
       "id": "magicrule-gemini",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Gemini",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Gemini_classical_5cce94bda31ad8d5.yaml",
-      "sha256": "aee9df8a1c4ac6ee44feb0427f35431c5040480a92723be571294e4bc21422e1",
+      "sha256": "cc58998886d0cb509947c3fc14c11b2ad1037dcc6d9cbba5b9fdff4ee18b9ed8",
       "from_cache": false,
       "rule_count": 54,
       "issue_count": 0
@@ -2569,9 +2569,9 @@
       "id": "magicrule-copilot",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Copilot",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Copilot_classical_fc7aed44f2e6746c.yaml",
-      "sha256": "1eedaae5d9a6a054561650e757aee4f3fe6e94f15aae44c7693b40af8c80b012",
+      "sha256": "c70c4857c8355b712cfa4d3afef9c344d4382cc39bc110c9c163bdfdece32624",
       "from_cache": false,
-      "rule_count": 413,
+      "rule_count": 410,
       "issue_count": 0
     },
     {
@@ -2659,16 +2659,16 @@
       "id": "magicrule-youtube",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#YouTube",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/YouTube_classical_59b6d0fe3b15c19e.yaml",
-      "sha256": "889fb2763c6b5d5ef44723454d030d60946c8cad69e9abfeaa86a320c11fca71",
+      "sha256": "a4eea7308b0ff587111868a330fb62e833a5c8fbb6727c3f392c8ce2130e20e0",
       "from_cache": false,
-      "rule_count": 191,
+      "rule_count": 190,
       "issue_count": 0
     },
     {
       "id": "magicrule-netflix",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Netflix",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Netflix_classical_c2f68b0a92395ef4.yaml",
-      "sha256": "1b9f9206b088f68a80c67e20b1be2399c24d95a1ff9ff42ffd94b2349e2498d5",
+      "sha256": "ea303281a3f2c9fe4a3baf38569a9a6dd3c3ba5652c2f7be111f5ed77bbd2269",
       "from_cache": false,
       "rule_count": 1620,
       "issue_count": 0
@@ -2677,7 +2677,7 @@
       "id": "magicrule-tiktok",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#TikTok",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/TikTok_classical_c510421d706b99d3.yaml",
-      "sha256": "cc1aa56c73a980d3a762e44626a16f34b13831769c8e3392630b9042c834978a",
+      "sha256": "79b9a753e1585db50e53cc020717f0d1898c43bb429c83b370e8828584f7ca7f",
       "from_cache": false,
       "rule_count": 66,
       "issue_count": 0
@@ -2695,7 +2695,7 @@
       "id": "magicrule-google",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Google",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Google_classical_fe2edb12daf1b32f.yaml",
-      "sha256": "ec43e974c5bac7aadcc122c95d0c76d60a1ea3b9bcfdd4cf1150e0c81e369cce",
+      "sha256": "5eba866263dd2f2e295295fc751d0f2d28db5ac77c30162d6ca7a04b57bb3322",
       "from_cache": false,
       "rule_count": 1147,
       "issue_count": 0
@@ -2713,16 +2713,16 @@
       "id": "magicrule-microsoft",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Microsoft",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Microsoft_classical_e67099aa280f921f.yaml",
-      "sha256": "c376e4d2b40f82d31d2fef205785d8124fa85abb8e0de6ac4d2f5c36e06bcb0e",
+      "sha256": "a8d753c85c7130577fed9bc87a626d0668bce2edbc5a5dc1742d029d6da38535",
       "from_cache": false,
-      "rule_count": 921,
+      "rule_count": 915,
       "issue_count": 0
     },
     {
       "id": "magicrule-onedrive",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#OneDrive",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/OneDrive_classical_b66da0833f479d0f.yaml",
-      "sha256": "d1801cdf789fbf43b4dfac0946fdcab76968843c71d6ea5cc4594ff31103aba9",
+      "sha256": "76571d54ee9c16cd89ae2e06e581872f19c3ccbf88ef4968bc88d9ee6db7fa93",
       "from_cache": false,
       "rule_count": 24,
       "issue_count": 0
@@ -2740,7 +2740,7 @@
       "id": "magicrule-mega",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#MEGA",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/MEGA_classical_e5048bca30c502ba.yaml",
-      "sha256": "5d7f6aff3564299bfbbc61c0c808ec66d5fda23c004eccd3e7a6d6ff968cfa81",
+      "sha256": "98ae860f89b33cc955edcdd86168595d925e0f46453fbaf398f7eb89260cf5b2",
       "from_cache": false,
       "rule_count": 23,
       "issue_count": 0
@@ -2758,7 +2758,7 @@
       "id": "magicrule-github",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#GitHub",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitHub_classical_66f5a463ca33f147.yaml",
-      "sha256": "3842aec18b4dd5c858801bedb55069c2c603119611e43c14fb7c0311945ceb55",
+      "sha256": "6e2c44a9254f51cf5dbeb33a859d154674def27800f9166da47b7eb16146a6a7",
       "from_cache": false,
       "rule_count": 74,
       "issue_count": 0
@@ -2767,7 +2767,7 @@
       "id": "magicrule-spotify",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Spotify",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Spotify_classical_822ce41d873a2ee4.yaml",
-      "sha256": "6545e38d6243f4273f861e29455a31bbc8d889c8c67cf1ea0ca57c16b680f855",
+      "sha256": "2ca1beb2f34252b18c5a697456209137297e3d936a75b92599d3d206ab96fafb",
       "from_cache": false,
       "rule_count": 39,
       "issue_count": 0
@@ -2866,7 +2866,7 @@
       "id": "magicrule-developer-gitlab",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#GitLab",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/GitLab_classical_9c36f4c59060f246.yaml",
-      "sha256": "23b128ac74ec87040b7f954ba8b874c6826a5de411c6782932159885f8a1df0f",
+      "sha256": "c129ddc8badbcc71dcbbdf8aa740e9c6d90b18a279aca55b097d63099744f56f",
       "from_cache": false,
       "rule_count": 8,
       "issue_count": 0
@@ -2974,7 +2974,7 @@
       "id": "magicrule-global-media-hbo",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#HBO",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/HBO_classical_441bde82fa9edd3b.yaml",
-      "sha256": "9db9641e48177cbabb6c83b713cd635ceffd2c6ca786531b505084e0e9735cdd",
+      "sha256": "c1c56c181cb681464d3732d753ced1522175457155d23167e910c7bde9ed7fde",
       "from_cache": false,
       "rule_count": 93,
       "issue_count": 0
@@ -2983,7 +2983,7 @@
       "id": "magicrule-global-media-hulu",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Hulu",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Hulu_classical_3ab1bf5853c5c37d.yaml",
-      "sha256": "9dffbc2342590f148ac76b257ac7c7fe3e9cd8967454bd0fd0957bc05354a4ae",
+      "sha256": "b0e07eaf6964e3f337e3f7087acea23969f4d6a12825529457a6727d01855651",
       "from_cache": false,
       "rule_count": 59,
       "issue_count": 0
@@ -3010,7 +3010,7 @@
       "id": "magicrule-global-media-twitch",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Twitch",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Twitch_classical_eb9925a7faea684e.yaml",
-      "sha256": "47d416e706f6e72d30612ad9c8933e1119d534ed2e50b34c16effde70bf3a4b2",
+      "sha256": "2304d1e4c0f3cb6d69a3629d3b00930ca669c578008f085bb19246bf89fa2c51",
       "from_cache": false,
       "rule_count": 59,
       "issue_count": 0
@@ -3028,7 +3028,7 @@
       "id": "magicrule-global-media-iqiyi-intl",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#iQIYIIntl",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYIIntl_classical_97f30cd7073efeba.yaml",
-      "sha256": "6871b477c2e37b68247ce0bdf690e2af15a11d6ee36b12fe4211857ac8940d79",
+      "sha256": "6a356c32cd6785fc0f687d0847332de113eef80ee6643850c8b9316f6f227051",
       "from_cache": false,
       "rule_count": 22,
       "issue_count": 0
@@ -3064,7 +3064,7 @@
       "id": "magicrule-global-media-joox",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#JOOX",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/JOOX_classical_16bd7ee04ec7d015.yaml",
-      "sha256": "486b729bb305689bb936951b7f42bea6803efe63a9a8b5d64612387a8b71bf9d",
+      "sha256": "bec5764c849213b0583df61909bfadda6586a211615c18aaa66174bbbbc19954",
       "from_cache": false,
       "rule_count": 3,
       "issue_count": 0
@@ -3109,7 +3109,7 @@
       "id": "magicrule-china-streaming-iqiyi",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#iQIYI",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/iQIYI_classical_9762f1d3d0d013dc.yaml",
-      "sha256": "a817bac3a2beeecb220317b9d9758dc6afe2cdd54a8a346bf32d39f90328195e",
+      "sha256": "a0582724f19d166019c4fd19153127d0c9f1a91698f79b088097d2d860b8de99",
       "from_cache": false,
       "rule_count": 76,
       "issue_count": 0
@@ -3145,7 +3145,7 @@
       "id": "magicrule-china-services-tencent",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Tencent",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Tencent_classical_c59bfb7f2928fde2.yaml",
-      "sha256": "61c9421fc20707c6470bb55ff32c6a1236798cd6ed3f2bd945df63bb134f69fe",
+      "sha256": "61c61315419335874b38ddbf26f0c278d6e6601ab74e1950e53aeed0d06e6918",
       "from_cache": false,
       "rule_count": 2776,
       "issue_count": 0
@@ -3154,7 +3154,7 @@
       "id": "magicrule-china-services-xiaomi",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#XiaoMi",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/XiaoMi_classical_b52a4f21f89b5ef5.yaml",
-      "sha256": "c9501a57814f8c6fb64d3ecbde9b9aace5b5780cb9129156ad724c769e3b02c8",
+      "sha256": "40afac0c39fae7ae06a7fec860ef88ed1874ec553fe29601bbf23254fc688921",
       "from_cache": false,
       "rule_count": 198,
       "issue_count": 0
@@ -3208,7 +3208,7 @@
       "id": "magicrule-china-services-sina",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Sina",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Sina_classical_9f4de81ac65076bf.yaml",
-      "sha256": "ce8c7812c1e7a71d08ab8959ac74f9cb4b4d05ed71df2a1c4892cbed3217911f",
+      "sha256": "7a71095e4adc3d702610cd7a9cc421e57f90d204955a04428fcb498366c0f47c",
       "from_cache": false,
       "rule_count": 142,
       "issue_count": 0

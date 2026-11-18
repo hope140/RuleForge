@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 15172,
-  "dropped_rule_count": 1563,
+  "kept_rule_count": 15165,
+  "dropped_rule_count": 1560,
   "moved_rule_count": 33,
   "dropped": [
     {
@@ -3827,39 +3827,9 @@
       "source_id": "magicrule-copilot",
       "category": "ai",
       "policy": "AI",
-      "rule_type": "IP-CIDR",
-      "value": "199.47.142.0/23",
-      "line_number": 397,
-      "raw": "IP-CIDR,199.47.142.0/23,no-resolve",
-      "reason": "copilot-source-business-boundary"
-    },
-    {
-      "source_id": "magicrule-copilot",
-      "category": "ai",
-      "policy": "AI",
-      "rule_type": "IP-CIDR",
-      "value": "24.199.123.28/32",
-      "line_number": 398,
-      "raw": "IP-CIDR,24.199.123.28/32,no-resolve",
-      "reason": "copilot-source-business-boundary"
-    },
-    {
-      "source_id": "magicrule-copilot",
-      "category": "ai",
-      "policy": "AI",
-      "rule_type": "IP-CIDR",
-      "value": "64.23.132.171/32",
-      "line_number": 399,
-      "raw": "IP-CIDR,64.23.132.171/32,no-resolve",
-      "reason": "copilot-source-business-boundary"
-    },
-    {
-      "source_id": "magicrule-copilot",
-      "category": "ai",
-      "policy": "AI",
       "rule_type": "IP6-CIDR",
       "value": "2604:f20::/32",
-      "line_number": 400,
+      "line_number": 397,
       "raw": "IP-CIDR6,2604:f20::/32,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3869,7 +3839,7 @@
       "policy": "AI",
       "rule_type": "IP6-CIDR",
       "value": "2607:6bc0::/32",
-      "line_number": 401,
+      "line_number": 398,
       "raw": "IP-CIDR6,2607:6bc0::/32,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3879,7 +3849,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "14061",
-      "line_number": 402,
+      "line_number": 399,
       "raw": "IP-ASN,14061,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3889,7 +3859,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "399358",
-      "line_number": 403,
+      "line_number": 400,
       "raw": "IP-ASN,399358,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3899,7 +3869,7 @@
       "policy": "AI",
       "rule_type": "IP-ASN",
       "value": "401518",
-      "line_number": 404,
+      "line_number": 401,
       "raw": "IP-ASN,401518,no-resolve",
       "reason": "copilot-source-business-boundary"
     },
@@ -3909,7 +3879,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Antigravity",
-      "line_number": 405,
+      "line_number": 402,
       "raw": "PROCESS-NAME,Antigravity",
       "reason": "copilot-source-business-boundary"
     },
@@ -3919,7 +3889,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Antigravity.exe",
-      "line_number": 406,
+      "line_number": 403,
       "raw": "PROCESS-NAME,Antigravity.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3929,7 +3899,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Augment",
-      "line_number": 407,
+      "line_number": 404,
       "raw": "PROCESS-NAME,Augment",
       "reason": "copilot-source-business-boundary"
     },
@@ -3939,7 +3909,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Augment.exe",
-      "line_number": 408,
+      "line_number": 405,
       "raw": "PROCESS-NAME,Augment.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3949,7 +3919,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "ChatGPT",
-      "line_number": 409,
+      "line_number": 406,
       "raw": "PROCESS-NAME,ChatGPT",
       "reason": "copilot-source-business-boundary"
     },
@@ -3959,7 +3929,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "ChatGPT.exe",
-      "line_number": 410,
+      "line_number": 407,
       "raw": "PROCESS-NAME,ChatGPT.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3969,7 +3939,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Claude",
-      "line_number": 411,
+      "line_number": 408,
       "raw": "PROCESS-NAME,Claude",
       "reason": "copilot-source-business-boundary"
     },
@@ -3979,7 +3949,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Claude.exe",
-      "line_number": 412,
+      "line_number": 409,
       "raw": "PROCESS-NAME,Claude.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -3989,7 +3959,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Codex",
-      "line_number": 413,
+      "line_number": 410,
       "raw": "PROCESS-NAME,Codex",
       "reason": "copilot-source-business-boundary"
     },
@@ -3999,7 +3969,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Codex.exe",
-      "line_number": 414,
+      "line_number": 411,
       "raw": "PROCESS-NAME,Codex.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -4009,7 +3979,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Cursor",
-      "line_number": 415,
+      "line_number": 412,
       "raw": "PROCESS-NAME,Cursor",
       "reason": "copilot-source-business-boundary"
     },
@@ -4019,7 +3989,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Cursor.exe",
-      "line_number": 416,
+      "line_number": 413,
       "raw": "PROCESS-NAME,Cursor.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -4029,7 +3999,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Windsurf",
-      "line_number": 417,
+      "line_number": 414,
       "raw": "PROCESS-NAME,Windsurf",
       "reason": "copilot-source-business-boundary"
     },
@@ -4039,7 +4009,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "Windsurf.exe",
-      "line_number": 418,
+      "line_number": 415,
       "raw": "PROCESS-NAME,Windsurf.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -4049,7 +4019,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "antigravity",
-      "line_number": 419,
+      "line_number": 416,
       "raw": "PROCESS-NAME,antigravity",
       "reason": "copilot-source-business-boundary"
     },
@@ -4059,7 +4029,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "augment",
-      "line_number": 420,
+      "line_number": 417,
       "raw": "PROCESS-NAME,augment",
       "reason": "copilot-source-business-boundary"
     },
@@ -4069,7 +4039,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "chatgpt",
-      "line_number": 421,
+      "line_number": 418,
       "raw": "PROCESS-NAME,chatgpt",
       "reason": "copilot-source-business-boundary"
     },
@@ -4079,7 +4049,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "claude",
-      "line_number": 422,
+      "line_number": 419,
       "raw": "PROCESS-NAME,claude",
       "reason": "copilot-source-business-boundary"
     },
@@ -4089,7 +4059,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "claude.exe",
-      "line_number": 423,
+      "line_number": 420,
       "raw": "PROCESS-NAME,claude.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -4099,7 +4069,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "codex",
-      "line_number": 424,
+      "line_number": 421,
       "raw": "PROCESS-NAME,codex",
       "reason": "copilot-source-business-boundary"
     },
@@ -4109,7 +4079,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "cowork-svc.exe",
-      "line_number": 425,
+      "line_number": 422,
       "raw": "PROCESS-NAME,cowork-svc.exe",
       "reason": "copilot-source-business-boundary"
     },
@@ -4119,7 +4089,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "cursor",
-      "line_number": 426,
+      "line_number": 423,
       "raw": "PROCESS-NAME,cursor",
       "reason": "copilot-source-business-boundary"
     },
@@ -4129,7 +4099,7 @@
       "policy": "AI",
       "rule_type": "PROCESS-NAME",
       "value": "windsurf",
-      "line_number": 427,
+      "line_number": 424,
       "raw": "PROCESS-NAME,windsurf",
       "reason": "copilot-source-business-boundary"
     },
