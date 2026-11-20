@@ -855,7 +855,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 212,
+        "line_number": 213,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       },
       "dropped": {
@@ -17353,7 +17353,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 212,
+        "line_number": 213,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       },
       "right": {
@@ -18835,7 +18835,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 212,
+        "line_number": 213,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       },
       "right": {
@@ -46310,7 +46310,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 212,
+        "line_number": 213,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       }
     },

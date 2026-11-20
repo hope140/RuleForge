@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-18T10:19:03.868837+00:00",
+  "generated_at_utc": "2026-11-20T10:08:53.703164+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1845,11 +1845,11 @@
   },
   "source_count": 171,
   "enabled_source_count": 170,
-  "parsed_rule_count": 16725,
+  "parsed_rule_count": 16726,
   "curated_rule_count": 15165,
-  "curation_drop_count": 1560,
+  "curation_drop_count": 1561,
   "curation_move_count": 33,
-  "candidate_kept_rule_count": 15930,
+  "candidate_kept_rule_count": 15931,
   "kept_rule_count": 14524,
   "safe_rule_count": 14219,
   "resolved_rule_count": 14219,
@@ -1948,7 +1948,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 469,
+      "rule_count": 470,
       "source_count": 6
     },
     {
@@ -2569,9 +2569,9 @@
       "id": "magicrule-copilot",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Copilot",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Copilot_classical_fc7aed44f2e6746c.yaml",
-      "sha256": "c70c4857c8355b712cfa4d3afef9c344d4382cc39bc110c9c163bdfdece32624",
+      "sha256": "cbae67dd0790eaa63aec167992c9f6367d805eb4223622268d07969e644d1d1a",
       "from_cache": false,
-      "rule_count": 410,
+      "rule_count": 411,
       "issue_count": 0
     },
     {
@@ -3145,7 +3145,7 @@
       "id": "magicrule-china-services-tencent",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Tencent",
       "resolved_url": "https://magicrule.pages.dev/data/_shared/artifacts/Tencent_classical_c59bfb7f2928fde2.yaml",
-      "sha256": "61c61315419335874b38ddbf26f0c278d6e6601ab74e1950e53aeed0d06e6918",
+      "sha256": "2228f57d182643477c1ade5a06e43514d298c25927c88be5d027b5dfe9946a44",
       "from_cache": false,
       "rule_count": 2776,
       "issue_count": 0
