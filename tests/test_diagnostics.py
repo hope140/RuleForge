@@ -66,17 +66,24 @@ class DiagnosticsTests(unittest.TestCase):
             for conflict in audit.conflicts:
                 self.assertIsNone(_value_category_rule(conflict))
 
-    def test_quarantine_uses_immutable_same_target_snapshots(self):
+    def test_restored_magicrule_sources_use_live_client_indexes(self):
         from ruleforge.manifest import load_manifest
-        for name, target in [('quantumultx', 'quantumult-x'), ('mihomo', 'mihomo')]:
-            _, sources = load_manifest(ROOT / 'sources' / (name + '.yaml'))
-            snapshots = [s for s in sources if s.id.startswith('snapshot-reviewed-')]
-            self.assertEqual({s.category for s in snapshots}, {'apple', 'telegram', 'china-direct'})
-            for source in snapshots:
-                self.assertIn('/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/' + target + '/', source.url)
-                self.assertEqual(source.resolver, '')
-                self.assertTrue(source.enabled)
-            self.assertFalse(next(s for s in sources if s.id == 'magicrule-apple-proxy').enabled)
+        categories = {
+            'magicrule-apple': 'Apple',
+            'magicrule-apple-proxy': 'AppleProxy',
+            'magicrule-telegram': 'Telegram',
+            'magicrule-direct': 'Direct',
+        }
+        for name, client in [('quantumultx', 'QuantumultX'), ('mihomo', 'Mihomo')]:
+            with self.subTest(client=client):
+                _, sources = load_manifest(ROOT / 'sources' / (name + '.yaml'))
+                by_id = {source.id: source for source in sources}
+                self.assertFalse(any(key.startswith('snapshot-reviewed-') for key in by_id))
+                for key, category in categories.items():
+                    source = by_id[key]
+                    self.assertTrue(source.enabled)
+                    self.assertEqual(source.resolver, 'magicrule')
+                    self.assertEqual(source.url, f'https://magicrule.pages.dev/data/index/{client}.json#{category}')
 
     def test_shared_facebook_cdn_is_not_pinned_to_ai(self):
         from ruleforge.curation import curate_rules

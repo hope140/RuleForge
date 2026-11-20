@@ -169,7 +169,7 @@ class RuleForgeTests(unittest.TestCase):
             self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
 
     def test_manifest_has_unique_seed_sources(self) -> None:
-        expected_counts = {"quantumultx.yaml": 173, "mihomo.yaml": 171}
+        expected_counts = {"quantumultx.yaml": 176, "mihomo.yaml": 174}
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
             manifest, sources = load_manifest(ROOT / "sources" / filename)
             self.assertEqual(manifest["target"], target)
@@ -280,7 +280,7 @@ sources:
     def test_mihomo_manifest_uses_native_clash_sources(self) -> None:
         _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
         magicrule = [source for source in sources if source.resolver == "magicrule" and source.enabled]
-        self.assertEqual(len(magicrule), 73)
+        self.assertEqual(len(magicrule), 77)
         self.assertTrue(all(source.format == "clash" for source in magicrule))
         self.assertTrue(all(source.parser == "clash-classical" for source in magicrule))
         self.assertTrue(all("/data/index/Mihomo.json#" in source.url for source in magicrule))

@@ -144,6 +144,11 @@ class PriorityRegressionTests(unittest.TestCase):
             "api-glb-sea.smoot.apple.com": "苹果服务",
             "tvbtracking.azurewebsites.net": "国际媒体",
             "beacons.gvt2.com": "谷歌服务",
+            "icloud.cn": "苹果服务",
+            "www.icloud.cn": "苹果服务",
+            "127.skk.moe": "direct",
+            "cn.windowssearch.com": "direct",
+            "test.cn.windowssearch.com": "direct",
             "ctldl.windowsupdate.com": "direct",
             "azuremigrate.download.prss.microsoft.com": "direct",
         }

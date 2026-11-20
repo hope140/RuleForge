@@ -90,15 +90,15 @@ sources:
     enabled: true
     notes: QX 没有 Mihomo 的 GEOSITE,openai 兜底，补充 OpenAI Statsig telemetry 根域。
 
-  - id: snapshot-reviewed-apple
+  - id: magicrule-apple
     kind: filter
     format: quantumult-x
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/quantumult-x/categories/safe/apple.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Apple
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
-    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: magicrule-apple-media
     kind: filter
@@ -138,7 +138,7 @@ sources:
     url: https://magicrule.pages.dev/data/index/QuantumultX.json#AppleProxy
     resolver: magicrule
     parser: quantumult-x
-    enabled: false
+    enabled: true
 
   - id: magicrule-apple-tv
     kind: filter
@@ -290,15 +290,15 @@ sources:
     parser: quantumult-x
     enabled: true
 
-  - id: snapshot-reviewed-telegram
+  - id: magicrule-telegram
     kind: filter
     format: quantumult-x
     category: telegram
     policy: 电报代理
-    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/quantumult-x/categories/safe/telegram.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Telegram
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
-    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: magicrule-social-twitter
     kind: filter
@@ -837,15 +837,15 @@ sources:
     parser: surge
     enabled: true
 
-  - id: snapshot-reviewed-china-direct
+  - id: magicrule-direct
     kind: filter
     format: quantumult-x
     category: china-direct
     policy: direct
-    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/quantumult-x/categories/safe/china-direct.list
+    url: https://magicrule.pages.dev/data/index/QuantumultX.json#Direct
+    resolver: magicrule
     parser: quantumult-x
     enabled: true
-    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: rulego-proxy-plus
     kind: filter
@@ -1689,5 +1689,32 @@ sources:
     category: game-download
     policy: 游戏下载
     url: "inline:HOST,epicgames-download1.akamaized.net"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-icloud-cn
+    kind: inline
+    format: quantumult-x
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST-SUFFIX,icloud.cn"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-windows-search-cn
+    kind: inline
+    format: quantumult-x
+    category: china-direct
+    policy: direct
+    url: "inline:HOST-SUFFIX,cn.windowssearch.com"
+    parser: quantumult-x
+    enabled: true
+
+  - id: local-skk-127
+    kind: inline
+    format: quantumult-x
+    category: china-direct
+    policy: direct
+    url: "inline:HOST,127.skk.moe"
     parser: quantumult-x
     enabled: true
