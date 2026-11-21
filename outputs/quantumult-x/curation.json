@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 15112,
-  "dropped_rule_count": 1538,
+  "kept_rule_count": 15171,
+  "dropped_rule_count": 1540,
   "moved_rule_count": 32,
   "dropped": [
     {
@@ -4032,6 +4032,26 @@
       "line_number": 38,
       "raw": "DOMAIN-SUFFIX,intercomcdn.com",
       "reason": "shared-infrastructure-root-suffix"
+    },
+    {
+      "source_id": "magicrule-apple",
+      "category": "apple",
+      "policy": "苹果服务",
+      "rule_type": "HOST-SUFFIX",
+      "value": "digicert.com",
+      "line_number": 1211,
+      "raw": "HOST-SUFFIX,digicert.com,Apple",
+      "reason": "shared-infrastructure-root"
+    },
+    {
+      "source_id": "magicrule-apple-proxy",
+      "category": "apple",
+      "policy": "苹果服务",
+      "rule_type": "HOST-SUFFIX",
+      "value": "digicert.com",
+      "line_number": 56,
+      "raw": "HOST-SUFFIX,digicert.com,AppleProxy",
+      "reason": "shared-infrastructure-root"
     },
     {
       "source_id": "magicrule-netflix",

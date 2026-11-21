@@ -2,9 +2,9 @@
   "mode": "preview-only",
   "active": false,
   "target": "quantumult-x",
-  "ordered_overlap_count": 1695,
+  "ordered_overlap_count": 1717,
   "live_cross_category_count": 760,
-  "discarded_overlap_count": 935,
+  "discarded_overlap_count": 957,
   "apple_contract_gap_count": 0,
   "actual_policy_mismatch_count": 4,
   "preview_candidate_decision_count": 2,
@@ -12,8 +12,8 @@
   "review_required_count": 2,
   "unwitnessed_count": 0,
   "status_counts": {
-    "enforced": 670,
-    "equivalent-policy": 86,
+    "enforced": 671,
+    "equivalent-policy": 85,
     "preview-candidate": 2,
     "review-required": 2
   },
