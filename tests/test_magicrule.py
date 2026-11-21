@@ -145,7 +145,7 @@ class MagicRuleTests(unittest.TestCase):
             text = (ROOT / "sources" / filename).read_text(encoding="utf-8")
             self.assertNotIn("blackmatrix7/ios_rule_script", text)
             _, sources = load_manifest(ROOT / "sources" / filename)
-            self.assertEqual(sum(s.resolver == "magicrule" and s.enabled for s in sources), 73)
+            self.assertEqual(sum(s.resolver == "magicrule" and s.enabled for s in sources), 77)
             self.assertTrue(any(s.url.endswith("#NPM") for s in sources))
             for before, after in (("resolver: magicrule", "resolver: unknown"),
                                   (".json#OpenAI", ".json"),

@@ -80,15 +80,15 @@ sources:
     enabled: true
     notes: 作为 AI 交叉来源，按 Mihomo Classical 规则参与统一去重和冲突审计。
 
-  - id: snapshot-reviewed-apple
+  - id: magicrule-apple
     kind: filter
     format: clash
     category: apple
     policy: 苹果服务
-    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/mihomo/categories/safe/apple.list
+    url: https://magicrule.pages.dev/data/index/Mihomo.json#Apple
+    resolver: magicrule
     parser: clash-classical
     enabled: true
-    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: magicrule-apple-media
     kind: filter
@@ -128,7 +128,7 @@ sources:
     url: https://magicrule.pages.dev/data/index/Mihomo.json#AppleProxy
     resolver: magicrule
     parser: clash-classical
-    enabled: false
+    enabled: true
 
   - id: magicrule-apple-tv
     kind: filter
@@ -280,15 +280,15 @@ sources:
     parser: clash-classical
     enabled: true
 
-  - id: snapshot-reviewed-telegram
+  - id: magicrule-telegram
     kind: filter
     format: clash
     category: telegram
     policy: 电报代理
-    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/mihomo/categories/safe/telegram.list
+    url: https://magicrule.pages.dev/data/index/Mihomo.json#Telegram
+    resolver: magicrule
     parser: clash-classical
     enabled: true
-    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: magicrule-social-twitter
     kind: filter
@@ -827,15 +827,15 @@ sources:
     parser: surge
     enabled: true
 
-  - id: snapshot-reviewed-china-direct
+  - id: magicrule-direct
     kind: filter
     format: clash
     category: china-direct
     policy: direct
-    url: https://raw.githubusercontent.com/hope140/RuleForge/893b4f3cb68f415c9025ce82fade7011fd5333a3/outputs/mihomo/categories/safe/china-direct.list
+    url: https://magicrule.pages.dev/data/index/Mihomo.json#Direct
+    resolver: magicrule
     parser: clash-classical
     enabled: true
-    notes: Temporary reviewed snapshot from 2026-11-09; see docs/upstream-quarantine.md.
 
   - id: rulego-proxy-plus
     kind: filter
@@ -1670,5 +1670,32 @@ sources:
     category: china-direct
     policy: direct
     url: "inline:PROCESS-NAME,aria2c.exe"
+    parser: inline
+    enabled: true
+
+  - id: local-icloud-cn
+    kind: inline
+    format: clash
+    category: apple
+    policy: 苹果服务
+    url: "inline:HOST-SUFFIX,icloud.cn"
+    parser: inline
+    enabled: true
+
+  - id: local-windows-search-cn
+    kind: inline
+    format: clash
+    category: china-direct
+    policy: direct
+    url: "inline:HOST-SUFFIX,cn.windowssearch.com"
+    parser: inline
+    enabled: true
+
+  - id: local-skk-127
+    kind: inline
+    format: clash
+    category: china-direct
+    policy: direct
+    url: "inline:HOST,127.skk.moe"
     parser: inline
     enabled: true
