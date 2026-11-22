@@ -172,7 +172,9 @@ COPILOT_HOSTS = frozenset({
 UPSTREAM_MARKER_HOST = "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"
 GOOGLE_FCM_HOSTS = frozenset({"mtalk.google.com", *(f"alt{i}-mtalk.google.com" for i in range(1, 9))})
 INTERNATIONAL_MEDIA_SUFFIXES = ("wetv.vip", "wetvinfo.com", "joox.com", "i-joox.com", "sanook.com")
-AI_GENERIC_KEYWORDS = frozenset({"datadog", "sentry", "sift", "codex", "colab", "developerprofiles"})
+AI_GENERIC_KEYWORDS = frozenset({
+    "datadog", "sentry", "sift", "codex", "colab", "developerprofiles", "antigravity",
+})
 _COUNTRY_WIDE_CATEGORIES = frozenset({
     "china-direct", "proxy", "proxy-exception", "direct-exception", "reject", "privacy",
 })

@@ -255,6 +255,21 @@ class MagicRuleTests(unittest.TestCase):
                         self.assertIsNotNone(result, domain)
                         self.assertEqual(result.policy, policy)
 
+    def test_antigravity_keyword_is_excluded_but_service_hosts_are_kept(self):
+        expected = {
+            "antigravity.google": "AI",
+            "antigravity.googleapis.com": "AI",
+            "antigravity.jd.com": "direct",
+            "antigravitybatteries.com": None,
+        }
+        for target in ("quantumult-x", "mihomo"):
+            for profile in (False, True):
+                rules = active_routes(ROOT, target, profile=profile)
+                for domain, policy in expected.items():
+                    with self.subTest(target=target, profile=profile, domain=domain):
+                        result = simulate_route(rules, RouteProbe(domain=domain))
+                        self.assertEqual(result.policy if result else None, policy)
+
     def test_generated_routes_keep_media_aliases_and_shared_services_scoped(self):
         expected = {
             "wetv.vip": "国际媒体", "htrace.wetvinfo.com": "国际媒体", "joox.com": "国际媒体",
