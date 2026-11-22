@@ -1,5 +1,5 @@
 {
-  "kept_rule_count": 15171,
+  "kept_rule_count": 15177,
   "dropped_rule_count": 1540,
   "moved_rule_count": 32,
   "dropped": [
@@ -3999,7 +3999,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "auth0.com",
-      "line_number": 20,
+      "line_number": 24,
       "raw": "DOMAIN-SUFFIX,auth0.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -4009,7 +4009,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "identrust.com",
-      "line_number": 36,
+      "line_number": 42,
       "raw": "DOMAIN-SUFFIX,identrust.com",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -4019,7 +4019,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercom.io",
-      "line_number": 37,
+      "line_number": 43,
       "raw": "DOMAIN-SUFFIX,intercom.io",
       "reason": "shared-infrastructure-root-suffix"
     },
@@ -4029,7 +4029,7 @@
       "policy": "AI",
       "rule_type": "HOST-SUFFIX",
       "value": "intercomcdn.com",
-      "line_number": 38,
+      "line_number": 44,
       "raw": "DOMAIN-SUFFIX,intercomcdn.com",
       "reason": "shared-infrastructure-root-suffix"
     },

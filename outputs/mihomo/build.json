@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-21T09:18:55.316415+00:00",
+  "generated_at_utc": "2026-11-22T09:54:02.500247+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -1875,18 +1875,18 @@
   },
   "source_count": 174,
   "enabled_source_count": 174,
-  "parsed_rule_count": 16789,
-  "curated_rule_count": 15225,
+  "parsed_rule_count": 16795,
+  "curated_rule_count": 15231,
   "curation_drop_count": 1564,
   "curation_move_count": 33,
-  "candidate_kept_rule_count": 15937,
-  "kept_rule_count": 14538,
-  "safe_rule_count": 14225,
-  "resolved_rule_count": 14225,
-  "conflicted_rule_count": 1845,
-  "duplicate_count": 687,
-  "conflict_count": 2042,
-  "resolved_conflict_count": 2042,
+  "candidate_kept_rule_count": 15938,
+  "kept_rule_count": 14539,
+  "safe_rule_count": 14226,
+  "resolved_rule_count": 14226,
+  "conflicted_rule_count": 1846,
+  "duplicate_count": 692,
+  "conflict_count": 2046,
+  "resolved_conflict_count": 2046,
   "blackmatrix_preferred_conflict_count": 0,
   "source_preferred_conflict_count": 0,
   "direct_preferred_conflict_count": 0,
@@ -1895,15 +1895,15 @@
   "value_category_preferred_conflict_count": 71,
   "protective_reject_conflict_count": 24,
   "fallback_conflict_count": 0,
-  "ordered_overlap_count": 1719,
-  "routing_constraint_count": 1719,
+  "ordered_overlap_count": 1723,
+  "routing_constraint_count": 1723,
   "priority_override_rule_count": 93,
   "unresolved_conflict_count": 0,
   "shared_infrastructure_risk_count": 15,
   "resolution": {
-    "resolved_rule_count": 14225,
+    "resolved_rule_count": 14226,
     "rejected_rule_count": 313,
-    "resolved_conflict_count": 2042,
+    "resolved_conflict_count": 2046,
     "blackmatrix_preferred_conflict_count": 0,
     "source_preferred_conflict_count": 0,
     "direct_preferred_conflict_count": 0,
@@ -1913,16 +1913,16 @@
     "protective_reject_conflict_count": 24,
     "fallback_conflict_count": 0,
     "priority_override_rule_count": 93,
-    "ordered_overlap_count": 1719,
+    "ordered_overlap_count": 1723,
     "unresolved_conflict_count": 0
   },
   "priority_preview": {
     "mode": "preview-only",
     "active": false,
     "target": "mihomo",
-    "ordered_overlap_count": 1719,
+    "ordered_overlap_count": 1723,
     "live_cross_category_count": 762,
-    "discarded_overlap_count": 957,
+    "discarded_overlap_count": 961,
     "apple_contract_gap_count": 0,
     "actual_policy_mismatch_count": 4,
     "preview_candidate_decision_count": 2,
@@ -1978,7 +1978,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 470,
+      "rule_count": 471,
       "source_count": 6
     },
     {
@@ -2288,7 +2288,7 @@
       "policies": [
         "AI"
       ],
-      "rule_count": 203,
+      "rule_count": 204,
       "source_count": 8
     },
     {
@@ -2626,9 +2626,9 @@
       "id": "acl4ssr-ai",
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
       "resolved_url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list",
-      "sha256": "63e70895ac8c04c3b28965dc0b4ba9ceb3a1313a66b49487ed96005debc97e1e",
+      "sha256": "82a8806f260c92b605f7a6abd2a0f20b79239cba4b578773b2f93151ac3e971b",
       "from_cache": false,
-      "rule_count": 49,
+      "rule_count": 55,
       "issue_count": 0
     },
     {
