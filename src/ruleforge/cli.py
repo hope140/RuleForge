@@ -18,6 +18,7 @@ from .fetch import FetchError, fetch_source
 from .manifest import ManifestError, load_manifest
 from .parsers import parse_resource
 from .preflight import TARGETS, render_target
+from .release_guard import check_release
 from .preview import build_priority_preview, render_priority_preview_markdown
 from .render import (
     render_audit,
@@ -484,6 +485,11 @@ def build_parser() -> argparse.ArgumentParser:
     preflight.add_argument("--report", help="write a new UTF-8 Markdown file instead of printing")
     preflight.add_argument("--timeout", type=float, default=30.0, help="upstream request timeout in seconds")
     preflight.set_defaults(handler=_preflight)
+
+    release = subparsers.add_parser("check-release", help="reject severe rule loss before publishing")
+    release.add_argument("--baseline", required=True, type=Path, help="previously published outputs directory")
+    release.add_argument("--candidate", default=Path("outputs"), type=Path, help="freshly built outputs directory")
+    release.set_defaults(handler=lambda args: check_release(args.baseline, args.candidate))
 
     for command, profile, rules, synchronize in (
         ("sync-mihomo-profile", "profiles/mihomo/config.example.yaml",

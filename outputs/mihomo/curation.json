@@ -1,6 +1,6 @@
 {
-  "kept_rule_count": 15231,
-  "dropped_rule_count": 1564,
+  "kept_rule_count": 15230,
+  "dropped_rule_count": 1565,
   "moved_rule_count": 33,
   "dropped": [
     {
@@ -4222,6 +4222,16 @@
       "line_number": 99,
       "raw": "DOMAIN,www.bing.com",
       "reason": "shared-microsoft-infrastructure-host"
+    },
+    {
+      "source_id": "acl4ssr-ai",
+      "category": "ai",
+      "policy": "AI",
+      "rule_type": "HOST-KEYWORD",
+      "value": "antigravity",
+      "line_number": 4,
+      "raw": "DOMAIN-KEYWORD,antigravity",
+      "reason": "shared-or-ambiguous-ai-keyword"
     },
     {
       "source_id": "acl4ssr-ai",

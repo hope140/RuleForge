@@ -69,10 +69,14 @@ def load_snapshot(directory: Path, target: str) -> Snapshot:
     return Snapshot(sources, files, expected)
 
 
+def is_sharp_drop(before: int, after: int) -> bool:
+    return before - after >= 10 and (before - after) * 10 >= before * 3
+
+
 def count_alert(before: int, after: int) -> str:
     if after == 0:
         return "变空（此前有内容）" if before else "空文件"
-    if before - after >= 10 and (before - after) * 10 >= before * 3:
+    if is_sharp_drop(before, after):
         return "骤减"
     return ""
 

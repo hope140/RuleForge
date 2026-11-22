@@ -1,9 +1,9 @@
 {
-  "kept_rule_count": 14539,
-  "safe_rule_count": 14226,
-  "conflicted_rule_count": 1846,
+  "kept_rule_count": 14538,
+  "safe_rule_count": 14225,
+  "conflicted_rule_count": 1845,
   "duplicate_count": 692,
-  "conflict_count": 2046,
+  "conflict_count": 2042,
   "shared_infrastructure_risk_count": 15,
   "duplicates": [
     {
@@ -43854,110 +43854,6 @@
       "kind": "semantic-overlap",
       "relation": "host-keyword-overlap",
       "left": {
-        "source_id": "acl4ssr-ai",
-        "source_format": "surge",
-        "category": "ai",
-        "policy": "AI",
-        "rule_type": "HOST-KEYWORD",
-        "value": "antigravity",
-        "options": [],
-        "line_number": 4,
-        "raw": "DOMAIN-KEYWORD,antigravity"
-      },
-      "right": {
-        "source_id": "magicrule-google",
-        "source_format": "clash",
-        "category": "google",
-        "policy": "谷歌服务",
-        "rule_type": "HOST",
-        "value": "antigravity-pa.googleapis.com",
-        "options": [],
-        "line_number": 30,
-        "raw": "DOMAIN,antigravity-pa.googleapis.com"
-      }
-    },
-    {
-      "kind": "semantic-overlap",
-      "relation": "host-keyword-overlap",
-      "left": {
-        "source_id": "acl4ssr-ai",
-        "source_format": "surge",
-        "category": "ai",
-        "policy": "AI",
-        "rule_type": "HOST-KEYWORD",
-        "value": "antigravity",
-        "options": [],
-        "line_number": 4,
-        "raw": "DOMAIN-KEYWORD,antigravity"
-      },
-      "right": {
-        "source_id": "magicrule-google",
-        "source_format": "clash",
-        "category": "google",
-        "policy": "谷歌服务",
-        "rule_type": "HOST",
-        "value": "antigravity.googleapis.com",
-        "options": [],
-        "line_number": 31,
-        "raw": "DOMAIN,antigravity.googleapis.com"
-      }
-    },
-    {
-      "kind": "semantic-overlap",
-      "relation": "host-keyword-overlap",
-      "left": {
-        "source_id": "acl4ssr-ai",
-        "source_format": "surge",
-        "category": "ai",
-        "policy": "AI",
-        "rule_type": "HOST-KEYWORD",
-        "value": "antigravity",
-        "options": [],
-        "line_number": 4,
-        "raw": "DOMAIN-KEYWORD,antigravity"
-      },
-      "right": {
-        "source_id": "magicrule-google",
-        "source_format": "clash",
-        "category": "google",
-        "policy": "谷歌服务",
-        "rule_type": "HOST-SUFFIX",
-        "value": "antigravity-unleash.goog",
-        "options": [],
-        "line_number": 291,
-        "raw": "DOMAIN-SUFFIX,antigravity-unleash.goog"
-      }
-    },
-    {
-      "kind": "semantic-overlap",
-      "relation": "host-keyword-overlap",
-      "left": {
-        "source_id": "acl4ssr-ai",
-        "source_format": "surge",
-        "category": "ai",
-        "policy": "AI",
-        "rule_type": "HOST-KEYWORD",
-        "value": "antigravity",
-        "options": [],
-        "line_number": 4,
-        "raw": "DOMAIN-KEYWORD,antigravity"
-      },
-      "right": {
-        "source_id": "magicrule-google",
-        "source_format": "clash",
-        "category": "google",
-        "policy": "谷歌服务",
-        "rule_type": "HOST-SUFFIX",
-        "value": "antigravity.google",
-        "options": [],
-        "line_number": 292,
-        "raw": "DOMAIN-SUFFIX,antigravity.google"
-      }
-    },
-    {
-      "kind": "semantic-overlap",
-      "relation": "host-keyword-overlap",
-      "left": {
         "source_id": "magicrule-apple",
         "source_format": "clash",
         "category": "apple",
@@ -70318,11 +70214,11 @@
     }
   ],
   "conflict_free_rule_count": 12693,
-  "resolved_rule_count": 14226,
+  "resolved_rule_count": 14225,
   "resolution": {
-    "resolved_rule_count": 14226,
+    "resolved_rule_count": 14225,
     "rejected_rule_count": 313,
-    "resolved_conflict_count": 2046,
+    "resolved_conflict_count": 2042,
     "blackmatrix_preferred_conflict_count": 0,
     "source_preferred_conflict_count": 0,
     "direct_preferred_conflict_count": 0,
@@ -70332,7 +70228,7 @@
     "protective_reject_conflict_count": 24,
     "fallback_conflict_count": 0,
     "priority_override_rule_count": 93,
-    "ordered_overlap_count": 1723,
+    "ordered_overlap_count": 1719,
     "unresolved_conflict_count": 0,
     "decisions": [
       {
@@ -91112,86 +91008,6 @@
           "rule_type": "HOST-KEYWORD",
           "value": "google",
           "policy": "全球加速"
-        },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "kind": "semantic-overlap",
-        "relation": "host-keyword-overlap",
-        "decision": "ordered-overlap",
-        "winner": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST",
-          "value": "antigravity-pa.googleapis.com",
-          "policy": "谷歌服务"
-        },
-        "loser": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
-        },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "kind": "semantic-overlap",
-        "relation": "host-keyword-overlap",
-        "decision": "ordered-overlap",
-        "winner": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST",
-          "value": "antigravity.googleapis.com",
-          "policy": "谷歌服务"
-        },
-        "loser": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
-        },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "kind": "semantic-overlap",
-        "relation": "host-keyword-overlap",
-        "decision": "ordered-overlap",
-        "winner": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST-SUFFIX",
-          "value": "antigravity-unleash.goog",
-          "policy": "谷歌服务"
-        },
-        "loser": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
-        },
-        "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "kind": "semantic-overlap",
-        "relation": "host-keyword-overlap",
-        "decision": "ordered-overlap",
-        "winner": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST-SUFFIX",
-          "value": "antigravity.google",
-          "policy": "谷歌服务"
-        },
-        "loser": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
         },
         "reason": "Both rules are retained. A more specific rule must be evaluated before its broader overlap."
       },
@@ -123426,74 +123242,6 @@
           "rule_type": "HOST-KEYWORD",
           "value": "google",
           "policy": "全球加速"
-        },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST",
-          "value": "antigravity-pa.googleapis.com",
-          "policy": "谷歌服务"
-        },
-        "after": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
-        },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST",
-          "value": "antigravity.googleapis.com",
-          "policy": "谷歌服务"
-        },
-        "after": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
-        },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST-SUFFIX",
-          "value": "antigravity-unleash.goog",
-          "policy": "谷歌服务"
-        },
-        "after": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
-        },
-        "reason": "A more specific rule must be evaluated before its broader overlap."
-      },
-      {
-        "before": {
-          "source_id": "magicrule-google",
-          "category": "google",
-          "rule_type": "HOST-SUFFIX",
-          "value": "antigravity.google",
-          "policy": "谷歌服务"
-        },
-        "after": {
-          "source_id": "acl4ssr-ai",
-          "category": "ai",
-          "rule_type": "HOST-KEYWORD",
-          "value": "antigravity",
-          "policy": "AI"
         },
         "reason": "A more specific rule must be evaluated before its broader overlap."
       },
