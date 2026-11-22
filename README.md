@@ -142,6 +142,8 @@ python -m unittest discover -s tests -v
 
 ## 更新前预检
 
+有仓库写权限时，可在 GitHub 仓库的 **Actions → RuleForge 更新预检 → Run workflow** 手动运行。运行摘要会显示对比的两个提交，以及 Quantumult X 和 Mihomo 的预检结果；也可从 Artifacts 下载 Markdown 报告。它以运行开始时检出的 `main` 规则作为已发布基线，使用所选分支的生成代码刷新上游。此入口独立于定时更新，不提交或发布规则。GitHub 要求该工作流先存在于默认分支，才会提供首次手动运行入口。
+
 先更新本地分支，使 `outputs/` 对应已发布基线，然后在仓库根目录运行：
 
 ```powershell
