@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import argparse
-from collections import Counter
+import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import uuid
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -15,6 +17,7 @@ from .curation import curate_rules
 from .fetch import FetchError, fetch_source
 from .manifest import ManifestError, load_manifest
 from .parsers import parse_resource
+from .preflight import TARGETS, render_target
 from .preview import build_priority_preview, render_priority_preview_markdown
 from .render import (
     render_audit,
@@ -381,6 +384,57 @@ def _build(args: argparse.Namespace) -> int:
     return 0
 
 
+def _preflight(args: argparse.Namespace) -> int:
+    baseline = Path(args.baseline).resolve()
+    if args.report:
+        report_file = Path(args.report).resolve()
+        protected = (baseline,) + ((Path(args.candidate).resolve(),) if args.candidate else ())
+        if any(report_file == root or root in report_file.parents for root in protected):
+            raise ManifestError("report must be outside the baseline and candidate outputs")
+
+    sections = [
+        "# RuleForge 更新预检",
+        "比较已发布基线和候选结果；忽略生成时间、注释和空行。"
+        "骤减指至少减少 10 条且降幅至少 30%；缺失或空文件单独标出。"
+        "预检不发布，不修改现有输出。",
+    ]
+    failed = False
+    with tempfile.TemporaryDirectory(prefix="ruleforge-preflight-") as temp:
+        temp_dir = Path(temp)
+        candidate = Path(args.candidate).resolve() if args.candidate else temp_dir / "outputs"
+        for target in TARGETS:
+            if not args.candidate:
+                manifest = "quantumultx.yaml" if target == "quantumult-x" else "mihomo.yaml"
+                command = [
+                    sys.executable, str(_default_root() / "tools/ruleforge.py"), "build",
+                    "--manifest", str(_default_root() / "sources" / manifest),
+                    "--output-dir", str(candidate / target), "--cache-dir", str(temp_dir / "cache"),
+                    "--timeout", str(args.timeout), "--refresh", "--fail-on-conflict",
+                ]
+                result = subprocess.run(command, capture_output=True, encoding="utf-8", errors="replace",
+                                        env={**os.environ, "PYTHONIOENCODING": "utf-8"})
+                if result.returncode:
+                    failed = True
+                    stderr = result.stderr.strip() or "No build diagnostics."
+                    print(f"{target}: {stderr}", file=sys.stderr)
+                    sections.append(f"## {target}\n\n刷新或构建失败（退出码 {result.returncode}）；未生成可比较结果。详见终端错误输出。")
+                    continue
+            try:
+                sections.append(render_target(baseline, candidate, target))
+            except (ValueError, OSError) as exc:
+                failed = True
+                print(f"{target}: {exc}", file=sys.stderr)
+                sections.append(f"## {target}\n\n无法比较：缺少有效的构建摘要或生成文件无法读取。详见终端错误输出。")
+    report = "\n\n".join(sections) + "\n"
+    if args.report:
+        with report_file.open("x", encoding="utf-8") as file:
+            file.write(report)
+        print(f"report={report_file}")
+    else:
+        sys.stdout.write(report)
+    return int(failed)
+
+
 def _sync_profile(args: argparse.Namespace) -> int:
     profile_path = Path(args.profile)
     original = profile_path.read_bytes().decode("utf-8")
@@ -423,6 +477,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     build.add_argument("--fail-on-conflict", action="store_true")
     build.set_defaults(handler=_build)
+
+    preflight = subparsers.add_parser("preflight", help="compare refreshed rules against the published baseline without publishing")
+    preflight.add_argument("--baseline", default="outputs", help="directory containing the baseline target outputs")
+    preflight.add_argument("--candidate", help="compare already-built target outputs instead of refreshing")
+    preflight.add_argument("--report", help="write a new UTF-8 Markdown file instead of printing")
+    preflight.add_argument("--timeout", type=float, default=30.0, help="upstream request timeout in seconds")
+    preflight.set_defaults(handler=_preflight)
 
     for command, profile, rules, synchronize in (
         ("sync-mihomo-profile", "profiles/mihomo/config.example.yaml",

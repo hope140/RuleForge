@@ -140,6 +140,18 @@ python -m unittest discover -s tests -v
 
 带有 `--refresh` 的构建会访问上游来源；使用 `--offline` 可复用已有缓存进行本地验证，缓存缺失时直接失败。清单缺少有效来源、字段重复或分类策略不一致时，lint 和构建都会失败。任一来源抓取失败、没有解析出规则、出现解析异常、不受支持的规则类型或在 `--fail-on-conflict` 下仍有未决冲突时，构建会失败。生成过程先写入同盘暂存目录，全部检查和渲染成功后才替换正式输出；失败构建不会覆盖上一次可用结果。
 
+## 更新前预检
+
+先更新本地分支，使 `outputs/` 对应已发布基线，然后在仓库根目录运行：
+
+```powershell
+python tools/ruleforge.py preflight --report preflight.md
+```
+
+命令在临时目录刷新 Quantumult X 和 Mihomo，比较来源哈希、来源条目数、候选及安全分类规则，以及两端生成路由。报告显示每个变动文件的增删条目数，也会标记只调整顺序、文件缺失、无规则条目和骤减（至少减少 10 条且降幅至少 30%）。注释、空行、生成时间和缓存标记不计入变更。
+
+省略 `--report` 会打印到终端；指定的报告文件必须尚不存在。用 `--candidate /path/to/generated-outputs` 可直接比较另一份已生成的输出，无需联网；用 `--baseline` 可指定另一份基线。预检不覆盖规则、不提交、不发布，也不会改变定时更新。上游刷新、构建或比较失败时返回非零，并在报告中标出无法比较的平台；数量提示仅供人工确认，不是发布门禁。
+
 ## 自动更新
 
 [Update proxy rules](.github/workflows/update-rules.yml) 每天在 UTC 2 时 17 分运行，对应中国时间 10 时 17 分。也可以从 GitHub Actions 页面手动触发。
