@@ -855,7 +855,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 213,
+        "line_number": 214,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       },
       "dropped": {
@@ -12938,7 +12938,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "p-log.ykimg.com",
         "options": [],
-        "line_number": 1128,
+        "line_number": 1129,
         "raw": "DOMAIN-SUFFIX,p-log.ykimg.com"
       }
     },
@@ -12962,7 +12962,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "passport-log.youku.com",
         "options": [],
-        "line_number": 1131,
+        "line_number": 1132,
         "raw": "DOMAIN-SUFFIX,passport-log.youku.com"
       }
     },
@@ -12986,7 +12986,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "pl.youku.com",
         "options": [],
-        "line_number": 1138,
+        "line_number": 1139,
         "raw": "DOMAIN-SUFFIX,pl.youku.com"
       }
     },
@@ -13010,7 +13010,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "s-adashx.ut.youku.com",
         "options": [],
-        "line_number": 1168,
+        "line_number": 1169,
         "raw": "DOMAIN-SUFFIX,s-adashx.ut.youku.com"
       }
     },
@@ -13034,7 +13034,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "soku.com",
         "options": [],
-        "line_number": 1288,
+        "line_number": 1289,
         "raw": "DOMAIN-SUFFIX,soku.com"
       }
     },
@@ -13058,7 +13058,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "stat.youku.com",
         "options": [],
-        "line_number": 1292,
+        "line_number": 1293,
         "raw": "DOMAIN-SUFFIX,stat.youku.com"
       }
     },
@@ -13082,7 +13082,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "statis.api.3g.youku.com",
         "options": [],
-        "line_number": 1293,
+        "line_number": 1294,
         "raw": "DOMAIN-SUFFIX,statis.api.3g.youku.com"
       }
     },
@@ -13106,7 +13106,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tudou.com",
         "options": [],
-        "line_number": 1366,
+        "line_number": 1367,
         "raw": "DOMAIN-SUFFIX,tudou.com"
       }
     },
@@ -13130,7 +13130,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "v6-adashx.ut.youku.com",
         "options": [],
-        "line_number": 1394,
+        "line_number": 1395,
         "raw": "DOMAIN-SUFFIX,v6-adashx.ut.youku.com"
       }
     },
@@ -13154,7 +13154,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "yk-ssp.ad.youku.com",
         "options": [],
-        "line_number": 1458,
+        "line_number": 1459,
         "raw": "DOMAIN-SUFFIX,yk-ssp.ad.youku.com"
       }
     },
@@ -13178,7 +13178,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ykad-data.youku.com",
         "options": [],
-        "line_number": 1459,
+        "line_number": 1460,
         "raw": "DOMAIN-SUFFIX,ykad-data.youku.com"
       }
     },
@@ -13202,7 +13202,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "ykimg.com",
         "options": [],
-        "line_number": 1460,
+        "line_number": 1461,
         "raw": "DOMAIN-SUFFIX,ykimg.com"
       }
     },
@@ -13226,7 +13226,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youku.com",
         "options": [],
-        "line_number": 1461,
+        "line_number": 1462,
         "raw": "DOMAIN-SUFFIX,youku.com"
       }
     },
@@ -13250,7 +13250,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youku.tv",
         "options": [],
-        "line_number": 1462,
+        "line_number": 1463,
         "raw": "DOMAIN-SUFFIX,youku.tv"
       }
     },
@@ -13274,7 +13274,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youkuhonor.com",
         "options": [],
-        "line_number": 1463,
+        "line_number": 1464,
         "raw": "DOMAIN-SUFFIX,youkuhonor.com"
       }
     },
@@ -13298,7 +13298,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "youkuplay.com",
         "options": [],
-        "line_number": 1464,
+        "line_number": 1465,
         "raw": "DOMAIN-SUFFIX,youkuplay.com"
       }
     },
@@ -13326,7 +13326,7 @@
         "options": [
           "no-resolve"
         ],
-        "line_number": 1494,
+        "line_number": 1495,
         "raw": "IP-CIDR,106.11.0.0/16,no-resolve"
       }
     },
@@ -18607,7 +18607,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 213,
+        "line_number": 214,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       },
       "right": {
@@ -20089,7 +20089,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 213,
+        "line_number": 214,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       },
       "right": {
@@ -22626,7 +22626,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tanx.com",
         "options": [],
-        "line_number": 1302,
+        "line_number": 1303,
         "raw": "DOMAIN-SUFFIX,tanx.com"
       }
     },
@@ -22652,7 +22652,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "yukhj.com",
         "options": [],
-        "line_number": 1467,
+        "line_number": 1468,
         "raw": "DOMAIN-SUFFIX,yukhj.com"
       }
     },
@@ -22808,7 +22808,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tjqonline.cn",
         "options": [],
-        "line_number": 146,
+        "line_number": 145,
         "raw": "DOMAIN-SUFFIX,tjqonline.cn"
       }
     },
@@ -22834,7 +22834,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "tracking.miui.com",
         "options": [],
-        "line_number": 149,
+        "line_number": 148,
         "raw": "DOMAIN-SUFFIX,tracking.miui.com"
       }
     },
@@ -25360,7 +25360,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "xiaomi.com",
         "options": [],
-        "line_number": 155,
+        "line_number": 154,
         "raw": "DOMAIN-SUFFIX,xiaomi.com"
       }
     },
@@ -25490,7 +25490,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "sm.cn",
         "options": [],
-        "line_number": 1287,
+        "line_number": 1288,
         "raw": "DOMAIN-SUFFIX,sm.cn"
       }
     },
@@ -25516,7 +25516,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "taobao.com",
         "options": [],
-        "line_number": 1305,
+        "line_number": 1306,
         "raw": "DOMAIN-SUFFIX,taobao.com"
       }
     },
@@ -28220,7 +28220,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "xiaomi.com",
         "options": [],
-        "line_number": 155,
+        "line_number": 154,
         "raw": "DOMAIN-SUFFIX,xiaomi.com"
       }
     },
@@ -28298,7 +28298,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "xiaomi.com",
         "options": [],
-        "line_number": 155,
+        "line_number": 154,
         "raw": "DOMAIN-SUFFIX,xiaomi.com"
       }
     },
@@ -28324,7 +28324,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "xiaomi.com",
         "options": [],
-        "line_number": 155,
+        "line_number": 154,
         "raw": "DOMAIN-SUFFIX,xiaomi.com"
       }
     },
@@ -48318,7 +48318,7 @@
         "rule_type": "HOST-SUFFIX",
         "value": "githubcopilot.com",
         "options": [],
-        "line_number": 213,
+        "line_number": 214,
         "raw": "DOMAIN-SUFFIX,githubcopilot.com"
       }
     },
