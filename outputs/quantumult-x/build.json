@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T11:01:05.784813+00:00",
+  "generated_at_utc": "2026-11-27T10:59:14.577685+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -2929,7 +2929,7 @@
       "id": "magicrule-social-threads",
       "url": "https://magicrule.pages.dev/data/index/QuantumultX.json#Threads",
       "resolved_url": "https://rule-26r.pages.dev/data/_shared/artifacts/Threads_rules_6ad78fe6c0460829.list",
-      "sha256": "750494449795b704a29dbb10d4854d69125385a4f99f1a35ff39406ba6c6fd2f",
+      "sha256": "c7b2aa50f634f7991631ae7557e33856fc95bc902b94b3c4270731bb5a9022fa",
       "from_cache": false,
       "rule_count": 2,
       "issue_count": 0

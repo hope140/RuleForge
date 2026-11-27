@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T11:01:49.110339+00:00",
+  "generated_at_utc": "2026-11-27T11:00:00.218827+00:00",
   "generator_version": "0.1.1",
   "manifest": {
     "schema_version": 1,
@@ -2896,7 +2896,7 @@
       "id": "magicrule-social-threads",
       "url": "https://magicrule.pages.dev/data/index/Mihomo.json#Threads",
       "resolved_url": "https://rule-26r.pages.dev/data/_shared/artifacts/Threads_classical_bc78c862bfbd600c.yaml",
-      "sha256": "3d9d85a48b0ea219f860ba29c8b31a757ca8c1e3ec2455ac0a3936393b84bea8",
+      "sha256": "aa58aca43d845990070fe33e0d87184fccb5caa3ce4fb8e1e95644d3b7cb851f",
       "from_cache": false,
       "rule_count": 2,
       "issue_count": 0
