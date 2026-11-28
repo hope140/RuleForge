@@ -169,13 +169,29 @@ class RuleForgeTests(unittest.TestCase):
             self.assertEqual(list(root.glob(".ruleforge-backup-*")), [])
 
     def test_manifest_has_unique_seed_sources(self) -> None:
-        expected_counts = {"quantumultx.yaml": 176, "mihomo.yaml": 174}
+        expected_counts = {"quantumultx.yaml": 176, "mihomo.yaml": 176}
         for filename, target in (("quantumultx.yaml", "quantumult-x"), ("mihomo.yaml", "mihomo")):
             manifest, sources = load_manifest(ROOT / "sources" / filename)
             self.assertEqual(manifest["target"], target)
             self.assertEqual(len(sources), expected_counts[filename])
             self.assertEqual(len({source.id for source in sources}), expected_counts[filename])
             self.assertEqual(len({source.url for source in sources}), expected_counts[filename])
+
+    def test_steam_china_cdns_use_download_policy_without_changing_store(self) -> None:
+        _, sources = load_manifest(ROOT / "sources" / "mihomo.yaml")
+        rules = []
+        for source in sources:
+            if source.enabled and source.kind == "inline":
+                rules.extend(parse_resource(source.url.removeprefix("inline:"), source).rules)
+        for domain, category in (
+            ("dl.steam.clngaa.com", "game-download"),
+            ("st.dl.eccdnx.com", "game-download"),
+            ("store.steampowered.com", "game-store"),
+        ):
+            with self.subTest(domain=domain):
+                route = simulate_route(rules, RouteProbe(domain=domain))
+                self.assertIsNotNone(route)
+                self.assertEqual(route.rule.category, category)
 
     def test_manifest_rejects_invalid_root_schema_target_and_unknown_fields(self) -> None:
         base = """schema_version: 1
