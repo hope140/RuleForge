@@ -1563,6 +1563,24 @@ sources:
     parser: inline
     enabled: true
 
+  - id: local-game-download-dl-steam-clngaa-com
+    kind: inline
+    format: clash
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,dl.steam.clngaa.com"
+    parser: inline
+    enabled: true
+
+  - id: local-game-download-st-dl-eccdnx-com
+    kind: inline
+    format: clash
+    category: game-download
+    policy: 游戏下载
+    url: "inline:HOST,st.dl.eccdnx.com"
+    parser: inline
+    enabled: true
+
   - id: local-game-download-steampipe-akamaized-net
     kind: inline
     format: clash
